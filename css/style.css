@@ -2,6 +2,7 @@
   --link-color: #366a92;
   --body-color: #333;
   --body-color-secondary: rgb(121, 121, 121);
+  --body-color-dark: #eee;
 }
 body {
   font-family: georgia, "times new roman", times, serif;
@@ -88,4 +89,15 @@ h2 {
 }
 .nav-links a {
   color: var(--body-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--body-color-dark);
+    background: #121212;
+  }
+
+  .nav-links a {
+    color: var(--body-color-dark);
+  }
 }
