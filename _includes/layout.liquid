@@ -2,18 +2,40 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ '/css/normalize.css' | url }}">
-        <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+        <title>{{ title | "Blog by Andrew Ford" }} </title>
+        <link rel="stylesheet" href="{{ '/css/normalize.css' }}">
+        <link rel="stylesheet" href="{{ '/css/style.css' }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header>
-        
+        <header class="wrapper">          
+            <div class="avatar-wrapper">
+                <a href="{{ '/' }}"><img class="avatar" src={{ '/images/andrew-emoji.png '}} /></a>
+                <h1 class="site-title">Andrew Ford</h1>
+                <h2 class="site-description">Full Stack Developer from Tauranga, New Zealand</h2>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    {%- for page in collections.pages -%}
+                    <li><a href="{{ page.url }}">{{ page.data.title }}</a></li>    
+                    {%- endfor -%}    
+                </ul>
+            </nav>
         </header>
-        <main>
-            <h1>{{ title }}</h1>
+        <main class="wrapper">
+            <article>
+                <h1>{{ title }}</h1>
 
-            {{ content }}
+                {{ content }}
+            </article>
         </main>
+        <footer class="wrapper">
+            <ul class="nav-links ">
+                <li><a href="https://www.linkedin.com/in/andrewjamesford">LinkedIn</a></li>
+                <li><a href="https://github.com/andrewjamesford">Github</a></li>
+                <li><a href="mailto:me@andrewford.co.nz">Email</a></li>
+                <li><a href="https://andrewford.co.nz/rss.xml">RSS</a></li>
+            </ul>
+        </footer>
     </body>
 </html>
