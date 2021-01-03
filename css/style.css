@@ -3,6 +3,7 @@
   --body-color: #333;
   --body-color-secondary: rgb(121, 121, 121);
   --body-color-dark: #eee;
+  --body-color-dark-secondary: rgb(230, 230, 230);
 }
 body {
   font-family: georgia, "times new roman", times, serif;
@@ -61,6 +62,7 @@ h2 {
   border-radius: 50%;
   background-clip: padding-box;
   width: 7rem;
+  height: 7rem;
 }
 .avatar-wrapper {
   padding-top: 1rem;
@@ -85,10 +87,13 @@ h2 {
 .nav-links li {
   display: inline-block;
   list-style: none;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 .nav-links a {
   color: var(--body-color);
+}
+.hide {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -99,5 +104,8 @@ h2 {
 
   .nav-links a {
     color: var(--body-color-dark);
+  }
+  .site-description {
+    color: var(--body-color-dark-secondary);
   }
 }
