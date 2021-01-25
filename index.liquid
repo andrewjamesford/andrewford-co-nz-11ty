@@ -5,9 +5,12 @@ description: "Blog for Andrew Ford a full stack developer from Tauranga, New Zea
 ---
 
 
-
-{%- for article in collections.articles reversed -%}
-    <em class="article-date">{{ article.date | date: "%Y-%m-%d" }}</em>
-    <h2><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
-{%- endfor -%}
+<ul>
+    {%- for article in collections.articles reversed -%}
+    <li class="article-list-item">
+        <em class="article-date">{{ article.date | date: "%Y-%m-%d" }}</em>
+        <h2 class="article-title"><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
+    </li>
+    {%- endfor -%}
+</ul>
 
