@@ -1,4 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pageAssetsPlugin = require('eleventy-plugin-page-assets');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
@@ -13,5 +14,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   
   eleventyConfig.addPlugin(pluginRss);
+
+  eleventyConfig.addPlugin(pageAssetsPlugin, {
+    mode: "parse",
+    postsMatching: "content/**/*.md",
+  });
 
 };
