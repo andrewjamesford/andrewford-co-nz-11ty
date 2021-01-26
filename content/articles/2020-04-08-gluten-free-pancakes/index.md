@@ -12,7 +12,7 @@ description: "Gluten free pancakes made with chickpea flour"
 
 Who *doesn't* like pancakes? Right about now anything to take your mind off the current crisis is worth doing. So today I made my family pancakes for lunch. 
 
-If you've tried to do shopping lately it's been hard to get flour, it's like the new gold. Very rare. It's leaving shelves as quick as it's stacked in the supermarket (supposedly thanks to issues packaging). Well fortunately I'm going to tell you a gluten free recipe for pancakes. For a flour subsitute you probably haven't used before. That's right this recipe uses **chickpea** flour.
+If you've tried to do shopping lately it's been hard to get flour, it's like the new gold. Very rare. It's leaving shelves as quick as it's stacked in the supermarket (supposedly thanks to issues packaging). Well fortunately I'm going to tell you a gluten free recipe for pancakes. For a flour substitute you probably haven't used before. That's right this recipe uses **chickpea** flour.
 
 ![Gluten Free Chickpea pancakes](./gluten-free-chickpea-pancakes.jpg)
 

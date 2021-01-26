@@ -14,7 +14,7 @@ description: "Some key take aways from the Test Automation Workshop I attended"
 
 Today I attended a Test Automation workshop (@ Wintec House) run in conjunction with [Callaghan Innovation](https://www.callaghaninnovation.govt.nz/) & [Hypr](https://www.hypr.nz/). It was a hands-on workshop where we covered some theory, did some activities that reinforced the theory and finished off with some sample code exercises.
 
-Some key take aways from the workshop where:
+Some key learnings from the workshop where:
 
 - The shape of your testing should look more like a [pyramid rather than an ice cream cone](https://watirmelon.blog/testing-pyramids/)
 - Small batches of work are far more efficient to get through the development cycle then large batches
