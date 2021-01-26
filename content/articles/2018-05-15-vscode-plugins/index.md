@@ -11,7 +11,6 @@ tags:
 description: ""
 ---
 
-# Visual Studio Code Extensions for .Net Core, ReactJS and Docker
 
 My choice of text editor/IDE is Microsofts Visual Studio Code, the cross platform extensible editor. It's performant, has continuios updates and has a big extension development community.
 

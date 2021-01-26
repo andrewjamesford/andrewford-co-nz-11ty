@@ -12,7 +12,6 @@ tags:
 description: "How to rid yourself of advertising on the internet"
 ---
 
-# An Almost Ad-free household
 
 I detest the majority of advertisements, as they more than often have little context to me. The ad driven model of baiting for clicks is breaking the internet. It’s causing tech & advertising companies to do [creepy stuff](https://motherboard.vice.com/en_us/article/bjb745/john-oliver-facebook-ads-last-week-tonight) and just [be evil](https://www.nasdaq.com/article/googles-china-reentry-plan-looks-evil-and-risky-20180802-00012). It’s making media companies produce [meaningless content](https://www.buzzfeed.com/) that is meant to fire you up until the next rage inducing article. Luckily you can do something about it to reduce the surveillance at home.
 

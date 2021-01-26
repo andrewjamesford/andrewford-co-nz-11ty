@@ -13,7 +13,6 @@ tags:
 description: "Parenting in this modern age is harder now then ever. I share some tips to shield your kids from the bad."
 ---
 
-# Internet Parenting
 
 As a father of three kids and an IT professional I'm all too aware of the great things of the internet, and the _not_ so great things of the internet especially for young children.
 
