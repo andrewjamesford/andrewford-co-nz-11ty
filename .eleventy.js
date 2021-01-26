@@ -9,9 +9,7 @@ module.exports = function(eleventyConfig) {
   .getAllSorted()
   .filter(item => item.inputPath.startsWith('./content/articles/')));
 
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("css","images","assets");
   
   eleventyConfig.addPlugin(pluginRss);
 
