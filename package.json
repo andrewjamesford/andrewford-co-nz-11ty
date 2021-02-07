@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/andrewjamesford/andrewford-co-nz-11ty.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["11ty", "blog"],
+  "author": "Andrew Ford",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
