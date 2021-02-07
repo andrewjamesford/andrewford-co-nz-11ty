@@ -49,7 +49,7 @@ FTP settings are located in the **Advanced > Advanced Sharing** tab. The FTP swi
 
 I quickly took up Google Photos when it was released and haven't looked back for my online photo storage (previously I'd used [Flickr](https://www.flickr.com). Having access to your entire collection of photos for free with great search is pretty amazing. But there is one downside on the free tier, your photos are compressed (not that you can tell) but none the less you can't download the proper originals.
 
-So they say you should always have at least two backups, but how without having to sync your phone? Simple use CameraSync on iOS. It doesn't support SMB shares but it does support FTP which is pretty easy to setup. I have mine set to backup when on wifi when I'm at home (thanks to the background location sync).
+So they say you should always have at least two backups, but how without having to sync your phone? Simple use CameraSync on iOS. It doesn't support SMB shares but it does support FTP which is pretty easy to setup. I have mine set to backup when on WiFi when I'm at home (thanks to the background location sync).
 
 ### Conclusion
 
