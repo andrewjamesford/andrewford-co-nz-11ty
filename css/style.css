@@ -148,6 +148,10 @@ article img {
   max-width: 100%;
 }
 
+.text-center {
+  text-align: center;
+}
+
 table {
   display: block;
   border-collapse: collapse;
