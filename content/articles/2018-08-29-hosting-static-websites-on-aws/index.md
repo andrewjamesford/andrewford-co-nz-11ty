@@ -16,7 +16,7 @@ description: "AWS is a great platform to host a static website, here is how to u
 
 Hosting a static website (static as in HTML/CSS files and JavaScript, not PHP, C# etc) on AWS can seem like a bit of a mine field at first. But it really isn't, as AWS have a great wizard like tool that does everything you need to get going quickly.
 
-![Static website hosting diagram](aws-diagram.svg)
+![Static website hosting diagram](aws-diagram.png)
 
 Tucked away on the AWS documentation is a link to the [Website Quickstart Hosting](https://console.aws.amazon.com/quickstart-website/home) page (this requires an Amazon developer account). From here its made as easy as possible to get your own static site setup on AWS using [S3](https://aws.amazon.com/s3/) for file storage, [CloudFront](https://aws.amazon.com/cloudfront/) as the CDN for your sites content to be cached on, [Route 53](https://aws.amazon.com/route53/) where your domain or sub-domain is configured, with [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) ready for securing your site over HTTPS.
 

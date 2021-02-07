@@ -5,7 +5,7 @@ description: "Blog for Andrew Ford a full stack developer from Tauranga, New Zea
 ---
 
 
-<ul>
+<ul class="article-list">
     {%- for article in collections.articles reversed -%}
     <li class="article-list-item">
         <em class="article-date">{{ article.date | date: "%Y-%m-%d" }}</em>

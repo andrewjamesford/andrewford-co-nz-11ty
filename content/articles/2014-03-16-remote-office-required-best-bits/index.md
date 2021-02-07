@@ -33,4 +33,3 @@ Remote: Office Not Required is well worth the read if your interested in changin
 
 Grab the book here: <a title="Remote: Office Not Required by 37 Signals" href="http://37signals.com/remote/">http://37signals.com/remote/</a>
 
-Or on iBooks here: <a href="https://itunes.apple.com/nz/book/remote/id656114139" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_ibooks-lrg.png) no-repeat;width:146px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_ibooks-lrg.svg);}"></a>
