@@ -18,8 +18,6 @@ There are only two actual needs in my own home that **need** automation that I s
 
 I wanted a no frills, white only light bulb of the E27 variety and LIFX had what I wanted, even better was for an introductory price of only $38 (at the time) from [Noel Leeming](https://www.noelleeming.co.nz/shop/computers-tablets/smart-home/smart-lighting/lifx-l3a19mw08e27-mini-white-e27/prod169514.html). The Lifx range support all the 3 of the most popular control systems, Apple Home kit, Goole Home and Amazon Alexa. While it had crossed my mind to use a Raspberry Pi to control home automation, I didn't want the hassle of setup.
 
-![Setup LIFX bulb](./lifx2.png)
-
 The process for setup was very easy, first set the bulb up by plugging it in to it's socket and switching the power on. Install the Lifx app on your phone and run through the set up wizard. Once that's done, you can update firmware and optionally set up like in my case for it to work with Homekit, by scanning the code that came with the device.
 
 ![Apple Home](./lifx1.png)
