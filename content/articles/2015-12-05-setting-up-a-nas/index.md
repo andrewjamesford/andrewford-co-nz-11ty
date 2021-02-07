@@ -32,7 +32,6 @@ When we switched to [Vodafone](http://www.vodafone.co.nz) they supplied a smart 
 
 Go to the **Sharing** tab and make sure the **Share All** switch is green. If you click the downward facing arrow with the name of the Hard Drive it will show you the SMB share path. Now if you jump on your Mac from the **Finder menu > Go > Connect to Server** option you can type in the address shown. On a Windows machine open an explorer window and simply type address in.
 
-![Sharing Connect](./sharing-connect.png)
 
 So now you can connect to the drive and see it's existing media and should be able to view, copy, delete and upload files to the NAS disk. To further make your NAS available by other servers I recommend you enable FTP as well.
 

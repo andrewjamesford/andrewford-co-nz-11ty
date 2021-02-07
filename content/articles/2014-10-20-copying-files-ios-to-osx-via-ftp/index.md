@@ -21,15 +21,11 @@ First of all if you haven't bought [Panic](http://panic.com)'s great new FTP cli
 
 First of all enable SSH/SFTP on your mac by going to **System Preferences &gt; Sharing** and enable **Remote Login**.
 
-![Enable Remote Login in System Preferences &gt; Sharing](./remote-login-setting1.png)
-
 Add a **New Server** in Transmit for iOS, adding an **SFTP** account.
-
-![Add a new connection, select SFTP and enter your Macs details](./transmit-add-connection.png)
 
 Add the name from OS X of your computer "computername.local" in the address field, your user and password. You can find this on the **System Preferences &gt; Sharing** pane.
 
-![Select your desktop folder, tap the + icon and select the file to upload. You can preview images simply by tapping the filename.](./transmit-upload-deskto.png)
+![Select your desktop folder, tap the + icon and select the file to upload. You can preview images simply by tapping the filename.](./transmit-upload-desktop.png)
 
 Connect to your Mac from Transmit and go to your Desktop and click the **+** icon. This will bring up the recent images and gives you access to iCloud Drive, Photo Library and some other options. Simply select your file to upload and it will be transferred to your mac.
 
