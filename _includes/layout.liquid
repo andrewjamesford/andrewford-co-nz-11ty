@@ -1,79 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ title }}</title>
-    <link rel="icon" href="{{ '/images/andrew-emoji.webp ' }}" />
-    <link
-      rel="apple-touch-icon"
-      sizes="48x48"
-      href="{{ '/images/andrew-emoji.webp ' }}"
-    />
-    <link rel="preload" href="{{ '/css/style.css' }}" as="style" />
-    <link
-      rel="preload"
-      href="{{ '/fonts/fira-sans-v10-latin-800.woff2' }}"
-      as="font"
-    />
-    <link
-      rel="preload"
-      href="{{ '/fonts/fira-sans-v10-latin-regular.woff2' }}"
-      as="font"
-    />
-    <link rel="stylesheet" href="{{ '/css/style.css' }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ description }}" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Blog by Andrew Ford"
-      href="/feed.xml"
-    />
-  </head>
-  <body>
-    <header class="wrapper">
-      <div class="avatar-wrapper">
-        <a href="{{ '/' }}">
-          <picture>
-            <source srcset={{ "/images/andrew-emoji.webp " }} type="image/webp">
-            <img class="avatar" src={{
-              "/images/andrew-emoji.png "
-            }}
-            alt="Andrew's Avatar" width="112" height="112" />
-          </picture>
-          <p class="hide">Home</p>
-        </a>
-        <h1 class="site-title">Andrew Ford</h1>
-        <h2 class="site-description">
-          Full Stack Developer from Tauranga, New Zealand
-        </h2>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          {%- for page in collections.pages -%}
-          <li>
-            <a href="{{ page.url }}">{{ page.data.title }}</a>
-          </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-    </header>
-    <main class="wrapper">
-      <article>
-        <h1 class="article-heading">{{ title }}</h1>
 
-        {{ content }}
-      </article>
-    </main>
-    <footer class="wrapper">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <link rel="icon" href="{{ '/images/andrew-emoji.webp ' }}" />
+  <link rel="apple-touch-icon" sizes="48x48" href="{{ '/images/andrew-emoji.webp ' }}" />
+  <link rel="preload" href="{{ '/css/style.css' }}" as="style" />
+  <link rel="preload" href="{{ '/fonts/fira-sans-v10-latin-800.woff2' }}" as="font" />
+  <link rel="preload" href="{{ '/fonts/fira-sans-v10-latin-regular.woff2' }}" as="font" />
+  <link rel="stylesheet" href="{{ '/css/style.css' }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description }}" />
+  <link rel="alternate" type="application/rss+xml" title="Blog by Andrew Ford" href="/feed.xml" />
+</head>
+
+<body>
+  <header class="wrapper">
+    <div class="avatar-wrapper">
+      <a href="{{ '/' }}">
+        <picture>
+          <source srcset="{{ '/images/andrew-emoji.webp' }}" type="image/webp" />
+          <img class="avatar" src="{{ '/images/andrew-emoji.png' }}" alt="Andrew's Avatar" width="112" height="112" />
+        </picture>
+        <p class="hide">Home</p>
+      </a>
+      <h1 class="site-title">Andrew Ford</h1>
+      <h2 class="site-description">
+        Full Stack Developer from Tauranga, New Zealand
+      </h2>
+    </div>
+    <nav>
       <ul class="nav-links">
+        {%- for page in collections.pages -%}
         <li>
-          <a href="https://www.linkedin.com/in/andrewjamesford">LinkedIn</a>
+          <a href="{{ page.url }}">{{ page.data.title }}</a>
         </li>
-        <li><a href="https://github.com/andrewjamesford">Github</a></li>
-        <li><a href="mailto:me@andrewford.co.nz">Email</a></li>
-        <li><a href="https://andrewford.co.nz/feed.xml">RSS</a></li>
+        {%- endfor -%}
       </ul>
-    </footer>
-  </body>
+    </nav>
+  </header>
+  <main class="wrapper">
+    <article>
+      <h1 class="article-heading">{{ title }}</h1>
+
+      {{ content }}
+    </article>
+  </main>
+  <footer class="wrapper">
+    <ul class="nav-links">
+      <li>
+        <a href="https://www.linkedin.com/in/andrewjamesford">LinkedIn</a>
+      </li>
+      <li><a href="https://github.com/andrewjamesford">Github</a></li>
+      <li><a href="mailto:me@andrewford.co.nz">Email</a></li>
+      <li><a href="https://andrewford.co.nz/feed.xml">RSS</a></li>
+    </ul>
+  </footer>
+</body>
+
 </html>
