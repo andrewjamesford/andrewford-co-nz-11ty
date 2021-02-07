@@ -3,7 +3,7 @@ title: "Lifx bulb"
 date: '2019-03-07T10:26:42Z'
 template: post
 draft: false
-slug: '2019/03/07/lifx-blub'
+slug: '2019/03/07/lifx-bulb'
 category: article
 tags:
 - lifx
