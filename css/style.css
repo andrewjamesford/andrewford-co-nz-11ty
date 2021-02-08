@@ -112,7 +112,17 @@ samp {
   background-clip: padding-box;
   width: 7rem;
   height: 7rem;
+  background-image: url("/images/andrew-avatar.png");
+  background-image: url("/images/andrew-avatar.webp");
+  background-size: contain;
 }
+@media 
+  (-webkit-min-device-pixel-ratio: 2) {
+    .avatar {
+  background-image: url("/images/andrew-avatar@2x.webp");
+
+    }
+  }
 .avatar-wrapper {
   padding-top: 1rem;
   text-align: center;
@@ -147,7 +157,15 @@ samp {
 article img {
   max-width: 100%;
 }
-
+article blockquote {
+  border-left: 0.5rem solid var(--link-color);
+  margin-left: 0;
+  padding-left: 2rem;
+  margin-right: 2rem;
+}
+article ul {
+  padding-left: 2rem;
+}
 .text-center {
   text-align: center;
 }

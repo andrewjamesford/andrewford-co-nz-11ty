@@ -11,7 +11,7 @@ tags:
 description: "Switched the blog from Gatsby to 11ty"
 --- 
 
-For 2021 I wanted to switch to a new blog engine. [GatsbyJS](https://www.gatsbyjs.com) had served me well the last couple of years I've been using it... but there was a huge number of dependencies with the NPM packages I used (mainly due to the theme). I'd get constant pings from Github Dependabot to update packages by approving pull requests. 
+For 2021 I wanted to switch to a new blog engine. [GatsbyJS](https://www.gatsbyjs.com) had served me well the last [couple of years](/2018/03/31/new-year-new-blog/) I've been using it... but there was a huge number of dependencies with the NPM packages I used (mainly due to the theme). I'd get constant pings from Github Dependabot to update packages by approving pull requests. 
 
 I also wanted something simpler. Easy to build (and faster), less issues with dependencies, and super easy to style and tweak. After seeing some buzz from other web developers and a quick read of the documentation I chose Eleventy (or 11ty for short). [Eleventy](https://www.11ty.dev) calls itself a "simpler static site generator" and it lives up to its catch phrase. 
 
