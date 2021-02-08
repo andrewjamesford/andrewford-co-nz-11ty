@@ -1,3 +1,4 @@
 # Redirects from what the browser requests to what we serve
-/rss.xml              /feed.xml
-/tags                 /
+/rss.xml                                        /feed.xml
+/tags                                           /
+/2021/02/07/new-year-new-blog-generator         /2021/02/07/new-year-new-blog-11ty

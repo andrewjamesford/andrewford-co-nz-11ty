@@ -1,9 +1,9 @@
 ---
-title: "New Year, New Blog Generator"
+title: "New Year, New Blog 11ty"
 date: '2021-02-07T21:07:46Z'
 template: post
 draft: true
-slug: '2021/02/07/new-year-new-blog-generator'
+slug: '2021/02/07/new-year-new-blog-11ty'
 category: article
 tags:
 - 11ty
