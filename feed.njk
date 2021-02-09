@@ -28,6 +28,7 @@
   </author>
   {%- for article in collections.articles %}
   {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- if article.data.draft == false -%}
   <entry>
     <title>{{ article.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
@@ -35,5 +36,6 @@
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ article.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
+  {%- endif -%}
   {%- endfor %}
 </feed>

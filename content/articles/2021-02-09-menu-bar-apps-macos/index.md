@@ -13,7 +13,7 @@ tags:
 description: "My recommendations for MacOS apps in the menu bar"
 --- 
 
-Even with a widescreen monitor I don't have a huge number of apps that sit in my menu bar. In fact I try to run the bare minimum (no need for [Bartender](https://www.macbartender.com) or [Dozer](https://github.com/Mortennn/Dozer) for me). 
+Even with a ultra widescreen monitor (21:9) I don't have a huge number of apps that sit in my menu bar. In fact I try to run the bare minimum (no need for [Bartender](https://www.macbartender.com) or [Dozer](https://github.com/Mortennn/Dozer) for me). 
 
 Here are my current apps that take up that space in the right hand corner:
 
