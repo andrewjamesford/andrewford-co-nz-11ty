@@ -25,9 +25,11 @@ I have it bound to `command + shift + v` and use it constantly. Just be sure to 
 
 ## [Magnet](https://magnet.crowdcafe.com) - Paid MAS
 
-One thing I miss about window management on MacOS compared to Windows is being able to drag windows to either the left or right of the desktop and have them auto size to half the desktop (when not full screen). Magnet let's you do this via drag n drop.  It also has other options to use a 1/4 or 1/3 etc and can be controlled by keyboard shortcuts. 
+One thing I miss about window management on MacOS compared to Windows is being able to drag windows to either the left or right of the desktop and have snap and auto size to half the desktop (when not full screen). Magnet let's you do this via drag n drop.  It also has other options to use a 1/4 or 1/3 etc and can be controlled by keyboard shortcuts. 
 
-Since Mojave you can get easy half width windows by hovering your mouse pointer over the left hand green dot button and pressing the `option` key where you will get the option to *Move window to the Left/Right side of the screen*.
+Since Catalina you can get easy half width windows by hovering your mouse pointer over the left hand green dot button and pressing the `option` key where you will get the option to *Move window to the Left/Right side of the screen*.
+
+[Rectangle](https://rectangleapp.com) has most of the same features including drag to snap as Magnet and is open-source and free.
 
 ## Popclip
 
