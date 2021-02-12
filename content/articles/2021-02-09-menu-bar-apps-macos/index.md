@@ -29,13 +29,20 @@ One thing I miss about window management on MacOS compared to Windows is being a
 
 Since Catalina you can get easy half width windows by hovering your mouse pointer over the left hand green dot button and pressing the `option` key where you will get the option to *Move window to the Left/Right side of the screen*.
 
-[Rectangle](https://rectangleapp.com) has most of the same features including drag to snap as Magnet and is open-source and free.
+[Rectangle](https://rectangleapp.com) has most of the same features including drag to snap as Magnet and is open-source (free).
 
-## Popclip
+## [Popclip](https://pilotmoon.com/popclip/) - Paid MAS
 
+Popclip is the missing thing from iOS that MacOS needs. When you select text via the mouse it pops up a little over lay above with options to search, copy, paste or add to Notes similar to iOS. Best of all it configurable, so you can add all the apps that you use.
 
-## Bumpr
+## Bumpr - Paid MAS
 
-## Amphetamine
+Bumpr sits as an inbetween before you click on an email or URL. It pops up a menu to allow you to choose what browser or email client you want to use. 
 
-## Itsycal
+## Amphetamine - Free MAS
+
+I use Amphetamine simply to make my Mac not fall asleep. A right click sets my display to stay on.
+
+## Itsycal - Free
+
+The first version of Fantastical was great in that it was tucked away until you clicked on it so you could quickly see the date of the month you where interested in or what's coming up. Itsycal is my replacement for Fantastical 1 that's open source and free.
