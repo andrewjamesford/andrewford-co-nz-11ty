@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/andrewjamesford/andrewford-co-nz-11ty.git"
   },
-  "keywords": ["11ty", "blog"],
+  "keywords": [
+    "11ty",
+    "blog"
+  ],
   "author": "Andrew Ford",
   "license": "ISC",
   "bugs": {
@@ -24,5 +27,8 @@
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "eleventy-plugin-page-assets": "^0.3.0"
+  },
+  "dependencies": {
+    "@quasibit/eleventy-plugin-sitemap": "^2.0.4"
   }
 }

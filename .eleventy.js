@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pageAssetsPlugin = require('eleventy-plugin-page-assets');
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
@@ -22,6 +23,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pageAssetsPlugin, {
     mode: "parse",
     postsMatching: "content/**/*.md",
+  });
+
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://andrewford.co.nz",
+    },
   });
 
 };
