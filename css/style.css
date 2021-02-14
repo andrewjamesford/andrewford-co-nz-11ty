@@ -112,8 +112,7 @@ samp {
   background-clip: padding-box;
   width: 7rem;
   height: 7rem;
-  background-image: url("/images/andrew-avatar.png");
-  background-image: url("/images/andrew-avatar.webp");
+  background-image: url("/images/andrew-avatar.png"), url("/images/andrew-avatar.webp");
   background-size: contain;
 }
 @media 
