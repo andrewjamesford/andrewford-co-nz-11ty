@@ -118,8 +118,7 @@ samp {
 @media 
   (-webkit-min-device-pixel-ratio: 2) {
     .avatar {
-  background-image: url("/images/andrew-avatar@2x.webp");
-
+      background-image: url("/images/andrew-avatar@2x.png"), url("/images/andrew-avatar@2x.webp");
     }
   }
 .avatar-wrapper {
