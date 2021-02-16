@@ -76,6 +76,9 @@ h5,
 h6 {
   margin-top: 0;
 }
+article :is(h2,h3,h4,h5,h6) {
+  margin-top: 2rem;
+}
 h1 {
   font-size: 1.9rem;
   line-height: 2.3rem;
@@ -104,6 +107,9 @@ samp {
 }
 .article-heading {
   text-align: center;
+}
+h2.article-title {
+  margin-top: 0;
 }
 .avatar {
   display: inline-block;
