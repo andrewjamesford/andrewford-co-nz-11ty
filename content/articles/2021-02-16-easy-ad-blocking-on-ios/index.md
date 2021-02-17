@@ -2,7 +2,7 @@
 title: "Easy ad-blocking via iOS 14 profiles"
 date: '2021-02-16T09:08:57Z'
 template: post
-draft: true
+draft: false
 slug: '2021/02/16/easy-ad-blocking-on-ios'
 category: article
 tags:
@@ -12,7 +12,7 @@ tags:
 description: "How to easily block ads on iOS 14 via profile"
 --- 
 
-[Aguard offer a DNS service](https://adguard.com/en/adguard-dns/overview.html) to block ads (and also have a family filter called "Family protection") I use this on my home router these days (previously I used [Pi-hole](https://andrewford.co.nz/2018/08/03/an-almost-ad-free-household)) but the downside of this is when my family use their devices on another network or cellular network they don't have ad blocking. 
+[Aguard offer a DNS service](https://adguard.com/en/adguard-dns/overview.html) to block ads (and also have a family filter called "Family protection") I use this on my home router these days (previously I used [Pi-hole](https://andrewford.co.nz/2018/08/03/an-almost-ad-free-household)) but the downside of this is when I or my family use their devices on another network they don't have ad blocking. 
 
 Adguard now provide [iOS & MacOS profiles](https://adguard.com/en/blog/encrypted-dns-ios-14.html) that can be installed on your devices that will enable ad blocking no matter the network and are super easy to install. 
 
