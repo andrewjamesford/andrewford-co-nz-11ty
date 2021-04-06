@@ -10,6 +10,11 @@ module.exports = function(eleventyConfig) {
   .getAllSorted()
   .filter(item => item.inputPath.startsWith('./content/articles/')));
 
+  eleventyConfig.addCollection("archive",
+  collection => collection
+  .getAllSorted()
+  .filter(item => item.inputPath.startsWith('./content/archive/')));
+
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("assets");

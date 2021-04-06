@@ -1,0 +1,18 @@
+---
+layout: layout.liquid
+title: "Drew's Blog"
+description: "Blog for Andrew Ford a full stack developer from Tauranga, New Zealand"
+---
+
+
+<ul class="article-list">
+    {%- for archives in collections.archive reversed -%}
+    <li class="article-list-item">
+        {%- if archives.data.draft == false -%}
+        <em class="article-date">{{ archives.date | date: "%Y-%m-%d" }}</em>
+        {{ archives.drafts }}
+        <h2 class="article-title"><a href="{{ archives.url }}">{{ archives.data.title }}</a></h2>
+        {%- endif -%}
+    </li>
+    {%- endfor -%}
+</ul>

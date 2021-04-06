@@ -1,0 +1,5 @@
+{
+    "layout": "layout.liquid",
+    "tags": "[articles]",
+    "permalink": "{{slug}}/index.html"
+}
