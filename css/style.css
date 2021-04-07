@@ -264,3 +264,8 @@ caption {
     flex-direction: row;
   }
 }
+
+pre {
+  overflow-x: auto;
+  font-size: 1rem;
+}
