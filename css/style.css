@@ -160,6 +160,7 @@ h2.article-title {
 }
 article img {
   max-width: 100%;
+  border-radius: 0.3em;
 }
 article blockquote {
   border-left: 0.5rem solid var(--link-color);
@@ -173,6 +174,7 @@ article ul {
 .text-center {
   text-align: center;
 }
+
 
 table {
   display: block;
@@ -266,6 +268,5 @@ caption {
 }
 
 pre {
-  overflow-x: auto;
   font-size: 1rem;
 }

@@ -26,7 +26,7 @@ All your going to need is a:
 
 My Pi sits right next to the soundbar underneath the TV in our lounge, I installed a 3.5mm stereo cable plugged it in to the soundbar and the other end into the Pi. Installed the Raspotify package by SSHing into the Pi and running the [script](https://github.com/dtcooper/raspotify#tldr).
 
-```sh
+```bash
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 ```
 
@@ -36,7 +36,7 @@ Once installed open up spotify on your computer or phone and connect to a device
 
 One issue I found was that Raspotify was too quiet and I had to turn the soundbar right up to hear, even with Spotify at maximum volume. To fix this on the raspberry pi run:
 
-```sh
+```
 alsamixer
 ```
 

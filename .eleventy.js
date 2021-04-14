@@ -1,9 +1,12 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pageAssetsPlugin = require('eleventy-plugin-page-assets');
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
+
+  eleventyConfig.addPlugin(syntaxHighlight);
   
   eleventyConfig.addCollection("articles",
   collection => collection
