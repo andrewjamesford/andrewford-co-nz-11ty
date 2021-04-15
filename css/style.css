@@ -171,6 +171,15 @@ article blockquote {
 article ul {
   padding-left: 2rem;
 }
+article img + em {
+  font-size: 0.8rem;
+}
+article img ~ em {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
 .text-center {
   text-align: center;
 }
