@@ -2,12 +2,14 @@
 title: Tailwind Theming by Config
 date: '2021-04-06T21:47:02Z'
 template: post
-draft: true
+draft: false
 slug: 'tailwind-theming-by-config'
 category: article
 tags:
-- 
-description: Description here
+- tailwindcss
+- environment variables
+- branding
+description: Using tailwind css and environment variables to reuse code for multiple brands on the same codebase.
 --- 
 
 A common approach to building web apps in large organisations are theming them for multiple brands. The app will function in the same way but look different for each corresponding theme with alternate fonts, colours and logo etc. This can be a big headache, and you can be left maintaining multiple copies of the same code base. In an ideal world we don't want to do that.
@@ -15,8 +17,6 @@ A common approach to building web apps in large organisations are theming them f
 I found myself at work in this exact scenario. We had a need for multiple themes/branding but at the apps core it had the same functionality. I needed to use the same code base for this ReactJS app. Most importantly I needed to have flexibility and have options to hide and show form fields, components etc if needed for different themes. I also wanted to have an easy way to switch which theme/brand the app was using across the board at the deployment level. So same GIT repository, 3 different deployments (domains), all hosted on Azure.
 
 At work we use [Tailwind CSS](https://tailwindcss.com) which is a utility first CSS framework. Rather than making custom CSS classes for each part of a component you are working on, you add multiple utility classes to each element and never run the issue of another developer (or your self in the future) breaking your design. CSS classes stay consistent and in practise I've found you only need to add on the off occasion a custom CSS class.
-
-
 
 To achieve the theming of Tailwind I used a plugin called [tailwind-theme-variants](https://github.com/JakeNavith/tailwindcss-theme-variants). This allowed me to create 3 variants. We will call them Alpha, Beta, Gamma. Each have there own brand colours. So anywhere through out the application I can prefix the brand name and a colon to a CSS class for example and know it will only be shown for that theme. Just like when using the [responsive classes in Tailwind CSS](https://tailwindcss.com/docs/responsive-design).
 
@@ -26,11 +26,11 @@ My component
 </div>
 ```
 
-In the [example](https://github.com/andrewjamesford/tailwind-theming-by-config-example) above when the user is looking at the **alpha** themed version of the app this component will have the background colour of alpha colour 1 (**<span style="color:azure">azure</span>**). Versus the **gamma** themed version will have the background colour of gamma colour 1 (**<span style="color:ghostwhite">ghostwhite</span>**). This allows some great flexibility to theme your app while at the same time making it easy to manage.
+In the [example](https://github.com/andrewjamesford/tailwind-theming-by-config-example) above when the user is looking at the **alpha** themed version of the app this component will have the background colour of alpha colour 1 (**<span style="border-bottom: 3px solid azure;">azure</span>**). Versus the **gamma** themed version will have the background colour of gamma colour 1 (**<span style="border-bottom: 3px solid ghostwhite">ghostwhite</span>**). This allows some great flexibility to theme your app while at the same time making it easy to manage.
 
 ## Final result
 
-First off lets look at the final results. In the screenshots below you can see two identically styled designs of 3 cards. The top one has the **alpha** theme with a background color of **<span style="color:azure">azure</span>** the bottom **gamma** with a background colour of **<span style="color:ghostwhite">ghostwhite</span>**.
+First off lets look at the final results. In the screenshots below you can see two identically styled designs of 3 cards. The top one has the **alpha** theme with a background color of **<span style="border-bottom: 3px solid azure;">azure</span>** the bottom **gamma** with a background colour of **<span style="border-bottom: 3px solid ghostwhite">ghostwhite</span>**.
 
 ![Alpha Cards](./cards-alpha.png "The alpha theme is set")
 *The alpha theme is set*
@@ -108,8 +108,6 @@ plugins: [
   ],
 ```
 
-
-
 ## How it works
 
 These themes are configured by the root html element having the theme CSS name. In the example below the html tag has the selector class of *alpha*. The selector class has to be added to the *:root* or *html* tag.
@@ -136,6 +134,12 @@ Coming back to my scenario above I needed the same source code to have the abili
 <html lang="en" class="%REACT_APP_THEME_CONFIG%">
 ```
 
-If you look at the *index.html* file in the public folder of the example react app, I've added an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) in the html tag like above. 
+If you look at the *index.html* file in the public folder of the [example react app](https://github.com/andrewjamesford/tailwind-theming-by-config-example), I've added an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) in the html tag like above. The variable has been set to **alpha** in the **.env** file. When the project is run, on build the "alpha" class replaces the **%REACT_APP_THEME_CONFIG%**. 
 
-The variable has been set to **alpha** in the **.env** file. When the project is run, on build the "alpha" class is set. See my [example project](https://github.com/andrewjamesford/tailwind-theming-by-config-example) to get a better understanding of how it works. Run the application by running `npm run start`, see the results. Stop the app and change the variable in the .env file to **gamma** and run again. You will see the styles on the cards take effect with a different colour background.
+Clone the project and run the application by running `npm run start`. Then you can see the results first hand. To set a different theme stop the app and change the variable in the **.env** file to **gamma** and run again. You will see the styles on the cards take effect with a different colour background.
+
+The beauty of environment variables is they can be set in a multitude of ways. From command line at build, or via web interface with the likes of [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com). While in development you can update an *env* file to check your results.
+
+## Summary
+
+Tailwind CSS is a powerful CSS utility framework and extending it via plugins for theme variants allows a lot of flexibility. Especially when you need to re-use code across different brands. Also while environment variables have been around for a long time, they are still just as relevant today in deployment/development. The two together can be a winning combination in your next project.
