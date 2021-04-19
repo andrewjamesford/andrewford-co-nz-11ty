@@ -59,23 +59,21 @@ We now need to modify our [*tailwind.config.js*](https://github.com/andrewjamesf
 const { themeVariants } = require("tailwindcss-theme-variants");
 ```
 
-We can then add our custom theme colors for our individual themes in this case alpha, beta and gamma:
+We can then add our custom theme colors for our individual themes in this case *alpha*, *beta* and *gamma*:
 ```js
 theme: {
     extend: {
-      colors: {
+        colors: {
 			alpha: {
-				colour1: 'azure',
-					
+				colour1: 'azure',					
 			},
 			beta: {
 				colour1: 'green',
-					
 			},
             gamma: {
 				colour1: 'ghostwhite',					
 			},
-      }
+        }
     },
   },
 ```
@@ -94,18 +92,18 @@ Finally the selector for each theme.
 ```js
 plugins: [
     themeVariants({
-      group: "schemes",
-      themes: {
-          alpha: {
-              selector: ".alpha",
-          },
-          beta: {
-              selector: ".beta",
-          },
-          gamma: {
-            selector: ".gamma",
+        group: "schemes",
+        themes: {
+            alpha: {
+                selector: ".alpha",
+            },
+            beta: {
+                selector: ".beta",
+            },
+            gamma: {
+                selector: ".gamma",
+            },
         },
-      },
     }),
   ],
 ```
@@ -114,7 +112,7 @@ plugins: [
 
 ## How it works
 
-These themes are configured by the root html element having the theme CSS name. In the example below the html tag has the prefix class of Alpha.
+These themes are configured by the root html element having the theme CSS name. In the example below the html tag has the selector class of *alpha*. The selector class has to be added to the *:root* or *html* tag.
 
 ```html
 <html class="alpha">
@@ -122,10 +120,22 @@ These themes are configured by the root html element having the theme CSS name. 
 </html>
 ```
 
-Coming back to my scenario above I needed the same source code to have the ability to use the same codebase but have different themes for separate deployments.
+If you inspect the class with an *alpha* selector it will look like this in your dev tools when you inspect it:
+
+```css
+:root.alpha .alpha\:bg-alpha-colour1 {
+...
+}
+```
+
+Coming back to my scenario above I needed the same source code to have the ability to use the same codebase but I needed to apply different colours etc (themes) for separate deployments.
+
+## Adding a css class via environment variable
 
 ```html
 <html lang="en" class="%REACT_APP_THEME_CONFIG%">
 ```
 
-The react app here has had the [environment variable set in **index.html**](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) file. The variable has been set to **alpha** in the **.env** file. See my [example project](https://github.com/andrewjamesford/tailwind-theming-by-config-example) to get a better understanding of how it works.
+If you look at the *index.html* file in the public folder of the example react app, I've added an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) in the html tag like above. 
+
+The variable has been set to **alpha** in the **.env** file. When the project is run, on build the "alpha" class is set. See my [example project](https://github.com/andrewjamesford/tailwind-theming-by-config-example) to get a better understanding of how it works. Run the application by running `npm run start`, see the results. Stop the app and change the variable in the .env file to **gamma** and run again. You will see the styles on the cards take effect with a different colour background.
