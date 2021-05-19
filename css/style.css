@@ -76,7 +76,7 @@ h5,
 h6 {
   margin-top: 0;
 }
-article :is(h2,h3,h4,h5,h6) {
+article :is(h2, h3, h4, h5, h6) {
   margin-top: 2rem;
 }
 h1 {
@@ -118,15 +118,16 @@ h2.article-title {
   background-clip: padding-box;
   width: 7rem;
   height: 7rem;
-  background-image: url("/images/andrew-avatar.png"), url("/images/andrew-avatar.webp");
+  background-image: url("/images/andrew-avatar.png"),
+    url("/images/andrew-avatar.webp");
   background-size: contain;
 }
-@media 
-  (-webkit-min-device-pixel-ratio: 2) {
-    .avatar {
-      background-image: url("/images/andrew-avatar@2x.png"), url("/images/andrew-avatar@2x.webp");
-    }
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .avatar {
+    background-image: url("/images/andrew-avatar@2x.png"),
+      url("/images/andrew-avatar@2x.webp");
   }
+}
 .avatar-wrapper {
   padding-top: 1rem;
   text-align: center;
@@ -183,7 +184,6 @@ article img ~ em {
 .text-center {
   text-align: center;
 }
-
 
 table {
   display: block;
@@ -277,5 +277,5 @@ caption {
 }
 
 pre {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }

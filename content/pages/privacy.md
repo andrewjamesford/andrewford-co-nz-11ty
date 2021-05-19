@@ -7,7 +7,7 @@ socialImage: ""
 
 ## TLDR;
 
-No _tracking_, no _ads_, all opinions on this website are my own and use this site at _your own risk_.
+Some _tracking_, no _ads_, all opinions on this website are my own and use this site at _your own risk_.
 
 ## Slightly Longer Privacy Policy
 
@@ -17,7 +17,7 @@ I try my best to only link to websites that are decent, and any content from ext
 
 ### Tracking
 
-This website has **no** tracking analytics software implemented. I have no idea how many visitors come to my site and don't care. Feel calm that on my site at least, no one is tracking you.
+This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products. 
 
 ### Advertisements
 

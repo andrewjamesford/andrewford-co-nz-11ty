@@ -143,3 +143,10 @@ The beauty of environment variables is they can be set in a multitude of ways. F
 ## Summary
 
 Tailwind CSS is a powerful CSS utility framework and extending it via plugins for theme variants allows a lot of flexibility. Especially when you need to re-use code across different brands. Also while environment variables have been around for a long time, they are still just as relevant today in deployment/development. The two together can be a winning combination in your next project.
+
+### Hey! Have you struggled with Flexbox layout in Tailwind CSS?
+
+I know I have. That's why I created a Tailwind Flexbox Cheatsheet to quickly visually see what classes to use to nail your layout in your own web project.
+
+<script src="https://gumroad.com/js/gumroad-embed.js"></script>
+<div class="gumroad-product-embed"><a href="https://gumroad.com/l/XgkCC">Loading...</a></div>
