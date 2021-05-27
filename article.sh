@@ -5,7 +5,7 @@ read -p 'Title: ' BLOGTITLE
 read -p 'File title: ' BLOGFILETITLE
 
 DATE="$(date '+%Y-%m-%d')" 
-FOLDER="content/blog/$BLOGFILETITLE" 
+FOLDER="content/articles/$BLOGFILETITLE" 
 FILE="$FOLDER/index.md"
 mkdir $FOLDER && touch $FILE && echo "---
 title: $BLOGTITLE

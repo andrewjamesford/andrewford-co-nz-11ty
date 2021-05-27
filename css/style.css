@@ -110,6 +110,8 @@ samp {
 }
 h2.article-title {
   margin-top: 0;
+  text-align: center;
+  width: 100%;
 }
 .avatar {
   display: inline-block;
