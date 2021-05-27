@@ -11,6 +11,6 @@ Over the last couple of years I've progressed to building bespoke web and mobile
 
 Previously I was the Lead Developer of a small team, working on a cloud based applicant tracking software for [QJumpers](https://www.qjumpers.com/). Working with .Net Core, ReactJS, Kubernetes and PostgresDB, hosted on AWS.
 
-Currently I work as a Lead Senior Developer at [Craigs Investment Partners](https://craigsip.com) working with ReactJS and .Net Core where we host on MS Azure.
+Currently I work as a Senior Developer at [Craigs Investment Partners](https://craigsip.com) working with ReactJS and .Net Core where we host on MS Azure.
 
 My latest CV is available [here](https://andrewford.co.nz/assets/CV-AndrewFord-Feb-2021.pdf).
