@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rm -rf _site && npx @11ty/eleventy --serve",
-    "startnoclear": "npx @11ty/eleventy --serve",
+    "startclear": "rm -rf _site && npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh"
