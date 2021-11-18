@@ -2,11 +2,12 @@
 title: Full Stack Developer to Instructor
 date: "2021-11-18T08:24:23Z"
 template: post
-draft: true
+draft: false
 slug: "full-stack-developer-to-instructor"
 category: article
 tags:
   - teaching
+  - career
 description: My transition from Full Stack Developer to Instructor at Developers Institute
 socialBackground: bg3
 ---
