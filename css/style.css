@@ -118,17 +118,21 @@ h2.article-title {
   margin-bottom: 0;
   border-radius: 50%;
   background-clip: padding-box;
+  text-decoration: none;
   width: 7rem;
   height: 7rem;
-  background-image: url("/images/andrew-avatar.png"),
-    url("/images/andrew-avatar.webp");
+  background-image: url("/images/andrew-avatar.webp");
   background-size: contain;
+}
+.no-webp .avatar {
+  background-image: url("/images/andrew-avatar.png");
 }
 @media (-webkit-min-device-pixel-ratio: 2) {
   .avatar {
-    background-image: url("/images/andrew-avatar@2x.png"),
-      url("/images/andrew-avatar@2x.webp");
+    background-image: url("/images/andrew-avatar@2x.webp");
   }
+  .no-webp .avatar {
+    background-image: url("/images/andrew-avatar@2x.png"); 
 }
 .avatar-wrapper {
   padding-top: 1rem;
@@ -159,7 +163,7 @@ h2.article-title {
   color: var(--body-color);
 }
 .hide {
-  display: none;
+  color: transparent;
 }
 article img {
   max-width: 100%;
