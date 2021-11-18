@@ -9,7 +9,8 @@
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh",
-    "clear": "rm -rf _site"
+    "clear": "rm -rf _site",
+    "social": "npx itdk view resoc-templates/default/resoc.manifest.json"
   },
   "repository": {
     "type": "git",
