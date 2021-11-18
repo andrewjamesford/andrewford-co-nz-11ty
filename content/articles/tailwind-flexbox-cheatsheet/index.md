@@ -10,7 +10,7 @@ tags:
   - flexbox
   - cheatsheet
 description: My Tailwind Flexbox Cheatsheet
-background: bg2
+socialBackground: bg2
 ---
 
 If you hadn't figured out already (see my other [blog entry](https://andrewford.co.nz/articles/tailwind-theming-by-config/)) I'm quite a fan of [Tailwind](https://tailwindcss.com/) the utility CSS framework. While I think their documentation is great, I'm a fan of visual cheatsheets. With a heavy emphasis on the visual. Finding no one else had made what I wanted I fired up [Figma](https://figma.com) and got to work.
