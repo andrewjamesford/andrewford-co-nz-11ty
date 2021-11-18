@@ -1,0 +1,83 @@
+{% set socialImageUrl %}
+{%- resoc
+  template = "default",
+  slug = (title or metadata.title) | slug,
+  values = {
+    title: title or metadata.title,
+    background: socialBackground
+  }
+-%}
+{% endset %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <link rel="icon" href="{{ '/images/andrew-emoji.webp ' }}" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+  <link rel="preload" href="{{ '/css/style.css' }}" as="style" />
+  <link rel="stylesheet" href="{{ '/css/style.css' }}" />
+  <link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description }}" />
+  <link rel="alternate" type="application/rss+xml" title="Blog by Andrew Ford" href="/feed.xml" />
+  <meta property="og:title" content="{{ title or metadata.title }}" />
+  <meta property="og:description" content="{{ description or metadata.description }}" />
+  <meta property="og:image" content="{{ socialImageUrl }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+</head>
+
+<body>
+  <header class="wrapper">
+    <div class="avatar-wrapper">
+      <a href="{{ '/' }}" class="avatar">
+        <p class="hide">Home</p>
+      </a>
+      <h1 class="site-title">Andrew "Drew" Ford</h1>
+      <h2 class="site-description">
+        Full Stack Developer from Tauranga, New Zealand
+      </h2>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        {%- for page in collections.pages -%}
+        <li>
+          <a href="{{ page.url }}">{{ page.data.title }}</a>
+        </li>
+        {%- endfor -%}
+        <li>
+          <a href="https://react.andrewford.co.nz">ReactJS Notes</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="wrapper">
+    <article>
+      <h1 class="article-heading">{{ title }}</h1>
+
+      <div>{{ content | safe }}</div>
+    </article>
+  </main>
+  <footer class="wrapper">
+    <ul class="nav-links">
+      <li><a href="https://github.com/andrewjamesford">Github</a></li>
+      <li><a href="mailto:me@andrewford.co.nz">Email</a></li>
+      <li><a href="https://andrewford.co.nz/archive">Archive</a></li>
+      <li><a href="https://andrewford.co.nz/feed.xml">RSS</a></li>
+
+    </ul>
+  </footer>
+</body>
+
+</html>

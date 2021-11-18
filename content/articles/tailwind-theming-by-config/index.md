@@ -1,16 +1,17 @@
 ---
 title: Tailwind Theming by Config
-date: '2021-04-06T21:47:02Z'
+date: "2021-04-06T21:47:02Z"
 template: post
 draft: false
-slug: 'tailwind-theming-by-config'
+slug: "tailwind-theming-by-config"
 category: article
 tags:
-- tailwindcss
-- environment variables
-- branding
+  - tailwindcss
+  - environment variables
+  - branding
 description: Using tailwind css and environment variables to reuse code for multiple brands on the same codebase.
---- 
+background: bg1
+---
 
 A common approach to building web apps in large organisations are theming them for multiple brands. The app will function in the same way but look different for each corresponding theme with alternate fonts, colours and logo etc. This can be a big headache, and you can be left maintaining multiple copies of the same code base. In an ideal world we don't want to do that.
 
@@ -22,7 +23,7 @@ To achieve the theming of Tailwind I used a plugin called [tailwind-theme-varian
 
 ```jsx
 <div className="alpha:bg-alpha-color1 beta:bg-beta-color1 gamma:bg-gamma-color1 text-sm">
-My component
+  My component
 </div>
 ```
 
@@ -33,16 +34,17 @@ In the [example](https://github.com/andrewjamesford/tailwind-theming-by-config-e
 First off lets look at the final results. In the screenshots below you can see two identically styled designs of 3 cards. The top one has the **alpha** theme with a background color of **<span style="border-bottom: 3px solid azure;">azure</span>** the bottom **gamma** with a background colour of **<span style="border-bottom: 3px solid ghostwhite">ghostwhite</span>**.
 
 ![Alpha Cards](./cards-alpha.png "The alpha theme is set")
-*The alpha theme is set*
+_The alpha theme is set_
 
 ![Gamma Cards](./cards-gamma.png "The gamma theme is set")
-*The gamma theme is set*
+_The gamma theme is set_
 
-Same code base, the only difference between each to get the different results is that an environment variable is different between the two. In this case while developing I have a *.env* file that looks like this: 
+Same code base, the only difference between each to get the different results is that an environment variable is different between the two. In this case while developing I have a _.env_ file that looks like this:
 
 ```properties
 REACT_APP_THEME_CONFIG=alpha
 ```
+
 The above sets the theme to alpha on build via an [environment variable](https://en.wikipedia.org/wiki/Environment_variable).
 
 ## Getting started
@@ -53,25 +55,26 @@ To set up your own theme variants for your own Tailwind application we need to f
 npm install --save-dev tailwindcss-theme-variants
 ```
 
-We now need to modify our [*tailwind.config.js*](https://github.com/andrewjamesford/tailwind-theming-by-config-example/blob/main/tailwind.config.js) file. Add the following at the top.
+We now need to modify our [_tailwind.config.js_](https://github.com/andrewjamesford/tailwind-theming-by-config-example/blob/main/tailwind.config.js) file. Add the following at the top.
 
 ```js
 const { themeVariants } = require("tailwindcss-theme-variants");
 ```
 
-We can then add our custom theme colors for our individual themes in this case *alpha*, *beta* and *gamma*:
+We can then add our custom theme colors for our individual themes in this case _alpha_, _beta_ and _gamma_:
+
 ```js
 theme: {
     extend: {
         colors: {
 			alpha: {
-				colour1: 'azure',					
+				colour1: 'azure',
 			},
 			beta: {
 				colour1: 'green',
 			},
             gamma: {
-				colour1: 'ghostwhite',					
+				colour1: 'ghostwhite',
 			},
         }
     },
@@ -79,6 +82,7 @@ theme: {
 ```
 
 Followed by our variants, which set what properties we can use these colours for in this example background color, border color and text color. I used a group called 'schemes' in this example to not have to write each theme name 9 times:
+
 ```js
 variants: {
     backgroundColor: ['schemes'],
@@ -89,6 +93,7 @@ variants: {
 ```
 
 Finally the selector for each theme.
+
 ```js
 plugins: [
     themeVariants({
@@ -110,19 +115,19 @@ plugins: [
 
 ## How it works
 
-These themes are configured by the root html element having the theme CSS name. In the example below the html tag has the selector class of *alpha*. The selector class has to be added to the *:root* or *html* tag.
+These themes are configured by the root html element having the theme CSS name. In the example below the html tag has the selector class of _alpha_. The selector class has to be added to the _:root_ or _html_ tag.
 
 ```html
 <html class="alpha">
-...
+  ...
 </html>
 ```
 
-If you inspect the class with an *alpha* selector it will look like this in your dev tools when you inspect it:
+If you inspect the class with an _alpha_ selector it will look like this in your dev tools when you inspect it:
 
 ```css
 :root.alpha .alpha\:bg-alpha-colour1 {
-...
+  ...;
 }
 ```
 
@@ -131,14 +136,14 @@ Coming back to my scenario above I needed the same source code to have the abili
 ## Adding a css class via environment variable
 
 ```html
-<html lang="en" class="%REACT_APP_THEME_CONFIG%">
+<html lang="en" class="%REACT_APP_THEME_CONFIG%"></html>
 ```
 
-If you look at the *index.html* file in the public folder of the [example react app](https://github.com/andrewjamesford/tailwind-theming-by-config-example), I've added an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) in the html tag like above. The variable has been set to **alpha** in the **.env** file. When the project is run, on build the "alpha" class replaces the **%REACT_APP_THEME_CONFIG%**. 
+If you look at the _index.html_ file in the public folder of the [example react app](https://github.com/andrewjamesford/tailwind-theming-by-config-example), I've added an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/#referencing-environment-variables-in-the-html) in the html tag like above. The variable has been set to **alpha** in the **.env** file. When the project is run, on build the "alpha" class replaces the **%REACT_APP_THEME_CONFIG%**.
 
 Clone the project and run the application by running `npm run start`. Then you can see the results first hand. To set a different theme stop the app and change the variable in the **.env** file to **gamma** and run again. You will see the styles on the cards take effect with a different colour background.
 
-The beauty of environment variables is they can be set in a multitude of ways. From command line at build, or via web interface with the likes of [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com). While in development you can update an *env* file to check your results.
+The beauty of environment variables is they can be set in a multitude of ways. From command line at build, or via web interface with the likes of [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com). While in development you can update an _env_ file to check your results.
 
 ## Summary
 

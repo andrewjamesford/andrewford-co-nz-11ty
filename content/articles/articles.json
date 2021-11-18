@@ -1,5 +1,5 @@
 {
-    "layout": "layout.liquid",
-    "tags": "[article]",
-    "permalink": "articles/{{slug}}/index.html"
+  "layout": "layout.njk",
+  "tags": "[article]",
+  "permalink": "articles/{{slug}}/index.html"
 }

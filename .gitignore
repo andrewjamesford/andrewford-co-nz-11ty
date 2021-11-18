@@ -106,3 +106,6 @@ dist
 # Generated site
 _site/
 .DS_Store
+
+# Resoc image data mapping file
+resoc-image-data.json

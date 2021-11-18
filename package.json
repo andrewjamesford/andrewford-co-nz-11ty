@@ -10,7 +10,6 @@
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh",
     "clear": "rm -rf _site"
-    
   },
   "repository": {
     "type": "git",
@@ -30,6 +29,8 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@resoc/eleventy-plugin-social-image": "^0.0.4",
+    "@resoc/netlify-plugin-social-image": "^0.0.9",
     "eleventy-plugin-page-assets": "^0.3.0"
   },
   "dependencies": {

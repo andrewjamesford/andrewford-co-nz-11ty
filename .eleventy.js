@@ -1,22 +1,29 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pageAssetsPlugin = require('eleventy-plugin-page-assets');
+const pageAssetsPlugin = require("eleventy-plugin-page-assets");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginResoc = require("@resoc/eleventy-plugin-social-image");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPlugin(syntaxHighlight);
-  
-  eleventyConfig.addCollection("articles",
-  collection => collection
-  .getAllSorted()
-  .filter(item => item.inputPath.startsWith('./content/articles/')));
+  eleventyConfig.addPlugin(pluginResoc, {
+    templatesDir: "resoc-templates",
+    patchNetlifyToml: true,
+  });
 
-  eleventyConfig.addCollection("archive",
-  collection => collection
-  .getAllSorted()
-  .filter(item => item.inputPath.startsWith('./content/archive/')));
+  eleventyConfig.addCollection("articles", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/articles/"))
+  );
+
+  eleventyConfig.addCollection("archive", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/archive/"))
+  );
 
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
@@ -25,7 +32,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("apple-touch-icon*.png");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  
+
   eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPlugin(pageAssetsPlugin, {
@@ -38,5 +45,4 @@ module.exports = function(eleventyConfig) {
       hostname: "https://andrewford.co.nz",
     },
   });
-
 };
