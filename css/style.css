@@ -272,7 +272,8 @@ pre {
   margin: 0 auto;
   max-width: 30rem;
 }
-.news-box h6 {
+.news-heading {
+  font-weight: bold;
   font-size: 1.13rem;
   margin-top: 0;
   margin-bottom: 0.2rem;

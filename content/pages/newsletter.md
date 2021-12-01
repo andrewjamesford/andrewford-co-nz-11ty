@@ -4,6 +4,7 @@ heading: "Join my Newsletter"
 template: page
 slug: "newsletter/"
 socialImage: ""
+description: "How to sign up for my newsletter and whats on offer"
 ---
 
 I love to teach and share what I learn. My blog is my personal outlet to do that sharing. Via my newsletter I'll send you updates on my latest articles and tutorials about web/software development and career advice.
