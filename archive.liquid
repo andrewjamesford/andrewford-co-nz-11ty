@@ -9,9 +9,10 @@ description: "Blog for Andrew Ford a full stack developer from Tauranga, New Zea
     {%- for archives in collections.archive reversed -%}
     <li class="article-list-item">
         {%- if archives.data.draft == false -%}
-        <em class="article-date">{{ archives.date | date: "%Y-%m-%d" }}</em>
         {{ archives.drafts }}
         <h2 class="article-title"><a href="{{ archives.url }}">{{ archives.data.title }}</a></h2>
+        <em class="article-date">{{ archives.date | date: "%Y-%m-%d" }}</em>
+        <p class="article-description">{{ article.data.description }}</p>
         {%- endif -%}
     </li>
     {%- endfor -%}

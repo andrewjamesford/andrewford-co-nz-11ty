@@ -6,6 +6,7 @@
   --body-color-dark-secondary: rgb(230, 230, 230);
   --bg-color: #fff;
   --bg-color-dark: #121212;
+  --box-bg-color: #f1f9ff;
   --font-mono: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New",
     Courier, monospace;
   --font-sans: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -108,10 +109,13 @@ samp {
 .article-heading {
   text-align: center;
 }
-h2.article-title {
+.article-title {
   margin-top: 0;
-  text-align: center;
   width: 100%;
+  margin-bottom: 0;
+}
+.article-description {
+  margin-top: 0;
 }
 .avatar {
   display: inline-block;
@@ -119,20 +123,22 @@ h2.article-title {
   border-radius: 50%;
   background-clip: padding-box;
   text-decoration: none;
-  width: 7rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
   background-image: url("/images/andrew-avatar.webp");
   background-size: contain;
 }
 .no-webp .avatar {
   background-image: url("/images/andrew-avatar.png");
 }
-@media (-webkit-min-device-pixel-ratio: 2) {
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
   .avatar {
     background-image: url("/images/andrew-avatar@2x.webp");
   }
   .no-webp .avatar {
-    background-image: url("/images/andrew-avatar@2x.png"); 
+    background-image: url("/images/andrew-avatar@2x.png");
+  }
 }
 .avatar-wrapper {
   padding-top: 1rem;
@@ -186,11 +192,9 @@ article img ~ em {
   display: inline-block;
   width: 100%;
 }
-
 .text-center {
   text-align: center;
 }
-
 table {
   display: block;
   border-collapse: collapse;
@@ -230,8 +234,61 @@ tr {
 caption {
   display: block;
 }
+pre {
+  font-size: 0.9rem;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 30rem;
+  margin: 3rem auto 0 auto;
+}
+.form-element {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border: 1px solid var(--body-color-secondary);
+}
+.form-button {
+  background-color: var(--link-color);
+  border: 1px solid var(--link-color);
+  color: #fff;
+  text-align: center;
+}
 
-@media (min-width: 700px) {
+.news-box {
+  background-color: var(--box-bg-color);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.news-content {
+  margin: 0 auto;
+  max-width: 30rem;
+}
+.news-box h6 {
+  font-size: 1.13rem;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+.news-box .form {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.news-box .form-button {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 48rem) {
+  .avatar {
+    width: 7rem;
+    height: 7rem;
+  }
   table {
     display: table;
   }
@@ -262,26 +319,18 @@ caption {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   body {
     color: var(--body-color-dark);
     background: var(--bg-color-dark);
   }
-
   .nav-links a {
     color: var(--body-color-dark);
   }
   .site-description {
     color: var(--body-color-dark-secondary);
   }
-}
-
-@media (min-width: 768px) {
-  .article-list-item {
-    flex-direction: row;
+  .news-box {
+    color: var(--bg-color-dark);
   }
-}
-
-pre {
-  font-size: 0.9rem;
 }

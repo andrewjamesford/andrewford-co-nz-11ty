@@ -33,6 +33,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("apple-touch-icon*.png");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("favicon-16x16.png");
+  eleventyConfig.addPassthroughCopy("favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("site.webmanifest");
 
   eleventyConfig.addPlugin(pluginRss);
 

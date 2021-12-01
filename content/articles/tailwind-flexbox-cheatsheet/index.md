@@ -9,7 +9,7 @@ tags:
   - tailwind
   - flexbox
   - cheatsheet
-description: My Tailwind Flexbox Cheatsheet
+description: Get your free copy of my Tailwind Flexbox Cheatsheet
 socialBackground: bg2
 ---
 
