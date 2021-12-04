@@ -244,6 +244,17 @@ And the subsequent CSS styles
 }
 ```
 
+We also need to update the `global.css` file with these variables. Add them to the very top of the file.
+
+```css
+:root {
+  --font-color: #111;
+  --icon-color: #111;
+  --bg-color: #fff;
+  --max-cont-width: 1000px;
+}
+```
+
 Now lets add some icons, we are going to use [Heroicons](https://heroicons.com) in this project.
 
 ```shell
@@ -396,17 +407,6 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
   font-size: 0.8em;
   opacity: 0.8;
   margin-top: 0.6rem;
-}
-```
-
-We also need to update the `global.css` file with these variables. Add them to the very top of the file.
-
-```css
-:root {
-  --font-color: #111;
-  --icon-color: #111;
-  --bg-color: #fff;
-  --max-cont-width: 1000px;
 }
 ```
 
