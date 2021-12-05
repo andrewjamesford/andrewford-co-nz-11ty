@@ -2,7 +2,7 @@
 title: Build a shop with Next.js and Stripe
 date: "2021-12-03T22:02:38Z"
 template: post
-draft: true
+draft: false
 slug: "shop-nextjs-stripe-introduction"
 category: article
 tags:
@@ -11,23 +11,24 @@ tags:
   - shop
   - series
 description: Introducing a new series on how to build a shop using Next.js and Stripe
+socialBackground: bg5
 ---
 
-In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org).You may have built a website before using the likes of [Create React App](https://create-react-app.dev) which will get you the barebones together to start building. It doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages? What CSS in JS library? Should I use Tailwind? Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a library.
+In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org). You may have built a website before using the likes of [Create React App](https://create-react-app.dev) which will get you the barebones together to start building. It doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages? What CSS in JS library? Should I use Tailwind? Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a library.
 
 Next.js on the other hand is "The React Framework for Production". With it a lot of the decisions have been made for you, letting you get up and running much faster. More importantly it solves a lot of the common problems that building a website/web app entail.
 
 You will need to have an understanding of HTML, CSS and React of course to follow along with this series. I teach all these subjects on the Client Side paper at [Developers Institute](https://www.developers.ac.nz) 😉
 
-To get started building a Next.js application, hopefully you have Node installed (if not [download here](https://nodejs.org/en/) and open up your terminal.
+To get started building a Next.js application, hopefully you have Node installed ( if not [download here](https://nodejs.org/en/) ) and open up your terminal.
 
 ```shell
 npx create-next-app@latest
 ```
 
-Follow the prompt and give it a name "shop-nextjs-stripe"
+Follow the prompts and give it a name "shop-nextjs-stripe"
 
-Now head into the directory with your new project and start the local development .
+Head into the directory with your new project and start the local development.
 
 ```shell
 cd shop-nextjs-stripe
@@ -42,9 +43,9 @@ Open the project in a [browser](http://localhost:3000) and you should see someth
 
 ![Next.JS Starter](./nextjs-start.png)
 
-Great so now the project is up and running in development mode 🙌
+Great the project is up and running in development mode 🙌
 
-In your code editor we will now open the `index.js` file in the `pages` folder.
+In your code editor we will open the `index.js` file in the `pages` folder.
 
 We are going to remove everything and replace it with the following:
 
@@ -63,7 +64,7 @@ export default function Home() {
 }
 ```
 
-That's cleared the standard install junk. Time to make our first component. Let's make a new folder called `components` and add a file `layout.js` in that directory. Add the following:
+That's cleared the standard install documentation links. Time to make our first component. Let's make a new folder called `components` and add a file `layout.js` in that directory. Add the following:
 
 ```jsx
 import React from "react";
@@ -109,7 +110,7 @@ export const Footer = () => {
 };
 ```
 
-Now we need to update the layout component like so (see the comments in the code):
+We need to update the layout component like so (see the comments in the code):
 
 ```jsx
 import React from "react";
@@ -192,7 +193,7 @@ export default function Home() {
 }
 ```
 
-Now we can start putting some content in to the Header component. Let's start off by adding some `<div>` tags to store a logo and some icons.
+Let's start putting some content in to the Header component. Let's start off by adding some `<div>` tags to store a logo and some icons.
 
 ```jsx
 import React from "react";
@@ -255,13 +256,13 @@ We also need to update the `global.css` file with these variables. Add them to t
 }
 ```
 
-Now lets add some icons, we are going to use [Heroicons](https://heroicons.com) in this project. In the terminal run:
+Time to add some icons, we are going to use [Heroicons](https://heroicons.com) in this project. In the terminal run:
 
 ```shell
 npm i @heroicons/react
 ```
 
-We can now add them to the `header.js` file like so. Also note that I've now added an SVG for a logo.
+We can add them to the `header.js` file like so. Also note that I've added an SVG for a logo.
 
 ```jsx
 import React from "react";
@@ -324,7 +325,7 @@ export const Header = () => {
 };
 ```
 
-Plus the add corresponding CSS for the icons.
+Also add corresponding CSS for the icons.
 
 ```css
 .searchIcon {
@@ -347,7 +348,7 @@ Plus the add corresponding CSS for the icons.
 }
 ```
 
-we are almost done, lets add a footer and style it.
+We are almost done, lets add a footer and style it.
 
 ```jsx
 import React from "react";
@@ -401,13 +402,13 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 .footerNav li {
   padding: 0.3rem 0;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 .copyright {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   opacity: 0.8;
   margin-top: 0.6rem;
 }
 ```
 
-Alright that's quite a bit we've done here 👍. We now have the shell off the shop. Next up we need to set up Stripe to store our product info, product images and prices.
+Alright that's quite a bit we've done here 👍. We have the shell of the shop. Next up we need to set up Stripe to store our product info, product images and prices.
