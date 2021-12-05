@@ -13,7 +13,7 @@ tags:
 description: Introducing a new series on how to build a shop using Next.js and Stripe
 ---
 
-In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org). While you may have built a website with React, hopefully using the likes of [Create React App](https://create-react-app.dev) which will get you the barebones together to start building. It doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages, what CSS in JS library or should I use Tailwind. Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a library.
+In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org).You may have built a website before using the likes of [Create React App](https://create-react-app.dev) which will get you the barebones together to start building. It doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages? What CSS in JS library? Should I use Tailwind? Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a library.
 
 Next.js on the other hand is "The React Framework for Production". With it a lot of the decisions have been made for you, letting you get up and running much faster. More importantly it solves a lot of the common problems that building a website/web app entail.
 
@@ -251,11 +251,11 @@ We also need to update the `global.css` file with these variables. Add them to t
   --font-color: #111;
   --icon-color: #111;
   --bg-color: #fff;
-  --max-cont-width: 1000px;
+  --max-cont-width: 63rem;
 }
 ```
 
-Now lets add some icons, we are going to use [Heroicons](https://heroicons.com) in this project.
+Now lets add some icons, we are going to use [Heroicons](https://heroicons.com) in this project. In the terminal run:
 
 ```shell
 npm i @heroicons/react
@@ -347,7 +347,7 @@ Plus the add corresponding CSS for the icons.
 }
 ```
 
-Finally lets add a footer and style it.
+we are almost done, lets add a footer and style it.
 
 ```jsx
 import React from "react";
@@ -377,7 +377,7 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 ```css
 .footer {
   width: 100%;
-  height: 180px;
+  height: 11rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,4 +410,4 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 }
 ```
 
-Alright that's quite a bit we've done. We now have the shell off the shop. Next up we need to set up stripe to store our product info, images and prices.
+Alright that's quite a bit we've done here 👍. We now have the shell off the shop. Next up we need to set up Stripe to store our product info, product images and prices.
