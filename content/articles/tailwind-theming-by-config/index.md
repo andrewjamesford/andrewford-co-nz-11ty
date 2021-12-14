@@ -153,5 +153,4 @@ Tailwind CSS is a powerful CSS utility framework and extending it via plugins fo
 
 I know I have. That's why I created a Tailwind Flexbox Cheatsheet to quickly visually see what classes to use to nail your layout in your own web project.
 
-<script src="https://gumroad.com/js/gumroad-embed.js"></script>
-<div class="gumroad-product-embed"><a href="https://gumroad.com/l/XgkCC">Loading...</a></div>
+{% include tailwindcheatsheet %}

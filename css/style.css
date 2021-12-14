@@ -296,6 +296,27 @@ pre {
 .news-box .form-button {
   margin-bottom: 0;
 }
+
+.product {
+  background-color: var(--box-bg-color);
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  border: 1px solid #33333308;
+}
+.product-image {
+  max-width: 100%;
+  object-fit: cover;
+}
+.product-title {
+  font-size: 1.2rem;
+  padding: 1rem 1rem 0.5rem 1rem;
+  font-weight: bold;
+}
+.product-body {
+  padding: 0 1rem;
+  margin-top: 0;
+  color: #000;
+}
 @media screen and (min-width: 48rem) {
   .avatar {
     width: 7rem;

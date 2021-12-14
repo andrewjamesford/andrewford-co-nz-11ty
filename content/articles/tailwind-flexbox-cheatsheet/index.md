@@ -17,5 +17,4 @@ If you hadn't figured out already (see my other [blog entry](https://andrewford.
 
 Hope you like it! Any suggestions [let me know](mailto:me@andrewford.co.nz).
 
-<script src="https://gumroad.com/js/gumroad-embed.js"></script>
-<div class="gumroad-product-embed"><a href="https://gumroad.com/l/XgkCC">Loading...</a></div>
+{% include tailwindcheatsheet %}
