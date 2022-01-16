@@ -417,4 +417,4 @@ Alright that's quite a bit we've done here, well done if you got this far 👍. 
 
 Please subscribe to get notified of the next installment in this series.
 
-{% include newsletter %}
+{% include "newsletter.liquid" %}

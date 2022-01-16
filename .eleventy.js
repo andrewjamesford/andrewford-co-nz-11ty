@@ -1,10 +1,13 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pageAssetsPlugin = require("eleventy-plugin-page-assets");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+// const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginResoc = require("@resoc/eleventy-plugin-social-image");
 
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -44,9 +47,9 @@ module.exports = function (eleventyConfig) {
     postsMatching: "content/**/*.md",
   });
 
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: "https://andrewford.co.nz",
-    },
-  });
+  // eleventyConfig.addPlugin(sitemap, {
+  //   sitemap: {
+  //     hostname: "https://andrewford.co.nz",
+  //   },
+  // });
 };

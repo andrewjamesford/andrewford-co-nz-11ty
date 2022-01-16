@@ -17,4 +17,4 @@ If you hadn't figured out already (see my other [blog entry](https://andrewford.
 
 Hope you like it! Any suggestions [let me know](mailto:me@andrewford.co.nz).
 
-{% include tailwindcheatsheet %}
+{% include "tailwindcheatsheet.liquid" %}

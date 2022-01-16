@@ -28,4 +28,4 @@ I've now survived one term teaching Client Side Web Development. The students en
 
 If you feel like you need a change to developing software maybe consider teaching and come join me and the rest of the team at [Developers Institute](https://apply.workable.com/developers-institute/).
 
-{% include newsletter %}
+{% include "newsletter.liquid" %}

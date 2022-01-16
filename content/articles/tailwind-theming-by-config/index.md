@@ -153,4 +153,4 @@ Tailwind CSS is a powerful CSS utility framework and extending it via plugins fo
 
 I know I have. That's why I created a Tailwind Flexbox Cheatsheet to quickly visually see what classes to use to nail your layout in your own web project.
 
-{% include tailwindcheatsheet %}
+{% include "tailwindcheatsheet.liquid" %}
