@@ -5,3 +5,8 @@ package = "@resoc/netlify-plugin-social-image"
   templates_dir = "resoc-templates"
   open_graph_base_path = "/social-images"
   slug_to_image_data_mapping_file = "resoc-image-data.json"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
