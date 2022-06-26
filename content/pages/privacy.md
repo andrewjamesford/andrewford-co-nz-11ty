@@ -17,7 +17,7 @@ I try my best to only link to websites that are decent, and any content from ext
 
 ### Tracking
 
-This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products. 
+This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products.
 
 ### Advertisements
 
@@ -26,3 +26,5 @@ You don't like advertisements, I don't like advertisements, this site doesn't se
 ## Disclaimer
 
 All views on this website are my own and do not represent the opinions of any entity whatsoever with which I have been, am now or will be affiliated.
+
+{% include "assistte.liquid" %}
