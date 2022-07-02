@@ -26,5 +26,3 @@ You don't like advertisements, I don't like advertisements, this site doesn't se
 ## Disclaimer
 
 All views on this website are my own and do not represent the opinions of any entity whatsoever with which I have been, am now or will be affiliated.
-
-{% include "assistte.liquid" %}
