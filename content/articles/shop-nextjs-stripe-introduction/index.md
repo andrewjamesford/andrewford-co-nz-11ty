@@ -388,7 +388,7 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 }
 ```
 
-![Progress so far of the header and footer](shop-header-footer.png)
+![Progress so far of the header and footer](shop-header-footer-chrome.png)
 
 Alright that's quite a bit we've done here, well done if you got this far 👍. We have the shell of the shop. Next up we need to set up Stripe to store our product info, product images and prices.
 
