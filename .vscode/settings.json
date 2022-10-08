@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["nextjs", "webp"]
+  "cSpell.words": [
+    "nextjs",
+    "webp"
+  ],
+  "liquid.format.enable": true
 }
