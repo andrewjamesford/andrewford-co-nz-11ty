@@ -9,9 +9,99 @@ tags:
   - storybook
   - reactjs
   - typescript
-description: A walkthrough to create your own UI Component library with ReactJS, TypeScript and Storybook
+description: A guide to getting started creating your own UI Component library with ReactJS, TypeScript and Storybook
 ---
+
+In this guide I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
+
+You will need [Node.js](https://nodejs.org/) installed as a prerequisite, so install it if you don't already have it installed.
+
+Open a terminal where you want to start working, we will create a new folder with our new project. We are using [Create React App](https://create-react-app.dev) in this example but the steps are similar with [ViteJS](https://vitejs.dev) and [NextJS](https://nextjs.org). Run the following command:
 
 ```shell
 npx create-react-app your-ui-library-name --template typescript
 ```
+
+This will use CRA with the TypeScript template to create a new project.
+
+Next we will install [Storybook](https://storybook.js.org). Make sure you are in the directory that contains your project using `cd your-ui-library-name`, replace `your-ui-library-name` with your own projects name.
+
+```shell
+npx storybook init
+```
+
+This will install Storybook in your project and add some default files.
+
+Let's get it running so we can make sure the installation went well.
+
+```shell
+npm run storybook
+```
+
+You should now see a welcome screen in your default browser like the following:
+
+![Storybook welcome screen](storybook-welcome.png)
+
+When building a component UI library it's best to start building the smallest components that will make up the UI library. I suggest starting with some basic components like Headings & Buttons followed by common form controls. The storybook documentation on the welcome screen has a link to a great site quickly summarising [component driven development](https://www.componentdriven.org/).
+
+By default Storybook creates a folder called `stories` that contains component files, stories files and CSS files all matching the appropriate component name. For example `header.css`, `Header.tsx` and `Header.stories.tsx`.
+
+My preference is to instead create a `components` and `pages` folder. I use the pages folder for the top level components that are used by a router for example like [React Router](https://reactrouter.com). All my other components are placed in the `components` folder.
+
+Copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. They are a good template to start with for our own Button component. Now you can delete the `stories` folder created by Storybook.
+
+Create React App, NextJS etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to _button.module.css_.
+Open _Button.tsx_ replace the reference to the /button.css file with the following:
+
+```ts
+// From this
+import "./button.css";
+// To this
+import styles from "./button.module.css";
+```
+
+In the `Button.tsx` file you can see the properties for the component have been defined with `interface ButtonProps`. Notice the "size" with options of small, medium and large. We are going to make some adjustments to the CSS and logic of the component to work with CSS Modules.
+
+Open the `button.module.css` file and rename the CSS classes from [Kebab Case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [Camel Case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). Also rename to a more generic name, I removed the "storybook" from my class names.
+
+![Rename CSS from kebab case to camel case](rename-css.png)
+
+Now we need to update the button component with the class names from the CSS module.
+
+```tsx
+export const Button = ({
+  primary = false,
+  size = "medium",
+  backgroundColor,
+  label,
+  ...props
+}: ButtonProps) => {
+  const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
+  let sizeClass = styles.buttonMedium;
+  if (size === "small") {
+    sizeClass = styles.buttonSmall;
+  }
+  if (size === "large") {
+    sizeClass = styles.buttonLarge;
+  }
+
+  return (
+    <button
+      type="button"
+      className={[`${styles.button}`, `${sizeClass}`, mode].join(" ")}
+      style={{ backgroundColor }}
+      {...props}
+    >
+      {label}
+    </button>
+  );
+};
+```
+
+In your browser you can now view the "Docs" section for the button with it's awesome ability to change properties for your component in real time. Which is great for testing purposes.
+
+![Storybook documentation for our button](storybook-button.png)
+
+Now keep creating more components for your onw UI library piece by piece.
+
+If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library). For more guides on how to use Storybook to create your own UI Component library check out the [Tutorial section](https://storybook.js.org/tutorials/) at storybook.js.org.
