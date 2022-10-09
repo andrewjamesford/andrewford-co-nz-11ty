@@ -317,6 +317,18 @@ pre {
   margin-top: 0;
   color: #000;
 }
+.product-cta,
+.product-cta:visited,
+.product-cta:active {
+  margin: 0 1rem 1rem 1rem;
+  color: white;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: var(--link-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+}
 @media screen and (min-width: 48rem) {
   .avatar {
     width: 7rem;

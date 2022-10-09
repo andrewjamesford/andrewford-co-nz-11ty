@@ -3,5 +3,5 @@
     "nextjs",
     "webp"
   ],
-  "liquid.format.enable": true
+  "liquid.format.enable": false
 }
