@@ -1,5 +1,5 @@
 ---
-title: Create your own UI Component library
+title: Create your own UI Component Library
 date: "2022-10-08T16:33:02Z"
 template: post
 draft: true
@@ -46,12 +46,12 @@ When building a component UI library it's best to start building the smallest co
 
 By default Storybook creates a folder called `stories` that contains component files, stories files and CSS files all matching the appropriate component name. For example `header.css`, `Header.tsx` and `Header.stories.tsx`.
 
-My preference is to instead create a `components` and `pages` folder. I use the pages folder for the top level components that are used by a router for example like [React Router](https://reactrouter.com). All my other components are placed in the `components` folder.
+My preference is to instead create a `components` and `pages` folder. In the components folder I will have the component file, the stories file and the CSS module together as they are all part of the whole. I use the pages folder for the top level components that are used by a router for example like [React Router](https://reactrouter.com). All my other components that are made up of the simple ones are also placed in the `components` folder, like a login form for example.
 
-Copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. They are a good template to start with for our own Button component. Now you can delete the `stories` folder created by Storybook.
+We are now going to copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. This is a great example to start with for our own Button component. Now you can delete the `stories` folder created by Storybook.
 
 Create React App, NextJS etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to _button.module.css_.
-Open _Button.tsx_ replace the reference to the /button.css file with the following:
+Open _Button.tsx_ replace the reference to the `button.css` file with the following:
 
 ```ts
 // From this
@@ -76,7 +76,9 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
+  // The mode will be used to show either the primary or secondary button styles
   const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
+  // The size class will be used to select the correct CSS class
   let sizeClass = styles.buttonMedium;
   if (size === "small") {
     sizeClass = styles.buttonSmall;
@@ -102,6 +104,10 @@ In your browser you can now view the "Docs" section for the button with it's awe
 
 ![Storybook documentation for our button](storybook-button.png)
 
-Now keep creating more components for your onw UI library piece by piece.
+I've also added another example for [headings](https://github.com/andrewjamesford/react-ts-component-library/blob/main/src/components/Heading.tsx), that allows you to select from h1-h6.
 
-If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library). For more guides on how to use Storybook to create your own UI Component library check out the [Tutorial section](https://storybook.js.org/tutorials/) at storybook.js.org.
+![Storybook documentation for a heading component](storybook-heading.png)
+
+Now keep creating more components for your own UI library piece by piece. You can test and check your components in Storybook independent of the web app, configuring all sorts of different property combinations.
+
+If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library). For more guides on how to use Storybook to create your own UI Component library check out the [tutorial section](https://storybook.js.org/tutorials/) at storybook.js.org.
