@@ -2,7 +2,7 @@
 title: Create your own UI Component Library
 date: "2022-10-08T16:33:02Z"
 template: post
-draft: true
+draft: false
 slug: "create-your-own-ui-component-library"
 category: article
 tags:
@@ -12,11 +12,11 @@ tags:
 description: A guide to getting started creating your own UI Component library with ReactJS, TypeScript and Storybook
 ---
 
-In this guide I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
+In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 
 You will need [Node.js](https://nodejs.org/) installed as a prerequisite, so install it if you don't already have it installed.
 
-Open a terminal where you want to start working, we will create a new folder with our new project. We are using [Create React App](https://create-react-app.dev) in this example but the steps are similar with [ViteJS](https://vitejs.dev) and [NextJS](https://nextjs.org). Run the following command:
+Open a terminal where you want to start working, we will create a new folder with our new project. We are using [Create React App](https://create-react-app.dev) in this example but the steps are similar to [ViteJS](https://vitejs.dev) and [NextJS](https://nextjs.org). Run the following command:
 
 ```shell
 npx create-react-app your-ui-library-name --template typescript
@@ -44,14 +44,14 @@ You should now see a welcome screen in your default browser like the following:
 
 When building a component UI library it's best to start building the smallest components that will make up the UI library. I suggest starting with some basic components like Headings & Buttons followed by common form controls. The storybook documentation on the welcome screen has a link to a great site quickly summarising [component driven development](https://www.componentdriven.org/).
 
-By default Storybook creates a folder called `stories` that contains component files, stories files and CSS files all matching the appropriate component name. For example `header.css`, `Header.tsx` and `Header.stories.tsx`.
+By default, Storybook creates a folder called `stories` that contains component files, stories files and CSS files all matching the appropriate component name. For example `header.css`, `Header.tsx` and `Header.stories.tsx`.
 
-My preference is to instead create a `components` and `pages` folder. In the components folder I will have the component file, the stories file and the CSS module together as they are all part of the whole. I use the pages folder for the top level components that are used by a router for example like [React Router](https://reactrouter.com). All my other components that are made up of the simple ones are also placed in the `components` folder, like a login form for example.
+My preference is to instead create a `components` and `pages` folder. In the components folder, I will have the component file, the stories file and the CSS module together as they are all part of the whole. I use the pages folder for the top-level components that are used by a router for example [React Router](https://reactrouter.com). All my other components that are made up of the simple ones are also placed in the `components` folder, like a login form for example.
 
-We are now going to copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. This is a great example to start with for our own Button component. Now you can delete the `stories` folder created by Storybook.
+We are now going to copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. This is a great example to start with for our Button component. Now you can delete the `stories` folder created by Storybook.
 
 Create React App, NextJS etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to _button.module.css_.
-Open _Button.tsx_ replace the reference to the `button.css` file with the following:
+Open _Button.tsx_ and replace the reference to the `button.css` file with the following:
 
 ```ts
 // From this
@@ -100,7 +100,7 @@ export const Button = ({
 };
 ```
 
-In your browser you can now view the "Docs" section for the button with it's awesome ability to change properties for your component in real time. Which is great for testing purposes.
+In your browser, you can now view the "Docs" section for the button with its awesome ability to change properties for your component in real-time. Which is great for testing purposes.
 
 ![Storybook documentation for our button](storybook-button.png)
 
