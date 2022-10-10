@@ -14,7 +14,7 @@ tags:
 description: Continuing with the Next.js & Stripe account setup
 ---
 
-[Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account.
+[Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account (if you don't already have one).
 
 ## Register a Stripe account
 
@@ -25,7 +25,7 @@ Once signed up go to the "Developer" page and select the "API keys" on the left 
 We need to now create an ENV file for our project so it can use these API keys to retrieve our products from Stripe. In the folder of your project create a new file called `.env.local` and add the following two variable names.
 
 ```
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
 ```
 
@@ -49,4 +49,4 @@ Now repeat until you have finished creating all the new products you wish to cre
 
 ![List of products on Stripe](stripe-products-list.png)
 
-## Setup your shop with the Stripe JS library and get your products
+Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
