@@ -111,3 +111,5 @@ I've also added another example for [headings](https://github.com/andrewjamesfor
 Now keep creating more components for your own UI library piece by piece. You can test and check your components in Storybook independent of the web app, configuring all sorts of different property combinations.
 
 If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library). For more guides on how to use Storybook to create your own UI Component library check out the [tutorial section](https://storybook.js.org/tutorials/) at storybook.js.org.
+
+{% include "newsletter.liquid" %}
