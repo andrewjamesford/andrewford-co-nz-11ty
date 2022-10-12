@@ -12,6 +12,7 @@ tags:
   - series
   - account
 description: Continuing with the Next.js & Stripe account setup
+socialBackground: bg6
 ---
 
 [Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account (if you don't already have one).
@@ -50,7 +51,5 @@ Now repeat until you have finished creating all the new products you wish to cre
 ![List of products on Stripe](stripe-products-list.png)
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
-
-Please subscribe to get notified of the next installment in this series.
 
 {% include "newsletter.liquid" %}
