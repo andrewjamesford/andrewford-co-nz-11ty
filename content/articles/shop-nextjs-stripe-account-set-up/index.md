@@ -2,7 +2,7 @@
 title: Build a shop with Next.js and Stripe - Stripe account set up
 date: "2022-10-02T13:02:18Z"
 template: post
-draft: true
+draft: false
 slug: "shop-nextjs-stripe-account-set-up"
 category: article
 tags:
@@ -31,7 +31,7 @@ STRIPE_SECRET_KEY=
 
 Grab the keys from the API keys page and add them to the corresponding variables in the `.env.local` file.
 
-_Please be aware that these keys are for testing and you will need to generate new keys for production._
+_Please be aware that these keys are for testing and you will need to generate new keys for when you go live (production)._
 
 ## Create products for our online shop
 
