@@ -116,6 +116,7 @@ pre[class*="language-"] {
 .article-list-item {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 .article-heading {
   text-align: center;
