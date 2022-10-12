@@ -1,6 +1,6 @@
 ---
 title: Build a shop with Next.js and Stripe - Stripe account set up
-date: "2022-10-02T13:02:18Z"
+date: "2022-10-12T13:02:18Z"
 template: post
 draft: false
 slug: "shop-nextjs-stripe-account-set-up"
@@ -50,3 +50,7 @@ Now repeat until you have finished creating all the new products you wish to cre
 ![List of products on Stripe](stripe-products-list.png)
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
+
+Please subscribe to get notified of the next installment in this series.
+
+{% include "newsletter.liquid" %}
