@@ -12,12 +12,12 @@ tags:
 description: Continuing with the Next.js & Stripe online shop we now will display the products from Stripe.
 ---
 
-Continuing with the Next.js & Stripe online shop we now will display the products.
+Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 
 We first need to get the products from Stripe and we need to do that in a secure manner and not expose our secret Stripe key.
 So let's start with creating a new file called `products.js` in the `/pages/api/` folder.
 
-We need to install the **stripe** NPM package first. Run the following command to install it:
+We need to install the [**stripe** NPM package](https://www.npmjs.com/package/stripe) first. Run the following command to install it:
 
 ```shell
 npm install --save stripe
@@ -26,7 +26,6 @@ npm install --save stripe
 Add the following to the `products.js` file:
 
 ```js
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
@@ -43,12 +42,142 @@ export default async function handler(req, res) {
 }
 ```
 
-- Add host to .env file
-- Add Stripe NPM package
-- Create api end point for products api
-- Create products component to list products
-- Add getServerSideProps
-- Style products component
-- Add stripe to images domain
+By default the products can only be retrieved on the [same origin](https://nextjs.org/docs/api-routes/introduction#caveats) ensuring that only our own shop can retrieve the products.
 
----
+Let's [test our API](http://localhost:3000/api/products) retrieves our products when running locally. You should be able to see the JSON returned.
+
+![Response from the product API](product-api.png)
+
+Before we do anything else we need to create a _HOST_ environment variable. Open the `.env.local` file and add the following:
+
+```
+HOST=http://localhost:3000
+```
+
+We will use the _HOST_ environment variable now, to prepend to our request to the API. Let's update the `index.js` file in the `pages` directory and add the following (outlined in the orange comments):
+
+```jsx
+import Head from "next/head";
+import { Layout } from "../components/layout";
+
+// Pass the products object to the Home page
+export default function Home({ products }) {
+  return (
+    <>
+      <Head>
+        <title>Products</title>
+        <meta name="description" content="Products" />
+      </Head>
+      <Layout></Layout>
+    </>
+  );
+}
+// Add getServerSideProps so we can return the data from server-side
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`${process.env.HOST}/api/products`);
+  const products = await res.json();
+
+  // Pass data to the page via props
+  return { props: { products } };
+}
+```
+
+This will retrieve the products via a server side request so the page can pre-render. We now need a component to display this product information. To do this we will create a new javascript file called `products.js` in the `components` folder.
+
+```jsx
+import React from "react";
+import Image from "next/image";
+import styles from "../styles/products.module.css";
+
+export const Products = ({ products }) => {
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <>
+      {products.length ? (
+        <ul className={styles.products}>
+          {products.map((product) => (
+            <li key={product.id}>
+              <Image
+                src={product.images[0]}
+                alt={`Image of ${product.name}`}
+                layout={"responsive"}
+                width={0}
+                height={0}
+                priority={true}
+              />
+              <h2>{product.name}</h2>
+              <p>{product.description}</p>
+              <a href="#" className={styles.link} onClick={handleAddToCart}>
+                Add To Cart
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div>No products</div>
+      )}
+    </>
+  );
+};
+```
+
+We also need to create a CSS module for the product component, create a new file called `products.module.css` in the `styles` folder.
+
+```css
+.link {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--primary-color);
+}
+.link:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+}
+@media screen and (min-width: 50rem) {
+  .products {
+    // 2 columns
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 70rem) {
+  .products {
+    // 3 columns
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+```
+
+The last step to get our images to display from Stripe is to update the `next.config.js` file with a parameter to allow us to retrieve the images from stripe.com. We can do this by adding the following:
+
+```js
+module.exports = {
+  reactStrictMode: true,
+  // Add this to allow images to be retrieved from stripe.com
+  images: {
+    domains: ["files.stripe.com"],
+  },
+};
+```
+
+When loading the page for your shop locally you should now see a list of products available like the following:
+
+![Products listed ](shop-with-products.png)
+
+Our products are displaying now and because we used `getServerSideProps` to retrieve the products server side the product information is ready to serve on render. Great for search engines to be able to index your products.
+
+Next we will add the cart and purchase functionality so someone could by one of our products.
+
+{% include "newsletter.liquid" %}
