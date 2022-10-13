@@ -19,7 +19,7 @@ socialBackground: bg6
 
 ## Register a Stripe account
 
-![Stripe Developers API keys page](stripe-api-page.png)
+{% image "./content/articles/shop-nextjs-stripe-account-set-up/stripe-api-page.png", "Stripe Developers API keys page", "(min-width: 30em) 50vw, 100vw" %}
 
 Once signed up go to the "Developer" page and select the "API keys" on the left hand side menu.
 
@@ -36,19 +36,19 @@ _Please be aware that these keys are for testing and you will need to generate n
 
 ## Create products for our online shop
 
-You can manage all the content for your online shop through the Stripe dashboard. This has a lot of benefits. You don't requite a CMS to manage your products, you can use different currencies/pricing for different regions and you can manage your product images all in the same interface.
+You can manage all the content for your online shop through the Stripe dashboard. This has a lot of benefits. You don't require a CMS to manage your products, you can use different currencies/pricing for different regions and you can manage your product images all in the same interface.
 
 From the menu, access the "Products" page then click the purple "Add Product" button.
 
-![Product information form](add-product-stripe.png)
+{% image "./content/articles/shop-nextjs-stripe-account-set-up/add-product-stripe.png", "Product information form", "(min-width: 30em) 50vw, 100vw" %}
 
 Add some details for your product, add a price and upload an image. Make sure to select "One Time" for the product price.
 
-![Product One Time price](product-one-time-price.png)
+{% image "./content/articles/shop-nextjs-stripe-account-set-up/product-one-time-price.png", "Product One Time price", "(min-width: 30em) 50vw, 100vw" %}
 
 Now repeat until you have finished creating all the new products you wish to create. You should end up with a product list similar to this.
 
-![List of products on Stripe](stripe-products-list.png)
+{% image "./content/articles/shop-nextjs-stripe-account-set-up/stripe-products-list.png", "List of products on Stripe", "(min-width: 30em) 50vw, 100vw" %}
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
 
