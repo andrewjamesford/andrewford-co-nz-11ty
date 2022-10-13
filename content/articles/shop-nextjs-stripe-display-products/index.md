@@ -46,7 +46,7 @@ By default the products can only be retrieved on the [same origin](https://nextj
 
 Let's [test our API](http://localhost:3000/api/products) retrieves our products when running locally. You should be able to see the JSON returned.
 
-![Response from the product API](product-api.png)
+{% image "./content/articles/shop-nextjs-stripe-display-products/product-api.png", "Response from the product API", "(min-width: 30em) 50vw, 100vw" %}
 
 Before we do anything else we need to create a _HOST_ environment variable. Open the `.env.local` file and add the following:
 
@@ -174,7 +174,7 @@ module.exports = {
 
 When loading the page for your shop locally you should now see a list of products available like the following:
 
-![Products listed ](shop-with-products.png)
+{% image "./content/articles/shop-nextjs-stripe-display-products/shop-with-products.png", "Products listed", "(min-width: 30em) 50vw, 100vw" %}
 
 Our products are displaying now and because we used `getServerSideProps` to retrieve the products server side the product information is ready to serve on render. Great for search engines to be able to index your products.
 

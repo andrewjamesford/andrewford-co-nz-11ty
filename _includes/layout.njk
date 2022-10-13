@@ -21,8 +21,8 @@
   <link rel="manifest" href="{{ '/site.webmanifest' }}">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="preload" href="{{ '/css/style.css' }}?2" as="style" />
-  <link rel="stylesheet" href="{{ '/css/style.css' }}?2" />
+  <link rel="preload" href="{{ '/css/style.css' }}?3" as="style" />
+  <link rel="stylesheet" href="{{ '/css/style.css' }}?3" />
   <link rel="preload" href="{{ '/css/prism-dracula.css' }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}"></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,6 +46,11 @@
   <header class="wrapper">
     <div class="avatar-wrapper">
       <a href="{{ '/' }}" class="avatar">
+        <picture>
+          <source type="image/webp" srcset="https://andrewford.co.nz/images/andrew-avatar.webp, https://andrewford.co.nz/images/andrew-avatar@2x.webp 2x">
+          <source type="image/png" srcset="https://andrewford.co.nz/images/andrew-avatar.png, https://andrewford.co.nz/images/andrew-avatar@2x.png 2x">
+          <img alt="Avatar for Andrew Ford" loading="lazy" decoding="async" src="https://andrewford.co.nz/images/andrew-avatar.png" width="112" height="111">
+        </picture>
         <span class="hide">Home</span>
       </a>
       <h1 class="site-title">Andrew "Drew" Ford</h1>
@@ -83,7 +88,6 @@
       <li><a href="https://andrewford.co.nz/feed.xml">RSS</a></li>
     </ul>
   </footer>
-  <script src="{{ '/scripts/modernizr-custom.js' }}"></script>
 
 </body>
 

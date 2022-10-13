@@ -123,26 +123,12 @@ pre[class*="language-"] {
   margin-top: 0;
 }
 .avatar {
-  display: inline-block;
-  margin-bottom: 0;
-  border-radius: 50%;
-  background-clip: padding-box;
+  width: 7rem;
+  height: 7rem;
+  display: block;
+  margin: 0 auto;
   text-decoration: none;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("/images/andrew-avatar.webp");
-  background-size: contain;
-}
-.no-webp .avatar {
-  background-image: url("/images/andrew-avatar.png");
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .avatar {
-    background-image: url("/images/andrew-avatar@2x.webp");
-  }
-  .no-webp .avatar {
-    background-image: url("/images/andrew-avatar@2x.png");
-  }
+  text-align: center;
 }
 .avatar-wrapper {
   padding-top: 1rem;
@@ -178,6 +164,7 @@ pre[class*="language-"] {
 article img {
   max-width: 100%;
   border-radius: 0.3em;
+  height: auto;
 }
 article blockquote {
   border-left: 0.5rem solid var(--link-color);
@@ -322,10 +309,6 @@ pre {
 }
 
 @media screen and (min-width: 48rem) {
-  .avatar {
-    width: 7rem;
-    height: 7rem;
-  }
   table {
     display: table;
   }
