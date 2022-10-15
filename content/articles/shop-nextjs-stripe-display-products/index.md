@@ -14,7 +14,7 @@ description: Continuing with the Next.js & Stripe online shop we now will displa
 
 Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 
-We first need to get the products from Stripe and we need to do that in a secure manner and not expose our secret Stripe key.
+We first need to get the products from Stripe and we need to do that securely and not expose our secret Stripe key.
 So let's start with creating a new file called `products.js` in the `/pages/api/` folder.
 
 We need to install the [**stripe** NPM package](https://www.npmjs.com/package/stripe) first. Run the following command to install it:
@@ -50,8 +50,10 @@ Let's [test our API](http://localhost:3000/api/products) retrieves our products 
 
 Before we do anything else we need to create a _HOST_ environment variable. Open the `.env.local` file and add the following:
 
-```
-HOST=http://localhost:3000
+```diff-shell
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
++ HOST=http://localhost:3000
 ```
 
 We will use the _HOST_ environment variable now, to prepend to our request to the API. Let's update the `index.js` file in the `pages` directory and add the following (outlined in the orange comments):
@@ -162,13 +164,13 @@ We also need to create a CSS module for the product component, create a new file
 
 The last step to get our images to display from Stripe is to update the `next.config.js` file with a parameter to allow us to retrieve the images from stripe.com. We can do this by adding the following:
 
-```js
+```diff-js
 module.exports = {
   reactStrictMode: true,
-  // Add this to allow images to be retrieved from stripe.com
-  images: {
-    domains: ["files.stripe.com"],
-  },
++  // Add this to allow images to be retrieved from stripe.com
++  images: {
++    domains: ["files.stripe.com"],
++  },
 };
 ```
 
@@ -176,8 +178,8 @@ When loading the page for your shop locally you should now see a list of product
 
 {% image "./content/articles/shop-nextjs-stripe-display-products/shop-with-products.png", "Products listed", "(min-width: 30em) 50vw, 100vw" %}
 
-Our products are displaying now and because we used `getServerSideProps` to retrieve the products server side the product information is ready to serve on render. Great for search engines to be able to index your products.
+Our products are displaying now because we used `getServerSideProps` to retrieve the products server side. The product information is retrieved before rendering and served server side (information will be displayed even if JavaScript is disabled). Great for search engines to be able to index your products.
 
-Next we will add the cart and purchase functionality so someone could by one of our products.
+Next, we will add the cart and purchase functionality so someone could buy one of our products.
 
 {% include "newsletter.liquid" %}
