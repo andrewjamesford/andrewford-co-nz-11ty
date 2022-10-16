@@ -137,6 +137,7 @@ pre[class*="language-"] {
   padding-top: 1rem;
   text-align: center;
   padding-bottom: 1rem;
+  min-height: 11rem;
 }
 .site-title {
   font-size: 1.3rem;
@@ -152,6 +153,7 @@ pre[class*="language-"] {
   text-align: center;
   margin: 0;
   font-size: 0.8rem;
+  min-height: 2.5rem;
 }
 .nav-links li {
   display: inline-block;
@@ -311,6 +313,29 @@ pre {
   text-decoration: none;
 }
 
+.series {
+  background-color: var(--box-bg-color);
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  border: 1px solid #33333308;
+  color: ;
+}
+.series-heading {
+  font-size: 1.2rem;
+  padding: 1rem 1rem 0rem 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+.series-body {
+  padding: 0rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.series-list {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
 @media screen and (min-width: 48rem) {
   table {
     display: table;
@@ -360,7 +385,8 @@ pre {
   .site-description {
     color: var(--body-color-dark-secondary);
   }
-  .news-box {
+  .news-box,
+  .series {
     color: var(--bg-color-dark);
   }
 }

@@ -12,6 +12,8 @@ tags:
 description: Continuing with the Next.js & Stripe online shop we now will display the products from Stripe.
 ---
 
+{% include "seriesstripenextjs.liquid" %}
+
 Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 
 We first need to get the products from Stripe and we need to do that securely and not expose our secret Stripe key.

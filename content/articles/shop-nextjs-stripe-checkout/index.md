@@ -10,6 +10,8 @@ tags:
 description: Continuing with the Next.js & Stripe online shop we now will add the checkout functionality
 ---
 
+{% include "seriesstripenextjs.liquid" %}
+
 Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stipes hosted checkout page.
 
 To do this we need to create a new API router to post the ID of the product we wish to purchase. In the `pages/api/` folder create a new file `checkout_session.js`. Add the following to this file:
