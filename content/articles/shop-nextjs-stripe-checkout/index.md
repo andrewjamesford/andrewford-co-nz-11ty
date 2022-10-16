@@ -8,6 +8,7 @@ category: article
 tags:
   -
 description: Continuing with the Next.js & Stripe online shop we now will add the checkout functionality
+socialBackground: bg8
 ---
 
 {% include "seriesstripenextjs.liquid" %}

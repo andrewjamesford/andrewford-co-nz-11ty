@@ -10,6 +10,7 @@ tags:
   - stripe
   - products
 description: Continuing with the Next.js & Stripe online shop we now will display the products from Stripe.
+socialBackground: bg7
 ---
 
 {% include "seriesstripenextjs.liquid" %}
