@@ -180,4 +180,6 @@ We have now completed the display of products and have the checkout page working
 
 You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop-nextjs-stripe) for this project. Please note there are branches for each step. For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
+{% include "seriesstripenextjs.liquid" %}
+
 {% include "newsletter.liquid" %}

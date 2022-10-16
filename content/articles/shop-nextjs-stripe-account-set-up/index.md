@@ -54,4 +54,6 @@ Now repeat until you have finished creating all the new products you wish to cre
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
 
+{% include "seriesstripenextjs.liquid" %}
+
 {% include "newsletter.liquid" %}

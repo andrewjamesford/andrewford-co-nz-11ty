@@ -188,4 +188,6 @@ Our products are displaying now because we used `getServerSideProps` to retrieve
 
 Next, we will add the cart and purchase functionality so someone could buy one of our products.
 
+{% include "seriesstripenextjs.liquid" %}
+
 {% include "newsletter.liquid" %}
