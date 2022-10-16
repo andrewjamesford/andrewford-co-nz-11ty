@@ -58,30 +58,30 @@ STRIPE_SECRET_KEY=
 
 We will use the _HOST_ environment variable now, to prepend to our request to the API. Let's update the `index.js` file in the `pages` directory and add the following (outlined in the orange comments):
 
-```jsx
+```diff-jsx
 import Head from "next/head";
 import { Layout } from "../components/layout";
 
-// Pass the products object to the Home page
-export default function Home({ products }) {
++ // Pass the products object to the Home page
++ export default function Home({ products }) {
   return (
     <>
       <Head>
         <title>Products</title>
-        <meta name="description" content="Products" />
++        <meta name="description" content="Products" />
       </Head>
       <Layout></Layout>
     </>
   );
 }
-// Add getServerSideProps so we can return the data from server-side
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`${process.env.HOST}/api/products`);
-  const products = await res.json();
++ // Add getServerSideProps so we can return the data from server-side
++ export async function getServerSideProps() {
++  // Fetch data from external API
++  const res = await fetch(`${process.env.HOST}/api/products`);
++  const products = await res.json();
 
-  // Pass data to the page via props
-  return { props: { products } };
++  // Pass data to the page via props
++ return { props: { products } };
 }
 ```
 
@@ -93,28 +93,32 @@ import Image from "next/image";
 import styles from "../styles/products.module.css";
 
 export const Products = ({ products }) => {
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-  };
   return (
     <>
       {products.length ? (
         <ul className={styles.products}>
           {products.map((product) => (
             <li key={product.id}>
-              <Image
-                src={product.images[0]}
-                alt={`Image of ${product.name}`}
-                layout={"responsive"}
-                width={0}
-                height={0}
-                priority={true}
-              />
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <a href="#" className={styles.link} onClick={handleAddToCart}>
-                Add To Cart
-              </a>
+              <form action="/api/checkout_sessions" method="POST">
+                <Image
+                  src={product.images[0]}
+                  alt={`Image of ${product.name}`}
+                  layout={"responsive"}
+                  width={0}
+                  height={0}
+                  priority={true}
+                />
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
+                <button type="submit" role="link" className={styles.link}>
+                  Buy Now
+                </button>
+                <input
+                  type="hidden"
+                  name="priceId"
+                  value={product.default_price}
+                />
+              </form>
             </li>
           ))}
         </ul>
