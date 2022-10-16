@@ -61,7 +61,7 @@ export const Products = ({ products }) => {
         <ul className={styles.products}>
           {products.map((product) => (
             <li key={product.id}>
-+             <form action="/api/checkout_sessions" method="POST">
++              <form action="/api/checkout_sessions" method="POST">
                 <Image
                   src={product.images[0]}
                   alt={`Image of ${product.name}`}
@@ -101,10 +101,9 @@ npm install --save @stripe/stripe-js
 
 Once thats been added we can then add the following to the `index.js` file to create Stripe object. Make sure it sits outside the component for the page.
 
-```jsx
+```js
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-
 const stripePromise = loadStripe(
   `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`
 );
