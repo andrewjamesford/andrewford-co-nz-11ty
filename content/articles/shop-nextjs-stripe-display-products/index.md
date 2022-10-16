@@ -1,8 +1,8 @@
 ---
 title: Build a shop with Next.js and Stripe - Display the products from Stripe
-date: "2022-10-09T16:31:45Z"
+date: "2022-10-16T07:29:45Z"
 template: post
-draft: true
+draft: false
 slug: "shop-nextjs-stripe-display-products"
 category: article
 tags:
