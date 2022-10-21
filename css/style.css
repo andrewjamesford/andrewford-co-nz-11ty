@@ -7,6 +7,8 @@
   --bg-color: #fff;
   --bg-color-dark: #121212;
   --box-bg-color: #f1f9ff;
+  --box-bg-color2: #e1e4e6;
+  --box-border-color: #33333308;
   --code-bg-color: #282a36;
   --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
@@ -262,6 +264,7 @@ pre {
   margin-bottom: 0.25rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  border: 1px solid var(--box-border-color);
 }
 .news-content {
   margin: 0 auto;
@@ -314,11 +317,10 @@ pre {
 }
 
 .series {
-  background-color: var(--box-bg-color);
+  background-color: var(--box-bg-color2);
   border-radius: 0.5rem;
   margin: 2rem 0;
-  border: 1px solid #33333308;
-  color: ;
+  border: 1px solid var(--box-border-color);
 }
 .series-heading {
   font-size: 1.2rem;
@@ -364,6 +366,9 @@ pre {
   }
   caption {
     display: table-caption;
+  }
+  .news-box {
+    padding: 3rem;
   }
 }
 
