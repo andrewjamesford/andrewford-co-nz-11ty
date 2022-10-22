@@ -133,6 +133,8 @@ export const Products = ({ products }) => {
 };
 ```
 
+Notice in the above example we take advantage of the [Next.js Image component](https://nextjs.org/docs/api-reference/next/image). This component is great for displaying optimised versions of your images serving the correct sized image for the device/screen they are being served to.
+
 We also need to create a CSS module for the product component, create a new file called `products.module.css` in the `styles` folder.
 
 ```css
