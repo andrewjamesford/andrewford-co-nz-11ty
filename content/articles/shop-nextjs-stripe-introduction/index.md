@@ -284,9 +284,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.mainNav}>
-        <BuildingStorefrontIcon className={styles.logo} />
++        <BuildingStorefrontIcon className={styles.logo} />
 
-        <div className={styles.iconNav}>
++        <div className={styles.iconNav}>
           <nav>
 +            <ul>
 +              <li>
@@ -300,7 +300,7 @@ export const Header = () => {
 +              </li>
 +            </ul>
           </nav>
-        </div>
++        </div>
       </div>
     </header>
   );
