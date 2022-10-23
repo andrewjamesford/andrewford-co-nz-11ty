@@ -269,11 +269,12 @@ We can add them to the `header.js` file like so. Also note that I've added an SV
 ```jsx
 import React from "react";
 import {
-  SearchIcon,
-  ShoppingCartIcon,
-  MenuIcon,
-  building-storefront
-} from "@heroicons/react/outline";
+  MagnifyingGlassIcon,
+  BuildingStorefrontIcon,
+  Bars3Icon,
+} from "@heroicons/react/24/solid";
+
+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 
 import styles from "../styles/header.module.css";
 
