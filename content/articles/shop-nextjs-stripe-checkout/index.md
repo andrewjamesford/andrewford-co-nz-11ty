@@ -1,19 +1,23 @@
 ---
 title: Build a shop with Next.js and Stripe - Checkout
-date: "2022-10-15T19:56:32Z"
+date: "2022-10-23T07:40:32Z"
 template: post
-draft: true
+draft: false
 slug: "shop-nextjs-stripe-checkout"
 category: article
 tags:
-  -
-description: Continuing with the Next.js & Stripe online shop we now will add the checkout functionality
+  - nextjs
+  - stripe
+  - shop
+  - series
+  - checkout
+description: Concluding with the Next.js & Stripe online shop we now will add the checkout functionality
 socialBackground: bg8
 ---
 
 {% include "seriesstripenextjs.liquid" %}
 
-Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stipes hosted checkout page.
+Concluding with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stripes hosted checkout page.
 
 To do this we need to create a new API router to post the ID of the product we wish to purchase. In the `pages/api/` folder create a new file `checkout_session.js`. Add the following to this file:
 
@@ -51,7 +55,7 @@ export default async function handler(req, res) {
 }
 ```
 
-This function will only allow only POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe making the request with our private Stripe key.
+This function will only allow only POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe requesting with our private Stripe key.
 
 We now need to update the product component (`products.js`), adding the form with the product price ID to post. See the changes to add below highlighted with a `+`.
 
@@ -96,13 +100,13 @@ export const Products = ({ products }) => {
 
 ```
 
-The last step we need to add the Stripe front end library which generates a new shopping object. Let's first install via the terminal:
+In the last step, we need to add the Stripe front-end library which generates a new shopping object. Let's first install via the terminal:
 
 ```shell
 npm install --save @stripe/stripe-js
 ```
 
-Once thats been added we can then add the following to the `index.js` file to create Stripe object. Make sure it sits outside the component for the page.
+Once that's been added we can then add the following to the `index.js` file to create a Stripe object. Make sure it sits outside the component for the page.
 
 ```js
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -114,7 +118,7 @@ const stripePromise = loadStripe(
 
 We now need to more pages `success.js` and `canceled.js` to be added to the `pages` folder.
 
-Success will have the following:
+The `success.js` file will have the following:
 
 ```jsx
 import Head from "next/head";
@@ -139,7 +143,7 @@ export default function Success() {
 }
 ```
 
-Canceled will have the following:
+The `canceled.js` will have the following:
 
 ```jsx
 import Head from "next/head";
@@ -171,15 +175,15 @@ When you click on the "Buy Now" button you will be redirected to the Stripe chec
 
 If you complete the purchase, then you will be directed to the success page.
 
-![Succesful order](order-success.png)
+![Successful order](order-success.png)
 
-Otherwise you click the left arrow / back you will be redirected to the cancel page.
+Otherwise if you click the left arrow / back you will be redirected to the cancel page.
 
 ![Canceled order](canceled-order.png)
 
 We have now completed the display of products and have the checkout page working correctly. Well done. 👏
 
-You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop-nextjs-stripe) for this project. Please note there are branches for each step. For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
+You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop-nextjs-stripe) for this project to see the finished result. Please note there are branches for each step. For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
 {% include "seriesstripenextjs.liquid" %}
 

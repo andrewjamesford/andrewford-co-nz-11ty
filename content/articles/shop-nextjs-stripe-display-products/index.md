@@ -8,14 +8,16 @@ category: article
 tags:
   - nextjs
   - stripe
+  - shop
   - products
+  - series
 description: Continuing with the Next.js & Stripe online shop we now will display the products from Stripe.
 socialBackground: bg7
 ---
 
 {% include "seriesstripenextjs.liquid" %}
 
-Continuing with the [Next.js & Stripe online shop](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
+Continuing with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 
 We first need to get the products from Stripe and we need to do that securely and not expose our secret Stripe key.
 So let's start with creating a new file called `products.js` in the `/pages/api/` folder.
