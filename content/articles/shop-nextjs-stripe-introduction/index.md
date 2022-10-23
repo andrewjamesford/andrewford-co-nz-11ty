@@ -229,8 +229,9 @@ And the subsequent CSS styles
   background-color: var(--bg-color);
   z-index: 10;
 }
-.iconNav {
-  margin-top: 0.8rem;
+.iconNav ul {
+  list-style: none;
+  display: flex;
 }
 .mainNav {
   display: flex;
