@@ -206,7 +206,6 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.mainNav}>
-        <div className={styles.logo}></div>
         <div className={styles.iconNav}>
           <nav></nav>
         </div>
@@ -266,17 +265,18 @@ npm i @heroicons/react
 
 We can add them to the `header.js` file like so.
 
-```diff-jsx
+```jsx
 import React from "react";
 
 // icons added
-+import {
-+  MagnifyingGlassIcon,
-+  BuildingStorefrontIcon,
-+  Bars3Icon,
-+} from "@heroicons/react/24/solid";
+import {
+  MagnifyingGlassIcon,
+  BuildingStorefrontIcon,
+  Bars3Icon,
+} from "@heroicons/react/24/solid";
 
-+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+// outline icon added
+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 
 import styles from "../styles/header.module.css";
 
@@ -284,23 +284,23 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.mainNav}>
-+        <BuildingStorefrontIcon className={styles.logo} />
+        <BuildingStorefrontIcon className={styles.logo} />
 
-+        <div className={styles.iconNav}>
+        <div className={styles.iconNav}>
           <nav>
-+            <ul>
-+              <li>
-+                <MagnifyingGlassIcon className={styles.searchIcon} />
-+              </li>
-+              <li>
-+                <ShoppingBagIcon className={styles.cartIcon} />
-+              </li>
-+              <li>
-+                <Bars3Icon className={styles.menuIcon} />
-+              </li>
-+            </ul>
+            <ul>
+              <li>
+                <MagnifyingGlassIcon className={styles.searchIcon} />
+              </li>
+              <li>
+                <ShoppingBagIcon className={styles.cartIcon} />
+              </li>
+              <li>
+                <Bars3Icon className={styles.menuIcon} />
+              </li>
+            </ul>
           </nav>
-+        </div>
+        </div>
       </div>
     </header>
   );
