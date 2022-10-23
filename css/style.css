@@ -338,6 +338,11 @@ pre {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 0.3rem;
+}
 @media screen and (min-width: 48rem) {
   table {
     display: table;
