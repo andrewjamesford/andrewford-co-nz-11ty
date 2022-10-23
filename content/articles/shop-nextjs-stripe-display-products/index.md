@@ -55,38 +55,39 @@ Let's [test our API](http://localhost:3000/api/products) retrieves our products 
 
 Before we do anything else we need to create a _HOST_ environment variable. Open the `.env.local` file and add the following:
 
-```diff-shell
+```shell
 STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
-+ HOST=http://localhost:3000
+// add HOST
+HOST=http://localhost:3000
 ```
 
 We will use the _HOST_ environment variable now, to prepend to our request to the API. Let's update the `index.js` file in the `pages` directory and add the following (outlined in the orange comments):
 
-```diff-jsx
+```jsx
 import Head from "next/head";
 import { Layout } from "../components/layout";
 
-+ // Pass the products object to the Home page
-+ export default function Home({ products }) {
+// Pass the products object to the Home page
+export default function Home({ products }) {
   return (
     <>
       <Head>
         <title>Products</title>
-+        <meta name="description" content="Products" />
+        <meta name="description" content="Products" />
       </Head>
       <Layout></Layout>
     </>
   );
 }
-+ // Add getServerSideProps so we can return the data from server-side
-+ export async function getServerSideProps() {
-+  // Fetch data from external API
-+  const res = await fetch(`${process.env.HOST}/api/products`);
-+  const products = await res.json();
+// Add getServerSideProps so we can return the data from server-side
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`${process.env.HOST}/api/products`);
+  const products = await res.json();
 
-+  // Pass data to the page via props
-+ return { props: { products } };
+  // Pass data to the page via props
+  return { props: { products } };
 }
 ```
 
@@ -175,13 +176,13 @@ We also need to create a CSS module for the product component, create a new file
 
 The last step to get our images to display from Stripe is to update the `next.config.js` file with a parameter to allow us to retrieve the images from stripe.com. We can do this by adding the following:
 
-```diff-js
+```js
 module.exports = {
   reactStrictMode: true,
-+  // Add this to allow images to be retrieved from stripe.com
-+  images: {
-+    domains: ["files.stripe.com"],
-+  },
+  // Add this to allow images to be retrieved from stripe.com
+  images: {
+    domains: ["files.stripe.com"],
+  },
 };
 ```
 

@@ -59,16 +59,16 @@ This function will only allow only POST requests. It also checks to ensure that 
 
 We now need to update the product component (`products.js`), adding the form with the product price ID to post. See the changes to add below highlighted with a `+`.
 
-```diff-jsx
+```jsx
 export const Products = ({ products }) => {
-
   return (
     <>
       {products.length ? (
         <ul className={styles.products}>
           {products.map((product) => (
             <li key={product.id}>
-+              <form action="/api/checkout_sessions" method="POST">
+              // Add the form
+              <form action="/api/checkout_sessions" method="POST">
                 <Image
                   src={product.images[0]}
                   alt={`Image of ${product.name}`}
@@ -79,15 +79,16 @@ export const Products = ({ products }) => {
                 />
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-+               <button type="submit" role="link" className={styles.link}>
-+                 Buy Now
-+               </button>
-+               <input
-+                 type="hidden"
-+                 name="priceId"
-+                 value={product.default_price}
-+               />
-+             </form>
+                <button type="submit" role="link" className={styles.link}>
+                  Buy Now
+                </button>
+                <input
+                  type="hidden"
+                  name="priceId"
+                  value={product.default_price}
+                />
+              </form>
+              // end form
             </li>
           ))}
         </ul>
@@ -97,7 +98,6 @@ export const Products = ({ products }) => {
     </>
   );
 };
-
 ```
 
 In the last step, we need to add the Stripe front-end library which generates a new shopping object. Let's first install via the terminal:
