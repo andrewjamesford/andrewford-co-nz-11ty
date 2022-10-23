@@ -144,7 +144,7 @@ export const Layout = ({ children }) => {
 
 We now have a Layout component we can re-use throughout our application with the Header and Footer on every page. We can pass the content for the page via the **children** prop.
 
-You may have noticed we have a reference to a CSS module but haven't added that to the `styles` folder yet. By default Next.js supports CSS modules, the major benefit with CSS modules is we can avoid CSS name collisions (it makes unique CSS class names) and feel comfortable to delete an unused CSS file as we know it's only relaxant to one component. [CSS Tricks](https://css-tricks.com/css-modules-part-1-need/) has a series on CSS Modules worth reading to get a better understanding.
+You may have noticed we have a reference to a CSS module but haven't added that to the `styles` folder yet. By default Next.js supports CSS modules, the major benefit with CSS modules is we can avoid CSS name collisions (it makes unique CSS class names) and feel comfortable to delete an unused CSS file as we know it's only relevant to one component. [CSS Tricks](https://css-tricks.com/css-modules-part-1-need/) has a series on CSS Modules worth reading to get a better understanding.
 
 Notice that the corresponding CSS classes above are referenced as a JavaScript object e.g.
 
