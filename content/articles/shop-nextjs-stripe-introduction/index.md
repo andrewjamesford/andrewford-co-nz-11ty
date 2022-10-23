@@ -349,7 +349,7 @@ export const Footer = () => {
             <li>Feedback</li>
           </ul>
         </nav>
-        <div className={styles.copyright}>&copy; 2022 Shoe Shop</div>
+        <div className={styles.copyright}>&copy; 2022 Online Shop</div>
       </div>
     </footer>
   );
