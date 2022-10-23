@@ -183,7 +183,9 @@ Otherwise if you click the left arrow / back you will be redirected to the cance
 
 We have now completed the display of products and have the checkout page working correctly. Well done. 👏
 
-You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop-nextjs-stripe) for this project to see the finished result. Please note there are branches for each step. For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
+You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop-nextjs-stripe) for this project to see the finished result. Please note there are branches for each step. Alternatively you can view the repository on [CodeSandbox](https://codesandbox.io/p/github/andrewjamesford/shop-nextjs-stripe/main?file=%2FREADME.md).
+
+For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
 {% include "seriesstripenextjs.liquid" %}
 
