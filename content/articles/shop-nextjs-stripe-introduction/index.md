@@ -264,17 +264,19 @@ Time to add some icons, we are going to use [Heroicons](https://heroicons.com) i
 npm i @heroicons/react
 ```
 
-We can add them to the `header.js` file like so. Also note that I've added an SVG for a logo.
+We can add them to the `header.js` file like so.
 
-```jsx
+```diff-jsx
 import React from "react";
-import {
-  MagnifyingGlassIcon,
-  BuildingStorefrontIcon,
-  Bars3Icon,
-} from "@heroicons/react/24/solid";
 
-import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+// icons added
++import {
++  MagnifyingGlassIcon,
++  BuildingStorefrontIcon,
++  Bars3Icon,
++} from "@heroicons/react/24/solid";
+
++import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 
 import styles from "../styles/header.module.css";
 
@@ -286,17 +288,17 @@ export const Header = () => {
 
         <div className={styles.iconNav}>
           <nav>
-            <ul>
-              <li>
-                <MagnifyingGlassIcon className={styles.searchIcon} />
-              </li>
-              <li>
-                <ShoppingBagIcon className={styles.cartIcon} />
-              </li>
-              <li>
-                <Bars3Icon className={styles.menuIcon} />
-              </li>
-            </ul>
++            <ul>
++              <li>
++                <MagnifyingGlassIcon className={styles.searchIcon} />
++              </li>
++              <li>
++                <ShoppingBagIcon className={styles.cartIcon} />
++              </li>
++              <li>
++                <Bars3Icon className={styles.menuIcon} />
++              </li>
++            </ul>
           </nav>
         </div>
       </div>
