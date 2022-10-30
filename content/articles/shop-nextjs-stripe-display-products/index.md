@@ -17,6 +17,8 @@ socialBackground: bg5
 
 {% include "seriesstripenextjs.liquid" %}
 
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/OiHx3Zouj_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Continuing with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 
 We first need to get the products from Stripe and we need to do that securely and not expose our secret Stripe key.
