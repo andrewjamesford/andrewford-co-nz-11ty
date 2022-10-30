@@ -74,7 +74,10 @@ export default function Home({ products }) {
         <title>Products</title>
         <meta name="description" content="Products" />
       </Head>
-      <Layout></Layout>
+      <Layout>
+        {/* Need to pass products.data to the Products component */}
+        <Products products={products.data} />
+      </Layout>
     </>
   );
 }
