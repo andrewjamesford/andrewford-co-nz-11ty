@@ -165,13 +165,13 @@ We also need to create a CSS module for the product component, create a new file
 }
 @media screen and (min-width: 50rem) {
   .products {
-    // 2 columns
+    /* 2 columns */
     grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (min-width: 70rem) {
   .products {
-    // 3 columns
+    /* 3 columns */
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
