@@ -56,9 +56,7 @@ Let's [test our API](http://localhost:3000/api/products) retrieves our products 
 Before we do anything else we need to create a _HOST_ environment variable. Open the `.env.local` file and add the following:
 
 ```shell
-STRIPE_PUBLISHABLE_KEY=
-STRIPE_SECRET_KEY=
-// add HOST
+# add HOST
 HOST=http://localhost:3000
 ```
 
@@ -101,11 +99,15 @@ import styles from "../styles/products.module.css";
 export const Products = ({ products }) => {
   return (
     <>
+      {/* Check that we have products */}
       {products.length ? (
         <ul className={styles.products}>
+          {/* Iterate over the products */}
           {products.map((product) => (
             <li key={product.id}>
+              {/* Note that we are using a form to post to the API we just created */}
               <form action="/api/checkout_sessions" method="POST">
+                {/* Display the product image using the Next Image component */}
                 <Image
                   src={product.images[0]}
                   alt={`Image of ${product.name}`}
@@ -119,6 +121,7 @@ export const Products = ({ products }) => {
                 <button type="submit" role="link" className={styles.link}>
                   Buy Now
                 </button>
+                {/* The ID of the product so the user can purchase */}
                 <input
                   type="hidden"
                   name="priceId"
