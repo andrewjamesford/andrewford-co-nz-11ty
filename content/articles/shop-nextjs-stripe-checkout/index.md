@@ -57,7 +57,7 @@ export default async function handler(req, res) {
 
 This function will only allow POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe requesting with our private Stripe key.
 
-In the previous step we have a form with a price ID value that we can post to this new `checkout_session.js` API route.
+In the previous step we have a form with a price ID value that we can post to this new `checkout_sessions.js` API route.
 
 On the product page we need to add the Stripe front-end library which generates a new shopping object. Let's first install via the terminal:
 
