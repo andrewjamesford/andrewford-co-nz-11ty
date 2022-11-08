@@ -57,50 +57,9 @@ export default async function handler(req, res) {
 
 This function will only allow POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe requesting with our private Stripe key.
 
-We now need to update the product component (`products.js`), adding the form with the product price ID to post. See the changes to add below highlighted with a comment.
+In the previous step we have a form with a price ID value that we can post to this new `checkout_session.js` API route.
 
-```jsx
-export const Products = ({ products }) => {
-  return (
-    <>
-      {products.length ? (
-        <ul className={styles.products}>
-          {products.map((product) => (
-            <li key={product.id}>
-              // Add the form
-              <form action="/api/checkout_sessions" method="POST">
-                <Image
-                  src={product.images[0]}
-                  alt={`Image of ${product.name}`}
-                  layout={"responsive"}
-                  width={0}
-                  height={0}
-                  priority={true}
-                />
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
-                <button type="submit" role="link" className={styles.link}>
-                  Buy Now
-                </button>
-                <input
-                  type="hidden"
-                  name="priceId"
-                  value={product.default_price}
-                />
-              </form>
-              // end form
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div>No products</div>
-      )}
-    </>
-  );
-};
-```
-
-In the last step, we need to add the Stripe front-end library which generates a new shopping object. Let's first install via the terminal:
+On the product page we need to add the Stripe front-end library which generates a new shopping object. Let's first install via the terminal:
 
 ```shell
 npm install --save @stripe/stripe-js
@@ -109,6 +68,9 @@ npm install --save @stripe/stripe-js
 Once that's been added we can then add the following to the `index.js` file to create a Stripe object. Make sure it sits outside the component for the page.
 
 ```js
+// import stripe js
+import { loadStripe } from "@stripe/stripe-js";
+
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
@@ -169,7 +131,7 @@ export default function Canceled() {
 
 In the `checkout_session.js` file we supply a `success_url` and a `canceled_url` value. This is where we redirect the user from the checkout page.
 
-When you click on the "Buy Now" button you will be redirected to the Stripe checkout like in the image below.
+When you click on the "Buy Now" button you will be redirected to the Stripe checkout, like in the image below.
 
 ![The hosted Stripe checkout](stripe-checkout.png)
 
