@@ -19,7 +19,7 @@ socialBackground: bg5
 
 Concluding with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stripes hosted checkout page.
 
-To do this we need to create a new API router to post the ID of the product we wish to purchase. In the `pages/api/` folder create a new file `checkout_session.js`. Add the following to this file:
+To do this we need to create a new API router to post the ID of the product we wish to purchase. In the `pages/api/` folder create a new file `checkout_sessions.js`. Add the following to this file:
 
 ```js
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
@@ -129,7 +129,7 @@ export default function Canceled() {
 }
 ```
 
-In the `checkout_session.js` file we supply a `success_url` and a `canceled_url` value. This is where we redirect the user from the checkout page.
+In the `checkout_sessions.js` file we supply a `success_url` and a `canceled_url` value. This is where we redirect the user from the checkout page.
 
 When you click on the "Buy Now" button you will be redirected to the Stripe checkout, like in the image below.
 
