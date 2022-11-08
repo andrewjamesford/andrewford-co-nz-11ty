@@ -55,9 +55,9 @@ export default async function handler(req, res) {
 }
 ```
 
-This function will only allow only POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe requesting with our private Stripe key.
+This function will only allow POST requests. It also checks to ensure that the request body contains the price ID for the product, before redirecting to Stripe requesting with our private Stripe key.
 
-We now need to update the product component (`products.js`), adding the form with the product price ID to post. See the changes to add below highlighted with a `+`.
+We now need to update the product component (`products.js`), adding the form with the product price ID to post. See the changes to add below highlighted with a comment.
 
 ```jsx
 export const Products = ({ products }) => {
@@ -116,7 +116,7 @@ const stripePromise = loadStripe(
 );
 ```
 
-We now need to more pages `success.js` and `canceled.js` to be added to the `pages` folder.
+We now need to create the following pages `success.js` and `canceled.js` to be added to the `pages` folder.
 
 The `success.js` file will have the following:
 
