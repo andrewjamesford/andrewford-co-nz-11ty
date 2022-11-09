@@ -17,6 +17,8 @@ socialBackground: bg5
 
 {% include "seriesstripenextjs.liquid" %}
 
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/-jCI2bKrud4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Concluding with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stripes hosted checkout page.
 
 To do this we need to create a new API router to post the ID of the product we wish to purchase. In the `pages/api/` folder create a new file `checkout_sessions.js`. Add the following to this file:
