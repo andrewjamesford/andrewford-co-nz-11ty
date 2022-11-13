@@ -15,7 +15,7 @@ socialBackground: bg7
 
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 
-You will need [Node.js](https://nodejs.org/) installed as a prerequisite, so install it if you don't already have it installed.
+You will need [Node.js](https://nodejs.org/) installed as a prerequisite, so install this first (if not already installed).
 
 Open a terminal where you want to start working, we will create a new folder with our new project. We are using [Create React App](https://create-react-app.dev) in this example but the steps are similar to [ViteJS](https://vitejs.dev) and [NextJS](https://nextjs.org). Run the following command:
 
@@ -23,7 +23,7 @@ Open a terminal where you want to start working, we will create a new folder wit
 npx create-react-app your-ui-library-name --template typescript
 ```
 
-This will use CRA with the TypeScript template to create a new project.
+This will use [CRA](https://create-react-app.dev) with the TypeScript template to create a new project.
 
 Next we will install [Storybook](https://storybook.js.org). Make sure you are in the directory that contains your project using `cd your-ui-library-name`, replace `your-ui-library-name` with your own projects name.
 
@@ -51,8 +51,8 @@ My preference is to instead create a `components` and `pages` folder. In the com
 
 We are now going to copy the `button.css`, `Button.stories.tsx` and `Button.tsx` files into the `components` folder. This is a great example to start with for our Button component. Now you can delete the `stories` folder created by Storybook.
 
-Create React App, NextJS etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to _button.module.css_.
-Open _Button.tsx_ and replace the reference to the `button.css` file with the following:
+[Create React App](https://create-react-app.dev), [NextJS](https://nextjs.org) etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to `button.module.css`.
+Open `Button.tsx` and replace the reference to the `button.css` file with the following:
 
 ```ts
 // From this
@@ -63,7 +63,7 @@ import styles from "./button.module.css";
 
 In the `Button.tsx` file you can see the properties for the component have been defined with `interface ButtonProps`. Notice the "size" with options of small, medium and large. We are going to make some adjustments to the CSS and logic of the component to work with CSS Modules.
 
-Open the `button.module.css` file and rename the CSS classes from [Kebab Case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [Camel Case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). Also rename to a more generic name, I removed the "storybook" from my class names.
+Open the `button.module.css` file and rename the CSS classes from [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [camelCase](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). We will also rename to a more generic name, by removing the "storybook" from the  class names.
 
 {% image "./content/articles/create-your-own-ui-component-library/rename-css.png", "Rename CSS from kebab case to camel case", "(min-width: 30em) 50vw, 100vw" %}
 
@@ -77,7 +77,8 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  // The mode will be used to show either the primary or secondary button styles
+  // The mode will be used to show either the primary 
+  // or secondary button styles
   const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
   // The size class will be used to select the correct CSS class
   let sizeClass = styles.buttonMedium;
