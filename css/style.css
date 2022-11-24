@@ -160,7 +160,7 @@ pre[class*="language-"] {
 .nav-links li {
   display: inline-block;
   list-style: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.9rem;
 }
 .nav-links a {
   color: var(--body-color);
