@@ -13,6 +13,8 @@ description: A guide to getting started creating your own UI Component library w
 socialBackground: bg7
 ---
 
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 
 You will need [Node.js](https://nodejs.org/) installed as a prerequisite, so install this first (if not already installed).
@@ -63,7 +65,7 @@ import styles from "./button.module.css";
 
 In the `Button.tsx` file you can see the properties for the component have been defined with `interface ButtonProps`. Notice the "size" with options of small, medium and large. We are going to make some adjustments to the CSS and logic of the component to work with CSS Modules.
 
-Open the `button.module.css` file and rename the CSS classes from [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [camelCase](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). We will also rename to a more generic name, by removing the "storybook" from the  class names.
+Open the `button.module.css` file and rename the CSS classes from [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [camelCase](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). We will also rename to a more generic name, by removing the "storybook" from the class names.
 
 {% image "./content/articles/create-your-own-ui-component-library/rename-css.png", "Rename CSS from kebab case to camel case", "(min-width: 30em) 50vw, 100vw" %}
 
@@ -77,7 +79,7 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  // The mode will be used to show either the primary 
+  // The mode will be used to show either the primary
   // or secondary button styles
   const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
   // The size class will be used to select the correct CSS class
