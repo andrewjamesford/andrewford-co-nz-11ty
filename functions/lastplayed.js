@@ -1,11 +1,10 @@
 import fetch from "node-fetch";
 
 exports.handler = async function (event, context) {
-  console.log("got here");
-  // your server-side functionality
   try {
+    const apiKey = process.env.LASTFM_API_KEY;
     const response = await fetch(
-      "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=indysonic&api_key=f338072e530795905234f1e21d33d5fa&format=json",
+      `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=indysonic&api_key=${apiKey}&format=json`,
       {
         method: "GET",
       }
@@ -22,7 +21,6 @@ exports.handler = async function (event, context) {
       albumArt: lastTrackData.image[1]["#text"],
     };
 
-    console.log(lastTrack);
     return {
       statusCode: 200,
       body: JSON.stringify(lastTrack),
