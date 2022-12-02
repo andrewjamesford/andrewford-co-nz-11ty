@@ -344,6 +344,8 @@ pre {
   border-radius: 0.3rem;
 }
 .lastfm-widget {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--body-color-secondary);
   font-size: 0.9rem;
   line-height: 1.2;
   display: grid;
@@ -414,5 +416,8 @@ pre {
   .news-box,
   .series {
     color: var(--bg-color-dark);
+  }
+  .lastfm-widget {
+    border-top: 1px solid var(--body-color-dark-secondary);
   }
 }
