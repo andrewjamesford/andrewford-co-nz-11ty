@@ -343,6 +343,22 @@ pre {
   width: 100%;
   border-radius: 0.3rem;
 }
+.lastfm-widget {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  display: grid;
+  grid-template-columns: 64px auto;
+  gap: 0.5rem;
+  margin: 0.75rem auto 0 auto;
+}
+.lastfm-img {
+  border-radius: 0.25rem;
+}
+.lastfm-title {
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
 @media screen and (min-width: 48rem) {
   table {
     display: table;

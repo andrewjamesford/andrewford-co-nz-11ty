@@ -109,3 +109,6 @@ _site/
 
 # Resoc image data mapping file
 resoc-image-data.json
+
+# Local Netlify folder
+.netlify

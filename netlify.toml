@@ -10,3 +10,6 @@ package = "@resoc/netlify-plugin-social-image"
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+
+[build]
+  functions = "netlify/functions"
