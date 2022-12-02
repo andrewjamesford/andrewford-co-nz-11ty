@@ -22,7 +22,7 @@ exports.handler = async function (event, context) {
       albumArt: lastTrackData.image[1]["#text"],
     };
 
-    //  console.log(lastTrack);
+    console.log(lastTrack);
     return {
       statusCode: 200,
       body: JSON.stringify(lastTrack),
@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(error),
+      body: JSON.stringify({ error_description: error.message }),
     };
   }
 };
