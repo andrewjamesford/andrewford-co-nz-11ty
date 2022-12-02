@@ -1,6 +1,7 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 exports.handler = async function (event, context) {
+  console.log("got here");
   // your server-side functionality
   try {
     const response = await fetch(

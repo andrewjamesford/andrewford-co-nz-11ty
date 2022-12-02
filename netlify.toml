@@ -1,6 +1,11 @@
 [build]
   command = "npm run build"
-  functions = "netlify/functions"
+  functions = "functions"
+  publish = "_site"
+
+[dev]
+  command = "npm run start"
+  functions = "functions"
   publish = "_site"
 
 [functions]
