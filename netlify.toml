@@ -1,5 +1,5 @@
 [build]
-  command = "# no build command"
+  command = "npm run build"
   functions = "netlify/functions"
   publish = "_site"
 
