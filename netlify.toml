@@ -1,11 +1,11 @@
 [build]
   command = "# no build command"
   functions = "netlify/functions"
-  publish = "public"
+  publish = "_site"
 
 [functions]
   node_bundler = "esbuild" 
-  
+
 [[plugins]]
 package = "@resoc/netlify-plugin-social-image"
 
