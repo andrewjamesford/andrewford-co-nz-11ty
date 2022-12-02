@@ -33,6 +33,7 @@
     "@resoc/eleventy-plugin-social-image": "^0.0.4",
     "@resoc/netlify-plugin-social-image": "^0.0.9",
     "eleventy-plugin-page-assets": "^0.3.0",
+    "node-fetch": "^3.3.0",
     "prettier": "2.5.0"
   },
   "dependencies": {
