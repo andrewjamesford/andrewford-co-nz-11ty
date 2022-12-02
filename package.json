@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
+    "dev": "netlify dev",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh",

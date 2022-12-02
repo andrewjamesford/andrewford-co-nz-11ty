@@ -89,7 +89,7 @@
       <li><a href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a></li>
     </ul>
 
-    <div id="lastFM" class="lastfm-widget">
+    <div id="lastFM" class="lastfm-widget" style="display:none">
         <img id="lastFMImg" src="" class="lastfm-img" />
         <div>
           <div class="lastfm-title">Listening to:</div>
@@ -117,6 +117,7 @@
         lastFMImg.src = data.albumArt;
         lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
         lastFMAlbum.innerText = data.album;
+        lastFMWidget.style = "display:grid";
       }
 
       loadData();
