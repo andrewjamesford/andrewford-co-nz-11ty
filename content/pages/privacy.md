@@ -17,7 +17,7 @@ I try my best to only link to websites that are decent, and any content from ext
 
 ### Tracking
 
-This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products.
+This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products and YouTube video embed.
 
 ### Advertisements
 
