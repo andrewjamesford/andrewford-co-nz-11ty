@@ -6,3 +6,4 @@
 /.well-known/host-meta* https://mastodon.nz/.well-known/host-meta?resource=acct:andrewford@mastodon.nz 301
 /.well-known/nodeinfo* https://mastodon.nz/.well-known/nodeinfo?resource=acct:andrewford@mastodon.nz 301
 /.well-known/webfingers* https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz 301
+/@andrewford* https://mastodon.nz/@andrewford 302
