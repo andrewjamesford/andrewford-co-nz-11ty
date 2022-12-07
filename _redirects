@@ -1,4 +1,8 @@
 # Redirects from what the browser requests to what we serve
-/rss.xml                                        /feed.xml
-/tags/*                                         /
-/2021/02/07/new-year-new-blog-generator         /2021/02/07/new-year-new-blog-11ty
+
+/rss.xml /feed.xml
+/tags/\* /
+/2021/02/07/new-year-new-blog-generator /2021/02/07/new-year-new-blog-11ty
+/.well-known/host-meta?resource=acct:andrew@andrewford.co.nz https://mastodon.nz/.well-known/host-meta?resource=acct:andrewford@mastodon.nz
+/.well-known/webfinger?resource=acct:andrew@andrewford.co.nz https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz
+/.well-known/nodeinfo?resource=acct:andrew@andrewford.co.nz https://mastodon.nz/.well-known/nodeinfo?resource=acct:andrewford@mastodon.nz

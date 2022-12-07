@@ -10,7 +10,7 @@ tags:
 description:
 ---
 
-Tailwind CSS is a library of utility CSS classes that in combination let you style your HTML content by adding the additional CSS classes to your HTML elements. For example say you were creating a Card component with a heading, description and image using ReactJS.
+Tailwind CSS is a library of CSS utility classes that used in combination let you style your HTML content by appending a multitude of predefined CSS classes to your HTML elements. For example say you were creating a Card component with a heading, description and image using ReactJS.
 
 ```jsx
 const Card = ({ heading, description, image }) => {
@@ -39,13 +39,8 @@ Using standard CSS we would create classes for all the elements in our Card comp
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: white;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px
-      var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(
-      --tw-ring-shadow,
-      0 0 #0000
-    ), var(--tw-shadow);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px
+      6px -4px rgb(0 0 0 / 0.1);
 }
 .cardHeading {
   font-weight: bold;
@@ -83,8 +78,17 @@ Some reasons to use Tailwind CSS are:
 
 ## What makes the Tailwind CSS developer experience better?
 
-In terms of developer experience once you get over it looking horrible **tag soup** with all those CSS classes scattered through your HTML/JSX files you will start to notice a couple of things:
+In terms of developer experience once you get over it looking like horrible **tag soup** with all those CSS classes scattered through your HTML/JSX files you will start to notice a couple of things:
 
-Tailwind CSS is ideal in team situations. By default, you don't have naming conflicts and there are no confusion about names as styling is done at the property level. The use of the Tailwind Labs official plugin for VS Code enable autocomplete functionality. If you already know the name of CSS properties and have used the likes of [Bootstrap](https://getbootstrap.com/docs/5.2/utilities/spacing/#margin-and-padding) for padding and margin you will quickly feel familiar with Tailwind.
+- Tailwind CSS is ideal in team situations. By default, you don't have naming conflicts and there are no confusion about names as styling is done at the property level.
+- The use of the Tailwind Labs official plugin for VS Code enable autocomplete functionality. If you already know the name of CSS properties and have used the likes of [Bootstrap](https://getbootstrap.com/docs/5.2/utilities/spacing/#margin-and-padding) for padding and margin you will quickly feel familiar with Tailwind.
+- Another benefit is that you aren't changing the CSS, instead you are working on the HTML so it won't break other parts of your website.
+- You will only have to do a minimal amount of CSS work for the likes of theming or specific custom styles which means your CSS won't grow in size much at all. In fact with the build process your HTML can be scanned to look for the CSS classes and determine if they are not used and can be removed from the CSS file of the website. Therefor only creating a CSS file with the CSS classes used.
+- As the padding and margin values are predefined you won't get the same padding value declared multiple times scattered through your CSS file. You can also check at a glance are elements sharing the same padding or margin by the CSS classes applied without having to use the browser dev tools or find the class in the CSS.
+- No need to write media queries as instead you can use the [utility classes outlined here](https://tailwindcss.com/docs/responsive-design) in the vein of `md:w-32` to only apply the CSS class on the page being **medium** sized
 
 ## When should I use Tailwind CSS?
+
+In my experience Tailwind CSS is best used on a team where some/most of the developers CSS isn't strong. Creating a coherent design system with CSS is a long winded process. You will need to have a good understanding of CSS itself but also be strong at communicating a set process and construct a style guide for the rest of the developers on your team that must be followed (not copying some "janky" code from StackOverflow cause they can't work).
+
+## What are the downsides of Tailwind CSS?
