@@ -6,7 +6,7 @@ const pluginResoc = require("@resoc/eleventy-plugin-social-image");
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
-
+const CleanCSS = require("clean-css");
 const imageShortcode = async (
   src,
   alt,
@@ -73,6 +73,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pageAssetsPlugin, {
     mode: "parse",
     postsMatching: "content/**/*.md",
+  });
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
   });
 
   // eleventyConfig.addPlugin(sitemap, {

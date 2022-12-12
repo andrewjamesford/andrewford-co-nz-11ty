@@ -21,10 +21,18 @@
   <link rel="manifest" href="{{ '/site.webmanifest' }}">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="preload" href="{{ '/css/style.css' }}?4" as="style" />
-  <link rel="stylesheet" href="{{ '/css/style.css' }}?4" />
-  <link rel="preload" href="{{ '/css/prism-dracula.css' }}?1" as="style">
-  <link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}?1" />
+  {% set css %}
+    {% include "critical.css" %}
+  {% endset %}
+  <style>
+    {{ css | cssmin | safe }}
+  </style>
+  <link rel="preload" href="{{ '/css/style.css' }}?5" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ '/css/prism-dracula.css' }}?1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ '/css/style.css' }}?5">
+    <link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}?1">
+  </noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{{ description }}" />
   <link rel="alternate" type="application/rss+xml" title="Blog by Andrew Ford" href="/feed.xml" />
@@ -39,7 +47,8 @@
   <meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
   <meta name="twitter:description" content="{{ description or metadata.description }}">
   <meta name="twitter:image" content="https://andrewford.co.nz{{ socialImageUrl }}">
-
+  <link rel="modulepreload" href="{{ '/scripts/script.js' }}?1" />
+  <script src="{{ '/scripts/script.js' }}?1" type="module"></script>
 </head>
 
 <body>
@@ -99,31 +108,7 @@
           <div id="lastFMAlbum" class="lastfm-album"></div>
         </div>
     </div>
-    <script>
-      const lastFMWidget = document.getElementById("lastFM");
-      const lastFMLink = document.getElementById("lastFMLink");
-      const lastFMImg = document.getElementById("lastFMImg");
-      const lastFMAlbum = document.getElementById("lastFMAlbum");
-
-      const loadData = async () => {
-        const response = await fetch(`/.netlify/functions/lastplayed`, {
-          method: "GET",
-        });
-        const data = await response.json();
-
-        console.log(data);
-        lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
-        lastFMLink.href = data.url;
-        lastFMImg.src = data.albumArt;
-        lastFMImg.width = 64;
-        lastFMImg.height = 64;
-        lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
-        lastFMAlbum.innerText = data.album;
-        lastFMWidget.style = "display:grid";
-      }
-
-      loadData();
-    </script>
+    
   </footer>
 
 </body>
