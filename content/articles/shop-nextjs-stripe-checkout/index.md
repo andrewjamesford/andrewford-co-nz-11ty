@@ -152,5 +152,3 @@ You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop
 For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
 {% include "seriesstripenextjs.liquid" %}
-
-{% include "newsletter.liquid" %}

@@ -403,5 +403,3 @@ Alright that's quite a bit we've done here, congrats if you got this far 👍. W
 Please subscribe to get notified of the next installment in this series.
 
 {% include "seriesstripenextjs.liquid" %}
-
-{% include "newsletter.liquid" %}
