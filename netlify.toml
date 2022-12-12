@@ -23,3 +23,8 @@ package = "@resoc/netlify-plugin-social-image"
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+
+[[redirects]]
+  from = "/.well-known/webfinger"
+  to = "https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz"
+  status = 200
