@@ -55,6 +55,7 @@ h4,
 h5,
 h6 {
   margin-top: 0;
+  letter-spacing: -1px;
 }
 
 article :is(h2, h3, h4, h5, h6) {
@@ -90,8 +91,6 @@ h2 {
 }
 .article-description {
   margin-top: 0;
-  max-height: 3rem;
-  overflow: hidden;
 }
 
 .avatar {

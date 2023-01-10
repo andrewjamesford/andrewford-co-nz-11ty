@@ -28,7 +28,7 @@ const Card = ({ heading, description, image }) => {
 
 Using standard CSS we would create classes for all the elements in our Card component like the example above. This would require us to create these individual classes in a CSS file. In this scenario there are two things that need to be done:
 
-1. Name our classes. Naming is hard and further complicated when you have multiple people on your team. Someone calls something a tile and another calls it a card.
+1. Name our classes. Naming is hard and further complicated when you have multiple people on your team. For example someone calls something a tile and another calls it a card.
 2. Potentially duplicate the same CSS properties multiple times throughout the CSS file e.g. margin and padding
 
 ```css
@@ -76,7 +76,7 @@ Some reasons to use Tailwind CSS are:
 - There is a [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) that enables autocomplete functionality which again helps speed up the flow of styling
 - The build process also scours your files for the CSS classes that you have actually used and only adds them to the production build reducing the size of the CSS file.
 
-## What makes the Tailwind CSS developer experience better?
+## What makes the Tailwind CSS developer experience good?
 
 In terms of developer experience once you get over it looking like horrible **tag soup** with all those CSS classes scattered through your HTML/JSX files you will start to notice a couple of things:
 
