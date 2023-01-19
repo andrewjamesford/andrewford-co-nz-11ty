@@ -30,6 +30,10 @@ article blockquote {
   margin-right: 2rem;
 }
 
+article li {
+  margin-bottom: 0.5rem;
+}
+
 article img + em {
   font-size: 0.8rem;
 }

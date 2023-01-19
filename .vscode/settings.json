@@ -3,5 +3,6 @@
     "nextjs",
     "webp"
   ],
-  "liquid.format.enable": false
+  "liquid.format.enable": false,
+  "cSpell.enabled": true
 }
