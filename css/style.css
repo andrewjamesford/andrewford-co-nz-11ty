@@ -141,9 +141,8 @@ pre {
   margin: 2rem 0;
   border: 1px solid #33333308;
 }
-.product-image {
-  max-width: 100%;
-  object-fit: cover;
+.product-img {
+  width: 100%;
 }
 .product-title {
   font-size: 1.2rem;
