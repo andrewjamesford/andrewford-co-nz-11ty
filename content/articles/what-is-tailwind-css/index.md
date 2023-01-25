@@ -28,7 +28,7 @@ const Card = ({ heading, description, image }) => {
 
 Using standard CSS we would create classes for all the elements in our Card component like the example above. This would require us to create these individual classes in a CSS file. In this scenario there are two things that need to be done:
 
-1. Name our classes. Naming is hard and further complicated when you have multiple people on your team. For example someone calls something a tile and another calls it a card.
+1. Name our CSS class names. But naming can be difficult, especially when multiple team members are involved. It can lead to confusion, for example, if one person refers to a component as a "tile" and another calls it a "card."
 2. Potentially duplicate the same CSS properties multiple times throughout the CSS file e.g. `margin: 0` and `padding: 1rem`
 
 ```css
@@ -69,46 +69,45 @@ So why would you use Tailwind and pollute your components with all these class n
 
 The most common answer to why is you don't have to worry about naming classes or naming collisions in your CSS. Instead you can just get on with using the CSS properties you already know and set about applying them to your HTML elements. You don't even need to view the CSS file. You can just remain working on the component with the occasional look at the [Tailwind documentation](https://tailwindcss.com/docs/box-sizing).
 
-Some reasons to use Tailwind CSS are:
+Some more reasons to use Tailwind CSS are:
 
-- No repetition of code in your CSS files, `margin-left: 1rem` is only declared once in your stylesheet. CSS property declarations are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) so aren't repeated
-- No confusion of naming as all members of the team use the pre-existing CSS class names instead of creating new CSS classes
-- There is a [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) that enables autocomplete functionality which again helps speed up the flow of styling
-- The build process also scours your files for the CSS classes that you have actually used and only adds them to the production build reducing the size of the CSS file.
+- DRY: No repetition of code in your CSS files, `margin-left: 1rem` is only declared once in your stylesheet. CSS property declarations are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) so aren't repeated
+- Lack of confusion: No confusion of naming as all members of the team use the pre-existing CSS class names instead of creating new CSS classes
 - Speed: Tailwind CSS provides pre-defined CSS classes that can be used to quickly style elements, allowing developers to focus on building the structure and functionality of their website or application.
 - Consistency: By using the same pre-defined classes throughout the project, developers can ensure that the design is consistent across all pages and components.
 - Customization: Tailwind CSS allows developers to customize the default styles and generate new classes with specific variations, giving more flexibility and control over the design.
 - Accessibility: Tailwind CSS provides a set of utility classes to help implement accessibility best practices, such as providing sufficient contrast and using semantic HTML elements.
-- Performance: Tailwind CSS allows you to only include the CSS you need, leading to smaller CSS file sizes and faster load times for your website or application.
+- Performance: Tailwind CSS allows you to only include the CSS you need (via a clever build process), leading to smaller CSS file sizes and faster load times for your website or application.
 
 ## What makes the Tailwind CSS developer experience (DX) good?
 
 In terms of developer experience once you get over it looking like horrible **tag soup** with all those CSS classes scattered through your HTML/JSX files you will start to notice a couple of things:
 
 - Tailwind CSS is ideal in team situations. By default, you don't have naming conflicts and there are no confusion about names as styling is done at the property level.
-- The use of the Tailwind Labs official plugin for VS Code enable autocomplete functionality. If you already know the name of CSS properties and have used the likes of [Bootstrap](https://getbootstrap.com/docs/5.2/utilities/spacing/#margin-and-padding) for padding and margin you will quickly feel familiar with Tailwind.
-- Another benefit is that you aren't changing the CSS, instead you are working on the HTML so it won't break styling for other parts of your website.
+- The use of the Tailwind Labs official plugin for [VS Code](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) enable autocomplete functionality. If you already know the name of CSS properties and have used the likes of [Bootstrap](https://getbootstrap.com/docs/5.2/utilities/spacing/#margin-and-padding) for padding and margin you will quickly feel familiar with Tailwind.
+- Another benefit is that you aren't changing the CSS, instead you are working on the HTML so there is little chance of breaking styling for other parts of your website.
 - You will only have to do a minimal amount of CSS work for the likes of theming or specific custom styles which means your CSS won't grow in size much at all. In fact with the build process your HTML can be scanned to look for the CSS classes and determine if they are not used and can be removed from the CSS file of the website. Therefore only creating a CSS file with the CSS classes used.
 - As the padding and margin values are predefined you won't get the same padding value declared multiple times scattered through your CSS file. You can also check at a glance are elements sharing the same padding or margin by the CSS classes applied without having to use the browser dev tools or find the class in the CSS.
 - No need to write media queries as instead you can use the [utility classes outlined here](https://tailwindcss.com/docs/responsive-design) in the vein of `md:w-32` to only apply the CSS class on the page being **medium** sized.
-- Once familiar with the framework your speed of styling can be very rapid as most layouts will become easy to implement with the prebuilt utility classes, especially when used in conjunction with the VS Code plugin with autocomplete support.
 
 ## When should I use Tailwind CSS?
 
-In my experience Tailwind CSS is best used on a team where some/most of the developers CSS skills are not strong. Creating a coherent design system with CSS is a long winded process. You will need to have a good understanding of CSS itself but also be strong at communicating a process and construct a style guide for the rest of the developers on your team that must be followed (not copying some "janky" code from StackOverflow cause they can't work).
+Based on my experience, Tailwind CSS is most effective when used on a team where some or most of the developers have limited CSS skills. Establishing a consistent design system using CSS can be a time-consuming process. It requires a solid understanding of CSS as well as strong communication skills to establish a process and create a style guide that all team members must adhere to, instead of relying on "janky" CSS hacks for the desired look from StackOverflow.
 
-It can take care of the process of documentation as the documentation is reasonably good and the process of getting started has a lot of resources from the developers of [Tailwind](https://tailwindcss.com/docs/installation) and the [community](https://www.youtube.com/watch?v=ft30zcMlFao).
+Tailwind CSS can simplify the documentation process by providing comprehensive documentation and resources for getting started, both from the official [Tailwind](https://tailwindcss.com/docs/installation) developers and the [community](https://www.youtube.com/watch?v=ft30zcMlFao). This can make it easier to understand and implement.
 
 ## What are the downsides of Tailwind CSS?
 
 It's not all roses with Tailwind CSS. There are some downsides that can impact the near and long term of your project.
 
-- File size: Tailwind CSS generates a large amount of CSS code, which can lead to longer page load times and larger file sizes if not optimized properly.
+- File size: Tailwind requires a large number of CSS classes to be added to your HTML, which can lead to longer page load times and larger file sizes if not optimized properly.
 - Learning curve: Tailwind CSS requires a different approach to writing CSS, which can take some time to learn and adjust to.
 - Opinionated design: Tailwind CSS provides pre-defined classes that can be used to quickly style elements, but it also imposes a specific design aesthetic that may not align with the desired look and feel of the website or application.
 - Overuse of classes: Using too many classes on a single element can make the HTML difficult to read and understand, leading to a more complex and harder to maintain codebase.
 - Customization: Tailwind CSS is highly customizable, but this can also lead to increased complexity in terms of configuration, and can make it harder to maintain the design consistency across the project.
-- Hard to remove: It can be challenging to remove Tailwind CSS once it has been implemented. This is because the embedded Tailwind classes are present throughout your HTML, component, or template files, and removing them incrementally can create conflicts with the Tailwind build system. Additionally, it may further complicate the process by requiring an additional build process for the new setup.
+- Hard to remove: It can be challenging to remove Tailwind CSS once it has been implemented. This is because the embedded Tailwind classes are present throughout your HTML, component, or template files, and removing them incrementally can create conflicts with the Tailwind build system. Additionally, it may further complicate the project by requiring an additional build process for the new setup to incrementally replace styling.
 - Waiting on bleeding edge CSS features: Recent years have seen significant advancements in browser CSS capabilities, such as [Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has), and [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid). While these features can enhance the design and functionality of a website, they can be difficult to implement using Tailwind. In some cases, it may be necessary to wait for them to become available in Tailwind or make changes to the implementation once they are supported.
 - Native is forever: When incorporating a new framework like Tailwind into a project, it will require a learning phase. However, it's important to note that the knowledge acquired is specific to the Tailwind framework, including its class names and naming conventions, which may not be transferable to other frameworks. On the other hand, using CSS in its native form and understanding its intended use will result in a knowledge that will remain useful for a long time.
 - Bare-bones by default: What makes Tailwind different to other frameworks like Bootstrap etc is that you will need to create basic components like footers and headers from scratch, unless you pay for [TailwindUI](https://tailwindui.com). These prebuilt components are not freely available as open source. Instead most build there own components from scratch using the Tailwind CSS classes.
+
+If this hasn't put you off using Tailwind CSS in your next project I recommend you checking out the [Learn Tailwind CSS - Course for Beginners](https://www.youtube.com/watch?v=ft30zcMlFao).
