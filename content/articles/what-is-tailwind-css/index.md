@@ -8,6 +8,7 @@ category: article
 tags:
   -
 description:
+socialBackground: bg1
 ---
 
 Tailwind CSS is a utility-first CSS framework that can provide many benefits for a web development project. It lets you style your HTML content by appending a multitude of predefined utility CSS classes to your HTML elements. For example say you were creating a Card component with a heading, description and image using ReactJS.
@@ -106,8 +107,10 @@ It's not all roses with Tailwind CSS. There are some downsides that can impact t
 - Overuse of classes: Using too many classes on a single element can make the HTML difficult to read and understand, leading to a more complex and harder to maintain codebase.
 - Customization: Tailwind CSS is highly customizable, but this can also lead to increased complexity in terms of configuration, and can make it harder to maintain the design consistency across the project.
 - Hard to remove: It can be challenging to remove Tailwind CSS once it has been implemented. This is because the embedded Tailwind classes are present throughout your HTML, component, or template files, and removing them incrementally can create conflicts with the Tailwind build system. Additionally, it may further complicate the project by requiring an additional build process for the new setup to incrementally replace styling.
-- Waiting on bleeding edge CSS features: Recent years have seen significant advancements in browser CSS capabilities, such as [Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has), and [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid). While these features can enhance the design and functionality of a website, they can be difficult to implement using Tailwind. In some cases, it may be necessary to wait for them to become available in Tailwind or make changes to the implementation once they are supported.
+- Waiting on bleeding edge CSS features: Recent years have seen significant advancements in browser CSS capabilities, such as [Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), `:has()`, and [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid). While these features can enhance the design and functionality of a website, they can be difficult to implement using Tailwind. In some cases, it may be necessary to wait for them to become available in Tailwind or make changes to the implementation once they are supported.
 - Native is forever: When incorporating a new framework like Tailwind into a project, it will require a learning phase. However, it's important to note that the knowledge acquired is specific to the Tailwind framework, including its class names and naming conventions, which may not be transferable to other frameworks. On the other hand, using CSS in its native form and understanding its intended use will result in a knowledge that will remain useful for a long time.
 - Bare-bones by default: What makes Tailwind different to other frameworks like Bootstrap etc is that you will need to create basic components like footers and headers from scratch, unless you pay for [TailwindUI](https://tailwindui.com). These prebuilt components are not freely available as open source. Instead most build there own components from scratch using the Tailwind CSS classes.
 
 If this hasn't put you off using Tailwind CSS in your next project I recommend you checking out the [Learn Tailwind CSS - Course for Beginners](https://www.youtube.com/watch?v=ft30zcMlFao).
+
+{% include "tailwindcheatsheet.liquid" %}
