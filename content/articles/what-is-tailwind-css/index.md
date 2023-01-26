@@ -111,8 +111,8 @@ It's not all roses with Tailwind CSS. There are some downsides that can impact t
 - Native is forever: When incorporating a new framework like Tailwind into a project, it will require a learning phase. However, it's important to note that the knowledge acquired is specific to the Tailwind framework, including its class names and naming conventions, which may not be transferable to other frameworks. On the other hand, using CSS in its native form and understanding its intended use will result in a knowledge that will remain useful for a long time.
 - Bare-bones by default: What makes Tailwind different to other frameworks like Bootstrap etc is that you will need to create basic components like footers and headers from scratch, unless you pay for [TailwindUI](https://tailwindui.com). These prebuilt components are not freely available as open source. Instead most build there own components from scratch using the Tailwind CSS classes.
 
-If this hasn't put you off using Tailwind CSS in your next project I recommend you checking out the [Freecodecamp Learn Tailwind CSS - Course for Beginners](https://www.youtube.com/watch?v=ft30zcMlFao).
+Tailwind can be a suitable choice for almost any team, especially those that have no strong lead in CSS. Although it has some drawbacks, it sits between Bootstrap and native CSS in terms of flexibility and appearance. It avoids the common "look and feel" of websites built with Bootstrap, while providing some rails to prevent a large messy CSS file. To get the most out of Tailwind, it is important to adhere to its recommended practices and adjust your process to it's way.
 
-Check out my Tailwind Flexbox cheat sheet below.
+If this hasn't put you off using Tailwind CSS in your next project I recommend you checking out the [Freecodecamp Learn Tailwind CSS - Course for Beginners](https://www.youtube.com/watch?v=ft30zcMlFao) and my cheat-sheet below.
 
 {% include "tailwindcheatsheet.liquid" %}
