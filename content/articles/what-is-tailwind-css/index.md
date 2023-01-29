@@ -99,7 +99,7 @@ Tailwind CSS can simplify the documentation process by providing comprehensive d
 
 ## What are the downsides of Tailwind CSS?
 
-It's not all roses with Tailwind CSS. There are some downsides that can impact the near and long term of your project.
+Although Tailwind CSS offers many benefits, there are some drawbacks that could affect both the short-term and long-term success of your project:
 
 - File size: Tailwind requires a large number of CSS classes to be added to your HTML, which can lead to longer page load times and larger file sizes if not optimized properly.
 - Learning curve: Tailwind CSS requires a different approach to writing CSS, which can take some time to learn and adjust to.
