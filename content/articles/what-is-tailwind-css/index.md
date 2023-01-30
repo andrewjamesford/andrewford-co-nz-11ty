@@ -8,7 +8,7 @@ category: article
 tags:
   - tailwindcss
   - css
-description: A introduction to what Tailwind CSS is it's pros and cons.
+description: An introduction to what Tailwind CSS is, and its pros & cons.
 socialBackground: bg2
 ---
 
