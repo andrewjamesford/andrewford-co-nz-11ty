@@ -2,7 +2,7 @@
 title: What is Tailwind CSS?
 date: "2022-11-28T08:59:49Z"
 template: post
-draft: true
+draft: false
 slug: "what-is-tailwind-css"
 category: article
 tags:
@@ -30,8 +30,8 @@ const Card = ({ heading, description, image }) => {
 
 Using standard CSS we would create classes for all the elements in our Card component like the example above. This would require us to create these individual classes in a CSS file. In this scenario there are two things that need to be done:
 
-1. Name our CSS class names. But naming can be difficult, especially when multiple team members are involved. It can lead to confusion, for example, if one person refers to a component as a "tile" and another calls it a "card."
-2. Potentially duplicate the same CSS properties multiple times throughout the CSS file e.g. `margin: 0` and `padding: 1rem`
+1. Name our CSS class names: Naming can be difficult, especially when multiple team members are involved. It can lead to confusion, for example, if one person refers to a component as a "tile" and another calls it a "card."
+2. Duplication: Repeating the same CSS properties multiple times throughout the CSS file(s) e.g. `margin: 0` and `padding: 1rem` we can end up with a mess that most developers on your team would be afraid to change for fear of regression issues.
 
 ```css
 .cardContainer {
@@ -49,7 +49,7 @@ Using standard CSS we would create classes for all the elements in our Card comp
 }
 ```
 
-Compare this to the same component but this time using CSS classes from Tailwind CSS below. Initially it's a shock to see such a mess of CSS classes for each HTML element.
+Compare this to the same component but this time using CSS classes from Tailwind CSS below. Initially it's a shock to see such a mess of CSS classes for each HTML element. But each class is easy to remember as they map to existing CSS properties, and will not be repeated in the CSS file.
 
 ```jsx
 const Card = ({ heading, description, image }) => {
