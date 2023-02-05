@@ -46,6 +46,15 @@ main.wrapper {
 a,
 a:visited {
   color: var(--link-color);
+  padding: 0.0625rem;
+}
+
+a:hover,
+a:active {
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.1rem;
 }
 
 h1,

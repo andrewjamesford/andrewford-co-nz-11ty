@@ -56,3 +56,11 @@ This shortcut is flexible in that it can be used in multiple ways. If no text is
 On macOS it's a little different. You first select the text and copy it to your clipboard. You can then invoke the shortcut by going up to the menu bar and running the shortcut from there.
 
 {% image "./content/articles/chatgpt-macos-ios-using-shortcuts/shortcuts-macOS.png", "Run a shortcut on macOS from the menu bar", "(min-width: 30em) 50vw, 100vw" %}
+
+## Alternative way to use the shortcut (macOS)
+
+{% image "./content/articles/chatgpt-macos-ios-using-shortcuts/popclip-in-action.png", "PopClip in action", "(min-width: 30em) 50vw, 100vw" %}
+
+I'm a big fan of the app [PopClip](https://pilotmoon.com/popclip/) on macOS that acts like the pop up selection menu for copy and paste on iOS. It can be used to invoke a Shortcut and I've created an [extension](https://andrewford.co.nz/assets/ChatGPTpopclipext.zip) that allows me to select some text with the mouse and then trigger the ChatGPT shortcut.
+
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/xqFsMzWzi5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
