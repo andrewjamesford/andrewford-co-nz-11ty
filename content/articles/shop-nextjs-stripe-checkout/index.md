@@ -135,15 +135,15 @@ In the `checkout_sessions.js` file we supply a `success_url` and a `canceled_url
 
 When you click on the "Buy Now" button you will be redirected to the Stripe checkout, like in the image below.
 
-![The hosted Stripe checkout](stripe-checkout.png)
+{% image "./content/articles/shop-nextjs-stripe-checkout/stripe-checkout.png", "The hosted Stripe checkout", "(min-width: 30em) 50vw, 100vw" %}
 
 If you complete the purchase, then you will be directed to the success page.
 
-![Successful order](order-success.png)
+{% image "./content/articles/shop-nextjs-stripe-checkout/order-success.png", "Successful order", "(min-width: 30em) 50vw, 100vw" %}
 
 Otherwise if you click the left arrow / back you will be redirected to the cancel page.
 
-![Canceled order](canceled-order.png)
+{% image "./content/articles/shop-nextjs-stripe-checkout/canceled-order.png", "Canceled order", "(min-width: 30em) 50vw, 100vw" %}
 
 We have now completed the display of products and have the checkout page working correctly. Well done. 👏
 

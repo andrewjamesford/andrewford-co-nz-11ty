@@ -1,0 +1,58 @@
+---
+title: Make ChatGPT easy to use on macOS and iOS using Shortcuts
+date: "2023-02-04T14:23:11Z"
+template: post
+draft: true
+slug: "chatgpt-macos-ios-using-shortcuts"
+category: article
+tags:
+  - chatgpt
+  - macos
+  - ios
+  - shortcuts
+description: A tutorial on making it easy to use ChatGPT on macOS and iOS using shortcuts.
+---
+
+## What is ChatGPT?
+
+[ChatGPT](https://chat.openai.com/chat) is an open-source chatbot that uses GPT-3 (Generative Pre-trained Transformer) to generate natural language responses based on the user's input. In the tech community, there is a lot of excitement for where Machine Learning tools like it can be used next.
+
+## What could I use ChatGPT for?
+
+ChatGPT can be used for a variety of purposes, including creating conversational chatbots and virtual assistants, automated customer service bots, natural language processing tasks such as sentiment analysis or text summarization, and more.
+
+You could use it to rewrite a paragraph that your not happy with in a document, move past your writers block or use it like a personal assistant to write an email reply. The number of uses get larger by the day, as people figure out novel ways to incorporate it into their lives.
+
+While you can use it directly from the website (via copying and pasting) or through plugins for tools like [Obsidian](http://obsidian.md) with the [Ava plugin](obsidian://show-plugin?id=ava). I wanted to be able to use it from any application on both macOS or iOS, so I put together a way to use the ChatGPT API via an [Apple Shortcut](https://support.apple.com/en-nz/guide/shortcuts/welcome/ios).
+
+## What are Apple Shortcuts?
+
+Apple Shortcuts is a powerful automation app for iPhone, iPad and Mac that allows users to create automated workflows. It can be used to automate tasks such as sending messages, navigating maps, controlling music playback, opening apps and more. With Apple Shortcuts, users can save time by automating repetitive tasks so they can focus on the things that matter most.
+
+## Creating a "shortcut" using the ChatGPT API
+
+{% image "./content/articles/chatgpt-macos-ios-using-shortcuts/openai-create-new-key.png", "How to create an OpenAI key", "(min-width: 30em) 50vw, 100vw" %}
+
+To be able to use the Shortcut I've created you will need to first create an account with [OpenAI](https://beta.openai.com/signup). Head to their sign up page, fill in your details then got to the [View API Keys page](https://platform.openai.com/account/api-keys). Follow the instructions above.
+
+{% image "./content/articles/chatgpt-macos-ios-using-shortcuts/openai-api-key-generated.png", "Generate OpenAI key", "(min-width: 30em) 50vw, 100vw" %}
+
+You then need to create an API key to use with our Shortcut, click on the "+ Create new secret key" button. Copy the new key by clicking the green button.
+
+Either on macOS or on iOS [click this link to my shortcut](https://www.icloud.com/shortcuts/376d66df029f4a74b2e2098fd0253cd1) and "Add Shortcut".
+
+Open up the shortcut (right click and Edit on macOS) to edit. Paste the key into the Text section of the shortcut shown in the image below and close the shortcut.
+
+{% image "./content/articles/chatgpt-macos-ios-using-shortcuts/add-key-shortcut.png", "Add key to shortcut", "(min-width: 30em) 50vw, 100vw" %}
+
+For personal use they credited $18 until May for me when I created an account. I've barely run up any credit so far. Under $0.10, in fact it's very cheap.
+
+## How to use it?
+
+This shortcut is flexible in that it can be used in multiple ways. If no text is selected it will take the contents of the clipboard. Otherwise you can select text in iOS and then use the Share icon like in the video below.
+
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/LdzR17IGpQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+On macOS it's a little different. You first select the text and copy it to your clipboard. You can then invoke the shortcut by going up to the menu bar and running the shortcut from there.
+
+{% image "./content/articles/chatgpt-macos-ios-using-shortcuts/shortcuts-macOS.png", "Run a shortcut on macOS from the menu bar", "(min-width: 30em) 50vw, 100vw" %}

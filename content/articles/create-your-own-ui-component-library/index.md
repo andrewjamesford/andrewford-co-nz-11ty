@@ -56,10 +56,15 @@ We are now going to copy the `button.css`, `Button.stories.tsx` and `Button.tsx`
 [Create React App](https://create-react-app.dev), [NextJS](https://nextjs.org) etc support [CSS Modules](https://css-tricks.com/css-modules-part-1-need/) by default. CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Let's change this button component CSS file to `button.module.css`.
 Open `Button.tsx` and replace the reference to the `button.css` file with the following:
 
+From this:
+
 ```ts
-// From this
 import "./button.css";
-// To this
+```
+
+To this:
+
+```ts
 import styles from "./button.module.css";
 ```
 
@@ -79,10 +84,7 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  // The mode will be used to show either the primary
-  // or secondary button styles
   const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
-  // The size class will be used to select the correct CSS class
   let sizeClass = styles.buttonMedium;
   if (size === "small") {
     sizeClass = styles.buttonSmall;
@@ -114,4 +116,6 @@ I've also added another example for [headings](https://github.com/andrewjamesfor
 
 Now keep creating more components for your own UI library piece by piece. You can test and check your components in Storybook independent of the web app, configuring all sorts of different property combinations.
 
-If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library). For more guides on how to use Storybook to create your own UI Component library check out the [tutorial section](https://storybook.js.org/tutorials/) at storybook.js.org.
+If you would like to view the source code for my example it's available on [GitHub](https://github.com/andrewjamesford/react-ts-component-library).
+
+For more guides on how to use Storybook to create your own UI Component library check out the [tutorial section](https://storybook.js.org/tutorials/) at the storybook website.
