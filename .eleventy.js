@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pageAssetsPlugin = require("eleventy-plugin-page-assets");
+// const pageAssetsPlugin = require("eleventy-plugin-page-assets");
 // const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
@@ -64,10 +64,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
 
-  eleventyConfig.addPlugin(pageAssetsPlugin, {
-    mode: "parse",
-    postsMatching: "content/**/*.md",
-  });
+  // eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //   mode: "parse",
+  //   postsMatching: "content/**/*.md",
+  // });
 
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
