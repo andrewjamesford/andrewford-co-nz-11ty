@@ -2,7 +2,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pageAssetsPlugin = require("eleventy-plugin-page-assets");
 // const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginResoc = require("@resoc/eleventy-plugin-social-image");
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
@@ -38,10 +37,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(pluginResoc, {
-    templatesDir: "resoc-templates",
-    patchNetlifyToml: true,
-  });
 
   eleventyConfig.addCollection("articles", (collection) =>
     collection
@@ -85,4 +80,7 @@ module.exports = function (eleventyConfig) {
   //     hostname: "https://andrewford.co.nz",
   //   },
   // });
+
+  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
+  eleventyConfig.addPlugin(UpgradeHelper);
 };

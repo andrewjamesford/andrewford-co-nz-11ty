@@ -7,10 +7,11 @@
     "start": "npx @11ty/eleventy --serve",
     "dev": "netlify dev",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh",
-    "clear": "rm -rf _site",
-    "social": "npx itdk view resoc-templates/default/resoc.manifest.json"
+    "clear": "rm -rf _site"
   },
   "repository": {
     "type": "git",
@@ -25,20 +26,20 @@
   "bugs": {
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy-upgrade-help": "2.0.5",
     "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "@resoc/eleventy-plugin-social-image": "^0.0.4",
-    "@resoc/netlify-plugin-social-image": "^0.0.9",
+    "@11ty/eleventy-plugin-rss": "1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "eleventy-plugin-page-assets": "^0.3.0",
     "node-fetch": "^3.3.0",
-    "prettier": "2.5.0"
-  },
-  "dependencies": {
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
+    "prettier": "2.5.0",
     "clean-css": "^5.3.1"
-  }
+  },
+  "dependencies": {}
 }
