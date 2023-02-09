@@ -35,10 +35,10 @@
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
+    "@netlify/plugin-lighthouse": "^4.0.7",
+    "clean-css": "^5.3.1",
     "eleventy-plugin-page-assets": "^0.3.0",
     "node-fetch": "^3.3.0",
-    "prettier": "2.5.0",
-    "clean-css": "^5.3.1"
-  },
-  "dependencies": {}
+    "prettier": "2.5.0"
+  }
 }
