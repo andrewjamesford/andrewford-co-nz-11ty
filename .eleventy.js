@@ -2,7 +2,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pageAssetsPlugin = require("eleventy-plugin-page-assets");
 // const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const CleanCSS = require("clean-css");
@@ -33,7 +32,6 @@ const imageShortcode = async (
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -80,7 +78,4 @@ module.exports = function (eleventyConfig) {
   //     hostname: "https://andrewford.co.nz",
   //   },
   // });
-
-  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-  eleventyConfig.addPlugin(UpgradeHelper);
 };
