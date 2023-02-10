@@ -4,4 +4,4 @@
 /tags/\* /
 /2021/02/07/new-year-new-blog-generator /2021/02/07/new-year-new-blog-11ty
 /.well-known/webfinger https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz
-/@andrew https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz
+/@andrew https://mastodon.nz/@andrewford
