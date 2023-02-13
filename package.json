@@ -27,7 +27,7 @@
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=19.6"
   },
   "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
   "devDependencies": {
