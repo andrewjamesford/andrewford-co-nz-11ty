@@ -57,6 +57,11 @@ a:active {
   border-radius: 0.1rem;
 }
 
+a.no-hover:hover,
+a.no-hover:active {
+  background-color: transparent;
+}
+
 h1,
 h2,
 h3,
