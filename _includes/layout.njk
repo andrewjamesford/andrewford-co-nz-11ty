@@ -25,16 +25,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{{ description }}" />
   <link rel="alternate" type="application/rss+xml" title="Blog by Andrew Ford" href="/feed.xml" />
+
   <meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}" />
+  <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ description or metadata.description }}" />
-  <meta property="og:image" content="https://andrewford.co.nz/images/andrew-avatar.png" />
+  <meta property="og:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp" />
   <meta property="og:url" content="https://andrewford.co.nz{{ page.url }}">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="andrewford.co.nz">
   <meta property="twitter:url" content="https://andrewford.co.nz{{ page.url }}">
   <meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
   <meta name="twitter:description" content="{{ description or metadata.description }}">
-  <meta name="twitter:image" content="https://andrewford.co.nz/images/andrew-avatar.png">
+  <meta name="twitter:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp">
+
   <link rel="modulepreload" href="{{ '/scripts/script.js' }}?1" />
   <script src="{{ '/scripts/script.js' }}?1" type="module"></script>
   <link rel="webmention" href="https://webmention.io/andrewford.co.nz/webmention" />
