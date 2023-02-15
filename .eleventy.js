@@ -57,6 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("apple-touch-icon*.png");
+  eleventyConfig.addPassthroughCopy("apple-touch-icon*.webp");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("favicon-16x16.png");
   eleventyConfig.addPassthroughCopy("favicon-32x32.png");
