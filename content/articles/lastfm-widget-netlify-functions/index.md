@@ -26,11 +26,11 @@ Currently, it's showing a track by [Foals](https://www.last.fm/music/Foals) and 
 
 ### Create a LastFM API key
 
-We're now gonna generate a last FM API key. So here to the [last FM API website](https://www.last.fm/api/account/create). I'm gonna add that into the comments.
+We're now gonna generate the last FM API key. So here to the [last FM API website](https://www.last.fm/api/account/create). I'm gonna add that to the comments.
 
-To generate a new API key, And once that's done, give your application a name, maybe like website widget demo. Fill in all the details. We won't be needing the call back URL. And after hitting submit, it will create your account and display an API key.
+To generate a new API key, once that's done, give your application a name, maybe like a website widget demo. Fill in all the details. We won't be needing the call-back URL. And after hitting submit, it will create your account and display an API key.
 
-### Create an ENV file.
+### Create an ENV file
 
 We're going to start by creating an ENV file. I see why I've already created one already, `.env`. You can see that. And I have added the Last FM API key. And I'm going to copy that key into that position there.
 
@@ -48,7 +48,7 @@ To be able to make a fetch request, I'm going to add the [Node fetch package](ht
 npm install -D node-fetch@3
 ```
 
-Once we have that setup, we can create a JavaScript function to make the get request return the result. I've made my function an imported node fetch, and then made a handler function for my get request. I then pulled in my API key from the environment file that we created, and then you can see here we have a feature quest for the API key added as a string literal. I then created a last track object and retrieved the appropriate details from the JSON data requested and finally returned the result. You can see I have my last FM username in the string for the URL that we're calling. You will need to replace that with your own username.
+Once we have that setup, we can create a JavaScript function to make the get request return the result. I've made my function an imported node fetch, and then made a handler function for my get request. I then pulled in my API key from the environment file that we created, and then you can see here we have a request with the API key added as a string literal. I then created a last track object and retrieved the appropriate details from the JSON data requested and finally returned the result. You can see I have my Last FM username in the string for the URL that we're calling. You will need to replace that with your own username.
 
 ```javascript
 import fetch from "node-fetch";
@@ -116,7 +116,7 @@ const loadData = async () => {
 loadData();
 ```
 
-You can see in my layout here I have the basic structure of the widget with display none to hide it until the content has been loaded. Each of the IDs are targeted in the JavaScript with document to get element by ID, or for style being set to display grid once loaded.
+You can see in my layout here I have the basic structure of the widget with display none to hide it until the content has been loaded. Each of the IDs is targeted in the JavaScript with `document.getElementByID`, or for style being set to display grid once loaded.
 
 ```html
 <div id="lastFM" class="lastfm-widget" style="display:none">
@@ -178,6 +178,6 @@ Install the CLI tool globally by copying this command into your terminal from th
 
 ### Run Local
 
-Run Netlify Dev from the command line and this will start a local server that you can run your serverless function locally. It starts up the local serverless function dev server and then it calls the NPM start command to start the 11ty Dev server. Check out the link in the notes below and you can see how to deploy your function.
+Run Netlify Dev from the command line and this will start a local server where you can run your serverless function locally. It starts up the local serverless function dev server and then it calls the NPM `start` command to start the 11ty Dev server. Check out the link in the notes below and you can see how to deploy your function.
 
 [Netlify CLI functions](https://cli.netlify.com/commands/functions) documentation.
