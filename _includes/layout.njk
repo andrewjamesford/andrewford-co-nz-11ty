@@ -29,7 +29,11 @@
   <meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ description or metadata.description }}" />
+  {% if ogimage %}
+  <meta property="og:image" content="{{ (page.url + ogimage) }}" />
+  {% else %}
   <meta property="og:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp" />
+  {% endif %}
   <meta property="og:url" content="https://andrewford.co.nz{{ page.url }}">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -37,8 +41,11 @@
   <meta property="twitter:url" content="https://andrewford.co.nz{{ page.url }}">
   <meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
   <meta name="twitter:description" content="{{ description or metadata.description }}">
-  <meta name="twitter:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp">
-
+  {% if ogimage %}
+  <meta name="twitter:image" content="{{ (page.url + ogimage) }}">
+  {% else %}
+  <meta property="twitter:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp" />
+  {% endif %}
   <link rel="modulepreload" href="{{ '/scripts/script.js' }}?1" />
   <script src="{{ '/scripts/script.js' }}?1" type="module"></script>
   <link rel="webmention" href="https://webmention.io/andrewford.co.nz/webmention" />
