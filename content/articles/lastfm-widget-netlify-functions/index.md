@@ -14,9 +14,9 @@ tags:
 description: Here is the latest transcript of my guide on how to make a LastFM widget using Netlify functions to show the latest track played on your website.
 ---
 
-<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/okbDFf-eIqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 Here is the transcript from my [latest how-to guide](https://www.youtube.com/embed/okbDFf-eIqk) on how to make a [LastFM widget](https://www.last.fm) for your own website showing your last played song that uses [Netlify functions](https://www.netlify.com/products/functions/).
+
+<iframe class="video" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/okbDFf-eIqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
