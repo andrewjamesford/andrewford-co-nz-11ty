@@ -30,7 +30,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ description or metadata.description }}" />
   {% if ogimage %}
-  <meta property="og:image" content="{{ (page.url + ogimage) }}" />
+  <meta property="og:image" content="https://andrewford.co.nz/images/{{ ogimage }}" />
   {% else %}
   <meta property="og:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp" />
   {% endif %}
@@ -42,7 +42,7 @@
   <meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
   <meta name="twitter:description" content="{{ description or metadata.description }}">
   {% if ogimage %}
-  <meta name="twitter:image" content="{{ (page.url + ogimage) }}">
+  <meta name="twitter:image" content="https://andrewford.co.nz/images/{{ ogimage }}">
   {% else %}
   <meta property="twitter:image" content="https://andrewford.co.nz/images/andrew-opengraph.webp" />
   {% endif %}
