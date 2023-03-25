@@ -12,7 +12,6 @@ tags:
   - classroom
   - remote learning
 description: Recent advancements in collaborative software tools have made it easier for remote learners to participate in coding solutions together.
-ogimage:
 ---
 
 When teaching software development it's great to have class participation. What better way for learners to learn by taking turns to code up a solution. In a in-person classroom this could be done by simply having class members swap seats to switch who is using the keyboard and mouse of who is coding.
