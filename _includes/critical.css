@@ -46,7 +46,9 @@ main.wrapper {
 }
 
 a,
-a:visited {
+a:visited,
+a:hover,
+a:active {
   color: var(--link-color);
   padding: 0.0625rem;
 }
