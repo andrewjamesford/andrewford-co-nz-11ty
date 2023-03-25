@@ -1,6 +1,6 @@
 ---
 title: Collaboration when Learning Software Development
-date: "2023-03-25T18:12:29Z"
+date: "2023-03-24T18:12:29Z"
 template: post
 draft: false
 slug: "collaboration-when-learning-software-development"
@@ -32,7 +32,6 @@ While it may get the code sharing running up quickly it's only downside is to ru
 
 Another option that allows screen sharing with nothing but a link and a browser is [Replit](https://replit.com/). It's an entire IDE ([Integrated Development Environment](https://en.wikipedia.org/wiki/Integrated_development_environment)) in your browser.
 
-![[replit-python.png]]
 {% image "./content/articles/collaboration-when-learning-software-development/replit-python.png", "Replit with Python ", "(min-width: 30em) 50vw, 100vw" %}
 
 The best part is you can have multiple people collaborate, run tests, use the terminal all while previewing the resulting code results in a browser (with a console). It's great for getting started quickly as it has a whole suite of templates for all sorts of projects including NodeJS, Python, Java, Ruby, Go, C# and HTML/CSS. No stress about setting up the development environment, just select the appropriate template, run and share the link with your class.
