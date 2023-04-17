@@ -56,11 +56,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("_redirects");
-  eleventyConfig.addPassthroughCopy("apple-touch-icon*.png");
-  eleventyConfig.addPassthroughCopy("apple-touch-icon*.webp");
+  eleventyConfig.addPassthroughCopy("apple-*.png");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("favicon-16x16.png");
-  eleventyConfig.addPassthroughCopy("favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("favicon-*.png");
+  eleventyConfig.addPassthroughCopy("android-*.png");
+  eleventyConfig.addPassthroughCopy("ms-icon-*.png");
+  eleventyConfig.addPassthroughCopy("manifest.json");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
 
   eleventyConfig.addPlugin(pluginRss);
