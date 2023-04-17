@@ -206,6 +206,10 @@ pre {
 }
 
 @media screen and (min-width: 48rem) {
+  .logo {
+    width: 7rem;
+    height: 7rem;
+  }
   table {
     display: table;
   }
