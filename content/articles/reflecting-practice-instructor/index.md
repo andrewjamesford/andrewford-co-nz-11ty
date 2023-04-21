@@ -2,7 +2,7 @@
 title: Reflecting on my practice as an Instructor
 date: "2023-04-11T12:43:40Z"
 template: post
-draft: true
+draft: false
 slug: "reflecting-practice-instructor"
 category: article
 tags:
