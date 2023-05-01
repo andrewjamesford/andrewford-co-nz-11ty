@@ -28,7 +28,7 @@
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
   },
   "engines": {
-    "node": ">=19.6"
+    "node": ">=18"
   },
   "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
   "devDependencies": {
@@ -38,7 +38,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "clean-css": "^5.3.1",
     "node-fetch": "^3.3.0",
-    "prettier": "2.5.0",
-    "sharp": "^0.32.1"
+    "prettier": "2.5.0"
   }
 }
