@@ -5,6 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const CleanCSS = require("clean-css");
+const markdownIt = require("markdown-it");
 const imageShortcode = async (
   src,
   alt,
@@ -33,6 +34,35 @@ const imageShortcode = async (
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
+
+  // Create our custom markdown-it instance.
+  let md = markdownIt({
+    html: true,
+    linkify: true,
+  }).use(require("markdown-it-footnote"));
+
+  // Create custom footnote block rule
+  md.renderer.rules.footnote_block_open = () => (
+    '<hr />\n' +
+    '<h4 class="footnotes-title">References</h4>\n' +
+    '<section class="footnotes">\n' +
+    '<ol class="footnotes-list">\n'
+  );
+
+  // Replacement render_footnote_caption with no [] around the number
+  const render_footnote_caption = (tokens, idx) => {
+    var n = Number(tokens[idx].meta.id + 1).toString();
+    if (tokens[idx].meta.subId > 0) {
+      n += ':' + tokens[idx].meta.subId;
+    }
+    return n;
+  }
+  
+  // Replace existing function with one with no []
+  md.renderer.rules.footnote_caption = (tokens, idx) => render_footnote_caption(tokens, idx)
+
+  // Overwrite the built-in Markdown library with our custom instance.
+  eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPlugin(syntaxHighlight);
 

@@ -204,6 +204,14 @@ pre {
   width: 100%;
   border-radius: 0.3rem;
 }
+.footnotes,
+.footnote-ref {
+  font-size: 0.8rem;
+}
+.footnote-ref a,
+.footnote-backref {
+  text-decoration: none;
+}
 
 @media screen and (min-width: 48rem) {
   .logo {
@@ -265,9 +273,7 @@ pre {
   .series {
     color: var(--bg-color-dark);
   }
-  .lastfm-widget {
-    border-top: 1px solid var(--body-color-dark-secondary);
-  }
+
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

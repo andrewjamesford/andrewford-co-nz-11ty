@@ -65,7 +65,7 @@ a.no-hover:active {
 }
 
 hr {
-  border-bottom: 0;
+  border: 0;
   border-top: 1px solid var(--body-color);
   margin: 2rem 0;
 }
@@ -81,6 +81,9 @@ h6 {
 
 article :is(h2, h3, h4, h5, h6) {
   margin-top: 3rem;
+}
+h4:is(.footnotes-title) {
+  margin-top: 0;
 }
 
 h1 {
@@ -119,9 +122,6 @@ h2 {
   height: 4rem;
 }
 .avatar {
-  /* width: 7rem;
-  height: 7rem;
-  min-height: 7rem; */
   display: block;
   margin: 0 auto;
   text-decoration: none;
@@ -171,7 +171,6 @@ article ul {
 }
 .lastfm-widget {
   padding-top: 1.5rem;
-  border-top: 1px solid var(--body-color-secondary);
   font-size: 0.9rem;
   line-height: 1.2;
   display: grid;
