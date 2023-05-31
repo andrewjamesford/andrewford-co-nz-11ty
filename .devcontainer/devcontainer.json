@@ -16,7 +16,12 @@
 				"csstools.postcss",
 				"dawhite.mustache",
 				"ms-vscode-remote.remote-containers",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"streetsidesoftware.code-spell-checker",
+				"dbaeumer.vscode-eslint",
+				"Orta.vscode-jest",
+				"eamodio.gitlens",
+				"GitHub.copilot"
 			]
 		}
 	},
