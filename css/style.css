@@ -47,6 +47,23 @@ article picture {
   width: 100%;
   display: block;
 }
+@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+  .article p:first-of-type::first-letter {
+    initial-letter: 3;
+    -webkit-initial-letter: 3;
+    padding-right: 0.8rem;
+    font-family: var(--font-serif);
+  }
+  .article-list p:first-of-type::first-letter,
+  .footnotes p:first-of-type::first-letter{
+    initial-letter: 1;
+    -webkit-initial-letter: 1;
+    padding-right: 0.1rem;
+    font-family: var(--font-sans);
+
+  }
+}
+
 .text-center {
   text-align: center;
 }
