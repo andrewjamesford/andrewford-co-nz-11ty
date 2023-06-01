@@ -4,5 +4,6 @@
     "webp"
   ],
   "liquid.format.enable": false,
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
+  "cSpell.language": "en,en-GB"
 }

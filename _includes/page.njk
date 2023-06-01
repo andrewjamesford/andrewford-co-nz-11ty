@@ -1,0 +1,7 @@
+{% extends "layout.njk" %}
+
+{% block article %}
+<h1 class="page-heading">{{ heading or title  }}</h1>
+
+<div class="page">{{ content | safe }}</div>
+{% endblock %}

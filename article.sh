@@ -17,6 +17,5 @@ category: article
 tags:
 - 
 description: 
-ogimage: 
 --- 
 " >> $FILE
