@@ -135,11 +135,11 @@ h2 {
   padding-top: 1rem;
   text-align: center;
   padding-bottom: 1rem;
-  /* min-height: 11rem; */
 }
 .site-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
+  font-family: var(--font-serif);
 }
 .site-description {
   font-size: 0.9rem;
