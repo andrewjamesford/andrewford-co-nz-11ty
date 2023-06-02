@@ -228,6 +228,14 @@ pre {
 .footnote-backref {
   text-decoration: none;
 }
+.figure {
+  margin: 0;
+}
+.figure-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+}
 
 @media screen and (min-width: 48rem) {
   .logo {

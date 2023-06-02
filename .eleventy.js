@@ -29,7 +29,35 @@ const imageShortcode = async (
     decoding: "async",
   };
 
+  
   return Image.generateHTML(imageMetadata, imageAttributes);
+};
+
+const figureShortCode = async (
+  src,
+  alt,
+  className = undefined,
+  widths = [400, 800, 1000],
+  formats = ["webp", "jpeg"],
+  sizes = "100vw"
+) => {
+  const imageMetadata = await Image(src, {
+    widths: [...widths, null],
+    formats: [...formats, null],
+    outputDir: "_site/assets/images",
+    urlPath: "/assets/images",
+  });
+
+  const imageAttributes = {
+    class: "image",
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+  const img = Image.generateHTML(imageMetadata, imageAttributes);
+  
+  return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
 };
 
 module.exports = function (eleventyConfig) {
@@ -79,6 +107,7 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addShortcode("image", imageShortcode);
+  eleventyConfig.addShortcode("figure", figureShortCode);
 
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("scripts");
