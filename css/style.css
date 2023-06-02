@@ -235,6 +235,7 @@ pre {
   text-align: center;
   font-size: 0.8rem;
   font-style: italic;
+  color: var(--body-color-secondary);
 }
 
 @media screen and (min-width: 48rem) {
