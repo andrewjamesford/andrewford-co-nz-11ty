@@ -28,7 +28,7 @@ One of these ways is to incorporate ChatGPT as another tool for our students to 
 
 To ensure new and existing learners can take advantage of this incredible technology, we are planning on creating a supplementary course in our learner management system that will cover the following items (Fraiwan et al., 2023)[^1]:
 
-- Personalised learning experiences: Tools like ChatGPT can provide personalised learning experiences by suggesting learning resources, addressing student inquiries and offering feedback .
+- Personalised learning experiences: Tools like ChatGPT can help by suggesting learning resources, addressing student inquiries and offering feedback .
 - Code Generation: Like in the previous example above, ChatGPT can help solve coding problems or provide guidance on how to approach a programming problem. The learner can describe a problem in words and/or code snippets to help solve an issue.
 - Debugging: Assist in identifying errors and suggesting fixes.
 
