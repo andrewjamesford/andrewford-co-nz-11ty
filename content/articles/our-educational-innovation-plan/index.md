@@ -1,24 +1,24 @@
 ---
 title: Our Educational Innovation Plan
-date: '2023-06-01T08:09:00Z'
+date: "2023-06-01T08:09:00Z"
 template: post
 draft: true
-slug: 'our-educational-innovation-plan'
+slug: "our-educational-innovation-plan"
 category: article
 tags:
-- chatgpt
-- copilot
-- codespaces
-- education
-- innovation
-- machine learning
+  - chatgpt
+  - copilot
+  - codespaces
+  - education
+  - innovation
+  - machine learning
 description: The educational innovation plan focuses on leveraging technology to enhance remote education practices. The plan emphasizes the integration of tools like ChatGPT, GitHub Copilot, and GitHub Codespaces to support personalized learning experiences, code generation, debugging, and collaborative learning. Additionally, the plan aims to incorporate environmentally sustainable software practices into the curriculum to reduce energy consumption and promote green hosting options. By implementing these strategies, Developers Institute aims to provide a cutting-edge and environmentally conscious learning environment for its students.
-ogimage: 
---- 
+ogimage:
+---
 
-How do you innovate in education with technology when the school you teach at is already a remote school underpinned by technology and couldn't operate without it? Every class meeting is online, with the likes of [Zoom](https://zoom.us) or [Google Meet](https://meet.google.com). Communication between staff and students is via [Slack](https://slack.com) instant messaging and channels. Course exercises, projects and learning materials are all delivered via our web-based LMS (Learner Management System) [iQualify](https://www.iqualify.com) (in the form of videos, tutorials, exercises and quizzes).
+How do you innovate in education with technology when the school you teach at is already a remote school underpinned by technology and couldn't operate without it? Every class meeting is online, with the likes of [Zoom](https://zoom.us) or [Google Meet](https://meet.google.com). Communication between staff and students is via [Slack](https://slack.com) instant messaging. Course exercises, projects and learning materials are all delivered via our web-based LMS (Learner Management System) [iQualify](https://www.iqualify.com) (in the form of videos, tutorials, exercises and quizzes).
 
-You lean into technology is how. Every week new tools are released that you can incorporate into your education practices. We have seen the most significant growth in Machine Learning technology with the increase in the ability of Large Language Models at an almost frightening pace. Since late last year, we have seen huge jumps in the capability of generative AI art models to produce fantastic images from simple text prompts. We have seen all the GPT (Generative pre-trained transformer) tools like [ChatGPT](https://openai.com/product/chatgpt), for example, that given short text prompts can produce answers for simple facts to writing history essays. What’s even more exciting is the adoption of the technology companies adding these capabilities to products we already use and love. AI answers have now been incorporated into searches on [Bing](https://www.bing.com/new) and [Google](https://www.google.co.nz), so your answers are provided directly in the search engine itself. Adobe has added generative image creation into Photoshop to create extraordinary images with text prompts. [Canva](https://www.canva.com) can produce multiple templates on the fly from a user uploading an image and some colour prompts.
+You lean into technology is how. Every week new tools are released that you can incorporate into your education practices. We have seen the most significant growth in Machine Learning technology with the increase in the ability of Large Language Models at an almost frightening pace. Since late last year, we have seen huge jumps in the capability of generative AI art models to produce fantastic images from simple text prompts. We have seen all the GPT (Generative pre-trained transformer) tools like [ChatGPT](https://openai.com/product/chatgpt), for example, that given short text prompts can produce answers for simple facts to writing history essays. What’s even more exciting is the adoption of the technology companies adding these capabilities to products we already use and love. AI answers have now been incorporated into searches on [Bing](https://www.bing.com/new) and [Google](https://www.google.co.nz), so your answers are provided directly in the search engine itself. [Adobe](https://www.adobe.com) has added generative image creation into Photoshop to create extraordinary images with text prompts. [Canva](https://www.canva.com) can produce multiple templates on the fly from a user uploading an image and some colour prompts.
 
 We have benefitted significantly at [Developers Institute](https://www.developers.ac.nz) by integrating digital learning into our practices. What was once an in-person school in Whangarei teaching Software Development in a class environment. We now teach students from all over the motu in Aotearoa to even some overseas online by embracing digital technology in our teaching practices. But there are still more tools we can embrace to benefit the learners.
 
@@ -45,7 +45,7 @@ The benefits that most developers find when using Copilot are the following:
 
 We plan to integrate Copilot with the previously mentioned course with ChatGPT. Again adding screencasts and tutorials on how to make the most of it. This course will be called "Enhancing Development with AI", which we plan to be 2-3 weeks of content and can be completed after our first program in the student's software development journey as a supplementary self-paced online course. That way, existing students and new learners alike can up-skill.
 
-Another great tool that enables collaborative learning between students and teaching staff is [GitHub Codespaces](https://github.com/features/codespaces). It is a cloud-based development environment. It allows you to code as if using Visual Studio Code, in a browser (or your local copy of VS Code). There is no need to set up a local environment to install Node.js or Python (or whatever language you require) and necessary dependencies etc. 
+Another great tool that enables collaborative learning between students and teaching staff is [GitHub Codespaces](https://github.com/features/codespaces). It is a cloud-based development environment. It allows you to code as if using Visual Studio Code, in a browser (or your local copy of VS Code). There is no need to set up a local environment to install Node.js or Python (or whatever language you require) and necessary dependencies etc.
 
 {% figure "./content/articles/our-educational-innovation-plan/vscode-codespaces.png", "Visual Studio Code using Codespaces", "(min-width: 30em) 50vw, 100vw" %}
 
@@ -57,7 +57,7 @@ Some of the benefits of Codespaces are the following (Malan, 2022)[^5]:
 
 In the short term, we plan to migrate our existing exercises and projects to use "dev containers" config files to take advantage of Codespaces, whether locally or in the cloud. With many exercises to convert, it will take some time to complete.
 
-Finally, we want to embed environmentally sustainable software practises into our course. We want to minimise the impact of software systems on our environment by reducing energy consumption and using green energy, reducing carbon emissions. 
+Finally, we want to embed environmentally sustainable software practises into our course. We want to minimise the impact of software systems on our environment by reducing energy consumption and using green energy, reducing carbon emissions.
 
 There are several ways to do this:
 
@@ -69,20 +69,10 @@ The reduced cost benefit is an easy sell to employers, and if each graduate can 
 
 In conclusion, as a remote school heavily relying on technology, it's important to continue innovating in education to enhance the student's learning experience. We need to educate students in tools like ChatGPT and GitHub Copilot to assist and support them when practising to become software developers. Allowing them to develop and apply collaborative teaching and learning more accessible to the staff and other learners by easily sharing their current issue(s)/bug without frustration and hassle using Codespaces. We need them to go into the industry with a good grasp of environmental sustainability concerning software development to help with impending climate change. Incorporating these tools into our teaching will sustain Developers Institute at the forefront of digital and collaborative learning.
 
-
 [^1]: Mohammad Fraiwan, Natheer Khasawneh (2023). A Review of ChatGPT Applications in Education, Marketing, Software Engineering, and Healthcare: Benefits, Drawbacks, and Research Directions. https://arxiv.org/abs/2305.00237
-
 [^2]: Agarwal, A., Wong-Fannjiang, C., Sussillo, D., Lee, K., & Firat, O. (2018). Hallucinations in Neural Machine Translation. https://openreview.net/pdf?id=SkxJ-309FQ
-
 [^3]: Sida Peng, Eirini Kalliamvakou, Peter Cihon, Mert Demirer. (2023). The Impact of AI on Developer Productivity: Evidence from GitHub Copilot. https://arxiv.org/abs/2302.06590
-
-[^4]: Wermelinger, Michel. (2023). Using GitHub Copilot to Solve Simple Programming Problems. https://doi.org/10.1145/3545945.3569830  
-
+[^4]: Wermelinger, Michel. (2023). Using GitHub Copilot to Solve Simple Programming Problems. https://doi.org/10.1145/3545945.3569830
 [^5]: David J. Malan. (2022). Standardizing Students’ Programming Environments with Docker Containers. https://cs.harvard.edu/malan/publications/iticse22.pdf
-
 [^6]: NZX (2023, May 25). CEN signs 10-year renewable energy agreement with Microsoft NZX. https://www.nzx.com/announcements/412004
-
 [^7]: Abhishek D S, Anusha V, Bheemappa, Chaitra B R, Mallesha Holeyache, Vijaykumar, Dr. Sheela S V. (2021). Green Software. https://www.ijres.org/papers/Volume-9/Issue-8/Series-8/C09081219.pdf
-
-
-
