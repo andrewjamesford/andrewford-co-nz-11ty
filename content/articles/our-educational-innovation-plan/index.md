@@ -56,7 +56,7 @@ Some of the benefits of Codespaces are the following (Malan, 2022)[^5]:
 - Rapid onboarding and sharing: Students and staff can quickly set up and start working on a shared project or exercise in a class without the hassle of setting up a local development environment. The Codespaces can be configured with all tools and dependencies near instantly.
 - Collaboration and code review: It's common to support our learners by needing to run their exercise or project to help them debug. We must find their Git repository, clone it locally to our local development environment (computer), and install all the dependencies to provide support. With Codespaces, we can quickly deploy in the cloud and share the same code in seconds.
 
-In the long term, we plan to migrate our existing exercises and projects to use [development containers](https://containers.dev) config files to take advantage of Codespaces, whether locally or in the cloud. With many exercises to convert, it will take some time to complete.
+In the long term, we plan to migrate our existing exercises and projects to use [development containers](https://containers.dev) config files to take advantage of Codespaces, locally or in the cloud. With many exercises to convert, it will take some time to complete.
 
 Finally, we want to embed environmentally sustainable software practises into our course. We want to minimise the impact of software systems on our environment by reducing energy consumption and using green energy, reducing carbon emissions.
 
@@ -66,7 +66,7 @@ There are several ways to do this:
 - Energy efficiency and optimisation: Teach energy-efficient programming practices and techniques where resources are minimised, and we attempt to reduce unnecessary compute time. Thus reducing the energy consumption of servers (Abhishek et al., 2021)[^7].
 - Promote reduced cost: By optimising efficiency, the software can require smaller servers to reduce the cost of hosting. The reduced cost benefit is an easy sell to employers.
 
-If each graduate can help make environmentally sustainable efforts for software development in New Zealand more common, we can get a little closer to our carbon reduction goals of 2050, and hopefully impact climate change.
+If each graduate can help make environmentally sustainable efforts for software development in New Zealand more common, we can get a little closer to our reduction of greenhouse gas emissions goals of 2030, and reduce the impact of climate change.
 
 In conclusion, as a remote school heavily relying on technology, it's important to continue innovating in education to enhance the student's learning experience. We need to educate students in tools like ChatGPT and GitHub Copilot to assist and support them when practising to become software developers. Allowing collaboration and learning to be more accessible to staff and learners by easily sharing their current issue(s)/bug without frustration and hassle using Codespaces. We need them to go into the industry with a good grasp of environmental sustainability concerning software development to help with impending climate change. Incorporating these tools and knowledge into our teaching practices will ensure Developers Institute is at the forefront of digital and collaborative learning.
 
