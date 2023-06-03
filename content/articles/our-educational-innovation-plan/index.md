@@ -66,7 +66,7 @@ There are several ways to do this:
 - Energy efficiency and optimisation: Teach energy-efficient programming practices and techniques where resources are minimised, and we attempt to reduce unnecessary compute time. Thus reducing the energy consumption of servers (Abhishek et al., 2021)[^7].
 - Promote reduced cost: By optimising efficiency, the software can require smaller servers to reduce the cost of hosting. The reduced cost benefit is an easy sell to employers.
 
-If each graduate can help make environmentally sustainable efforts for software development in New Zealand more common, we can get a little closer to our reduction of greenhouse gas emissions goals of 2030, and reduce the impact of climate change.
+If each graduate can help make environmentally sustainable efforts for software development in Aotearoa more common, we can get a little closer to our reduction of greenhouse gas emissions goals of 2030, and reduce the impact of climate change.
 
 In conclusion, as a remote school heavily relying on technology, it's important to continue innovating in education to enhance the student's learning experience. We need to educate students in tools like ChatGPT and GitHub Copilot to assist and support them when practising to become software developers. Allowing collaboration and learning to be more accessible to staff and learners by easily sharing their current issue(s) without frustration and hassle using Codespaces. We need them to go into the industry with a good grasp of environmental sustainability concerning software development to help with impending climate change. Incorporating these tools and knowledge into our teaching practices will ensure Developers Institute is at the forefront of digital and collaborative learning.
 
