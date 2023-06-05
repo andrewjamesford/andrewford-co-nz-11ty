@@ -187,3 +187,16 @@ article ul {
   font-size: 0.7rem;
   margin-bottom: 0.2rem;
 }
+a.lastfm-icon {
+  color: var(--body-color);
+}
+a.lastfm-icon svg {
+  fill: var(--body-color);
+}
+a.lastfm-icon:hover {
+  color: var(--link-color);
+  background-color: transparent;
+}
+a.lastfm-icon:hover svg{
+  fill: var(--link-color);
+}
