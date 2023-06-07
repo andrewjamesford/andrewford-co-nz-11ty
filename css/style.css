@@ -298,6 +298,9 @@ pre {
   .series {
     color: var(--bg-color-dark);
   }
+  a.lastfm-icon svg {
+    fill: var(--body-color-dark);
+  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
