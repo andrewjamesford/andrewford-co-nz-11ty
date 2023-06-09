@@ -14,7 +14,6 @@ tags:
   - machine learning
   - environmental sustainability
 description: The educational innovation plan focuses on leveraging technology to enhance remote education practices. The plan emphasizes the integration of tools like ChatGPT, GitHub Copilot, and GitHub Codespaces to support personalized learning experiences, code generation, debugging, and collaborative learning. Additionally, the plan aims to incorporate environmentally sustainable software practices into the curriculum to reduce energy consumption and promote green hosting options. By implementing these strategies, Developers Institute aims to provide a cutting-edge and environmentally conscious learning environment for its students.
-ogimage:
 ---
 
 How do you innovate in education when the school you teach at is already a remote school underpinned by technology and couldn't operate without it? Every class meeting is online, with the likes of [Zoom](https://zoom.us) or [Google Meet](https://meet.google.com). Communication between staff and students is via [Slack](https://slack.com) instant messaging. Course exercises, projects and learning materials are all delivered via our web-based LMS (Learner Management System) [iQualify](https://www.iqualify.com) (in the form of videos, tutorials, exercises and quizzes).
