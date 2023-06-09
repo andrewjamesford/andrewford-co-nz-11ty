@@ -15,3 +15,8 @@
   from = "/.well-known/webfinger"
   to = "https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; css-src 'self' *.cloudfront.net;"
