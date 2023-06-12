@@ -15,11 +15,11 @@ description: A tutorial on making it easy to use ChatGPT on macOS and iOS using 
 
 ## What is ChatGPT?
 
-[ChatGPT](https://chat.openai.com/chat) is an open-source chatbot that uses GPT-3 (Generative Pre-trained Transformer) to generate natural language responses based on the user's input. In the tech community, there is a lot of excitement for where Machine Learning tools like it can be used next.
+ChatGPT is an open-source chatbot that uses GPT-3 (Generative Pre-trained Transformer) to generate natural language responses based on the user's input. In the tech community, there is a lot of excitement for where Machine Learning tools like it can be used next.
 
 ## What could I use ChatGPT for?
 
-ChatGPT can be used for a variety of purposes, including creating conversational chatbots and virtual assistants, automated customer service bots, natural language processing tasks such as sentiment analysis or text summarization, and more.
+[ChatGPT](https://chat.openai.com/chat) can be used for a variety of purposes, including creating conversational chatbots and virtual assistants, automated customer service bots, natural language processing tasks such as sentiment analysis or text summarization, and more.
 
 You could use it to rewrite a paragraph that your not happy with in a document, move past your writers block or use it like a personal assistant to write an email reply. The number of uses get larger by the day, as people figure out novel ways to incorporate it into their lives.
 

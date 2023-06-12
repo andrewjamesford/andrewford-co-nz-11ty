@@ -1,6 +1,11 @@
 # Redirects from what the browser requests to what we serve
 
 /rss.xml /feed.xml
+/comments/feed /feed.xml
+/author/andrewf /about/
+/react-js-conf-2016-highlights-day-1/ /2016/02/23/react-js-conf-2016-highlights-day-1/
+/newsletter/ /
+/2018/05/11/Brotherhood-of-ad-blockers /2018/05/11/brotherhood-of-ad-blockers/
 /tags/\* /
 /2021/02/07/new-year-new-blog-generator /2021/02/07/new-year-new-blog-11ty
 /.well-known/webfinger https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz

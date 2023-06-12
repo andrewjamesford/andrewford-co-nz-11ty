@@ -15,9 +15,13 @@ socialBackground: bg2
 
 If you hadn't figured out already (see my other [blog entry](https://andrewford.co.nz/articles/tailwind-theming-by-config/)) I'm quite a fan of [Tailwind](https://tailwindcss.com/) the utility CSS framework. While I think their documentation is great, I'm a fan of visual cheatsheets. With a heavy emphasis on the visual. Finding no one else had made what I wanted I fired up [Figma](https://figma.com) and got to work.
 
-![Sneak peak of the cheatsheet](Tailwind-cheatsheet-screenshot.jpg)
+{% image "./content/articles/tailwind-flexbox-cheatsheet/Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet", "(min-width: 30em) 50vw, 100vw" %}
 
 Hope you like it! Any suggestions [let me know](mailto:me@andrewford.co.nz).
+
+## Update 12 June 2023
+
+I've added it's brother to Gumroad [Tailwind Grid Cheatsheet](https://andrewford.gumroad.com/l/tailwindgridcheatsheet) get the set.
 
 ## Update 21 May 2022
 

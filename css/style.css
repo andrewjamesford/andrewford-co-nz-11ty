@@ -47,15 +47,18 @@ article picture {
   width: 100%;
   display: block;
 }
-@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
-  .article p:first-of-type::first-letter {
+@supports (initial-letter: 3) {
+  .article > p:first-of-type::first-letter, 
+  .article > p:first-of-type:first-letter {
     initial-letter: 3;
     -webkit-initial-letter: 3;
     margin-right: 0.8em;
     font-family: var(--font-serif);
   }
-  .article-list p:first-of-type::first-letter,
-  .footnotes p:first-of-type::first-letter {
+   
+
+  .article-list > p:first-of-type::first-letter,
+  .article-list > p:first-of-type:first-letter {
     initial-letter: 1;
     -webkit-initial-letter: 1;
     font-family: var(--font-sans);
