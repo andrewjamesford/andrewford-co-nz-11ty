@@ -9,7 +9,7 @@ tags:
   - teaching
   - instructor
   - reflection
-description: A reflection on my practice as an instructor teaching Software Development at Developers Institute
+description: A reflection on my practice as an instructor teaching Software Development at Developers Institute.
 ---
 
 As a software developer of twenty-plus years, changing my career focus to teaching software development has been a radical change. While I have lots of experience in software development, I only have limited teaching experience. This was previously gained on the job mentoring junior developers in the workplace. Of course, being relatively new to teaching, there is much room for personal improvement, especially on the learning theory side. But even though this time frame has been short, my teaching practices have constantly evolved through trial and error. Improved from advice from the rest of the teaching team and, most recently, from taking the [DCTL](https://academyex.com/courses/micro-credential/digital-and-collaborative-teaching-and-learning-micro-credential) course.
