@@ -1,0 +1,4 @@
+Sitemap: https://andrewford.co.nz/sitemap.xml
+
+User-agent: *
+Disallow:

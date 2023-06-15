@@ -122,6 +122,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("ms-icon-*.png");
   eleventyConfig.addPassthroughCopy("manifest.json");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
+  eleventyConfig.addPassthroughCopy("*.txt");
 
   eleventyConfig.addPlugin(pluginRss);
 
