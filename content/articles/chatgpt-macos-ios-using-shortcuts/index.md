@@ -31,6 +31,10 @@ Apple Shortcuts is a powerful automation app for iPhone, iPad and Mac that allow
 
 ## Creating a "shortcut" using the ChatGPT API
 
+**🚨 Update 🚨**
+
+**Since I wrote this Open AI have released an iOS app with a shortcut action [see how it works here](https://andrewford.co.nz/articles/chatgpt-shortcut-on-ios).**
+
 {% image "./content/articles/chatgpt-macos-ios-using-shortcuts/openai-create-new-key.png", "How to create an OpenAI key", "(min-width: 30em) 50vw, 100vw" %}
 
 To be able to use the Shortcut I've created you will need to first create an account with [OpenAI](https://beta.openai.com/signup). Head to their sign up page, fill in your details then got to the [View API Keys page](https://platform.openai.com/account/api-keys). Follow the instructions above.

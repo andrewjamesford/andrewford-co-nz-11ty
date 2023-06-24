@@ -122,6 +122,8 @@ h2 {
 .logo {
   width: 4rem;
   height: 4rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
 }
 .avatar {
   display: block;
