@@ -16,7 +16,7 @@ socialBackground: bg5
 
 {% include "seriesstripenextjs.liquid" %}
 
-<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/-3rN4US4xzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/-3rN4US4xzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org). You may have built a website before using the likes of [Create React App](https://create-react-app.dev) which will get you the bare bones together to start building. But it doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages? What CSS in JS library? Should I use Tailwind? Will my website have good [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)? Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a _library_.
 

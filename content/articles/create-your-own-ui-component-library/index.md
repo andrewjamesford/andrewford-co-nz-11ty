@@ -13,7 +13,7 @@ description: A guide to getting started creating your own UI Component library w
 socialBackground: bg7
 ---
 
-<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 
