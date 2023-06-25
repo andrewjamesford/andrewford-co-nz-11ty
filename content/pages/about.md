@@ -3,6 +3,7 @@ title: "About Me"
 template: page
 slug: "about/"
 socialImage: ""
+description: "I’m an experienced full stack developer with over 20 years of experience. I’ve worked on a wide range of projects, from small sites for local businesses to large sites for corporations. I’m currently the Head of Teaching at Developer’s Institute, where I mentor the teaching team and enhance the learning experience for students."
 ---
 
 I'm an experienced full stack developer working professionally in the web industry since the year 2000. Having worked on small sites for local business to large sites for corporations including Sony, Panasonic, Comvita, Zespri, Trust Power, Farmlands, Lion Nathan, Destination Great Lake Taupo, Craigs Investment Partners and Fisher & Paykel Healthcare to name but a few. These sites exposed me to a wide range of CMS systems from bespoke solutions, to Wordpress, Umbraco and Sitecore.
@@ -15,4 +16,4 @@ Recently I was a Tech Lead / Instructor at [Developers Institute](https://www.de
 
 I am currently the Head of Teaching at [Developer's Institute](https://www.developers.ac.nz), where my role involves mentoring the teaching team and enhancing the learning experience for students. I am responsible for implementing assessments and ensuring the curriculum is delivered at a high standard.
 
-My latest CV is available [here](https://andrewford.co.nz/assets/CV-AndrewFord-June-2023.pdf).
+My latest [CV is available here](https://andrewford.co.nz/assets/CV-AndrewFord-June-2023.pdf).

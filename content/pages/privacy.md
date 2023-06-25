@@ -3,6 +3,7 @@ title: "Privacy"
 template: "page"
 slug: "privacy/"
 socialImage: ""
+description: "Privacy Policy for Andrew Ford"
 ---
 
 ## TLDR;
