@@ -21,7 +21,7 @@ Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/
 ### How to use it
 
 1. Install the [ChatGPT app](https://apps.apple.com/us/app/chatgpt/id6448311069) from the App Store
-2. Install my ChatGPT shortcut from [here](https://www.icloud.com/shortcuts/34ad5973ed41401bab872a407e324da1) and click the "Get Shortcut" button
+2. Install my [ChatGPT shortcut from here](https://www.icloud.com/shortcuts/34ad5973ed41401bab872a407e324da1) and click the "Get Shortcut" button
 3. Make sure you have signed in to the ChatGPT app (if not open it now and login)
 4. From the share sheet on an article on Safari scroll the page down to you come across the share action "ChatGPT" and tap it
 5. The shortcut will open a prompt asking "What would you like ChatGPT to do?" 
