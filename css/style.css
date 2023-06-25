@@ -242,9 +242,27 @@ pre {
 }
 
 @media screen and (min-width: 48rem) {
-  .logo {
-    width: 7rem;
-    height: 7rem;    
+  .avatar-wrapper{
+    display: grid;
+    grid-template-columns: min-content 2fr;
+    gap: 1rem;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 90ch;
+    margin: 2rem auto 2rem auto;
+  }
+  .header-titles {
+    text-align: left;
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .main {
+    padding-top: 2rem;
   }
   table {
     display: table;
@@ -276,6 +294,9 @@ pre {
   }
   .news-box {
     padding: 3rem;
+  }
+  .lastfm-widget {
+    max-width: 80%;
   }
 }
 
