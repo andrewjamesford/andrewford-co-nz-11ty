@@ -1,6 +1,4 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-// const pageAssetsPlugin = require("eleventy-plugin-page-assets");
-// const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
@@ -29,7 +27,7 @@ const imageShortcode = async (
     decoding: "async",
   };
 
-  
+
   return Image.generateHTML(imageMetadata, imageAttributes);
 };
 
@@ -56,7 +54,7 @@ const figureShortCode = async (
     decoding: "async",
   };
   const img = Image.generateHTML(imageMetadata, imageAttributes);
-  
+
   return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
 };
 
@@ -85,7 +83,7 @@ module.exports = function (eleventyConfig) {
     }
     return n;
   }
-  
+
   // Replace existing function with one with no []
   md.renderer.rules.footnote_caption = (tokens, idx) => render_footnote_caption(tokens, idx)
 
@@ -126,18 +124,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
 
-  // eleventyConfig.addPlugin(pageAssetsPlugin, {
-  //   mode: "parse",
-  //   postsMatching: "content/**/*.md",
-  // });
-
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
 
-  // eleventyConfig.addPlugin(sitemap, {
-  //   sitemap: {
-  //     hostname: "https://andrewford.co.nz",
-  //   },
-  // });
 };
