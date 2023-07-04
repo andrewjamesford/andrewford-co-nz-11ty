@@ -93,7 +93,7 @@ exports.handler = async function (event, context) {
 
 ### Fetch Data
 
-We've now have a way to retrieve a data from Last FM in a secure way, protecting our API key. I've created a JavaScript file to run after the page has loaded. This is going to grab the data from our serverless function and append it to the page.
+We now have a way to retrieve our data from Last FM in a secure way, protecting our API key. I've created a JavaScript file to run after the page has loaded. This is going to grab the data from our serverless function and append it to the page.
 
 ```javascript
 const loadData = async () => {
