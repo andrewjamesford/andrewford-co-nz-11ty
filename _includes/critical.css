@@ -113,6 +113,7 @@ h2 {
   margin-top: 0;
   width: 100%;
   margin-bottom: 0;
+  text-wrap: balance;
 }
 .article-description {
   margin-top: 0;
