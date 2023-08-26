@@ -9,8 +9,8 @@ This is my personal blog built with [11ty](https://www.11ty.dev/). It features a
 To get started with this project, you'll need to clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/{YOUR_GITHUB_USERNAME}/my-11ty-blog.git
-cd my-11ty-blog
+git clone https://github.com/andrewjamesford/andrewford-co-nz-11ty
+cd andrewford-co-nz-11ty
 npm install
 ```
 
