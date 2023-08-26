@@ -12,7 +12,7 @@
     "build": "npx @11ty/eleventy",
     "article": "bash article.sh",
     "clear": "rm -rf _site",
-    "perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view"
+    "perfbudget": "lighthouse http://localhost:8080 --budget-path=./budget.json --view"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "blog"
   ],
   "author": "Andrew Ford",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
   },
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",

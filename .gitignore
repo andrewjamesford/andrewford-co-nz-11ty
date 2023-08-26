@@ -112,3 +112,7 @@ resoc-image-data.json
 
 # Local Netlify folder
 .netlify
+
+# Generated lighthouse reports
+chromewebdata_*
+localhost_*

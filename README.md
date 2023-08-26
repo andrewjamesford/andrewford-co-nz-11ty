@@ -17,7 +17,7 @@ npm install
 Once you've installed the dependencies, you can run the development server:
 
 ```bash
-npm run serve
+npm run start
 ```
 
 This will start a local development server at http://localhost:8080/ where you can preview your blog.
