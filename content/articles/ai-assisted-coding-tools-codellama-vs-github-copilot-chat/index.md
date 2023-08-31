@@ -14,6 +14,8 @@ tags:
 description: Explore the strengths of CodeLlama's offline assistance and GitHub Copilot's Chat in this AI-assisted coding tool comparison.
 ---
 
+{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/code-llama.png", "a llama in front of a computer with code on the screen, digital art / DALL-E", "(min-width: 30em) 50vw, 100vw" %}
+
 Wouldn't it be great to run a local Large Language Model on your own computer to help you code? Even when your internet is out/flaky or your on mobile data. Best of all it's free and using an Open Source extension and LLM.
 
 You can do this today thanks to Meta and their LLM CodeLlama. This article will walk through what you need to set this up on your own computer. I also do some very subjective testing.
