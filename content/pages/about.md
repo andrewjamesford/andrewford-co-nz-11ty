@@ -16,4 +16,4 @@ Recently I was a Tech Lead / Instructor at [Developers Institute](https://www.de
 
 I am currently the Head of Teaching at [Developer's Institute](https://www.developers.ac.nz), where my role involves mentoring the teaching team and enhancing the learning experience for students. I am responsible for implementing assessments and ensuring the curriculum is delivered at a high standard.
 
-My latest [CV is available here](https://andrewford.co.nz/assets/CV-AndrewFord-June-2023.pdf).
+My latest [CV is available here](https://andrewford.co.nz/assets/CV-AndrewFord-Aug-2023.pdf).
