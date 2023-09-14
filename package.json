@@ -40,7 +40,6 @@
     "lighthouse": "^10.2.0",
     "markdown-it-footnote": "^3.0.3",
     "node-fetch": "^3.3.0",
-    "prettier": "2.5.0",
-    "sharp": "^0.32.1"
+    "prettier": "2.5.0"
   }
 }
