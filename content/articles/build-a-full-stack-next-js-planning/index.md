@@ -6,7 +6,12 @@ draft: true
 slug: 'build-a-full-stack-next-js-planning'
 category: article
 tags:
-- 
+- nextjs
+- fullstack
+- react
+- planning
 description: 
 --- 
 
+
+[Wireframes](https://excalidraw.com/#json=almP8vw8UnTN7cR6Zk6Xf,aIx7EgfHxXwpKKnv6k3IbQ)
