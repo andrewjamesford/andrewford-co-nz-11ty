@@ -12,7 +12,6 @@ exports.handler = async function (event, context) {
                 method: "GET",
             }
             );
-            console.log(response);
             const data = await response.json();
             const lastUploadData = data.items;
             
