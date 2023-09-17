@@ -2,7 +2,7 @@
 title: Build a Full-Stack web app with Next.js - Part 1 Planning
 date: '2023-09-14T20:08:44Z'
 template: post
-draft: true
+draft: false
 slug: 'build-a-full-stack-next-js-planning'
 category: article
 tags:
@@ -10,7 +10,7 @@ tags:
 - fullstack
 - react
 - planning
-description: 
+description: This is a transcript of my stream that went through the initial planning stages of a Next.js project, starting with brainstorming ideas on a virtual whiteboard. Wireframes were then created in Excalidraw to visualize pages like home, sign up, course listings, and course details. Key requirements around authentication, data storage, roles and permissions were mapped out. Superbase was selected to provide authentication via LinkedIn/Google login as well as for it being a Postgres database. Next.js was chosen for its React framework and Radix UI was selected for accessible, customizable UI components to speed up development.
 --- 
 
 The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
