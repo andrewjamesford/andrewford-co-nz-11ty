@@ -7,14 +7,14 @@ exports.handler = async function (event, context) {
         const channelId = process.env.YOUTUBE_CHANNEL_ID;
 
         const response = await fetch(
-            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&key=${apiKey}`,
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`,
             {
                 method: "GET",
             }
             );
             console.log(response);
             const data = await response.json();
-            const lastUploadData = data;
+            const lastUploadData = data.items;
             
         return {
             statusCode: 200,
