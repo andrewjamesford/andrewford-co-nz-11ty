@@ -1,6 +1,6 @@
 ---
 title: Build a Full-Stack web app with Next.js - Part 1 Planning
-date: '2023-09-14T20:08:44Z'
+date: '2023-09-17T03:11:44Z'
 template: post
 draft: false
 slug: 'build-a-full-stack-next-js-planning'
