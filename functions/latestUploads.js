@@ -1,0 +1,30 @@
+import fetch from "node-fetch";
+
+exports.handler = async function (event, context) {
+    try {
+
+        const apiKey = process.env.YOUTUBE_API_KEY;
+        const channelId = process.env.YOUTUBE_CHANNEL_ID;
+
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&key=${apiKey}`,
+            {
+                method: "GET",
+            }
+            );
+            console.log(response);
+            const data = await response.json();
+            const lastUploadData = data;
+            
+        return {
+            statusCode: 200,
+            body: JSON.stringify(lastUploadData),
+        };
+    }
+    catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error_description: error.message }),
+        };
+    }
+};
