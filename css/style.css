@@ -159,28 +159,34 @@ pre {
 .news-box .form-button {
   margin-bottom: 0;
 }
-.product {
+.promotion {
   background-color: var(--box-bg-color);
   border-radius: 0.5rem;
   margin: 2rem 0;
   border: 1px solid #33333308;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.product-img {
+.promotion-logo {
+  margin-left: 1rem;
+}
+.promotion-img {
   width: 100%;
 }
-.product-title {
+.promotion-title {
   font-size: 1.2rem;
   padding: 1rem 1rem 0.5rem 1rem;
   font-weight: bold;
 }
-.product-body {
+.promotion-body {
   padding: 0 1rem;
   margin-top: 0;
   color: #000;
 }
-.product-cta,
-.product-cta:visited,
-.product-cta:active {
+.promotion-cta,
+.promotion-cta:visited,
+.promotion-cta:active {
   margin: 0 1rem 1rem 1rem;
   color: white;
   display: inline-block;

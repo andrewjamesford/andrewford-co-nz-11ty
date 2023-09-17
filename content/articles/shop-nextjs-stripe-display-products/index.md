@@ -160,7 +160,7 @@ We also need to create a CSS module for the product component, create a new file
   background-color: #fff;
   color: var(--primary-color);
 }
-.products {
+.promotion {
   display: grid;
   grid-template-columns: 1fr;
   list-style: none;
@@ -168,13 +168,13 @@ We also need to create a CSS module for the product component, create a new file
   padding: 0;
 }
 @media screen and (min-width: 50rem) {
-  .products {
+  .promotion {
     /* 2 columns */
     grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (min-width: 70rem) {
-  .products {
+  .promotion {
     /* 3 columns */
     grid-template-columns: 1fr 1fr 1fr;
   }

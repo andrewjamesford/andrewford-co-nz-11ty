@@ -1160,3 +1160,5 @@ If you think of anything that you would like me to go over, I would be happy to 
 I have a little time on my hand, so let's make the most of it.
 
 Catch you all later.
+
+{% include "youtubesubscribe.liquid" %}

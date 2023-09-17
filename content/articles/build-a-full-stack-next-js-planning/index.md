@@ -1238,3 +1238,5 @@ Nope, awesome.
 Alright, have an awesome day and I'll see you next time.
 
 Bye.
+
+{% include "youtubesubscribe.liquid" %}
