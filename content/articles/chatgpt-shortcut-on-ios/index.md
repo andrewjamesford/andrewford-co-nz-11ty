@@ -30,7 +30,7 @@ Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/
 8. The shortcut automatically copies the answer to your clipboard so you can paste it into another app
 
 
-{% figure "./content/articles/chatgpt-shortcut-on-ios/chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article" %}
 
 ### How it works
 

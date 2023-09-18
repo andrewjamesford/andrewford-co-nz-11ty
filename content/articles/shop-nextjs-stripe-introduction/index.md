@@ -45,7 +45,7 @@ Your **pages** folder will have a **api** folder and two files `_app.js` and `in
 
 Open the project in a [browser](http://localhost:3000) and you should see something like this
 
-{% image "./content/articles/shop-nextjs-stripe-introduction/nextjs-start.png", "Next.JS Starter", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./content/articles/shop-nextjs-stripe-introduction/nextjs-start.png", "Next.JS Starter" %}
 
 Great the project is up and running in development mode 🙌
 
@@ -396,7 +396,7 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 }
 ```
 
-{% image "./content/articles/shop-nextjs-stripe-introduction/shop-header-footer-chrome.png", "Progress so far of the header and footer", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./content/articles/shop-nextjs-stripe-introduction/shop-header-footer-chrome.png", "Progress so far of the header and footer" %}
 
 Alright that's quite a bit we've done here, congrats if you got this far 👍. We have the shell of the shop. Next up we need to set up Stripe to store our product info, product images and prices.
 

@@ -14,7 +14,7 @@ tags:
 description: Explore the strengths of CodeLlama's offline assistance and GitHub Copilot's Chat in this AI-assisted coding tool comparison.
 ---
 
-{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/code-llama.png", "a llama in front of a computer with code on the screen, digital art / DALL-E", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./code-llama.png", "a llama in front of a computer with code on the screen, digital art / DALL-E" %}
 
 Wouldn't it be great to run a local Large Language Model on your own computer to help you code? Even when your internet is out/flaky or your on mobile data. Best of all it's free and using an Open Source extension and LLM.
 
@@ -38,7 +38,7 @@ You can do this today thanks to Meta and their LLM CodeLlama. This article will 
 
 Make sure you have Ollama running. You should have a cute little llama sitting in your menu bar, when it's running.
 
-{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/ollama-menu-bar.png", "The Ollama menu bar icon", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./ollama-menu-bar.png", "The Ollama menu bar icon" %}
 
 We first of all need to locally install the CodeLlama model. To do this open your terminal and input the following:
 
@@ -48,7 +48,7 @@ ollama pull codellama
 
 This will start the download process to pull down the CodeLlama model. You should see it start pulling dow the files. Be warned it's a 3.8 GB download, so may take some time.
 
-{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal" %}
 
 We then need to configure Continue to use CodeLlama. To do this we need to open the config file for Continue.
 
@@ -80,7 +80,7 @@ Save the file and close Visual Studio Code and reopen it again.
 
 On the left hand sidebar you hopefully have noticed a icon that has the letter C and D. Click on that will open the prompt.
 
-{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/continue-query-answer.png", "The Continue extension user interface in VS Code", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./continue-query-answer.png", "The Continue extension user interface in VS Code" %}
 
 If everything worked correctly you can now start asking questions to CodeLlama.
 
@@ -177,7 +177,7 @@ Again another classic coding challenge question.
 
 With GC I got off to a very rocky start. Upon entering my question I got this result _"Oops, your response got filtered. Vote down if you think this shouldn't have happened."_. 
 
-{% figure "./content/articles/ai-assisted-coding-tools-codellama-vs-github-copilot-chat/github-copilot-filtered.png", "GitHub Copilot filtering a response", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response" %}
 
 I ended up having to change my question to the following for GC to get an answer, I'm not sure why it triggered the filter:
 

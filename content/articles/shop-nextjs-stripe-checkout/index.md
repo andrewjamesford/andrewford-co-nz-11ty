@@ -15,7 +15,7 @@ description: Concluding with the Next.js & Stripe online shop we now will add th
 socialBackground: bg5
 ---
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}
 
 <iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/-jCI2bKrud4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -135,15 +135,15 @@ In the `checkout_sessions.js` file we supply a `success_url` and a `canceled_url
 
 When you click on the "Buy Now" button you will be redirected to the Stripe checkout, like in the image below.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/stripe-checkout.png", "The hosted Stripe checkout", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./stripe-checkout.png", "The hosted Stripe checkout" %}
 
 If you complete the purchase, then you will be directed to the success page.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/order-success.png", "Successful order", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./order-success.png", "Successful order" %}
 
 Otherwise if you click the left arrow / back you will be redirected to the cancel page.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/canceled-order.png", "Canceled order", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./canceled-order.png", "Canceled order" %}
 
 We have now completed the display of products and have the checkout page working correctly. Well done. 👏
 
@@ -151,4 +151,4 @@ You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop
 
 For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}

@@ -22,7 +22,7 @@ To view the Wireframes I created in the stream, please see the following link:
 
 <iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-{% figure "./content/articles/build-a-full-stack-next-js-planning/whiteboard.png", "The Whiteboard from the Stream", "(min-width: 30em) 50vw, 100vw" %}
+{% figure "./whiteboard.png", "The Whiteboard from the Stream" %}
 
 
 ---
@@ -1239,4 +1239,4 @@ Alright, have an awesome day and I'll see you next time.
 
 Bye.
 
-{% include "youtubesubscribe.liquid" %}
+{% include "promos/youtubesubscribe.njk" %}
