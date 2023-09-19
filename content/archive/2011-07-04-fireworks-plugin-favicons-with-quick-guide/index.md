@@ -4,8 +4,10 @@ date: "2011-07-04T22:25:58+00:00"
 template: post
 draft: false
 slug: "/2011/07/04/fireworks-plugin-favicons-with-quick-guide/"
-category: "article"
+category: article
 tags:
+    - Fireworks
+    - Favicon
 description: "Found a great fireworks plugin to create a favicon"
 ---
 

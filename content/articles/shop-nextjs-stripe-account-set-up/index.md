@@ -52,7 +52,7 @@ Add some details for your product, add a price and upload an image. Make sure to
 
 Now repeat until you have finished creating all the new products you wish to create. You should end up with a product list similar to this.
 
-{% image "./stripe-products-list.png", "List of products on Stripe %}
+{% image "./stripe-products-list.png", "List of products on Stripe" %}
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
 

@@ -4,7 +4,7 @@ date: "2011-07-29T20:41:38+00:00"
 template: post
 draft: false
 slug: "/2011/07/29/css3-toolset/"
-category: "article"
+category: article
 tags:
   - CSS3
   - Tools

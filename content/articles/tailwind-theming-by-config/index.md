@@ -10,7 +10,6 @@ tags:
   - environment variables
   - branding
 description: Using tailwind css and environment variables to reuse code for multiple brands on the same codebase.
-socialBackground: bg1
 ---
 
 A common approach to building web apps in large organisations are theming them for multiple brands. The app will function in the same way but look different for each corresponding theme with alternate fonts, colours and logo etc. This can be a big headache, and you can be left maintaining multiple copies of the same code base. In an ideal world we don't want to do that.
@@ -33,10 +32,10 @@ In the [example](https://github.com/andrewjamesford/tailwind-theming-by-config-e
 
 First off lets look at the final results. In the screenshots below you can see two identically styled designs of 3 cards. The top one has the **alpha** theme with a background color of **<span style="border-bottom: 3px solid azure;">azure</span>** the bottom **gamma** with a background colour of **<span style="border-bottom: 3px solid ghostwhite">ghostwhite</span>**.
 
-{% image "./content/articles/tailwind-theming-by-config/cards-alpha.png", "Alpha Cards" %}
+{% image "./cards-alpha.png", "Alpha Cards" %}
 _The alpha theme is set_
 
-{% image "./content/articles/tailwind-theming-by-config/cards-gamma.png", "Gamma Cards" %}
+{% image "./cards-gamma.png", "Gamma Cards" %}
 _The gamma theme is set_
 
 Same code base, the only difference between each to get the different results is that an environment variable is different between the two. In this case while developing I have a _.env_ file that looks like this:
@@ -153,4 +152,4 @@ Tailwind CSS is a powerful CSS utility framework and extending it via plugins fo
 
 I know I have. That's why I created a Tailwind Flexbox Cheatsheet to quickly visually see what classes to use to nail your layout in your own web project.
 
-{% include "tailwindcheatsheet.liquid" %}
+{% include "promos/tailwindcheatsheet.njk" %}

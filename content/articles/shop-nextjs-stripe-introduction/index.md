@@ -14,7 +14,7 @@ description: Introducing a new series on how to build a shop using Next.js and S
 socialBackground: bg5
 ---
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}
 
 <iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/-3rN4US4xzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -45,7 +45,7 @@ Your **pages** folder will have a **api** folder and two files `_app.js` and `in
 
 Open the project in a [browser](http://localhost:3000) and you should see something like this
 
-{% image "./content/articles/shop-nextjs-stripe-introduction/nextjs-start.png", "Next.JS Starter" %}
+{% image "./nextjs-start.png", "Next.JS Starter" %}
 
 Great the project is up and running in development mode 🙌
 
@@ -396,10 +396,10 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 }
 ```
 
-{% image "./content/articles/shop-nextjs-stripe-introduction/shop-header-footer-chrome.png", "Progress so far of the header and footer" %}
+{% image "./shop-header-footer-chrome.png", "Progress so far of the header and footer" %}
 
 Alright that's quite a bit we've done here, congrats if you got this far 👍. We have the shell of the shop. Next up we need to set up Stripe to store our product info, product images and prices.
 
 Please subscribe to get notified of the next installment in this series.
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}

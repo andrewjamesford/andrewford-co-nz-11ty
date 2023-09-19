@@ -116,4 +116,4 @@ Tailwind can be a suitable choice for almost any team, especially those that hav
 
 If this hasn't put you off using Tailwind CSS in your next project I recommend you checking out the [Freecodecamp Learn Tailwind CSS - Course for Beginners](https://www.youtube.com/watch?v=ft30zcMlFao) and my cheat-sheet below.
 
-{% include "tailwindcheatsheet.liquid" %}
+{% include "promos/tailwindcheatsheet.njk" %}
