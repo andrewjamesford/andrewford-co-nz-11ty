@@ -1,5 +1,5 @@
 {
-  "layout": "layouts/archive.njk",
+  "layout": "layouts/post.njk",
   "tags": "[archive]",
   "permalink": "{{slug}}/index.html"
 }
