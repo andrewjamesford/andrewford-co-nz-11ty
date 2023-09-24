@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
+{% set postsCount = collections.article | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
@@ -19,10 +19,21 @@ numberOfLatestPostsToShow: 3
 {% endif %}
 
 {# List every content page in the project #}
-{#
+{# 
 <ul>
 	{%- for entry in collections.all %}
 	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
 	{%- endfor %}
+</ul> #}
+
+<ul>
+{%- for article in collections.articles %}
+{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- if article.data.draft == false -%}
+  <li>
+    {{ article.data.title }}
+    
+  </li>
+  {%- endif -%}
+{%- endfor %}
 </ul>
-#}

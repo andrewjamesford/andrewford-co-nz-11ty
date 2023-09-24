@@ -14,17 +14,20 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
-<h2>Article</h2>
+<h2>-Archives</h2>
 {{ content | safe }}
 
+
 <ul>
-{%- for article in collections.articles %}
-{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  {%- if article.data.draft == false -%}
+{%- for archiveItem in collections.archive %}
+{% set absolutePostUrl %}{{ archiveItem.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- if archiveItem.data.draft == false -%}
   <li>
-    {{ article.data.title }}
+    {{ archiveItem.data.title }}
     
   </li>
   {%- endif -%}
 {%- endfor %}
 </ul>
+
+

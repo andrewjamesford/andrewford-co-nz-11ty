@@ -91,6 +91,18 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addCollection("articles", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/articles/"))
+  );
+
+  eleventyConfig.addCollection("archive", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/archive/"))
+  );
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
