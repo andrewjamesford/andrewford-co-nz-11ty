@@ -22,16 +22,22 @@
 		#}
 
 		{#- Add an arbitrary string to the bundle #}
-		{%- css %}* { box-sizing: border-box; }{% endcss %}
+		{# {%- css %}* { box-sizing: border-box; }{% endcss %} #}
 		{#- Add the contents of a file to the bundle #}
-		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+		{%- css %}{% include "public/css/critical.css" %}{% endcss %}
+		{# {%- css %}{% include "public/css/index.css" %}{% endcss %} #}
 		{#- Or add from node_modules #}
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
-		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}		
+		
+		<link rel="preload" href="{{ '/css/style.css' }}?6" as="style" />
+  		<link rel="stylesheet" href="{{ '/css/style.css' }}?6" />
+		<link rel="preload" href="{{ '/css/prism-dracula.css' }}?1" as="style">
+  		<link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}?1" />
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>

@@ -1,7 +1,7 @@
 ---
 layout: layouts/article.njk
 title: "Articles"
-slug: "article/"
+slug: "articles/"
 ---
 
 Hello I'm an index for article

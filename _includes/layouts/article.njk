@@ -6,14 +6,6 @@ layout: layouts/base.njk
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
 <h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
-
 <h2>Article</h2>
 {{ content | safe }}
 
@@ -22,8 +14,7 @@ layout: layouts/base.njk
 {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
   {%- if article.data.draft == false -%}
   <li>
-    {{ article.data.title }}
-    
+    <a href={{ absolutePostUrl }}>{{ article.data.title }}</a>
   </li>
   {%- endif -%}
 {%- endfor %}
