@@ -17,7 +17,6 @@ pre[class*="language-"] {
 	white-space: nowrap;
 	margin-right: 1rem;
 }
-
 article img {
 	max-width: 100%;
 	border-radius: 0.3em;
@@ -62,7 +61,6 @@ article picture {
 		margin-right: 0;
 	}
 }
-
 .text-center {
 	text-align: center;
 }
@@ -193,7 +191,6 @@ pre {
 	cursor: pointer;
 	text-decoration: none;
 }
-
 .series {
 	background-color: var(--box-bg-color2);
 	border-radius: 0.5rem;

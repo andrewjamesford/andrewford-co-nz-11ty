@@ -15,7 +15,6 @@
 		Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
 		Segoe UI Emoji, Segoe UI Symbol;
 }
-
 @media (prefers-color-scheme: dark) {
 	:root {
 		--link-color: #79a9cd;
@@ -24,7 +23,6 @@
 		--bg-color: #121212;
 	}
 }
-
 html {
 	scroll-behavior: smooth;
 }
@@ -49,7 +47,6 @@ header,
 footer {
 	margin-bottom: 2rem;
 }
-
 .wrapper {
 	max-width: 100ch;
 	margin: 0 auto;
@@ -58,17 +55,14 @@ footer {
 .header-titles {
 	text-align: center;
 }
-
 main.wrapper {
 	min-height: 60vh;
 }
-
 a,
 a:visited {
 	color: var(--link-color);
 	padding: 0.0625rem;
 }
-
 a:hover,
 a:active {
 	background-color: var(--link-color);
@@ -76,12 +70,10 @@ a:active {
 	text-decoration: none;
 	border-radius: 0.1rem;
 }
-
 a.no-hover:hover,
 a.no-hover:active {
 	background-color: transparent;
 }
-
 hr {
 	border: 0;
 	border-top: 1px solid var(--body-color);
@@ -97,20 +89,17 @@ h6 {
 	letter-spacing: -1px;
 	text-wrap: balance;
 }
-
 article :is(h2, h3, h4, h5, h6) {
 	margin-top: 3rem;
 }
 h4:is(.footnotes-title) {
 	margin-top: 0;
 }
-
 h1 {
 	font-size: 1.9rem;
 	line-height: 2.3rem;
 	min-height: 2.3rem;
 }
-
 h2 {
 	font-size: 1.5rem;
 	line-height: 1.8rem;
@@ -136,7 +125,6 @@ h2 {
 .article-description {
 	margin-top: 0;
 }
-
 .logo {
 	width: 4rem;
 	height: 4rem;
