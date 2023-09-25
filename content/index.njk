@@ -25,6 +25,7 @@ numberOfLatestPostsToShow: 3
     {%- for video in latestVideos.videos -%}
       {% if loop.index <= numberOfLatestPostsToShow -%}
         <li>
+          <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }} />
           {{ video.snippet.title }}
         </li>
       {%- endif -%}
