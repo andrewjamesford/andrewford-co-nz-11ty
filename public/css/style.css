@@ -246,6 +246,11 @@ pre {
 .header-anchor {
 	font-size: 0.9rem;
 }
+.latest-articles-videos {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
 
 @media screen and (min-width: 48rem) {
 	.avatar-wrapper {
@@ -303,6 +308,10 @@ pre {
 	}
 	.lastfm-widget {
 		max-width: 80%;
+	}
+	.latest-articles-videos {	
+		grid-template-columns: 1fr 1fr;	
+		align-items: baseline;
 	}
 }
 

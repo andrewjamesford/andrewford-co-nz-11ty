@@ -4,11 +4,10 @@ layout: layouts/base.njk
 
 <h1>{{ title }}</h1>
 
-<h2>Archives</h2>
 {{ content | safe }}
 
 <ul>
-{%- for archiveItem in collections.archive %}
+{%- for archiveItem in collections.archive | reverse %}
 {% set absolutePostUrl %}{{ archiveItem.url | url | absoluteUrl(metadata.url) }}{% endset %}
   {%- if archiveItem.data.draft == false -%}
   <li>

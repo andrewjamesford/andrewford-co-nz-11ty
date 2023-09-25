@@ -1,7 +1,8 @@
 # Redirects from what the browser requests to what we serve
 
-/rss.xml /feed.xml
-/comments/feed /feed.xml
+/rss.xml /feed/feed.xml
+/feed.xml /feed/feed.xml
+/comments/feed /feed/feed.xml
 /author/andrewf /about/
 /react-js-conf-2016-highlights-day-1/ /2016/02/23/react-js-conf-2016-highlights-day-1/
 /newsletter/ /

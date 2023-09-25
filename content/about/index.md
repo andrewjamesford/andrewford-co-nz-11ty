@@ -10,11 +10,17 @@ eleventyNavigation:
   order: 4
 ---
 
+<h1>About Andrew Ford
+
+<h2>Then</h2>
+
 I'm an experienced full stack developer working professionally in the web industry since the year 2000. Having worked on small sites for local business to large sites for corporations including Sony, Panasonic, Comvita, Zespri, Trust Power, Farmlands, Lion Nathan, Destination Great Lake Taupo, Craigs Investment Partners and Fisher & Paykel Healthcare to name but a few. These sites exposed me to a wide range of CMS systems from bespoke solutions, to Wordpress, Umbraco and Sitecore.
 
 Over the last couple of years I've progressed to building bespoke web and mobile applications. Using technologies like AngularJS and ReactJS (including React Native) for SaaS companies and an ERP system for local government (councils).
 
 Previously I was the Lead Developer of a small team, working on a cloud based applicant tracking software for [QJumpers](https://www.qjumpers.com/). Working with .Net Core, ReactJS, Kubernetes and PostgresDB, hosted on AWS.
+
+<h2>Now</h2>
 
 Recently I was a Tech Lead / Instructor at [Developers Institute](https://www.developers.ac.nz) teaching students Client Side & Full Stack development to be the next generation of Web Developers.
 

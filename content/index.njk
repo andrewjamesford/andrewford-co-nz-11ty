@@ -1,55 +1,55 @@
 ---
+title: "Home"
 layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 3
+numberOfLatestPostsToShow: 6
+numberOfLatestVideosToShow: 3
 ---
-{% set postsCount = collections.articles | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h3>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-</h3>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+<h1>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching people how to code. </h1>
+<h2>He is also a full-stack web developer and an educator living in Tauranga, New Zealand.</h2>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-  <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/article/">the articles</a>.</p>
-{% endif %}
+<section class="latest-articles-videos">
+  {%- if collections.articles.length > 0 -%}
+    <article class="latest-articles">
+      <h3>Latest Articles</h3>
+      <ul>
+        {%- for article in collections.articles | reverse -%}
+          {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+          {%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
+            <li>
+              <h4 class="article-title">
+                <a href="{{ absolutePostUrl }}">{{ article.data.title }}</a>
+              </h4>
+              <p class="article-description">{{ article.data.description }}</p>
+            </li>
+          {%- endif -%}
+        {%- endfor %}
+        <li><a href="{{ metadata.url }}/article/">More articles...</a></li>
+      </ul>
+    </article>
+  {%- endif -%}
 
-{%- if latestVideos.videos.length > 0 -%}
-  <ul>
-    {# Latest Videos:  {{ latestVideos.videos | length }} #}
-    {%- for video in latestVideos.videos -%}
-      {% if loop.index <= numberOfLatestPostsToShow -%}
-        <li>
-          <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
-            <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }}/>
-            {{ video.snippet.title }}
-          </a>
-        </li>
-      {%- endif -%}
-    {%- endfor -%}
-  </ul>
-{%- endif -%}
+  {%- if latestVideos.videos.length > 0 -%}
+    <aside class="latest-videos">
+      <h3>Latest Videos</h3>
+      <ul>
+        {# Latest Videos:  {{ latestVideos.videos | length }} #}
+        {%- for video in latestVideos.videos -%}
+          {% if loop.index <= numberOfLatestVideosToShow -%}
+            <li>
+              <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
+                <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }}/>
+                {{ video.snippet.title }}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        <li><a href="https://www.youtube.com/@CodewithAndrewFord">More videos...</a></li>
+      </ul>
+    </aside>
+  {%- endif -%}
 
-{# List every content page in the project #}
-{# 
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul> #}
-
-<ul>
-  {%- for article in collections.articles -%}
-    {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
-    {%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
-      <li>
-        <a href={{ absolutePostUrl }}>{{ article.data.title }}</a>
-      </li>
-    {%- endif -%}
-  {%- endfor %}
-</ul>
+</section>

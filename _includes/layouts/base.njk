@@ -6,7 +6,8 @@
 		<title>{{ title or metadata.title }} - Andrew Ford - </title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
-		<meta name="msapplication-TileColor" content="#ffffff">
+		{#- Icons -#}
+		<meta name="msapplication-TileColor" content="#eee">
 		<meta name="msapplication-TileImage" content="{{ metadata.url }}/ms-icon-144x144.png">
 		<link rel="apple-touch-icon" sizes="57x57" href="{{ metadata.url }}/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="{{ metadata.url }}/apple-icon-60x60.png">
@@ -35,22 +36,22 @@
 		<meta property="og:type" content="website"/>
 		<meta property="og:description" content="{{ description or metadata.description }}"/>
 		{% if ogimage %}
-			<meta property="og:image" content="{{ hostname }}/images/{{ ogimage }}"/>
+			<meta property="og:image" content="{{ metadata.url }}/images/{{ ogimage }}"/>
 		{% else %}
-			<meta property="og:image" content="{{ hostname }}/images/social-card.png"/>
+			<meta property="og:image" content="{{ metadata.url }}/images/social-card.png"/>
 		{% endif %}
-		<meta property="og:url" content="{{ hostname }}{{ page.url }}">
+		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
 
 		{# twitter #}
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="andrewford.co.nz">
-		<meta property="twitter:url" content="{{ hostname }}{{ page.url }}">
+		<meta property="twitter:url" content="{{ metadata.url }}{{ page.url }}">
 		<meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
 		{% if ogimage %}
-			<meta name="twitter:image" content="{{ hostname }}/images/{{ ogimage }}">
+			<meta name="twitter:image" content="{{ metadata.url }}/images/{{ ogimage }}">
 		{% else %}
-			<meta property="twitter:image" content="{{ hostname }}/images/social-card.png"/>
+			<meta property="twitter:image" content="{{ metadata.url }}/images/social-card.png"/>
 		{% endif %}
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
@@ -103,9 +104,7 @@
 				</a>
 				<div class="header-titles">
 					<h1 class="site-title">Andrew Ford</h1>
-					<h2 class="site-description">
-						Full Stack Developer / Educator from Tauranga, New Zealand
-					</h2>
+					<h2 class="site-description">Full Stack Developer / Streamer / Educator</h2>
 				</div>
 			</div>
 			
@@ -129,7 +128,22 @@
 			{{ content | safe }}
 		</main>
 
-		<footer>footer</footer>
+		<footer class="wrapper">
+		<hr />
+		<ul class="nav-links">
+			<li><a href="{{ metadata.url }}/about/">About</a></li>
+			<li><a href="{{ metadata.url }}/archive/">Archive</a></li>
+			<li><a href="{{ metadata.url }}/article/">Articles</a></li>
+			<li><a href="https://ko-fi.com/andrewfordcodes">Buy me a Coffee</a></li>
+			<li><a rel="me" href="mailto:me@andrewford.co.nz">Email</a></li>
+			<li><a rel="me authn" href="https://github.com/andrewjamesford">GitHub</a></li>
+			<li><a href="https://www.linkedin.com/in/andrewjamesford/">LinkedIn</a></li>
+			<li><a rel="me" href="{{ metadata.url }}/@andrew">Mastodon</a></li>
+			<li><a href="{{ metadata.url }}/privacy/">Privacy</a></li>
+			<li><a href="{{ metadata.url }}/feed/feed.xml">RSS</a></li>
+			<li><a href="https://andrewford.gumroad.com/">Shop</a></li>
+			<li><a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a></li>
+		</ul>
 
 		{%- if latestMusic.music.artist !== "" -%}
 			<div id="lastFM" class="lastfm-widget">
@@ -151,6 +165,7 @@
 				</div>
 			</div>
 		{%- endif -%}
+		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 
