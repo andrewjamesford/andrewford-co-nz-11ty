@@ -19,19 +19,21 @@ numberOfLatestPostsToShow: 3
   <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/article/">the articles</a>.</p>
 {% endif %}
 
-<ul>
-  {%- if latestVideos.videos.length > 0 -%}
-  {# Latest Videos:  {{ latestVideos.videos | length }} #}
+{%- if latestVideos.videos.length > 0 -%}
+  <ul>
+    {# Latest Videos:  {{ latestVideos.videos | length }} #}
     {%- for video in latestVideos.videos -%}
       {% if loop.index <= numberOfLatestPostsToShow -%}
         <li>
-          <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }} />
-          {{ video.snippet.title }}
+          <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
+            <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }}/>
+            {{ video.snippet.title }}
+          </a>
         </li>
       {%- endif -%}
     {%- endfor -%}
-  {%- endif -%}
-</ul>
+  </ul>
+{%- endif -%}
 
 {# List every content page in the project #}
 {# 
