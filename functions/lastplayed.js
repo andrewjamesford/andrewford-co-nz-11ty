@@ -12,13 +12,13 @@ exports.handler = async function (event, context) {
 
     const data = await response.json();
     const lastTrackData = data.recenttracks.track[0];
-
     const lastTrack = {
       artist: lastTrackData.artist["#text"],
       trackName: lastTrackData.name,
       album: lastTrackData.album["#text"],
       url: lastTrackData.url,
       albumArt: lastTrackData.image[1]["#text"],
+      albumArtLarge: lastTrackData.image[3]["#text"],
     };
 
     return {
