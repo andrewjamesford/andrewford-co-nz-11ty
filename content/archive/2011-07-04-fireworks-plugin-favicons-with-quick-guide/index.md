@@ -6,8 +6,8 @@ draft: false
 slug: "/2011/07/04/fireworks-plugin-favicons-with-quick-guide/"
 category: article
 tags:
-    - Fireworks
-    - Favicon
+  - Fireworks
+  - Favicon
 description: "Found a great fireworks plugin to create a favicon"
 ---
 

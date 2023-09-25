@@ -5,10 +5,10 @@ template: post
 draft: false
 slug: "/2018/05/03/wordpress-to-gatsbyjs"
 category: "link"
-tags: 
-- Wordpress
-- GatsbyJS
-- Blog
+tags:
+  - Wordpress
+  - GatsbyJS
+  - Blog
 description: "How and Why I migrated from WordPress to static JAM Stack site built with Gatsby JS."
 ---
 

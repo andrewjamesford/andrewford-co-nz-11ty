@@ -5,11 +5,11 @@ template: post
 draft: false
 slug: "/2018/03/31/new-year-new-blog/"
 category: "link"
-tags: 
-- blog
-- gatsbyjs
-- reactjs
-- netlify
+tags:
+  - blog
+  - gatsbyjs
+  - reactjs
+  - netlify
 description: "New year, new blog running on Gatsby"
 ---
 
@@ -20,4 +20,3 @@ With the move to the using Gatsby I'm also moving hosting. Without the need for 
 In my job I work in React all day so this is a simple extension to me to work on Gatsby. This isn't ideal for everyone else but the beauty of Gatsby is it can have it's content populated by dozens of other means. For example you could pull content in from Wordpress, Drupal or Google Sheets. The content is simply treated like an API and more than likely there is already a [plugin available](https://www.gatsbyjs.org/plugins/) to serve it.
 
 Previously I've hosted my Wordpress site on a small VPS on Ramnode. Managing all updates & upgrades of Ubuntu including security patches and backups. It's been a valuable learning experience for me using Linux and doing all my own server maintenance. But with the move it will be just one less job to do, so I can focus on writing.
-

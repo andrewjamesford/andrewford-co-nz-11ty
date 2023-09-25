@@ -15,7 +15,7 @@ If you **love** movies, then do yourself a favour and sign up for [Letterboxd](h
 
 ![Screenshots of Letterboxd app](./letterboxd-3-wide.png)
 
-There are two things that stood out to me in the app as *different* choices on iOS. Firstly the Letterbox app doesn't have labels on the tab bar at the bottom.
+There are two things that stood out to me in the app as _different_ choices on iOS. Firstly the Letterbox app doesn't have labels on the tab bar at the bottom.
 
 ![Letterbox tab bar - sans labels](./letterboxd-tab-bar.png)
 

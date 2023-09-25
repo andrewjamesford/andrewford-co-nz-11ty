@@ -31,7 +31,7 @@ pre[class*="language-diff-"] {
 .token.prefix.inserted,
 .token.prefix.deleted {
 	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Optional: full-width background color */

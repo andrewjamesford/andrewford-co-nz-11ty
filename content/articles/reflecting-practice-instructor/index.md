@@ -40,9 +40,6 @@ The other aspect of sustainability we wish to encourage in our learners is the s
 
 Teaching software development remotely has been a challenging yet fulfilling experience for me. The use of digital tools and contemporary pedagogies such as constructionism, experiential learning, and constructivism have helped to engage learners and facilitate their learning process. The Developers Institute's focus on equity and accessibility has allowed learners from all stages of life and cultures to access tertiary education anywhere in New Zealand. The institute's emphasis on sustainability in learning and the environment is essential for our learners to succeed in their future careers and contribute to a better world. Teaching software development remotely has been a radical change, but I have found it to be an effective and flexible way of providing education to learners. I wish to learn more additional tools and pedagogies and incorporate them into my teaching practice.
 
-
 [^1]: Garrison, D. R., Anderson, T., & Archer, W. (1999). Critical inquiry in a text-based environment: Computer conferencing in higher education. The internet and higher education, 2(2-3), 87-105.
-
 [^2]: Liu, C. H. & Matthews, R. (2005). Vygotsky’s Philosophy: Constructivism and Its Criticisms Examined. _International Education Journal, 6_(3), 386-399.
-
 [^3]: Energy Efficiency & Conservation Authority (EECA), Efficient and low emissions transport [https://www.eeca.govt.nz/strategic-focus-areas/efficient-and-low-emissions-transport/](https://www.eeca.govt.nz/strategic-focus-areas/efficient-and-low-emissions-transport/)

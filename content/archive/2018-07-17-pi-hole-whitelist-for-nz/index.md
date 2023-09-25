@@ -1,17 +1,17 @@
 ---
 title: "Pi-hole whitelist for New Zealand"
-date: '2018-07-17T18:58:55Z'
+date: "2018-07-17T18:58:55Z"
 template: post
 draft: false
-slug: '2018/07/17/pi-hole-whitelist-for-nz'
+slug: "2018/07/17/pi-hole-whitelist-for-nz"
 category: article
 tags:
-- nz
-- new zealand
-- pi-hole
-- whitelist
-- TVNZ
-- ThreeNow
+  - nz
+  - new zealand
+  - pi-hole
+  - whitelist
+  - TVNZ
+  - ThreeNow
 description: "A list of URL's I've had to whitelist for apps media apps in New Zealand"
 ---
 
@@ -21,13 +21,13 @@ The two big free to air TV companies have apps for mobile and TV boxes (like the
 
 Here is my whitelist of URL's you will need to add for these apps to work.
 
-* accounts.au1.gigya.com
-* cdns.au1.gigya.com
-* cdns.gigya.com
-* edge.api.brightcove.com
-* imasdk.googleapis.com
-* metrics.brightcove.com
-* socialize.au1.gigya.com
+- accounts.au1.gigya.com
+- cdns.au1.gigya.com
+- cdns.gigya.com
+- edge.api.brightcove.com
+- imasdk.googleapis.com
+- metrics.brightcove.com
+- socialize.au1.gigya.com
 
 There are two ways to add these from the command line like this:
 

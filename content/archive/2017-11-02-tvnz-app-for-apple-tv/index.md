@@ -13,9 +13,8 @@ tags:
 description: "TVNZ app for Apple TV"
 ---
 
-
 [TVNZ](https://www.tvnz.co.nz/what-to-watch/news-feed/apple-tv):
 
->You’ve been asking for it, and it’s finally here. Apple TV is now compatible with TVNZ.
+> You’ve been asking for it, and it’s finally here. Apple TV is now compatible with TVNZ.
 
 Finally!

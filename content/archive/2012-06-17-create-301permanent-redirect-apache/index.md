@@ -6,8 +6,8 @@ draft: false
 slug: "/2012/06/17/create-301permanent-redirect-apache/"
 category: "article"
 tags:
-- blog
-- development
+  - blog
+  - development
 description: ""
 ---
 

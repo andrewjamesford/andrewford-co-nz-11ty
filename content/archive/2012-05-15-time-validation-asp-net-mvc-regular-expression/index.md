@@ -6,7 +6,7 @@ draft: false
 slug: "/2012/05/15/time-validation-asp-net-mvc-regular-expression/"
 category: "article"
 tags:
-- .Net
+  - .Net
 description: ""
 ---
 

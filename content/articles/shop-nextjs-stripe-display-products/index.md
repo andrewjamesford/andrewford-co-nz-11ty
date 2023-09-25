@@ -36,15 +36,15 @@ Add the following to the `products.js` file:
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-  try {
-    const products = await stripe.products.list({
-      limit: 100,
-    });
+	try {
+		const products = await stripe.products.list({
+			limit: 100,
+		});
 
-    res.status(200).json(products);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+		res.status(200).json(products);
+	} catch (err) {
+		res.status(500).json({ message: err.message });
+	}
 }
 ```
 
@@ -69,27 +69,27 @@ import { Layout } from "../components/layout";
 
 // Pass the products object to the Home page
 export default function Home({ products }) {
-  return (
-    <>
-      <Head>
-        <title>Products</title>
-        <meta name="description" content="Products" />
-      </Head>
-      <Layout>
-        {/* Need to pass products.data to the Products component */}
-        <Products products={products.data} />
-      </Layout>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>Products</title>
+				<meta name="description" content="Products" />
+			</Head>
+			<Layout>
+				{/* Need to pass products.data to the Products component */}
+				<Products products={products.data} />
+			</Layout>
+		</>
+	);
 }
 // Add getServerSideProps so we can return the data from server-side
 export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`${process.env.HOST}/api/products`);
-  const products = await res.json();
+	// Fetch data from external API
+	const res = await fetch(`${process.env.HOST}/api/products`);
+	const products = await res.json();
 
-  // Pass data to the page via props
-  return { props: { products } };
+	// Pass data to the page via props
+	return { props: { products } };
 }
 ```
 
@@ -101,45 +101,45 @@ import Image from "next/image";
 import styles from "../styles/products.module.css";
 
 export const Products = ({ products }) => {
-  return (
-    <>
-      {/* Check that we have products */}
-      {products.length ? (
-        <ul className={styles.products}>
-          {/* Iterate over the products */}
-          {products.map((product) => (
-            <li key={product.id}>
-              {/* Note that we are using a form to post to the API we just created */}
-              <form action="/api/checkout_sessions" method="POST">
-                {/* Display the product image using the Next Image component */}
-                <Image
-                  src={product.images[0]}
-                  alt={`Image of ${product.name}`}
-                  layout={"responsive"}
-                  width={0}
-                  height={0}
-                  priority={true}
-                />
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
-                <button type="submit" role="link" className={styles.link}>
-                  Buy Now
-                </button>
-                {/* The ID of the product so the user can purchase */}
-                <input
-                  type="hidden"
-                  name="priceId"
-                  value={product.default_price}
-                />
-              </form>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div>No products</div>
-      )}
-    </>
-  );
+	return (
+		<>
+			{/* Check that we have products */}
+			{products.length ? (
+				<ul className={styles.products}>
+					{/* Iterate over the products */}
+					{products.map((product) => (
+						<li key={product.id}>
+							{/* Note that we are using a form to post to the API we just created */}
+							<form action="/api/checkout_sessions" method="POST">
+								{/* Display the product image using the Next Image component */}
+								<Image
+									src={product.images[0]}
+									alt={`Image of ${product.name}`}
+									layout={"responsive"}
+									width={0}
+									height={0}
+									priority={true}
+								/>
+								<h2>{product.name}</h2>
+								<p>{product.description}</p>
+								<button type="submit" role="link" className={styles.link}>
+									Buy Now
+								</button>
+								{/* The ID of the product so the user can purchase */}
+								<input
+									type="hidden"
+									name="priceId"
+									value={product.default_price}
+								/>
+							</form>
+						</li>
+					))}
+				</ul>
+			) : (
+				<div>No products</div>
+			)}
+		</>
+	);
 };
 ```
 
@@ -149,35 +149,35 @@ We also need to create a CSS module for the product component, create a new file
 
 ```css
 .link {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
-  border: 1px solid var(--primary-color);
+	display: inline-block;
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 0.2rem;
+	border: 1px solid var(--primary-color);
 }
 .link:hover {
-  background-color: #fff;
-  color: var(--primary-color);
+	background-color: #fff;
+	color: var(--primary-color);
 }
 .promotion {
-  display: grid;
-  grid-template-columns: 1fr;
-  list-style: none;
-  gap: 1rem;
-  padding: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	list-style: none;
+	gap: 1rem;
+	padding: 0;
 }
 @media screen and (min-width: 50rem) {
-  .promotion {
-    /* 2 columns */
-    grid-template-columns: 1fr 1fr;
-  }
+	.promotion {
+		/* 2 columns */
+		grid-template-columns: 1fr 1fr;
+	}
 }
 @media screen and (min-width: 70rem) {
-  .promotion {
-    /* 3 columns */
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+	.promotion {
+		/* 3 columns */
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 ```
 
@@ -185,11 +185,11 @@ The last step to get our images to display from Stripe is to update the `next.co
 
 ```js
 module.exports = {
-  reactStrictMode: true,
-  // Add this to allow images to be retrieved from stripe.com
-  images: {
-    domains: ["files.stripe.com"],
-  },
+	reactStrictMode: true,
+	// Add this to allow images to be retrieved from stripe.com
+	images: {
+		domains: ["files.stripe.com"],
+	},
 };
 ```
 

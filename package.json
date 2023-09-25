@@ -11,7 +11,9 @@
 		"build": "npx @11ty/eleventy",
 		"article": "bash article.sh",
 		"clear": "rm -rf _site && rm -rf .cache",
-		"perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view"
+		"perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
+		"prettier": "prettier --write \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore",
+		"prettier:check": "prettier --check \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore"
 	},
 	"repository": {
 		"type": "git",
@@ -45,5 +47,5 @@
 		"node-fetch": "^3.3.0",
 		"dotenv": "^16.3.1",
 		"prettier": "2.5.0"
-	}	
+	}
 }

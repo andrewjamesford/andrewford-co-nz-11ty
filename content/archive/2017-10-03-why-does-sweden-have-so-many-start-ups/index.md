@@ -11,7 +11,6 @@ tags:
 description: "Stockholm produces the second-highest number of billion-dollar tech companies per capita, after Silicon Valley"
 ---
 
-
 [Alana Semuels](https://www.theatlantic.com/business/archive/2017/09/sweden-startups/541413/?single_page=true):
 
->Stockholm produces the second-highest number of billion-dollar tech companies per capita, after Silicon Valley, and in Sweden overall, there are 20 start-ups
+> Stockholm produces the second-highest number of billion-dollar tech companies per capita, after Silicon Valley, and in Sweden overall, there are 20 start-ups

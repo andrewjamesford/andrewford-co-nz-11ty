@@ -5,11 +5,11 @@ template: post
 draft: false
 slug: "/2018/04/16/the-internet-apologizes"
 category: "link"
-tags: 
-- Facebook
-- Google
-- Reddit
-- privacy
+tags:
+  - Facebook
+  - Google
+  - Reddit
+  - privacy
 description: "Even those who designed our digital world are aghast at what they created. A breakdown of what went wrong — from the architects who built it."
 ---
 

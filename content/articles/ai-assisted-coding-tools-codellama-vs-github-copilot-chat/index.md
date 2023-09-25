@@ -129,15 +129,15 @@ From the start GitHub Copilot was faster to respond by 2 seconds. As for the cod
 
 ```javascript
 for (let i = 1; i <= 100; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 === 0) {
-    console.log("Fizz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
-  }
+	if (i % 3 === 0 && i % 5 === 0) {
+		console.log("FizzBuzz");
+	} else if (i % 3 === 0) {
+		console.log("Fizz");
+	} else if (i % 5 === 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}
 }
 ```
 
@@ -149,15 +149,15 @@ for (let i = 1; i <= 100; i++) {
 
 ```javascript
 for (var i = 1; i <= 100; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 === 0) {
-    console.log("Fizz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
-  }
+	if (i % 3 === 0 && i % 5 === 0) {
+		console.log("FizzBuzz");
+	} else if (i % 3 === 0) {
+		console.log("Fizz");
+	} else if (i % 5 === 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}
 }
 ```
 
@@ -175,7 +175,7 @@ Again another classic coding challenge question.
 | Continue/CodeLlama (CL) | 10s             | 5/5    |
 | GitHub Copilot (GC)     | 5s              | 4/5    |
 
-With GC I got off to a very rocky start. Upon entering my question I got this result _"Oops, your response got filtered. Vote down if you think this shouldn't have happened."_. 
+With GC I got off to a very rocky start. Upon entering my question I got this result _"Oops, your response got filtered. Vote down if you think this shouldn't have happened."_.
 
 {% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response" %}
 
@@ -191,18 +191,18 @@ Again GC was faster with the response, but in my opinion CL gave the better answ
 
 ```javascript
 const arr = [
-  10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+	10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 ];
 
 let smallest = arr[0];
 let largest = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
-  if (arr[i] < smallest) {
-    smallest = arr[i];
-  } else if (arr[i] > largest) {
-    largest = arr[i];
-  }
+	if (arr[i] < smallest) {
+		smallest = arr[i];
+	} else if (arr[i] > largest) {
+		largest = arr[i];
+	}
 }
 
 console.log("Smallest number: " + smallest);
@@ -233,20 +233,20 @@ I took the results of the previous answer from GC and placed it in a function.
 
 ```javascript
 function getFizzBuzz() {
-  const fizzBuzzArray = [];
-  for (let i = 1; i <= 100; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      fizzBuzzArray.push("FizzBuzz");
-    } else if (i % 3 === 0) {
-      fizzBuzzArray.push("Fizz");
-    } else if (i % 5 === 0) {
-      fizzBuzzArray.push("Buzz");
-    } else {
-      fizzBuzzArray.push(i);
-    }
-  }
-  console.log(fizzBuzzArray);
-  return fizzBuzzArray;
+	const fizzBuzzArray = [];
+	for (let i = 1; i <= 100; i++) {
+		if (i % 3 === 0 && i % 5 === 0) {
+			fizzBuzzArray.push("FizzBuzz");
+		} else if (i % 3 === 0) {
+			fizzBuzzArray.push("Fizz");
+		} else if (i % 5 === 0) {
+			fizzBuzzArray.push("Buzz");
+		} else {
+			fizzBuzzArray.push(i);
+		}
+	}
+	console.log(fizzBuzzArray);
+	return fizzBuzzArray;
 }
 
 module.exports = getFizzBuzz;
@@ -267,40 +267,40 @@ Then asked the assistants the question above. This time CL took an age to return
 const getFizzBuzz = require("./index");
 
 describe("getFizzBuzz", () => {
-  it("should return an array of length 100", () => {
-    const result = getFizzBuzz();
-    expect(result).toHaveLength(100);
-  });
+	it("should return an array of length 100", () => {
+		const result = getFizzBuzz();
+		expect(result).toHaveLength(100);
+	});
 
-  it('should return "Fizz" for multiples of 3', () => {
-    const result = getFizzBuzz();
-    for (let i = 2; i < result.length; i += 3) {
-      expect(result[i]).toBe("Fizz");
-    }
-  });
+	it('should return "Fizz" for multiples of 3', () => {
+		const result = getFizzBuzz();
+		for (let i = 2; i < result.length; i += 3) {
+			expect(result[i]).toBe("Fizz");
+		}
+	});
 
-  it('should return "Buzz" for multiples of 5', () => {
-    const result = getFizzBuzz();
-    for (let i = 4; i < result.length; i += 5) {
-      expect(result[i]).toBe("Buzz");
-    }
-  });
+	it('should return "Buzz" for multiples of 5', () => {
+		const result = getFizzBuzz();
+		for (let i = 4; i < result.length; i += 5) {
+			expect(result[i]).toBe("Buzz");
+		}
+	});
 
-  it('should return "FizzBuzz" for multiples of both 3 and 5', () => {
-    const result = getFizzBuzz();
-    for (let i = 14; i < result.length; i += 15) {
-      expect(result[i]).toBe("FizzBuzz");
-    }
-  });
+	it('should return "FizzBuzz" for multiples of both 3 and 5', () => {
+		const result = getFizzBuzz();
+		for (let i = 14; i < result.length; i += 15) {
+			expect(result[i]).toBe("FizzBuzz");
+		}
+	});
 
-  it("should return the number itself for all other numbers", () => {
-    const result = getFizzBuzz();
-    for (let i = 0; i < result.length; i++) {
-      if (i % 3 !== 0 && i % 5 !== 0) {
-        expect(result[i]).toBe(i + 1);
-      }
-    }
-  });
+	it("should return the number itself for all other numbers", () => {
+		const result = getFizzBuzz();
+		for (let i = 0; i < result.length; i++) {
+			if (i % 3 !== 0 && i % 5 !== 0) {
+				expect(result[i]).toBe(i + 1);
+			}
+		}
+	});
 });
 ```
 

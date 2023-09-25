@@ -7,7 +7,7 @@ slug: "/2015/09/04/android-hardware-makers-stare-into-profitless-abyss/"
 category: "article"
 tags:
   - android
-  - link  
+  - link
 description: ""
 ---
 

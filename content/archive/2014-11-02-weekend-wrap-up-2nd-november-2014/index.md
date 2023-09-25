@@ -1,5 +1,5 @@
 ---
-title: 'Weekend Wrap-up - 2nd November 2014'
+title: "Weekend Wrap-up - 2nd November 2014"
 date: "2014-11-02T08:48:10+00:00"
 template: post
 draft: false
@@ -19,7 +19,7 @@ The whole Angular JS world blew up this week with the revelations of big changes
 Josh Ginter has a great review of Day One a beautiful journal app for iOS / OS X . I whole heartedly agree with his review, Day One is the best app out their to catch your thoughts and precious moments in a way pen and paper can't.
 
 <a href="http://www.bonappetit.com/test-kitchen/how-to/article/supermarket-psychology">How to Buy Food: The Psychology of the Supermarket - Bon Appétit</a>
-Ever walked out of a supermarket with a whole lot of stuff you didn't plan to buy when only going in to get some milk? Here is how  they do it.
+Ever walked out of a supermarket with a whole lot of stuff you didn't plan to buy when only going in to get some milk? Here is how they do it.
 
 <a href="https://firstlook.org/theintercept/2014/10/28/smuggling-snowden-secrets/">Ed Snowden Taught Me To Smuggle Secrets Past Incredible Danger. Now I Teach You. - The Intercept</a>
 This is great as a primer to security and encryption of email, outlining how Snowden got in contact with Greenwald.

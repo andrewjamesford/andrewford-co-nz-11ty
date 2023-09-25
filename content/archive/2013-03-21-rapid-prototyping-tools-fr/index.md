@@ -36,7 +36,7 @@ A great looking tool for rapid prototyping. It's works with Mac and Windows. Sup
 
 A tool for creating responsive designs in the browser. Not open to the public yet but have a nice interactive demo you can play with.
 
-[Vimeo of WebFlow](http://player.vimeo.com/video/62227334?title=0&amp;byline=0&amp;portrait=0)
+[Vimeo of WebFlow](http://player.vimeo.com/video/62227334?title=0&byline=0&portrait=0)
 
 [Webflow User Interface Tutorial](http://vimeo.com/62227334) from [Vlad Magdalin](http://vimeo.com/callmevlad) on [Vimeo](http://vimeo.com)
 

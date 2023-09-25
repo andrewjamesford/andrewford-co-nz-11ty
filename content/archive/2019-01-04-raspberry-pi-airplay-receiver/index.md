@@ -1,14 +1,14 @@
 ---
 title: "Raspberry Pi Airplay Receiver"
-date: '2019-01-03T20:59:41Z'
+date: "2019-01-03T20:59:41Z"
 template: post
 draft: false
-slug: '2019/01/04/raspberry-pi-airplay-receiver'
+slug: "2019/01/04/raspberry-pi-airplay-receiver"
 category: link
 tags:
-- airplay
-- raspberry pi
-- audio
+  - airplay
+  - raspberry pi
+  - audio
 description: "How to make your Raspberry Pi into an AirPlay receiver"
 ---
 

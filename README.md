@@ -23,7 +23,9 @@ npm run start
 This will start a local development server at http://localhost:8080/ where you can preview your blog.
 
 ## Deployment
+
 This blog is deployed to Netlify using their continuous deployment feature. Whenever changes are pushed to the main branch, Netlify will automatically build and deploy the site.
 
 ## License
+
 This project is licensed under the MIT License.

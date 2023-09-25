@@ -5,11 +5,11 @@ template: post
 draft: false
 slug: "/2018/04/01/new-year-new-blog/"
 category: "link"
-tags: 
-- DNS
-- security
-- privacy
-- pihole
+tags:
+  - DNS
+  - security
+  - privacy
+  - pihole
 description: "Cloudflare launch a privacy focused DNS"
 ---
 

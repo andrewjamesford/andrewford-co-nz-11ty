@@ -18,7 +18,7 @@ iOS7 has now been out for over a month now. A lot of app developers have now rel
 
 ![Ionicons](./ionic.png)
 
-<b>Free and open source (MIT License)</b><br>These icons are to be used in the upcoming <a title="Iconic Framework" href="http://ionicframework.com" target="_blank">Iconic Framework</a> a 100% free and open source beautiful front-end framework for developing native mobile apps in HTML5. The icons come both as an icon font and a set of SVG images. The Ionic icon font is available in the Cocoa pod <a href="https://github.com/TapTemplate/ionicons-iOS">ionicions-iOS</a>. 
+<b>Free and open source (MIT License)</b><br>These icons are to be used in the upcoming <a title="Iconic Framework" href="http://ionicframework.com" target="_blank">Iconic Framework</a> a 100% free and open source beautiful front-end framework for developing native mobile apps in HTML5. The icons come both as an icon font and a set of SVG images. The Ionic icon font is available in the Cocoa pod <a href="https://github.com/TapTemplate/ionicons-iOS">ionicions-iOS</a>.
 
 ## Essence Icon Set
 

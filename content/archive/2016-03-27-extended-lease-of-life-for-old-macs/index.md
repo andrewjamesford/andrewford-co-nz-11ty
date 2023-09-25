@@ -13,7 +13,6 @@ tags:
 description: ""
 ---
 
-
 ![BX200 2.5 inch SSD - 480GB](./crucial-bx200-feature.jpg)
 
 I have a [2010 Mac Book Pro](http://www.everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.66-aluminum-15-mid-2010-unibody-specs.html) (MBP) that I'd upgraded for every new release of OSX. Never had I done a fresh install until late last year. While it did help it's performance it didn't make a huge improvement. The PC was still sluggish.
@@ -24,7 +23,7 @@ When I started looking at prices for a new Mac Book Pro I couldn't justify spend
 
 ![BX200](./BX200.png)
 
-So I started researching SSD drives and found the [Crucial BX200](http://www.crucial.com/usa/en/storage-ssd-bx200) offered good value and performance from [PBTech](http://www.pbtech.co.nz/index.php?z=p&amp;p=HDDCRU10480&amp;name=Crucial-BX200-480GB-SATA-2.5-7mm-(with-9.5mm-adapt)) clocking in at 480GB for NZ$250. SSD storage has never been as cheap at under $2 per GB mark. Importantly the Crucial drive includes a spacer to pad out the drive in the Mac Books body.
+So I started researching SSD drives and found the [Crucial BX200](http://www.crucial.com/usa/en/storage-ssd-bx200) offered good value and performance from [PBTech](<http://www.pbtech.co.nz/index.php?z=p&p=HDDCRU10480&name=Crucial-BX200-480GB-SATA-2.5-7mm-(with-9.5mm-adapt)>) clocking in at 480GB for NZ$250. SSD storage has never been as cheap at under $2 per GB mark. Importantly the Crucial drive includes a spacer to pad out the drive in the Mac Books body.
 
 I'd previously got a screwdriver to fit the Mac from the OWC ram upgrade a Phillips #00. You will also need a T6 Torx screwdriver also, I got mine from [Bunnings](http://www.bunnings.co.nz/fuller-pro-tamperproof-t-6x100mm-screwdriver_p00193579) for $6. Follow the [guide on the Crucial support site](http://guides.crucial.com/Guide/MacBook-Pro-15-Inch-Unibody-2-53-GHz-Mid-2009-SSD-Installation/359/1) as it walks you through step by step with images. It's a easy install taking less than 30 minutes.
 

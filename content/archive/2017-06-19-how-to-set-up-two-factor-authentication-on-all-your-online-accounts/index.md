@@ -12,6 +12,7 @@ description: ""
 ---
 
 <a href="https://www.theverge.com/2017/6/17/15772142/how-to-set-up-two-factor-authentication">Natt Garun</a>:
+
 <blockquote>Just about any account you own on the internet is prone to being hacked — and one of the easiest ways to add an extra layer of security is to enable two-factor authentication. Also known as two-step verification or 2FA, the process gives web services a secondary access to the account owner (you!) in order to verify a login attempt. Typically, this involves phone number and / or an email address.</blockquote>
 If you haven't already set up 2 factor authentication on all your accounts I recommend you do so immediately.
 

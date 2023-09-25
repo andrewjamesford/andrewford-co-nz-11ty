@@ -13,6 +13,7 @@ description: ""
 ---
 
 <a href="https://www.macstories.net/news/sega-forever-brings-sonic-and-other-classics-to-ios/">John Voorhees</a>:
+
 <blockquote>Today, Sega began releasing classic Sega games under the banner Sega Forever.
 
 The first titles released are Sonic the Hedgehog, which was already available on iOS, Comix Zone, Altered Beast, Kid Chameleon, and Phantasy Star II. The games, which are standalone downloads, are free and include ads that can be removed with a $1.99 In-App Purchase. </blockquote>

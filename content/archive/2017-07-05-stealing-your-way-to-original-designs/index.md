@@ -13,6 +13,6 @@ description: ""
 
 [Dan Mall](http://danmall.me/articles/stealing-your-way-to-original-designs/):
 
->Imitate<br>
->Remix<br>
->Invent
+> Imitate<br>
+> Remix<br>
+> Invent

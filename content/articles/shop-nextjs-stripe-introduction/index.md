@@ -57,14 +57,14 @@ We are going to remove everything and replace it with the following:
 import Head from "next/head";
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Products</title>
-        <meta name="description" content="Products" />
-      </Head>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>Products</title>
+				<meta name="description" content="Products" />
+			</Head>
+		</>
+	);
 }
 ```
 
@@ -77,16 +77,16 @@ import Head from "next/head";
 import styles from "../styles/layout.module.css";
 
 export const Layout = ({ children }) => {
-  return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className={styles.container}>
-        <main className={styles.main}>{children}</main>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<div className={styles.container}>
+				<main className={styles.main}>{children}</main>
+			</div>
+		</>
+	);
 };
 ```
 
@@ -100,7 +100,7 @@ In the header file add the following:
 import React from "react";
 
 export const Header = () => {
-  return <header></header>;
+	return <header></header>;
 };
 ```
 
@@ -110,7 +110,7 @@ In the footer file add the following:
 import React from "react";
 
 export const Footer = () => {
-  return <footer></footer>;
+	return <footer></footer>;
 };
 ```
 
@@ -127,20 +127,20 @@ import { Footer } from "./footer";
 import styles from "../styles/layout.module.css";
 
 export const Layout = ({ children }) => {
-  return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* Add the Header */}
-      <Header />
-      <div className={styles.container}>
-        <main className={styles.main}>{children}</main>
-      </div>
-      {/* Add the Footer */}
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			{/* Add the Header */}
+			<Header />
+			<div className={styles.container}>
+				<main className={styles.main}>{children}</main>
+			</div>
+			{/* Add the Footer */}
+			<Footer />
+		</>
+	);
 };
 ```
 
@@ -158,18 +158,18 @@ Let's add the CSS and it's file. Create a `layout.module.css` file in the `style
 
 ```css
 .container {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 .main {
-  padding: 5.3rem 0 1rem 0;
-  margin: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	padding: 5.3rem 0 1rem 0;
+	margin: 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 ```
 
@@ -183,17 +183,17 @@ import styles from "../styles/Home.module.css";
 import { Layout } from "../components/layout";
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Products</title>
-        <meta name="description" content="Products" />
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>Products</title>
+				<meta name="description" content="Products" />
+			</Head>
 
-      {/* Add the Layout component to the Home page. */}
-      <Layout></Layout>
-    </>
-  );
+			{/* Add the Layout component to the Home page. */}
+			<Layout></Layout>
+		</>
+	);
 }
 ```
 
@@ -205,15 +205,15 @@ import React from "react";
 import styles from "../styles/header.module.css";
 
 export const Header = () => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.mainNav}>
-        <div className={styles.iconNav}>
-          <nav></nav>
-        </div>
-      </div>
-    </header>
-  );
+	return (
+		<header className={styles.header}>
+			<div className={styles.mainNav}>
+				<div className={styles.iconNav}>
+					<nav></nav>
+				</div>
+			</div>
+		</header>
+	);
 };
 ```
 
@@ -221,31 +221,31 @@ And the subsequent CSS styles
 
 ```css
 .header {
-  width: 100%;
-  height: 4.4rem;
-  border-bottom: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  background-color: var(--bg-color);
-  z-index: 10;
+	width: 100%;
+	height: 4.4rem;
+	border-bottom: 1px solid #eaeaea;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	background-color: var(--bg-color);
+	z-index: 10;
 }
 .iconNav ul {
-  list-style: none;
-  display: flex;
+	list-style: none;
+	display: flex;
 }
 .mainNav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: var(--max-cont-width);
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: var(--max-cont-width);
 }
 .logo {
-  color: var(--font-color);
-  cursor: pointer;
-  width: 4rem;
-  height: 4rem;
+	color: var(--font-color);
+	cursor: pointer;
+	width: 4rem;
+	height: 4rem;
 }
 ```
 
@@ -253,10 +253,10 @@ We also need to update the `global.css` file with these variables. Add them to t
 
 ```css
 :root {
-  --font-color: #111;
-  --icon-color: #111;
-  --bg-color: #fff;
-  --max-cont-width: 63rem;
+	--font-color: #111;
+	--icon-color: #111;
+	--bg-color: #fff;
+	--max-cont-width: 63rem;
 }
 ```
 
@@ -273,9 +273,9 @@ import React from "react";
 
 // icons added
 import {
-  MagnifyingGlassIcon,
-  BuildingStorefrontIcon,
-  Bars3Icon,
+	MagnifyingGlassIcon,
+	BuildingStorefrontIcon,
+	Bars3Icon,
 } from "@heroicons/react/24/solid";
 
 // outline icon added
@@ -284,29 +284,29 @@ import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import styles from "../styles/header.module.css";
 
 export const Header = () => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.mainNav}>
-        <BuildingStorefrontIcon className={styles.logo} />
+	return (
+		<header className={styles.header}>
+			<div className={styles.mainNav}>
+				<BuildingStorefrontIcon className={styles.logo} />
 
-        <div className={styles.iconNav}>
-          <nav>
-            <ul>
-              <li>
-                <MagnifyingGlassIcon className={styles.searchIcon} />
-              </li>
-              <li>
-                <ShoppingBagIcon className={styles.cartIcon} />
-              </li>
-              <li>
-                <Bars3Icon className={styles.menuIcon} />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-  );
+				<div className={styles.iconNav}>
+					<nav>
+						<ul>
+							<li>
+								<MagnifyingGlassIcon className={styles.searchIcon} />
+							</li>
+							<li>
+								<ShoppingBagIcon className={styles.cartIcon} />
+							</li>
+							<li>
+								<Bars3Icon className={styles.menuIcon} />
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+	);
 };
 ```
 
@@ -314,22 +314,22 @@ Also add corresponding CSS for the icons.
 
 ```css
 .searchIcon {
-  width: 1.5em;
-  height: 1.5em;
-  color: var(--icon-color);
-  margin-right: 0.5rem;
+	width: 1.5em;
+	height: 1.5em;
+	color: var(--icon-color);
+	margin-right: 0.5rem;
 }
 .cartIcon {
-  width: 1.5em;
-  height: 1.5em;
-  color: var(--icon-color);
-  margin-right: 0.5rem;
+	width: 1.5em;
+	height: 1.5em;
+	color: var(--icon-color);
+	margin-right: 0.5rem;
 }
 .menuIcon {
-  width: 1.5em;
-  height: 1.5em;
-  color: var(--icon-color);
-  margin-right: 0.5rem;
+	width: 1.5em;
+	height: 1.5em;
+	color: var(--icon-color);
+	margin-right: 0.5rem;
 }
 ```
 
@@ -340,21 +340,21 @@ import React from "react";
 import styles from "../styles/footer.module.css";
 
 export const Footer = () => {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.footerCont}>
-        <nav className={styles.footerNav}>
-          <ul>
-            <li>Find a Store</li>
-            <li>Sign up for Email</li>
-            <li>Become a Member</li>
-            <li>Feedback</li>
-          </ul>
-        </nav>
-        <div className={styles.copyright}>&copy; 2022 Online Shop</div>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className={styles.footer}>
+			<div className={styles.footerCont}>
+				<nav className={styles.footerNav}>
+					<ul>
+						<li>Find a Store</li>
+						<li>Sign up for Email</li>
+						<li>Become a Member</li>
+						<li>Feedback</li>
+					</ul>
+				</nav>
+				<div className={styles.copyright}>&copy; 2022 Online Shop</div>
+			</div>
+		</footer>
+	);
 };
 ```
 
@@ -362,37 +362,37 @@ Add a new file to the styles folder `footer.module.css`. Then add the following 
 
 ```css
 .footer {
-  width: 100%;
-  height: 11rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--font-color);
-  color: #fff;
-  flex-direction: column;
+	width: 100%;
+	height: 11rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--font-color);
+	color: #fff;
+	flex-direction: column;
 }
 .footerCont {
-  max-width: var(--max-cont-width);
-  margin: 0 auto;
-  padding: 0 1.6rem;
-  width: 100%;
+	max-width: var(--max-cont-width);
+	margin: 0 auto;
+	padding: 0 1.6rem;
+	width: 100%;
 }
 .footerNav ul {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 .footerNav li {
-  padding: 0.3rem 0;
-  text-transform: uppercase;
-  font-size: 0.8rem;
+	padding: 0.3rem 0;
+	text-transform: uppercase;
+	font-size: 0.8rem;
 }
 .copyright {
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 0.6rem;
+	font-size: 0.8rem;
+	opacity: 0.8;
+	margin-top: 0.6rem;
 }
 ```
 

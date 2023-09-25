@@ -1,5 +1,5 @@
 ---
-title: 'Long Weekend Wrap-up - 27th October 2014'
+title: "Long Weekend Wrap-up - 27th October 2014"
 date: "2014-10-27T13:26:31+00:00"
 template: post
 draft: false

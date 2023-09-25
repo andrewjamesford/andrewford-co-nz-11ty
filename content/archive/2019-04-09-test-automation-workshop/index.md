@@ -1,16 +1,16 @@
 ---
 title: "Test Automation Workshop"
-date: '2019-04-09T16:35:37Z'
+date: "2019-04-09T16:35:37Z"
 template: post
 draft: false
-slug: '2019/04/09/test-automation-workshop'
+slug: "2019/04/09/test-automation-workshop"
 category: article
 tags:
-- testing
-- automation
-- workshop
+  - testing
+  - automation
+  - workshop
 description: "Some key take aways from the Test Automation Workshop I attended"
---- 
+---
 
 Today I attended a Test Automation workshop (@ Wintec House) run in conjunction with [Callaghan Innovation](https://www.callaghaninnovation.govt.nz/) & [Hypr](https://www.hypr.nz/). It was a hands-on workshop where we covered some theory, did some activities that reinforced the theory and finished off with some sample code exercises.
 

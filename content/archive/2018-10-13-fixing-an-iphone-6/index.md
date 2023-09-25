@@ -1,15 +1,15 @@
 ---
 title: "Fixing an iPhone 6"
-date: '2018-10-13T19:32:43Z'
+date: "2018-10-13T19:32:43Z"
 template: post
 draft: false
-slug: '2018/10/13/fixing-an-iphone-6'
+slug: "2018/10/13/fixing-an-iphone-6"
 category: article
 tags:
-- ifixit
-- right to repair
-- diy
-- repair not replace
+  - ifixit
+  - right to repair
+  - diy
+  - repair not replace
 description: "How I repaired an iPhone myself"
 ---
 

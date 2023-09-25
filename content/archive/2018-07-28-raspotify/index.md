@@ -1,14 +1,14 @@
 ---
 title: "Raspotify"
-date: '2018-07-28T14:37:24Z'
+date: "2018-07-28T14:37:24Z"
 template: post
 draft: false
-slug: '2018/07/28/raspotify'
+slug: "2018/07/28/raspotify"
 category: article
 tags:
-- spotify
-- raspberry pi
-- speaker
+  - spotify
+  - raspberry pi
+  - speaker
 description: "Raspotify is a great package to install on a Raspberry Pi to turn it into a Spotify Connect client that just works"
 ---
 
@@ -18,9 +18,9 @@ description: "Raspotify is a great package to install on a Raspberry Pi to turn 
 
 All your going to need is a:
 
-* Speaker with a 3.5mm stereo input
-* 3.5mm stereo cable
-* A Raspberry Pi that has a 3.5mm stereo jack
+- Speaker with a 3.5mm stereo input
+- 3.5mm stereo cable
+- A Raspberry Pi that has a 3.5mm stereo jack
 
 ![Raspberry Pi with stereo cable](./raspberry-pi-with-stereo-cable.jpg)
 

@@ -22,7 +22,6 @@ Before I committed to changing I decided to survey the landscape and work out wh
 
 In the end I went with Warehouse Mobile and a combination of minutes and data packs for a total of $8 a month. I have plenty of minutes (200) and enough data (500MB) to get through the month. As a bonus because they are on the 2Degrees network you get Wi-Fi calling on compatible phones.
 
-
 <table class="mobileplans">
     <thead>
     <tr>
@@ -135,9 +134,4 @@ Last updated: 24th September 2019
 
 An important point to watch out for is Spark, Skinny and Vodafone cheap plans are only 28 days.
 
-<sup>*</sup> With active credit, pack or combo.
-
-
-
-
-
+<sup>\*</sup> With active credit, pack or combo.

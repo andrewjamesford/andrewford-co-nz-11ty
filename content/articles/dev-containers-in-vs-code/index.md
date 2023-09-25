@@ -1,17 +1,17 @@
 ---
 title: Dev Containers In VS Code
-date: '2023-09-14T20:41:32Z'
+date: "2023-09-14T20:41:32Z"
 template: post
 draft: false
-slug: 'dev-containers-in-vs-code'
+slug: "dev-containers-in-vs-code"
 category: article
 tags:
-- vscode
-- containers
-- devcontainers
-- livest
+  - vscode
+  - containers
+  - devcontainers
+  - livest
 description: Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
---- 
+---
 
 The following is a transcript of my live stream on YouTube Sep 11, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
 
@@ -151,7 +151,7 @@ You've got the vs code, pretty much the same as what you're used to.
 
 It's pretty normal.
 
-But when you have a devcontainer.json file, one of the things that the yes code will do is it will pop up a little pop up saying "Would you like to open this in a container?" 
+But when you have a devcontainer.json file, one of the things that the yes code will do is it will pop up a little pop up saying "Would you like to open this in a container?"
 
 And when it does that, so what just like as you would if you typed docker from the client line or docker compose with a docker file, that would then pull down those image, set that up locally on your machine and then make it available to work on.
 
@@ -185,7 +185,7 @@ Hang on, I'll get the right link here.
 
 So this is the extension ID here.
 
-If you do search for that in your own VS code, that should come up with the right one. 
+If you do search for that in your own VS code, that should come up with the right one.
 
 And you're going to need to install it of course.
 
@@ -1131,7 +1131,7 @@ But can't remember off the top of my head the cost?
 
 No, I'm sorry.
 
-180 included hours for Codespace with GitHub Pro. 
+180 included hours for Codespace with GitHub Pro.
 
 Well, yeah, that's a really great tool.
 

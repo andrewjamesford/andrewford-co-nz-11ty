@@ -1,5 +1,5 @@
 ---
-title: 'The Shorter Your Sleep, the Shorter Your Life: The New Sleep Science'
+title: "The Shorter Your Sleep, the Shorter Your Life: The New Sleep Science"
 date: "2017-10-03T07:27:04+00:00"
 template: post
 draft: false
@@ -13,4 +13,4 @@ description: "...once people know of the powerful links between sleep loss and, 
 
 [Rachel Cooke](https://www.theguardian.com/lifeandstyle/2017/sep/24/why-lack-of-sleep-health-worst-enemy-matthew-walker-why-we-sleep):
 
->...once people know of the powerful links between sleep loss and, among other things, Alzheimer’s disease, cancer, diabetes, obesity and poor mental health, they will try harder to get the recommended eight hours a night (sleep deprivation, amazing as this may sound to Donald Trump types, constitutes anything less than seven hours).
+> ...once people know of the powerful links between sleep loss and, among other things, Alzheimer’s disease, cancer, diabetes, obesity and poor mental health, they will try harder to get the recommended eight hours a night (sleep deprivation, amazing as this may sound to Donald Trump types, constitutes anything less than seven hours).

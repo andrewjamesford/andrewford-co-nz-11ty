@@ -13,5 +13,6 @@ description: ""
 ---
 
 <a href="https://creativecommons.org/2017/06/22/unsplash/">Ryan Merkley</a>:
+
 <blockquote>Unsplash, a photo sharing startup, has launched their own branded license and updated their terms to add new restrictions and remove CC0 from their platform. As a result of the changes, Unsplash images are no longer in the public domain. The permissions offered can be revoked at any time, and Unsplash now has the right to pursue infringement on behalf of their users. </blockquote>
 Well that's a shame, I've used Unsplash in the past purely because of its great content and it's nearly unrestricted license.

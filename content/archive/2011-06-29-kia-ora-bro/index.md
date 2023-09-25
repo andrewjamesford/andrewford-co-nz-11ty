@@ -6,7 +6,7 @@ draft: false
 slug: "/2011/06/29/kia-ora-bro/"
 category: article
 tags:
-    - Wordpress
+  - Wordpress
 description: "Welcome"
 ---
 
