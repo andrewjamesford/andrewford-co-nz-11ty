@@ -5,6 +5,9 @@ template: "page"
 slug: "about/"
 socialImage: ""
 description: "I’m an experienced full stack developer with over 20 years of experience. I’ve worked on a wide range of projects, from small sites for local businesses to large sites for corporations. I’m currently the Head of Teaching at Developer’s Institute, where I mentor the teaching team and enhance the learning experience for students."
+eleventyNavigation:
+  key: About
+  order: 4
 ---
 
 I'm an experienced full stack developer working professionally in the web industry since the year 2000. Having worked on small sites for local business to large sites for corporations including Sony, Panasonic, Comvita, Zespri, Trust Power, Farmlands, Lion Nathan, Destination Great Lake Taupo, Craigs Investment Partners and Fisher & Paykel Healthcare to name but a few. These sites exposed me to a wide range of CMS systems from bespoke solutions, to Wordpress, Umbraco and Sitecore.

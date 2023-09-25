@@ -5,9 +5,9 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.article | length %}
+{% set postsCount = collections.articles | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<h3>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h3>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -15,7 +15,7 @@ numberOfLatestPostsToShow: 3
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/article/">the articles</a>.</p>
 {% endif %}
 
 {# List every content page in the project #}
@@ -27,12 +27,11 @@ numberOfLatestPostsToShow: 3
 </ul> #}
 
 <ul>
-{%- for article in collections.articles %}
+{%- for article in collections.articles -%}
 {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  {%- if article.data.draft == false -%}
+  {%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
   <li>
-    {{ article.data.title }}
-    
+    <a href={{ absolutePostUrl }}>{{ article.data.title }}</a>
   </li>
   {%- endif -%}
 {%- endfor %}
