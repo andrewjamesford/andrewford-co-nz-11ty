@@ -154,7 +154,7 @@ h2 {
 	padding-left: 0;
 	text-align: center;
 	margin: 0;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	min-height: 2.5rem;
 }
 .nav-links li {
@@ -202,4 +202,7 @@ a.lastfm-icon:hover {
 }
 a.lastfm-icon:hover svg {
 	fill: var(--link-color);
+}
+.center {
+	text-align: center;
 }

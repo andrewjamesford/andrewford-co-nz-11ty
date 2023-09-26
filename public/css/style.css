@@ -267,7 +267,7 @@ pre {
 	.nav {
 		display: flex;
 		justify-content: flex-end;
-		align-items: flex-end;
+		align-items: center;
 	}
 	.main {
 		padding-top: 2rem;

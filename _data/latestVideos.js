@@ -6,7 +6,7 @@ module.exports = async function () {
 		let url = baseUrl + "/.netlify/functions/latestUploads";
 
 		let json = await EleventyFetch(url, {
-			duration: "1d", // save for 1 day
+			duration: "1h", // save for 1 hour
 			type: "json", // we’ll parse JSON for you
 		});
 
