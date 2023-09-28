@@ -248,6 +248,11 @@ pre {
 	grid-template-columns: 1fr;
 	gap: 1rem;
 }
+.video-thumb {
+	border-radius: 1.1rem;
+	max-width: 100%;
+	width: 100%;
+}
 
 @media screen and (min-width: 48rem) {
 	.avatar-wrapper {
@@ -307,7 +312,7 @@ pre {
 		max-width: 80%;
 	}
 	.latest-articles-videos {	
-		grid-template-columns: 1fr 1fr;	
+		grid-template-columns: 2fr 1fr;	
 		align-items: baseline;
 	}
 }

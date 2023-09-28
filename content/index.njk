@@ -42,8 +42,8 @@ numberOfLatestVideosToShow: 3
             <li class="article-list-item">
               <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
                 <h4>{{ video.snippet.title }}</h4>
-              </a>
-              <img src={{ video.snippet.thumbnails.high.url }} alt={{ video.snippet.title }}/>
+              </a>                            
+              <img src={{ video.snippet.thumbnails.medium.url }} alt="{{ "Thumb for " + video.snippet.title }}" class="video-thumb">              
             </li>
           {%- endif -%}
         {%- endfor -%}
