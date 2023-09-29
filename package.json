@@ -1,7 +1,7 @@
 {
-	"name": "eleventy-base-blog",
-	"version": "8.0.0",
-	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"name": "andrewford-co-nz-11ty",
+	"version": "2.0.0",
+	"description": "andrewford.co.nz blog in 11ty",
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve",
 		"dev": "netlify dev",

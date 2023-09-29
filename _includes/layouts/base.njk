@@ -6,7 +6,7 @@
 		<title>{{ title or metadata.title }} - Andrew Ford - </title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
-		{#- Icons -#}
+		{# Icons #}
 		<meta name="msapplication-TileColor" content="#eee">
 		<meta name="msapplication-TileImage" content="{{ metadata.url }}/ms-icon-144x144.png">
 		<link rel="apple-touch-icon" sizes="57x57" href="{{ metadata.url }}/apple-icon-57x57.png">
@@ -27,7 +27,7 @@
 		<link rel="manifest" href="{{ metadata.url }}/site.webmanifest">
 		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
-		{#- Atom and JSON feeds included by default #}
+		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="{{ metadata.url }}/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
@@ -54,32 +54,32 @@
 			<meta property="twitter:image" content="{{ metadata.url }}/images/social-card.png"/>
 		{% endif %}
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
+		{# Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
 		<meta name="generator" content="{{ eleventy.generator }}">
 
 		{# Webmention.io #}
 		<link rel="webmention" href="https://webmention.io/andrewford.co.nz/webmention"/>
 		<link rel="pingback" href="https://webmention.io/andrewford.co.nz/xmlrpc"/>
-		{#-
+		{#
 		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
 		 https://github.com/11ty/eleventy-plugin-bundle
 		#}
 
-		{#- Add the contents of a file to the CSS bundle #}
+		{# Add the contents of a file to the CSS bundle #}
 		{%- css %}{% include "public/css/critical.css" %}{% endcss %}
 
-		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
+		{# Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>
 			{% getBundle "css" %}
 		</style>
 
-		{#- Preload the CSS bundle #}
+		{# Preload the CSS bundle #}
 		<link rel="preload" href="{{ metadata.url + '/css/style.css' }}?6" as="style"/>
 		<link rel="stylesheet" href="{{ metadata.url + '/css/style.css' }}?6"/>
 
 	</head>
 
-	<!-- Google tag (gtag.js) -->
+	{# Google tag (gtag.js) #}
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -91,7 +91,7 @@
 		gtag('config', 'G-K39D2FSQEF');
 	</script>
 
-	<body>
+	<body class="body">
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header class="header">
@@ -122,49 +122,47 @@
 			</nav>
 		</header>
 
-		<hr />
-
 		<main id="skip" class="main wrapper">
 			{{ content | safe }}
 		</main>
 
 		<footer class="wrapper">
-		<hr />
-		<ul class="nav-links">
-			<li><a href="{{ metadata.url }}/about/">About</a></li>
-			<li><a href="{{ metadata.url }}/archive/">Archive</a></li>
-			<li><a href="{{ metadata.url }}/article/">Articles</a></li>
-			<li><a href="https://ko-fi.com/andrewfordcodes">Buy me a Coffee</a></li>
-			<li><a rel="me" href="mailto:me@andrewford.co.nz">Email</a></li>
-			<li><a rel="me authn" href="https://github.com/andrewjamesford">GitHub</a></li>
-			<li><a href="https://www.linkedin.com/in/andrewjamesford/">LinkedIn</a></li>
-			<li><a rel="me" href="{{ metadata.url }}/@andrew">Mastodon</a></li>
-			<li><a href="{{ metadata.url }}/privacy/">Privacy</a></li>
-			<li><a href="{{ metadata.url }}/feed/feed.xml">RSS</a></li>
-			<li><a href="https://andrewford.gumroad.com/">Shop</a></li>
-			<li><a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a></li>
-		</ul>
 
-		{%- if latestMusic.music.artist !== "" -%}
-			<div id="lastFM" class="lastfm-widget">
-				<img id="lastFMImg" src="{{ latestMusic.music.albumArtLarge }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm"/>
-				<div>
-					<div class="lastfm-title">
-						Last listening to:
-						<a href="{{ metadata.url }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
-								<path fill="none" d="M0 0h24v24H0V0z"></path>
-								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.5.51-.86.97-1.04 1.69-.08.32-.13.68-.13 1.14h-2v-.5c0-.46.08-.9.22-1.31.2-.58.53-1.1.95-1.52l1.24-1.26c.46-.44.68-1.1.55-1.8-.13-.72-.69-1.33-1.39-1.53-1.11-.31-2.14.32-2.47 1.27-.12.37-.43.65-.82.65h-.3C8.4 9 8 8.44 8.16 7.88c.43-1.47 1.68-2.59 3.23-2.83 1.52-.24 2.97.55 3.87 1.8 1.18 1.63.83 3.38-.19 4.4z"></path>
-							</svg>
-						</a>
+			<ul class="nav-links">
+				<li><a href="{{ metadata.url }}/about/">About</a></li>
+				<li><a href="{{ metadata.url }}/archive/">Archive</a></li>
+				<li><a href="{{ metadata.url }}/article/">Articles</a></li>
+				<li><a href="https://ko-fi.com/andrewfordcodes">Buy me a Coffee</a></li>
+				<li><a rel="me" href="mailto:me@andrewford.co.nz">Email</a></li>
+				<li><a rel="me authn" href="https://github.com/andrewjamesford">GitHub</a></li>
+				<li><a href="https://www.linkedin.com/in/andrewjamesford/">LinkedIn</a></li>
+				<li><a rel="me" href="{{ metadata.url }}/@andrew">Mastodon</a></li>
+				<li><a href="{{ metadata.url }}/privacy/">Privacy</a></li>
+				<li><a href="{{ metadata.url }}/feed/feed.xml">RSS</a></li>
+				<li><a href="https://andrewford.gumroad.com/">Shop</a></li>
+				<li><a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a></li>
+			</ul>
+
+			{%- if latestMusic.music.artist !== "" -%}
+				<div id="lastFM" class="lastfm-widget">
+					<img id="lastFMImg" src="{{ latestMusic.music.albumArtLarge }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm"/>
+					<div>
+						<div class="lastfm-title">
+							Last listening to:
+							<a href="{{ metadata.url }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
+									<path fill="none" d="M0 0h24v24H0V0z"></path>
+									<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.5.51-.86.97-1.04 1.69-.08.32-.13.68-.13 1.14h-2v-.5c0-.46.08-.9.22-1.31.2-.58.53-1.1.95-1.52l1.24-1.26c.46-.44.68-1.1.55-1.8-.13-.72-.69-1.33-1.39-1.53-1.11-.31-2.14.32-2.47 1.27-.12.37-.43.65-.82.65h-.3C8.4 9 8 8.44 8.16 7.88c.43-1.47 1.68-2.59 3.23-2.83 1.52-.24 2.97.55 3.87 1.8 1.18 1.63.83 3.38-.19 4.4z"></path>
+								</svg>
+							</a>
+						</div>
+						<div class="lastfm-link">
+							<a id="lastFMLink" href="https://www.last.fm">{{ latestMusic.music.artist }} - {{ latestMusic.music.trackName }}</a>
+						</div>
+						<div id="lastFMAlbum" class="lastfm-album">{{ latestMusic.music.album }}</div>
 					</div>
-					<div class="lastfm-link">
-						<a id="lastFMLink" href="https://www.last.fm">{{ latestMusic.music.artist }} - {{ latestMusic.music.trackName }}</a>
-					</div>
-					<div id="lastFMAlbum" class="lastfm-album">{{ latestMusic.music.album }}</div>
 				</div>
-			</div>
-		{%- endif -%}
+			{%- endif -%}
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->

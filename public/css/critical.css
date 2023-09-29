@@ -2,7 +2,7 @@
 	--link-color: #366a92;
 	--body-color: #333;
 	--body-color-secondary: rgb(100, 100, 100);
-	--bg-color: #eee;
+	--bg-color: #fff;
 	--box-bg-color: #f1f9ff;
 	--box-bg-color2: #e1e4e6;
 	--box-border-color: #33333308;
@@ -14,19 +14,27 @@
 	--font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
 		Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
 		Segoe UI Emoji, Segoe UI Symbol;
-}
+	--code-color: #fff;
+	--promo-border: #33333308;
+	--promo-color: #000;
+	--promo-cta-color: #fff;
+	--header-bg-color: #ffffffcc;
+	--header-shadow: #eaeaea;
+}	
 @media (prefers-color-scheme: dark) {
 	:root {
 		--link-color: #79a9cd;
 		--body-color: #eee;
 		--body-color-secondary: rgb(230, 230, 230);
 		--bg-color: #121212;
+		--header-bg-color: #12121200;
+		--header-shadow: #242424;
 	}
 }
 html {
 	scroll-behavior: smooth;
 }
-body {
+.body {
 	font-family: var(--font-sans);
 	color: var(--body-color);
 	font-size: 1.13rem;
@@ -34,7 +42,7 @@ body {
 	background-color: var(--bg-color);
 }
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active) {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -43,8 +51,8 @@ body {
 	white-space: nowrap;
 	width: 1px;
 }
-header,
-footer {
+.header,
+.footer {
 	margin-bottom: 2rem;
 }
 .wrapper {
@@ -89,21 +97,21 @@ h6 {
 	letter-spacing: -1px;
 	text-wrap: balance;
 }
-article :is(h2, h3, h4, h5, h6) {
+.article :is(h2, h3, h4, h5, h6) {
 	margin-top: 3rem;
 }
 h4:is(.footnotes-title) {
 	margin-top: 0;
 }
 h1 {
-	font-size: 1.9rem;
-	line-height: 2.3rem;
-	min-height: 2.3rem;
+	font-size: 3rem;
+	line-height: 3.2rem;
+	min-height: 3.3rem; 
 }
 h2 {
-	font-size: 1.5rem;
-	line-height: 1.8rem;
-	min-height: 2.3rem;
+	font-size: 2.5rem;
+	line-height: 2.6rem;
+	min-height: 2.7rem;
 }
 .article-list {
 	padding-left: 0;
@@ -126,13 +134,13 @@ h2 {
 	margin-top: 0;
 }
 .logo {
-	width: 4rem;
-	height: 4rem;
+	width: 2rem;
+	height: 2rem;
 	border: 1px solid #fff;
 	border-radius: 50%;
 }
 .avatar {
-	display: block;
+	display: flex;
 	margin: 0 auto;
 	text-decoration: none;
 	text-align: center;
@@ -150,17 +158,18 @@ h2 {
 	color: var(--body-color-secondary);
 	margin-bottom: 0;
 }
+.nav {
+	text-align: end;
+}
 .nav-links {
 	padding-left: 0;
-	text-align: center;
 	margin: 0;
-	font-size: 1rem;
-	min-height: 2.5rem;
+	font-size: 0.8rem;
 }
 .nav-links li {
 	display: inline-block;
 	list-style: none;
-	padding: 0.4rem 0.9rem;
+	padding: 0.2rem 0.4rem;
 }
 .nav-links a {
 	color: var(--body-color);
@@ -205,4 +214,7 @@ a.lastfm-icon:hover svg {
 }
 .center {
 	text-align: center;
+}
+.body {
+	margin: 0;
 }

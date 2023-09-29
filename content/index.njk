@@ -27,7 +27,11 @@ numberOfLatestVideosToShow: 3
             </li>
           {%- endif -%}
         {%- endfor %}
-        <li class="article-list-item"><h4 class="article-title"><a href="{{ metadata.url }}/article/">More Articles...</a></h4></li>
+        <li class="article-list-item">
+          <h4 class="article-title">
+            <a href="{{ metadata.url }}/article/">More Articles&#8230;</a>
+          </h4>
+        </li>
       </ul>
     </article>
   {%- endif -%}
@@ -40,14 +44,20 @@ numberOfLatestVideosToShow: 3
         {%- for video in latestVideos.videos -%}
           {% if loop.index <= numberOfLatestVideosToShow -%}
             <li class="article-list-item">
-              <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
-                <h4>{{ video.snippet.title }}</h4>
-              </a>                            
-              <img src={{ video.snippet.thumbnails.medium.url }} alt="{{ "Thumb for " + video.snippet.title }}" class="video-thumb">              
+              <h4 class="article-title">
+                <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
+                  {{ video.snippet.title }}
+                </a>
+              </h4>
+              <img src={{ video.snippet.thumbnails.medium.url }} alt="{{ "Thumb for " + video.snippet.title }}" class="video-thumb">
             </li>
           {%- endif -%}
         {%- endfor -%}
-        <li class="article-list-item"><a href="https://www.youtube.com/@CodewithAndrewFord">More Videos...</a></li>
+        <li class="article-list-item">
+          <h4 class="article-title">
+          <a href="https://www.youtube.com/@CodewithAndrewFord">More Videos&#8230;</a>
+          </h4>
+        </li>
       </ul>
     </aside>
   {%- endif -%}
