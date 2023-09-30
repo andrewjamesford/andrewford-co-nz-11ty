@@ -145,7 +145,10 @@
 
 			{%- if latestMusic.music.artist !== "" -%}
 				<div id="lastFM" class="lastfm-widget">
-					<img id="lastFMImg" src="{{ latestMusic.music.albumArtLarge }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm"/>
+					<picture>
+						<source srcset="{{ latestMusic.music.albumArtLarge }}" media="(min-width: 50rem)">
+						<img id="lastFMImg" src="{{ latestMusic.music.albumArt }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm"/>
+					</picture>
 					<div>
 						<div class="lastfm-title">
 							Last listening to:

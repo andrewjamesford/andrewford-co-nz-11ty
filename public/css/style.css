@@ -309,7 +309,16 @@ pre[class*="language-"] {
 		padding: 3rem;
 	}
 	.lastfm-widget {
-		max-width: 80%;
+		max-width: 30rem;
+	}
+	.lastfm-img {
+		max-width: 128px;
+	}
+	.lastfm-title {
+		font-size: 1rem;
+	}
+	.lastfm-widget {
+		font-size: 1.3rem;
 	}
 	.latest-articles-videos {
 		grid-template-columns: 2fr 1fr;

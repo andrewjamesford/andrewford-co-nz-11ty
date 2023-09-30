@@ -188,9 +188,10 @@ article ul {
 	font-size: 0.9rem;
 	line-height: 1.2;
 	display: grid;
-	grid-template-columns: 64px auto;
+	grid-template-columns: min-content auto;
 	gap: 0.5rem;
 	margin: 0.75rem auto 5rem auto;
+	max-width: 70%;
 }
 .lastfm-img {
 	border-radius: 0.25rem;

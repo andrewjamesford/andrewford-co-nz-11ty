@@ -40,7 +40,6 @@ numberOfLatestVideosToShow: 3
     <aside class="latest-videos">
       <h3>Latest Videos</h3>
       <ul class="article-list">
-        {# Latest Videos:  {{ latestVideos.videos | length }} #}
         {%- for video in latestVideos.videos -%}
           {% if loop.index <= numberOfLatestVideosToShow -%}
             <li class="article-list-item">
