@@ -14,10 +14,13 @@ cd andrewford-co-nz-11ty
 npm install
 ```
 
+Ensure you have the following dependencies installed:
+- Netlify CLI
+
 Once you've installed the dependencies, you can run the development server:
 
 ```bash
-npm run start
+npm run dev
 ```
 
 This will start a local development server at http://localhost:8080/ where you can preview your blog.
