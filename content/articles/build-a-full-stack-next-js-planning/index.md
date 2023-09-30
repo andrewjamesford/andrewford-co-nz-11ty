@@ -20,7 +20,7 @@ In this stream I went over the planning stages of a project. First on a virtual 
 To view the Wireframes I created in the stream, please see the following link:
 [Wireframes on Excalidraw](https://excalidraw.com/#json=almP8vw8UnTN7cR6Zk6Xf,aIx7EgfHxXwpKKnv6k3IbQ)
 
-<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 {% figure "./whiteboard.png", "The Whiteboard from the Stream" %}
 

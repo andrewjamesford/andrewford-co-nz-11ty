@@ -118,6 +118,10 @@ h3 {
 	line-height: 2.1rem;
 	min-height: 2.2rem;
 }
+.article-datetime {
+	font-size: 1.5rem;
+	color: var(--body-color-secondary);
+}
 .article-list {
 	padding-left: 0;
 }
@@ -173,6 +177,7 @@ h3 {
 }
 .nav-links-footer {
 	text-align: center;
+	color: var(--body-color-secondary);
 }
 .nav-links li {
 	display: inline-block;
@@ -226,4 +231,7 @@ a.lastfm-icon:hover svg {
 }
 .body {
 	margin: 0;
+}
+.secondary {
+	color: var(--body-color-secondary);
 }

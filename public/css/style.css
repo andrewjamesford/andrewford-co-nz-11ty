@@ -16,6 +16,7 @@ pre[class*="language-"] {
 .article-date {
 	white-space: nowrap;
 	margin-right: 1rem;
+	color: var(--body-color-secondary);
 }
 .article img {
 	max-width: 100%;
@@ -43,6 +44,21 @@ pre[class*="language-"] {
 	text-align: center;
 	width: 100%;
 	display: block;
+}
+.article-tag-title {
+	text-align: center;
+	margin-bottom: 0;
+}
+.article-tags {
+	font-size: 0.8rem;
+	display: flex;	
+	align-items: center;
+	margin-bottom: 1.5rem;
+	list-style: none;
+	color: var(--body-color-secondary);
+}
+.article-tags dd {
+	margin-inline-start: 0;
 }
 @supports (initial-letter: 3) {
 	.article > p:first-of-type::first-letter,
@@ -212,7 +228,9 @@ pre[class*="language-"] {
 }
 .video {
 	aspect-ratio: 16 / 9;
-	max-width: 100%;
+	max-width: 1280px;
+	max-height: 720px;
+	width: 100%;
 	border-radius: 0.3rem;
 	display: flex;
 	margin: 0 auto;
@@ -241,6 +259,7 @@ pre[class*="language-"] {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 2rem;
+	margin-top: 1rem;
 }
 .video-thumb {
 	border-radius: 1.1rem;
@@ -325,6 +344,7 @@ pre[class*="language-"] {
 	.latest-articles-videos {
 		grid-template-columns: 2fr 1fr;
 		align-items: baseline;
+		margin-top: 5rem;
 	}
 	.nav-links {
 		font-size: 1rem;
