@@ -1,7 +1,7 @@
 :root {
 	--link-color: #366a92;
 	--body-color: #333;
-	--body-color-secondary: rgb(100, 100, 100);
+	--body-color-secondary: #646464;
 	--bg-color: #fff;
 	--box-bg-color: #f1f9ff;
 	--box-bg-color2: #e1e4e6;
@@ -25,7 +25,7 @@
 	:root {
 		--link-color: #79a9cd;
 		--body-color: #eee;
-		--body-color-secondary: rgb(230, 230, 230);
+		--body-color-secondary: #e6e6e6;
 		--bg-color: #121212;
 		--header-bg-color: #12121200;
 		--header-shadow: #242424;
@@ -84,7 +84,7 @@ a.no-hover:active {
 }
 hr {
 	border: 0;
-	border-top: 1px solid var(--body-color);
+	border-top: 1px solid var(--body-color-secondary);
 	margin: 2rem 0;
 }
 h1,

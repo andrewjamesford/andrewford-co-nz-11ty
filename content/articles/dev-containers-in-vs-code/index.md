@@ -13,7 +13,13 @@ tags:
 description: Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
 ---
 
-The following is a transcript of my live stream on YouTube Sep 11, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
+Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
+
+[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+[Dev Containers Documentation](https://code.visualstudio.com/docs/devcontainers/containers)
+
+The following is a transcript of my live stream on YouTube Sep 11, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity. 
 
 <iframe class="video" loading="lazy" src="https://www.youtube.com/embed/yiJ2lWrVCgk?si=gRRnvuHwD-8cHg8D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
