@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownIt = require("markdown-it");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -11,6 +12,35 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 module.exports = function (eleventyConfig) {
+	// Create our custom markdown-it instance.
+	let md = markdownIt({
+		html: true,
+		linkify: true,
+	  }).use(require("markdown-it-footnote"));
+	
+	  // Create custom footnote block rule
+	  md.renderer.rules.footnote_block_open = () => (
+		'<hr />\n' +
+		'<h4 class="footnotes-title">References</h4>\n' +
+		'<section class="footnotes">\n' +
+		'<ol class="footnotes-list">\n'
+	  );
+	
+	  // Replacement render_footnote_caption with no [] around the number
+	  const render_footnote_caption = (tokens, idx) => {
+		var n = Number(tokens[idx].meta.id + 1).toString();
+		if (tokens[idx].meta.subId > 0) {
+		  n += ':' + tokens[idx].meta.subId;
+		}
+		return n;
+	  }
+	
+	  // Replace existing function with one with no []
+	  md.renderer.rules.footnote_caption = (tokens, idx) => render_footnote_caption(tokens, idx)
+	
+	  // Overwrite the built-in Markdown library with our custom instance.
+	  eleventyConfig.setLibrary("md", md);
+
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
