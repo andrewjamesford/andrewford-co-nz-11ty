@@ -208,6 +208,8 @@ article ul {
 }
 .lastfm-img {
 	border-radius: 0.25rem;
+	max-width: 64px;	
+	max-height: 64px;
 }
 .lastfm-title {
 	font-size: 0.7rem;

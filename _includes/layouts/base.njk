@@ -69,7 +69,7 @@
 		{%- css %}{% include "public/css/critical.css" %}{% endcss %}
 
 		{# Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
-		<style>	
+		<style>
 			{% getBundle "css" %}
 		</style>
 
@@ -167,7 +167,7 @@
 				<div id="lastFM" class="lastfm-widget">
 					<picture>
 						<source srcset="{{ latestMusic.music.albumArtLarge }}" media="(min-width: 50rem)">
-						<img id="lastFMImg" src="{{ latestMusic.music.albumArt }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm"/>
+						<img id="lastFMImg" src="{{ latestMusic.music.albumArt }}" class="lastfm-img" loading="lazy" alt="Album cover art for last listened on Last.fm" width="128" height="128"/>
 					</picture>
 					<div>
 						<div class="lastfm-title">

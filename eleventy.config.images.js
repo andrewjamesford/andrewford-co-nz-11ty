@@ -8,7 +8,7 @@ module.exports = (eleventyConfig) => {
 
 		return path.resolve(split.join(path.sep), relativeFilePath);
 	}
-	const formats = ["avif", "webp", "auto"];
+	const formats = ["avif", "webp", "png", "auto"];
 
 	// Eleventy Image shortcode
 	// https://www.11ty.dev/docs/plugins/image/
