@@ -6,13 +6,15 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
-<ul>
+<ul class="article-list">
 {%- for archiveItem in collections.archive | reverse %}
 {% set absolutePostUrl %}{{ archiveItem.url | url | absoluteUrl(metadata.url) }}{% endset %}
   {%- if archiveItem.data.draft == false -%}
-  <li>
-    <a href={{ absolutePostUrl }}>{{ archiveItem.data.title }}</a>
-    
+  <li class="article-list-item">
+    <h4 class="article-title">
+      <a href={{ absolutePostUrl }}>{{ archiveItem.data.title }}</a>
+    </h4>
+    <p class="article-description">{{ archiveItem.data.description }}</p>
   </li>
   {%- endif -%}
 {%- endfor %}

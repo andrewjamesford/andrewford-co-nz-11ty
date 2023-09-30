@@ -7,4 +7,3 @@ eleventyNavigation:
   order: 2
 ---
 
-Hello I'm an index for article

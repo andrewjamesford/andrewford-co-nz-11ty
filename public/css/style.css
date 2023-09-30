@@ -212,8 +212,10 @@ pre[class*="language-"] {
 }
 .video {
 	aspect-ratio: 16 / 9;
-	width: 100%;
+	max-width: 100%;
 	border-radius: 0.3rem;
+	display: flex;
+	margin: 0 auto;
 }
 .footnotes,
 .footnote-ref {
