@@ -14,14 +14,14 @@ permalink: /feed/feed.json
 		"url": "{{ metadata.author.url }}"
 	},
 	"items": [
-		{%- for post in collections.posts | reverse %}
-		{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.url) %}
+		{%- for article in collections.articles | reverse %}
+		{%- set absoluteArticleUrl = article.url | htmlBaseUrl(metadata.url) %}
 		{
-			"id": "{{ absolutePostUrl }}",
-			"url": "{{ absolutePostUrl }}",
-			"title": "{{ post.data.title }}",
-			"content_html": {% if post.templateContent %}{{ post.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) | dump | safe }}{% else %}""{% endif %},
-			"date_published": "{{ post.date | dateToRfc3339 }}"
+			"id": "{{ absoluteArticleUrl }}",
+			"url": "{{ absoluteArticleUrl }}",
+			"title": "{{ article.data.title }}",
+			"content_html": {% if article.templateContent %}{{ article.templateContent | transformWithHtmlBase(absoluteArticleUrl, article.url) | dump | safe }}{% else %}""{% endif %},
+			"date_published": "{{ article.date | dateToRfc3339 }}"
 		}
 		{% if not loop.last %},{% endif %}
 		{%- endfor %}
