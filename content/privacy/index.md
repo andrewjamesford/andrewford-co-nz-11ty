@@ -5,9 +5,6 @@ template: "page"
 slug: "privacy/"
 socialImage: ""
 description: "Privacy Policy for Andrew Ford"
-eleventyNavigation:
-  key: Privacy
-  order: 5
 ---
 
 ## TLDR;

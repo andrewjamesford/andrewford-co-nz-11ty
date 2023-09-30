@@ -74,8 +74,8 @@
 		</style>
 
 		{# Preload the CSS bundle #}
-		<link rel="preload" href="{{ metadata.url + '/css/style.css' }}?6" as="style"/>
-		<link rel="stylesheet" href="{{ metadata.url + '/css/style.css' }}?6"/>
+		<link rel="preload" href="{{ metadata.url + '/css/style.css' }}" as="style"/>
+		<link rel="stylesheet" href="{{ metadata.url + '/css/style.css' }}"/>
 
 	</head>
 
@@ -128,7 +128,7 @@
 
 		<footer class="wrapper">
 
-			<ul class="nav-links">
+			<ul class="nav-links nav-links-footer">
 				<li><a href="{{ metadata.url }}/about/">About</a></li>
 				<li><a href="{{ metadata.url }}/archive/">Archive</a></li>
 				<li><a href="{{ metadata.url }}/article/">Articles</a></li>

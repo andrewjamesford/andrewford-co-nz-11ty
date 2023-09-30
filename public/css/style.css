@@ -330,6 +330,9 @@ pre[class*="language-"] {
 	.nav-links li {
 		padding: 0.4rem 0.9rem;
 	}
+	.header-anchor {
+		font-size: 1.2rem;
+	}
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

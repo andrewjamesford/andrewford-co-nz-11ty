@@ -113,6 +113,11 @@ h2 {
 	line-height: 2.6rem;
 	min-height: 2.7rem;
 }
+h3 {
+	font-size: 2rem;
+	line-height: 2.1rem;
+	min-height: 2.2rem;
+}
 .article-list {
 	padding-left: 0;
 }
@@ -165,6 +170,9 @@ h2 {
 	padding-left: 0;
 	margin: 0;
 	font-size: 0.8rem;
+}
+.nav-links-footer {
+	text-align: center;
 }
 .nav-links li {
 	display: inline-block;
