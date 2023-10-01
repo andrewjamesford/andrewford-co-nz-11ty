@@ -272,8 +272,9 @@ pre[class*="language-"] {
 	position: sticky;
 	display: grid;
 	top: 0;
-	backdrop-filter: saturate(180%) blur(5px);
-	background: var(--header-bg-color);
+	-webkit-backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(180%) blur(5px);
+	background: var(--header-bg-color);    
 	padding: 0.5rem;
 	box-shadow: inset 0 -0.5px 0 0 var(--header-shadow);
 	grid-template-columns: 1fr 5fr;
@@ -288,6 +289,21 @@ pre[class*="language-"] {
 }
 
 @media screen and (min-width: 48rem) {
+	h1 {
+		font-size: 3rem;
+		line-height: 3.2rem;
+		min-height: 3.3rem;
+	}
+	h2 {
+		font-size: 2.5rem;
+		line-height: 2.6rem;
+		min-height: 2.7rem;
+	}
+	h3 {
+		font-size: 2rem;
+		line-height: 2.1rem;
+		min-height: 2.2rem;
+	}
 	.logo {
 		width: 4rem;
 		height: 4rem;

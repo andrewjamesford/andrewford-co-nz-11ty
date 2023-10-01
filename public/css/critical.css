@@ -18,7 +18,7 @@
 	--promo-border: #33333308;
 	--promo-color: #000;
 	--promo-cta-color: #fff;
-	--header-bg-color: #ffffffcc;
+	--header-bg-color: rgba(255, 255, 255, 0.8);
 	--header-shadow: #eaeaea;
 }
 @media (prefers-color-scheme: dark) {
@@ -27,7 +27,7 @@
 		--body-color: #eee;
 		--body-color-secondary: #e6e6e6;
 		--bg-color: #121212;
-		--header-bg-color: #12121200;
+		--header-bg-color: rgba(18, 18, 18, 0);
 		--header-shadow: #242424;
 	}
 }
@@ -104,20 +104,17 @@ h4:is(.footnotes-title) {
 	margin-top: 0;
 }
 h1 {
-	font-size: 3rem;
-	line-height: 3.2rem;
-	min-height: 3.3rem;
-}
-h2 {
-	font-size: 2.5rem;
-	line-height: 2.6rem;
-	min-height: 2.7rem;
-}
-h3 {
-	font-size: 2rem;
-	line-height: 2.1rem;
-	min-height: 2.2rem;
-}
+	font-size: 1.9rem;
+	line-height: 2.3rem;
+	min-height: 2.3rem;
+  }
+  
+  h2 {
+	font-size: 1.5rem;
+	line-height: 1.8rem;
+	min-height: 2.3rem;
+  }
+
 .article-datetime {
 	font-size: 1.5rem;
 	color: var(--body-color-secondary);
