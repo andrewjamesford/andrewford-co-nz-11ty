@@ -59,6 +59,7 @@ pre[class*="language-"] {
 }
 .article-tags dd {
 	margin-inline-start: 0;
+	font-style: italic;
 }
 @supports (initial-letter: 3) {
 	.article > p:first-of-type::first-letter,

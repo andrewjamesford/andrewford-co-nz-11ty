@@ -29,7 +29,7 @@ Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/
 7. The shortcut will show a loading icon and then display your answer in an alert box with a "Done" button
 8. The shortcut automatically copies the answer to your clipboard so you can paste it into another app
 
-{% figure "./chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article" %}
+{% figure "./chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 ### How it works
 

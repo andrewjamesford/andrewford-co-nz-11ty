@@ -14,7 +14,7 @@ tags:
 description: Explore the strengths of CodeLlama's offline assistance and GitHub Copilot's Chat in this AI-assisted coding tool comparison.
 ---
 
-{% figure "./code-llama.png", "a llama in front of a computer with code on the screen, digital art / DALL-E" %}
+{% figure "./code-llama.png", "a llama in front of a computer with code on the screen, digital art / DALL-E", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Wouldn't it be great to run a local Large Language Model on your own computer to help you code? Even when your internet is out/flaky or your on mobile data. Best of all it's free and using an Open Source extension and LLM.
 
@@ -48,7 +48,7 @@ ollama pull codellama
 
 This will start the download process to pull down the CodeLlama model. You should see it start pulling dow the files. Be warned it's a 3.8 GB download, so may take some time.
 
-{% figure "./ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal" %}
+{% figure "./ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 We then need to configure Continue to use CodeLlama. To do this we need to open the config file for Continue.
 
@@ -80,7 +80,7 @@ Save the file and close Visual Studio Code and reopen it again.
 
 On the left hand sidebar you hopefully have noticed a icon that has the letter C and D. Click on that will open the prompt.
 
-{% figure "./continue-query-answer.png", "The Continue extension user interface in VS Code" %}
+{% figure "./continue-query-answer.png", "The Continue extension user interface in VS Code", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 If everything worked correctly you can now start asking questions to CodeLlama.
 
@@ -177,7 +177,7 @@ Again another classic coding challenge question.
 
 With GC I got off to a very rocky start. Upon entering my question I got this result _"Oops, your response got filtered. Vote down if you think this shouldn't have happened."_.
 
-{% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response" %}
+{% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 I ended up having to change my question to the following for GC to get an answer, I'm not sure why it triggered the filter:
 
@@ -320,14 +320,14 @@ npm install --save-dev jest
 > 2. In this file, import Jest and the `getFizzBuzz` function:
 
 ```javascript
-import { getFizzBuzz } from &amp;amp;#39;./getFizzBuzz&amp;amp;#39;;
+import { getFizzBuzz } from "./getFizzBuzz";
 ```
 
 > 1. Write a test for each of the edge cases you identified earlier, such as testing that the function returns an empty array when given an empty array or a single number.
 > 2. For example, to test that the function returns an empty array when given an empty array, you could write the following test:
 
 ```javascript
-test(&amp;amp;#39;returns an empty array when given an empty array&amp;amp;#39;, () =&amp;amp;gt; {
+test("returns an empty array when given an empty array", () => {
   expect(getFizzBuzz([])).toStrictEqual([]);
 });
 
@@ -336,16 +336,16 @@ test(&amp;amp;#39;returns an empty array when given an empty array&amp;amp;#39;,
 > 1. To test that the function returns the correct output for a single number, you could write the following test:
 
 ```javascript
-test(&amp;amp;#39;returns an array with the correct output for a single number&amp;amp;#39;, () =&amp;amp;gt; {
-  expect(getFizzBuzz([1])).toStrictEqual([&amp;amp;#39;1&amp;amp;#39;]);
+test("returns an array with the correct output for a single number", () => {
+  expect(getFizzBuzz([1])).toStrictEqual([1]);
 });
 ```
 
 > 1. To test that the function returns the correct output for multiple numbers, you could write the following test:
 
 ```javascript
-test(&amp;amp;#39;returns an array with the correct output for multiple numbers&amp;amp;#39;, () =&amp;amp;gt; {
-  expect(getFizzBuzz([1, 2, 3])).toStrictEqual([&amp;amp;#39;1&amp;amp;#39;, &amp;amp;#39;2&amp;amp;#39;, &amp;amp;#39;Fizz&amp;amp;#39;]);
+test("returns an array with the correct output for multiple numbers";, () => {
+  expect(getFizzBuzz([1, 2, 3])).toStrictEqual([1, 2, "Fizz"]);
 });
 
 ```

@@ -43,7 +43,7 @@ npm run storybook
 
 You should now see a welcome screen in your default browser like the following:
 
-{% image "./storybook-welcome.png", "Storybook welcome screen" %}
+{% image "./storybook-welcome.png", "Storybook welcome screen", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 When building a component UI library it's best to start building the smallest components that will make up the UI library. I suggest starting with some basic components like Headings & Buttons followed by common form controls. The storybook documentation on the welcome screen has a link to a great site quickly summarising [component driven development](https://www.componentdriven.org/).
 
@@ -72,7 +72,7 @@ In the `Button.tsx` file you can see the properties for the component have been 
 
 Open the `button.module.css` file and rename the CSS classes from [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [camelCase](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). We will also rename to a more generic name, by removing the "storybook" from the class names.
 
-{% image "./rename-css.png", "Rename CSS from kebab case to camel case" %}
+{% image "./rename-css.png", "Rename CSS from kebab case to camel case", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Now we need to update the button component with the class names from the CSS module.
 
@@ -108,11 +108,11 @@ export const Button = ({
 
 In your browser, you can now view the "Docs" section for the button with its awesome ability to change properties for your component in real-time. Which is great for testing purposes.
 
-{% image "./storybook-button.png", "Storybook documentation for our button" %}
+{% image "./storybook-button.png", "Storybook documentation for our button", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 I've also added another example for [headings](https://github.com/andrewjamesford/react-ts-component-library/blob/main/src/components/Heading.tsx), that allows you to select from h1-h6.
 
-{% image "./storybook-heading.png", "Storybook documentation for a heading component" %}
+{% image "./storybook-heading.png", "Storybook documentation for a heading component", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Now keep creating more components for your own UI library piece by piece. You can test and check your components in Storybook independent of the web app, configuring all sorts of different property combinations.
 

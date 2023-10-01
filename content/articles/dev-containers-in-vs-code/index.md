@@ -9,7 +9,9 @@ tags:
   - vscode
   - containers
   - devcontainers
-  - livest
+  - livestream
+  - video
+  - codespaces
 description: Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
 ---
 

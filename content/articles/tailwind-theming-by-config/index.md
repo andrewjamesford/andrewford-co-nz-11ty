@@ -32,10 +32,10 @@ In the [example](https://github.com/andrewjamesford/tailwind-theming-by-config-e
 
 First off lets look at the final results. In the screenshots below you can see two identically styled designs of 3 cards. The top one has the **alpha** theme with a background color of **<span style="border-bottom: 3px solid azure;">azure</span>** the bottom **gamma** with a background colour of **<span style="border-bottom: 3px solid ghostwhite">ghostwhite</span>**.
 
-{% image "./cards-alpha.png", "Alpha Cards" %}
+{% image "./cards-alpha.png", "Alpha Cards", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 _The alpha theme is set_
 
-{% image "./cards-gamma.png", "Gamma Cards" %}
+{% image "./cards-gamma.png", "Gamma Cards", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 _The gamma theme is set_
 
 Same code base, the only difference between each to get the different results is that an environment variable is different between the two. In this case while developing I have a _.env_ file that looks like this:

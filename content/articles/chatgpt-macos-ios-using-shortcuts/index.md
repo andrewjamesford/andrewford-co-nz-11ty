@@ -35,11 +35,11 @@ Apple Shortcuts is a powerful automation app for iPhone, iPad and Mac that allow
 
 **Since I wrote this Open AI have released an iOS app with a shortcut action [see how it works here](https://andrewford.co.nz/articles/chatgpt-shortcut-on-ios).**
 
-{% image "./openai-create-new-key.png", "How to create an OpenAI key" %}
+{% image "./openai-create-new-key.png", "How to create an OpenAI key", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 To be able to use the Shortcut I've created you will need to first create an account with [OpenAI](https://beta.openai.com/signup). Head to their sign up page, fill in your details then got to the [View API Keys page](https://platform.openai.com/account/api-keys). Follow the instructions above.
 
-{% image "./openai-api-key-generated.png", "Generate OpenAI key" %}
+{% image "./openai-api-key-generated.png", "Generate OpenAI key", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 You then need to create an API key to use with our Shortcut, click on the "+ Create new secret key" button. Copy the new key by clicking the green button.
 
@@ -47,7 +47,7 @@ Either on macOS or on iOS [click this link to my shortcut](https://www.icloud.co
 
 Open up the shortcut (right click and Edit on macOS) to edit. Paste the key into the Text section of the shortcut shown in the image below and close the shortcut.
 
-{% image "./add-key-shortcut.png", "Add key to shortcut" %}
+{% image "./add-key-shortcut.png", "Add key to shortcut", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 For personal use they credited $18 until May for me when I created an account. I've barely run up any credit so far. Under $0.10, in fact it's very cheap.
 
@@ -59,11 +59,11 @@ This shortcut is flexible in that it can be used in multiple ways. If no text is
 
 On macOS it's a little different. You first select the text and copy it to your clipboard. You can then invoke the shortcut by going up to the menu bar and running the shortcut from there.
 
-{% image "./shortcuts-macOS.png", "Run a shortcut on macOS from the menu bar" %}
+{% image "./shortcuts-macOS.png", "Run a shortcut on macOS from the menu bar", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 ## Alternative way to use the shortcut (macOS)
 
-{% image "./popclip-in-action.png", "PopClip in action" %}
+{% image "./popclip-in-action.png", "PopClip in action", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 I'm a big fan of the app [PopClip](https://pilotmoon.com/popclip/) on macOS that acts like the pop up selection menu for copy and paste on iOS (as seen in the image above). It can be used to invoke a Shortcut and I've created an [extension](https://andrewford.co.nz/assets/ChatGPTpopclipext.zip) that allows me to select some text with the mouse and then trigger the ChatGPT shortcut. See the video below to see how it works.
 
