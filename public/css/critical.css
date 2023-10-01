@@ -129,6 +129,7 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 0.5rem;
+	align-items: center;
 }
 .article-heading {
 	text-align: center;
