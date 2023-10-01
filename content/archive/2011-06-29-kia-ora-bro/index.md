@@ -18,4 +18,4 @@ I started the build of this theme after reading the Sitepoint book [Build Your O
 
 On starting the build I  struggled to follow the "Thematic" theme, child theme approach. I got frustrated with overriding so much CSS and decided to start from a basic HTML 5 base theme instead. Build time was far longer than expected, with my own project being constantly put on the back burner. Finally though the site is now launched.
 
-![K Bars](./k-bars.jpg)
+{% image "./k-bars.jpg", "K Bars", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
