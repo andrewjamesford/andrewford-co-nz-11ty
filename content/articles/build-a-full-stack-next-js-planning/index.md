@@ -10,12 +10,12 @@ tags:
   - fullstack
   - react
   - planning
+  - youtube
+  - lms
 description: This is a transcript of my stream that went through the initial planning stages of a Next.js project, starting with brainstorming ideas on a virtual whiteboard. Wireframes were then created in Excalidraw to visualize pages like home, sign up, course listings, and course details. Key requirements around authentication, data storage, roles and permissions were mapped out. Superbase was selected to provide authentication via LinkedIn/Google login as well as for it being a Postgres database. Next.js was chosen for its React framework and Radix UI was selected for accessible, customizable UI components to speed up development.
 ---
 
-The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
-
-In this stream I went over the planning stages of a project. First on a virtual whiteboard. I started with a brainstorm of ideas, then moved onto wireframes. Then circled back to start thinking about what features and functionality I would need to build the app. I also talked about the pros and cons of building a UI library from scratch or using something that is already pre-tested and available. Finally I went over the data structure and how I would store the data.
+The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity. In this stream I went over the planning stages of a project. First on a virtual whiteboard. I started with a brainstorm of ideas, then moved onto wireframes. Then circled back to start thinking about what features and functionality I would need to build the app. I also talked about the pros and cons of building a UI library from scratch or using something that is already pre-tested and available. Finally I went over the data structure and how I would store the data.
 
 To view the Wireframes I created in the stream, please see the following link:
 [Wireframes on Excalidraw](https://excalidraw.com/#json=almP8vw8UnTN7cR6Zk6Xf,aIx7EgfHxXwpKKnv6k3IbQ)
