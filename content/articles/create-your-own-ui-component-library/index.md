@@ -13,7 +13,7 @@ description: A guide to getting started creating your own UI Component library w
 socialBackground: bg7
 ---
 
-<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 
@@ -43,7 +43,7 @@ npm run storybook
 
 You should now see a welcome screen in your default browser like the following:
 
-{% image "./content/articles/create-your-own-ui-component-library/storybook-welcome.png", "Storybook welcome screen", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./storybook-welcome.png", "Storybook welcome screen" %}
 
 When building a component UI library it's best to start building the smallest components that will make up the UI library. I suggest starting with some basic components like Headings & Buttons followed by common form controls. The storybook documentation on the welcome screen has a link to a great site quickly summarising [component driven development](https://www.componentdriven.org/).
 
@@ -72,47 +72,47 @@ In the `Button.tsx` file you can see the properties for the component have been 
 
 Open the `button.module.css` file and rename the CSS classes from [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case) to [camelCase](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-camel-case). We will also rename to a more generic name, by removing the "storybook" from the class names.
 
-{% image "./content/articles/create-your-own-ui-component-library/rename-css.png", "Rename CSS from kebab case to camel case", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./rename-css.png", "Rename CSS from kebab case to camel case" %}
 
 Now we need to update the button component with the class names from the CSS module.
 
 ```tsx
 export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  ...props
+	primary = false,
+	size = "medium",
+	backgroundColor,
+	label,
+	...props
 }: ButtonProps) => {
-  const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
-  let sizeClass = styles.buttonMedium;
-  if (size === "small") {
-    sizeClass = styles.buttonSmall;
-  }
-  if (size === "large") {
-    sizeClass = styles.buttonLarge;
-  }
+	const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
+	let sizeClass = styles.buttonMedium;
+	if (size === "small") {
+		sizeClass = styles.buttonSmall;
+	}
+	if (size === "large") {
+		sizeClass = styles.buttonLarge;
+	}
 
-  return (
-    <button
-      type="button"
-      className={[`${styles.button}`, `${sizeClass}`, mode].join(" ")}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
+	return (
+		<button
+			type="button"
+			className={[`${styles.button}`, `${sizeClass}`, mode].join(" ")}
+			style={{ backgroundColor }}
+			{...props}
+		>
+			{label}
+		</button>
+	);
 };
 ```
 
 In your browser, you can now view the "Docs" section for the button with its awesome ability to change properties for your component in real-time. Which is great for testing purposes.
 
-{% image "./content/articles/create-your-own-ui-component-library/storybook-button.png", "Storybook documentation for our button", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./storybook-button.png", "Storybook documentation for our button" %}
 
 I've also added another example for [headings](https://github.com/andrewjamesford/react-ts-component-library/blob/main/src/components/Heading.tsx), that allows you to select from h1-h6.
 
-{% image "./content/articles/create-your-own-ui-component-library/storybook-heading.png", "Storybook documentation for a heading component", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./storybook-heading.png", "Storybook documentation for a heading component" %}
 
 Now keep creating more components for your own UI library piece by piece. You can test and check your components in Storybook independent of the web app, configuring all sorts of different property combinations.
 

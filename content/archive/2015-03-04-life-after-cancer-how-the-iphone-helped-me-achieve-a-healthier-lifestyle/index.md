@@ -1,5 +1,5 @@
 ---
-title: 'Life After Cancer: How the iPhone Helped Me Achieve a Healthier Lifestyle'
+title: "Life After Cancer: How the iPhone Helped Me Achieve a Healthier Lifestyle"
 date: "2015-03-04T12:12:02+00:00"
 template: post
 draft: false

@@ -4,7 +4,7 @@ date: "2011-07-29T20:41:38+00:00"
 template: post
 draft: false
 slug: "/2011/07/29/css3-toolset/"
-category: "article"
+category: article
 tags:
   - CSS3
   - Tools
@@ -29,7 +29,7 @@ Prefix my CSS will add the vendors (Mozilla, Opera, Webkit) prefixes to your sty
 
 ## [Ultimate CSS gradient creator](http://www.colorzilla.com/gradient-editor/)
 
-If your used to Photoshops gradient effect tool you'll love the Ultimate CSS gradient creator. It allows you to place multiple gradient points along the bar and adjust to your hearts content. Alternatively you can just grab one of the pre-generated presets and edit that. The CSS produced is already prefixed and also there are fall backs for older browsers and IE.  
+If your used to Photoshops gradient effect tool you'll love the Ultimate CSS gradient creator. It allows you to place multiple gradient points along the bar and adjust to your hearts content. Alternatively you can just grab one of the pre-generated presets and edit that. The CSS produced is already prefixed and also there are fall backs for older browsers and IE.
 
 ## [jsFiddle](http://jsfiddle.net)
 

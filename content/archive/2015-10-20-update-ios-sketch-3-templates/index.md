@@ -24,10 +24,7 @@ Meng has create both an [iPhone](https://designcode.io/ios9) and [iPad](https://
 If you'd like to add these files or any other to the template option it's as simple as heading to **File > New From Template > Reveal in Finder.**
 
 ![Sketch Templates](./sketch-templates.png)
- 
+
 This will show you the folder in Finder, simply drag your fresh templates into here. Once added you can quickly create a new Sketch file with all these elements available for you to use in your next iOS design.
 
 ![Sketch Templates in Finder](./sketch-templates-finder.png)
- 
-
- 

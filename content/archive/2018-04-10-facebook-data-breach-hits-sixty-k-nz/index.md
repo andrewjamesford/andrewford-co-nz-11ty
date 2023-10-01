@@ -5,10 +5,10 @@ template: post
 draft: false
 slug: "/2018/04/10/facebook-data-breach-hits-sixty-k-nz/"
 category: "link"
-tags: 
-- Facebook
-- New Zealand
-- privacy
+tags:
+  - Facebook
+  - New Zealand
+  - privacy
 description: "Ten New Zealanders who downloaded an app on Facebook could have exposed up to 63,714 of their compatriots to the data mining tactics of Cambridge Analytica."
 ---
 

@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+{# Only include the syntax highlighter CSS on blog posts #}
+<link rel="preload" href="{{ '/css/prism-dracula.css' }}" as="style">
+<link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}" />
+
+<h1>{{ title }}</h1>
+
+<time datetime="{{ page.date | htmlDateString }}" class="article-datetime">{{ page.date | readableDate }}</time>
+
+<article class="article">
+	{{ content | safe }}
+</article>
+
+<dl class="article-tags">
+	<dt>Tags:</dt>
+	{%- for tag in tags | filterTagList %}
+	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<dd>&nbsp;{{ tag | slugify }}{%- if not loop.last %}, {% endif %}</dd>
+	{%- endfor %}
+</dl>
+

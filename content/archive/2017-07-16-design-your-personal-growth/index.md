@@ -13,6 +13,6 @@ description: ""
 
 [Melissa Mandelbaum](https://medium.com/@lissalauren/design-your-personal-growth-831582b8524d):
 
->In recent conversation, I discovered many of my friends are trying to grow, but struggling to make progress. I dug deeper and realized, growth frameworks are not widely known or practiced.
+> In recent conversation, I discovered many of my friends are trying to grow, but struggling to make progress. I dug deeper and realized, growth frameworks are not widely known or practiced.
 
 While these may sound like a chore to do I believe most people need some help with guidance of their career.

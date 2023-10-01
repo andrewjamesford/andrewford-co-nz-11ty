@@ -1,15 +1,15 @@
 ---
 title: "Write and Publish on the Mac"
-date: '2018-08-29T20:32:54Z'
+date: "2018-08-29T20:32:54Z"
 template: post
 draft: false
-slug: '2018/08/29/write-and-publish-on-the-mac'
+slug: "2018/08/29/write-and-publish-on-the-mac"
 category: link
 tags:
-- link
-- writing
-- workflow
-- iA Writer
+  - link
+  - writing
+  - workflow
+  - iA Writer
 description: "M.G. Siegler describes his workflow for writing for the web"
 ---
 

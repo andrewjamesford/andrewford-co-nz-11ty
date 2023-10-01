@@ -15,7 +15,7 @@ description: ""
 
 ![Scanbot Icon](./icon-scanbot-150x150.jpg)
 
-[Scanbot](https://itunes.apple.com/nz/app/scanbot-pdf-scanner-qr-reader/id834854351?mt=8&amp;uo=4&amp;at=10lnRx) my favourite document scanning app has been named the best over at [The Sweet Setup](http://thesweetsetup.com/apps/best-scanning-app-ios/).
+[Scanbot](https://itunes.apple.com/nz/app/scanbot-pdf-scanner-qr-reader/id834854351?mt=8&uo=4&at=10lnRx) my favourite document scanning app has been named the best over at [The Sweet Setup](http://thesweetsetup.com/apps/best-scanning-app-ios/).
 
 Why I like Scanbot the most of all the great scanning apps out there is it's ability to quickly scan multiple documents with great results. You don't even need to press the shutter button it will automatically take the shot when the positioning is correct.
 

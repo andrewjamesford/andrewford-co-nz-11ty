@@ -1,16 +1,16 @@
 ---
 title: "Hosting Static Websites on AWS"
-date: '2018-08-29T20:00:23Z'
+date: "2018-08-29T20:00:23Z"
 template: post
 draft: false
-slug: '2018/08/29/hosting-static-websites-on-aws'
+slug: "2018/08/29/hosting-static-websites-on-aws"
 category: article
 tags:
-- aws
-- cloudfront
-- s3
-- static
-- hosting
+  - aws
+  - cloudfront
+  - s3
+  - static
+  - hosting
 description: "AWS is a great platform to host a static website, here is how to use Cloudfront and S3 to achieve this"
 ---
 
@@ -39,19 +39,15 @@ Now you have your domain setup against your public site, it's time to make it se
 Another helpful thing to do is setup the [AWS-CLI](https://aws.amazon.com/cli/). With the AWS-CLI you can **sync** your project with your S3 bucket next time you need to release an update like this for example:
 
 ```
-$ aws s3 sync myfolder s3://mybucket/myfolder 
+$ aws s3 sync myfolder s3://mybucket/myfolder
 ```
 
 I usually use this in conjunction with [Git Hooks](https://git-scm.com/docs/githooks) or [Husky](https://github.com/typicode/husky), so when I push my Git changes a new deployment is made.
 
 ## Basic Auth
 
-If you have a project you'd like to protect from prying eyes, like a staging site or a company internal use wiki/blog you can take advantage of [S3Auth](http://www.s3auth.com/). It's a 3rd party open source project, that acts as a gateway to your static site hosted on S3. When configured users will be challenged with a Basic Auth user and password prompt to view your site. 
+If you have a project you'd like to protect from prying eyes, like a staging site or a company internal use wiki/blog you can take advantage of [S3Auth](http://www.s3auth.com/). It's a 3rd party open source project, that acts as a gateway to your static site hosted on S3. When configured users will be challenged with a Basic Auth user and password prompt to view your site.
 
 ## Contact form for your static site
 
 There may come a time when your need a form, say a contact form for your static site. You can take advantage of [AWS Lambda](https://aws.amazon.com/lambda/) to handle your form content. AWS Lambda allows you to run code without thinking about servers. You can create a little function in Java, Node.js, C# or Python and then connect that up to [AWS Simple Email Service](https://aws.amazon.com/ses/) to email your contact form details to the right person. Here is a nicely detailed [guide](https://www.codeengine.com/articles/process-form-aws-api-gateway-lambda/) to do just that.
-
-
-
- 

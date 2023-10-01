@@ -14,7 +14,7 @@ description: Get your copy of my Tailwind Flexbox Cheatsheet
 
 If you hadn't figured out already (see my other [blog entry](https://andrewford.co.nz/articles/tailwind-theming-by-config/)) I'm quite a fan of [Tailwind](https://tailwindcss.com/) the utility CSS framework. While I think their documentation is great, I'm a fan of visual cheatsheets. With a heavy emphasis on the visual. Finding no one else had made what I wanted I fired up [Figma](https://figma.com) and got to work.
 
-{% image "./content/articles/tailwind-flexbox-cheatsheet/Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet" %}
 
 Hope you like it! Any suggestions [let me know](mailto:me@andrewford.co.nz).
 
@@ -32,4 +32,4 @@ It has the following changes:
 - Changed `flex-shrink` to `shrink`
 - Added `basis-{size}` with two examples
 
-{% include "tailwindcheatsheet.liquid" %}
+{% include "promos/tailwindcheatsheet.njk" %}

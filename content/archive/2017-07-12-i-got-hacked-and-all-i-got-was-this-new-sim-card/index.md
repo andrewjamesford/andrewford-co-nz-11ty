@@ -13,7 +13,7 @@ description: ""
 
 [Justin Williams](https://carpeaqua.com/2017/07/07/hack-the-planet/):
 
->I like to think I take an above average amount of steps to secure myself online: I use a password manager, unique passwords as complex as the site will allow, and turn on 2-factor authentication when possible. A true security expert will likely find some sort of flaw in my setup, but I'll argue that I am doing more than 95% of the planet.
+> I like to think I take an above average amount of steps to secure myself online: I use a password manager, unique passwords as complex as the site will allow, and turn on 2-factor authentication when possible. A true security expert will likely find some sort of flaw in my setup, but I'll argue that I am doing more than 95% of the planet.
 
 So how did I, someone who is reasonably secure, have his cell phone disabled, his PayPal account compromised, and a few hundred dollars withdrawn from his bank account?
 

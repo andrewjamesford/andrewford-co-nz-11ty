@@ -29,7 +29,6 @@ Lets start with Facebook. There are a couple of items that will need to be added
 
 **Step 2:** Add the Facebook share script
 
-
 ```
 &lt;script src="//static.ak.fbcdn.net/connect.php/js/FB.Share"&gt;&lt;/script&gt;
 ```
@@ -52,7 +51,7 @@ For Twitter follow these steps.
 
 ```
 $('.socialLinkTwitter').click(function (e) {
-    
+
 e.preventDefault();
 var sTwitterShare = $(this).attr('href');
 window.open(sTwitterShare,'Share','width=550,height=450');

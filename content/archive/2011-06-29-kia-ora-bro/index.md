@@ -4,10 +4,10 @@ date: "2011-06-29T06:05:14+00:00"
 template: post
 draft: false
 slug: "/2011/06/29/kia-ora-bro/"
-category: "article"
+category: article
 tags:
+  - Wordpress
 description: "Welcome"
-socialImage:
 ---
 
 Welcome to the latest version of my website now running a custom Wordpress theme.

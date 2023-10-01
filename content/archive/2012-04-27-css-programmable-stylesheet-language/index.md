@@ -6,8 +6,8 @@ draft: false
 slug: "/2012/04/27/css-programmable-stylesheet-language/"
 category: "article"
 tags:
-- css
-- less
+  - css
+  - less
 description: "Using LESS for CSS"
 ---
 
@@ -51,7 +51,6 @@ By far the the easiest way to implement LESS processing regardless of platform i
 ## Getting Started quickly with LESS
 
 To get started quickly with LESS you can start with some great frameworks so you won't need to write your own mixins. The rapid development kick starter Twitter's Bootstrap uses LESS and is a great learning tool to see what's achievable. I'd recommend checking out the nicely structured LESS files of Twitter Bootstrap. Other frameworks of mention are [Elements](http://lesselements.com/) and my own set of mixins [LESS Mixing](https://github.com/andrewjamesford/lessmixing).
-
 
 ## Further Reading
 

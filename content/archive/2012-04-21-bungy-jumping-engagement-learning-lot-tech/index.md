@@ -6,8 +6,8 @@ draft: false
 slug: "/2012/04/21/bungy-jumping-engagement-learning-lot-tech/"
 category: "article"
 tags:
-- bungy
-- engadgement
+  - bungy
+  - engadgement
 description: ""
 ---
 

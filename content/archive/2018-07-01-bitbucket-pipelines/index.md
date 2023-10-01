@@ -5,10 +5,10 @@ template: post
 draft: false
 slug: "2018/07/01/bitbucket-pipeline"
 category: "article"
-tags: 
-- bitbucket
-- build
-- docker
+tags:
+  - bitbucket
+  - build
+  - docker
 description: "Bitbucket Pipeline - Your own personal docker builds in the cloud"
 ---
 

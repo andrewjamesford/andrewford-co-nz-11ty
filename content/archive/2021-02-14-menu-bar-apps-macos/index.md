@@ -1,19 +1,19 @@
 ---
 title: "Menu bar apps MacOS"
-date: '2021-02-14T20:14:04Z'
+date: "2021-02-14T20:14:04Z"
 template: post
 draft: false
-slug: '2021/02/14/menu-bar-apps-macos'
+slug: "2021/02/14/menu-bar-apps-macos"
 category: article
 tags:
-- macos
-- menubar
-- menu bar
-- apps
+  - macos
+  - menubar
+  - menu bar
+  - apps
 description: "My recommendations for MacOS apps in the menu bar"
---- 
+---
 
-Even with a ultra widescreen monitor (21:9) I don't have a huge number of apps that sit in my menu bar. In fact I try to run the bare minimum (no need for [Bartender](https://www.macbartender.com) or [Dozer](https://github.com/Mortennn/Dozer) for me). 
+Even with a ultra widescreen monitor (21:9) I don't have a huge number of apps that sit in my menu bar. In fact I try to run the bare minimum (no need for [Bartender](https://www.macbartender.com) or [Dozer](https://github.com/Mortennn/Dozer) for me).
 
 Here are my current apps that take up that space in the right hand corner:
 
@@ -25,9 +25,9 @@ I have it bound to `command + shift + v` and use it constantly. Just be sure to 
 
 ## [Magnet](https://magnet.crowdcafe.com) - Paid MAS
 
-One thing I miss about window management on MacOS compared to Windows is being able to drag windows to either the left or right of the desktop and have snap and auto size to half the desktop (when not full screen). **Magnet** let's you do this via drag n drop.  It also has other options to use a 1/4 or 1/3 etc and can be controlled by keyboard shortcuts. 
+One thing I miss about window management on MacOS compared to Windows is being able to drag windows to either the left or right of the desktop and have snap and auto size to half the desktop (when not full screen). **Magnet** let's you do this via drag n drop. It also has other options to use a 1/4 or 1/3 etc and can be controlled by keyboard shortcuts.
 
-Since Catalina you can get [easy half width windows](https://www.theverge.com/2020/3/6/21168153/macos-catalina-windows-size-rearrange-how-to) by hovering your mouse pointer over the left hand green dot button and pressing the `option` key where you will get the option to *Move window to the Left/Right side of the screen*.
+Since Catalina you can get [easy half width windows](https://www.theverge.com/2020/3/6/21168153/macos-catalina-windows-size-rearrange-how-to) by hovering your mouse pointer over the left hand green dot button and pressing the `option` key where you will get the option to _Move window to the Left/Right side of the screen_.
 
 [Rectangle](https://rectangleapp.com) has most of the same features including drag to snap as **Magnet** and is open-source (free).
 
@@ -37,7 +37,7 @@ Since Catalina you can get [easy half width windows](https://www.theverge.com/20
 
 ## [Bumpr](https://www.getbumpr.com) - Paid MAS
 
-**Bumpr** sits as an in between before you click on an email or URL. It pops up a menu to allow you to choose what browser or email client you want to use. 
+**Bumpr** sits as an in between before you click on an email or URL. It pops up a menu to allow you to choose what browser or email client you want to use.
 
 ## [Amphetamine](https://apps.apple.com/nz/app/amphetamine/id937984704?mt=12) - Free MAS
 

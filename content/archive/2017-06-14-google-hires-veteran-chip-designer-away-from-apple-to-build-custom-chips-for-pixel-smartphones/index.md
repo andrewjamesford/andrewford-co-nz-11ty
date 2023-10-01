@@ -13,6 +13,7 @@ description: ""
 ---
 
 <a href="https://www.macrumors.com/2017/06/13/google-hires-veteran-apple-chip-designer/">Joe Rossignol</a>:
+
 <blockquote>Google has hired veteran chip architect Manu Gulati, who worked at Apple for the past eight years, according to Variety.
 
 Gulati is now a Lead SOC Architect at Google, where he began in May, according to his recently updated LinkedIn profile.

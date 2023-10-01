@@ -5,14 +5,13 @@ template: post
 draft: false
 slug: "/2018/08/04/internet-parenting"
 category: "article"
-tags: 
-- parenting
-- internet
-- privacy
-- safety
+tags:
+  - parenting
+  - internet
+  - privacy
+  - safety
 description: "Parenting in this modern age is harder now then ever. I share some tips to shield your kids from the bad."
 ---
-
 
 As a father of three kids and an IT professional I'm all too aware of the great things of the internet, and the _not_ so great things of the internet especially for young children.
 
@@ -38,8 +37,8 @@ A number of routers allow you to have more than one [SSID](https://www.lifewire.
 
 On iOS there are restriction settings on iOS to stop changing of options (like WiFi and DNS), block websites and the ability to stop App Store downloads. These are quite limited at the moment but this will all change with [iOS 12](https://www.macrumors.com/roundup/ios-12/#parental_controls).
 
-
 ### Nintendo Switch Parental controls
+
 The Nintendo Switch has great parental controls that allow you to easily set daily time limits for use of the console. We have ours set to an hour a day during the week, increasing it on the weekends to two hours. Games as well can be black or white listed, if you'd prefer the kids not to play certain titles.
 
 ![Nintendo Switch Parental Controls](./nintendo-switch-parental-controls.jpg)

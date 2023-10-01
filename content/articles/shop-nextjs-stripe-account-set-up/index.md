@@ -15,15 +15,15 @@ description: Continuing with the Next.js & Stripe account setup
 socialBackground: bg5
 ---
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}
 
-<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/cEL2Jtp8RLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/cEL2Jtp8RLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop series we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account (if you don't already have one).
 
 ## Register a Stripe account
 
-{% image "./content/articles/shop-nextjs-stripe-account-set-up/stripe-api-page.png", "Stripe Developers API keys page", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./stripe-api-page.png", "Stripe Developers API keys page" %}
 
 Once signed up go to the "Developer" page and select the "API keys" on the left hand side menu.
 
@@ -44,16 +44,16 @@ You can manage all the content for your online shop through the Stripe dashboard
 
 From the menu, access the "Products" page then click the purple "Add Product" button.
 
-{% image "./content/articles/shop-nextjs-stripe-account-set-up/add-product-stripe.png", "Product information form", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./add-product-stripe.png", "Product information form" %}
 
 Add some details for your product, add a price and upload an image. Make sure to select "One Time" for the product price.
 
-{% image "./content/articles/shop-nextjs-stripe-account-set-up/product-one-time-price.png", "Product One Time price", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./product-one-time-price.png", "Product One Time price" %}
 
 Now repeat until you have finished creating all the new products you wish to create. You should end up with a product list similar to this.
 
-{% image "./content/articles/shop-nextjs-stripe-account-set-up/stripe-products-list.png", "List of products on Stripe", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./stripe-products-list.png", "List of products on Stripe" %}
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}

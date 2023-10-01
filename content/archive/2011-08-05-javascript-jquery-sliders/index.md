@@ -17,7 +17,6 @@ description: ""
 
 I've used a number of Javascript based image sliders on a number of projects in the last year. They all have some points of difference so I thought I'd share what they are and make people aware of them.
 
-
 ## Nivo Slider
 
 [http://nivo.dev7studios.com/](http://nivo.dev7studios.com/)
@@ -83,7 +82,6 @@ Points of difference:
 Sites I've implemented on:
 
 <a title="CV for Andrew Ford" href="http://cv.andrewford.co.nz" target="_blank">cv.andrewford.co.nz</a>
-
 
 <h2>bxSlider</h2>
 

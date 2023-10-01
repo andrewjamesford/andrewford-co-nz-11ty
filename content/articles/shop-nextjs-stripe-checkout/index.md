@@ -15,9 +15,9 @@ description: Concluding with the Next.js & Stripe online shop we now will add th
 socialBackground: bg5
 ---
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}
 
-<iframe class="video" loading="lazy" height="400" src="https://www.youtube.com/embed/-jCI2bKrud4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/-jCI2bKrud4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Concluding with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stripes hosted checkout page.
 
@@ -27,33 +27,33 @@ To do this we need to create a new API router to post the ID of the product we w
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-  if (req.method === "POST") {
-    try {
-      // Check priceId has been provided
-      if (!req.body?.priceId) {
-        throw new Error("Price ID not provided");
-      }
-      // Create Checkout Sessions from body params.
-      const session = await stripe.checkout.sessions.create({
-        line_items: [
-          {
-            // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            price: req.body.priceId,
-            quantity: 1,
-          },
-        ],
-        mode: "payment",
-        success_url: `${process.env.HOST}/success`,
-        cancel_url: `${process.env.HOST}/canceled`,
-      });
-      res.redirect(303, session.url);
-    } catch (err) {
-      res.status(err.statusCode || 500).json(err.message);
-    }
-  } else {
-    res.setHeader("Allow", "POST");
-    res.status(405).end("Method Not Allowed");
-  }
+	if (req.method === "POST") {
+		try {
+			// Check priceId has been provided
+			if (!req.body?.priceId) {
+				throw new Error("Price ID not provided");
+			}
+			// Create Checkout Sessions from body params.
+			const session = await stripe.checkout.sessions.create({
+				line_items: [
+					{
+						// Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+						price: req.body.priceId,
+						quantity: 1,
+					},
+				],
+				mode: "payment",
+				success_url: `${process.env.HOST}/success`,
+				cancel_url: `${process.env.HOST}/canceled`,
+			});
+			res.redirect(303, session.url);
+		} catch (err) {
+			res.status(err.statusCode || 500).json(err.message);
+		}
+	} else {
+		res.setHeader("Allow", "POST");
+		res.status(405).end("Method Not Allowed");
+	}
 }
 ```
 
@@ -76,7 +76,7 @@ import { loadStripe } from "@stripe/stripe-js";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
-  `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`
+	`${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`
 );
 ```
 
@@ -90,20 +90,20 @@ import Link from "next/link";
 import { Layout } from "../components/layout";
 
 export default function Success() {
-  return (
-    <>
-      <Head>
-        <title>Order Success</title>
-        <meta name="description" content="Products" />
-      </Head>
-      <Layout>
-        <h1>Order Success</h1>
-        <p>Thanks for ordering.</p>
+	return (
+		<>
+			<Head>
+				<title>Order Success</title>
+				<meta name="description" content="Products" />
+			</Head>
+			<Layout>
+				<h1>Order Success</h1>
+				<p>Thanks for ordering.</p>
 
-        <Link href="/">Return to products</Link>
-      </Layout>
-    </>
-  );
+				<Link href="/">Return to products</Link>
+			</Layout>
+		</>
+	);
 }
 ```
 
@@ -115,19 +115,19 @@ import Link from "next/link";
 import { Layout } from "../components/layout";
 
 export default function Canceled() {
-  return (
-    <>
-      <Head>
-        <title>Order Canceled</title>
-        <meta name="description" content="Products" />
-      </Head>
-      <Layout>
-        <h1>Order canceled</h1>
-        <p>Your order has been canceled.</p>
-        <Link href="/">Return to products</Link>
-      </Layout>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>Order Canceled</title>
+				<meta name="description" content="Products" />
+			</Head>
+			<Layout>
+				<h1>Order canceled</h1>
+				<p>Your order has been canceled.</p>
+				<Link href="/">Return to products</Link>
+			</Layout>
+		</>
+	);
 }
 ```
 
@@ -135,15 +135,15 @@ In the `checkout_sessions.js` file we supply a `success_url` and a `canceled_url
 
 When you click on the "Buy Now" button you will be redirected to the Stripe checkout, like in the image below.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/stripe-checkout.png", "The hosted Stripe checkout", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./stripe-checkout.png", "The hosted Stripe checkout" %}
 
 If you complete the purchase, then you will be directed to the success page.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/order-success.png", "Successful order", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./order-success.png", "Successful order" %}
 
 Otherwise if you click the left arrow / back you will be redirected to the cancel page.
 
-{% image "./content/articles/shop-nextjs-stripe-checkout/canceled-order.png", "Canceled order", "(min-width: 30em) 50vw, 100vw" %}
+{% image "./canceled-order.png", "Canceled order" %}
 
 We have now completed the display of products and have the checkout page working correctly. Well done. 👏
 
@@ -151,4 +151,4 @@ You can [checkout the GitHub repository](https://github.com/andrewjamesford/shop
 
 For more help with setting up Stripe checkout take a look at the [documentation](https://stripe.com/docs/checkout/quickstart) on the Stripe website.
 
-{% include "seriesstripenextjs.liquid" %}
+{% include "promos/seriesstripenextjs.njk" %}

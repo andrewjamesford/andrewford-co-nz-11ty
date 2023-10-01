@@ -18,7 +18,7 @@ Was surprised to see that they are smaller than the original which will make plu
 
 ![Apple NZ replacement plug head](./duck-head.jpg)
 
->Apple has determined that, in very rare cases, the two prong Apple AC wall plug adapters designed for use in Continental Europe, Australia, New Zealand, Korea, Argentina and Brazil may break and create a risk of electrical shock if touched.
+> Apple has determined that, in very rare cases, the two prong Apple AC wall plug adapters designed for use in Continental Europe, Australia, New Zealand, Korea, Argentina and Brazil may break and create a risk of electrical shock if touched.
 
 It's impressive to see Apple making safety a priority and redesigning a safer plug for its customers way back to 2003.
 

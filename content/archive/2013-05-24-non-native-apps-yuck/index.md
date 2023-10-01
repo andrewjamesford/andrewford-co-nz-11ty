@@ -1,5 +1,5 @@
 ---
-title: 'Non native apps - yuck!'
+title: "Non native apps - yuck!"
 date: "2013-05-24T20:34:35+00:00"
 template: post
 draft: false

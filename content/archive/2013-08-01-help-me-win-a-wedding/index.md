@@ -5,7 +5,7 @@ template: post
 draft: false
 slug: "/2013/08/01/help-me-win-a-wedding/"
 category: "article"
-tags:  
+tags:
   - blog
   - other
 description: ""

@@ -1,0 +1,65 @@
+---
+title: "Home"
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+numberOfLatestPostsToShow: 6
+numberOfLatestVideosToShow: 3
+---
+
+<h1 class="center">Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching people how to code. </h1>
+<h2 class="center secondary">He is also a full-stack web developer and an educator living in Tauranga, New Zealand.</h2>
+
+<section class="latest-articles-videos">
+  {%- if collections.articles.length > 0 -%}
+    <article class="latest-articles">
+      <h3>Latest Articles</h3>
+      <ul class="article-list">
+        {%- for article in collections.articles | reverse -%}
+          {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+          {%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
+            <li class="article-list-item">
+              <h4 class="article-title">
+                <a href="{{ absolutePostUrl }}">{{ article.data.title }}</a>
+              </h4>
+              <p class="article-description">{{ article.data.description }}</p>
+            </li>
+          {%- endif -%}
+        {%- endfor %}
+        <li class="article-list-item">
+          <h4 class="article-title">
+            <a href="{{ metadata.url }}/article/">More Articles&#8230;</a>
+          </h4>
+        </li>
+      </ul>
+    </article>
+  {%- endif -%}
+
+  {%- if latestVideos.videos.length > 0 -%}
+    <aside class="latest-videos">
+      <h3>Latest Videos</h3>
+      <ul class="article-list">
+        {%- for video in latestVideos.videos -%}
+          {% if loop.index <= numberOfLatestVideosToShow -%}
+            <li class="article-list-item">
+              <img src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ "Thumb for " + video.snippet.title }}" class="video-thumb" height="207" width="368">
+              <h4 class="article-title">
+                <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
+                  {{ video.snippet.title }}
+                </a>
+              </h4>
+              <p class="article-description">{{ video.snippet.description }}</p>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        <li class="article-list-item">
+          <h4 class="article-title">
+          <a href="https://www.youtube.com/@CodewithAndrewFord">More Videos&#8230;</a>
+          </h4>
+        </li>
+      </ul>
+    </aside>
+  {%- endif -%}
+
+</section>

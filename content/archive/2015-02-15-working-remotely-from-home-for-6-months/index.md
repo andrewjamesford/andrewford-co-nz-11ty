@@ -10,7 +10,7 @@ tags:
 description: ""
 ---
 
-I’ve been working remotely now for over 6 months with <a href="http://www.monitorbm.com" title="Monitor Business Machines">Monitor</a> from home. Its been a tough but overall enjoyable time.  Here are some points about my experience and some advice.
+I’ve been working remotely now for over 6 months with <a href="http://www.monitorbm.com" title="Monitor Business Machines">Monitor</a> from home. Its been a tough but overall enjoyable time. Here are some points about my experience and some advice.
 
 <strong>The good parts:</strong>
 

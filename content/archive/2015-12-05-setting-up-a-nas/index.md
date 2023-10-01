@@ -16,13 +16,13 @@ description: ""
 
 For a long time I've wanted a NAS (Networked Attached Storage) but put off buying one due to the cost. For those that don't know what a NAS is it is a small box that either plugs into your network/router via cable or wifi. It's a hard drive that you can access on your network to copy or read files to, very much like a shared folder in your office. Some can even download torrents or act as a email server.
 
->[Network Attached Server (NAS)](https://en.wikipedia.org/wiki/Network-attached_storage) is a file-level computer data storage server connected to a computer network providing data access to a heterogeneous group of clients.
+> [Network Attached Server (NAS)](https://en.wikipedia.org/wiki/Network-attached_storage) is a file-level computer data storage server connected to a computer network providing data access to a heterogeneous group of clients.
 
 With the move to only laptops and mobile devices in our house, more storage is always in high demand. But I don't want to manage another computer just to serve files.
 
 So after being fed up with my [Plex](http://plex.tv) server needing a restart again as the old laptop it lived on is getting pretty creaky, I thought there must be a better way to manage media on our home network. Then it clicked, the router we've had for quite some time has the abilty to act as a basic NAS.
 
->**Plex** organizes video, music and photos from personal media libraries and streams them to [smart TVs](https://en.wikipedia.org/wiki/Smart_TV), [streaming boxes](https://en.wikipedia.org/wiki/Digital_media_player) and [mobile devices](https://en.wikipedia.org/wiki/Mobile_device). It is a [media player](https://en.wikipedia.org/wiki/Media_player_(software)) system and software suite consisting of many player applications for [10-foot user interfaces](https://en.wikipedia.org/wiki/10-foot_user_interface) and an associated [media server](https://en.wikipedia.org/wiki/Media_server) that organizes personal media stored on local devices.
+> **Plex** organizes video, music and photos from personal media libraries and streams them to [smart TVs](https://en.wikipedia.org/wiki/Smart_TV), [streaming boxes](https://en.wikipedia.org/wiki/Digital_media_player) and [mobile devices](https://en.wikipedia.org/wiki/Mobile_device). It is a [media player](<https://en.wikipedia.org/wiki/Media_player_(software)>) system and software suite consisting of many player applications for [10-foot user interfaces](https://en.wikipedia.org/wiki/10-foot_user_interface) and an associated [media server](https://en.wikipedia.org/wiki/Media_server) that organizes personal media stored on local devices.
 
 ### Setup
 
@@ -31,7 +31,6 @@ When we switched to [Vodafone](http://www.vodafone.co.nz) they supplied a smart 
 ![Sharing Disk](./sharing-disk.png)
 
 Go to the **Sharing** tab and make sure the **Share All** switch is green. If you click the downward facing arrow with the name of the Hard Drive it will show you the SMB share path. Now if you jump on your Mac from the **Finder menu > Go > Connect to Server** option you can type in the address shown. On a Windows machine open an explorer window and simply type address in.
-
 
 So now you can connect to the drive and see it's existing media and should be able to view, copy, delete and upload files to the NAS disk. To further make your NAS available by other servers I recommend you enable FTP as well.
 

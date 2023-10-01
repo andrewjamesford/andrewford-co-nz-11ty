@@ -1,20 +1,20 @@
 ---
 title: "Easy ad-blocking via iOS 14 profiles"
-date: '2021-02-16T09:08:57Z'
+date: "2021-02-16T09:08:57Z"
 template: post
 draft: false
-slug: '2021/02/16/easy-ad-blocking-on-ios'
+slug: "2021/02/16/easy-ad-blocking-on-ios"
 category: article
 tags:
-- dns
-- adguard
-- ios
+  - dns
+  - adguard
+  - ios
 description: "How to easily block ads on iOS 14 via profile"
---- 
+---
 
-[Aguard offer a DNS service](https://adguard.com/en/adguard-dns/overview.html) to block ads (and also have a family filter called "Family protection") I use this on my home router these days (previously I used [Pi-hole](https://andrewford.co.nz/2018/08/03/an-almost-ad-free-household)) but the downside of this is when I or my family use their devices on another network they don't have ad blocking. 
+[Aguard offer a DNS service](https://adguard.com/en/adguard-dns/overview.html) to block ads (and also have a family filter called "Family protection") I use this on my home router these days (previously I used [Pi-hole](https://andrewford.co.nz/2018/08/03/an-almost-ad-free-household)) but the downside of this is when I or my family use their devices on another network they don't have ad blocking.
 
-Adguard now provide [iOS & MacOS profiles](https://adguard.com/en/blog/encrypted-dns-ios-14.html) that can be installed on your devices that will enable ad blocking no matter the network and are super easy to install. 
+Adguard now provide [iOS & MacOS profiles](https://adguard.com/en/blog/encrypted-dns-ios-14.html) that can be installed on your devices that will enable ad blocking no matter the network and are super easy to install.
 
 These profiles are supported on the following:
 
@@ -26,18 +26,20 @@ These profiles are supported on the following:
 ## How to install
 
 ### Install on iOS and iPadOS
+
 1. Open the Settings app.
 2. Tap Profile Downloaded.
 3. Tap Install in the upper-right corner, then follow the onscreen instructions.
-   
 
 ### Install on macOS
+
 1. Open the downloaded `.mobileconfig` file.
 2. Open System Preferences.
 3. Go to Profiles.
 4. Click Install.
-   
+
 ### Install on tvOS
+
 1. Open the Settings app.
 2. Go to General → Privacy.
 3. Hover over Share Apple TV Analytics without pressing.
@@ -50,12 +52,11 @@ Credit to [nextdns](https://apple.nextdns.io) for the above instructions.
 
 ## Alternatively
 
-If you'd like to use a different service rather than Adguard there are a multitude of ways to use other profiles or create your own. 
+If you'd like to use a different service rather than Adguard there are a multitude of ways to use other profiles or create your own.
 
 ### [Encrypted DNS Party](https://encrypted-dns.party)
 
 Has a page of profiles you can download config files from and you can view the [source on GitLab](https://gitlab.com/nitrohorse/ios14-encrypted-dns-mobileconfigs) and download from there alternatively.
-
 
 ### [Paul Miller profiles](https://paulmillr.com/posts/encrypted-dns/)
 
@@ -67,9 +68,8 @@ Paul Miller has created profiles for a number of DNS providers. He too has the s
 
 ### [NextDNS Apple Configuration Profile](https://apple.nextdns.io)
 
-[NextDNS](https://nextdns.io) offer a tool for their DNS service to generate profiles to use on your devices. 
+[NextDNS](https://nextdns.io) offer a tool for their DNS service to generate profiles to use on your devices.
 
 ### What about Android?
 
 For Android users an alternative is [Rethink DNS](https://www.bravedns.com) which is more of a firewall/DNS service.
-

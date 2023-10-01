@@ -40,7 +40,7 @@ We will assume your using a web server on your local machine like MAMP or IIS. G
 <strong>Step 4: </strong>
 In the terminal window enter a similar command like this:
 
-<code>browser-sync --proxy "mysite.local" --files "content/css/*.css, views/**/*.cshtml"</code>
+<code>browser-sync --proxy "mysite.local" --files "content/css/_.css, views/\*\*/_.cshtml"</code>
 
 This tells BrowserSync to run a proxy to the local domain of your website, and watch the CSS and HTML / Razor views of your website. For your own site replace the domain for the proxy with your own local address. Then change the paths to your files, in the case of running your site on PHP replace "cshtml" with "php".
 

@@ -12,7 +12,7 @@ tags:
   - xamarin
   - apps
   - code
-  - development  
+  - development
 description: ""
 ---
 

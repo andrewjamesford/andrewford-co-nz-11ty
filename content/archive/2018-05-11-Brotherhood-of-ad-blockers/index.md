@@ -5,9 +5,9 @@ template: post
 draft: false
 slug: "2018/05/11/Brotherhood-of-ad-blockers"
 category: "link"
-tags: 
-- ad-block
-- privacy
+tags:
+  - ad-block
+  - privacy
 description: "An article on the team behind the great open source project Pi-Hole"
 ---
 

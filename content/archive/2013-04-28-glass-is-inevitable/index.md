@@ -5,7 +5,7 @@ template: post
 draft: false
 slug: "/2013/04/28/glass-is-inevitable/"
 category: "article"
-tags:  
+tags:
   - blog
   - other
 description: ""
@@ -17,7 +17,7 @@ description: ""
 
 You vow you'll never forget those precious moments with your little one, only to be left with hazy memories of them as they further grow. Being a dad again 10 years later I'm ever reminded of those special moments I first experienced with my first daughter, reliving them again with my youngest.
 
-<a href="https://plus.google.com/+Scobleizer/posts/ZLV9GdmkRzS" title="My two-week review of Google Glass: it all depends on the price">Robert Scoble</a> made the bold statement: 
+<a href="https://plus.google.com/+Scobleizer/posts/ZLV9GdmkRzS" title="My two-week review of Google Glass: it all depends on the price">Robert Scoble</a> made the bold statement:
 
 <blockquote>I will never live a day of my life from now on without it (or a competitor). It's that significant. </blockquote>
 

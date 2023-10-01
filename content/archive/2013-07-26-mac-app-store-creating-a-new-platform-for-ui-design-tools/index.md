@@ -15,4 +15,5 @@ description: ""
 ---
 
 <a href="http://www.subtraction.com/2013/07/24/macaw" title="Macaw" target="_blank">Khoi Vinh</a> notes the changes in UI design software now appearing thanks to the Mac App Store.
+
 <blockquote>There’s change in the air for those of us who design interfaces for a living. Where once we could choose only between designing in code or designing in Photoshop, we’re now seeing at least one or two promising if still nascent alternatives.</blockquote>

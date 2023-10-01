@@ -1,14 +1,14 @@
 ---
 title: "Lifx bulb"
-date: '2019-03-07T10:26:42Z'
+date: "2019-03-07T10:26:42Z"
 template: post
 draft: false
-slug: '2019/03/07/lifx-bulb'
+slug: "2019/03/07/lifx-bulb"
 category: article
 tags:
-- lifx
-- home automation
-- homekit
+  - lifx
+  - home automation
+  - homekit
 description: "A cautious first step to home automation"
 ---
 
@@ -28,4 +28,3 @@ So the good thing is it's nice to be able to switch the light on from the car an
 But there are some glaring bad points with smart bulbs in general. You have to leave the light switch on for them to work and there is no easy way to turn the light on if you don't have a smart speaker in the room or you iPhone/mac/iPad handy. Ideally there needs to be a cheap, preferably hub-less, Homekit supporting switch, preferably that can hide the existing switch. I may have to investigate [this option](https://www.aqara.com/en/smart_hub-product.html) more.
 
 As a side note I had originally ordered a [Kogeek Wifi enabled smart switch](https://www.koogeek.com/p-kh02.html) but unfortunately it was incompatible with my light wiring. I still think while having the need for an electrician to install, a smart light switch is a far better alternative than a smart bulb.
-

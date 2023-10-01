@@ -12,7 +12,7 @@ tags:
 description: ""
 ---
 
-[Cloudflare have now setup a data center in Auckland](https://blog.cloudflare.com/auckland-melbourne/) which is great news for customers latency. 
+[Cloudflare have now setup a data center in Auckland](https://blog.cloudflare.com/auckland-melbourne/) which is great news for customers latency.
 
 It was interesting to read about the Auckland fibre situation.
 

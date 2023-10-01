@@ -1,5 +1,5 @@
 ---
-title: 'React.js Conf 2016 Highlights - Day 1'
+title: "React.js Conf 2016 Highlights - Day 1"
 date: "2016-02-23T23:26:56+00:00"
 template: post
 draft: false

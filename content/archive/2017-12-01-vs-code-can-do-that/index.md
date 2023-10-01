@@ -5,8 +5,8 @@ template: post
 draft: false
 slug: "/2017/12/01/vs-code-can-do-that/"
 category: "link"
-tags: 
-- link
+tags:
+  - link
 description: "All the best things about Visual Studio Code that you didn't know"
 ---
 

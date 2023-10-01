@@ -6,9 +6,9 @@ draft: false
 slug: "/2012/11/05/clipboard-history-why-isnt-this-baked-i/"
 category: "article"
 tags:
-- clipboard
-- osx
-- windows
+  - clipboard
+  - osx
+  - windows
 description: ""
 ---
 
@@ -19,4 +19,3 @@ In my day job I develop websites on Windows 7 and in my spare time I develop iOS
 To get round this shortcoming of both platforms I have to use small applications to do this. For Windows I use [Ditto](http://ditto-cp.sourceforge.net) a free Open source application that saves a clipboard history (and is also searchable). For OSX on the Mac I use a great freeware app called [ClipMenu](http://www.clipmenu.com). Both work in a similar way. Use a global shortcut combination and you then get a menu right where your mouse cursor is to select the item you want to paste into your current application/text editor/IDE.
 
 Not exactly earth shattering stuff. Used throughout your day when you can blissfully copy text without having to right then and then go use what was copied at that point in time... Well you get the picture. This is such a fundamentally huge step forward, why isn't just part of the OS? Do yourself a favour install one of these apps today.
-

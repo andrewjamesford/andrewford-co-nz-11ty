@@ -1,5 +1,5 @@
 ---
-title: 'Remote: Office Not Required - The Best Bits'
+title: "Remote: Office Not Required - The Best Bits"
 date: "2014-03-16T10:07:56+00:00"
 template: post
 draft: false
@@ -32,4 +32,3 @@ Some great highlights and insights were:
 Remote: Office Not Required is well worth the read if your interested in changing your company to work remote or you work remotely yourself. I've gained a few insights into better ways to work remotely and plan to share my tips and advice on working remote.
 
 Grab the book here: <a title="Remote: Office Not Required by 37 Signals" href="http://37signals.com/remote/">http://37signals.com/remote/</a>
-

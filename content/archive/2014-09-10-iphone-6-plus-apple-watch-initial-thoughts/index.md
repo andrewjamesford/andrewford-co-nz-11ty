@@ -27,7 +27,7 @@ New screen sizes and performance improvements are always welcome, but with the a
 
 An interesting change to the iPhone 6 and iPhone 6 Plus is the exclusion of a 32GB model. Only 16, 64 and 128 phones are available, actually making the price points of the latter two quite attractive. Both iPhones are available to order on the 26th of September starting at NZD $999 for the iPhone 6 and $1149 for the iPhone 6 Plus. (([iPhone 6 prices](http://store.apple.com/nz/buy-iphone/iphone6)))
 
-The question I ask with the release of the 6 Plus is there need for an iPad Mini (or iPad Air)? I’d say for a large number of people, no. Due to cost alone, it is a big saving only buying one device. Maybe this is the push to consolidate the iPad into the iPhone.  It’s not unlike Apple to cannibalise their existing product markets, they have done it before with the iPod and iPod Nano. It will be interesting to see what improvements and features are added to the iPad later this year to justify its purchase.
+The question I ask with the release of the 6 Plus is there need for an iPad Mini (or iPad Air)? I’d say for a large number of people, no. Due to cost alone, it is a big saving only buying one device. Maybe this is the push to consolidate the iPad into the iPhone. It’s not unlike Apple to cannibalise their existing product markets, they have done it before with the iPod and iPod Nano. It will be interesting to see what improvements and features are added to the iPad later this year to justify its purchase.
 
 ## Apple Watch
 
@@ -39,7 +39,7 @@ The number of variations of the Apple Watch is a departure from having limited S
 
 ![Apple Watch](./apple-watch-white.jpg)
 
-An important thing to remember is that the Apple Watch needs to be paired with an iPhone (5, 5C,5S,6 &amp; 6 Plus) just like the  Android Wear watches can only be used with Android 4.3+ phones. Price may be a barrier for adoption with a RRP of USD $349 and more likely NZD $400+ which is pretty steep when compared with other smart watches already on sale.
+An important thing to remember is that the Apple Watch needs to be paired with an iPhone (5, 5C,5S,6 &amp; 6 Plus) just like the Android Wear watches can only be used with Android 4.3+ phones. Price may be a barrier for adoption with a RRP of USD $349 and more likely NZD $400+ which is pretty steep when compared with other smart watches already on sale.
 
 The most important question is the battery life of the Apple Watch, even with the nice “magsafe” charger having a watch you have to remember to charge every night is a deal breaker for me and I’m sure a lot of others.
 

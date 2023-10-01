@@ -14,7 +14,7 @@ tags:
   - Facebook
 format: link
 ---
+
 An organisation called Share Lab has mapped out Facebook's algorithms and connections of what we do know, and the results are frightening.
 
 <blockquote>All of us, when we are uploading something, when we are tagging people, when we are commenting, we are basically working for Facebook</blockquote>
-
