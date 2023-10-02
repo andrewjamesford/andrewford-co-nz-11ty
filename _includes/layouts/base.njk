@@ -26,6 +26,9 @@
 		
 		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+		<link href="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF" rel="preload" as="script">
+
 		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="{{ metadata.url }}/feed/feed.json" type="application/json" title="{{ metadata.title }}">
@@ -78,17 +81,7 @@
 
 	</head>
 
-	{# Google tag (gtag.js) #}
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-K39D2FSQEF');
-	</script>
+	
 
 	<body class="body">
 		<a href="#skip" class="skip-link">Skip to main content</a>
@@ -186,6 +179,16 @@
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+		{# Google tag (gtag.js) #}
+		<script defer src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
+			gtag('config', 'G-K39D2FSQEF');
+		</script>
 	</body>
 </html>
