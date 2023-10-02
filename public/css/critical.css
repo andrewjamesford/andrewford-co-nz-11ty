@@ -127,6 +127,9 @@ h1 {
 	flex-direction: column;
 	margin-bottom: 0.5rem;
 }
+.article-list-item picture {
+	text-align: center;
+}
 .article-heading {
 	text-align: center;
 }

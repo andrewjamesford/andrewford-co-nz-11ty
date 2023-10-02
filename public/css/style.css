@@ -352,6 +352,9 @@ pre[class*="language-"] {
 	.article caption {
 		display: table-caption;
 	}
+	.article-list-item picture {
+		text-align: left;
+	}
 	.news-box {
 		padding: 3rem;
 	}
