@@ -38,9 +38,9 @@
 		<meta property="og:type" content="website"/>
 		<meta property="og:description" content="{{ description or metadata.description }}"/>
 		{% if ogimage %}
-			<meta property="og:image" content="{{ metadata.url }}/images/{{ ogimage }}"/>
+			<meta property="og:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}"/>
 		{% else %}
-			<meta property="og:image" content="{{ metadata.url }}/images/social-card.png"/>
+			<meta property="og:image" content="{{ metadata.url }}/ogimage/social-card.png"/>
 		{% endif %}
 		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
 
@@ -51,9 +51,9 @@
 		<meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
 		{% if ogimage %}
-			<meta name="twitter:image" content="{{ metadata.url }}/images/{{ ogimage }}">
+			<meta name="twitter:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}">
 		{% else %}
-			<meta property="twitter:image" content="{{ metadata.url }}/images/social-card.png"/>
+			<meta property="twitter:image" content="{{ metadata.url }}/ogimage/social-card.png"/>
 		{% endif %}
 
 		{# Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
