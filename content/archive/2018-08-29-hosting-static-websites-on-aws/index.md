@@ -16,7 +16,7 @@ description: "AWS is a great platform to host a static website, here is how to u
 
 Hosting a static website (static as in HTML/CSS files and JavaScript, not PHP, C# etc) on AWS can seem like a bit of a mine field at first. But it really isn't, as AWS have a great wizard like tool that does everything you need to get going quickly.
 
-![Static website hosting diagram](aws-diagram.png)
+{% figure "./aws-diagram.png", "Static website hosting diagram", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Tucked away on the AWS documentation is a link to the [Website Quickstart Hosting](https://console.aws.amazon.com/quickstart-website/home) page (this requires an Amazon developer account). From here its made as easy as possible to get your own static site setup on AWS using [S3](https://aws.amazon.com/s3/) for file storage, [CloudFront](https://aws.amazon.com/cloudfront/) as the CDN for your sites content to be cached on, [Route 53](https://aws.amazon.com/route53/) where your domain or sub-domain is configured, with [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) ready for securing your site over HTTPS.
 
@@ -24,7 +24,7 @@ The quick start wizard makes this as easy as giving your project a name and uplo
 
 ## Adding your own domain
 
-![AWS Wizard Complete](aws-wizard-complete.png)
+{% figure "./aws-wizard-complete.png", "AWS Wizard Complete", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Once you have uploaded your content to AWS you will be taken to the screen above. Click on the `Buy domain` blue button and you can either buy a domain direct from Amazon or use an existing domain (the catch is you will need to be using [Route 53](https://console.aws.amazon.com/route53/home) as your Name Server to be able to use it).
 
@@ -32,7 +32,7 @@ Once you have uploaded your content to AWS you will be taken to the screen above
 
 Now you have your domain setup against your public site, it's time to make it secure (for performance mainly when using [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) and looking better in [Google Chrome](https://blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/). You will need to setup an SSL certificate from the [Certificate Manager](https://console.aws.amazon.com/acm/home), you may need to verify your domain ownership either via email or DNS CNAME. Follow the steps, once complete and your domain is verified you can now go to CloudFront from the Static website dash. Click the `Edit` button near the top left and change the SSL Certificate to Custom SSL Certificate and select the SSL you generated before.
 
-![Cloudfront settings](aws-static-dash.png)
+{% figure "./aws-static-dash.png", "Cloudfront settings", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 ## Deployment of your static site
 

@@ -12,7 +12,7 @@ tags:
 description: ""
 ---
 
-![Firefox Addon Nightly Tester Tools](./NightlyTesterTools1.png)
+{% figure "./NightlyTesterTools1.png", "Firefox Addon Nightly Tester Tools", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Today I needed to use a plugin that was out of date with the latest version of Firefox (Firefox 6 is now out). The great [Pixel Perfect Plugin](http://pixelperfectplugin.com/), an awesome tool for checking your CSS/HTML layouts match your design by overlaying a graphic over top with opacity. Definitely check it out, helps keep me honest to the design.
 

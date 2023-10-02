@@ -17,17 +17,17 @@ tags:
 description: ""
 ---
 
-![Prompt 2 helps you manage your server from your iPhone](./prompt2-icon-150x150.jpg)
+{% figure "./prompt2-icon-150x150.jpg", "Prompt 2 helps you manage your server from your iPhone", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 [Prompt 2](https://itunes.apple.com/nz/app/prompt-2/id917437289?mt=8&uo=4) is an update to my favourite [SSH](https://en.wikipedia.org/wiki/Secure_Shell)</a> terminal app for iOS. It allows me to manage, perform maintenance and repair my [VPS](https://clientarea.ramnode.com)</a> (which hosts this website) from my phone anywhere I have an internet connection.
 
 One of the new features added to the app are "clips", short snippets of commands you can create and sync between devices.&nbsp;This is great for saving time typing out complicated commands when your most likely under some pressure.
 
-![From the keyboard tap the green button until the red button is shown. Activate the clips menu with the button highlighted in red.](./prompt-2-shortcuts-merged1.png)
+{% figure "./prompt-2-shortcuts-merged1.png", "From the keyboard tap the green button until the red button is shown. Activate the clips menu with the button highlighted in red.", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Once you've logged on to your session with your server tap the double dot button (shown in green in the screenshot above) until the star 5 pointed star button (highlighted in red) is shown then tap this to bring up the clips menu. You can create server specific or global clips.
 
-![Some of the clips I use in Prompt 2](./prompt-2-shortcuts-merged2.png)
+{% figure "./prompt-2-shortcuts-merged2.png", "Some of the clips I use in Prompt 2", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Here are a few of the clips I use to manage my own server:
 

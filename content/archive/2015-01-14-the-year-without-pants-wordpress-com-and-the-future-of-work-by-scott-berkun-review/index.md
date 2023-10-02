@@ -16,7 +16,7 @@ description: ""
 
 [Automattic](http://automattic.com) is the company behind the most popular blogging software in the world [Wordpress](https://kinsta.com/learn/wordpress-history/). In Scott’s book he describes how Automattic works from both a high level and directly in context of his own personal experiences being a team leader for Team Social on Wordpress.com.
 
-![The Year Without Pants: WordPress.com and the Future of Work by Scott Berkun](./YWP-COVER-FINAL.png)
+{% figure "./YWP-COVER-FINAL.png", "The Year Without Pants: WordPress.com and the Future of Work by Scott Berkun", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 He describes how the company is far removed from formal siloed practises like project management, agile, waterfall or even QA. Critiquing how different the organisation is to say Microsoft where he had worked for a number of years on the Internet Explorer team.
 

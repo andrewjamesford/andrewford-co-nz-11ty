@@ -13,7 +13,7 @@ tags:
 description: "Custom 404 page with CSS3"
 ---
 
-![404 page](./404page.png)
+{% figure "./404page.png", "404 page", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Saw a great article on .Net magazines site on how to create a [404 page with CSS 3 animation](http://www.netmagazine.com/tutorials/create-404-page-css3-animations) for browsers that support it. At the moment both Firefox 5 and Chrome support CSS3 animation (works on iPhone/iPad too), this will be great workaround for flash for simple banner ads. No more resorting to animated gifs.
 

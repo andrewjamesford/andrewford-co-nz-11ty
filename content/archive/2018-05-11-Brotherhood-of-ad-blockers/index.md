@@ -11,7 +11,7 @@ tags:
 description: "An article on the team behind the great open source project Pi-Hole"
 ---
 
-![Ad Blocking](./ad-blocker.jpg)
+{% figure "./ad-blocker.jpg", "Ad Blocking", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Pi-Hole has been one of the best Raspberry Pi projects I've setup that has made a day to day difference in my life. Almost no ads on my home network for all my families devices, and the ability to restrict websites to my kids.
 

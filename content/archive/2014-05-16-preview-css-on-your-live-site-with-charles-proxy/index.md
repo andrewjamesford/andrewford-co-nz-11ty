@@ -17,13 +17,13 @@ What if you could check/preview your CSS changes before you push your changes to
 
 First enable local mapping. Under "Tools" > "Map Local".
 
-![Charles enable map local](./Charles-proxy-mapping1.png)
+{% figure "./Charles-proxy-mapping1.png", "Charles enable map local", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Charles enable map local
 
 Then select the CSS file you want to override with your local copy.
 
-![Charles CSS mapping](./Charles-proxy-mapping2.png)
+{% figure "./Charles-proxy-mapping2.png", "Charles CSS mapping", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Too easy. When you next refresh your browser you will see the changes you made to your CSS. You now have a great way to double-check your changes before go live.
 

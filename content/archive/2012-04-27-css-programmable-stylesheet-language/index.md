@@ -30,11 +30,11 @@ I can't say I've ever used this method. I'm not sure if you could use it in deve
 
 ## Implementing LESS ASP.Net as part of your build process
 
-![Squishit adding the css](./squishit-css.jpg)
+{% figure "./squishit-css.jpg", "SquishIt adding the CSS", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 In my day job I develop a web application using ASP.Net MVC 3. The way I implement LESS in ASP.Net is via using the package SquishIt. Grab it from the [NuGet Gallery](http://nuget.org/packages/SquishIt). The great thing about SquishIt is not only does it process your LESS files (plus CoffeeScript) it will minify, and combine the output (even in a cache busting way). It's implementation is also extremely easy (and it works with both MVC and WinForm projects). Check out the developer [Justin's guide](http://www.codethinked.com/squishit-the-friendly-aspnet-javascript-and-css-squisher) on implementing SquishIt
 
-![SquishIt add the JavaScript](./squishit-js.jpg)
+{% figure "./squishit-js.jpg", "SquishIt adding the JavaScript", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 SquishIt can also be used to reference your JavaScript files both minifying and combining. It can reference external CDN files e.g. for jQuery etc and local files in the same call, using the local file for development and the external file when going live. It will compile you LESS files on save so all that is needed to see your changes in the browser when developing locally is a refresh.
 
@@ -44,7 +44,7 @@ There is a plugin for Visual Studio that will add support for LESS syntax and hi
 
 ## Using an application to process LESS
 
-![CodeKit](./CodeKit.jpg)
+{% figure "./CodeKit.jpg", "CodeKit", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 By far the the easiest way to implement LESS processing regardless of platform is to use an application to convert the LESS files into CSS, either on save of the file or by manually clicking a process button. On a Mac there are a multitude of options but by far my favourite is the application CodeKit. It allows importing from other folders, processing of many other CSS dynamic languages and the minification and combining of files. Other applications of note are SimpLESS which is multi-platform, and LESS app for Mac by the same developer as CodeKit. If you are just starting out I'd recommend CodeKit to start with, it's easier to setup and independent of the language your developing on also it will notify you of errors when compiling the LESS to CSS. CodeKit isn't free but in my opinion is worth every cent.
 

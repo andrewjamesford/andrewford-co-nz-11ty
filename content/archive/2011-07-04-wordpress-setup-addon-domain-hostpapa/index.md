@@ -24,4 +24,4 @@ http://myoriginaldomain.com/myaddondomain.com/image.jpg
 
 To stop this occurring simply go to the settings tab in the Wordpress admin for your new site and update the Wordpress address (URL) and the Site address (URL) like in the screenshot below.
 
-![Setting up Wordpress to work correctly with a HostPapa addon domain](./addondomain-wordpress.png)
+{% figure "./addondomain-wordpress.png", "Setting up Wordpress to work correctly with a HostPapa addon domain", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

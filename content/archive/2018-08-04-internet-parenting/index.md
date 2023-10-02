@@ -21,7 +21,7 @@ To try and shield my kids from things I think they shouldn't need to see yet I'v
 
 I run a [Raspberry Pi](https://www.raspberrypi.org/) at home running among other things [Pi-Hole](https://pi-hole.net/) - a network wide ad-blocker. A great feature the Pi-Hole software has is the ability blacklist sites on your network. This allows you as a parent to block sites you don't like or feel are inappropriate for your kids. You can even automate the black listing of entire categories of sites by using a pre-configured [block list](https://github.com/StevenBlack/hosts).
 
-![Pi-Hole blacklist](./pi-hole-blacklist.jpg)
+{% figure "./pi-hole-blacklist.jpg", "Pi-Hole blacklist", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 In our house we outright block a few websites. The likes of YouTube, Instagram and Snapchat to name a few. While there are some good things on these platforms, my wife and I agree that at our kids current age the negatives out way the good. All these social sites are intended to be addictive and that’s something our kids don’t need at such a young age. Tim Cook CEO @ Apple doesn't allow his nephew on [social media for example](http://fortune.com/2018/01/20/tim-cook-wont-allow-his-nephew-on-social-media/).
 
@@ -31,7 +31,7 @@ You can achieve a similar ability to black list sites without a Raspberry Pi / P
 
 A number of routers allow you to have more than one [SSID](https://www.lifewire.com/definition-of-service-set-identifier-816547) and enable and disable as necessary. This is great for setting up a SSID for each kid in your family. When the kids are breaking the rules simply log in to the router and disable their SSID. If that's not an option on your router you could always plug in a second router specially for the kids, and switch on/off as necessary.
 
-![Seperate WiFi SSIDs for the kids](./wifi-ssids.jpg)
+{% figure "./wifi-ssids.jpg", "Separate WiFi SSIDs for the kids", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 ## Restricting devices
 
@@ -41,6 +41,6 @@ On iOS there are restriction settings on iOS to stop changing of options (like W
 
 The Nintendo Switch has great parental controls that allow you to easily set daily time limits for use of the console. We have ours set to an hour a day during the week, increasing it on the weekends to two hours. Games as well can be black or white listed, if you'd prefer the kids not to play certain titles.
 
-![Nintendo Switch Parental Controls](./nintendo-switch-parental-controls.jpg)
+{% figure "./nintendo-switch-parental-controls.jpg", "Nintendo Switch Parental Controls", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Parental controls can be controlled by an app for [iOS & Android](https://www.nintendo.com/switch/family-fun/parental-controls/), it has a nice little toggle to disable the time limit for the day.

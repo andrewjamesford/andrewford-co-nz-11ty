@@ -21,7 +21,7 @@ I've used a number of Javascript based image sliders on a number of projects in 
 
 [http://nivo.dev7studios.com/](http://nivo.dev7studios.com/)
 
-![Nivo Slider](./nivo-slider.png)
+{% figure "./nivo-slider.png", "Nivo Slider", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 I'm currently using Nivo slider on this website for the home page. It's currently pulling in the Featured Post image  using a custom function for my Wordpress theme. Nivo slider has a great set of animation effects and has a number of options. If you want a no hassle installation for Wordpress Dev7Studios offer a paid plugin as well. There are even a number of other platforms already supported with Drupal, Joomla and Sitefinity.
 
@@ -47,7 +47,7 @@ Sites I've implemented on:
 
 &nbsp;
 
-![jQuery Cycle](./zespri-slider.png)
+{% figure "./zespri-slider.png", "jQuery Cycle", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 This great plugin has the most effects of all the sliders here, it also has the honor of being the oldest project of the round up. Very highly configurable, huge number of options and can be paused, progressed etc from a JavaScript call. I've used it on multiple projects and combined with jQuery easing the transition effects can be very smooth and extended (ease in, bounce etc).
 

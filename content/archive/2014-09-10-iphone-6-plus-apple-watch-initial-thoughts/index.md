@@ -21,7 +21,7 @@ Both phones are taking design cues from the first iPhone with the rounded edges 
 
 There aren’t any ground breaking changes (well maybe NFC) to the new iPhones, just good incremental changes as a whole. I think we’ve seen the last of new big hardware features. From now on the biggest improvements will be on software I believe. iOS 8 is actually what I’m more excited about, with its polished interface improvements and the inter app extensions.
 
-![iPhone 6 & iPhone 6 Plus](./iphone6-6plus-homescreens.jpg)
+{% figure "./iphone6-6plus-homescreens.jpg", "iPhone 6 & iPhone 6 Plus", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 New screen sizes and performance improvements are always welcome, but with the already good performance of my iPhone 5S its a tough call on wether to upgrade to an iPhone 6 (or 6 Plus). If battery life is your prime concern, the iPhone 6 Plus may very much be worth it with double the battery life for talk time of the 5S/5C. (([Apple iPhone comparison table](http://www.apple.com/nz/iphone/compare/)))
 
@@ -37,7 +37,7 @@ The Apple Watch looks great! With its dial I believe it solves a lot of the “f
 
 The number of variations of the Apple Watch is a departure from having limited SKUs other than colour compare to the iPods and iPhones. There are 2 sizes (38mm and 42mm) in each of the 3 collections (some with 18 carat gold) and a multitude of different straps from rubber, leather and aluminium material with different clasps. In one of the collections there are 18 variations. (([Apple Watch Collection](https://www.apple.com/watch/apple-watch/)))
 
-![Apple Watch](./apple-watch-white.jpg)
+{% figure "./apple-watch-white.jpg", "Apple Watch", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 An important thing to remember is that the Apple Watch needs to be paired with an iPhone (5, 5C,5S,6 &amp; 6 Plus) just like the Android Wear watches can only be used with Android 4.3+ phones. Price may be a barrier for adoption with a RRP of USD $349 and more likely NZD $400+ which is pretty steep when compared with other smart watches already on sale.
 
@@ -45,4 +45,4 @@ The most important question is the battery life of the Apple Watch, even with th
 
 It will be interesting to see what more details are dropped before release, and what the final features will be. At the moment we have only a glimpse of a great looking mockup. I look forward to seeing the online configuration selection when it does become available, it will be a feat in itself to make it simple.
 
-![Apple Watch and iPhone 6](./apple-watch-iphone6.jpg)
+{% figure "./apple-watch-iphone6.jpg", "Apple Watch and iPhone 6", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

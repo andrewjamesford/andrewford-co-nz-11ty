@@ -15,7 +15,8 @@ description: ""
 
 Two great tools I like to use are React.js and Sketch.app now just got better together with AirBnB's new open source library <a href="https://github.com/airbnb/react-sketchapp" target="_blank">React-Sketchapp</a>. It can render your React components to a Sketch design file.
 
-![The basic setup example React-Sketchapp](./React-sketchapp-example.png)
+{% figure "./React-sketchapp-example.png", "The basic setup example React-Sketchapp", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+
 
 Traditionally your application is designed in a UI design tool like Sketch. From the mockups the developers/designers create the React components based on these designs. Over time these move away from the original Sketch file with revisions over the life of the project/product. The design files need to be updated manually and this can be very time consuming.
 

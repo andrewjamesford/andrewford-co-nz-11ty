@@ -12,7 +12,7 @@ tags:
 description: ""
 ---
 
-![Perfect Pixel](./Perfect-Pixel.png)
+{% figure "./Perfect-Pixel.png", "Perfect Pixel", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Ever had to build a web page for a picky web designer? One that will rake you over the coals for little things not matching their design?
 

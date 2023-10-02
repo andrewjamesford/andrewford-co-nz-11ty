@@ -10,7 +10,7 @@ tags:
 description: ""
 ---
 
-![A screenshot of my iOS app Mirror 7](./Intro.png)
+{% figure "./Intro.png", "A screenshot of my iOS app Mirror 7", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 Unfortunately on the weekend my iOS app in review Mirror 7 was rejected. I won't go into the details, it was rejected with some pretty fair reasons and won't ever appear on iTunes.
 
