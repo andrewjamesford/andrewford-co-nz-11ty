@@ -42,8 +42,7 @@ module.exports = (eleventyConfig) => {
 		async function externalImageShortcode(src, alt, widths, sizes, cssClass) {
 			// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 			// Warning: Avif can be resource-intensive so take care!
-			let file = src;
-			let metadata = await eleventyImage(file, {
+			let metadata = await eleventyImage(src, {
 				widths: widths || ["auto"],
 				formats,
 				outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.

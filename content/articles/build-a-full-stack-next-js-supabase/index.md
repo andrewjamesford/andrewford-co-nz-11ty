@@ -17,7 +17,7 @@ description: This is the third video tutorial on building a full-stack Next.js w
 ogimage: "full-stack3.jpg"
 --- 
 
-{% figure "./full-stack3.jpg", "A web full-stack app built with NextJS - Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./full-stack3.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 
 The following is a transcript of my live stream on [YouTube](https://www.youtube.com/live/LCnHOpg7U7s) Sep 28, 2023 on Building a Full-Stack web app with Next.js. This is the third video in the series where I use [Supabase](https://supabase.com) as the database for the app. In the video I create a table to hold our courses. I then load it with some data of some course names and then finally display the results of the data in a list.
