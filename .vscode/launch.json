@@ -9,14 +9,14 @@
 			"request": "launch",
 			"reAttach": true,
 			"name": "Launch FF",
-			"url": "http://localhost:8080",
+			"url": "http://localhost:8888",
 			"webRoot": "${workspaceFolder}"
 		},
 		{
 			"type": "pwa-chrome",
 			"request": "launch",
 			"name": "Launch Chrome",
-			"url": "http://localhost:8080",
+			"url": "http://localhost:8888",
 			"webRoot": "${workspaceFolder}"
 		}
 	]
