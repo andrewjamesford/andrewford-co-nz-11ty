@@ -1,9 +1,9 @@
 ---
 title: Build a Full-Stack web app with Next.js - Part 3 Supabase
-date: '2023-09-28T00:00:01Z'
+date: "2023-09-28T00:00:01Z"
 template: post
 draft: false
-slug: 'build-a-full-stack-next-js-supabase'
+slug: "build-a-full-stack-next-js-supabase"
 category: article
 tags:
   - nextjs
@@ -15,13 +15,11 @@ tags:
   - lms
 description: This is the third video tutorial on building a full-stack Next.js with Supabase. Andrew discusses how to display a list of courses on a webpage using data from a Supabase database. He explains how to use SQL queries to retrieve data from the database and display it on the webpage and also mentions using Superbase's table editor to edit the database and provides a brief overview of plans for future development.
 ogimage: "full-stack3.jpg"
---- 
+---
 
 {% figure "./full-stack3.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-
 The following is a transcript of my live stream on [YouTube](https://www.youtube.com/live/LCnHOpg7U7s) Sep 28, 2023 on Building a Full-Stack web app with Next.js. This is the third video in the series where I use [Supabase](https://supabase.com) as the database for the app. In the video I create a table to hold our courses. I then load it with some data of some course names and then finally display the results of the data in a list.
-
 
 The project is available on [GitHub as LMS NextJS](https://github.com/andrewjamesford/lms-nextjs).
 
@@ -82,8 +80,6 @@ And I'm going to add a description.
 Again, this one I will actually make a text.
 
 And I'm going to add another column here for some.
-
-
 
 We need to have an image, I think.
 
@@ -153,7 +149,6 @@ Is that going to let me?
 
 Hm, it's not getting so.
 
-
 I don't know why that's not letting me.
 
 Weird.
@@ -189,8 +184,6 @@ It's not to worry, let's refresh this.
 and new course named 'grat.
 
 js4beginners' It's kind of weird it popped up with the accept there and.
-
-
 
 I am not having luck today am I?
 

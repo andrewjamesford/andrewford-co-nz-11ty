@@ -100,7 +100,7 @@
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav class="nav">
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav-links">
+				<ul class="nav-links nav-links-header">
 					{%- for entry in collections.all | eleventyNavigation %}
 						<li>
 							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
@@ -176,6 +176,10 @@
 					</div>
 				</div>
 			{%- endif -%}
+			<div class="website-built">
+				Website made with <a href="https://www.11ty.dev/">Eleventy</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.
+				Source available on <a href="https://github.com/andrewjamesford/andrewford-co-nz-11ty">GitHub</a>.
+			</div>
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->

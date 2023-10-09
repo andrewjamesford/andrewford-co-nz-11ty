@@ -17,7 +17,6 @@ Two great tools I like to use are React.js and Sketch.app now just got better to
 
 {% figure "./React-sketchapp-example.png", "The basic setup example React-Sketchapp", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-
 Traditionally your application is designed in a UI design tool like Sketch. From the mockups the developers/designers create the React components based on these designs. Over time these move away from the original Sketch file with revisions over the life of the project/product. The design files need to be updated manually and this can be very time consuming.
 
 But now you can use React-Sketchapp to generate the design files from the actual React components that are used in your application.

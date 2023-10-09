@@ -328,16 +328,15 @@ import { getFizzBuzz } from "./getFizzBuzz";
 
 ```javascript
 test("returns an empty array when given an empty array", () => {
-  expect(getFizzBuzz([])).toStrictEqual([]);
+	expect(getFizzBuzz([])).toStrictEqual([]);
 });
-
 ```
 
 > 1. To test that the function returns the correct output for a single number, you could write the following test:
 
 ```javascript
 test("returns an array with the correct output for a single number", () => {
-  expect(getFizzBuzz([1])).toStrictEqual([1]);
+	expect(getFizzBuzz([1])).toStrictEqual([1]);
 });
 ```
 

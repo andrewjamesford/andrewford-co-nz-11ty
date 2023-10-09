@@ -6,4 +6,3 @@ eleventyNavigation:
   key: "Articles"
   order: 2
 ---
-

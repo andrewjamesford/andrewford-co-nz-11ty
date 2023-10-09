@@ -5,6 +5,7 @@
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve",
 		"dev": "netlify dev",
+		"serve": "netlify serve",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",

@@ -20,7 +20,6 @@ I was lucky enough to attend the Microsoft Winter of Xamarin 2017 event in Auckl
 
 {% figure "./xamarin-winter-of-code.jpg", "Xamarin Winter of Code", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-
 The day was a great learning experience were throughout the day we made a [cross platform app](https://github.com/ovishesh/Winter-of-Xamarin) of iOS, Android and Windows UWP using Xamarin and Xamarin Forms.
 
 {% figure "./app-updated-controls.png", "App Updated Controls", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
@@ -32,7 +31,6 @@ The finished app[/caption]The venue was packed with close to 100 people all givi
 I was impressed with the new [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/), it didn't feel like a gross cross platform IDE. In fact I'd see say it's on par with [Xcode](https://developer.apple.com/xcode/) and [Android Studio](https://developer.android.com/studio/index.html). Throughout the day I felt very much at home developing cross platform with C#, the API's for Android and iOS felt very familiar wrapped in a C# way. The concepts of [Xamarin](https://www.xamarin.com/) and [Xamarin Forms](https://www.xamarin.com/forms) were easy to pick up, you had a lot of control to do specific UI overrides when you needed to for specific platforms.
 
 {% figure "./xamarin-beanie.jpg", "Free swag! Xamarin beanie", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
-
 
 Xamarin development experience felt much easier than React Native the only cross platform tool I've used heavily in the past. Being able to spin up an iOS or Android emulator straight from the debug menu of Visual Studio was great. It felt as natural as working in Xcode or Android Studio, but you have the benefit of code sharing (including the UI) all in the same project.
 

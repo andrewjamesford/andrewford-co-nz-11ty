@@ -15,7 +15,6 @@ description: ""
 
 {% figure "./transmit-icon-150x150.jpg", "Transmit for iOS", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-
 First of all if you haven't bought [Panic](http://panic.com)'s great new FTP client for iOS [Transmit](https://itunes.apple.com/nz/app/transmit-ios/id917432930?mt=8&uo=4&at=10lnRx) I suggest you go grab it. With the introduction of iOS 8 an app like Transmit helps become that bridge to easily transfer files to your Mac/Server and your iPad or iPhone _without_ using a cloud service.
 
 [Panic](https://www.panic.com/transmit-ios/) mentions in their FAQ for [Transmit for iOS](https://itunes.apple.com/nz/app/transmit-ios/id917432930?mt=8&uo=4&at=10lnRx) you can transfer files to your mac via FTP. This is a great alternative to AirDrop if your Mac doesn't support it.

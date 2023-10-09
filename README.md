@@ -15,6 +15,7 @@ npm install
 ```
 
 Ensure you have the following dependencies installed:
+
 - Netlify CLI
 
 Once you've installed the dependencies, you can run the development server:

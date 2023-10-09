@@ -73,7 +73,7 @@ Okay so I'm going to go through that whole process of installing the actual code
 
 And then I'm also going to try and start the part of actually building the app, start looking at the wireframe there and start getting that working.
 
-Okay cool okay so if we go to the docs for Next.js 
+Okay cool okay so if we go to the docs for Next.js
 
 so on the Next.js org website forward slash docs there is a usually what's for pretty much every single website you can imagine these are getting started page and getting started page is generally what we want to look at in in terms of actually installing all the prerequisites there and actually get it up and running.
 

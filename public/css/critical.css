@@ -111,13 +111,13 @@ h1 {
 	font-size: 1.9rem;
 	line-height: 2.3rem;
 	min-height: 2.3rem;
-  }
-  
-  h2 {
+}
+
+h2 {
 	font-size: 1.5rem;
 	line-height: 1.8rem;
 	min-height: 2.3rem;
-  }
+}
 
 .article-datetime {
 	font-size: 1.5rem;
@@ -181,15 +181,23 @@ h1 {
 	padding-left: 0;
 	margin: 0;
 	font-size: 0.8rem;
+	display: grid;
 }
 .nav-links-footer {
 	text-align: center;
 	color: var(--body-color-secondary);
+	grid-template-columns: repeat(3, 1fr);
 }
 .nav-links li {
 	list-style: none;
 	padding: 0.2rem 0.4rem;
 	text-align: center;
+}
+.nav-links-header li {
+	font-size: 1rem;
+}
+.nav-links-header {
+	grid-template-columns: repeat(2, 1fr);
 }
 .nav-links a {
 	color: var(--body-color);

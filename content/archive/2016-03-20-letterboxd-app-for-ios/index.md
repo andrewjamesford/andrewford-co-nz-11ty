@@ -15,7 +15,6 @@ If you **love** movies, then do yourself a favour and sign up for [Letterboxd](h
 
 {% figure "./letterboxd-3-wide.png", "Screenshots of Letterboxd app", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-
 There are two things that stood out to me in the app as _different_ choices on iOS. Firstly the Letterbox app doesn't have labels on the tab bar at the bottom.
 
 {% figure "./letterboxd-tab-bar.png", "Letterboxd tab bar - sans labels", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
@@ -31,7 +30,6 @@ On some apps I believe this is fine. Say like [Twitterrific](http://twitterrific
 Purely by coincidence Letterboxd was released the same week Google updated the "Material Design" guidelines adding a [bottom navigation bar](https://www.google.com/design/spec/components/bottom-navigation.html#bottom-navigation-style) similar to the iOS tab bar in Safari on iOS. On Letterboxd as the content is scrolled the tab bar (and navigation bar) is hidden therefore removing a distraction to reading/viewing.
 
 [Letterboxd hide toolbar video](./letterboxd-hide-toolbar.mov)
-
 
 The wait has been long but has been worthwhile for Letterboxd to provide a great [version 1.0 iOS app](https://letterboxd.com/app/). I look forward to what they add next to the service.
 
