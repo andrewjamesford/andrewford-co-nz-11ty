@@ -44,11 +44,18 @@ numberOfLatestVideosToShow: 3
           {% if loop.index <= numberOfLatestVideosToShow -%}
             <li class="article-list-item">
               {% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320, 720], [320, 720], "video-thumb" %}
+                  
               <h4 class="article-title">
                 <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
                   {{ video.snippet.title }}
                 </a>
               </h4>
+              {% if video.snippet.liveBroadcastContent === "live" %}
+                <h5 class="article-title indicator-live">LIVE</h5>
+              {% endif %}
+              {% if video.snippet.liveBroadcastContent === "upcoming" %}
+                <h5 class="article-title indicator-upcoming">Upcoming</h5>
+              {% endif %}
               <p class="article-description">{{ video.snippet.description }}</p>
             </li>
           {%- endif -%}
