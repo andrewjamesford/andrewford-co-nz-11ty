@@ -201,6 +201,7 @@ h2 {
 }
 .nav-links a {
 	color: var(--body-color);
+	text-shadow: var(--bg-color) 0 0 5px;
 }
 .nav-links a:hover {
 	background-color: transparent;
