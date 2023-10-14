@@ -2,6 +2,7 @@
 <html lang="{{ metadata.language }}">
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' www.googletagmanager.com www.youtube.com;">
 		<meta name="view-transition" content="same-origin" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }} - Andrew Ford - </title>
@@ -78,6 +79,11 @@
 		{# Preload the CSS bundle #}
 		<link rel="preload" href="{{ metadata.url + '/css/style.css' }}" as="style"/>
 		<link rel="stylesheet" href="{{ metadata.url + '/css/style.css' }}"/>
+
+		{# Add the contents of a file to the JS bundle #}
+		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
+
+		
 
 	</head>
 
@@ -157,7 +163,7 @@
 
 			{%- if latestMusic.music.artist !== "" -%}
 				<div id="lastFM" class="lastfm-widget">
-					{% externalImage latestMusic.music.albumArtLarge, "Cover art for " + latestMusic.music.trackName + " by " + latestMusic.music.artist, [64, 128, "auto"], [64, 128], "lastfm-img" %}
+					{% externalImage latestMusic.music.albumArtLarge, "Cover art for " + latestMusic.music.trackName + " by " + latestMusic.music.artist, [64, 300, "auto"], [64, 300], "lastfm-img", "lastFMImg" %}
 					<div>
 						<div class="lastfm-title">
 							Last listening to:
@@ -194,5 +200,8 @@
 
 			gtag('config', 'G-K39D2FSQEF');
 		</script>
+
+		{# Render the JS bundle #}
+		<script>{% getBundle "js" %}</script>		
 	</body>
 </html>
