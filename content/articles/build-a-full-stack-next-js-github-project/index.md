@@ -136,9 +136,7 @@ For those that watched the video last night or want to catch up, there actually 
 
 So, you'll be able to go into the description and you should be able to see the link to the GitHub repo.
 
-In this SQL folder, there should be the latest update from dbdiagram.
-
-io, which has the actual SQL that we used to create these tables.
+In this SQL folder, there should be the latest update from dbdiagram.io, which has the actual SQL that we used to create these tables.
 
 You can do the same or not.
 
@@ -192,7 +190,7 @@ Project.
 
 I'm going to use the table, probably board view.
 
-That's what I prefer, a Canban board.
+That's what I prefer, a Kanban board.
 
 Okay.
 
@@ -200,7 +198,7 @@ So, we create that.
 
 Okay.
 
-And we've got a basic sort of Canban board structure there that we can now use for our project.
+And we've got a basic sort of Kanban board structure there that we can now use for our project.
 
 I'm going to do, I've got another one to do.
 
