@@ -8,7 +8,9 @@ const loadData = async () => {
 	try {
 		const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
 		const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
-		const lastFMSourceList = document.querySelectorAll(`.lastfm-widget picture source`);
+		const lastFMSourceList = document.querySelectorAll(
+			`.lastfm-widget picture source`
+		);
 		const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
 
 		const response = await fetch(NETLIFY_FUNCTIONS_URL, {

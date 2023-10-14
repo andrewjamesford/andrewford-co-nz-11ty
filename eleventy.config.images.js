@@ -39,7 +39,14 @@ module.exports = (eleventyConfig) => {
 	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addAsyncShortcode(
 		"externalImage",
-		async function externalImageShortcode(src, alt, widths, sizes, cssClass, id = "externalImage") {
+		async function externalImageShortcode(
+			src,
+			alt,
+			widths,
+			sizes,
+			cssClass,
+			id = "externalImage"
+		) {
 			// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 			// Warning: Avif can be resource-intensive so take care!
 			let srcUrl = src || "/ogimage/social-card.png";

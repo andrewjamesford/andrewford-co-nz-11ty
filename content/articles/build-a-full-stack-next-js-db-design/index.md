@@ -11,7 +11,6 @@ tags:
   - design
   - dbdiagram.io
   - next.js
-  - entity relationship diagram
   - ERD
 description: "In this video, we will be designing the database for our app. We will be using dbdiagram.io to design our database. We use DBML to define our tables and denote the relationships between them. Using the export option, we quickly create the tables in our ERD (Entity Relationship Diagram) on Supabase."
 ogimage: "full-stack4.jpg"
