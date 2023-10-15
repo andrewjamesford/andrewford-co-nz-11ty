@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 3 Supabase
+title: Build a Full-Stack web app with Next.js - Part 3 - Supabase
 date: "2023-09-28T00:00:01Z"
 template: post
 draft: false

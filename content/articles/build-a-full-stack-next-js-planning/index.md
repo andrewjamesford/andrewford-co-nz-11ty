@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 1 Planning
+title: Build a Full-Stack web app with Next.js - Part 1 - Planning
 date: "2023-09-17T03:11:44Z"
 template: post
 draft: false

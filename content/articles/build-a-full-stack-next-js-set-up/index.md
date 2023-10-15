@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 2 Set Up
+title: Build a Full-Stack web app with Next.js - Part 2 - Set Up
 date: "2023-09-18T00:00:01Z"
 template: post
 draft: false
