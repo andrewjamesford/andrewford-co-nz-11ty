@@ -11,7 +11,7 @@ samp {
 }
 code[class*="language-"],
 pre[class*="language-"] {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 }
 .article-date {
 	white-space: nowrap;
