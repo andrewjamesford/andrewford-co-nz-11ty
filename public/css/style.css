@@ -330,7 +330,8 @@ pre[class*="language-"] {
 		display: inline;
 	}
 	.nav-links-footer {
-		display: inline-block;
+		display: flex;
+		justify-content: center;
 	}
 	.main {
 		padding-top: 2rem;
