@@ -2,7 +2,7 @@
 title: Build a Full-Stack web app with Next.js - Part 7 - Radix Components
 date: '2023-12-24T01:25:43Z'
 template: post
-draft: true
+draft: false
 slug: 'build-a-full-stack-next-js-radix-components'
 category: article
 tags:
