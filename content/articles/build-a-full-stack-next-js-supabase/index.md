@@ -656,3 +656,5 @@ Please like and subscribe and thanks to all those that managed to get me to 100 
 But yeah, tell your friends and I will see you next time.
 
 Bye.
+
+*Please note this transcript was edited for clarity.*

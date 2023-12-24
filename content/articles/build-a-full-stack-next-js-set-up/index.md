@@ -964,3 +964,5 @@ We've grabbed a lot of parts from the existing template there for the likes of N
 Have a great day and I will see you next time.
 
 Catch you later.
+
+*Please note this transcript was edited for clarity.*
