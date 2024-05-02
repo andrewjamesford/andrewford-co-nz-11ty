@@ -49,7 +49,11 @@ module.exports = (eleventyConfig) => {
 		) {
 			// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 			// Warning: Avif can be resource-intensive so take care!
-			let srcUrl = src || "/ogimage/social-card.png";
+			let srcUrl = src ? src : "";
+			if (srcUrl === "") {
+				return "";
+			}
+
 			let metadata = await eleventyImage(srcUrl, {
 				widths: widths || ["auto"],
 				formats,

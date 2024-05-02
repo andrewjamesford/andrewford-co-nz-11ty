@@ -14,6 +14,15 @@ cd andrewford-co-nz-11ty
 npm install
 ```
 
+Create an .env file with the following environment variables:
+
+```env
+LASTFM_API_KEY=
+SITE_URL=
+YOUTUBE_API_KEY=
+YOUTUBE_CHANNEL_ID=
+```
+
 Ensure you have the following dependencies installed:
 
 - Netlify CLI
