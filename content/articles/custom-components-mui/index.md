@@ -15,6 +15,8 @@ tags:
 description: "In this article we will create custom components in MUI (Material UI) using ReactJS and Storybook."
 ---
 
+<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/f6Bjdmlx35s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Introduction & Getting Started
 
 So in this video we're going to end up with three components in our own custom
