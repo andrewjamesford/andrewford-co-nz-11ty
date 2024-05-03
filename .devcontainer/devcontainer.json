@@ -31,8 +31,17 @@
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
 				"okitavera.vscode-nunjucks-formatter",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"ronnidc.nunjucks"
 			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/netlify-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/features/deno:1": {
+			"version": "latest"
 		}
 	},
 }

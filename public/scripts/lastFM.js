@@ -2,7 +2,8 @@ const LAST_FM_WIDGET_ID = "lastFM";
 const LAST_FM_LINK_ID = "lastFMLink";
 const LAST_FM_IMG_ID = "lastFMImg";
 const LAST_FM_ALBUM_ID = "lastFMAlbum";
-const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
+const NETLIFY_FUNCTIONS_URL = ".netlify/functions/lastplayed";
+const SITE_URL = location.href;
 
 const loadData = async () => {
 	try {
@@ -12,8 +13,7 @@ const loadData = async () => {
 			`.lastfm-widget picture source`
 		);
 		const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
-
-		const response = await fetch(NETLIFY_FUNCTIONS_URL, {
+		const response = await fetch(SITE_URL + NETLIFY_FUNCTIONS_URL, {
 			method: "GET",
 		});
 

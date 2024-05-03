@@ -273,6 +273,7 @@ pre[class*="language-"] {
 	text-align: center;
 }
 
+
 @media (prefers-color-scheme: dark) {
 	.series-heading,
 	.series-body,
@@ -326,13 +327,10 @@ pre[class*="language-"] {
 		justify-content: flex-end;
 		align-items: center;
 	}
-	.nav-links-header {
-		display: inline;
+	.nav-links-header, .nav-links-footer {
+		display: inline-block;
 	}
-	.nav-links-footer {
-		display: flex;
-		justify-content: center;
-	}
+
 	.main {
 		padding-top: 2rem;
 	}
