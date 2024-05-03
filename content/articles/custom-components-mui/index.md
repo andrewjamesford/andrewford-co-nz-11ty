@@ -321,8 +321,8 @@ export const Dropdown = ({ label, children, ...rest }: SelectProps) => {
     <MuiSelect
       label={label}
       {...rest}
-      sx={{ minWidth: 150 }}
-      style={{ background: "orange" }}
+      sx={ { minWidth: 150 } }
+      style={ { background: "orange" } }
     >
       {children}
     </MuiSelect>
@@ -489,7 +489,7 @@ export const DataTable = (props: TableProps) => {
       <Table
         aria-labelledby="tableTitle"
         size={"medium"}
-        sx={{ minWidth: [300, 750] }}
+        sx={ { minWidth: [300, 750] } }
       >
         <TableHeader headCells={header} />
         <TableBody>
