@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
 	let md = markdownIt({
 		html: true,
 		linkify: true,
+		typographer: true
 	}).use(require("markdown-it-footnote"));
 
 	// Create custom footnote block rule

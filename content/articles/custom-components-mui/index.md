@@ -15,10 +15,17 @@ tags:
 description: "In this article we will create custom components in MUI (Material UI) using ReactJS and Storybook."
 ---
 
-{% figure "./custom-components.png", "&quot;Create Custom Components using MUI&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./custom-components.png", "&quot;Create Custom Components using
+MUI&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320]
+%}
 
-The Material UI (MUI) library is a popular choice for building React applications. It provides a set of components that follow the Material Design guidelines, making it easy to create beautiful and consistent user interfaces. In this article, we will create custom components in MUI using ReactJS and Storybook.
+The Material UI (MUI) library is a popular choice for building React
+applications. It provides a set of components that follow the Material Design
+guidelines, making it easy to create beautiful and consistent user interfaces.
+In this article, we will create custom components in MUI using ReactJS and
+Storybook.
 
+The following is a transcript of the video tutorial below.
 
 <iframe class="video" loading="lazy" src="https://www.youtube.com/embed/f6Bjdmlx35s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -343,7 +350,8 @@ And then we create a interface.
 Next we can add the drop down component and then we can add our default
 properties for this component.
 
-We can add the story file now then it's going to be called `Dropdown.stories.tsx`.
+We can add the story file now then it's going to be called
+`Dropdown.stories.tsx`.
 
 So just like the button story we have to add the meta story object and the drop
 down component itself to the file.
