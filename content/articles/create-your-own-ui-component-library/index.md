@@ -11,6 +11,7 @@ tags:
   - typescript
 description: A guide to getting started creating your own UI Component library with ReactJS, TypeScript and Storybook
 socialBackground: bg7
+ogimage: "storybook-welcome.png"
 ---
 
 <iframe class="video" loading="lazy" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

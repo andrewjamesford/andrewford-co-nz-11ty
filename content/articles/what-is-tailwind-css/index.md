@@ -10,6 +10,7 @@ tags:
   - css
 description: An introduction to what Tailwind CSS is, and its pros & cons.
 socialBackground: bg2
+ogimage: "TailwindFlexboxCover.jpg"
 ---
 
 Tailwind CSS is a utility-first CSS framework that can provide many benefits for a web development project. It lets you style your HTML content by appending a multitude of predefined utility CSS classes to your HTML elements. For example say you were creating a Card component with a heading, description and image using ReactJS.

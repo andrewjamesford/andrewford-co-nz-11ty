@@ -13,6 +13,7 @@ tags:
   - account
 description: Continuing with the Next.js & Stripe account setup
 socialBackground: bg5
+ogimage: "stripe-api-page.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}

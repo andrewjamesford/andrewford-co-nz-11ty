@@ -13,6 +13,7 @@ tags:
 - radix
 - radix-ui
 description: 'In this article, we will continue building a full-stack web app with Next.js. We will be using Radix UI components to build our components in isolation using Storybook.' 
+ogimage: "lego-r.jpg"
 --- 
 
 {% figure "./lego-r.jpg", "&quot;Working with Radix components&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

@@ -11,6 +11,7 @@ tags:
   - ios
   - shortcuts
 description: A tutorial on making it easy to use ChatGPT on macOS and iOS using shortcuts.
+ogimage: "popclip-in-action.png"
 ---
 
 ## What is ChatGPT?

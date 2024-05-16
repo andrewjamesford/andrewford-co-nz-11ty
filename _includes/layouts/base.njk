@@ -32,7 +32,7 @@
 
 		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		<link rel="alternate" href="{{ metadata.url }}/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+		{# <link rel="alternate" href="{{ metadata.url }}/feed/feed.json" type="application/json" title="{{ metadata.title }}"> #}
 
 		{# open graph #}
 		<meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}"/>

@@ -12,6 +12,7 @@ tags:
   - copilot
   - chat
 description: Explore the strengths of CodeLlama's offline assistance and GitHub Copilot's Chat in this AI-assisted coding tool comparison.
+ogimage: "code-llama.png"
 ---
 
 {% figure "./code-llama.png", "&quot;a llama in front of a computer with code on the screen, digital art&quot; / DALL-E", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
