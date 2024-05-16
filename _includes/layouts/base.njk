@@ -41,7 +41,7 @@
 		{% if ogimage %}
 			<meta property="og:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}"/>
 		{% else %}
-			<meta property="og:image" content="{{ metadata.url }}/ogimage/social-card.png"/>
+			<meta property="og:image" content="{{ metadata.url }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
 		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
 
@@ -54,7 +54,7 @@
 		{% if ogimage %}
 			<meta name="twitter:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}">
 		{% else %}
-			<meta property="twitter:image" content="{{ metadata.url }}/ogimage/social-card.png"/>
+			<meta property="twitter:image" content="{{ metadata.url }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
 
 		{# Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
