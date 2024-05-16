@@ -17,6 +17,6 @@ Again [scratching my own itch](https://andrewford.co.nz/articles/tailwind-flexbo
 
 {% image "./Tailwind-Grid-Cheatsheet-sneak-peak1.webp", "Sneak peak of the cheatsheet", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-As always open to suggestions [email me](mailto:me@andrewford.co.nz).
+As always open to suggestions [email me](mailto:hireme@andrewford.co.nz).
 
 {% include "promos/tailwindgridcheatsheet.njk" %}

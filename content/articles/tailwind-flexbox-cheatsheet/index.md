@@ -16,7 +16,7 @@ If you hadn't figured out already (see my other [blog entry](https://andrewford.
 
 {% image "./Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
-Hope you like it! Any suggestions [let me know](mailto:me@andrewford.co.nz).
+Hope you like it! Any suggestions [let me know](mailto:hireme@andrewford.co.nz).
 
 ## Update 12 June 2023
 
