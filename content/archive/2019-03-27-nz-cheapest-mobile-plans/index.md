@@ -12,6 +12,8 @@ tags:
 description: "What are NZ's cheapest mobile plans"
 ---
 
+> For an **always up to date list of the cheapest mobile plans** in New Zealand check out [MoneyHub](https://www.moneyhub.co.nz/compare-mobile-plans.html?referrer=andrewford.co.nz).
+
 Up until 2 Degrees Mobile entered the market mobile plans between the then Telecom (now Spark) & Vodafone where some of the most expensive in the world. When they entered the market I gladly switched to them, and got to keep my data when they at the time where the only telco's with "roll over data".
 
 I happily stayed with them until I was enticed to switch to Spark simply because they bundled Spotify Premium with my monthly prepay pack of \$19. I suffered through no data roll over simply for uninterrupted all I could listen music. Well unfortunately the good times can't last forever and Spark decided to cut my plan come the 15th of April.
