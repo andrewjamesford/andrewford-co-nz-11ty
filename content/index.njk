@@ -8,8 +8,10 @@ numberOfLatestPostsToShow: 6
 numberOfLatestVideosToShow: 3
 ---
 
-<h1 class="center">Andrew Ford is the host of <a href="https://www.youtube.com/@CodewithAndrewFord">Code with Andrew Ford</a>, a YouTube channel dedicated to teaching you how to code. </h1>
-<h2 class="center secondary">He is also a full-stack web developer, technical analyst and an educator living in Tauranga, New Zealand.</h2>
+<div class="h-card">
+<h1 class="center"><a class="p-name u-email" href="mailto:hireme@andrewford.co.nz" rel="me">Andrew Ford</a> is the host of <a class="u-url" href="https://www.youtube.com/@CodewithAndrewFord">Code with Andrew Ford</a>, a YouTube channel dedicated to teaching you how to code. </h1>
+<h2 class="center secondary">He is also a <a class="u-url" href="https://www.linkedin.com/in/andrewjamesford/">full-stack web developer, technical analyst</a> and an <a class="u-url" href="https://www.missionreadyhq.com/accelerator/advanced-full-stack-developer">educator</a> living in <a class="p-locality" href="https://en.wikipedia.org/wiki/Tauranga">Tauranga, New Zealand</a>.</h2>
+</div>
 
 <section class="latest-articles-videos">
   {%- if collections.articles.length > 0 -%}

@@ -32,7 +32,9 @@
 				"GitHub.copilot-chat",
 				"okitavera.vscode-nunjucks-formatter",
 				"esbenp.prettier-vscode",
-				"ronnidc.nunjucks"
+				"ronnidc.nunjucks",
+				"VASubasRaj.flashpost",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
