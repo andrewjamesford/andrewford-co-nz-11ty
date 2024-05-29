@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "ms-azuretools.vscode-docker",
-        "vasubasraj.flashpost"
+        "ms-azuretools.vscode-docker"
     ]
 }
