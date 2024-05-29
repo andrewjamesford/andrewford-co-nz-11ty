@@ -11,6 +11,9 @@ exports.handler = async function (event, context) {
 				method: "GET",
 			}
 		);
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ` + JSON.stringify(response.status + ' ' + response.statusText));
+		}
 		const data = await response.json();
 		const lastUploadData = data.items;
 
@@ -19,6 +22,7 @@ exports.handler = async function (event, context) {
 			body: JSON.stringify(lastUploadData),
 		};
 	} catch (error) {
+		console.error(error);
 		return {
 			statusCode: 500,
 			body: JSON.stringify({ error_description: error.message }),
