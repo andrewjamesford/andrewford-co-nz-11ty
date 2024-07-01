@@ -116,3 +116,4 @@ resoc-image-data.json
 # Generated lighthouse reports
 chromewebdata_*
 localhost_*
+package-lock.json

@@ -46,9 +46,12 @@
 		"luxon": "^3.3.0",
 		"markdown-it-anchor": "^8.6.7",
 		"markdown-it-footnote": "^3.0.3",
-		"netlify-cli": "^17.23.1",
+		"netlify-cli": "^17.31",
 		"node-fetch": "^3.3.0",
 		"npm": "^10.7.0",
 		"prettier": "2.5.0"
+	},
+	"dependencies": {
+		"eleventy-plugin-youtube-embed": "^1.10.2"
 	}
 }
