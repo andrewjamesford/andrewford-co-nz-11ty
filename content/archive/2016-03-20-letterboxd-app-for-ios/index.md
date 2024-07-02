@@ -8,6 +8,8 @@ category: "article"
 tags:
   - design
   - iOS
+  - letterboxd
+  - app
 description: "Letterboxd has released their iOS app. A great addition to the service."
 ---
 

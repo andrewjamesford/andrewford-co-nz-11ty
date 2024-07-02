@@ -34,8 +34,6 @@ The summary screen. All the most important information you need to know, all I'v
 
 The details screen. All the pertinent information nicely displayed on one screen, that I have drilled into from the summary screen.
 
-<div style="text-align: center;"><iframe src="https://marvl.in/19c24e?emb=1" width="384" height="834" frameborder="0"></iframe></div>
-
 Now to see it all in action here is the prototype.
 
 I hope you, like it <a title="2 Degrees Mobile" href="http://www.2degreesmobile.co.nz">2 Degrees</a>. Not only did I enjoy creating this redesign, I got some UX/UI experience, and learnt a couple of new tools (<a title="Sketch 3" href="https://itunes.apple.com/nz/app/sketch-3/id852320343?mt=12&amp;uo=4&amp;at=10lnRx">Sketch</a> and <a title="Marvel - Prototype tool" href="http://marvelapp.com">Marvel</a>).

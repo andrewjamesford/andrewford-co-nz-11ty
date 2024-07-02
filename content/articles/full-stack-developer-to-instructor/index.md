@@ -8,7 +8,7 @@ category: article
 tags:
   - teaching
   - career
-description: My transition from Full Stack Developer to Instructor at Developers Institute
+description: "After 20 years being in the software/web industry with roles like web developer, analyst developer, lead developer, software engineer, and full stack developer. I decided in August to take a side step in to teaching."
 socialBackground: bg3
 ---
 
