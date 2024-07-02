@@ -15,4 +15,4 @@ tags:
 description: "Tomas Trajan walks through how to understand and implement Flux without libraries. Furthermore he has put together an example on Github using TypeScript, React & Webpack."
 ---
 
-<a href="https://twitter.com/tomastrajan">Tomas Trajan</a> walks through how to understand and implement Flux without libraries. Furthermore he has put together an <a href="https://github.com/tomastrajan/react-typescript-webpack">example on Github</a> using TypeScript, React &amp; Webpack.
+[Tomas Trajan](https://twitter.com/tomastrajan) walks through how to understand and implement Flux without libraries. Furthermore he has put together an [example on Github](https://github.com/tomastrajan/react-typescript-webpack) using TypeScript, React &amp; Webpack.
