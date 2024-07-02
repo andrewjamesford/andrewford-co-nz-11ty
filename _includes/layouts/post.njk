@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 {# Only include the syntax highlighter CSS on blog posts #}
 <link rel="preload" href="{{ '/css/prism-dracula.css' }}" as="style">
-<link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}" />
+<link rel="stylesheet" href="{{ '/css/prism-dracula.css' }}" loading="lazy"  />
 
 <h1>{{ title }}</h1>
 

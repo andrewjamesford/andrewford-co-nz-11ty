@@ -28,7 +28,7 @@ Storybook.
 
 The following is a transcript of the video tutorial below.
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/f6Bjdmlx35s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+youtube.com/embed/f6Bjdmlx35s
 
 ## Introduction & Getting Started
 
@@ -94,12 +94,12 @@ and then we're going to add some add-ons to it.
 
 ```ts
 addons: [
-	'@storybook/addon-links',
-	'@storybook/addon-essentials',
-	'@storybook/addon-onboarding',
-	'@storybook/addon-actions',
-	'@storybook/addon-interactions',
-	'@storybook/addon-themes',
+ '@storybook/addon-links',
+ '@storybook/addon-essentials',
+ '@storybook/addon-onboarding',
+ '@storybook/addon-actions',
+ '@storybook/addon-interactions',
+ '@storybook/addon-themes',
 ],
 ```
 
@@ -107,19 +107,19 @@ Next we are going to add the typescript options.
 
 ```ts
 typescript: {
-	reactDocgen: 'react-docgen-typescript',
-	reactDocgenTypescriptOptions: {
-	compilerOptions: {
-		allowSyntheticDefaultImports: false,
-		esModuleInterop: false,
-	},
-	shouldExtractLiteralValuesFromEnum: true,
-	shouldRemoveUndefinedFromOptional: true,
-	propFilter: (prop) =>
-		prop.parent
-			? !/node_modules\/(?!@mui)/.test(prop.parent.fileName)
-			: true,
-	},
+ reactDocgen: 'react-docgen-typescript',
+ reactDocgenTypescriptOptions: {
+ compilerOptions: {
+  allowSyntheticDefaultImports: false,
+  esModuleInterop: false,
+ },
+ shouldExtractLiteralValuesFromEnum: true,
+ shouldRemoveUndefinedFromOptional: true,
+ propFilter: (prop) =>
+  prop.parent
+   ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName)
+   : true,
+ },
 },
 ```
 

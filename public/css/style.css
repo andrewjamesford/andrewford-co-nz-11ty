@@ -227,14 +227,16 @@ pre[class*="language-"] {
 	padding: 0.9rem;
 	display: inline-block;
 }
-.video {
-	aspect-ratio: 16 / 9;
+
+.video lite-youtube {
+	border-radius: 0.3rem;
 	max-width: 1280px;
 	max-height: 720px;
+	aspect-ratio: 16 / 9;
+}
+.video > iframe {
 	width: 100%;
-	border-radius: 0.3rem;
-	display: flex;
-	margin: 0 auto;
+	height: 100%;
 }
 .footnotes,
 .footnote-ref {
@@ -253,6 +255,7 @@ pre[class*="language-"] {
 	font-style: italic;
 	color: var(--body-color-secondary);
 }
+
 .header-anchor {
 	font-size: 0.9rem;
 }
@@ -293,6 +296,8 @@ pre[class*="language-"] {
 		padding: 0.5rem;
 		box-shadow: inset 0 -0.5px 0 0 var(--header-shadow);
 		grid-template-columns: 1fr 5fr;
+	z-index: 10;
+
 	}
 	h1 {
 		font-size: 3rem;

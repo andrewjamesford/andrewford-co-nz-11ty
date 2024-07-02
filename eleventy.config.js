@@ -10,6 +10,7 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
+const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
@@ -17,7 +18,7 @@ module.exports = function (eleventyConfig) {
 	let md = markdownIt({
 		html: true,
 		linkify: true,
-		typographer: true
+		typographer: true,
 	}).use(require("markdown-it-footnote"));
 
 	// Create custom footnote block rule
@@ -58,6 +59,22 @@ module.exports = function (eleventyConfig) {
 	// App plugins
 	eleventyConfig.addPlugin(pluginDrafts);
 	eleventyConfig.addPlugin(pluginImages);
+	eleventyConfig.addPlugin(embedYouTube, {
+		embedClass: "video",
+		lazy: true,
+		recommendSelfOnly: true,
+		lite: {
+			js: {
+				inline: true
+			},
+			css: {
+				inline: true
+			
+			},
+			enabled: true,
+			responsive: true,
+		},
+	});
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
