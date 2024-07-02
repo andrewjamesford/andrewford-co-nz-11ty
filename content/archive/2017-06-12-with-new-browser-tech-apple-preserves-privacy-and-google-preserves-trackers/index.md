@@ -11,7 +11,7 @@ tags:
   - google
   - safari
   - link
-description: ""
+description: "Google and the CBA want to address the visibly annoying aspects of ads while ignoring the deeper privacy issues. Instead, they should take their lead from Apple on this one."
 ---
 
 <a href="https://www.eff.org/deeplinks/2017/06/with-new-browser-tech-apple-preserves-privacy-google-preserves-trackers">Alan Toner</a>:

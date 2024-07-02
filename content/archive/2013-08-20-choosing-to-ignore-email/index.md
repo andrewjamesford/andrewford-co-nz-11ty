@@ -8,7 +8,7 @@ category: "article"
 tags:
   - email
   - time management
-description: ""
+description: "Shawn Blanc makes the point about how he pre-decides to spend his time."
 ---
 
 <a href="http://shawnblanc.net/2013/08/not-busy-just-intentional/" title="Not Busy, Just Intentional">Shawn Blanc</a> makes the point about how he pre-decides to spend his time:

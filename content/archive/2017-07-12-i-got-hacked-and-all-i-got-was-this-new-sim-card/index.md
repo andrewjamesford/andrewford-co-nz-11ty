@@ -8,7 +8,7 @@ category: "article"
 tags:
   - security
   - link
-description: ""
+description: "Even when you do the right things to increase your security, social engineering can bypass it all."
 ---
 
 [Justin Williams](https://carpeaqua.com/2017/07/07/hack-the-planet/):

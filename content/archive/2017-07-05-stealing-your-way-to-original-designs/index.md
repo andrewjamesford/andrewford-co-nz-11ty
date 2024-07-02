@@ -8,7 +8,7 @@ category: "article"
 tags:
   - linked
   - design
-description: ""
+description: "Dan Mall on how to steal your way to original designs."
 ---
 
 [Dan Mall](http://danmall.me/articles/stealing-your-way-to-original-designs/):

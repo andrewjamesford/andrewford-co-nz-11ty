@@ -8,7 +8,7 @@ category: "article"
 tags:
   - blog
   - reading
-description: ""
+description: "If you write online, make sure that your blog serves your readers’ needs as well as yours, and lends appropriate weight to your well-chosen words."
 ---
 
 <blockquote><p><font face="Times"><span style="-webkit-text-size-adjust: auto; background-color: rgba(255, 255, 255, 0);">If you write online, make sure that your blog serves your readers’ needs as well as yours, and lends appropriate weight to your well-chosen words.</span></font></p></blockquote>

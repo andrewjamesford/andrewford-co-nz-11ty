@@ -10,7 +10,7 @@ tags:
   - design
   - React
   - sketch app
-description: ""
+description: "React-Sketchapp is a new open source library from AirBnB that can render your React components to a Sketch design file."
 ---
 
 Two great tools I like to use are React.js and Sketch.app now just got better together with AirBnB's new open source library <a href="https://github.com/airbnb/react-sketchapp" target="_blank">React-Sketchapp</a>. It can render your React components to a Sketch design file.

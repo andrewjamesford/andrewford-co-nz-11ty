@@ -7,7 +7,7 @@ slug: "/2015/09/16/prepare-for-ios-9/"
 category: "article"
 tags:
   - iOS 9
-description: ""
+description: "With the coming of iOS 9 tomorrow it will pay for you to get your iOS devices in a ready state for update day."
 ---
 
 With the coming of iOS 9 tomorrow it will pay for you to get your iOS devices in a ready state for update day.

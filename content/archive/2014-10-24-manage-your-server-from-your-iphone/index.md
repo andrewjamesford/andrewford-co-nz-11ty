@@ -14,7 +14,7 @@ tags:
   - apps
   - iOS
   - server
-description: ""
+description: "Prompt 2 is an update to my favourite SSH terminal app for iOS. It allows me to manage, perform maintenance and repair my VPS (which hosts this website) from my phone anywhere I have an internet connection."
 ---
 
 {% figure "./prompt2-icon-150x150.jpg", "Prompt 2 helps you manage your server from your iPhone", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

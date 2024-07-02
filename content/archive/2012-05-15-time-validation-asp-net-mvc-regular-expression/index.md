@@ -7,7 +7,7 @@ slug: "/2012/05/15/time-validation-asp-net-mvc-regular-expression/"
 category: "article"
 tags:
   - .Net
-description: ""
+description: "Just a quick tip for Time validation in ASP.Net MVC for your data model using a regular expression."
 ---
 
 Just a quick tip for Time validation in ASP.Net MVC for your data model using a regular expression.

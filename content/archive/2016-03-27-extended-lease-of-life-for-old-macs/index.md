@@ -10,7 +10,7 @@ tags:
   - mac book pro
   - SSD
   - upgrade
-description: ""
+description: "I have a 2010 Mac Book Pro (MBP) that I'd upgraded for every new release of OSX. Never had I done a fresh install until late last year. While it did help it's performance it didn't make a huge improvement. The PC was still sluggish."
 ---
 
 {% figure "./crucial-bx200-feature.jpg", "BX200 2.5 inch SSD - 480GB", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

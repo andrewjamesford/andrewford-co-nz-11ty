@@ -9,7 +9,7 @@ tags:
   - blog
   - design
   - development
-description: ""
+description: "Some great links for the 13th of March."
 ---
 
 Some great links for the 13th of March.

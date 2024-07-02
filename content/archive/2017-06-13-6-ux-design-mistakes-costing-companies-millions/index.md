@@ -8,7 +8,7 @@ category: "article"
 tags:
   - UX
   - link
-description: ""
+description: "Caroline White: In a recent UserTesting study, 36% of companies reported that their UX budget had increased since last year, and 27% said that the increase was due to a change in attitude towards user research."
 ---
 
 <a href="https://www.usertesting.com/blog/2017/05/11/6-ux-design-mistakes/?utm_source=linkedIn&amp;utm_medium=social&amp;utm_campaign=SocialWarfare">Caroline White</a>:

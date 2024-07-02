@@ -9,7 +9,7 @@ tags:
   - gaming
   - sega
   - link
-description: ""
+description: "Sega has released classic Sega games under the banner Sega Forever. The first titles released are Sonic the Hedgehog, Comix Zone, Altered Beast, Kid Chameleon, and Phantasy Star II."
 ---
 
 <a href="https://www.macstories.net/news/sega-forever-brings-sonic-and-other-classics-to-ios/">John Voorhees</a>:

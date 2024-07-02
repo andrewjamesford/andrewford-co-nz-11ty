@@ -13,7 +13,7 @@ tags:
   - lifestyle
   - quantified self
   - tracking
-description: ""
+description: "Federico Vitticci outlines the apps that he currently uses to record his steps, calories, sleep patterns and even his coffee consumption."
 ---
 
 Federico Vitticci (<a href="https://twitter.com/viticci" title="@viticci" target="_blank">@viticci</a>) posted a great [article](http://www.macstories.net/stories/life-after-cancer-how-the-iphone-helped-me-achieve-a-healthier-lifestyle/) on how the iPhone has helped him achieve a healthier lifestyle after cancer treatment. He outlines the apps that he currently uses to <a href="https://itunes.apple.com/nz/app/pedometer++/id712286167?mt=8&uo=4&at=10lnRx" title="Pedometer++" target="_blank">record his steps</a>, <a href="https://itunes.apple.com/nz/app/lifesum-lifestyle-tracker/id286906691?mt=8&uo=4&at=10lnRx" title="Lifesum" target="_blank">calories</a>, <a href="https://itunes.apple.com/nz/app/pillow-smart-sleep-cycle-alarm/id878691772?mt=8&uo=4&at=10lnRx" title="Pillow" target="_blank">sleep patterns</a> and even his <a href="https://itunes.apple.com/nz/app/up-coffee/id828031130?mt=8&uo=4&at=10lnRx" title="UP Coffee" target="_blank">coffee</a> consumption.

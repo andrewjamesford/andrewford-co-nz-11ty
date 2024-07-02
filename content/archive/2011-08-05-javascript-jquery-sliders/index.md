@@ -12,7 +12,7 @@ tags:
   - javascript
   - jquery
   - slider
-description: ""
+description: "I've used a number of Javascript based image sliders on a number of projects in the last year. They all have some points of difference so I thought I'd share what they are and make people aware of them."
 ---
 
 I've used a number of Javascript based image sliders on a number of projects in the last year. They all have some points of difference so I thought I'd share what they are and make people aware of them.

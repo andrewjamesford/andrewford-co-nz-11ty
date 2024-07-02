@@ -10,7 +10,7 @@ tags:
   - iOS
   - quantified self
   - tracking
-description: ""
+description: "Quantifying ones self is becoming more mainstream. I've been doing it for a number of years now."
 ---
 
 Something I've been doing for a number of years seems to be very much a mainstream thing now. That is quantifying ones self. Measuring your sleep, movement, mood, heart rate the list is getting longer everyday as technology finds ways to easily measure them.

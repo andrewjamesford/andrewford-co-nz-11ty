@@ -8,7 +8,7 @@ category: "article"
 tags:
   - security
   - link
-description: ""
+description: "Just about any account you own on the internet is prone to being hacked — and one of the easiest ways to add an extra layer of security is to enable two-factor authentication."
 ---
 
 <a href="https://www.theverge.com/2017/6/17/15772142/how-to-set-up-two-factor-authentication">Natt Garun</a>:

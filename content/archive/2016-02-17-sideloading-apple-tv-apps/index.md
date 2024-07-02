@@ -10,7 +10,7 @@ tags:
   - development
   - iOS
   - apple tv
-description: ""
+description: "I've been playing around with app ideas for the new Apple TV after purchasing a USB Type C cable from Ali Express. One thing I've found is it's very easy to load 'other' apps onto the device such as Provenance - a Nintendo and Sega emulator."
 ---
 
 I've been playing around with app ideas for the new Apple TV after purchasing a <a href="http://www.aliexpress.com/item/New-USB-C-Type-C-Cable-USB-3-1-USB-Data-Sync-Charging-Cable-For-Nexus/32530691700.html">USB Type C cable from Ali Express</a>. One thing I've found is it's very easy to load "other" apps onto the device such as <a href="https://github.com/jasarien/Provenance">Provenance</a> - a Nintendo and Sega emulator.

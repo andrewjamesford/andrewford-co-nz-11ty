@@ -9,7 +9,7 @@ tags:
   - apple
   - google
   - link
-description: ""
+description: "Google has hired veteran chip architect Manu Gulati, who worked at Apple for the past eight years, according to Variety."
 ---
 
 <a href="https://www.macrumors.com/2017/06/13/google-hires-veteran-apple-chip-designer/">Joe Rossignol</a>:

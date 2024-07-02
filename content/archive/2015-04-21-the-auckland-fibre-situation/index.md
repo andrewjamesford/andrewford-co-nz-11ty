@@ -9,7 +9,7 @@ tags:
   - link
   - fibre
   - new zealand
-description: ""
+description: "The Auckland fibre situation is an interesting one. Auckland is situated around a harbour. Over this harbour is a bridge which most of the fiber in the city runs across, with a small amount running via a much longer path around the harbour (think 30km longer fiber runs). Purchasing fiber between the areas of the city separated by the harbour costs more than a Kim Dotcom political party (i.e. a lot of money)."
 ---
 
 [Cloudflare have now setup a data center in Auckland](https://blog.cloudflare.com/auckland-melbourne/) which is great news for customers latency.

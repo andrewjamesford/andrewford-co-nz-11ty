@@ -10,7 +10,7 @@ tags:
   - Learning
   - reactjs
   - development
-description: ""
+description: "ReactJS is all the rage in the JavaScript community. It allows you to build an apps UI as discrete components that pass the data in"
 ---
 
 <a href="http://facebook.github.io/react/">ReactJS</a> is all the rage in the JavaScript community. It allows you to build an apps UI as discrete components that pass the data in a one-way reactive flow. It's a library just for the view of MVC. But it's not a framework.

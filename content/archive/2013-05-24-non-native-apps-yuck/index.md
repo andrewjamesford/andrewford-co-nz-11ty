@@ -8,7 +8,7 @@ category: "article"
 tags:
   - apps
   - blog
-description: ""
+description: "For the most part I really cannot stand to use non-native applications. If there is a native app — and it is even reasonably decent, yeah I’m using it."
 ---
 
 <blockquote><p><font face="Times"><span style="-webkit-text-size-adjust: auto; background-color: rgba(255, 255, 255, 0);">For the most part I really cannot stand to use non-native applications. If there is a native app — and it is even reasonably decent, yeah I’m using it.&nbsp;</span></font></p></blockquote>

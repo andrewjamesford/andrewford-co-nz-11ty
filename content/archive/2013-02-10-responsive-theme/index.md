@@ -9,7 +9,7 @@ tags:
   - blog
   - design
   - development
-description: ""
+description: "Today I launched my new theme for my blog. It's a very stripped back theme with a focus on typography and most importantly the content. It's a responsive theme, meaning content adjusts to certain breakpoints. Go ahead resize the browser if your on a desktop and watch it change."
 ---
 
 Today I launched my new theme for my blog. It's a very stripped back theme with a focus on typography and most importantly the content. It's a responsive theme, meaning content adjusts to certain breakpoints. Go ahead resize the browser if your on a desktop and watch it change.

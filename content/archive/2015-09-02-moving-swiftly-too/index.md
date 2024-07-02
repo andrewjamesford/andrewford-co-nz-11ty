@@ -8,7 +8,7 @@ category: "article"
 tags:
   - swift
   - development
-description: ""
+description: "Allen Pike talks about his great and enjoyable transition to Swift since October last year."
 ---
 
 Allen Pike talks about his great and enjoyable transition to [Swift](http://www.allenpike.com/2015/moving-swiftly/) since October last year.

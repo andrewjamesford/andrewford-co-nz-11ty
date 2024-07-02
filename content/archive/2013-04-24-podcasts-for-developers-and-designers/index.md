@@ -9,7 +9,7 @@ tags:
   - blog
   - design
   - development
-description: ""
+description: "Listen, Watch And Share!"
 ---
 
 <a href="http://www.smashingmagazine.com/2013/04/19/podcasts-for-designers-developers/" title="Listen, Watch And Share!">Melanie Lang @ Smashing Magazine:</a>

@@ -10,7 +10,7 @@ tags:
   - apps
   - link
   - iOS
-description: ""
+description: "Scanbot my favourite document scanning app has been named the best over at The Sweet Setup."
 ---
 
 ![Scanbot Icon](./icon-scanbot-150x150.jpg)

@@ -10,7 +10,7 @@ tags:
   - fake news
   - link
   - social media
-description: ""
+description: "In the final three months of the US presidential campaign, the top-performing fake election news stories on Facebook generated more engagement than the top stories from major news outlets such as the New York Times, Washington Post, Huffington Post, NBC News and others."
 ---
 
 [John Lanchester](https://www.lrb.co.uk/v39/n16/john-lanchester/you-are-the-product):

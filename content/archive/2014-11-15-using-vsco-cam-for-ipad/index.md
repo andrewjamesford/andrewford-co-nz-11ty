@@ -13,7 +13,7 @@ tags:
   - iOS
   - link
   - photography
-description: ""
+description: "Just like Shawn Blanc I too enjoy using VSCO cam for my photo post editing. The filters are truly great and with the iPad app now, I far more enjoy editing my photos on the big screen."
 ---
 
 Just like [Shawn Blanc](http://shawnblanc.net/2014/11/using-vsco-cam-for-ipad/) I too enjoy using <a href="https://itunes.apple.com/nz/app/vsco-cam/id588013838?mt=8&amp;uo=4&amp;at=10lnRx">VSCO cam</a> for my photo post editing. The filters are truly great and with the iPad app now, I far more enjoy editing my photos on the big screen.

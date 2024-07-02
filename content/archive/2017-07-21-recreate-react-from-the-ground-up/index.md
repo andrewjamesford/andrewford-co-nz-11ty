@@ -8,7 +8,7 @@ category: "article"
 tags:
   - react
   - development
-description: ""
+description: "In this five part series, we will “recreate” React from the ground up, learning how it works along the way. Once we’ve finished, you should have a good grasp of how React works, and when and why it calls the various lifecycle methods of a component."
 ---
 
 [Matt Greer](http://www.mattgreer.org/articles/react-internals-part-one-basic-rendering/):

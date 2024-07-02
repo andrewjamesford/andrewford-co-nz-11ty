@@ -10,7 +10,7 @@ tags:
   - design
   - iOS
   - Prototype
-description: ""
+description: "Wouldn't it be great if you could create prototypes for an iOS app or a website using the design tool(s) your already familiar with (like Photoshop or Sketch)? Well you can with Marvel."
 ---
 
 Wouldn't it be great if you could create prototypes for an iOS app or a website using the design tool(s) your already familiar with (like <a title="Adobe Photoshop" href="http://www.photoshop.com">Photoshop</a> or <a href="https://itunes.apple.com/nz/app/sketch-3/id852320343?mt=12&amp;uo=4&amp;at=10lnRx" target="itunes_store">Sketch</a>)? Well you can with <a title="Marvel App" href="https://marvelapp.com">Marvel</a>.

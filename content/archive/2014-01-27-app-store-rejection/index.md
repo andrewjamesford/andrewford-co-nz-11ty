@@ -7,7 +7,7 @@ slug: "/2014/01/27/app-store-rejection/"
 category: "article"
 tags:
   - iOS 7
-description: ""
+description: "My iOS app Mirror 7 was rejected from the App Store."
 ---
 
 {% figure "./Intro.png", "A screenshot of my iOS app Mirror 7", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

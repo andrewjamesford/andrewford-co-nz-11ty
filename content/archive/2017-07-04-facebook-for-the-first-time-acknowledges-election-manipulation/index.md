@@ -8,7 +8,7 @@ category: "article"
 tags:
   - Facebook
   - link
-description: ""
+description: "Facebook has acknowledged for the first time that malicious actors used the platform during the 2016 presidential election as part of a campaign with the intent of harming the reputation of specific political targets."
 ---
 
 <a href="http://www.cbsnews.com/news/facebook-for-the-first-time-acknowledges-election-manipulation/">Graham Kates</a>:

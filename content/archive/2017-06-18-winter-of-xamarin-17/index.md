@@ -13,7 +13,7 @@ tags:
   - apps
   - code
   - development
-description: ""
+description: "I was lucky enough to attend the Microsoft Winter of Xamarin 2017 event in Auckland on Saturday the 17th of June. It was held in Beca House Auditorium, a very nice venue located in Pitt Street, Auckland."
 ---
 
 I was lucky enough to attend the Microsoft Winter of Xamarin 2017 event in Auckland on Saturday the 17th of June. It was held in Beca House Auditorium, a very nice venue located in Pitt Street, Auckland.

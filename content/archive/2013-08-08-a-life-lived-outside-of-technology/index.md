@@ -10,7 +10,7 @@ tags:
   - life
   - reflection
   - technology
-description: ""
+description: "Ben Thompson reflects on why he got an internship with Apple."
 ---
 
 <a href="http://stratechery.com/2013/rebuilding-the-world-technology-destroyed/" title="Ben Thompson - REBUILDING THE WORLD TECHNOLOGY DESTROYED">Ben Thompson</a> reflects on why he got an internship with Apple:

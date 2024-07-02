@@ -9,7 +9,7 @@ tags:
   - desktop
   - electron
   - development
-description: ""
+description: "It's now never been easier to make a desktop version of your favourite website/web app thanks to the Electron project."
 ---
 
 It's now never been easier to make a desktop version of your favourite website/web app thanks to the <a href="http://electron.atom.io">Electron</a> project.

@@ -8,7 +8,7 @@ category: "article"
 tags:
   - android
   - link
-description: ""
+description: "Bill Bennett paints a bleak outlook for Android phone manufacturers."
 ---
 
 [Bill Bennett](http://billbennett.co.nz/2015/09/04/android-hardware-makers-stare-into-profitless-abyss/) paints a bleak outlook for Android phone manufacturers.

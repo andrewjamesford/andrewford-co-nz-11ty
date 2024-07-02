@@ -12,7 +12,7 @@ tags:
   - apple
   - development
   - iOS
-description: ""
+description: "The guys at Mobile Couch have a great collection of tips for mobile development including keyboard shortcuts and tools for deployment."
 ---
 
 The guys at [Mobile Couch](http://mobilecouch.co/66) have a great collection of tips for mobile development including keyboard shortcuts and tools for deployment.

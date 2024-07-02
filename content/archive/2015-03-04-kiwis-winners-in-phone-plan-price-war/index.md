@@ -10,7 +10,7 @@ tags:
   - mobile
   - phone
   - plan
-description: ""
+description: "With all the recent plans announced from 2 Degrees, Spark and Skinny New Zealander's are finally getting some value for money with the now available smartphone plans."
 ---
 
 With all the [recent plans announced from 2 Degrees, Spark and Skinny](http://www.stuff.co.nz/technology/digital-living/66920045/Kiwis-winners-in-phone-plan-price-war) New Zealander's are finally getting some value for money with the now available smartphone plans. They could all offer more data as the need for SMS and Voice services are needed less these days.

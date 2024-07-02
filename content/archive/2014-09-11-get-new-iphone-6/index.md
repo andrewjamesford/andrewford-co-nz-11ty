@@ -8,7 +8,7 @@ category: "link"
 tags:
   - iPhone
   - apple
-description: ""
+description: "Tim Schmitz on his blog Minutes to Midnight walks us through the pros and cons of the new iPhone 6 and iPhone 6 Plus and helps you answer the question: Which iPhone should I buy?"
 ---
 
 Tim Schmitz on his blog <a href="http://minutestomidnight.net">Minutes to Midnight</a> walks us through the pros and cons of the new iPhone 6 and iPhone 6 Plus and helps you answer the question: Which iPhone should I buy?

@@ -9,7 +9,7 @@ tags:
   - development
   - react-native
   - reactjs
-description: ""
+description: "Highlights from day 2 of React.js Conf 2016 including Exponentjs, gl-react, Falcor, Graphene, React-Native tools, obfuscating your React app, and Enzyme testing utilities."
 ---
 
 Following my <a href="http://www.andrewford.co.nz/react-js-conf-2016-highlights-day-1/">first day of highlights</a>, here are my highlights of day 2 of React.js Conf 2016.

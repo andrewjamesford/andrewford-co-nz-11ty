@@ -8,7 +8,7 @@ category: "article"
 tags:
   - link
   - Facebook
-description: ""
+description: "The problem is this: Facebook has become a feedback loop which can and does, despite its best intentions, become a vicious spiral. At Facebook’s scale, behavioral targeting doesn’t just reflect our behavior, it actually influences it. Over time, a service which was supposed to connect humanity is actually partitioning us into fractal disconnected bubbles."
 ---
 
 <blockquote>The problem is this: Facebook has become a feedback loop which can and does, despite its best intentions, become a vicious spiral. At Facebook’s scale, behavioral targeting doesn’t just reflect our behavior, it actually influences it. Over time, a service which was supposed to connect humanity is actually partitioning us into fractal disconnected bubbles.</blockquote>

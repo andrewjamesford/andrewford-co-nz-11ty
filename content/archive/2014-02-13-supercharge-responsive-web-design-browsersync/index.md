@@ -11,7 +11,7 @@ tags:
   - RWD
   - Sync
   - Workflow
-description: ""
+description: "A great way to speed up your workflow is to use a tool called BrowserSync. It's platform independent, so will work on Windows, Mac and Linux. Requires Node JS and doesn't require you to do anything special (install an app or setup a proxy) on your mobile devices (tablets & phones). Most importantly your site can be running as PHP, Rails or ASP.Net it doesn't matter."
 ---
 
 {% figure "./supercharging-html-css.jpg", "Vince Vaughn and Owen Wilson supercharge their HTML and CSS", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

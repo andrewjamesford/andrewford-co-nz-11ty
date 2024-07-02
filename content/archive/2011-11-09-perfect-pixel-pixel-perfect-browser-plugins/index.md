@@ -9,7 +9,7 @@ tags:
   - chrome
   - firefox
   - plugin
-description: ""
+description: "Ever had to build a web page for a picky web designer? One that will rake you over the coals for little things not matching their design? I have plenty of times... To save all the frustration and make sure I get it right first time I use one of my favorite tools."
 ---
 
 {% figure "./Perfect-Pixel.png", "Perfect Pixel", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

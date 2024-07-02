@@ -8,7 +8,7 @@ category: "article"
 tags:
   - Growth
   - link
-description: ""
+description: "In recent conversation, I discovered many of my friends are trying to grow, but struggling to make progress. I dug deeper and realized, growth frameworks are not widely known or practiced."
 ---
 
 [Melissa Mandelbaum](https://medium.com/@lissalauren/design-your-personal-growth-831582b8524d):

@@ -9,7 +9,7 @@ tags:
   - blog
   - design
   - development
-description: ""
+description: "Links for web developers / designers"
 ---
 
 During my web travels and twitter stream I come across some great links. Rather than spamming each one to social media I thought it would be a better idea to list them on my own blog, so starting today here are some links I've found on web for the last week.

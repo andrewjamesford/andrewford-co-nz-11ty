@@ -9,7 +9,7 @@ tags:
   - apps
   - iOS 8
   - apple
-description: ""
+description: "A roundup of the best articles related to the release of iOS 8 today."
 ---
 
 What a massive day of updates to apps I love and some new ones I'm going to really enjoy using (especially ones with extensions, notification widgets and custom keyboards).

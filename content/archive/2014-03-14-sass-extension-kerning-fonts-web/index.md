@@ -11,7 +11,7 @@ tags:
   - SASS
   - scss
   - web fonts
-description: ""
+description: "Enable kerning of your web font's thanks to Typekit's recommendations."
 ---
 
 Want your web font's to look better? Enable kerning of your web font's thanks to <a href="http://blog.typekit.com/2014/02/05/kerning-on-the-web/" title="Kerning on the web - Typekit Blog" target="_blank">Typekit's recommendations</a>.

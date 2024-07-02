@@ -8,7 +8,7 @@ category: "article"
 tags:
   - blog
   - other
-description: ""
+description: "Eric Meyer ponders about Google Glass and how it's inevitable."
 ---
 
 <a href="http://meyerweb.com/eric/thoughts/2013/03/07/glasshouse/" title="Glasshouse">Eric Meyer</a> ponders about <a href="http://www.google.com/glass/start/" title="Google Glass">Google Glass</a> and how it's inevitable:

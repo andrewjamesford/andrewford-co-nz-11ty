@@ -8,7 +8,7 @@ category: article
 tags:
   - CSS3
   - Tools
-description: ""
+description: "A collection of tools I use to create CSS3 styling."
 ---
 
 These days I'm trying as much as possible to get away without having to create pixels with websites. To do this I use CSS3 (part of the subset of the HTML 5 standard) to create the styling of elements without needing to open up Fireworks or Photoshop. There are a couple of benefits for this approach:

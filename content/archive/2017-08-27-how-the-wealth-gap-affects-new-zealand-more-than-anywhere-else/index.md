@@ -8,7 +8,7 @@ category: "article"
 tags:
   - nz
   - inequality
-description: ""
+description: "New Zealand was colonised under the premise of beating the class system. Our image of ourselves as a laid-back egalitarian utopia is ingrained in our vernacular: 'Kiwi ingenuity,' or 'She'll be right.' But this reputation appears to be misleading."
 ---
 
 [Beatrice Hazlehurst](https://www.vice.com/en_au/article/wdagyb/we-asked-an-expert-how-bad-new-zealands-inequality-crisis-really-is):

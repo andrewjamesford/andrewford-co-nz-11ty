@@ -8,7 +8,7 @@ category: "article"
 tags:
   - games
   - microsoft
-description: ""
+description: "Microsoft buying Minecraft for $2.5 billion might seem like a strange deal to some but let’s face it who would have the capital to buy the 3rd biggest game of all time and further build it."
 ---
 
 {% figure "./minecraft-app-icon.jpg", "Minecraft Pocket Edition", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

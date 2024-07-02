@@ -10,7 +10,7 @@ tags:
   - mobile
   - proxy
   - development
-description: ""
+description: "Charles Proxy is a great tool for inspecting mobile traffic and finding out what parameters are being passed."
 ---
 
 At <a href="http://monitorbm.com" title="Monitor Business Machines">work</a> I've been updating some mobile apps (iOS &amp; Android) that yesterday had their web service updated to pass me two parameters I needed (by one of the other developers). Me being a dummy I forgot to ask what those two parameters were called.

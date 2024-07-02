@@ -10,7 +10,7 @@ tags:
   - powershell
   - VS Code
   - development
-description: ""
+description: "A quick tip for when using Visual Studio Code in a cross platform team."
 ---
 
 A quick tip for when using Visual Studio Code in a cross platform team. You may have [tasks](https://code.visualstudio.com/docs/editor/tasks) (in the tasks.json) config file. They may be specific for Bash or Powershell (such as in my case).

@@ -8,7 +8,7 @@ category: "article"
 tags:
   - css
   - link
-description: ""
+description: "The fr unit (a 'fraction') can be used when defining grids like any other CSS length such as %, px or em."
 ---
 
 <a href="https://css-tricks.com/introduction-fr-css-unit/">Robin Rendle</a>:

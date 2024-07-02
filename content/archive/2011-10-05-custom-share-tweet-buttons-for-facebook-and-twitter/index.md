@@ -12,7 +12,7 @@ tags:
   - guide
   - share
   - tweet
-description: ""
+description: "I came across an issue with a design, where the client didn't want the standard Facebook Like and Twitter tweet buttons on their site. Here's how I created my own custom share buttons."
 ---
 
 I came across an issue with a design, where the client didn't want the standard Facebook Like and Twitter tweet buttons on their site. Here's how I created my own custom share buttons.

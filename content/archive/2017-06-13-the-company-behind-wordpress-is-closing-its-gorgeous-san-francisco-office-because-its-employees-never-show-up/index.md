@@ -8,7 +8,7 @@ category: "article"
 tags:
   - remote
   - link
-description: ""
+description: "Matt Mullenweg: We got an office there about six or seven years ago, pretty good lease, but nobody goes in it. Five people go in it and it’s 15,000 square feet. They get like 3,000 square feet each. … There are as many gaming tables as there are people."
 ---
 
 <a href="https://qz.com/1002655/the-company-behind-wordpress-is-closing-its-gorgeous-san-francisco-office-because-its-employees-never-show-up/">Matt Mullenweg</a>:

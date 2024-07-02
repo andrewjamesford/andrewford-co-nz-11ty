@@ -9,7 +9,7 @@ tags:
   - plug
   - replacement
   - apple
-description: ""
+description: "Apple has determined that, in very rare cases, the two prong Apple AC wall plug adapters designed for use in Continental Europe, Australia, New Zealand, Korea, Argentina and Brazil may break and create a risk of electrical shock if touched."
 ---
 
 I got my replacement "duck heads" from the local Apple reseller today. Seven in total.They are still flying out the door as quick as they come in. Suggest you call first before turning up.

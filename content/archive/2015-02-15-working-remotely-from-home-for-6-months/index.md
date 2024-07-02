@@ -7,7 +7,7 @@ slug: "/2015/02/15/working-remotely-from-home-for-6-months/"
 category: "article"
 tags:
   - remote
-description: ""
+description: "I’ve been working remotely now for over 6 months with Monitor from home. Its been a tough but overall enjoyable time. Here are some points about my experience and some advice."
 ---
 
 I’ve been working remotely now for over 6 months with <a href="http://www.monitorbm.com" title="Monitor Business Machines">Monitor</a> from home. Its been a tough but overall enjoyable time. Here are some points about my experience and some advice.

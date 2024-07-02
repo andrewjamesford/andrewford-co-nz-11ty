@@ -10,7 +10,7 @@ tags:
   - clipboard
   - mac
   - app
-description: ""
+description: "Was really happy to find a replacement for the now unsupported clipboard manager Clipmenu today. It's called Clipy and acts just the same as Clipmenu but has a new snippet manager."
 ---
 
 Was really happy to find a replacement for the now unsupported clipboard manager [Clipmenu](http://www.clipmenu.com/) today.

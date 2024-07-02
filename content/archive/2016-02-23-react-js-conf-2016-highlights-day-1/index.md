@@ -12,7 +12,7 @@ tags:
   - apps
   - development
   - iOS
-description: ""
+description: "Highlights from day 1 of React.js Conf 2016 including Draft.js, React Native Tools for VS Code, Continuous Integration and Code Push for React Native, Oy - email template tools for React, Nuclide React Native Tools, and Realm for React-Native."
 ---
 
 While I may not have attended day 1 of <a href="http://conf.reactjs.com">React.js Conf</a> today, I did get to listen to the conference live streamed from San Francisco. Here are my short cherry picked highlights of things that I thought were cool.

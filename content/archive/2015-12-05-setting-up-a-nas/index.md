@@ -11,7 +11,7 @@ tags:
   - NAS
   - photos
   - TV
-description: ""
+description: "Setting up a NAS on your home network is easy with a Vodafone Station and Infuse."
 ---
 
 For a long time I've wanted a NAS (Networked Attached Storage) but put off buying one due to the cost. For those that don't know what a NAS is it is a small box that either plugs into your network/router via cable or wifi. It's a hard drive that you can access on your network to copy or read files to, very much like a shared folder in your office. Some can even download torrents or act as a email server.

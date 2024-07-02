@@ -9,7 +9,7 @@ tags:
   - blog
   - link
   - development
-description: ""
+description: "Matt Briggs gives some broad descriptions of the levels of developers."
 ---
 
 [Matt Briggs](http://mattbriggs.net/blog/2015/06/01/the-role-of-a-senior-developer/) gives some broad descriptions of the levels of developers.

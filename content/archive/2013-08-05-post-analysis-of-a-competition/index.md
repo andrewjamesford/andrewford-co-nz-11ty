@@ -8,7 +8,7 @@ category: "article"
 tags:
   - blog
   - other
-description: ""
+description: "After the disappointing loss of the wedding competition for my fiancé and myself I thought it would be interesting to do some post analysis of the stats."
 ---
 
 {% figure "./Info_and_Stats-2.png", "Bitly stats for the competition", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

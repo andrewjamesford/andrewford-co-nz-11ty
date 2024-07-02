@@ -7,7 +7,7 @@ slug: "/2014/11/02/weekend-wrap-up-2nd-november-2014/"
 category: "article"
 tags:
   - links
-description: ""
+description: "After surviving Mr 6's tenpin birthday party this weekend, I managed to catch up on some great articles this week. Happy reading."
 ---
 
 After surviving Mr 6's tenpin birthday party this weekend, I managed to catch up on some great articles this week. Happy reading.

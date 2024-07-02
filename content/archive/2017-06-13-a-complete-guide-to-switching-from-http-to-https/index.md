@@ -9,7 +9,7 @@ tags:
   - https
   - linux
   - link
-description: ""
+description: "Vladislav Denishev: HTTPS is a must for every website nowadays: Users are looking for the padlock when providing their details; Chrome and Firefox explicitly mark websites that provide forms on pages without HTTPS as being non-secure; it is an SEO ranking factor; and it has a serious impact on privacy in general. Additionally, there is now more than one option to get an HTTPS certificate for free, so switching to HTTPS is only a matter of will."
 ---
 
 <a href="https://www.smashingmagazine.com/2017/06/guide-switching-http-https/">Vladislav Denishev</a>:

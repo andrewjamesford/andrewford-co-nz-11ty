@@ -15,7 +15,7 @@ tags:
   - TypeScript
   - VS Code
   - development
-description: ""
+description: "I've been slowly working my way through some of the videos from Microsoft's Build Conference for 2016. There are too many to watch almost, but here are some of my favourites."
 ---
 
 I've been slowly working my way through some of the videos from Microsofts Build Conference for 2016. There are too many to watch almost, but here are some of my favourites.

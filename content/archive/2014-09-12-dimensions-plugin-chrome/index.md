@@ -9,7 +9,7 @@ tags:
   - dimensions
   - measure
   - design
-description: ""
+description: "Felix Niklas has made a great plugin for Google Chrome that helps you measure Dimensions on your website or even mockups dragged into the browser."
 ---
 
 [Felix Niklas](http://www.twitter.com/mrflix) has made a great plugin for Google Chrome that helps you measure [Dimensions](http://felixniklas.com/dimensions/) on your website or even mockups dragged into the browser.

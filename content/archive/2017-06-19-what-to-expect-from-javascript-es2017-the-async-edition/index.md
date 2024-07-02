@@ -9,7 +9,7 @@ tags:
   - link
   - javascript
   - es20017
-description: ""
+description: "Some interesting new features in JavaScript to look forward to using."
 ---
 
 <a href="https://medium.com/komenco/what-to-expect-from-javascript-es2017-the-async-edition-618e28819711">André Neves</a>:

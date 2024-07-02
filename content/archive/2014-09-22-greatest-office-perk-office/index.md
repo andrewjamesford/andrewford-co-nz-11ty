@@ -8,7 +8,7 @@ category: "article"
 tags:
   - blog
   - remote
-description: ""
+description: "The makers of WordPress learned years ago that the ultimate office perk is not having an office"
 ---
 
 <blockquote>The makers of WordPress learned years ago that the ultimate office perk is not having an office</blockquote>

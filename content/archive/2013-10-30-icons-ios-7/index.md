@@ -9,7 +9,7 @@ tags:
   - cocoa pod
   - icons
   - iOS 7
-description: ""
+description: "A couple of icon sets that you can use to compliment Apple's own pencil line thin icons."
 ---
 
 iOS7 has now been out for over a month now. A lot of app developers have now released their new takes on apps for the "new look" of iOS. It seems only now designers have had a chance to catch up and offer great icon sets to compliment Apple's own pencil line thin icons. In making my own apps for iOS I've come across a couple of icon sets that you can use too.

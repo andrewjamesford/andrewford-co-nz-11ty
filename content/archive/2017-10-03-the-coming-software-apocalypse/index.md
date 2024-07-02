@@ -8,7 +8,7 @@ category: "article"
 tags:
   - technology
   - link
-description: ""
+description: "It’s been said that software is “eating the world.” More and more, critical systems that were once controlled mechanically, or by people, are coming to depend on code."
 ---
 
 [James Somers](https://www.theatlantic.com/technology/archive/2017/09/saving-the-world-from-code/540393/):

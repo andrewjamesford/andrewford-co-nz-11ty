@@ -7,7 +7,7 @@ slug: "/2011/09/21/travel-hacking/"
 category: "article"
 tags:
   - travel
-description: ""
+description: "I was reading a great blog post on travel hacking from the team at LifeHacker. So I thought I'd give some of my pointers."
 ---
 
 I was reading a great blog post on [travel hacking](http://lifehacker.com/5841147/the-ultimate-travel-hacking-guide) from the team at LifeHacker. So I thought I'd give some of my pointers.

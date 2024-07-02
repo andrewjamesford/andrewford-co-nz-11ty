@@ -8,7 +8,7 @@ category: "article"
 tags:
   - TypeScript
   - link
-description: ""
+description: "Dynamic import expressions are a new feature in ECMAScript that allows you to asynchronously request a module at any arbitrary point in your program."
 ---
 
 <a href="https://blogs.msdn.microsoft.com/typescript/2017/06/27/announcing-typescript-2-4/">Daniel Rosenwasser</a>:

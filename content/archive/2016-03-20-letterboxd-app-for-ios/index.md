@@ -8,7 +8,7 @@ category: "article"
 tags:
   - design
   - iOS
-description: ""
+description: "Letterboxd has released their iOS app. A great addition to the service."
 ---
 
 If you **love** movies, then do yourself a favour and sign up for [Letterboxd](http://letterboxd.com). They just released their [iOS app](http://itunes.apple.com/app/id1054271011). A great addition to the service.

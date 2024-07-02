@@ -7,7 +7,7 @@ slug: "/2014/11/09/weekend-wrap-up-9th-november-2014/"
 category: "article"
 tags:
   - links
-description: ""
+description: "Responsive images, Google's quest for interactive design, the web of the future, Serial listeners, Afghanistan expats, Virgin Galactic pilot, Berlin Wall"
 ---
 
 It really feels like summer now. Days spent playing outside with the kids, and parties with friends over for food and drink. The last birthday celebrations for this year were had, with my youngest turning two.

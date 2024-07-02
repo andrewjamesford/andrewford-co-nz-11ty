@@ -10,7 +10,7 @@ tags:
   - apple
   - apps
   - iOS
-description: ""
+description: "A look at the apps I use on my iPhone and why."
 ---
 
 One of my favourite sites <a title="The Sweet Setup" href="http://thesweetsetup.com">The Sweet Setup</a> has a great series of articles on showing off people's home screens on their Mac, iPhone or iPad. With the upcoming version of iOS 8 not too far away I thought it would be cool to share what my iPhone looks like now and see how quickly that will change in the following months.

@@ -9,12 +9,12 @@ tags:
   - blog
   - design
   - development
-description: ""
+description: "The designer-developer spectrum."
 ---
 
 <a href="http://markdotto.com/2013/04/22/designer-developer-spectrum/" title="The designer-developer spectrum">Mark Otto:</a>
 
-<blockquote>Designers and developers—like any other group of people—shouldn’t be pigeonholed into separate roles. Doing so is damaging to individuals, your company, and the entire industry. Quality products and cultures thrive on employing people with a broad set of skills and at least one specialization. Embrace the sliding spectrum of skills.</blockquote>
+> Designers and developers—like any other group of people—shouldn’t be pigeonholed into separate roles. Doing so is damaging to individuals, your company, and the entire industry. Quality products and cultures thrive on employing people with a broad set of skills and at least one specialization. Embrace the sliding spectrum of skills.
 
 I consider myself a developer who likes to design, who has been pigeon holed most of my career. I've never understood why companies segregate the tasks of their employees as there is so much overlap when building digital products.
 

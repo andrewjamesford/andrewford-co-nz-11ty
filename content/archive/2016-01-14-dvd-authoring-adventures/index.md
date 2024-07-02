@@ -7,7 +7,7 @@ slug: "/2016/01/14/dvd-authoring-adventures/"
 category: "article"
 tags:
   - link
-description: ""
+description: "Dan Moren on Six Colors walks through his use of ffmpegX to convert a video to MPEG2 format for DVD."
 ---
 
 <a href="https://sixcolors.com/post/2016/01/adventures-in-dvd-authoring/">Dan Moren on Six Colors</a> walks through his use of <a href="http://www.ffmpegx.com">ffmpegX</a> to convert a video to MPEG2 format for DVD.

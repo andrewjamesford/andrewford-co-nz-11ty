@@ -13,7 +13,7 @@ tags:
   - links
   - maps
   - VPN
-description: ""
+description: "It's Labour Day Weekend here in New Zealand and I'm having a pretty laid back weekend. It was my annual cleaning of the pool yesterday turning it from emerald green to blue with the help of a lot of chemicals and cleaning. Apart from that I've managed to read some great articles from my Instapaper queue to share with you. So enjoy the long weekend wrap-up."
 ---
 
 It's <a href="https://en.m.wikipedia.org/wiki/Labour_Day">Labour Day Weekend</a> here in New Zealand and I'm having a pretty laid back weekend. It was my annual cleaning of the pool yesterday turning it from emerald green to blue with the help of a lot of chemicals and cleaning. Apart from that I've managed to read some great articles from my Instapaper queue to share with you. So enjoy the long weekend wrap-up.

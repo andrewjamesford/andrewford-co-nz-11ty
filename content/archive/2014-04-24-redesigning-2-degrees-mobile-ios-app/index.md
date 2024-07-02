@@ -11,7 +11,7 @@ tags:
   - iOS 7
   - Prototype
   - Redesign
-description: ""
+description: "I've been a 2 Degrees Customer for over a year and a half now. Their marketing campaigns are funny (with Rhys Darby), I like their fair mobile plans where your data and minutes roll over, you can use your monthly minutes in Aussie and their prices have made the"
 ---
 
 Truth be told I fret about numbers. My bank balance, my home data cap, the number of kids in the car is the same as when we left home and my mobile data/minutes caps.

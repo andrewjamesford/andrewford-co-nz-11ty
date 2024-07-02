@@ -9,7 +9,7 @@ tags:
   - AI
   - UX
   - link
-description: ""
+description: "Stephen Moyers on how AI and UX are inextricably linked and how UX professionals must learn to use AI as a design and development tool."
 ---
 
 <a href="https://speckyboy.com/ai-will-affect-ux-vice-versa/">Stephen Moyers</a>:

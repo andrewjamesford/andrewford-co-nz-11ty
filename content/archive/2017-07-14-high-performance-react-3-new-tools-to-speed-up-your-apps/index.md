@@ -8,7 +8,7 @@ category: "article"
 tags:
   - reactjs
   - link
-description: ""
+description: "React is usually pretty fast, but it’s easy to make small mistakes that lead to performance issues. Slow component mounts, deep component trees, and unnecessary render cycles can quickly add up to an app that feels slow."
 ---
 
 [Ben Edelstein](https://medium.freecodecamp.org/make-react-fast-again-tools-and-techniques-for-speeding-up-your-react-app-7ad39d3c1b82):

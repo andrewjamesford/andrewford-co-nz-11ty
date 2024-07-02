@@ -11,7 +11,7 @@ tags:
   - review
   - wordpress
   - remote
-description: ""
+description: "Scott Berkun's book about working at Automattic, the company behind Wordpress."
 ---
 
 [Automattic](http://automattic.com) is the company behind the most popular blogging software in the world [Wordpress](https://kinsta.com/learn/wordpress-history/). In Scott’s book he describes how Automattic works from both a high level and directly in context of his own personal experiences being a team leader for Team Social on Wordpress.com.

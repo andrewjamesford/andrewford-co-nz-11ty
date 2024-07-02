@@ -10,7 +10,7 @@ tags:
   - Transmit
   - apps
   - iOS
-description: ""
+description: "Transmit for iOS is a great way to transfer files to your Mac without using a cloud service."
 ---
 
 {% figure "./transmit-icon-150x150.jpg", "Transmit for iOS", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

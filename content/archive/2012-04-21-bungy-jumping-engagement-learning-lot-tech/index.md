@@ -7,8 +7,8 @@ slug: "/2012/04/21/bungy-jumping-engagement-learning-lot-tech/"
 category: "article"
 tags:
   - bungy
-  - engadgement
-description: ""
+  - engagement
+description: "What a full on 6 months I've just had. I got engaged, visited Queenstown and New Castle in Australia, Bungy jumped for the first time. And to top that off I started a new job at SpeEDI software and launched my own web application Vote Daily Deals."
 ---
 
 What a full on 6 months I've just had. I got engaged, visited Queenstown and New Castle in Australia, Bungy jumped for the first time ([proof here](http://youtu.be/HwxAynPoEjM)). And to top that off I started a new job at SpeEDI software and launched my own web application Vote Daily Deals. While doing all that I had the chance to learn the following languages/technologies/frameworks:

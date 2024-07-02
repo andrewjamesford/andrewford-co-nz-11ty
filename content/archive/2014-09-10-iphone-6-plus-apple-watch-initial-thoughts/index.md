@@ -8,7 +8,7 @@ category: "article"
 tags:
   - Apple Watch
   - iPhone
-description: ""
+description: "Initial thoughts on the iPhone 6, iPhone 6 Plus and Apple Watch."
 ---
 
 ## iPhone 6 and iPhone 6 Plus

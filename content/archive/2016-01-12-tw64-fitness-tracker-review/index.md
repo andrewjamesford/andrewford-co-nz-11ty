@@ -9,7 +9,7 @@ tags:
   - fitness tracker
   - hardware
   - review
-description: ""
+description: "The TW64 is a very cheap fitness tracker. I purchased mine during the 'Singles Day' AliExpress sale for US $9.65. Which when compared with Many other fitness trackers on the market it's very very cheap in comparison. But the old adage of you get what you pay for applies heavily with the TW64."
 ---
 
 The TW64 aka the FakeFitBit is a very cheap fitness tracker. I purchased mine during the "Singles Day" AliExpress sale for US $9.65. Which when compared with Many other fitness trackers on the market it's very very cheap in comparison. But the old adage of you get what you pay for applies heavily with the TW64.

@@ -9,7 +9,7 @@ tags:
   - photos
   - stock
   - link
-description: ""
+description: "Unsplash has launched their own branded license and updated their terms to add new restrictions and remove CC0 from their platform."
 ---
 
 <a href="https://creativecommons.org/2017/06/22/unsplash/">Ryan Merkley</a>:

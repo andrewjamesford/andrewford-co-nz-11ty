@@ -10,7 +10,7 @@ tags:
   - apple
   - development
   - iOS
-description: ""
+description: "The best way I’ve found to learn new programming languages is simply to start using them. So when I had an app idea I wanted to itch I decided to use Swift 2 and jump straight in."
 ---
 
 The best way I’ve found to learn new programming languages is simply to start using them. So when I had an <a href="https://github.com/andrewjamesford/FlightFareFinder">app idea</a> I wanted to itch I decided to use Swift 2 and jump straight in.

@@ -9,7 +9,7 @@ tags:
   - apple
   - iOS
   - iPad
-description: ""
+description: "Recently I had to ask the question, what is an iPad good for? Can I get serious work done on it? While it's easy to use can it do all the things I need to do as a designer, developer and blogger?"
 ---
 
 Recently I had to ask the question, what is an iPad good for? Can I get serious work done on it? While it's easy to use can it do all the things I need to do as a designer, developer and blogger?

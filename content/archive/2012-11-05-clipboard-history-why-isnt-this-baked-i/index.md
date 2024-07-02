@@ -9,7 +9,7 @@ tags:
   - clipboard
   - osx
   - windows
-description: ""
+description: "Jeff Atwood had it right, why isn't clipboard history baked into the OS?"
 ---
 
 Jeff Atwood had it right, why isn't [clipboard history](http://www.codinghorror.com/blog/2008/01/reinventing-the-clipboard.html) baked into the OS?

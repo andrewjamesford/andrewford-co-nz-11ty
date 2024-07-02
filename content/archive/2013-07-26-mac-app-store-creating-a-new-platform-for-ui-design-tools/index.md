@@ -11,7 +11,7 @@ tags:
   - macaw app
   - sketch app
   - UI
-description: ""
+description: "Khoi Vinh notes the changes in UI design software now appearing thanks to the Mac App Store."
 ---
 
 <a href="http://www.subtraction.com/2013/07/24/macaw" title="Macaw" target="_blank">Khoi Vinh</a> notes the changes in UI design software now appearing thanks to the Mac App Store.

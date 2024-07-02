@@ -10,7 +10,7 @@ tags:
   - OS X
   - screenshot
   - yosemite
-description: ""
+description: "A great new feature added to QuickTime player with OS X Yosemite is the ability to record your iPhones screen, simply by plugging it into your Mac with a lightning cable and setting the recording source to your phone."
 ---
 
 A great new feature added to QuickTime player with OS X Yosemite is the ability to record your iPhones screen, simply by plugging it into your Mac with a lightning cable and setting the recording source to your phone.

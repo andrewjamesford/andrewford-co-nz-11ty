@@ -10,7 +10,7 @@ tags:
   - design
   - iOS
   - sketch app
-description: ""
+description: "A great productivity tip for iOS 9 design is to take advantage of a GUI template in Sketch 3."
 ---
 
 I've been using Sketch 3 recently (after a long hiatus) and a great productivity tip for iOS 9 design is to take advantage of a GUI template. A GUI template has all the UI elements painstakingly recreated in Sketch, to help you supplement your own designs.

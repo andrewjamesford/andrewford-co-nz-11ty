@@ -7,7 +7,7 @@ slug: "/2016/03/04/movies-2016-jan-feb/"
 category: "article"
 tags:
   - movies
-description: ""
+description: "A list of movies I've watched so far in 2016."
 ---
 
 I liked <a href="http://www.subtraction.com/2016/03/02/movies-watched-so-far-in-2016/">Khoi Vinh's rundown of the movies</a> he's watched. So I thought I'd write-up my own list, and add my 2 cents of what I've watched so far in 2016.

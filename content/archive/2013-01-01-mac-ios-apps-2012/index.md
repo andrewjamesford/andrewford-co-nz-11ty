@@ -8,7 +8,7 @@ category: "article"
 tags:
   - apps
   - blog
-description: ""
+description: "My list of favourite apps for 2012 in no particular order across a range of devices and OS."
 ---
 
 This is my list of favourite apps for 2012 in no particular order across a range of devices and OS. 2012 has been an amazing year for apps, the quality of independents creating beautiful intelligently designed apps is awesome. Almost all the stock apps on my devices have been replaced by better third parties. I look forward to 2013 to see what new ideas are launched on the App Store and hope to join the ranks of these developers with my own app Caleriffic.

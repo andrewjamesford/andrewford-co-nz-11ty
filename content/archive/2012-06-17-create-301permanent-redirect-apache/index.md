@@ -8,7 +8,7 @@ category: "article"
 tags:
   - blog
   - development
-description: ""
+description: "After running my blog for Vote Daily Deals on a sub-domain for some time, some SEO suggestions I've been given is it's better to have your blog as part of the main URL. With the separate sub domain they are treated as two separate URLs in Google's indexing."
 ---
 
 After running my blog for Vote Daily Deals on a sub-domain for some time, some SEO suggestions I've been given is it's better to have your blog as part of the main URL. With the separate sub domain they are treated as two separate URLs in Google's indexing.</p>
