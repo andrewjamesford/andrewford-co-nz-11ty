@@ -11,7 +11,7 @@ tags:
 description: ""
 ---
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/qpPy-1WH7Rk?rel=0" frameborder="0" allowfullscreen></iframe>
+youtube.com/embed/qpPy-1WH7Rk
 
 Lorena and I are entered in the Mid Air Matrimony contest on More FM and would love to win.
 

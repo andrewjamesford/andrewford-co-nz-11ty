@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjam
 
 Check out the [documentation on Radix UI](https://www.Radix-ui.com) components for more information.
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/EXvU7F1D59o?si=8kM1Zl-k5_MIjtDG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+youtube.com/embed/EXvU7F1D59o?si=8kM1Zl-k5_MIjtDG
 
 ---
 

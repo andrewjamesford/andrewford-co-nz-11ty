@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjame
 
 Check out [Storybook](https://storybook.js.org/) for more information.
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/EGn-MsRIs4U?si=xT4O5dqmXvoaX0D0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+youtube.com/embed/EGn-MsRIs4U?si=xT4O5dqmXvoaX0D0
 
 ---
 

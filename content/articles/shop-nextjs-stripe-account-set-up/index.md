@@ -18,7 +18,7 @@ ogimage: "stripe-api-page.png"
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/cEL2Jtp8RLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+youtube.com/embed/cEL2Jtp8RLs
 
 [Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop series we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account (if you don't already have one).
 

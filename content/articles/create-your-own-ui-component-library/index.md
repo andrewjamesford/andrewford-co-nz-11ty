@@ -14,7 +14,7 @@ socialBackground: bg7
 ogimage: "storybook-welcome.png"
 ---
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/fpUPw9Yu5NA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+youtube.com/embed/fpUPw9Yu5NA
 
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 

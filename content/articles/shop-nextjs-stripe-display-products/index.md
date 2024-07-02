@@ -18,7 +18,7 @@ ogimage: "product-api.png"
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-<iframe class="video" loading="lazy" src="https://www.youtube.com/embed/OiHx3Zouj_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+youtube.com/embed/OiHx3Zouj_w
 
 Continuing with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 

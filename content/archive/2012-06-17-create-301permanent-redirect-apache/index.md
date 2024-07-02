@@ -29,7 +29,7 @@ http://votedailydeals.co.nz/blog/welcome-to-vote-daily-deals/
 
 Here is a screencast of the ".htaccess" file I created and how to get the existing links indexed by Google.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KfSpBe-qUoA" frameborder="0" allowfullscreen></iframe>
+youtube.com/embed/KfSpBe-qUoA
 
 The syntax to retrieve all the indexed links on Google is:
 
