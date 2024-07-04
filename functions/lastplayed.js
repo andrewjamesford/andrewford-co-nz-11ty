@@ -18,7 +18,7 @@ exports.handler = async function (event, context) {
 			album: lastTrackData.album["#text"],
 			url: lastTrackData.url,
 			albumArt: lastTrackData.image[1]["#text"],
-			albumArtLarge: lastTrackData.image[3]["#text"],
+			albumArtLarge: lastTrackData.image[2]["#text"],
 		};
 
 		return {
