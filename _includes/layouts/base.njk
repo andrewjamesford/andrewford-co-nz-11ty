@@ -195,9 +195,14 @@
 			</div>
 		</footer>
 
+		{# visible page url in html #}
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+
+		{# Render the JS bundle #}
+		<script>{% getBundle "js" %}</script>
+
 		{# Google tag (gtag.js) #}
-		<script defer src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -207,8 +212,5 @@
 
 			gtag('config', 'G-K39D2FSQEF');
 		</script>
-
-		{# Render the JS bundle #}
-		<script>{% getBundle "js" %}</script>		
 	</body>
 </html>
