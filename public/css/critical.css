@@ -35,9 +35,10 @@ html {
 	scroll-behavior: smooth;
 }
 .body {
-	font-family: var(--font-sans);
 	color: var(--body-color);
 	font-size: 1.13rem;
+	font: -apple-system-body;
+	font-family: var(--font-sans);
 	line-height: 1.6rem;
 	background-color: var(--bg-color);
 }
