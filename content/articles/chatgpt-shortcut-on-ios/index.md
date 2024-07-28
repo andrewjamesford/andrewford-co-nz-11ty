@@ -14,7 +14,13 @@ description: A better way to use ChatGPT on iOS and not lose your context using 
 
 ## Use the ChatGPT app shortcut action on iOS
 
+**UPDATE** 
+Unfortunately the shortcut doesn't work anymore. I'd suggest you use the FREE [AI Actions](https://apps.apple.com/nz/app/ai-actions-for-shortcuts/id6465250302) app from Sindre Sorhus which will allow you to build your own custom AI actions in Shortcuts or the official [ChatGPT app](https://apps.apple.com/us/app/chatgpt/id6448311069).
+
+
 Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/articles/chatgpt-macos-ios-using-shortcuts). I've now created a iOS Shortcut that uses the [ChatGPT app](https://chatgpt.com) and it's shortcut action to do your bidding. This means you don't need to create an OpenAI API key to use it, history is available in the app and less _copy & pasting_ on an iPhone (which is not always easy).
+
+
 
 youtube.com/embed/fD1nNVAyY7E
 
