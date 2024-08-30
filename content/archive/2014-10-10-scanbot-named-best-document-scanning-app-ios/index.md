@@ -13,7 +13,7 @@ tags:
 description: "Scanbot my favourite document scanning app has been named the best over at The Sweet Setup."
 ---
 
-![Scanbot Icon](./icon-scanbot-150x150.jpg)
+{% figure "./icon-scanbot.jpg", "Scanbot Icon", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 [Scanbot](https://itunes.apple.com/nz/app/scanbot-pdf-scanner-qr-reader/id834854351?mt=8&uo=4&at=10lnRx) my favourite document scanning app has been named the best over at [The Sweet Setup](http://thesweetsetup.com/apps/best-scanning-app-ios/).
 
@@ -21,4 +21,4 @@ Why I like Scanbot the most of all the great scanning apps out there is it's abi
 
 I use it all the time to save receipts for work, as I can scan them right there and then. Never losing one for an expense claim.
 
-![The Scanbot app scanning a recipe on sausage rolls](./scanbot-feature.jpg)
+{% figure "./scanbot-feature.jpg", "The Scanbot app scanning a recipe on sausage rolls", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
