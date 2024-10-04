@@ -1,11 +1,10 @@
 {
-    "recommendations": [
-        "DavidAnson.vscode-markdownlint",
-        "ronnidc.nunjucks",
-        "okitavera.vscode-nunjucks-formatter",
-        "esbenp.prettier-vscode",
-        "streetsidesoftware.code-spell-checker",
-        "yzhang.markdown-all-in-one",
-        "treetrum.statusbar-format-on-save"
-    ]
+	"recommendations": [
+		"DavidAnson.vscode-markdownlint",
+		"ronnidc.nunjucks",
+		"okitavera.vscode-nunjucks-formatter",
+		"esbenp.prettier-vscode",
+		"streetsidesoftware.code-spell-checker",
+		"yzhang.markdown-all-in-one"
+	]
 }
