@@ -27,9 +27,13 @@ Ensure you have the following dependencies installed:
 
 - Netlify CLI
 
+```sh
+npm install netlify-cli -g
+```
+
 Once you've installed the dependencies, you can run the development server:
 
-```bash
+```sh
 npm run dev
 ```
 
