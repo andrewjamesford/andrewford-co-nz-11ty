@@ -2,7 +2,7 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async () => {
 	try {
-		const baseUrl = process.env.SITE_URL || "http://localhost:8888";
+		const baseUrl = process.env.API_URL || "http://localhost:8888";
 		const url = `${baseUrl}/.netlify/functions/lastplayed`;
 
 		const json = await EleventyFetch(url, {

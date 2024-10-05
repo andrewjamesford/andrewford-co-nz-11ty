@@ -17,6 +17,7 @@ npm install
 Create an .env file with the following environment variables:
 
 ```env
+API_URL=
 LASTFM_API_KEY=
 SITE_URL=
 YOUTUBE_API_KEY=
