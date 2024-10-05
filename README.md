@@ -34,7 +34,13 @@ npm install netlify-cli -g
 Once you've installed the dependencies, you can run the development server:
 
 ```sh
-npm run dev
+npm run dev 
+```
+
+or
+
+```sh
+netlify dev
 ```
 
 This will start a local development server at [http://localhost:8080/](http://localhost:8080/) where you can preview your blog.

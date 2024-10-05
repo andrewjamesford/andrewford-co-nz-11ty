@@ -78,8 +78,8 @@
 		</style>
 
 		{# Preload the CSS bundle #}
-		<link rel="preload" href="{{ metadata.url + '/css/style.css' }}" as="style"/>
-		<link rel="stylesheet" href="{{ metadata.url + '/css/style.css' }}"/>
+		<link rel="preload" href="{{ '/css/style.css' }}" as="style"/>
+		<link rel="stylesheet" href="{{ '/css/style.css' }}"/>
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
