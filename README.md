@@ -27,13 +27,23 @@ Ensure you have the following dependencies installed:
 
 - Netlify CLI
 
-Once you've installed the dependencies, you can run the development server:
-
-```bash
-npm run dev
+```sh
+npm install netlify-cli -g
 ```
 
-This will start a local development server at http://localhost:8080/ where you can preview your blog.
+Once you've installed the dependencies, you can run the development server:
+
+```sh
+npm run dev 
+```
+
+or
+
+```sh
+netlify dev
+```
+
+This will start a local development server at [http://localhost:8080/](http://localhost:8080/) where you can preview your blog.
 
 ## Deployment
 

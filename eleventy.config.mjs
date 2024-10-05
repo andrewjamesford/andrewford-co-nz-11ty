@@ -1,25 +1,27 @@
-const { DateTime } = require("luxon");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownIt = require("markdown-it");
+import { DateTime } from "luxon";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownIt from "markdown-it";
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginBundle from "@11ty/eleventy-plugin-bundle";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-const pluginDrafts = require("./eleventy.config.drafts.js");
-const pluginImages = require("./eleventy.config.images.js");
-const embedYouTube = require("eleventy-plugin-youtube-embed");
+import pluginDrafts from "./eleventy.config.drafts.js";
+import pluginImages from "./eleventy.config.images.js";
+import embedYouTube from "eleventy-plugin-youtube-embed";
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-module.exports = function (eleventyConfig) {
+export default async (eleventyConfig) => {
+	const { EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin } =
+		await import("@11ty/eleventy");
+
 	// Create our custom markdown-it instance.
-	let md = markdownIt({
+	const md = markdownIt({
 		html: true,
 		linkify: true,
 		typographer: true,
-	}).use(require("markdown-it-footnote"));
+	}).use((await import("markdown-it-footnote")).default);
 
 	// Create custom footnote block rule
 	md.renderer.rules.footnote_block_open = () =>
@@ -30,9 +32,9 @@ module.exports = function (eleventyConfig) {
 
 	// Replacement render_footnote_caption with no [] around the number
 	const render_footnote_caption = (tokens, idx) => {
-		var n = Number(tokens[idx].meta.id + 1).toString();
+		let n = Number(tokens[idx].meta.id + 1).toString();
 		if (tokens[idx].meta.subId > 0) {
-			n += ":" + tokens[idx].meta.subId;
+			n += `:${tokens[idx].meta.subId}`;
 		}
 		return n;
 	};
@@ -65,11 +67,10 @@ module.exports = function (eleventyConfig) {
 		recommendSelfOnly: true,
 		lite: {
 			js: {
-				inline: true
+				inline: true,
 			},
 			css: {
-				inline: true
-			
+				inline: true,
 			},
 			enabled: true,
 			responsive: true,
@@ -89,7 +90,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-			format || "DDDD"
+			format || "DDDD",
 		);
 	});
 
@@ -117,9 +118,11 @@ module.exports = function (eleventyConfig) {
 
 	// Return all the tags used in a collection
 	eleventyConfig.addFilter("getAllTags", (collection) => {
-		let tagSet = new Set();
-		for (let item of collection) {
-			(item.data.tags || []).forEach((tag) => tagSet.add(tag));
+		const tagSet = new Set();
+		for (const item of collection) {
+			for (const tag of item.data.tags || []) {
+				tagSet.add(tag);
+			}
 		}
 		return Array.from(tagSet);
 	});
@@ -128,8 +131,8 @@ module.exports = function (eleventyConfig) {
 		return (tags || []).filter(
 			(tag) =>
 				["all", "nav", "post", "posts", "[articles]", "[archive]"].indexOf(
-					tag
-				) === -1
+					tag,
+				) === -1,
 		);
 	});
 
@@ -150,13 +153,13 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection("articles", (collection) =>
 		collection
 			.getAllSorted()
-			.filter((item) => item.inputPath.startsWith("./content/articles/"))
+			.filter((item) => item.inputPath.startsWith("./content/articles/")),
 	);
 
 	eleventyConfig.addCollection("archive", (collection) =>
 		collection
 			.getAllSorted()
-			.filter((item) => item.inputPath.startsWith("./content/archive/"))
+			.filter((item) => item.inputPath.startsWith("./content/archive/")),
 	);
 
 	// Features to make your build faster (when you need them)
