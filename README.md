@@ -33,7 +33,7 @@ Once you've installed the dependencies, you can run the development server:
 npm run dev
 ```
 
-This will start a local development server at http://localhost:8080/ where you can preview your blog.
+This will start a local development server at [http://localhost:8080/](http://localhost:8080/) where you can preview your blog.
 
 ## Deployment
 
