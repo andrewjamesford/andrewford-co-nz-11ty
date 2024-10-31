@@ -117,3 +117,8 @@ resoc-image-data.json
 chromewebdata_*
 localhost_*
 package-lock.json
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
