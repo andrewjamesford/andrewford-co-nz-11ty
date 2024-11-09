@@ -27,7 +27,7 @@ This is my list of favourite apps for 2012 in no particular order across a range
 
 ## iPad apps
 
-- [Gmail]() - the latest version 2 of Gmails app is quite good. It has push notification support, important now that Google will not be supporting new activations of Active Sync.
+- [Gmail](https://apps.apple.com/us/app/gmail-email-by-google/id422689480) - the latest version 2 of Gmails app is quite good. It has push notification support, important now that Google will not be supporting new activations of Active Sync.
 - [Foldify](https://itunes.apple.com/nz/app/foldify/id527118971?mt=8&ign-mpt=uo%3D2) - make awesome little printable characters from your ipad.
 - [Shuttersnitch](https://itunes.apple.com/nz/app/shuttersnitch/id364176211?mt=8) - - wirelessly send images from your camera (using a Eyefi card) directly to your ipad.
 - [Day One](https://itunes.apple.com/us/app/day-one-journal/id421706526?mt=8) - hands down the best journaling app available. Great UI, with support for Markdown and Dropbox support to sync between iOS and OSX.

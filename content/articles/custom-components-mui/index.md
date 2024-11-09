@@ -80,10 +80,10 @@ npm install --save-dev --save-exact prettier
 
 ```json
 {
-  "tabWidth": 2,
-  "semi": true,
-  "singleQuote": false,
-  "arrowParens": "avoid"
+ "tabWidth": 2,
+ "semi": true,
+ "singleQuote": false,
+ "arrowParens": "avoid"
 }
 ```
 
@@ -151,24 +151,24 @@ corresponding modules for that.
 //export default preview
 
 export const decorators = [
-  withThemeFromJSXProvider({
-    themes: {
-      default: theme,
-    },
-    defaultTheme: "default",
-    Provider: ThemeProvider,
-    GlobalStyles: CssBaseline,
-  }),
+ withThemeFromJSXProvider({
+  themes: {
+   default: theme,
+  },
+  defaultTheme: "default",
+  Provider: ThemeProvider,
+  GlobalStyles: CssBaseline,
+ }),
 ];
 
 export const parameters = {
-  controls: {
-    expanded: true,
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
+ controls: {
+  expanded: true,
+  matchers: {
+   color: /(background|color)$/i,
+   date: /Date$/,
   },
+ },
 };
 ```
 
@@ -192,17 +192,17 @@ import { createTheme } from "@mui/material/styles";
 import { blue, purple, red } from "@mui/material/colors";
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: purple.A700,
-    },
-    secondary: {
-      main: blue.A200,
-    },
-    error: {
-      main: red.A400,
-    },
+ palette: {
+  primary: {
+   main: purple.A700,
   },
+  secondary: {
+   main: blue.A200,
+  },
+  error: {
+   main: red.A400,
+  },
+ },
 });
 
 export default theme;
@@ -243,31 +243,7 @@ And we're going to remove the default content.
 First of all we're going to add the meta properties and that's for the type of
 the button.
 
-```tsx
-import "./button.css";
-
-import {
-  Button as MuiButton,
-  ButtonProps as MuiButtonProps,
-} from "@mui/material";
-
-type ButtonBaseProps = Omit<MuiButtonProps, "disableRipple">;
-
-export interface ButtonProps extends ButtonBaseProps {
-  label: string;
-}
-
-export const Button = ({ label, ...rest }: ButtonProps) => {
-  return <MuiButton {...rest}>{label}</MuiButton>;
-};
-
-// Set default properties
-Button.defaultProps = {
-  color: "inherit",
-  size: "medium",
-  variant: "outlined",
-};
-```
+[GitHub Source - Button.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/Button.tsx)
 
 And we're going to create a story object which we're going to add some options
 to for its arguments.
@@ -309,38 +285,9 @@ it's reflected here.
 
 Now let's look at the file explorer and we're going to create a new component.
 
-Now we're going to call this one drop down.
+Now we're going to call this one [drop down].
 
-```tsx
-import {
-  Select as MuiSelect,
-  SelectProps as MuiSelectProps,
-} from "@mui/material";
-
-type SelectBaseProps = Omit<MuiSelectProps, "">;
-
-export interface SelectProps extends SelectBaseProps {
-  label: string;
-  children: React.ReactNode; // Add the 'children' prop,
-}
-
-export const Dropdown = ({ label, children, ...rest }: SelectProps) => {
-  // Pass 'children' to the MuiSelect component
-  return (
-    <MuiSelect
-      label={label}
-      {...rest}
-      sx={ { minWidth: 150 } }
-      style={ { background: "orange" } }
-    >
-      {children}
-    </MuiSelect>
-  );
-};
-
-// Set default properties
-Dropdown.defaultProps = {};
-```
+[GitHub Source - Dropdown.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/Dropdown.tsx)
 
 So again we extend the existing component from mui and in this case the select.
 
@@ -357,51 +304,7 @@ We can add the story file now then it's going to be called
 So just like the button story we have to add the meta story object and the drop
 down component itself to the file.
 
-```tsx
-import type { Meta, StoryObj } from "@storybook/react";
-import { Dropdown } from "./Dropdown";
-import MenuItem from "@mui/material/MenuItem/MenuItem";
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: "Example/Dropdown",
-  component: Dropdown,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-} satisfies Meta<typeof Dropdown>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-// Add a 'children' array with the following items
-const childItems = [
-  <MenuItem value={0} key={0}>
-    <em>None</em>
-  </MenuItem>,
-  <MenuItem value={10} key={10}>
-    Ten
-  </MenuItem>,
-  <MenuItem value={20} key={20}>
-    Twenty
-  </MenuItem>,
-  <MenuItem value={30} key={30}>
-    Thirty
-  </MenuItem>,
-];
-
-export const Example: Story = {
-  args: {
-    id: "dropdown",
-    color: "primary",
-    label: "Dropdown Label", // Add the 'label' property with a string value,
-    children: childItems,
-  },
-};
-```
+[GitHub Source - Dropdown.stories.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/Dropdown.stories.tsx)
 
 We need to create the meta object and do its export and its type of story.
 
@@ -433,88 +336,7 @@ you can see it is orange in the background there.
 
 Now let's create our new component `DataTable.tsx`.
 
-```tsx
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { grey } from "@mui/material/colors";
-
-export interface Data {
-  id: number;
-  movieName: string;
-  director: string;
-  year: number;
-  rating: number;
-}
-
-export interface HeadCell {
-  id: keyof Data;
-  label: string;
-  numeric: boolean;
-}
-
-interface TableHeaderProps {
-  headCells: readonly HeadCell[];
-}
-
-interface TableProps {
-  rows: Data[];
-  header: HeadCell[];
-  zebraStriped?: boolean;
-}
-
-const TableHeader = (props: TableHeaderProps) => {
-  const { headCells } = props;
-  return (
-    <TableHead>
-      <TableRow>
-        <TableCell></TableCell>
-        {headCells.map((headCell) => (
-          <TableCell key={headCell.id}>{headCell.label}</TableCell>
-        ))}
-      </TableRow>
-    </TableHead>
-  );
-};
-
-export const DataTable = (props: TableProps) => {
-  const { rows, header, zebraStriped = false } = props;
-
-  // Add zebra striped rows if true
-  let sx = {};
-  if (zebraStriped) {
-    sx = {
-      "&:nth-of-type(odd)": {
-        backgroundColor: grey[100],
-      },
-    };
-  }
-
-  return (
-    <TableContainer>
-      <Table
-        aria-labelledby="tableTitle"
-        size={"medium"}
-        sx={ { minWidth: [300, 750] } }
-      >
-        <TableHeader headCells={header} />
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id} sx={sx}>
-              {Object.keys(row).map((key) => (
-                <TableCell key={key}>{row[key as keyof Data]}</TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-};
-```
+[GitHub Source - DataTable.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/DataTable.tsx)
 
 Now this one's going to be a bit more customized in the sense that we've got a
 lot of elements that are going to make up the component.
@@ -555,116 +377,7 @@ striping if it has been set to true.
 
 We now need to make a data table stories file `DataTable.stories.tsx`.
 
-```tsx
-import { Data, DataTable, HeadCell } from "./DataTable";
-import { createData } from "./DataTableUtils";
-
-import type { Meta, StoryObj } from "@storybook/react";
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: "Example/DataTable",
-  component: DataTable,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-  args: {},
-} satisfies Meta<typeof DataTable>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-// Header Row cells
-const headCells: HeadCell[] = [
-  {
-    id: "movieName",
-    numeric: false,
-    label: "Movie Name",
-  },
-  {
-    id: "director",
-    numeric: false,
-
-    label: "Director",
-  },
-  {
-    id: "year",
-    numeric: true,
-
-    label: "Year",
-  },
-  {
-    id: "rating",
-    numeric: true,
-
-    label: "Rating",
-  },
-];
-
-// Data
-const rows: Data[] = [
-  createData(1, "The Shawshank Redemption", "Frank Darabont", 1994, 9.3),
-  createData(2, "The Godfather", "Francis Ford Coppola", 1972, 9.2),
-  createData(3, "The Dark Knight", "Christopher Nolan", 2008, 9.0),
-  createData(4, "Tenet", "Christopher Nolan", 2020, 7.4),
-  createData(5, "Inception", "Christopher Nolan", 2010, 8.8),
-  createData(6, "The Matrix", "Lana Wachowski", 1999, 8.7),
-  createData(7, "Interstellar", "Christopher Nolan", 2014, 8.6),
-  createData(8, "Dune Part One", "Denis Villeneuve", 2021, 8.3),
-  createData(9, "The Green Mile", "Frank Darabont", 1999, 8.6),
-  createData(
-    10,
-    "The Lord of the Rings: The Return of the King",
-    "Peter Jackson",
-    2003,
-    8.9,
-  ),
-  createData(
-    11,
-    "The Lord of the Rings: The Fellowship of the Ring",
-    "Peter Jackson",
-    2001,
-    8.8,
-  ),
-  createData(
-    12,
-    "The Lord of the Rings: The Two Towers",
-    "Peter Jackson",
-    2002,
-    8.7,
-  ),
-  createData(13, "The Godfather: Part II", "Francis Ford Coppola", 1974, 9.0),
-  createData(14, "The Dark Knight Rises", "Christopher Nolan", 2012, 8.4),
-  createData(15, "The Fifth Element", "Luc Besson", 1997, 7.7),
-  createData(
-    16,
-    "Star Wars: Episode IV - A New Hope",
-    "George Lucas",
-    1977,
-    8.6,
-  ),
-  createData(17, "2001: A Space Odyssey", "Stanley Kubrick", 1968, 8.3),
-];
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Example: Story = {
-  args: {
-    header: headCells,
-    rows,
-  },
-} as Story; // Add the type assertion to Story.
-
-export const ZebraStriped: Story = {
-  args: {
-    header: headCells,
-    rows,
-    zebraStriped: true, // Add the 'zebraStriped' property
-  },
-} as Story; // Add the type assertion to Story.
-```
+[GitHub Source - DataTable.stories.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/DataTable.stories.tsx)
 
 And like previously we need to import the component and we also need to create a
 utilities file.
@@ -686,13 +399,13 @@ We're going to make a function now to help create data and our story
 import { Data } from "./DataTable";
 
 export function createData(
-  id: number,
-  movieName: string,
-  director: string,
-  year: number,
-  rating: number,
+ id: number,
+ movieName: string,
+ director: string,
+ year: number,
+ rating: number
 ): Data {
-  return { id, movieName, director, year, rating };
+ return { id, movieName, director, year, rating };
 }
 ```
 

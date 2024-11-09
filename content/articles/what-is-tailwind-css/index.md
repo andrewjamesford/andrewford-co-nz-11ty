@@ -17,15 +17,15 @@ Tailwind CSS is a utility-first CSS framework that can provide many benefits for
 
 ```jsx
 const Card = ({ heading, description, image }) => {
-	return (
-		<div className="cardContainer">
-			<img src={image} className="cardImage" alt="" />
-			<div>
-				<h3 className="cardHeading">{heading}</h3>
-				<div className="cardDescription">{description}</div>
-			</div>
-		</div>
-	);
+ return (
+  <div className="cardContainer">
+   <img src={image} className="cardImage" alt="" />
+   <div>
+    <h3 className="cardHeading">{heading}</h3>
+    <div className="cardDescription">{description}</div>
+   </div>
+  </div>
+ );
 };
 ```
 
@@ -36,17 +36,17 @@ Using standard CSS we would create classes for all the elements in our Card comp
 
 ```css
 .cardContainer {
-	border-radius: 0.75rem;
-	display: flex;
-	gap: 0.5rem;
-	margin-bottom: 1rem;
-	padding: 1rem;
-	background-color: white;
-	box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px
-			6px -4px rgb(0 0 0 / 0.1);
+ border-radius: 0.75rem;
+ display: flex;
+ gap: 0.5rem;
+ margin-bottom: 1rem;
+ padding: 1rem;
+ background-color: white;
+ box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px
+   6px -4px rgb(0 0 0 / 0.1);
 }
 .cardHeading {
-	font-weight: bold;
+ font-weight: bold;
 }
 ```
 
@@ -54,15 +54,15 @@ Compare this to the same component but this time using CSS classes from Tailwind
 
 ```jsx
 const Card = ({ heading, description, image }) => {
-	return (
-		<div className="rounded-xl shadow-lg bg-white p-4 mb-4 flex gap-2">
-			<img src={image} className="rounded-lg" alt="" />
-			<div>
-				<h3 className="font-bold">{heading}</h3>
-				<div className="font-serif">{description}</div>
-			</div>
-		</div>
-	);
+ return (
+  <div className="rounded-xl shadow-lg bg-white p-4 mb-4 flex gap-2">
+   <img src={image} className="rounded-lg" alt="" />
+   <div>
+    <h3 className="font-bold">{heading}</h3>
+    <div className="font-serif">{description}</div>
+   </div>
+  </div>
+ );
 };
 ```
 

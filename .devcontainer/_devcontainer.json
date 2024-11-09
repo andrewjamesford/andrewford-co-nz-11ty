@@ -14,10 +14,7 @@
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root",
-	"runArgs": [
-		"--name",
-		"andrewford-co-nz-11ty"
-	],
+	"runArgs": ["--name", "andrewford-co-nz-11ty"],
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -45,5 +42,5 @@
 		"ghcr.io/devcontainers-community/features/deno:1": {
 			"version": "latest"
 		}
-	},
+	}
 }

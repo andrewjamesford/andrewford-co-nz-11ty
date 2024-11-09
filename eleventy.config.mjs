@@ -13,8 +13,7 @@ import pluginImages from "./eleventy.config.images.js";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
 export default async (eleventyConfig) => {
-	const { EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin } =
-		await import("@11ty/eleventy");
+
 
 	// Create our custom markdown-it instance.
 	const md = markdownIt({
@@ -200,5 +199,16 @@ export default async (eleventyConfig) => {
 		// it will transform any absolute URLs in your HTML to include this
 		// folder name and does **not** affect where things go in the output folder.
 		pathPrefix: "/",
+
+		// The base URL: defaults to Path Prefix
+		// baseHref: eleventyConfig.pathPrefix,
+		baseHref: "https://andrewford.co.nz/",
+
+		// But you could use a full URL here too:
+		// baseHref: "http://example.com/"
+
+		// Comma separated list of output file extensions to apply
+		// our transform to. Use `false` to opt-out of the transform.
+		extensions: "html",
 	};
 };

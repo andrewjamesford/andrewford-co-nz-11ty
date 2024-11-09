@@ -36,7 +36,7 @@ To generate a new API key, once that's done, give your application a name, maybe
 
 We're going to start by creating an ENV file. I see why I've already created one already, `.env`. You can see that. And I have added the Last FM API key. And I'm going to copy that key into that position there.
 
-```
+```env
 LASTFM_API_KEY=ReplaceWithYourAPIKey
 ```
 
@@ -56,37 +56,37 @@ Once we have that setup, we can create a JavaScript function to make the get req
 import fetch from "node-fetch";
 
 exports.handler = async function (event, context) {
-	try {
-		const apiKey = process.env.LASTFM_API_KEY;
-		const username = "YOUR_USERNAME";
-		const response = await fetch(
-			`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`,
-			{
-				method: "GET",
-			}
-		);
+ try {
+  const apiKey = process.env.LASTFM_API_KEY;
+  const username = "YOUR_USERNAME";
+  const response = await fetch(
+   `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`,
+   {
+    method: "GET",
+   }
+  );
 
-		const data = await response.json();
-		const lastTrackData = data.recenttracks.track[0];
+  const data = await response.json();
+  const lastTrackData = data.recenttracks.track[0];
 
-		const lastTrack = {
-			artist: lastTrackData.artist["#text"],
-			trackName: lastTrackData.name,
-			album: lastTrackData.album["#text"],
-			url: lastTrackData.url,
-			albumArt: lastTrackData.image[1]["#text"],
-		};
+  const lastTrack = {
+   artist: lastTrackData.artist["#text"],
+   trackName: lastTrackData.name,
+   album: lastTrackData.album["#text"],
+   url: lastTrackData.url,
+   albumArt: lastTrackData.image[1]["#text"],
+  };
 
-		return {
-			statusCode: 200,
-			body: JSON.stringify(lastTrack),
-		};
-	} catch (error) {
-		return {
-			statusCode: 500,
-			body: JSON.stringify({ error_description: error.message }),
-		};
-	}
+  return {
+   statusCode: 200,
+   body: JSON.stringify(lastTrack),
+  };
+ } catch (error) {
+  return {
+   statusCode: 500,
+   body: JSON.stringify({ error_description: error.message }),
+  };
+ }
 };
 ```
 
@@ -96,23 +96,23 @@ We now have a way to retrieve our data from Last FM in a secure way, protecting 
 
 ```javascript
 const loadData = async () => {
-	const lastFMWidget = document.getElementById("lastFM");
-	const lastFMLink = document.getElementById("lastFMLink");
-	const lastFMImg = document.getElementById("lastFMImg");
-	const lastFMAlbum = document.getElementById("lastFMAlbum");
-	const response = await fetch(`/.netlify/functions/lastplayed`, {
-		method: "GET",
-	});
-	const data = await response.json();
+ const lastFMWidget = document.getElementById("lastFM");
+ const lastFMLink = document.getElementById("lastFMLink");
+ const lastFMImg = document.getElementById("lastFMImg");
+ const lastFMAlbum = document.getElementById("lastFMAlbum");
+ const response = await fetch(`/.netlify/functions/lastplayed`, {
+  method: "GET",
+ });
+ const data = await response.json();
 
-	lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
-	lastFMLink.href = data.url;
-	lastFMImg.src = data.albumArt;
-	lastFMImg.width = 64;
-	lastFMImg.height = 64;
-	lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
-	lastFMAlbum.innerText = data.album;
-	lastFMWidget.style = "display:grid";
+ lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
+ lastFMLink.href = data.url;
+ lastFMImg.src = data.albumArt;
+ lastFMImg.width = 64;
+ lastFMImg.height = 64;
+ lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
+ lastFMAlbum.innerText = data.album;
+ lastFMWidget.style = "display:grid";
 };
 
 loadData();
@@ -122,20 +122,20 @@ You can see in my layout here I have the basic structure of the widget with disp
 
 ```html
 <div id="lastFM" class="lastfm-widget" style="display:none">
-	<img
-		id="lastFMImg"
-		src=""
-		class="lastfm-img"
-		alt="Album cover art for last listened on Last.fm"
-	/>
+ <img
+  id="lastFMImg"
+  src=""
+  class="lastfm-img"
+  alt="Album cover art for last listened on Last.fm"
+ />
 
-	<div>
-		<div class="lastfm-title">Listening to:</div>
-		<div class="lastfm-link">
-			<a id="lastFMLink" href="https://www.last.fm"></a>
-		</div>
-		<div id="lastFMAlbum" class="lastfm-album"></div>
-	</div>
+ <div>
+  <div class="lastfm-title">Listening to:</div>
+  <div class="lastfm-link">
+   <a id="lastFMLink" href="https://www.last.fm"></a>
+  </div>
+  <div id="lastFMAlbum" class="lastfm-album"></div>
+ </div>
 </div>
 ```
 
@@ -143,21 +143,21 @@ The CSS for the widget is loaded here in the CSS file for the website.
 
 ```css
 .lastfm-widget {
-	padding-top: 1.5rem;
-	border-top: 1px solid var(--body-color-secondary);
-	font-size: 0.9rem;
-	line-height: 1.2;
-	display: grid;
-	grid-template-columns: 64px auto;
-	gap: 0.5rem;
-	margin: 0.75rem auto 0 auto;
+ padding-top: 1.5rem;
+ border-top: 1px solid var(--body-color-secondary);
+ font-size: 0.9rem;
+ line-height: 1.2;
+ display: grid;
+ grid-template-columns: 64px auto;
+ gap: 0.5rem;
+ margin: 0.75rem auto 0 auto;
 }
 .lastfm-img {
-	border-radius: 0.25rem;
+ border-radius: 0.25rem;
 }
 .lastfm-title {
-	font-size: 0.7rem;
-	margin-bottom: 0.2rem;
+ font-size: 0.7rem;
+ margin-bottom: 0.2rem;
 }
 ```
 

@@ -965,4 +965,4 @@ Have a great day and I will see you next time.
 
 Catch you later.
 
-*Please note this transcript was edited for clarity.*
+_Please note this transcript was edited for clarity._

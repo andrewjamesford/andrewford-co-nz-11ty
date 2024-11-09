@@ -11,7 +11,7 @@ tags:
 description: "I've launched a new look for my blog today. Tell me what you think."
 ---
 
-Today I launched the new look for my blog today. Seems it was just in time I got linked to from an article on the well known UK web design blog <a href="http://boagworld.com/design/why-codesign-tools-are-the-future-of-web-design/" title="Boagworld - Web & Digital Advice - 
+Today I launched the new look for my blog today. Seems it was just in time I got linked to from an article on the well known UK web design blog <a href="http://boagworld.com/design/why-codesign-tools-are-the-future-of-web-design/" title="Boagworld - Web & Digital Advice -
 why codesign tools are the future of web design">Boagworld</a>.
 
 {% figure "./theme-sketch.jpg", "A sketch of my new theme", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}

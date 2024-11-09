@@ -18,7 +18,7 @@ When you've setup an addon domain for your HostPapa account following the [HostP
 
 This will setup your site and everything will appear just fine and will redirect you to your domain correctly. But if you check the source you'll see your files and links are being directed to your parent domain for your HostPapa account and then pointing to the subfolder you installed WordPress in e.g.
 
-```
+```html
 http://myoriginaldomain.com/myaddondomain.com/image.jpg
 ```
 

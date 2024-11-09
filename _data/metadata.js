@@ -1,7 +1,7 @@
 module.exports = {
 	title: "Andrew Ford",
 	url: process.env.SITE_URL || "http://localhost:8888",
-	language: "en",
+	language: "en-NZ",
 	description:
 		"Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code. He is also a full-stack web developer, technical analyst and an educator.",
 	author: {

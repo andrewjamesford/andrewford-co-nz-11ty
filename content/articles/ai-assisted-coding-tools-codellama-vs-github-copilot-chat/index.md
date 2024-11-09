@@ -111,11 +111,11 @@ There are a number of competitors with the big one being Copilot of course. Most
 
 I tested for the time to display content (both start streaming content as it's available to show) and gave a subjective rating out of 5.
 
-### Comparison 1 - FizzBuzz
+### Comparison 1 - Fizz Buzz
 
-To start off with I tried a classic coding challenge the [FizzBuzz problem](https://en.wikipedia.org/wiki/Fizz_buzz). I asked each coding assistant the following question:
+To start off with I tried a classic coding challenge the [Fizz Buzz problem](https://en.wikipedia.org/wiki/Fizz_buzz). I asked each coding assistant the following question:
 
-`How do I solve the fizzbuzz problem in JavaScript?`
+`How do I solve the Fizz Buzz problem in JavaScript?`
 
 | Assistant               | Time to content | Rating |
 | ----------------------- | --------------- | ------ |
@@ -124,45 +124,45 @@ To start off with I tried a classic coding challenge the [FizzBuzz problem](http
 
 From the start GitHub Copilot was faster to respond by 2 seconds. As for the code, they where virtually identical with GC using `let` for variable declaration vs. CL using `var`. But I actually preferred CL's answer as it gave more context in it's description to the problem. With that in my mind pushing it into the lead by half a point. Check out the results below.
 
-#### GitHub Copilot FizzBuzz Answer
+#### GitHub Copilot Fizz Buzz Answer
 
-> Here's one way to solve the FizzBuzz problem in JavaScript:
+> Here's one way to solve the Fizz Buzz problem in JavaScript:
 
 ```javascript
 for (let i = 1; i <= 100; i++) {
-	if (i % 3 === 0 && i % 5 === 0) {
-		console.log("FizzBuzz");
-	} else if (i % 3 === 0) {
-		console.log("Fizz");
-	} else if (i % 5 === 0) {
-		console.log("Buzz");
-	} else {
-		console.log(i);
-	}
+ if (i % 3 === 0 && i % 5 === 0) {
+  console.log("Fizz Buzz");
+ } else if (i % 3 === 0) {
+  console.log("Fizz");
+ } else if (i % 5 === 0) {
+  console.log("Buzz");
+ } else {
+  console.log(i);
+ }
 }
 ```
 
-> This code will loop through the numbers 1 to 100 and print "Fizz" for multiples of 3, "Buzz" for multiples of 5, "FizzBuzz" for multiples of both 3 and 5, and the number itself for all other numbers.
+> This code will loop through the numbers 1 to 100 and print "Fizz" for multiples of 3, "Buzz" for multiples of 5, "Fizz Buzz" for multiples of both 3 and 5, and the number itself for all other numbers.
 
-#### CodeLlama FizzBuzz Answer
+#### CodeLlama Fizz Buzz Answer
 
-> The FizzBuzz problem is a classic coding challenge that requires you to write a program that prints out all numbers from 1 to 100, but for multiples of three print "Fizz" instead, and for multiples of five print "Buzz". Here is the JavaScript code that solves the FizzBuzz problem:
+> The Fizz Buzz problem is a classic coding challenge that requires you to write a program that prints out all numbers from 1 to 100, but for multiples of three print "Fizz" instead, and for multiples of five print "Buzz". Here is the JavaScript code that solves the Fizz Buzz problem:
 
 ```javascript
 for (var i = 1; i <= 100; i++) {
-	if (i % 3 === 0 && i % 5 === 0) {
-		console.log("FizzBuzz");
-	} else if (i % 3 === 0) {
-		console.log("Fizz");
-	} else if (i % 5 === 0) {
-		console.log("Buzz");
-	} else {
-		console.log(i);
-	}
+ if (i % 3 === 0 && i % 5 === 0) {
+  console.log("Fizz Buzz");
+ } else if (i % 3 === 0) {
+  console.log("Fizz");
+ } else if (i % 5 === 0) {
+  console.log("Buzz");
+ } else {
+  console.log(i);
+ }
 }
 ```
 
-> This code uses a for loop to iterate from 1 to 100, and for each number it checks if it is divisible by 3 or 5 using the % operator. If the number is divisible by both 3 and 5, it prints "FizzBuzz". If it is only divisible by 3, it prints "Fizz". If it is only divisible by 5, it prints "Buzz". Otherwise, it prints the number itself.
+> This code uses a for loop to iterate from 1 to 100, and for each number it checks if it is divisible by 3 or 5 using the % operator. If the number is divisible by both 3 and 5, it prints "Fizz Buzz". If it is only divisible by 3, it prints "Fizz". If it is only divisible by 5, it prints "Buzz". Otherwise, it prints the number itself.
 
 ### Comparison 2 - Largest and Smallest Number in an Array 1-100
 
@@ -192,18 +192,18 @@ Again GC was faster with the response, but in my opinion CL gave the better answ
 
 ```javascript
 const arr = [
-	10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+ 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 ];
 
 let smallest = arr[0];
 let largest = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
-	if (arr[i] < smallest) {
-		smallest = arr[i];
-	} else if (arr[i] > largest) {
-		largest = arr[i];
-	}
+ if (arr[i] < smallest) {
+  smallest = arr[i];
+ } else if (arr[i] > largest) {
+  largest = arr[i];
+ }
 }
 
 console.log("Smallest number: " + smallest);
@@ -224,9 +224,9 @@ console.log(Math.min(...numbers)); // Output: 1
 
 > In this code, we first define an array of numbers called `numbers`. We then use the `Math.max()` function to find the largest number in the array, which is 87. Similarly, we use the `Math.min()` function to find the smallest number in the array, which is 1. Note that the `Math.max()` and `Math.min()` functions take a variable number of arguments, so we can pass an array as an argument and it will still work correctly.
 
-## Comparison 3 - Write Tests for FizzBuzz
+## Comparison 3 - Write Tests for Fizz Buzz
 
-Let's get the code assistants to do something very practical. Writing some tests for the FizzBuzz function is a helpful task we don't want to do.
+Let's get the code assistants to do something very practical. Writing some tests for the Fizz Buzz function is a helpful task we don't want to do.
 
 `Write tests to test the function getFizzBuzz`
 
@@ -234,20 +234,20 @@ I took the results of the previous answer from GC and placed it in a function.
 
 ```javascript
 function getFizzBuzz() {
-	const fizzBuzzArray = [];
-	for (let i = 1; i <= 100; i++) {
-		if (i % 3 === 0 && i % 5 === 0) {
-			fizzBuzzArray.push("FizzBuzz");
-		} else if (i % 3 === 0) {
-			fizzBuzzArray.push("Fizz");
-		} else if (i % 5 === 0) {
-			fizzBuzzArray.push("Buzz");
-		} else {
-			fizzBuzzArray.push(i);
-		}
-	}
-	console.log(fizzBuzzArray);
-	return fizzBuzzArray;
+ const Fizz BuzzArray = [];
+ for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+   Fizz BuzzArray.push("Fizz Buzz");
+  } else if (i % 3 === 0) {
+   Fizz BuzzArray.push("Fizz");
+  } else if (i % 5 === 0) {
+   Fizz BuzzArray.push("Buzz");
+  } else {
+   Fizz BuzzArray.push(i);
+  }
+ }
+ console.log(Fizz BuzzArray);
+ return Fizz BuzzArray;
 }
 
 module.exports = getFizzBuzz;
@@ -260,7 +260,7 @@ Then asked the assistants the question above. This time CL took an age to return
 | GitHub Copilot (GC)     | 3s              | 3/5    |
 | Continue/CodeLlama (CL) | 19s             | 2/5    |
 
-#### GitHub Copilot getFizzBuzz Tests Answer
+### GitHub Copilot getFizzBuzz Tests Answer
 
 > Sure, here's an example of how you could write tests to test the `getFizzBuzz` function using the Jest testing framework in JavaScript:
 
@@ -268,40 +268,40 @@ Then asked the assistants the question above. This time CL took an age to return
 const getFizzBuzz = require("./index");
 
 describe("getFizzBuzz", () => {
-	it("should return an array of length 100", () => {
-		const result = getFizzBuzz();
-		expect(result).toHaveLength(100);
-	});
+ it("should return an array of length 100", () => {
+  const result = getFizzBuzz();
+  expect(result).toHaveLength(100);
+ });
 
-	it('should return "Fizz" for multiples of 3', () => {
-		const result = getFizzBuzz();
-		for (let i = 2; i < result.length; i += 3) {
-			expect(result[i]).toBe("Fizz");
-		}
-	});
+ it('should return "Fizz" for multiples of 3', () => {
+  const result = getFizzBuzz();
+  for (let i = 2; i < result.length; i += 3) {
+   expect(result[i]).toBe("Fizz");
+  }
+ });
 
-	it('should return "Buzz" for multiples of 5', () => {
-		const result = getFizzBuzz();
-		for (let i = 4; i < result.length; i += 5) {
-			expect(result[i]).toBe("Buzz");
-		}
-	});
+ it('should return "Buzz" for multiples of 5', () => {
+  const result = getFizzBuzz();
+  for (let i = 4; i < result.length; i += 5) {
+   expect(result[i]).toBe("Buzz");
+  }
+ });
 
-	it('should return "FizzBuzz" for multiples of both 3 and 5', () => {
-		const result = getFizzBuzz();
-		for (let i = 14; i < result.length; i += 15) {
-			expect(result[i]).toBe("FizzBuzz");
-		}
-	});
+ it('should return "Fizz Buzz" for multiples of both 3 and 5', () => {
+  const result = getFizzBuzz();
+  for (let i = 14; i < result.length; i += 15) {
+   expect(result[i]).toBe("Fizz Buzz");
+  }
+ });
 
-	it("should return the number itself for all other numbers", () => {
-		const result = getFizzBuzz();
-		for (let i = 0; i < result.length; i++) {
-			if (i % 3 !== 0 && i % 5 !== 0) {
-				expect(result[i]).toBe(i + 1);
-			}
-		}
-	});
+ it("should return the number itself for all other numbers", () => {
+  const result = getFizzBuzz();
+  for (let i = 0; i < result.length; i++) {
+   if (i % 3 !== 0 && i % 5 !== 0) {
+    expect(result[i]).toBe(i + 1);
+   }
+  }
+ });
 });
 ```
 
@@ -329,7 +329,7 @@ import { getFizzBuzz } from "./getFizzBuzz";
 
 ```javascript
 test("returns an empty array when given an empty array", () => {
-	expect(getFizzBuzz([])).toStrictEqual([]);
+ expect(getFizzBuzz([])).toStrictEqual([]);
 });
 ```
 
@@ -337,7 +337,7 @@ test("returns an empty array when given an empty array", () => {
 
 ```javascript
 test("returns an array with the correct output for a single number", () => {
-	expect(getFizzBuzz([1])).toStrictEqual([1]);
+ expect(getFizzBuzz([1])).toStrictEqual([1]);
 });
 ```
 

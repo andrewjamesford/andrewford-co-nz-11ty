@@ -12,7 +12,10 @@ exports.handler = async function (event, context) {
 			}
 		);
 		if (!response.ok) {
-			throw new Error(`HTTP error! status: ` + JSON.stringify(response.status + ' ' + response.statusText));
+			throw new Error(
+				`HTTP error! status: ` +
+					JSON.stringify(response.status + " " + response.statusText)
+			);
 		}
 		const data = await response.json();
 		const lastUploadData = data.items;

@@ -16,14 +16,14 @@ description: "How to make your Raspberry Pi into an AirPlay receiver"
 
 You shouldn't need to do much then run the following if your Pi is already setup.
 
-```
+```sh
 sudo apt-get upgrade
 sudo apt-get install shairport-sync
 ```
 
 Once installed test the install by running:
 
-```
+```sh
 sudo systemctl enable shairport-sync
 sudo service shairport-sync start
 ```

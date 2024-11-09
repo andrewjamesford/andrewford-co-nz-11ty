@@ -18,7 +18,7 @@ Web Jet have a nice monthly deal finder search tool, choose your destination and
 
 Here are a few of my own tips for Air New Zealand:
 
-### Tip 1:
+### Tip 1
 
 For Air New Zealand flyers if you've flown in the last 7 days make sure you enter your details on Air Ponts Lucky Seven
 **Tip 1:** For Air New Zealand flyers if you've flown in the last 7 days make sure you enter your details on [Air Points Lucky Seven](https://www.airpointsluckyseven.co.nz/) and keep checking back everyday at midday to see if you've won.

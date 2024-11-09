@@ -982,4 +982,4 @@ Bye.
 
 Thank you.
 
-*Please note this transcript was edited for clarity.*
+_Please note this transcript was edited for clarity._

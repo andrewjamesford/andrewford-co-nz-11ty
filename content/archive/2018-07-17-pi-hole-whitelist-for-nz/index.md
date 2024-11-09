@@ -31,7 +31,7 @@ Here is my whitelist of URL's you will need to add for these apps to work.
 
 There are two ways to add these from the command line like this:
 
-```
+```sh
 pihole -w url-to-whitelist.com
 ```
 
@@ -39,7 +39,7 @@ The other is from the `piholeipaddress/admin/list.php?l=white` interface on your
 
 If you come across further issues I find the easiest way to see what other URLs need to be whitelisted is to open a terminal session to the Pi-hole and run:
 
-```
+```sh
 pihole tail
 ```
 

@@ -14,13 +14,10 @@ description: A better way to use ChatGPT on iOS and not lose your context using 
 
 ## Use the ChatGPT app shortcut action on iOS
 
-**UPDATE** 
+**UPDATE**
 Unfortunately the shortcut doesn't work anymore. I'd suggest you use the FREE [AI Actions](https://apps.apple.com/nz/app/ai-actions-for-shortcuts/id6465250302) app from Sindre Sorhus which will allow you to build your own custom AI actions in Shortcuts or the official [ChatGPT app](https://apps.apple.com/us/app/chatgpt/id6448311069).
 
-
 Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/articles/chatgpt-macos-ios-using-shortcuts). I've now created a iOS Shortcut that uses the [ChatGPT app](https://chatgpt.com) and it's shortcut action to do your bidding. This means you don't need to create an OpenAI API key to use it, history is available in the app and less _copy & pasting_ on an iPhone (which is not always easy).
-
-
 
 youtube.com/embed/fD1nNVAyY7E
 
@@ -41,7 +38,7 @@ youtube.com/embed/fD1nNVAyY7E
 
 The shortcut takes input from the Share Sheet "Text", "Rich Text", "Safari web pages" and "Articles". It then gets your prompt from the input box that pops up. It then appends say the URL of a website to your prompt. For example I was on an article on [Stuff](https://i.stuff.co.nz/national/education/300847887/chatgpt-how-teachers-are-bringing-ai-tech-into-the-classroom) and this is what is passed to ChatGPT:
 
-```
+```text
 "Summarise this article" +
 https://i.stuff.co.nz/...
 ```

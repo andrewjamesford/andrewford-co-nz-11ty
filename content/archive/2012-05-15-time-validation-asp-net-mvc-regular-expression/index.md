@@ -14,7 +14,7 @@ Just a quick tip for Time validation in ASP.Net MVC for your data model using a 
 
 Place the following in your model:
 
-```
+```c#
 [DisplayFormat(ApplyFormatInEditMode = true,
 DataFormatString = &quot;{0:HH:mm}&quot;)]
 [RegularExpression(@&quot;^(?:0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$&quot;, ErrorMessage = &quot;Invalid time.&quot;)]

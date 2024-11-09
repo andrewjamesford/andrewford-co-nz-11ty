@@ -25,7 +25,6 @@ To view the Wireframes I created in the stream, please see the following link:
 
 youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24
 
-
 {% figure "./whiteboard.png", "The Whiteboard from the Stream", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
 ---

@@ -36,7 +36,7 @@ Once installed open up spotify on your computer or phone and connect to a device
 
 One issue I found was that Raspotify was too quiet and I had to turn the soundbar right up to hear, even with Spotify at maximum volume. To fix this on the raspberry pi run:
 
-```
+```sh
 alsamixer
 ```
 
