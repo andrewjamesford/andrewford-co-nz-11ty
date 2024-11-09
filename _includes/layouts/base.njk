@@ -12,51 +12,51 @@
 
 		{# Icons #}
 		<meta name="msapplication-TileColor" content="#eee">
-		<meta name="msapplication-TileImage" content="{{ metadata.url }}/ms-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="57x57" href="{{ metadata.url }}/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="{{ metadata.url }}/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="{{ metadata.url }}/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="{{ metadata.url }}/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="{{ metadata.url }}/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="{{ metadata.url }}/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="{{ metadata.url }}/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="{{ metadata.url }}/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.url }}/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="{{ metadata.url }}/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ metadata.url }}/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="{{ metadata.url }}/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.url }}/favicon-16x16.png">
+		<meta name="msapplication-TileImage" content="{{ metadata.fullUrl }}/ms-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ metadata.fullUrl }}/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{{ metadata.fullUrl }}/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ metadata.fullUrl }}/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ metadata.fullUrl }}/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ metadata.fullUrl }}/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ metadata.fullUrl }}/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ metadata.fullUrl }}/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ metadata.fullUrl }}/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.fullUrl }}/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="{{ metadata.fullUrl }}/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ metadata.fullUrl }}/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="{{ metadata.fullUrl }}/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.fullUrl }}/favicon-16x16.png">
 
-		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+		<link rel="canonical" href="{{ metadata.fullUrl }}{{ page.url }}">
 
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 		<link href="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF" rel="preload" as="script">
 
 		{# Atom and JSON feeds included by default #}
-		<link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		{# <link rel="alternate" href="{{ metadata.url }}/feed/feed.json" type="application/json" title="{{ metadata.title }}"> #}
+		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		{# <link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.json" type="application/json" title="{{ metadata.title }}"> #}
 
 		{# open graph #}
 		<meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:description" content="{{ description or metadata.description }}"/>
 		{% if ogimage %}
-			<meta property="og:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}"/>
+			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ ogimage }}"/>
 		{% else %}
-			<meta property="og:image" content="{{ metadata.url }}/ogimage/{{ "social-card.png" }}"/>
+			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
-		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+		<meta property="og:url" content="{{ metadata.fullUrl }}{{ page.url }}">
 
 		{# twitter #}
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="andrewford.co.nz">
-		<meta property="twitter:url" content="{{ metadata.url }}{{ page.url }}">
+		<meta property="twitter:url" content="{{ metadata.fullUrl }}{{ page.url }}">
 		<meta name="twitter:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
 		{% if ogimage %}
-			<meta name="twitter:image" content="{{ metadata.url }}/ogimage/{{ ogimage }}">
+			<meta name="twitter:image" content="{{ metadata.fullUrl }}/ogimage/{{ ogimage }}">
 		{% else %}
-			<meta property="twitter:image" content="{{ metadata.url }}/ogimage/{{ "social-card.png" }}"/>
+			<meta property="twitter:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
 
 		{# Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
@@ -92,7 +92,7 @@
 
 		<header class="header">
 			<div class="avatar-wrapper">
-				<a href="{{ metadata.url + '/' }}" class="avatar" name="Home" aria-label="Return to Home">
+				<a href="{{ metadata.fullUrl + '/' }}" class="avatar" name="Home" aria-label="Return to Home">
 					<svg class="logo" viewBox="0 0 554 554" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<title>Logo for Andrew Ford showing a circle with the letters AF</title>
 						<path id="Ellipse" fill="#000" fill-rule="evenodd" stroke="#000000" stroke-width="5" d="M 551 277 C 551 125.673981 428.326019 3 277 3 C 125.673981 3 3 125.673981 3 277 C 3 428.326019 125.673981 551 277 551 C 428.326019 551 551 428.326019 551 277 Z"/>
@@ -128,13 +128,13 @@
 
 			<ul class="nav-links nav-links-footer">
 				<li>
-					<a href="{{ metadata.url }}/about/">About</a>
+					<a href="{{ metadata.fullUrl }}/about/">About</a>
 				</li>
 				<li>
-					<a href="{{ metadata.url }}/archive/">Archive</a>
+					<a href="{{ metadata.fullUrl }}/archive/">Archive</a>
 				</li>
 				<li>
-					<a href="{{ metadata.url }}/article/">Articles</a>
+					<a href="{{ metadata.fullUrl }}/article/">Articles</a>
 				</li>
 				{# <li>
 					<a href="https://ko-fi.com/andrewfordcodes">Buy me a Coffee</a>
@@ -152,16 +152,16 @@
 					<a href="https://www.linkedin.com/in/andrewjamesford/">LinkedIn</a>
 				</li>
 				<li>
-					<a rel="me" href="{{ metadata.url }}/@andrew">Mastodon</a>
+					<a rel="me" href="{{ metadata.fullUrl }}/@andrew">Mastodon</a>
 				</li>
 				<li>
-					<a href="{{ metadata.url }}/privacy/">Privacy</a>
+					<a href="{{ metadata.fullUrl }}/privacy/">Privacy</a>
 				</li>
 				<li>
-					<a href="{{ metadata.url }}/feed/feed.xml">RSS</a>
+					<a href="{{ metadata.fullUrl }}/feed/feed.xml">RSS</a>
 				</li>
 				<li>
-					<a href="{{ metadata.url }}/uses/">Uses</a>
+					<a href="{{ metadata.fullUrl }}/uses/">Uses</a>
 				</li>
 				<li>
 					<a href="https://andrewford.gumroad.com/">Shop</a>
@@ -180,7 +180,7 @@
 					<div>
 						<div class="lastfm-title">
 							Last listening to:
-							<a href="{{ metadata.url }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
+							<a href="{{ metadata.fullUrl }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
 									<title>Icon of a Question Mark ?</title>
 									<path fill="none" d="M0 0h24v24H0V0z"></path>

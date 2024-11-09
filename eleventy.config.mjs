@@ -12,6 +12,9 @@ import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 export default async (eleventyConfig) => {
   // Create our custom markdown-it instance.
   const md = markdownIt({

@@ -1,8 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
-
+require("dotenv").config();
 module.exports = async () => {
   try {
-    const baseUrl = process.env.API_URL || "http://localhost:8888";
+    const baseUrl = process.env.API_URL;
     const url = `${baseUrl}/.netlify/functions/lastplayed`;
 
     const json = await EleventyFetch(url, {

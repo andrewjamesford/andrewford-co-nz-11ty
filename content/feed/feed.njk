@@ -3,25 +3,26 @@
 permalink: /feed/feed.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ url }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.fullUrl }}" xml:lang="{{ metadata.language }}">
 	<title>Andrew Ford's Atom Feed</title>
 	<subtitle>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code. He is also a full-stack web developer, mentor and an advanced developer educator.</subtitle>
-	<link href="https://andrewford.co.nz/feed/feed.xml" rel="self"/>
-	<link href="https://andrewford.co.nz"/>
+	<link href="{{ metadata.fullUrl }}/feed/feed.xml" rel="self"/>
+	<link href="{{ metadata.fullUrl }}"/>
 	<updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>https://andrewford.co.nz</id>
+	<id>{{ metadata.fullUrl }}</id>
 	<author>
-		<name>Andrew Ford</name>
-		<email>me@andrewford.co.nz</email>
+		<name>{{ metadata.author.name }}</name>
+		<email>{{ metadata.author.email }}</email>
+		<link>{{ metadata.author.url }}</link>
 	</author>
 	{%- for article in collections.articles | reverse %}
-	{% set absoluteArticleUrl %}{{ article.url | htmlBaseUrl(url) }}{% endset %}
-	<entry>
-		<title>{{ article.data.title }}</title>
-		<link href="{{ absoluteArticleUrl }}"/>
-		<updated>{{ article.date | dateToRfc3339 }}</updated>
-		<id>{{ absoluteArticleUrl }}</id>
-		<content type="html">{{ article.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) }}</content>
-	</entry>
+		{% set absoluteArticleUrl %}{{ article.url }}{% endset %}
+		<entry>
+			<title>{{ article.data.title }}</title>
+			<link href="{{ absoluteArticleUrl }}"/>
+			<updated>{{ article.date | dateToRfc3339 }}</updated>
+			<id>{{ absoluteArticleUrl }}</id>
+			<content type="html">{{ article.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) }}</content>
+		</entry>
 	{%- endfor %}
 </feed>

@@ -15,15 +15,16 @@ permalink: /feed/feed.json
 	},
 	"items": [
 		{%- for article in collections.articles | reverse %}
-		{%- set absoluteArticleUrl = article.url | htmlBaseUrl(metadata.url) %}
+	{%- set absoluteArticleUrl = article.url | htmlBaseUrl(metadata.fullUrl) %}
 		{
 			"id": "{{ absoluteArticleUrl }}",
 			"url": "{{ absoluteArticleUrl }}",
 			"title": "{{ article.data.title }}",
-			"content_html": {% if article.templateContent %}{{ article.templateContent | transformWithHtmlBase(absoluteArticleUrl, article.url) | dump | safe }}{% else %}""{% endif %},
+			"content_html": {% if article.templateContent %}{{ article.templateContent | transformWithHtmlBase(absoluteArticleUrl, article.url) | dump | safe }}
+	{% else %}""{% endif %},
 			"date_published": "{{ article.date | dateToRfc3339 }}"
 		}
 		{% if not loop.last %},{% endif %}
-		{%- endfor %}
-	]	
+{%- endfor %}
+]	
 }

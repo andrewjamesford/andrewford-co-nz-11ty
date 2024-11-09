@@ -1,8 +1,9 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
+require("dotenv").config();
 
 module.exports = async () => {
   try {
-    const baseUrl = process.env.API_URL || "http://localhost:8888";
+    const baseUrl = process.env.API_URL;
     const url = `${baseUrl}/.netlify/functions/latestUploads`;
     const json = await EleventyFetch(url, {
       duration: "1h", // save for 1 hour

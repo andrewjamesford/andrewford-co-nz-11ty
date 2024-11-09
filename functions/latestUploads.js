@@ -1,6 +1,8 @@
 import fetch from "node-fetch";
+import dotenv from "dotenv";
 
 exports.handler = async function (event, context) {
+  dotenv.config();
   try {
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;

@@ -7,15 +7,15 @@ layout: layouts/base.njk
 {{ content | safe }}
 
 <ul class="article-list">
-{%- for article in collections.articles | reverse %}
-{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  {%- if article.data.draft == false -%}
-  <li class="article-list-item">
-    <h4 class="article-title">
-      <a href={{ absolutePostUrl }}>{{ article.data.title }}</a>
-    </h4>
-    <p class="article-description">{{ article.data.description }}</p>
-  </li>
-  {%- endif -%}
-{%- endfor %}
+	{%- for article in collections.articles | reverse %}
+		{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
+		{%- if article.data.draft == false -%}
+			<li class="article-list-item">
+				<h4 class="article-title">
+					<a href={{ absolutePostUrl }}>{{ article.data.title }}</a>
+				</h4>
+				<p class="article-description">{{ article.data.description }}</p>
+			</li>
+		{%- endif -%}
+	{%- endfor %}
 </ul>
