@@ -1,20 +1,20 @@
 ---
 title: Build a Full-Stack web app with Next.js - Part 7 - Radix Components
-date: '2023-12-24T01:25:43Z'
+date: "2023-12-24T01:25:43Z"
 template: post
 draft: false
-slug: 'build-a-full-stack-next-js-radix-components'
+slug: "build-a-full-stack-next-js-radix-components"
 category: article
 tags:
-- reactjs
-- nextjs
-- component
-- javascript
-- radix
-- radix-ui
-description: 'In this article, we will continue building a full-stack web app with Next.js. We will be using Radix UI components to build our components in isolation using Storybook.' 
+  - reactjs
+  - nextjs
+  - component
+  - javascript
+  - radix
+  - radix-ui
+description: "In this article, we will continue building a full-stack web app with Next.js. We will be using Radix UI components to build our components in isolation using Storybook."
 ogimage: "lego-r.jpg"
---- 
+---
 
 {% figure "./lego-r.jpg", "&quot;Working with Radix components&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
@@ -1686,4 +1686,4 @@ And hopefully you enjoyed it.
 
 Catch you all later.
 
-*Please note this transcript was edited for clarity.*
+_Please note this transcript was edited for clarity._

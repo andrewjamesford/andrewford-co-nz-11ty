@@ -1,20 +1,20 @@
 ---
 title: Build a Full-Stack web app with Next.js - Part 6 - Storybook
-date: '2023-10-30T14:01:33Z'
+date: "2023-10-30T14:01:33Z"
 template: post
 draft: false
-slug: 'build-a-full-stack-next-js-storybook'
+slug: "build-a-full-stack-next-js-storybook"
 category: article
 tags:
-- storybook
-- reactjs
-- nextjs
-- component
-- javascript
-- isolation
-description: 'In this installment we create a Storybook for our project and start building out our Header component. I walk through some of the features of Storybook and how it can help you build your React components in isolation.' 
+  - storybook
+  - reactjs
+  - nextjs
+  - component
+  - javascript
+  - isolation
+description: "In this installment we create a Storybook for our project and start building out our Header component. I walk through some of the features of Storybook and how it can help you build your React components in isolation."
 ogimage: "full-stack-6.jpeg"
---- 
+---
 
 {% figure "./full-stack-6.jpeg", "&quot;Building a storybook&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
 
@@ -2034,4 +2034,4 @@ Have a great day and I will catch you all later.
 
 Bye.
 
-*Please note this transcript was edited for clarity.*
+_Please note this transcript was edited for clarity._

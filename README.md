@@ -35,7 +35,7 @@ npm install netlify-cli -g
 Once you've installed the dependencies, you can run the development server:
 
 ```sh
-npm run dev 
+npm run dev
 ```
 
 or
