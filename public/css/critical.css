@@ -1,96 +1,96 @@
 :root {
-	--link-color: #366a92;
-	--body-color: #333;
-	--body-color-secondary: #646464;
-	--bg-color: #fff;
-	--box-bg-color: #f1f9ff;
-	--box-bg-color2: #e1e4e6;
-	--box-border-color: #33333308;
-	--code-bg-color: #282a36;
-	--font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-		monospace;
-	--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-		Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-		Segoe UI Emoji, Segoe UI Symbol;
-	--code-color: #fff;
-	--promo-border: #33333308;
-	--promo-color: #000;
-	--promo-cta-color: #fff;
-	--header-bg-color: rgba(255, 255, 255, 0.8);
-	--header-shadow: #eaeaea;
+  --link-color: #366a92;
+  --body-color: #333;
+  --body-color-secondary: #646464;
+  --bg-color: #fff;
+  --box-bg-color: #f1f9ff;
+  --box-bg-color2: #e1e4e6;
+  --box-border-color: #33333308;
+  --code-bg-color: #282a36;
+  --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
+  --code-color: #fff;
+  --promo-border: #33333308;
+  --promo-color: #000;
+  --promo-cta-color: #fff;
+  --header-bg-color: rgba(255, 255, 255, 0.8);
+  --header-shadow: #eaeaea;
 }
 @media (prefers-color-scheme: dark) {
-	:root {
-		--link-color: #79a9cd;
-		--body-color: #eee;
-		--body-color-secondary: #e6e6e6;
-		--bg-color: #121212;
-		--header-bg-color: rgba(18, 18, 18, 0);
-		--header-shadow: #242424;
-	}
+  :root {
+    --link-color: #79a9cd;
+    --body-color: #eee;
+    --body-color-secondary: #e6e6e6;
+    --bg-color: #121212;
+    --header-bg-color: rgba(18, 18, 18, 0);
+    --header-shadow: #242424;
+  }
 }
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 .body {
-	color: var(--body-color);
-	font-size: 1.13rem;
-	font: -apple-system-body;
-	font-family: var(--font-sans);
-	line-height: 1.6rem;
-	background-color: var(--bg-color);
+  color: var(--body-color);
+  font-size: 1.13rem;
+  font: -apple-system-body;
+  font-family: var(--font-sans);
+  line-height: 1.6rem;
+  background-color: var(--bg-color);
 }
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 .header {
-	display: grid;
-	grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .header,
 .footer {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .wrapper {
-	max-width: 100ch;
-	margin: 0 auto;
-	padding: 0 1rem;
+  max-width: 100ch;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 .header-titles {
-	text-align: center;
+  text-align: center;
 }
 main.wrapper {
-	min-height: 60vh;
+  min-height: 60vh;
 }
 a,
 a:visited {
-	color: var(--link-color);
-	padding: 0.0625rem;
+  color: var(--link-color);
+  padding: 0.0625rem;
 }
 a:hover,
 a:active {
-	background-color: var(--link-color);
-	color: #fff;
-	text-decoration: none;
-	border-radius: 0.1rem;
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.1rem;
 }
 a.no-hover:hover,
 a.no-hover:active {
-	background-color: transparent;
+  background-color: transparent;
 }
 hr {
-	border: 0;
-	border-top: 1px solid var(--body-color-secondary);
-	margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--body-color-secondary);
+  margin: 2rem 0;
 }
 h1,
 h2,
@@ -98,170 +98,170 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 0;
-	letter-spacing: -1px;
-	text-wrap: balance;
+  margin-top: 0;
+  letter-spacing: -1px;
+  text-wrap: balance;
 }
 .article :is(h2, h3, h4, h5, h6) {
-	margin-top: 3rem;
+  margin-top: 3rem;
 }
 h4:is(.footnotes-title) {
-	margin-top: 0;
+  margin-top: 0;
 }
 h1 {
-	font-size: 1.9rem;
-	line-height: 2.3rem;
-	min-height: 2.3rem;
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+  min-height: 2.3rem;
 }
 
 h2 {
-	font-size: 1.5rem;
-	line-height: 1.8rem;
-	min-height: 2.3rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  min-height: 2.3rem;
 }
 
 .article-datetime {
-	font-size: 1.5rem;
-	color: var(--body-color-secondary);
+  font-size: 1.5rem;
+  color: var(--body-color-secondary);
 }
 .article-list {
-	padding-left: 0;
+  padding-left: 0;
 }
 .article-list-item {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 .article-list-item picture {
-	text-align: center;
+  text-align: center;
 }
 .article-heading {
-	text-align: center;
+  text-align: center;
 }
 .article-title {
-	margin-top: 0;
-	width: 100%;
-	margin-bottom: 0;
-	text-wrap: balance;
+  margin-top: 0;
+  width: 100%;
+  margin-bottom: 0;
+  text-wrap: balance;
 }
 .article-description {
-	margin-top: 0;
+  margin-top: 0;
 }
 .logo {
-	width: 2rem;
-	height: 2rem;
-	border: 1px solid #fff;
-	border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
 }
 .avatar {
-	display: flex;
-	margin: 0 auto;
-	text-decoration: none;
-	text-align: center;
+  display: flex;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
 }
 .avatar:hover {
-	background-color: transparent;
+  background-color: transparent;
 }
 .avatar-wrapper {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .site-title {
-	font-size: 1.5rem;
-	margin-bottom: 0;
-	font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-family: var(--font-serif);
 }
 .site-description {
-	font-size: 0.9rem;
-	color: var(--body-color-secondary);
-	margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--body-color-secondary);
+  margin-bottom: 0;
 }
 .nav {
-	text-align: end;
+  text-align: end;
 }
 .nav-links {
-	padding-left: 0;
-	margin: 0;
-	font-size: 0.8rem;
-	display: grid;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  display: grid;
 }
 .nav-links-footer {
-	text-align: center;
-	color: var(--body-color-secondary);
-	grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  color: var(--body-color-secondary);
+  grid-template-columns: repeat(3, 1fr);
 }
 .nav-links li {
-	list-style: none;
-	padding: 0.2rem 0.4rem;
-	text-align: center;
+  list-style: none;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
 }
 .nav-links-header li {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 .nav-links-header {
-	grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 .nav-links a {
-	color: var(--body-color);
-	text-shadow: var(--bg-color) 0 0 5px;
+  color: var(--body-color);
+  text-shadow: var(--bg-color) 0 0 5px;
 }
 .nav-links a:hover {
-	background-color: transparent;
+  background-color: transparent;
 }
 .hide {
-	color: transparent;
+  color: transparent;
 }
 article ul {
-	padding-left: 2rem;
+  padding-left: 2rem;
 }
 .lastfm-widget {
-	padding-top: 1.5rem;
-	font-size: 0.9rem;
-	line-height: 1.2;
-	display: grid;
-	grid-template-columns: min-content auto;
-	gap: 0.5rem;
-	margin: 0.75rem auto;
-	max-width: 70%;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0.5rem;
+  margin: 0.75rem auto;
+  max-width: 70%;
 }
 .lastfm-img {
-	border-radius: 0.25rem;
-	max-width: 64px;
-	max-height: 64px;
+  border-radius: 0.25rem;
+  max-width: 64px;
+  max-height: 64px;
 }
 .lastfm-title {
-	font-size: 0.7rem;
-	margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
 }
 a.lastfm-icon {
-	color: var(--body-color);
+  color: var(--body-color);
 }
 a.lastfm-icon svg {
-	fill: var(--body-color);
+  fill: var(--body-color);
 }
 a.lastfm-icon:hover {
-	color: var(--link-color);
-	background-color: transparent;
+  color: var(--link-color);
+  background-color: transparent;
 }
 a.lastfm-icon:hover svg {
-	fill: var(--link-color);
+  fill: var(--link-color);
 }
 .center {
-	text-align: center;
+  text-align: center;
 }
 .body {
-	margin: 0;
+  margin: 0;
 }
 .secondary {
-	color: var(--body-color-secondary);
+  color: var(--body-color-secondary);
 }
 .skip-link {
-	left: 5rem;
-	position: absolute;
-	transform: translateY(-100%);
-	top: -50%;
+  left: 5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  top: -50%;
 }
 .skip-link:focus {
-	transform: translateY(0);
-	top: 0.7rem;
-	z-index: 99;
+  transform: translateY(0);
+  top: 0.7rem;
+  z-index: 99;
 }

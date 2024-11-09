@@ -52,4 +52,4 @@ This blog is deployed to Netlify using their continuous deployment feature. When
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [GPL3 License](https://github.com/andrewjamesford/andrewford-co-nz-11ty/main/LICENSE).

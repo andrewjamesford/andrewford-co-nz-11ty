@@ -3,9 +3,9 @@
 permalink: /feed/feed.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://andrewford.co.nz">
-	<title>Andrew Ford</title>
-	<subtitle>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code. He is also a full-stack web developer, technical analyst and an educator.</subtitle>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ url }}">
+	<title>Andrew Ford's Atom Feed</title>
+	<subtitle>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code. He is also a full-stack web developer, mentor and an advanced developer educator.</subtitle>
 	<link href="https://andrewford.co.nz/feed/feed.xml" rel="self"/>
 	<link href="https://andrewford.co.nz"/>
 	<updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
@@ -15,7 +15,7 @@ permalink: /feed/feed.xml
 		<email>me@andrewford.co.nz</email>
 	</author>
 	{%- for article in collections.articles | reverse %}
-	{% set absoluteArticleUrl %}{{ article.url | htmlBaseUrl(metadata.url) }}{% endset %}
+	{% set absoluteArticleUrl %}{{ article.url | htmlBaseUrl(url) }}{% endset %}
 	<entry>
 		<title>{{ article.data.title }}</title>
 		<link href="{{ absoluteArticleUrl }}"/>

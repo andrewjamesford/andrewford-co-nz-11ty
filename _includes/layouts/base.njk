@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		{# CSP #}
 		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' www.googletagmanager.com www.youtube.com cdn.jsdelivr.net;">
-		<meta name="view-transition" content="same-origin" />
+		<meta name="view-transition" content="same-origin"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }} - Andrew Ford </title>
 		<meta name="description" content="{{ description or metadata.description }}">
-		<meta name="fediverse:creator" content="@andrewford@mastodon.nz" />
+		<meta name="fediverse:creator" content="@andrewford@mastodon.nz"/>
 
 		{# Icons #}
 		<meta name="msapplication-TileColor" content="#eee">
@@ -26,7 +26,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ metadata.url }}/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="{{ metadata.url }}/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.url }}/favicon-16x16.png">
-		
+
 		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
@@ -85,11 +85,7 @@
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
 
-		
-
 	</head>
-
-	
 
 	<body class="body">
 		<a href="#skip" class="skip-link">Skip to main content</a>
@@ -114,12 +110,12 @@
 							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
 						</li>
 					{%- endfor %}
-						<li>
-							<a href="https://andrewford.gumroad.com/">Shop</a>
-						</li>
-						<li>
-							<a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a>
-						</li>
+					<li>
+						<a href="https://andrewford.gumroad.com/">Shop</a>
+					</li>
+					<li>
+						<a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -150,6 +146,9 @@
 					<a rel="me authn" href="https://github.com/andrewjamesford">GitHub</a>
 				</li>
 				<li>
+					<a rel="me authn" href="https://www.instagram.com/codewithandrewford/">Instagram</a>
+				</li>
+				<li>
 					<a href="https://www.linkedin.com/in/andrewjamesford/">LinkedIn</a>
 				</li>
 				<li>
@@ -162,7 +161,13 @@
 					<a href="{{ metadata.url }}/feed/feed.xml">RSS</a>
 				</li>
 				<li>
+					<a href="{{ metadata.url }}/uses/">Uses</a>
+				</li>
+				<li>
 					<a href="https://andrewford.gumroad.com/">Shop</a>
+				</li>
+				<li>
+					<a href="https://www.threads.net/@codewithandrewford">Threads</a>
 				</li>
 				<li>
 					<a rel="me" href="https://www.youtube.com/@CodewithAndrewFord">YouTube</a>
@@ -200,7 +205,9 @@
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 
 		{# Render the JS bundle #}
-		<script>{% getBundle "js" %}</script>
+		<script>
+			{% getBundle "js" %}
+		</script>
 
 		{# Google tag (gtag.js) #}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>

@@ -80,10 +80,10 @@ npm install --save-dev --save-exact prettier
 
 ```json
 {
- "tabWidth": 2,
- "semi": true,
- "singleQuote": false,
- "arrowParens": "avoid"
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "arrowParens": "avoid"
 }
 ```
 
@@ -151,24 +151,24 @@ corresponding modules for that.
 //export default preview
 
 export const decorators = [
- withThemeFromJSXProvider({
-  themes: {
-   default: theme,
-  },
-  defaultTheme: "default",
-  Provider: ThemeProvider,
-  GlobalStyles: CssBaseline,
- }),
+  withThemeFromJSXProvider({
+    themes: {
+      default: theme,
+    },
+    defaultTheme: "default",
+    Provider: ThemeProvider,
+    GlobalStyles: CssBaseline,
+  }),
 ];
 
 export const parameters = {
- controls: {
-  expanded: true,
-  matchers: {
-   color: /(background|color)$/i,
-   date: /Date$/,
+  controls: {
+    expanded: true,
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
   },
- },
 };
 ```
 
@@ -192,17 +192,17 @@ import { createTheme } from "@mui/material/styles";
 import { blue, purple, red } from "@mui/material/colors";
 
 const theme = createTheme({
- palette: {
-  primary: {
-   main: purple.A700,
+  palette: {
+    primary: {
+      main: purple.A700,
+    },
+    secondary: {
+      main: blue.A200,
+    },
+    error: {
+      main: red.A400,
+    },
   },
-  secondary: {
-   main: blue.A200,
-  },
-  error: {
-   main: red.A400,
-  },
- },
 });
 
 export default theme;
@@ -399,13 +399,13 @@ We're going to make a function now to help create data and our story
 import { Data } from "./DataTable";
 
 export function createData(
- id: number,
- movieName: string,
- director: string,
- year: number,
- rating: number
+  id: number,
+  movieName: string,
+  director: string,
+  year: number,
+  rating: number
 ): Data {
- return { id, movieName, director, year, rating };
+  return { id, movieName, director, year, rating };
 }
 ```
 

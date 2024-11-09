@@ -38,13 +38,13 @@ src="//static.ak.fbcdn.net/connect.php/js/FB.Share"&gt;&lt;/script&gt;
 
 ```html
 <a
- name="fb_share"
- type="button"
- href="http://www.facebook.com/sharer.php"
- target="_blank"
- class="socialLinkFacebook"
- title="Facebook"
- >Facebook</a
+  name="fb_share"
+  type="button"
+  href="http://www.facebook.com/sharer.php"
+  target="_blank"
+  class="socialLinkFacebook"
+  title="Facebook"
+  >Facebook</a
 >
 ```
 
@@ -54,11 +54,11 @@ For Twitter follow these steps.
 
 ```html
 <a
- href="https://twitter.com/share?url=mydomain.com"
- class="socialLinkTwitter"
- title="Twitter"
- target="_blank"
- >Twitter</a
+  href="https://twitter.com/share?url=mydomain.com"
+  class="socialLinkTwitter"
+  title="Twitter"
+  target="_blank"
+  >Twitter</a
 >
 ```
 
