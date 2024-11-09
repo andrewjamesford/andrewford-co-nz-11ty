@@ -4,14 +4,14 @@ permalink: /feed/feed.json
 ---
 {
 	"version": "https://jsonfeed.org/version/1.1",
-	"title": "{{ metadata.title }}",
-	"language": "{{ metadata.language }}",
-	"home_page_url": "{{ metadata.url | addPathPrefixToFullUrl }}",
-	"feed_url": "{{ permalink | htmlBaseUrl(metadata.url) }}",
-	"description": "{{ metadata.description }}",
+	"title": "Andrew Ford",
+	"language": "en-NZ",
+	"home_page_url": "https://andrewford.co.nz",
+	"feed_url": "https://andrewford.co.nz/feed/feed.json",
+	"description": "Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code. He is also a full-stack web developer, technical analyst and an educator.",
 	"author": {
-		"name": "{{ metadata.author.name }}",
-		"url": "{{ metadata.author.url }}"
+		"name": "Andrew Ford",
+		"url": "me@andrewford.co.nz"
 	},
 	"items": [
 		{%- for article in collections.articles | reverse %}
