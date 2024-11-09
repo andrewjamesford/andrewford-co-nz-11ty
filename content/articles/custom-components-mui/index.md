@@ -378,7 +378,7 @@ striping if it has been set to true.
 We now need to make a data table stories file `DataTable.stories.tsx`.
 
 [GitHub Source - DataTable.stories.tsx](https://github.com/andrewjamesford/mui-customisation/blob/main/src/stories/DataTable.stories.tsx)
-	
+
 And like previously we need to import the component and we also need to create a
 utilities file.
 
