@@ -38,8 +38,8 @@ Now you have your domain setup against your public site, it's time to make it se
 
 Another helpful thing to do is setup the [AWS-CLI](https://aws.amazon.com/cli/). With the AWS-CLI you can **sync** your project with your S3 bucket next time you need to release an update like this for example:
 
-```
-$ aws s3 sync myfolder s3://mybucket/myfolder
+```sh
+aws s3 sync myfolder s3://mybucket/myfolder
 ```
 
 I usually use this in conjunction with [Git Hooks](https://git-scm.com/docs/githooks) or [Husky](https://github.com/typicode/husky), so when I push my Git changes a new deployment is made.

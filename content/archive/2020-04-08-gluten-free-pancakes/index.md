@@ -18,11 +18,11 @@ If you've tried to do shopping lately it's been hard to get flour, it's like the
 
 ## Chickpea Flour Pancakes
 
-### Cook time:
+### Cook time
 
 5-10 minutes (depends on how big the pancakes are)
 
-### Prep time:
+### Prep time
 
 5 minutes
 

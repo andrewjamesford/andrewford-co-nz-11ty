@@ -7,7 +7,7 @@ socialImage: ""
 description: "Privacy Policy for Andrew Ford"
 ---
 
-## TLDR;
+## TLDR
 
 Some _tracking_, all opinions on this website are my own and use this site at _your own risk_.
 

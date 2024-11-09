@@ -14,7 +14,8 @@
 		"clear": "rm -rf _site && rm -rf .cache",
 		"perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
 		"prettier": "prettier --write \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore",
-		"prettier:check": "prettier --check \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore"
+		"prettier:check": "prettier --check \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore",
+		"markdownlint": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" --config .markdownlint.json"
 	},
 	"repository": {
 		"type": "git",
@@ -46,6 +47,7 @@
 		"luxon": "^3.5",
 		"markdown-it-anchor": "^9.2",
 		"markdown-it-footnote": "^4",
+		"markdownlint-cli2": "^0.14.0",
 		"node-fetch": "^3.3",
 		"prettier": "2.5.0"
 	},

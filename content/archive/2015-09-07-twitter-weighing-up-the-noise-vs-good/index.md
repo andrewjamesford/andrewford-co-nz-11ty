@@ -18,8 +18,8 @@ A lot of people who know what their talking about think Twitter is broken. Like 
 
 Maybe it's the lack of a community feel that hasn't made it as successful (compared to Facebook) as <a href="http://dcurt.is/twitter" target="_blank">Dustin</a> points out.
 
-<blockquote> 
-First, for normal users, Twitter feels too much like a one-way broadcast system. It needs to feel more like a community, with meaningful two-way interaction. 
+<blockquote>
+First, for normal users, Twitter feels too much like a one-way broadcast system. It needs to feel more like a community, with meaningful two-way interaction.
 </blockquote>
 
 For the time being anyway I'll be an occasional user and enjoy my <a href="http://nuzzel.com/andrewjamesford" target="_blank">filtered feed</a>.

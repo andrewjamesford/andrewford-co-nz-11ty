@@ -13,7 +13,7 @@ import pluginImages from "./eleventy.config.images.js";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
 export default async (eleventyConfig) => {
-	const { EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin } =
+	const { EleventyHtmlBasePlugin } =
 		await import("@11ty/eleventy");
 
 	// Create our custom markdown-it instance.

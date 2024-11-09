@@ -23,7 +23,7 @@ To achieve the theming of Tailwind I used a plugin called [tailwind-theme-varian
 
 ```jsx
 <div className="alpha:bg-alpha-color1 beta:bg-beta-color1 gamma:bg-gamma-color1 text-sm">
-	My component
+ My component
 </div>
 ```
 
@@ -67,15 +67,15 @@ We can then add our custom theme colors for our individual themes in this case _
 theme: {
     extend: {
         colors: {
-			alpha: {
-				colour1: 'azure',
-			},
-			beta: {
-				colour1: 'green',
-			},
+   alpha: {
+    colour1: 'azure',
+   },
+   beta: {
+    colour1: 'green',
+   },
             gamma: {
-				colour1: 'ghostwhite',
-			},
+    colour1: 'ghostwhite',
+   },
         }
     },
   },
@@ -119,7 +119,7 @@ These themes are configured by the root html element having the theme CSS name. 
 
 ```html
 <html class="alpha">
-	...
+ ...
 </html>
 ```
 
@@ -127,7 +127,7 @@ If you inspect the class with an _alpha_ selector it will look like this in your
 
 ```css
 :root.alpha .alpha\:bg-alpha-colour1 {
-	...;
+ ...;
 }
 ```
 

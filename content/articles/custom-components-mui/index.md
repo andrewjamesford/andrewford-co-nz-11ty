@@ -80,10 +80,10 @@ npm install --save-dev --save-exact prettier
 
 ```json
 {
-	"tabWidth": 2,
-	"semi": true,
-	"singleQuote": false,
-	"arrowParens": "avoid"
+ "tabWidth": 2,
+ "semi": true,
+ "singleQuote": false,
+ "arrowParens": "avoid"
 }
 ```
 
@@ -151,24 +151,24 @@ corresponding modules for that.
 //export default preview
 
 export const decorators = [
-	withThemeFromJSXProvider({
-		themes: {
-			default: theme,
-		},
-		defaultTheme: "default",
-		Provider: ThemeProvider,
-		GlobalStyles: CssBaseline,
-	}),
+ withThemeFromJSXProvider({
+  themes: {
+   default: theme,
+  },
+  defaultTheme: "default",
+  Provider: ThemeProvider,
+  GlobalStyles: CssBaseline,
+ }),
 ];
 
 export const parameters = {
-	controls: {
-		expanded: true,
-		matchers: {
-			color: /(background|color)$/i,
-			date: /Date$/,
-		},
-	},
+ controls: {
+  expanded: true,
+  matchers: {
+   color: /(background|color)$/i,
+   date: /Date$/,
+  },
+ },
 };
 ```
 
@@ -192,17 +192,17 @@ import { createTheme } from "@mui/material/styles";
 import { blue, purple, red } from "@mui/material/colors";
 
 const theme = createTheme({
-	palette: {
-		primary: {
-			main: purple.A700,
-		},
-		secondary: {
-			main: blue.A200,
-		},
-		error: {
-			main: red.A400,
-		},
-	},
+ palette: {
+  primary: {
+   main: purple.A700,
+  },
+  secondary: {
+   main: blue.A200,
+  },
+  error: {
+   main: red.A400,
+  },
+ },
 });
 
 export default theme;
@@ -247,25 +247,25 @@ the button.
 import "./button.css";
 
 import {
-	Button as MuiButton,
-	ButtonProps as MuiButtonProps,
+ Button as MuiButton,
+ ButtonProps as MuiButtonProps,
 } from "@mui/material";
 
 type ButtonBaseProps = Omit<MuiButtonProps, "disableRipple">;
 
 export interface ButtonProps extends ButtonBaseProps {
-	label: string;
+ label: string;
 }
 
 export const Button = ({ label, ...rest }: ButtonProps) => {
-	return <MuiButton {...rest}>{label}</MuiButton>;
+ return <MuiButton {...rest}>{label}</MuiButton>;
 };
 
 // Set default properties
 Button.defaultProps = {
-	color: "inherit",
-	size: "medium",
-	variant: "outlined",
+ color: "inherit",
+ size: "medium",
+ variant: "outlined",
 };
 ```
 
@@ -313,29 +313,29 @@ Now we're going to call this one drop down.
 
 ```tsx
 import {
-	Select as MuiSelect,
-	SelectProps as MuiSelectProps,
+ Select as MuiSelect,
+ SelectProps as MuiSelectProps,
 } from "@mui/material";
 
 type SelectBaseProps = Omit<MuiSelectProps, "">;
 
 export interface SelectProps extends SelectBaseProps {
-	label: string;
-	children: React.ReactNode; // Add the 'children' prop,
+ label: string;
+ children: React.ReactNode; // Add the 'children' prop,
 }
 
 export const Dropdown = ({ label, children, ...rest }: SelectProps) => {
-	// Pass 'children' to the MuiSelect component
-	return (
-		<MuiSelect
-			label={label}
-			{...rest}
-			sx={{ minWidth: 150 }}
-			style={{ background: "orange" }}
-		>
-			{children}
-		</MuiSelect>
-	);
+ // Pass 'children' to the MuiSelect component
+ return (
+  <MuiSelect
+   label={label}
+   {...rest}
+   sx={{ minWidth: 150 }}
+   style={{ background: "orange" }}
+  >
+   {children}
+  </MuiSelect>
+ );
 };
 
 // Set default properties
@@ -443,76 +443,76 @@ import TableRow from "@mui/material/TableRow";
 import { grey } from "@mui/material/colors";
 
 export interface Data {
-	id: number;
-	movieName: string;
-	director: string;
-	year: number;
-	rating: number;
+ id: number;
+ movieName: string;
+ director: string;
+ year: number;
+ rating: number;
 }
 
 export interface HeadCell {
-	id: keyof Data;
-	label: string;
-	numeric: boolean;
+ id: keyof Data;
+ label: string;
+ numeric: boolean;
 }
 
 interface TableHeaderProps {
-	headCells: readonly HeadCell[];
+ headCells: readonly HeadCell[];
 }
 
 interface TableProps {
-	rows: Data[];
-	header: HeadCell[];
-	zebraStriped?: boolean;
+ rows: Data[];
+ header: HeadCell[];
+ zebraStriped?: boolean;
 }
 
 const TableHeader = (props: TableHeaderProps) => {
-	const { headCells } = props;
-	return (
-		<TableHead>
-			<TableRow>
-				<TableCell></TableCell>
-				{headCells.map((headCell) => (
-					<TableCell key={headCell.id}>{headCell.label}</TableCell>
-				))}
-			</TableRow>
-		</TableHead>
-	);
+ const { headCells } = props;
+ return (
+  <TableHead>
+   <TableRow>
+    <TableCell></TableCell>
+    {headCells.map((headCell) => (
+     <TableCell key={headCell.id}>{headCell.label}</TableCell>
+    ))}
+   </TableRow>
+  </TableHead>
+ );
 };
 
 export const DataTable = (props: TableProps) => {
-	const { rows, header, zebraStriped = false } = props;
+ const { rows, header, zebraStriped = false } = props;
 
-	// Add zebra striped rows if true
-	let sx = {};
-	if (zebraStriped) {
-		sx = {
-			"&:nth-of-type(odd)": {
-				backgroundColor: grey[100],
-			},
-		};
-	}
+ // Add zebra striped rows if true
+ let sx = {};
+ if (zebraStriped) {
+  sx = {
+   "&:nth-of-type(odd)": {
+    backgroundColor: grey[100],
+   },
+  };
+ }
 
-	return (
-		<TableContainer>
-			<Table
-				aria-labelledby="tableTitle"
-				size={"medium"}
-				sx={{ minWidth: [300, 750] }}
-			>
-				<TableHeader headCells={header} />
-				<TableBody>
-					{rows.map((row) => (
-						<TableRow key={row.id} sx={sx}>
-							{Object.keys(row).map((key) => (
-								<TableCell key={key}>{row[key as keyof Data]}</TableCell>
-							))}
-						</TableRow>
-					))}
-				</TableBody>
-			</Table>
-		</TableContainer>
-	);
+ return (
+  <TableContainer>
+   <Table
+    aria-labelledby="tableTitle"
+    size={"medium"}
+    sx={{ minWidth: [300, 750] }}
+   >
+    <TableHeader headCells={header} />
+    <TableBody>
+     {rows.map((row) => (
+      <TableRow key={row.id} sx={sx}>
+       {Object.keys(row).map((key) => (
+        <TableCell key={key}>{row[key as keyof Data]}</TableCell>
+       ))}
+      </TableRow>
+     ))}
+    </TableBody>
+   </Table>
+  </TableContainer>
+ );
 };
 ```
 
@@ -686,13 +686,13 @@ We're going to make a function now to help create data and our story
 import { Data } from "./DataTable";
 
 export function createData(
-	id: number,
-	movieName: string,
-	director: string,
-	year: number,
-	rating: number
+ id: number,
+ movieName: string,
+ director: string,
+ year: number,
+ rating: number
 ): Data {
-	return { id, movieName, director, year, rating };
+ return { id, movieName, director, year, rating };
 }
 ```
 

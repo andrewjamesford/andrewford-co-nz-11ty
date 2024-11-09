@@ -70,10 +70,10 @@ If each graduate can help make environmentally sustainable efforts for software 
 
 In conclusion, as a remote school heavily relying on technology, it's important to continue innovating in education to enhance the student's learning experience. We need to educate students in tools like ChatGPT and GitHub Copilot to assist and support them when practising to become software developers. Allowing collaboration and learning to be more accessible to staff and learners by easily sharing their current issue(s) without frustration and hassle using Codespaces. We need them to go into the industry with a good grasp of environmental sustainability concerning software development to help with impending climate change. Incorporating these tools and knowledge into our teaching practices will ensure Developers Institute is at the forefront of digital and collaborative learning.
 
-[^1]: Mohammad Fraiwan, Natheer Khasawneh (2023). A Review of ChatGPT Applications in Education, Marketing, Software Engineering, and Healthcare: Benefits, Drawbacks, and Research Directions. https://arxiv.org/abs/2305.00237
-[^2]: Agarwal, A., Wong-Fannjiang, C., Sussillo, D., Lee, K., & Firat, O. (2018). Hallucinations in Neural Machine Translation. https://openreview.net/pdf?id=SkxJ-309FQ
-[^3]: Sida Peng, Eirini Kalliamvakou, Peter Cihon, Mert Demirer. (2023). The Impact of AI on Developer Productivity: Evidence from GitHub Copilot. https://arxiv.org/abs/2302.06590
-[^4]: Wermelinger, Michel. (2023). Using GitHub Copilot to Solve Simple Programming Problems. https://doi.org/10.1145/3545945.3569830
-[^5]: David J. Malan. (2022). Standardizing Students’ Programming Environments with Docker Containers. https://cs.harvard.edu/malan/publications/iticse22.pdf
-[^6]: NZX (2023, May 25). CEN signs 10-year renewable energy agreement with Microsoft NZX. https://www.nzx.com/announcements/412004
-[^7]: Abhishek D S, Anusha V, Bheemappa, Chaitra B R, Mallesha Holeyache, Vijaykumar, Dr. Sheela S V. (2021). Green Software. https://www.ijres.org/papers/Volume-9/Issue-8/Series-8/C09081219.pdf
+[^1]: Mohammad Fraiwan, Natheer Khasawneh (2023). A Review of ChatGPT Applications in Education, Marketing, Software Engineering, and Healthcare: Benefits, Drawbacks, and Research Directions. <https://arxiv.org/abs/2305.00237>
+[^2]: Agarwal, A., Wong-Fannjiang, C., Sussillo, D., Lee, K., & Firat, O. (2018). Hallucinations in Neural Machine Translation. <https://openreview.net/pdf?id=SkxJ-309FQ>
+[^3]: Sida Peng, Eirini Kalliamvakou, Peter Cihon, Mert Demirer. (2023). The Impact of AI on Developer Productivity: Evidence from GitHub Copilot. <https://arxiv.org/abs/2302.06590>
+[^4]: Wermelinger, Michel. (2023). Using GitHub Copilot to Solve Simple Programming Problems. <https://doi.org/10.1145/3545945.3569830>
+[^5]: David J. Malan. (2022). Standardizing Students’ Programming Environments with Docker Containers. <https://cs.harvard.edu/malan/publications/iticse22.pdf>
+[^6]: NZX (2023, May 25). CEN signs 10-year renewable energy agreement with Microsoft NZX. <https://www.nzx.com/announcements/412004>
+[^7]: Abhishek D S, Anusha V, Bheemappa, Chaitra B R, Mallesha Holeyache, Vijaykumar, Dr. Sheela S V. (2021). Green Software. <https://www.ijres.org/papers/Volume-9/Issue-8/Series-8/C09081219.pdf>
