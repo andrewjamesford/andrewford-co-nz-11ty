@@ -38,7 +38,7 @@ youtube.com/embed/fD1nNVAyY7E
 
 The shortcut takes input from the Share Sheet "Text", "Rich Text", "Safari web pages" and "Articles". It then gets your prompt from the input box that pops up. It then appends say the URL of a website to your prompt. For example I was on an article on [Stuff](https://i.stuff.co.nz/national/education/300847887/chatgpt-how-teachers-are-bringing-ai-tech-into-the-classroom) and this is what is passed to ChatGPT:
 
-```
+```text
 "Summarise this article" +
 https://i.stuff.co.nz/...
 ```

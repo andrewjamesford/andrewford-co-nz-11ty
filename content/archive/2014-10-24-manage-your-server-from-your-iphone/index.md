@@ -47,14 +47,14 @@ Will restart apache2 web server.
 
 Will restart the FTP service.
 
-```
+```sh
 cd /var/log/apache2/
 cat error.log
 ```
 
 Will open your error log.
 
-```
+```sh
 cd /var/mail
 cat username
 ```

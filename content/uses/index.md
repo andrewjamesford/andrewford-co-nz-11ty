@@ -10,11 +10,11 @@ description: "What I use"
 #   order: 4
 ---
 
-# Things I use in my day to day development and video production
+## Things I use in my day to day development and video production
 
-## Computing Device
+### Computing Device
 
-### Desktop Setup
+#### Desktop Setup
 
 - [MacBook Pro 16" 2021 M1 Max / 32GB Ram / 1TB SSD](https://support.apple.com/en-us/111901)
 - [Logitech MX Keys Mini](https://www.logitech.com/en-us/products/keyboards/mx-keys-mini.920-010473.html)

@@ -36,7 +36,7 @@ To generate a new API key, once that's done, give your application a name, maybe
 
 We're going to start by creating an ENV file. I see why I've already created one already, `.env`. You can see that. And I have added the Last FM API key. And I'm going to copy that key into that position there.
 
-```
+```env
 LASTFM_API_KEY=ReplaceWithYourAPIKey
 ```
 

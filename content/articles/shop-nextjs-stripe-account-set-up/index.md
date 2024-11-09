@@ -30,7 +30,7 @@ Once signed up go to the "Developer" page and select the "API keys" on the left 
 
 We need to now create an ENV file for our project so it can use these API keys to retrieve our products from Stripe. In the folder of your project create a new file called `.env.local` and add the following two variable names.
 
-```
+```env
 STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
 ```

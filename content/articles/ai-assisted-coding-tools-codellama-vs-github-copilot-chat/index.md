@@ -260,7 +260,7 @@ Then asked the assistants the question above. This time CL took an age to return
 | GitHub Copilot (GC)     | 3s              | 3/5    |
 | Continue/CodeLlama (CL) | 19s             | 2/5    |
 
-#### GitHub Copilot getFizzBuzz Tests Answer
+### GitHub Copilot getFizzBuzz Tests Answer
 
 > Sure, here's an example of how you could write tests to test the `getFizzBuzz` function using the Jest testing framework in JavaScript:
 

@@ -17,13 +17,13 @@ So after moving the blog into a sub-directory of votedailydeals.co.nz I need to 
 
 For example:
 
-```
+```html
 http://blog.votedailydeals.co.nz/welcome-to-vote-daily-deals/
 ```
 
 redirect to
 
-```
+```html
 http://votedailydeals.co.nz/blog/welcome-to-vote-daily-deals/
 ```
 
@@ -33,6 +33,6 @@ youtube.com/embed/KfSpBe-qUoA
 
 The syntax to retrieve all the indexed links on Google is:
 
-```
+```config
 site:example.com
 ```
