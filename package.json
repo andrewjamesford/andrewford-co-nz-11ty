@@ -26,7 +26,7 @@
 		"email": "hireme@andrewford.co.nz",
 		"url": "https://andrewford.co.nz/"
 	},
-	"license": "MIT",
+	"license": "GPL-3.0-only",
 	"engines": {
 		"node": ">=20"
 	},
