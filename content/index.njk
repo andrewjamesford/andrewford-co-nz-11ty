@@ -47,7 +47,7 @@ numberOfLatestVideosToShow: 3
 				{%- for video in latestVideos.videos -%}
 					{% if loop.index <= numberOfLatestVideosToShow -%}
 						<li class="article-list-item">
-							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320, 720], [320, 720], "video-thumb" %}
+							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320], ["auto"], "video-thumb" %}
 
 							<h4 class="article-title">
 								<a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>

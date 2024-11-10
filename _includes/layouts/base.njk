@@ -9,6 +9,7 @@
 		<title>{{ title or metadata.title }} - Andrew Ford </title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<meta name="fediverse:creator" content="@andrewford@mastodon.nz"/>
+		<base href="{{ metadata.fullUrl }}"/>
 
 		{# Icons #}
 		<meta name="msapplication-TileColor" content="#eee">
@@ -79,8 +80,8 @@
 		</style>
 
 		{# Preload the CSS bundle #}
-		<link rel="preload" href="{{ '/css/style.css' }}" as="style"/>
-		<link rel="stylesheet" href="{{ '/css/style.css' }}"/>
+		<link rel="preload" href="{{ metadata.fullUrl }}{{ '/css/style.css' }}" as="style"/>
+		<link rel="stylesheet" href="{{ metadata.fullUrl }}{{ '/css/style.css' }}"/>
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}

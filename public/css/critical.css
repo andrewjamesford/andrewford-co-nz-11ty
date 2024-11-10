@@ -132,17 +132,25 @@ h2 {
   flex-direction: column;
   margin-bottom: 0.5rem;
 }
+
 .article-list-item picture {
   text-align: center;
+  max-height: 180px;
+}
+.video-thumb {
+  border-radius: 0.75rem;
+  aspect-ratio: 16 / 9;
 }
 .article-heading {
   text-align: center;
 }
 .article-title {
-  margin-top: 0;
+  margin-top: 0.5rem;
   width: 100%;
   margin-bottom: 0;
   text-wrap: balance;
+  font-size: 90%;
+  line-height: 100%;
 }
 .article-description {
   margin-top: 0;
@@ -244,6 +252,9 @@ a.lastfm-icon:hover {
 }
 a.lastfm-icon:hover svg {
   fill: var(--link-color);
+}
+.lastfm-link a {
+  padding: 0.25rem 0;
 }
 .center {
   text-align: center;

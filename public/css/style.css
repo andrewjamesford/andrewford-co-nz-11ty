@@ -265,12 +265,7 @@ pre[class*="language-"] {
   gap: 2rem;
   margin-top: 1rem;
 }
-.video-thumb {
-  border-radius: 1.1rem;
-  max-width: 360px;
-  width: 100%;
-  height: 100%;
-}
+
 .website-built {
   font-size: 0.8rem;
   text-align: center;
@@ -369,6 +364,16 @@ pre[class*="language-"] {
   .article-list-item picture {
     text-align: left;
   }
+  .article-list-item .article-title {
+    margin-top: 0.25rem;
+    line-height: 110%;
+  }
+
+  aside .article-description {
+    font-size: 80%;
+    line-height: 110%;
+  }
+
   .news-box {
     padding: 3rem;
   }
@@ -386,7 +391,7 @@ pre[class*="language-"] {
     font-size: 1.3rem;
   }
   .latest-articles-videos {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 320px;
     align-items: baseline;
     margin-top: 5rem;
   }
