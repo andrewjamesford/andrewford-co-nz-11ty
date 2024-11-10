@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
-title: "Saves"
+title: "Save - Referral Links"
 template: "page"
-slug: "uses/"
+slug: "save/"
 socialImage: ""
 description: "Services I use with Referral links"
 ---
