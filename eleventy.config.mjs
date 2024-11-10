@@ -46,6 +46,28 @@ export default async (eleventyConfig) => {
   // Overwrite the built-in Markdown library with our custom instance.
   eleventyConfig.setLibrary("md", md);
 
+  eleventyConfig.addBundle("css", {
+    // Folder (relative to output directory) files will write to
+    toFileDirectory: "bundle",
+
+    // File extension used for bundle file output, defaults to bundle name
+    outputFileExtension: "css",
+
+    // Name of shortcode for use in templates, defaults to bundle name
+    shortcodeName: "css",
+    // shortcodeName: false, // disable this feature.
+
+    // Modify bundle content
+    transforms: [],
+
+    // If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
+    hoist: true,
+
+    // In 11ty.js templates, having a named export of `bundle` will populate your bundles.
+    // bundleExportKey: "bundle",
+    bundleExportKey: false, // disable this feature.
+  });
+
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/css/` ends up in `_site/css/`
   eleventyConfig.addPassthroughCopy({
@@ -161,28 +183,6 @@ export default async (eleventyConfig) => {
       .getAllSorted()
       .filter((item) => item.inputPath.startsWith("./content/archive/"))
   );
-
-  eleventyConfig.addBundle("css", {
-    // Folder (relative to output directory) files will write to
-    toFileDirectory: "bundle",
-
-    // File extension used for bundle file output, defaults to bundle name
-    outputFileExtension: "css",
-
-    // Name of shortcode for use in templates, defaults to bundle name
-    shortcodeName: "css",
-    // shortcodeName: false, // disable this feature.
-
-    // Modify bundle content
-    transforms: [],
-
-    // If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
-    hoist: true,
-
-    // In 11ty.js templates, having a named export of `bundle` will populate your bundles.
-    bundleExportKey: "bundle",
-    // bundleExportKey: false, // disable this feature.
-  });
 
   // Features to make your build faster (when you need them)
 
