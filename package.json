@@ -13,8 +13,8 @@
 		"article": "bash article.sh",
 		"clear": "rm -rf _site && rm -rf .cache",
 		"perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
-		"prettier": "prettier --write \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore",
-		"prettier:check": "prettier --check \"**/*.{md,html,js,json,yml,css,scss}\" --ignore-path .gitignore",
+		"prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
+		"prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
 		"markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json"
 	},
 	"repository": {
@@ -26,7 +26,7 @@
 		"email": "hireme@andrewford.co.nz",
 		"url": "https://andrewford.co.nz/"
 	},
-	"license": "MIT",
+	"license": "GPL-3.0-only",
 	"engines": {
 		"node": ">=20"
 	},
@@ -36,22 +36,21 @@
 	"homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^3",
-		"@11ty/eleventy-fetch": "^4.0.0",
-		"@11ty/eleventy-img": "^3.1.0",
+		"@11ty/eleventy-fetch": "^4.0.1",
+		"@11ty/eleventy-img": "^5.0.0",
 		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^1.0.4",
-		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-bundle": "^3.0.0",
+		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"dotenv": "^16.4.5",
-		"lighthouse": "^12.2",
+		"lighthouse": "^12.2.1",
 		"luxon": "^3.5",
 		"markdown-it-anchor": "^9.2",
 		"markdown-it-footnote": "^4",
 		"markdownlint-cli2": "^0.14.0",
-		"node-fetch": "^3.3",
-		"prettier": "2.5.0"
-	},
-	"dependencies": {
+		"node-fetch": "^3.3.2",
+		"prettier": "2.5.0",
+		"dotenv": "^16.4.5",
 		"eleventy-plugin-youtube-embed": "^1.11"
-	}
+	},
+	"dependencies": {}
 }

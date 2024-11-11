@@ -130,15 +130,15 @@ From the start GitHub Copilot was faster to respond by 2 seconds. As for the cod
 
 ```javascript
 for (let i = 1; i <= 100; i++) {
- if (i % 3 === 0 && i % 5 === 0) {
-  console.log("Fizz Buzz");
- } else if (i % 3 === 0) {
-  console.log("Fizz");
- } else if (i % 5 === 0) {
-  console.log("Buzz");
- } else {
-  console.log(i);
- }
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("Fizz Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
 }
 ```
 
@@ -150,15 +150,15 @@ for (let i = 1; i <= 100; i++) {
 
 ```javascript
 for (var i = 1; i <= 100; i++) {
- if (i % 3 === 0 && i % 5 === 0) {
-  console.log("Fizz Buzz");
- } else if (i % 3 === 0) {
-  console.log("Fizz");
- } else if (i % 5 === 0) {
-  console.log("Buzz");
- } else {
-  console.log(i);
- }
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("Fizz Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
 }
 ```
 
@@ -192,18 +192,18 @@ Again GC was faster with the response, but in my opinion CL gave the better answ
 
 ```javascript
 const arr = [
- 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+  10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 ];
 
 let smallest = arr[0];
 let largest = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
- if (arr[i] < smallest) {
-  smallest = arr[i];
- } else if (arr[i] > largest) {
-  largest = arr[i];
- }
+  if (arr[i] < smallest) {
+    smallest = arr[i];
+  } else if (arr[i] > largest) {
+    largest = arr[i];
+  }
 }
 
 console.log("Smallest number: " + smallest);
@@ -268,40 +268,40 @@ Then asked the assistants the question above. This time CL took an age to return
 const getFizzBuzz = require("./index");
 
 describe("getFizzBuzz", () => {
- it("should return an array of length 100", () => {
-  const result = getFizzBuzz();
-  expect(result).toHaveLength(100);
- });
+  it("should return an array of length 100", () => {
+    const result = getFizzBuzz();
+    expect(result).toHaveLength(100);
+  });
 
- it('should return "Fizz" for multiples of 3', () => {
-  const result = getFizzBuzz();
-  for (let i = 2; i < result.length; i += 3) {
-   expect(result[i]).toBe("Fizz");
-  }
- });
+  it('should return "Fizz" for multiples of 3', () => {
+    const result = getFizzBuzz();
+    for (let i = 2; i < result.length; i += 3) {
+      expect(result[i]).toBe("Fizz");
+    }
+  });
 
- it('should return "Buzz" for multiples of 5', () => {
-  const result = getFizzBuzz();
-  for (let i = 4; i < result.length; i += 5) {
-   expect(result[i]).toBe("Buzz");
-  }
- });
+  it('should return "Buzz" for multiples of 5', () => {
+    const result = getFizzBuzz();
+    for (let i = 4; i < result.length; i += 5) {
+      expect(result[i]).toBe("Buzz");
+    }
+  });
 
- it('should return "Fizz Buzz" for multiples of both 3 and 5', () => {
-  const result = getFizzBuzz();
-  for (let i = 14; i < result.length; i += 15) {
-   expect(result[i]).toBe("Fizz Buzz");
-  }
- });
+  it('should return "Fizz Buzz" for multiples of both 3 and 5', () => {
+    const result = getFizzBuzz();
+    for (let i = 14; i < result.length; i += 15) {
+      expect(result[i]).toBe("Fizz Buzz");
+    }
+  });
 
- it("should return the number itself for all other numbers", () => {
-  const result = getFizzBuzz();
-  for (let i = 0; i < result.length; i++) {
-   if (i % 3 !== 0 && i % 5 !== 0) {
-    expect(result[i]).toBe(i + 1);
-   }
-  }
- });
+  it("should return the number itself for all other numbers", () => {
+    const result = getFizzBuzz();
+    for (let i = 0; i < result.length; i++) {
+      if (i % 3 !== 0 && i % 5 !== 0) {
+        expect(result[i]).toBe(i + 1);
+      }
+    }
+  });
 });
 ```
 
@@ -329,7 +329,7 @@ import { getFizzBuzz } from "./getFizzBuzz";
 
 ```javascript
 test("returns an empty array when given an empty array", () => {
- expect(getFizzBuzz([])).toStrictEqual([]);
+  expect(getFizzBuzz([])).toStrictEqual([]);
 });
 ```
 
@@ -337,7 +337,7 @@ test("returns an empty array when given an empty array", () => {
 
 ```javascript
 test("returns an array with the correct output for a single number", () => {
- expect(getFizzBuzz([1])).toStrictEqual([1]);
+  expect(getFizzBuzz([1])).toStrictEqual([1]);
 });
 ```
 

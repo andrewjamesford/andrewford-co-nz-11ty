@@ -9,67 +9,68 @@ numberOfLatestVideosToShow: 3
 ---
 
 <div class="h-card">
-<h1 class="center"><a class="p-name u-email" href="mailto:hireme@andrewford.co.nz" rel="me">Andrew Ford</a> is the host of <a class="u-url" href="https://www.youtube.com/@CodewithAndrewFord">Code with Andrew Ford</a>, a YouTube channel dedicated to teaching <strong>YOU</strong> how to code. </h1>
-<h2 class="center secondary">He is also a <a class="u-url" href="https://www.linkedin.com/in/andrewjamesford/">full-stack web developer, technical analyst</a> and an <a class="u-url" href="https://www.missionreadyhq.com/accelerator/advanced-full-stack-developer">educator</a> living in <a class="p-locality" href="https://en.wikipedia.org/wiki/Tauranga">Tauranga, New Zealand</a>.</h2>
+	<h1 class="center">
+		<a class="p-name u-email" href="mailto:hireme@andrewford.co.nz" rel="me">Andrew Ford</a> is the host of <a class="u-url" href="https://www.youtube.com/@CodewithAndrewFord">Code with Andrew Ford</a>, a YouTube channel dedicated to teaching <strong>YOU</strong> how to code. </h1>
+	<h2 class="center secondary">He is also a <a class="u-url" href="https://www.linkedin.com/in/andrewjamesford/">full-stack web developer, mentor</a> and an <a class="u-url" href="https://www.missionreadyhq.com/accelerator/advanced-full-stack-developer">educator</a> living in <a class="p-locality" href="https://en.wikipedia.org/wiki/Tauranga">Tauranga, New Zealand</a>.</h2>
 </div>
 <h3 class="center">"I want to help you get on the job ladder as a Full Stack Developer"</h3>
 
 <section class="latest-articles-videos">
-  {%- if collections.articles.length > 0 -%}
-    <article class="latest-articles">
-      <h3>Latest Articles</h3>
-      <ul class="article-list">
-        {%- for article in collections.articles | reverse -%}
-          {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
-          {%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
-            <li class="article-list-item">
-              <h4 class="article-title">
-                <a href="{{ absolutePostUrl }}">{{ article.data.title }}</a>
-              </h4>
-              <p class="article-description">{{ article.data.description }}</p>
-            </li>
-          {%- endif -%}
-        {%- endfor %}
-        <li class="article-list-item">
-          <h4 class="article-title">
-            <a href="{{ metadata.url }}/article/">More Articles&#8230;</a>
-          </h4>
-        </li>
-      </ul>
-    </article>
-  {%- endif -%}
+	{%- if collections.articles.length > 0 -%}
+		<article class="latest-articles">
+			<h3>Latest Articles</h3>
+			<ul class="article-list">
+				{%- for article in collections.articles | reverse -%}
+					{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
+					{%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
+						<li class="article-list-item">
+							<h4 class="article-title">
+								<a href="{{ absolutePostUrl }}">{{ article.data.title }}</a>
+							</h4>
+							<p class="article-description">{{ article.data.description }}</p>
+						</li>
+					{%- endif -%}
+				{%- endfor %}
+				<li class="article-list-item">
+					<h4 class="article-title">
+						<a href="{{ metadata.fullUrl }}/article/">More Articles&#8230;</a>
+					</h4>
+				</li>
+			</ul>
+		</article>
+	{%- endif -%}
 
-  {%- if latestVideos.videos.length > 0 -%}
-    <aside class="latest-videos">
-      <h3>Latest Videos</h3>
-      <ul class="article-list">
-        {%- for video in latestVideos.videos -%}
-          {% if loop.index <= numberOfLatestVideosToShow -%}
-            <li class="article-list-item">
-              {% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320, 720], [320, 720], "video-thumb" %}
-                  
-              <h4 class="article-title">
-                <a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
-                  {{ video.snippet.title }}
-                </a>
-              </h4>
-              {% if video.snippet.liveBroadcastContent === "live" %}
-                <h5 class="article-title indicator-live">LIVE</h5>
-              {% endif %}
-              {% if video.snippet.liveBroadcastContent === "upcoming" %}
-                <h5 class="article-title indicator-upcoming">Upcoming</h5>
-              {% endif %}
-              <p class="article-description">{{ video.snippet.description }}</p>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-        <li class="article-list-item">
-          <h4 class="article-title">
-          <a href="https://www.youtube.com/@CodewithAndrewFord">More Videos&#8230;</a>
-          </h4>
-        </li>
-      </ul>
-    </aside>
-  {%- endif -%}
+	{%- if latestVideos.videos.length > 0 -%}
+		<aside class="latest-videos">
+			<h3>Latest Videos</h3>
+			<ul class="article-list">
+				{%- for video in latestVideos.videos -%}
+					{% if loop.index <= numberOfLatestVideosToShow -%}
+						<li class="article-list-item">
+							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320], ["auto"], "video-thumb" %}
+
+							<h4 class="article-title">
+								<a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
+									{{ video.snippet.title }}
+								</a>
+							</h4>
+							{% if video.snippet.liveBroadcastContent === "live" %}
+								<h5 class="article-title indicator-live">LIVE</h5>
+							{% endif %}
+							{% if video.snippet.liveBroadcastContent === "upcoming" %}
+								<h5 class="article-title indicator-upcoming">Upcoming</h5>
+							{% endif %}
+							<p class="article-description">{{ video.snippet.description }}</p>
+						</li>
+					{%- endif -%}
+				{%- endfor -%}
+				<li class="article-list-item">
+					<h4 class="article-title">
+						<a href="https://www.youtube.com/@CodewithAndrewFord">More Videos&#8230;</a>
+					</h4>
+				</li>
+			</ul>
+		</aside>
+	{%- endif -%}
 
 </section>

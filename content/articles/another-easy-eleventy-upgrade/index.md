@@ -39,36 +39,36 @@ Asked GitHub Copilot to "Update to esm syntax" and made sure the `eleventy.confi
 
 See the difference here between my [previous v2 config](https://github.com/andrewjamesford/andrewford-co-nz-11ty/blob/d4ca22e9e512c9fa8a5697beed1af9707d33e192/eleventy.config.js) to my [v3 config](https://github.com/andrewjamesford/andrewford-co-nz-11ty/blob/618c465e82021fdab51ecc68f7c26048b7a660e5/eleventy.config.mjs).
 
-```js
+{% highlight "diff-js" %}
 // v2 require statements
-const { DateTime } = require("luxon");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownIt = require("markdown-it");
+-const { DateTime } = require("luxon");
+-const markdownItAnchor = require("markdown-it-anchor");
+-const markdownIt = require("markdown-it");
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+-const pluginRss = require("@11ty/eleventy-plugin-rss");
+-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
+-const pluginNavigation = require("@11ty/eleventy-navigation");
+-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-const pluginDrafts = require("./eleventy.config.drafts.js");
-const pluginImages = require("./eleventy.config.images.js");
-const embedYouTube = require("eleventy-plugin-youtube-embed");
+-const pluginDrafts = require("./eleventy.config.drafts.js");
+-const pluginImages = require("./eleventy.config.images.js");
+-const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 // v3 import statements
-import { DateTime } from "luxon";
-import markdownItAnchor from "markdown-it-anchor";
-import markdownIt from "markdown-it";
++import { DateTime } from "luxon";
++import markdownItAnchor from "markdown-it-anchor";
++import markdownIt from "markdown-it";
 
-import pluginRss from "@11ty/eleventy-plugin-rss";
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import pluginBundle from "@11ty/eleventy-plugin-bundle";
-import pluginNavigation from "@11ty/eleventy-navigation";
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
++import pluginRss from "@11ty/eleventy-plugin-rss";
++import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
++import pluginBundle from "@11ty/eleventy-plugin-bundle";
++import pluginNavigation from "@11ty/eleventy-navigation";
++import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-import pluginDrafts from "./eleventy.config.drafts.js";
-import pluginImages from "./eleventy.config.images.js";
-import embedYouTube from "eleventy-plugin-youtube-embed";
-```
++import pluginDrafts from "./eleventy.config.drafts.js";
++import pluginImages from "./eleventy.config.images.js";
++import embedYouTube from "eleventy-plugin-youtube-embed";
+{% endhighlight %}
 
 Then it was time to test everything was working. Sure enough everything worked as expected. I removed the upgrade helper plugin and did a little tidy up switching syntax from commonjs to esm (es6/es2015) and pushed the branch to test the preview build (got to love Netlify's setup). The preview build looked good too, so I merged it into main. All done and dusted in under an hour. This is how all upgrades should work.

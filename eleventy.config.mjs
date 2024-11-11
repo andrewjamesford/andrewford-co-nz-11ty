@@ -12,203 +12,227 @@ import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
+import dotenv from "dotenv";
+
 export default async (eleventyConfig) => {
+  dotenv.config();
+  // Create our custom markdown-it instance.
+  const md = markdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+  }).use((await import("markdown-it-footnote")).default);
 
+  // Create custom footnote block rule
+  md.renderer.rules.footnote_block_open = () =>
+    "<hr />\n" +
+    '<h4 class="footnotes-title">References</h4>\n' +
+    '<section class="footnotes">\n' +
+    '<ol class="footnotes-list">\n';
 
-	// Create our custom markdown-it instance.
-	const md = markdownIt({
-		html: true,
-		linkify: true,
-		typographer: true,
-	}).use((await import("markdown-it-footnote")).default);
+  // Replacement render_footnote_caption with no [] around the number
+  const render_footnote_caption = (tokens, idx) => {
+    let n = Number(tokens[idx].meta.id + 1).toString();
+    if (tokens[idx].meta.subId > 0) {
+      n += `:${tokens[idx].meta.subId}`;
+    }
+    return n;
+  };
 
-	// Create custom footnote block rule
-	md.renderer.rules.footnote_block_open = () =>
-		"<hr />\n" +
-		'<h4 class="footnotes-title">References</h4>\n' +
-		'<section class="footnotes">\n' +
-		'<ol class="footnotes-list">\n';
+  // Replace existing function with one with no []
+  md.renderer.rules.footnote_caption = (tokens, idx) =>
+    render_footnote_caption(tokens, idx);
 
-	// Replacement render_footnote_caption with no [] around the number
-	const render_footnote_caption = (tokens, idx) => {
-		let n = Number(tokens[idx].meta.id + 1).toString();
-		if (tokens[idx].meta.subId > 0) {
-			n += `:${tokens[idx].meta.subId}`;
-		}
-		return n;
-	};
+  // Overwrite the built-in Markdown library with our custom instance.
+  eleventyConfig.setLibrary("md", md);
 
-	// Replace existing function with one with no []
-	md.renderer.rules.footnote_caption = (tokens, idx) =>
-		render_footnote_caption(tokens, idx);
+  // Copy the contents of the `public` folder to the output folder
+  // For example, `./public/css/` ends up in `_site/css/`
+  // https://www.11ty.dev/docs/assets/
+  https: eleventyConfig.addPassthroughCopy({
+    "./public/": "/",
+  });
 
-	// Overwrite the built-in Markdown library with our custom instance.
-	eleventyConfig.setLibrary("md", md);
+  // Run Eleventy when these files change:
+  // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
-	// Copy the contents of the `public` folder to the output folder
-	// For example, `./public/css/` ends up in `_site/css/`
-	eleventyConfig.addPassthroughCopy({
-		"./public/": "/",
-	});
+  // Watch content images for the image pipeline.
+  eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg,jpg}");
+  // Watch CSS files for the CSS pipeline.
+  eleventyConfig.addWatchTarget("public/**/*.{css}");
 
-	// Run Eleventy when these files change:
-	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
+  // App plugins
+  eleventyConfig.addPlugin(pluginDrafts);
+  eleventyConfig.addPlugin(pluginImages);
+  eleventyConfig.addPlugin(embedYouTube, {
+    embedClass: "video",
+    lazy: true,
+    recommendSelfOnly: true,
+    lite: {
+      js: {
+        inline: true,
+      },
+      css: {
+        inline: true,
+      },
+      enabled: true,
+      responsive: true,
+    },
+  });
 
-	// Watch content images for the image pipeline.
-	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+  // Official plugins
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+    preAttributes: { tabindex: 0 },
+  });
+  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(pluginBundle);
 
-	// App plugins
-	eleventyConfig.addPlugin(pluginDrafts);
-	eleventyConfig.addPlugin(pluginImages);
-	eleventyConfig.addPlugin(embedYouTube, {
-		embedClass: "video",
-		lazy: true,
-		recommendSelfOnly: true,
-		lite: {
-			js: {
-				inline: true,
-			},
-			css: {
-				inline: true,
-			},
-			enabled: true,
-			responsive: true,
-		},
-	});
+  // Filters
+  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+    // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
+      format || "DDDD"
+    );
+  });
 
-	// Official plugins
-	eleventyConfig.addPlugin(pluginRss);
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 },
-	});
-	eleventyConfig.addPlugin(pluginNavigation);
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(pluginBundle);
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  });
 
-	// Filters
-	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-			format || "DDDD",
-		);
-	});
+  // Get the first `n` elements of a collection.
+  eleventyConfig.addFilter("head", (array, n) => {
+    if (!Array.isArray(array) || array.length === 0) {
+      return [];
+    }
+    if (n < 0) {
+      return array.slice(n);
+    }
 
-	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-	});
+    return array.slice(0, n);
+  });
 
-	// Get the first `n` elements of a collection.
-	eleventyConfig.addFilter("head", (array, n) => {
-		if (!Array.isArray(array) || array.length === 0) {
-			return [];
-		}
-		if (n < 0) {
-			return array.slice(n);
-		}
+  // Return the smallest number argument
+  eleventyConfig.addFilter("min", (...numbers) => {
+    return Math.min.apply(null, numbers);
+  });
 
-		return array.slice(0, n);
-	});
+  // Return all the tags used in a collection
+  eleventyConfig.addFilter("getAllTags", (collection) => {
+    const tagSet = new Set();
+    for (const item of collection) {
+      for (const tag of item.data.tags || []) {
+        tagSet.add(tag);
+      }
+    }
+    return Array.from(tagSet);
+  });
 
-	// Return the smallest number argument
-	eleventyConfig.addFilter("min", (...numbers) => {
-		return Math.min.apply(null, numbers);
-	});
+  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+    return (tags || []).filter(
+      (tag) =>
+        ["all", "nav", "post", "posts", "[articles]", "[archive]"].indexOf(
+          tag
+        ) === -1
+    );
+  });
 
-	// Return all the tags used in a collection
-	eleventyConfig.addFilter("getAllTags", (collection) => {
-		const tagSet = new Set();
-		for (const item of collection) {
-			for (const tag of item.data.tags || []) {
-				tagSet.add(tag);
-			}
-		}
-		return Array.from(tagSet);
-	});
+  // Customize Markdown library settings:
+  eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib.use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: "after",
+        class: "header-anchor",
+        symbol: "#",
+        ariaHidden: false,
+      }),
+      level: [1, 2, 3, 4],
+      slugify: eleventyConfig.getFilter("slugify"),
+    });
+  });
 
-	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(
-			(tag) =>
-				["all", "nav", "post", "posts", "[articles]", "[archive]"].indexOf(
-					tag,
-				) === -1,
-		);
-	});
+  eleventyConfig.addCollection("articles", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/articles/"))
+  );
 
-	// Customize Markdown library settings:
-	eleventyConfig.amendLibrary("md", (mdLib) => {
-		mdLib.use(markdownItAnchor, {
-			permalink: markdownItAnchor.permalink.ariaHidden({
-				placement: "after",
-				class: "header-anchor",
-				symbol: "#",
-				ariaHidden: false,
-			}),
-			level: [1, 2, 3, 4],
-			slugify: eleventyConfig.getFilter("slugify"),
-		});
-	});
+  eleventyConfig.addCollection("archive", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/archive/"))
+  );
 
-	eleventyConfig.addCollection("articles", (collection) =>
-		collection
-			.getAllSorted()
-			.filter((item) => item.inputPath.startsWith("./content/articles/")),
-	);
+  eleventyConfig.addBundle("css", {
+    // Folder (relative to output directory) files will write to
+    toFileDirectory: "css",
 
-	eleventyConfig.addCollection("archive", (collection) =>
-		collection
-			.getAllSorted()
-			.filter((item) => item.inputPath.startsWith("./content/archive/")),
-	);
+    // File extension used for bundle file output, defaults to bundle name
+    outputFileExtension: "css",
 
-	// Features to make your build faster (when you need them)
+    // Name of shortcode for use in templates, defaults to bundle name
+    shortcodeName: "css",
+    // shortcodeName: false, // disable this feature.
 
-	// If your passthrough copy gets heavy and cumbersome, add this line
-	// to emulate the file copy on the dev server. Learn more:
-	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
+    // Modify bundle content
+    transforms: [],
 
-	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+    // If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
+    hoist: true,
 
-	return {
-		// Control which files Eleventy will process
-		// e.g.: *.md, *.njk, *.html, *.liquid
-		templateFormats: ["md", "njk", "html", "liquid"],
+    // In 11ty.js templates, having a named export of `bundle` will populate your bundles.
+    bundleExportKey: "bundle",
+    // bundleExportKey: false, // disable this feature.
+  });
 
-		// Pre-process *.md files with: (default: `liquid`)
-		markdownTemplateEngine: "njk",
+  // Features to make your build faster (when you need them)
 
-		// Pre-process *.html files with: (default: `liquid`)
-		htmlTemplateEngine: "njk",
+  // If your passthrough copy gets heavy and cumbersome, add this line
+  // to emulate the file copy on the dev server. Learn more:
+  // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
-		// These are all optional:
-		dir: {
-			input: "content", // default: "."
-			includes: "../_includes", // default: "_includes"
-			data: "../_data", // default: "_data"
-			output: "_site",
-		},
+  // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-		// -----------------------------------------------------------------
-		// Optional items:
-		// -----------------------------------------------------------------
+  return {
+    // Control which files Eleventy will process
+    // e.g.: *.md, *.njk, *.html, *.liquid
+    templateFormats: ["md", "njk", "html", "liquid"],
 
-		// If your site deploys to a subdirectory, change `pathPrefix`.
-		// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
+    // Pre-process *.md files with: (default: `liquid`)
+    markdownTemplateEngine: "njk",
 
-		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-		// it will transform any absolute URLs in your HTML to include this
-		// folder name and does **not** affect where things go in the output folder.
-		pathPrefix: "/",
+    // Pre-process *.html files with: (default: `liquid`)
+    htmlTemplateEngine: "njk",
 
-		// The base URL: defaults to Path Prefix
-		// baseHref: eleventyConfig.pathPrefix,
-		baseHref: "https://andrewford.co.nz/",
+    // These are all optional:
+    dir: {
+      input: "content", // default: "."
+      includes: "../_includes", // default: "_includes"
+      data: "../_data", // default: "_data"
+      output: "_site",
+    },
 
-		// But you could use a full URL here too:
-		// baseHref: "http://example.com/"
+    // -----------------------------------------------------------------
+    // Optional items:
+    // -----------------------------------------------------------------
 
-		// Comma separated list of output file extensions to apply
-		// our transform to. Use `false` to opt-out of the transform.
-		extensions: "html",
-	};
+    // If your site deploys to a subdirectory, change `pathPrefix`.
+    // Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
+
+    // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
+    // it will transform any absolute URLs in your HTML to include this
+    // folder name and does **not** affect where things go in the output folder.
+    pathPrefix: "/",
+
+    baseHref: "https://andrewford.co.nz/",
+
+    // But you could use a full URL here too:
+    // baseHref: "http://example.com/"
+
+    // Comma separated list of output file extensions to apply
+    // our transform to. Use `false` to opt-out of the transform.
+    extensions: "html",
+  };
 };

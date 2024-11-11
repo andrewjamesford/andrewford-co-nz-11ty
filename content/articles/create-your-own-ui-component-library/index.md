@@ -79,31 +79,31 @@ Now we need to update the button component with the class names from the CSS mod
 
 ```tsx
 export const Button = ({
- primary = false,
- size = "medium",
- backgroundColor,
- label,
- ...props
+  primary = false,
+  size = "medium",
+  backgroundColor,
+  label,
+  ...props
 }: ButtonProps) => {
- const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
- let sizeClass = styles.buttonMedium;
- if (size === "small") {
-  sizeClass = styles.buttonSmall;
- }
- if (size === "large") {
-  sizeClass = styles.buttonLarge;
- }
+  const mode = primary ? styles.buttonPrimary : styles.buttonSecondary;
+  let sizeClass = styles.buttonMedium;
+  if (size === "small") {
+    sizeClass = styles.buttonSmall;
+  }
+  if (size === "large") {
+    sizeClass = styles.buttonLarge;
+  }
 
- return (
-  <button
-   type="button"
-   className={[`${styles.button}`, `${sizeClass}`, mode].join(" ")}
-   style={{ backgroundColor }}
-   {...props}
-  >
-   {label}
-  </button>
- );
+  return (
+    <button
+      type="button"
+      className={[`${styles.button}`, `${sizeClass}`, mode].join(" ")}
+      style={{ backgroundColor }}
+      {...props}
+    >
+      {label}
+    </button>
+  );
 };
 ```
 
