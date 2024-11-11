@@ -28,14 +28,14 @@
 		<link rel="icon" type="image/png" sizes="96x96" href="{{ metadata.fullUrl }}/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.fullUrl }}/favicon-16x16.png">
 
-		<link rel="canonical" href="{{ metadata.fullUrl }}{{ page.url }}">
+		<link rel="canonical" href="https://andrewford.co.nz/{{ page.url }}">
 
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 		<link href="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF" rel="preload" as="script">
 
 		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		{# <link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.json" type="application/json" title="{{ metadata.title }}"> #}
+		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
 		{# open graph #}
 		<meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}"/>
