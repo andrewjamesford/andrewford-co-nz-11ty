@@ -13,9 +13,9 @@ import pluginImages from "./eleventy.config.images.js";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
 import dotenv from "dotenv";
-dotenv.config();
 
 export default async (eleventyConfig) => {
+  dotenv.config();
   // Create our custom markdown-it instance.
   const md = markdownIt({
     html: true,
@@ -48,7 +48,8 @@ export default async (eleventyConfig) => {
 
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/css/` ends up in `_site/css/`
-  eleventyConfig.addPassthroughCopy({
+  // https://www.11ty.dev/docs/assets/
+  https: eleventyConfig.addPassthroughCopy({
     "./public/": "/",
   });
 
@@ -56,7 +57,9 @@ export default async (eleventyConfig) => {
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
   // Watch content images for the image pipeline.
-  eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+  eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg,jpg}");
+  // Watch CSS files for the CSS pipeline.
+  eleventyConfig.addWatchTarget("public/**/*.{css}");
 
   // App plugins
   eleventyConfig.addPlugin(pluginDrafts);
@@ -162,6 +165,28 @@ export default async (eleventyConfig) => {
       .filter((item) => item.inputPath.startsWith("./content/archive/"))
   );
 
+  eleventyConfig.addBundle("css", {
+    // Folder (relative to output directory) files will write to
+    toFileDirectory: "css",
+
+    // File extension used for bundle file output, defaults to bundle name
+    outputFileExtension: "css",
+
+    // Name of shortcode for use in templates, defaults to bundle name
+    shortcodeName: "css",
+    // shortcodeName: false, // disable this feature.
+
+    // Modify bundle content
+    transforms: [],
+
+    // If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
+    hoist: true,
+
+    // In 11ty.js templates, having a named export of `bundle` will populate your bundles.
+    bundleExportKey: "bundle",
+    // bundleExportKey: false, // disable this feature.
+  });
+
   // Features to make your build faster (when you need them)
 
   // If your passthrough copy gets heavy and cumbersome, add this line
@@ -201,8 +226,6 @@ export default async (eleventyConfig) => {
     // folder name and does **not** affect where things go in the output folder.
     pathPrefix: "/",
 
-    // The base URL: defaults to Path Prefix
-    // baseHref: eleventyConfig.pathPrefix,
     baseHref: "https://andrewford.co.nz/",
 
     // But you could use a full URL here too:
