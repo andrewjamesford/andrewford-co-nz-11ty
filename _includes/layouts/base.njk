@@ -31,7 +31,7 @@
 		<link rel="canonical" href="https://andrewford.co.nz/{{ page.url }}">
 
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-		<link href="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF" rel="preload" as="script">
+		<link href="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}" rel="preload" as="script">
 
 		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -211,7 +211,7 @@
 		</script>
 
 		{# Google tag (gtag.js) #}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K39D2FSQEF"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -219,7 +219,7 @@
 			}
 			gtag('js', new Date());
 
-			gtag('config', 'G-K39D2FSQEF');
+			gtag('config', '{{ metadata.gTag}}');
 		</script>
 	</body>
 </html>
