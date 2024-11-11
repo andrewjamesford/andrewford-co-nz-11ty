@@ -11,4 +11,5 @@ module.exports = {
     email: "me@andrewford.co.nz",
     url: process.env.SITE_URL + "/about/",
   },
+  gTag: process.env.GTAG,
 };
