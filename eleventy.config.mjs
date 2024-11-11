@@ -46,8 +46,6 @@ export default async (eleventyConfig) => {
   // Overwrite the built-in Markdown library with our custom instance.
   eleventyConfig.setLibrary("md", md);
 
-  eleventyConfig.addBundle("css");
-
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/css/` ends up in `_site/css/`
   eleventyConfig.addPassthroughCopy({
