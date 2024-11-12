@@ -17,13 +17,13 @@ youtube.com/embed/y8Okx-RWK3M
 
 First enable local mapping. Under "Tools" > "Map Local".
 
-{% figure "./Charles-proxy-mapping1.png", "Charles enable map local", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./Charles-proxy-mapping1.png", "Charles enable map local" %}
 
 Charles enable map local
 
 Then select the CSS file you want to override with your local copy.
 
-{% figure "./Charles-proxy-mapping2.png", "Charles CSS mapping", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./Charles-proxy-mapping2.png", "Charles CSS mapping" %}
 
 Too easy. When you next refresh your browser you will see the changes you made to your CSS. You now have a great way to double-check your changes before go live.
 

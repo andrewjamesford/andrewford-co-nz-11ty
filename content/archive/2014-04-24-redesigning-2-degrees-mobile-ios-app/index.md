@@ -22,15 +22,15 @@ It pains me every time I need to check my account balance. I need to know have I
 
 Rather than whine about it (well maybe a bit) I decided to create a slight redesign for <a title="2 Degrees Mobile" href="http://www.2degreesmobile.co.nz">2 Degrees</a> on how I think their app would be so much better. For brownie points I even made a <a title="2 Degrees Mobile prototype" href="http://marvl.in/19c24e">prototype</a>.
 
-{% figure "./2degrees-loading.png", "2 Degrees loading screen", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./2degrees-loading.png", "2 Degrees loading screen" %}
 
 First things first. The loading screen, not much to say here. Some animation of the logo background circles would be nice. Branding front and centre.
 
-{% figure "./2degrees-summary.png", "2 Degrees summary screen", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./2degrees-summary.png", "2 Degrees summary screen" %}
 
 The summary screen. All the most important information you need to know, all I've had to do is open the app and I'm presented with this. Minutes, data and even shared data with my iPad. No more having to drill in and back to get an idea of my data and minutes.
 
-{% figure "./2degrees-minutes.png", "2 Degrees details screen", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./2degrees-minutes.png", "2 Degrees details screen" %}
 
 The details screen. All the pertinent information nicely displayed on one screen, that I have drilled into from the summary screen.
 
@@ -40,4 +40,4 @@ I hope you, like it <a title="2 Degrees Mobile" href="http://www.2degreesmobile.
 
 <strong>Update:</strong> Some good news 2 Degrees have updated their app to show a summary on the first page of the app.
 
-{% figure "./new-2degrees-app.png", "2 Degrees mobile summary screen.", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./new-2degrees-app.png", "2 Degrees mobile summary screen." %}

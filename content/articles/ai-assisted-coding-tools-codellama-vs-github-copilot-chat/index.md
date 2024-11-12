@@ -15,7 +15,7 @@ description: Explore the strengths of CodeLlama's offline assistance and GitHub 
 ogimage: "code-llama.png"
 ---
 
-{% figure "./code-llama.png", "&quot;a llama in front of a computer with code on the screen, digital art&quot; / DALL-E", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./code-llama.png", "&quot;a llama in front of a computer with code on the screen, digital art&quot; / DALL-E" %}
 
 Wouldn't it be great to run a local Large Language Model on your own computer to help you code? Even when your internet is out/flaky or your on mobile data. Best of all it's free and using an Open Source extension and LLM.
 
@@ -39,7 +39,7 @@ You can do this today thanks to Meta and their LLM CodeLlama. This article will 
 
 Make sure you have Ollama running. You should have a cute little llama sitting in your menu bar, when it's running.
 
-{% figure "./ollama-menu-bar.png", "The Ollama menu bar icon" %}
+{% figure "./ollama-menu-bar.png", "The Ollama menu bar icon", [320, 720, 1024, 1280] %}
 
 We first of all need to locally install the CodeLlama model. To do this open your terminal and input the following:
 
@@ -49,7 +49,7 @@ ollama pull codellama
 
 This will start the download process to pull down the CodeLlama model. You should see it start pulling dow the files. Be warned it's a 3.8 GB download, so may take some time.
 
-{% figure "./ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./ollama-pull-codellama.png", "Installing codellama model with ollama in the terminal", [320, 720, 1024, 1280] %}
 
 We then need to configure Continue to use CodeLlama. To do this we need to open the config file for Continue.
 
@@ -81,7 +81,7 @@ Save the file and close Visual Studio Code and reopen it again.
 
 On the left hand sidebar you hopefully have noticed a icon that has the letter C and D. Click on that will open the prompt.
 
-{% figure "./continue-query-answer.png", "The Continue extension user interface in VS Code", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./continue-query-answer.png", "The Continue extension user interface in VS Code" %}
 
 If everything worked correctly you can now start asking questions to CodeLlama.
 
@@ -178,7 +178,7 @@ Again another classic coding challenge question.
 
 With GC I got off to a very rocky start. Upon entering my question I got this result _"Oops, your response got filtered. Vote down if you think this shouldn't have happened."_.
 
-{% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./github-copilot-filtered.png", "GitHub Copilot filtering a response" %}
 
 I ended up having to change my question to the following for GC to get an answer, I'm not sure why it triggered the filter:
 

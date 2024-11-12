@@ -16,7 +16,7 @@ description: "In this article, we will continue building a full-stack web app wi
 ogimage: "lego-r.jpg"
 ---
 
-{% figure "./lego-r.jpg", "&quot;Working with Radix components&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./lego-r.jpg", "&quot;Working with Radix components&quot; / Bing Image Creator" %}
 
 The following is a transcript of my live stream on Dec 3rd 2023 on Building a Full-Stack web app with Next.js. This is part 7 of the series. I am continuing a project with an LMS (Learning Management System) using the Storybook.js, Superbase, and Radix UI. So far, I have set up a header component and am working on building other components in isolation using the storybook. The LMS project is in its early stages with a homepage set up and another page for listing data. The Superbase database is connected, with a few tables for courses and students. The next step is to work with Radix components.
 

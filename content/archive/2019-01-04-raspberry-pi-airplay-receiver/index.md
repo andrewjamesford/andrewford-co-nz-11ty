@@ -30,4 +30,4 @@ sudo service shairport-sync start
 
 Your Raspberry Pi should now be an option to AirPlay audio to, which again is a far better option then Bluetooth.
 
-{% figure "./airplay-receiver-framed.png", "Kakapo my Raspberry Pi showing as an AirPlay receiver", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./airplay-receiver-framed.png", "Kakapo my Raspberry Pi showing as an AirPlay receiver" %}

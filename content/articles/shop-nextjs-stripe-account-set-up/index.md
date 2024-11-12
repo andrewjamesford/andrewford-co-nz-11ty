@@ -24,7 +24,7 @@ youtube.com/embed/cEL2Jtp8RLs
 
 ## Register a Stripe account
 
-{% image "./stripe-api-page.png", "Stripe Developers API keys page", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./stripe-api-page.png", "Stripe Developers API keys page" %}
 
 Once signed up go to the "Developer" page and select the "API keys" on the left hand side menu.
 
@@ -45,15 +45,15 @@ You can manage all the content for your online shop through the Stripe dashboard
 
 From the menu, access the "Products" page then click the purple "Add Product" button.
 
-{% image "./add-product-stripe.png", "Product information form", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./add-product-stripe.png", "Product information form" %}
 
 Add some details for your product, add a price and upload an image. Make sure to select "One Time" for the product price.
 
-{% image "./product-one-time-price.png", "Product One Time price", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./product-one-time-price.png", "Product One Time price" %}
 
 Now repeat until you have finished creating all the new products you wish to create. You should end up with a product list similar to this.
 
-{% image "./stripe-products-list.png", "List of products on Stripe", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./stripe-products-list.png", "List of products on Stripe" %}
 
 Congrats you have now successfully added your shop products to Stripe. Stay tuned for the next update where we will display your shop products in your shop.
 

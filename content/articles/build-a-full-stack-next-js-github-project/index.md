@@ -16,7 +16,7 @@ description: "In this tutorial video we continue planning our full-stack web app
 ogimage: "full-stack5.jpg"
 ---
 
-{% figure "./full-stack-5.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./full-stack-5.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
 
 The following is a transcript of my live stream on Oct 13, 2023 on Building a Full-Stack web app with Next.js. This is part 5 of the series. In it we start further planning and using a kanban board to track our progress. To do this we use GitHub projects and generate a board and create some issues/tickets to build. We also start building out the components for the project.
 

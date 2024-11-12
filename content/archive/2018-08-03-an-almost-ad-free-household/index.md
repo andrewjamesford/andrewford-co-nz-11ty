@@ -16,7 +16,7 @@ I detest the majority of advertisements, as they more than often have little con
 
 First line of defence is setting up [Pi-hole](https://pi-hole.net/) on your network. This will block ads before they even get to your devices. Not only that it will also block tracking to **all devices** on your network. You can install it on all manner of machines, but one of the cheapest is a Raspberry Pi.
 
-{% figure "./pihole-dashboard.jpg", "Pi-hole Dashboard", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./pihole-dashboard.jpg", "Pi-hole Dashboard" %}
 
 Did you know that most apps you install on your devices will have tracking and telemetry sent to the likes of Segment, Crashlytics or Mix Panel unfortunately you generally can’t opt out of this.
 To stop this sort of tracking the default block lists on the Pi-hole are a good place to start. If you wish to automatically block other content look into [Steven Blacks hosts lists](https://github.com/StevenBlack/hosts). He has lists for almost everything on his Github page.
@@ -33,6 +33,6 @@ For iOS I recommend installing a ["Safari content blocker"](https://www.macworld
 
 On the high end with lots of configuration options [1Blocker X](https://1blocker.com/) is great, and my favourite. I love it's standout feature that allows custom blocking of elements (helpful for blocking popups or those download our app messages).
 
-{% figure "./1blocker.jpg", "1Blocker X - that's right 101k rules", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./1blocker.jpg", "1Blocker X - that's right 101k rules" %}
 
 Installing these items in your home will go a long way to reducing the number of ads you will have to see day to day in your household.

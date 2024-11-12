@@ -14,11 +14,11 @@ description: "The TW64 is a very cheap fitness tracker. I purchased mine during 
 
 The TW64 aka the FakeFitBit is a very cheap fitness tracker. I purchased mine during the "Singles Day" AliExpress sale for US $9.65. Which when compared with Many other fitness trackers on the market it's very very cheap in comparison. But the old adage of you get what you pay for applies heavily with the TW64.
 
-{% figure "./TW64-wrist.jpg", "The TW64 on my wrist", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./TW64-wrist.jpg", "The TW64 on my wrist" %}
 
 Aesthetically the device is reasonable looking, be it a little rough in finish in comparison to other devices. It comfortably fits my skinny wrists all be it on the 2<sup>nd</sup> to last few holes. It's made of a soft silicone with a diamond texture on the outside and a ridged shape on the underneath against your skin to stop it spinning around on your wrist. After previously wearing a stainless steel link band watch, the TW64 is much more comfortable. It's very easy to take off compared to putting on, I've only had it come off once.
 
-{% figure "./TW64-desk.jpg", "Charging the TW64, with it's clip charger", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./TW64-desk.jpg", "Charging the TW64, with it's clip charger" %}
 
 The device has one button on the left hand side that wakes the unit from sleep to display the time, battery remaining and date (only in US format). If you keep pressing the button multiple times you are shown steps, estimated distance travelled, estimated calories burnt and time slept. The display is a simple monochrome organic LED in white, which is easy to see except for in direct sunlight. It's bright enough in the dark to give a faint enough glow to see by, but not enough to light up the room.
 

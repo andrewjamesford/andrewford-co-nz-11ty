@@ -16,7 +16,7 @@ description: "In this installment we create a Storybook for our project and star
 ogimage: "full-stack-6.jpeg"
 ---
 
-{% figure "./full-stack-6.jpeg", "&quot;Building a storybook&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./full-stack-6.jpeg", "&quot;Building a storybook&quot; / Bing Image Creator" %}
 
 The following is a transcript of my live stream on Oct 29, 2023 on Building a Full-Stack web app with Next.js. This is part 6 of the series. In this installment we create a Storybook for our project and start building out our Header component. I walk through some of the features of Storybook and how it can help you build your React components in isolation.
 

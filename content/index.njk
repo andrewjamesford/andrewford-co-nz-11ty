@@ -4,7 +4,7 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 6
+numberOfLatestPostsToShow: 9
 numberOfLatestVideosToShow: 3
 ---
 
@@ -47,7 +47,7 @@ numberOfLatestVideosToShow: 3
 				{%- for video in latestVideos.videos -%}
 					{% if loop.index <= numberOfLatestVideosToShow -%}
 						<li class="article-list-item">
-							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320], ["auto"], "video-thumb" %}
+							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320], "video-thumb" %}
 
 							<h4 class="article-title">
 								<a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
@@ -68,6 +68,15 @@ numberOfLatestVideosToShow: 3
 					<h4 class="article-title">
 						<a href="https://www.youtube.com/@CodewithAndrewFord">More Videos&#8230;</a>
 					</h4>
+				</li>
+				<li class="article-list-item">
+					<div class="promotion">
+						{% image "./Tailwind-Grid-Cheatsheet-Cover.webp", "Tailwind Grid Cheatsheet", [320] %}
+						<div class="promotion-title">
+							<a href="https://andrewford.gumroad.com/l/tailwindgridcheatsheet">Tailwind Grid Cheatsheet</a>
+						</div>
+						<a href="https://andrewford.gumroad.com/l/tailwindgridcheatsheet" class="promotion-cta">Pay what you want</a>
+					</div>
 				</li>
 			</ul>
 		</aside>

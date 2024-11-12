@@ -14,7 +14,7 @@ tags:
 description: "A great way to speed up your workflow is to use a tool called BrowserSync. It's platform independent, so will work on Windows, Mac and Linux. Requires Node JS and doesn't require you to do anything special (install an app or setup a proxy) on your mobile devices (tablets & phones). Most importantly your site can be running as PHP, Rails or ASP.Net it doesn't matter."
 ---
 
-{% figure "./supercharging-html-css.jpg", "Vince Vaughn and Owen Wilson supercharge their HTML and CSS", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./supercharging-html-css.jpg", "Vince Vaughn and Owen Wilson supercharge their HTML and CSS" %}
 
 One of the biggest issues with Responsive Web Design development workflow is having to check as you build a website on multiple devices. Keeping browsers in sync between your devices wether they be desktop, tablet and phone (or simply Chrome vs. Internet Explorer) can be a time wasting experience having to manually refresh a multitude of devices. That isn't fun or productive.
 
@@ -22,7 +22,7 @@ A great way to speed up your workflow is to use a tool called <a title="BrowserS
 
 The process is very easy to get up and running. After installing <a title="Node JS" href="http://nodejs.org">Node JS</a> it takes about 5 mins.
 
-{% figure "./browsersync-setup.jpg", "BrowserSync running on desktop, tablet, and mobile phones", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./browsersync-setup.jpg", "BrowserSync running on desktop, tablet, and mobile phones" %}
 
 <strong>Step 1:</strong>
 Download and install <a title="NodeJS" href="http://nodejs.org">NodeJS</a>
@@ -46,6 +46,6 @@ This tells BrowserSync to run a proxy to the local domain of your website, and w
 
 When you run BrowserSync will fire up and open a new tab/window with an IP address &amp; port number that will proxy to your local address. Copy that IP address &amp; port number to other browsers and other devices to start syncing. Click around your site, scroll and make changes to your CSS to have the changes reflected across them all.
 
-{% figure "./browser-sync-demo2.gif", "A demo of BrowserSync", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./browser-sync-demo2.gif", "A demo of BrowserSync" %}
 
 Now you have a fast way to quickly check changes across a multitude of devices as you build responsive web sites.

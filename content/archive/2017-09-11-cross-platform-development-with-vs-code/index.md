@@ -17,4 +17,4 @@ A quick tip for when using Visual Studio Code in a cross platform team. You may 
 
 VS Code allows specific platform properties. So in my case I have the tasks use Bash for my Mac, whereas the other developers use Powershell on Windows. It's as simple as defining an override for your platform like so (OSX):
 
-{% figure "./tasks.png", "Tasks.json example", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./tasks.png", "Tasks.json example" %}

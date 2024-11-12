@@ -23,6 +23,6 @@ It's very easy once your showing the screen on your desktop to take a screenshot
 
 This will save a nice PNG to your desktop with a tidy version of the status bar (time set to 9:41 AM and the carrier removed).
 
-{% figure "./clean-status-bar.png", "A clean status bar with the carrier name removed and the time set to 9:41 am", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./clean-status-bar.png", "A clean status bar with the carrier name removed and the time set to 9:41 am" %}
 
 For further details on capturing your iPhone screen check out the post on [iDownloadBlog - How to record your iPhone’s screen and hide its carrier name with OS X Yosemite](http://www.idownloadblog.com/2014/10/20/how-to-record-your-iphones-screen-and-hide-its-carrier-name-with-os-x-yosemite/).

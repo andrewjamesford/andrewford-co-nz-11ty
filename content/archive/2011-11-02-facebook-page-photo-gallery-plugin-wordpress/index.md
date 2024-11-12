@@ -11,7 +11,7 @@ tags:
 description: "I recently built a Wordpress site for some friends. Being very busy people they were struggling to use the sites theme for galleries (I was struggling too with it). Being iPhone users they had no problem uploading photos of their clients cars to their business Facebook Page."
 ---
 
-{% figure "./Toyota-Supra-CDR-Paint-and-Panel.png", "Gallery Plugin", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./Toyota-Supra-CDR-Paint-and-Panel.png", "Gallery Plugin" %}
 
 I recently built a Wordpress site for some friends. Being very busy people they were struggling to use the sites theme for galleries (I was struggling too with it). Being iPhone users they had no problem uploading photos of their clients cars to their business Facebook Page.
 
