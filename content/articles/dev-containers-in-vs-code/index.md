@@ -16,7 +16,7 @@ description: Dev Containers in VS Code allow packaging a project's dependencies 
 ogimage: "dev-container.jpg"
 ---
 
-{% figure "./dev-container.jpg", "&quot;A Dev Container&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./dev-container.jpg", "&quot;A Dev Container&quot; / Bing Image Creator" %}
 
 Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
 

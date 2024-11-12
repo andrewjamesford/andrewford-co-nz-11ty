@@ -32,7 +32,7 @@ youtube.com/embed/fD1nNVAyY7E
 7. The shortcut will show a loading icon and then display your answer in an alert box with a "Done" button
 8. The shortcut automatically copies the answer to your clipboard so you can paste it into another app
 
-{% figure "./chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./chatgpt-ios-shortcut.webp", "Using the shortcut to summarise an article" %}
 
 ### How it works
 

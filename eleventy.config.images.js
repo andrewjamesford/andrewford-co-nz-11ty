@@ -14,12 +14,12 @@ module.exports = (eleventyConfig) => {
   // https://www.11ty.dev/docs/plugins/image/
   eleventyConfig.addAsyncShortcode(
     "image",
-    async function imageShortcode(src, alt, widths, sizes) {
+    async function imageShortcode(src, alt, widths = [320, 720, 1024, 1280]) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
-        widths: widths || ["auto"],
+        widths: widths || [320, 720, 1024, 1280],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
       });
@@ -27,7 +27,7 @@ module.exports = (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes,
+        sizes: widths,
         loading: "lazy",
         decoding: "async",
       };
@@ -42,8 +42,7 @@ module.exports = (eleventyConfig) => {
     async function externalImageShortcode(
       src,
       alt,
-      widths,
-      sizes,
+      widths = [320, 720, 1024, 1280],
       cssClass,
       id = "externalImage"
     ) {
@@ -55,7 +54,7 @@ module.exports = (eleventyConfig) => {
       }
 
       let metadata = await eleventyImage(srcUrl, {
-        widths: widths || ["auto"],
+        widths: widths || [320, 720, 1024, 1280],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
       });
@@ -63,7 +62,7 @@ module.exports = (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes,
+        sizes: widths,
         loading: "lazy",
         decoding: "async",
         class: cssClass,
@@ -75,12 +74,12 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addAsyncShortcode(
     "figure",
-    async function imageShortcode(src, alt, widths, sizes) {
+    async function imageShortcode(src, alt, widths = [320, 720, 1024, 1280]) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
-        widths: widths || ["auto"],
+        widths: widths || [320, 720, 1024, 1280],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
       });
@@ -88,7 +87,7 @@ module.exports = (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes,
+        sizes: widths,
         loading: "lazy",
         decoding: "async",
       };

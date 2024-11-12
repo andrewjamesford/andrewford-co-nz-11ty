@@ -13,13 +13,13 @@ tags:
 description: "Cloudflare launch a privacy focused DNS"
 ---
 
-{% figure "./1.1.1.1-fancycolor-2.gif", "1.1.1.1", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./1.1.1.1-fancycolor-2.gif", "1.1.1.1" %}
 
 [CloudFlare](https://blog.cloudflare.com/announcing-1111/) announced today the fastest privacy focused consumer DNS. Which is great news for those that are privacy conscious. DNS is like the directory for the internet, every request you make for a domain like [www.duckduckgo.com](https://duckduckgo.com/) is more than likely tracked via your ISP regardless if the URL is HTTPS. CloudFlare are now offering their own DNS that doesn't store any information on it's users.
 
 I use a [Pi-hole](https://pi-hole.net/) ad-blocker/tracking-blocker server on my [Raspberry Pi](https://www.raspberrypi.org/) that blocks advertisements (that track you) network wide at home. To start using CloudFlares DNS server simply add a custom IP to the DNS section of 1.1.1.1 and 1.0.0.1 for redundancy. You can do the same on your router or PC & Mobile.
 
-{% figure ".//pihole-dns.png", "Pi-hole", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure ".//pihole-dns.png", "Pi-hole" %}
 
 Not only will your requests be faster, you can feel a little more at ease that you aren't being tracked by your ISP. With the [Mozilla](https://mozilla.org) foundation (creators of Firefox) they have also added support for DNS HTTPS.
 

@@ -16,7 +16,7 @@ description: "In this video, we will be designing the database for our app. We w
 ogimage: "next-js-image.jpeg"
 ---
 
-{% figure "./next-js-image.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./next-js-image.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
 
 The following is a transcript of my live stream on Oct 12, 2023 on Building a Full-Stack web app with Next.js. This is part 4 of the series. In this video, I started the design of the database for our app. I used dbdiagram.io to design our database, using DBML and denoted the relation ships between tables. Using the export option I quickly created the tables in our ERD (Entity Relationship Diagram) on Supabase.
 

@@ -20,4 +20,4 @@ The guys at [Mobile Couch](http://mobilecouch.co/66) have a great collection of 
 My favourite is "Open Quickly" in Xcode:
 Command + Shift + O
 
-{% figure "./openquickly.png", "Open quickly keyboard shortcut in action", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./openquickly.png", "Open quickly keyboard shortcut in action" %}

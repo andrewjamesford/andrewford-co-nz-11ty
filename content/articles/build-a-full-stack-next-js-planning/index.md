@@ -16,7 +16,7 @@ description: This is a transcript of my stream that went through the initial pla
 ogimage: "full-stack1.jpg"
 ---
 
-{% figure "./full-stack1.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./full-stack1.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
 
 The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity. In this stream I went over the planning stages of a project. First on a virtual whiteboard. I started with a brainstorm of ideas, then moved onto wireframes. Then circled back to start thinking about what features and functionality I would need to build the app. I also talked about the pros and cons of building a UI library from scratch or using something that is already pre-tested and available. Finally I went over the data structure and how I would store the data.
 
@@ -25,7 +25,7 @@ To view the Wireframes I created in the stream, please see the following link:
 
 youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24
 
-{% figure "./whiteboard.png", "The Whiteboard from the Stream", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./whiteboard.png", "The Whiteboard from the Stream" %}
 
 ---
 

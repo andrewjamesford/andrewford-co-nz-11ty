@@ -17,7 +17,7 @@ ogimage: "custom-components.png"
 ---
 
 {% figure "./custom-components.png", "&quot;Create Custom Components using
-MUI&quot; / Bing Image Creator", [1280, 1024, 720, 320], [1280, 1024, 720, 320]
+MUI&quot; / Bing Image Creator"
 %}
 
 The Material UI (MUI) library is a popular choice for building React

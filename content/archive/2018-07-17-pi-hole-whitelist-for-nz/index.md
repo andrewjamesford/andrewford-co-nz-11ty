@@ -45,4 +45,4 @@ pihole tail
 
 This will output a real time stream of the DNS requests made on your network. White are allowed, red are being blocked. Try to play a video or audio stream for the app that is being effected and systematically whitelist urls until the app works as intended.
 
-{% figure "./pihole-tail-stream.png", "Pi-hole real time stream", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./pihole-tail-stream.png", "Pi-hole real time stream" %}

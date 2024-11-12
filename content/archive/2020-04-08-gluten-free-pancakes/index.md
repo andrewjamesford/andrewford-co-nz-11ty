@@ -14,7 +14,7 @@ Who _doesn't_ like pancakes? Right about now anything to take your mind off the 
 
 If you've tried to do shopping lately it's been hard to get flour, it's like the new gold. Very rare. It's leaving shelves as quick as it's stacked in the supermarket (supposedly thanks to issues packaging). Well fortunately I'm going to tell you a gluten free recipe for pancakes. For a flour substitute you probably haven't used before. That's right this recipe uses **chickpea** flour.
 
-{% image "./gluten-free-chickpea-pancakes.jpg", "Gluten Free Chickpea pancakes", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./gluten-free-chickpea-pancakes.jpg", "Gluten Free Chickpea pancakes" %}
 
 ## Chickpea Flour Pancakes
 

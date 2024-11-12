@@ -177,7 +177,7 @@
 
 			{%- if (latestMusic) and (latestMusic.music.artist !== "") -%}
 				<div id="lastFM" class="lastfm-widget">
-					{% externalImage latestMusic.music.albumArtLarge, "Cover art for " + latestMusic.music.trackName + " by " + latestMusic.music.artist, [64, 174], [64, 174], "lastfm-img", "lastFMImg" %}
+					{% externalImage latestMusic.music.albumArtLarge, "Cover art for " + latestMusic.music.trackName + " by " + latestMusic.music.artist, [64, 174], "lastfm-img", "lastFMImg" %}
 					<div>
 						<div class="lastfm-title">
 							Last listening to:

@@ -16,7 +16,7 @@ I still use a Mac Book Pro from 2010. It's been upgraded with more ram and an [S
 
 Or so I thought... Thanks to the efforts of [**Dosdude1**](http://dosdude1.com/mojave/) you can patch the installer of Mojave and install on _some_ older hardware not supported by Apple which includes my 15" mid 2010 Mac Book Pro (MacBookPro6,2) with it's superior keyboard.
 
-{% figure "./macos-about.png", "macOS Mojave about on my MBP", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./macos-about.png", "macOS Mojave about on my MBP" %}
 
 I did a fresh install by downloading the Mojave installer, patched and created a bootable USB drive following the [guide](http://dosdude1.com/mojave/). It was a painless process and the only difference between a normal install was the use of the patch tool.
 

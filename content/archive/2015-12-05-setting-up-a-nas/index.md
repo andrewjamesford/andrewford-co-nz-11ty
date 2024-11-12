@@ -28,17 +28,17 @@ So after being fed up with my [Plex](http://plex.tv) server needing a restart ag
 
 When we switched to [Vodafone](http://www.vodafone.co.nz) they supplied a smart looking router in white with a LCD screen called a Vodafone Station. It has two USB ports and supports up to a 2 TB hard drive (which luckily I had previously attached to the old Plex server PC). I simply plugged it in to the router and fired up the [settings page](http://vodafone.station).
 
-{% figure "./sharing-disk.png", "Sharing Disk", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./sharing-disk.png", "Sharing Disk" %}
 
 Go to the **Sharing** tab and make sure the **Share All** switch is green. If you click the downward facing arrow with the name of the Hard Drive it will show you the SMB share path. Now if you jump on your Mac from the **Finder menu > Go > Connect to Server** option you can type in the address shown. On a Windows machine open an explorer window and simply type address in.
 
 So now you can connect to the drive and see it's existing media and should be able to view, copy, delete and upload files to the NAS disk. To further make your NAS available by other servers I recommend you enable FTP as well.
 
-{% figure "./sharing-advanced.png", "Sharing Advanced", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./sharing-advanced.png", "Sharing Advanced" %}
 
 FTP settings are located in the **Advanced > Advanced Sharing** tab. The FTP switch is hidden. To find it click on the downward arrow by the disk name and then click on the disk location path e.g. **\vodafone.station\a** This will show the User privileges pane where you can enable the FTP setting. So how do we access our media?
 
-{% figure "./sharing-advanced-ftp.png", "Sharing Advanced FTP", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./sharing-advanced-ftp.png", "Sharing Advanced FTP" %}
 
 ### Playing Video
 

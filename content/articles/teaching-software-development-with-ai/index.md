@@ -25,7 +25,7 @@ We have benefitted significantly at [Developers Institute](https://www.developer
 
 One of these ways is to incorporate ChatGPT as another tool for our students to get support in their learning, exercises and projects. With ChatGPT, there can always be help available to answer questions at any time. ChatGPT was trained on a large portion of code on [GitHub](https://github.com), the collaborative version control software that hosts an extensive collection of open-source projects. Because of this, it can answer most questions about code syntax and provide examples for learners. Say a learner wanted to know how to fetch some data in a format called JSON (JavaScript Object Notation) using the JavaScript programming language. They could ask this to ChatGPT, which would explain with an example code like in the screenshot below. The answer has a step-by-step breakdown of what needs to happen, an example snippet of code and a summary explaining how it works.
 
-{% figure "./js-fetch-chatgpt.png", "ChatGPT fetch example", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./js-fetch-chatgpt.png", "ChatGPT fetch example" %}
 
 To ensure new and existing learners can take advantage of this incredible technology, we are planning on creating a supplementary course in our learner management system that will cover the following items (Fraiwan et al., 2023)[^1]:
 
@@ -37,7 +37,7 @@ The course will be a mix of documentation on advising on how to write prompts fo
 
 [GitHub Copilot](https://github.com/features/copilot) is a plugin for [Visual Studio Code](https://code.visualstudio.com), the IDE (integrated development environment) we use at the Developers Institute. It is an extension of a developer's work environment and acts as an AI pair programmer that helps one write code. It does this by prompting suggested code based on the context of your existing code and interpreting code comments. It will show this suggested code in the grey text beside the cursor. If it seems satisfactory, pressing the tab key will embed this suggestion into your code base. The suggestions can be from a simple line to multiple lines, depending on what the AI model predicts you will use. It will also suggest multiple options, generally more than one. If unhappy, use the “Next" suggestion keyboard shortcut. The predictions/suggestions will even use the declared variables in your existing code.
 
-{% figure "./vscode-copilot.png", "Visual Studio Code with GitHub Copilot", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./vscode-copilot.png", "Visual Studio Code with GitHub Copilot" %}
 
 The benefits that most developers find when using Copilot are the following:
 
@@ -48,7 +48,7 @@ We plan to integrate Copilot with the previously mentioned course with ChatGPT. 
 
 Another great tool that enables collaborative learning between students and teaching staff is [GitHub Codespaces](https://github.com/features/codespaces). It is a cloud-based development environment. It allows you to code as if using Visual Studio Code, in the cloud via a browser (or your local copy of VS Code). There is no need to set up a local environment to install Node.js or Python (or whatever language you require) and necessary dependencies etc.
 
-{% figure "./vscode-codespaces.png", "Visual Studio Code using Codespaces", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./vscode-codespaces.png", "Visual Studio Code using Codespaces" %}
 
 Some of the benefits of Codespaces are the following (Malan, 2022)[^5]:
 

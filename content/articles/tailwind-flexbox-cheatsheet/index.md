@@ -15,7 +15,7 @@ ogiimage: "TailwindFlexboxCover.jpg"
 
 If you hadn't figured out already (see my other [blog entry](https://andrewford.co.nz/articles/tailwind-theming-by-config/)) I'm quite a fan of [Tailwind](https://tailwindcss.com/) the utility CSS framework. While I think their documentation is great, I'm a fan of visual cheatsheets. With a heavy emphasis on the visual. Finding no one else had made what I wanted I fired up [Figma](https://figma.com) and got to work.
 
-{% image "./Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% image "./Tailwind-cheatsheet-screenshot.jpg", "Sneak peak of the cheatsheet" %}
 
 Hope you like it! Any suggestions [let me know](mailto:hireme@andrewford.co.nz).
 
@@ -34,3 +34,7 @@ It has the following changes:
 - Added `basis-{size}` with two examples
 
 {% include "promos/tailwindcheatsheet.njk" %}
+
+I also have a [Grid Cheatsheet](https://andrewford.co.nz/articles/tailwind-grid-cheatsheet/) for Tailwind CSS, buy both together and save!
+
+{% include "promos/tailwindgridcheatsheet.njk" %}

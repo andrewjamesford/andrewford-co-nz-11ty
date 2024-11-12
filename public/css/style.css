@@ -40,7 +40,7 @@ pre[class*="language-"] {
   display: inline-block;
   width: 100%;
 }
-.article picture {
+picture {
   text-align: center;
   width: 100%;
   display: block;
@@ -406,6 +406,12 @@ pre[class*="language-"] {
   .header-anchor {
     font-size: 1.2rem;
   }
+  /* .latest-videos picture {
+    max-width: 318px;
+    width: 318px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  } */
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

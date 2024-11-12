@@ -276,3 +276,10 @@ a.lastfm-icon:hover svg {
   top: 0.7rem;
   z-index: 99;
 }
+.latest-videos picture img {
+  border-radius: 0.5rem;
+}
+.article-list-item .promotion {
+  max-width: 320px;
+  margin: 1rem auto 0 auto;
+}

@@ -16,7 +16,7 @@ I got my replacement "duck heads" from the local Apple reseller today. Seven in 
 
 Was surprised to see that they are smaller than the original which will make plugging in to a wall socket easier than the previous round head ones.
 
-{% figure "./duck-head.jpg", "Apple NZ replacement plug head", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./duck-head.jpg", "Apple NZ replacement plug head" %}
 
 > Apple has determined that, in very rare cases, the two prong Apple AC wall plug adapters designed for use in Continental Europe, Australia, New Zealand, Korea, Argentina and Brazil may break and create a risk of electrical shock if touched.
 

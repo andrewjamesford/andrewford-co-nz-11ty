@@ -11,7 +11,7 @@ tags:
 description: "After the disappointing loss of the wedding competition for my fiancé and myself I thought it would be interesting to do some post analysis of the stats."
 ---
 
-{% figure "./Info_and_Stats-2.png", "Bitly stats for the competition", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./Info_and_Stats-2.png", "Bitly stats for the competition" %}
 
 After the disappointing loss of the <a href="http://www.andrewford.co.nz/help-me-win-a-wedding/" title="Help me win a mid-air wedding!">wedding competition</a> for my fiancé and myself I thought it would be interesting to do some post analysis of the stats.
 
@@ -19,7 +19,7 @@ My last check of the results before they were hidden were 1421 vs 1576 to the ot
 
 I used the short link service bitly with a custom url of <a href="https://bitly.com/lorena4andrew+" title="Bitly short link info and stats">https://bitly.com/lorena4andrew+</a> and collected some stats. We had 457 clicks of that link.
 
-{% figure "./Info_and_Stats.png", "Bitly link clicks", [1280, 1024, 720, 320], [1280, 1024, 720, 320] %}
+{% figure "./Info_and_Stats.png", "Bitly link clicks" %}
 
 We had 71% of our links followed from New Zealand no surprise there from a total of 457 clicks. Of them not surprisingly 182 were from Facebook, but of those Facebook users 65 were from mobile. Looks like Facebook's big push to mobile is starting to pay off. The majority of clicks were from email or IM with 243.
 
