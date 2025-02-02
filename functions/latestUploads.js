@@ -1,11 +1,14 @@
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 
-exports.handler = async function (event, context) {
+exports.handler = async (event, context) => {
   dotenv.config();
   try {
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;
+
+    // Documentation
+    // https://developers.google.com/youtube/v3/docs/search
 
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`,
