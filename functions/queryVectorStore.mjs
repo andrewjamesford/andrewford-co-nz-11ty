@@ -13,14 +13,12 @@ export const handler = async (event, context) => {
     const body =
       typeof event.body === "string" ? JSON.parse(event.body) : event.body;
     const { question } = body;
-    console.log("Debug: ", event.body, question);
     if (!question) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: "Question is required" }),
       };
     }
-    console.log("Debug: ", event.body, question);
 
     const embeddings = new OpenAIEmbeddings({
       apiKey: process.env.OPENAI_API_KEY,
