@@ -1,7 +1,8 @@
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 
-exports.handler = async (event, context) => {
+// Changed from exports.handler to ES module export
+export const handler = async (event, context) => {
   dotenv.config();
   try {
     const apiKey = process.env.YOUTUBE_API_KEY;

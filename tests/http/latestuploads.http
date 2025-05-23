@@ -1,0 +1,4 @@
+GET {{ FUNCTION_URL }}/.netlify/functions/latestuploads HTTP/1.1
+
+
+?? status == 200
