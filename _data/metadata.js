@@ -9,7 +9,7 @@ module.exports = {
   author: {
     name: "Andrew Ford",
     email: "me@andrewford.co.nz",
-    url: process.env.SITE_URL + "/about/",
+    url: `${process.env.SITE_URL}/about/`,
   },
   gTag: process.env.GTAG,
 };

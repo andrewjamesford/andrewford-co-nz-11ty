@@ -1,56 +1,63 @@
 {
-	"name": "andrewford-co-nz-11ty",
-	"version": "3.0.0",
-	"description": "andrewford.co.nz blog in 11ty",
-	"scripts": {
-		"start": "npx @11ty/eleventy --serve",
-		"dev": "netlify functions:serve & netlify dev",
-		"serve": "netlify serve",
-		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-		"build": "npx @11ty/eleventy",
-		"article": "bash article.sh",
-		"clear": "rm -rf _site && rm -rf .cache",
-		"perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
-		"prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
-		"prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
-		"markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/andrewjamesford/andrewford-co-nz-11ty.git"
-	},
-	"author": {
-		"name": "Andrew Ford",
-		"email": "hireme@andrewford.co.nz",
-		"url": "https://andrewford.co.nz/"
-	},
-	"license": "GPL-3.0-only",
-	"engines": {
-		"node": ">=20"
-	},
-	"bugs": {
-		"url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
-	},
-	"homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
-	"devDependencies": {
-		"@11ty/eleventy": "^3",
-		"@11ty/eleventy-fetch": "^4.0.1",
-		"@11ty/eleventy-img": "^5.0.0",
-		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^3.0.0",
-		"@11ty/eleventy-plugin-rss": "^2.0.2",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"lighthouse": "^12.2.1",
-		"luxon": "^3.5",
-		"markdown-it-anchor": "^9.2",
-		"markdown-it-footnote": "^4",
-		"markdownlint-cli2": "^0.14.0",
-		"node-fetch": "^3.3.2",
-		"prettier": "2.5.0",
-		"dotenv": "^16.4.5",
-		"eleventy-plugin-youtube-embed": "^1.11"
-	},
-	"dependencies": {}
+  "name": "andrewford-co-nz-11ty",
+  "version": "3.0.0",
+  "description": "andrewford.co.nz blog in 11ty",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "dev": "netlify functions:serve & netlify dev",
+    "serve": "netlify serve",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy",
+    "article": "bash article.sh",
+    "clear": "rm -rf _site && rm -rf .cache",
+    "perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
+    "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
+    "prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
+    "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
+    "genvector": "node tools/generateVectorStore.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewjamesford/andrewford-co-nz-11ty.git"
+  },
+  "author": {
+    "name": "Andrew Ford",
+    "email": "hireme@andrewford.co.nz",
+    "url": "https://andrewford.co.nz/"
+  },
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=20"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"
+  },
+  "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-bundle": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "eleventy-plugin-youtube-embed": "^1.11",
+    "lighthouse": "^12.2.1",
+    "luxon": "^3.5",
+    "markdown-it-anchor": "^9.2",
+    "markdown-it-footnote": "^4",
+    "markdownlint-cli2": "^0.14.0",
+    "node-fetch": "^3.3.2",
+    "prettier": "2.5.0"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.44",
+    "@langchain/core": "^0.3.57",
+    "@langchain/openai": "^0.5.11",
+    "@langchain/textsplitters": "^0.1.0",
+    "faiss-node": "^0.5.1"
+  }
 }

@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 
-exports.handler = async function (event, context) {
+exports.handler = async (event, context) => {
   dotenv.config();
   try {
     const apiKey = process.env.LASTFM_API_KEY;

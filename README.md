@@ -22,6 +22,7 @@ LASTFM_API_KEY=
 SITE_URL=
 YOUTUBE_API_KEY=
 YOUTUBE_CHANNEL_ID=
+OPENAI_API_KEY=
 ```
 
 Ensure you have the following dependencies installed:
