@@ -23,8 +23,22 @@ exports.handler = async (event, context) => {
       albumArtLarge: lastTrackData.image[2]["#text"],
     };
 
+    const allowedOrigins = [
+      "http://localhost:8888",
+      "https://andrewford.co.nz",
+    ];
+    const origin = event.headers.origin;
+    const allowOrigin = allowedOrigins.includes(origin)
+      ? origin
+      : allowedOrigins[0];
+
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": allowOrigin,
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET",
+      },
       body: JSON.stringify(lastTrack),
     };
   } catch (error) {

@@ -3,14 +3,17 @@ const LAST_FM_LINK_ID = "lastFMLink";
 const LAST_FM_IMG_ID = "lastFMImg";
 const LAST_FM_ALBUM_ID = "lastFMAlbum";
 const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
-const SITE_URL = location.origin;
+const SITE_URL =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://localhost:9999" // or your local dev port
+    : location.origin;
 
 const loadData = async () => {
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
     const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
     const lastFMSourceList = document.querySelectorAll(
-      `.lastfm-widget picture source`
+      ".lastfm-widget picture source"
     );
     const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
     const response = await fetch(SITE_URL + NETLIFY_FUNCTIONS_URL, {
@@ -29,9 +32,9 @@ const loadData = async () => {
       lastFMImg.src = data.albumArt;
       lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
       lastFMAlbum.innerText = data.album;
-      lastFMSourceList.forEach((source) => {
+      for (const source of lastFMSourceList) {
         source.setAttribute("srcset", data.albumArtLarge);
-      });
+      }
     }
   } catch (error) {
     console.error(error);

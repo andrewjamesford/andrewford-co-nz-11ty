@@ -48,8 +48,22 @@ exports.handler = async (event, context) => {
       input: question,
     });
 
+    const allowedOrigins = [
+      "http://localhost:8888",
+      "https://andrewford.co.nz",
+    ];
+    const origin = event.headers.origin;
+    const allowOrigin = allowedOrigins.includes(origin)
+      ? origin
+      : allowedOrigins[0];
+
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": allowOrigin,
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST",
+      },
       body: JSON.stringify({
         answer: response.answer,
         sourceDocuments: response.context,
