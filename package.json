@@ -16,7 +16,8 @@
     "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
-    "genvector": "node tools/generateVectorStore.mjs"
+    "genvector": "node tools/generateVectorStore.mjs",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "dotenv": "^16.4.5",
     "eleventy-plugin-youtube-embed": "^1.11",
+    "jest": "^29.7.0",
     "lighthouse": "^12.2.1",
     "luxon": "^3.5",
     "markdown-it-anchor": "^9.2",
