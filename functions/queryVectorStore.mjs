@@ -8,9 +8,19 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   try {
-    const { question } = JSON.parse(event.body);
+    const body =
+      typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+    const { question } = body;
+    console.log("Debug: ", event.body, question);
+    if (!question) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Question is required" }),
+      };
+    }
+    console.log("Debug: ", event.body, question);
 
     const embeddings = new OpenAIEmbeddings({
       apiKey: process.env.OPENAI_API_KEY,
