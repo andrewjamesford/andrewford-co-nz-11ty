@@ -30,10 +30,9 @@ const loadData = async () => {
       lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
       lastFMLink.href = data.url;
 
-      if (!data.albumArtLarge) {
+      if (data.albumArtLarge) {
         lastFMImg.src = data.albumArtLarge;
         lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
-      } else {
       }
       lastFMAlbum.innerText = data.album;
       for (const source of lastFMSourceList) {

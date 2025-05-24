@@ -11,14 +11,22 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
 // Initialize Upstash Redis-based rate limiting
-const redis = Redis.fromEnv(); // Uses UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
-
-const ratelimit = new Ratelimit({
-  redis: redis,
-  limiter: Ratelimit.slidingWindow(10, "15 m"), // 10 requests per 15 minutes
-  analytics: true, // Enable analytics
-});
-
+let redis;
+let ratelimit;
+try {
+  redis = Redis.fromEnv(); // Uses UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
+  ratelimit = new Ratelimit({
+    redis: redis,
+    limiter: Ratelimit.slidingWindow(10, "15 m"), // 10 requests per 15 minutes
+    analytics: true, // Enable analytics
+  });
+} catch (error) {
+  console.error("Error initializing Redis or Ratelimit:", error);
+  return {
+    statusCode: 500,
+    body: JSON.stringify({ error: "Rate limiting service unavailable" }),
+  };
+}
 // Input sanitization configuration
 const INPUT_LIMITS = {
   maxLength: 500,
@@ -78,7 +86,8 @@ async function checkRateLimit(clientIP) {
   } catch (error) {
     // If rate limiting service is down, allow the request but log the error
     console.error("Rate limiting service error:", error);
-    return { remaining: 999, reset: Date.now() + 900000 }; // Default fallback
+    // If rate limiting service is down, implement a more restrictive fallback
+    return { remaining: 1, reset: Date.now() + 60000 }; // Allow only 1 request per minute as fallback
   }
 }
 
@@ -176,6 +185,7 @@ export const handler = async (event, context) => {
   } catch (error) {
     // Handle rate limit errors specifically
     if (error.message.includes("Rate limit exceeded")) {
+      console.error("Rate limit error:", error);
       return {
         statusCode: 429,
         headers: {
@@ -185,10 +195,13 @@ export const handler = async (event, context) => {
           "Access-Control-Allow-Methods": "POST",
           "Retry-After": "900", // 15 minutes in seconds
         },
-        body: JSON.stringify({ error: error.message }),
+        body: JSON.stringify({
+          error: "Too many requests. Please try again later.",
+        }),
       };
     }
 
+    console.error("Error processing request:", error);
     return {
       statusCode: 500,
       headers: {
@@ -197,7 +210,9 @@ export const handler = async (event, context) => {
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "POST",
       },
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({
+        error: "An unexpected error occurred. Please try again later.",
+      }),
     };
   }
 };

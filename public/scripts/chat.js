@@ -4,7 +4,21 @@ function initializeChat() {
 
   input.addEventListener("keypress", async (e) => {
     if (e.key === "Enter" && input.value.trim()) {
-      const userMessage = input.value.trim();
+      const rawMessage = input.value.trim();
+
+      // Sanitize and validate the message
+      const userMessage = sanitizeMessage(rawMessage);
+
+      // Check minimum length requirement
+      if (userMessage.length < 10) {
+        appendMessage(
+          "Bot",
+          "Please enter a message with at least 10 characters."
+        );
+        input.value = "";
+        return;
+      }
+
       appendMessage("You", userMessage);
       input.value = "";
 
@@ -72,6 +86,32 @@ function initializeChat() {
       loadingElement.parentNode.removeChild(loadingElement);
     }
   }
+
+  function sanitizeMessage(message) {
+    // Remove any HTML tags
+    const tempDiv = document.createElement("div");
+    tempDiv.textContent = message;
+    let sanitized = tempDiv.innerHTML;
+
+    // Remove script tags and other potentially dangerous content
+    sanitized = sanitized
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+      .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "")
+      .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, "")
+      .replace(/<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi, "")
+      .replace(/javascript:/gi, "")
+      .replace(/on\w+\s*=/gi, "");
+
+    // Limit length to prevent extremely long messages
+    if (sanitized.length > 500) {
+      sanitized = sanitized.substring(0, 500) + "...";
+    }
+
+    // Trim whitespace and normalize line breaks
+    sanitized = sanitized.trim().replace(/\s+/g, " ");
+
+    return sanitized;
+  }
 }
 
 document.getElementById("chat-toggle").addEventListener("click", () => {
@@ -132,7 +172,7 @@ function checkClientRateLimit() {
   requests = requests.filter((timestamp) => now - timestamp < windowMs);
 
   if (requests.length >= maxRequests) {
-    throw new Error("Rate limit exceeded");
+    return false; // Rate limit exceeded
   }
 
   requests.push(now);
