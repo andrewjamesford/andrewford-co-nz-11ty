@@ -130,7 +130,10 @@ export const handler = async (event, context) => {
       modelName: "gpt-4.1-nano",
     });
 
-    const vectorStore = await FaissStore.load("./vector_store", embeddings);
+    const vectorStore = await FaissStore.load(
+      "./functions/vector_store",
+      embeddings
+    );
     const retriever = vectorStore.asRetriever();
 
     const prompt = ChatPromptTemplate.fromTemplate(`
