@@ -1,4 +1,4 @@
-import { handler } from "./latestuploads.mjs";
+import { handler } from "../functions/latestuploads.mjs";
 import dotenv from "dotenv";
 
 // Create an explicit mock function for fetch

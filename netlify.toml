@@ -1,13 +1,13 @@
 [build]
   command = "npm run build"
   functions = "functions"
-  edge_functions = "edge-functions"
   publish = "_site"
 
 [dev]
   command = "npm run start"
   functions = "functions"
   publish = "_site"
+  targetPort = 9999
 
 
 [functions]
