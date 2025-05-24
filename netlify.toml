@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
   functions = "functions"
+  edge_functions = "edge-functions"
   publish = "_site"
 
 [dev]
@@ -8,9 +9,11 @@
   functions = "functions"
   publish = "_site"
 
+
 [functions]
   node_bundler = "esbuild"
   directory = "functions"
+
 
 [[redirects]]
   from = "/.well-known/webfinger"

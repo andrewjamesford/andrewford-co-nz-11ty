@@ -1,0 +1,8 @@
+POST {{ FUNCTION_URL }}/.netlify/edge-functions/chat HTTP/1.1
+Content-Type: application/json
+{
+  "question": "Who is Andrew Ford?"
+
+}
+
+?? status == 200

@@ -4,7 +4,8 @@
   "description": "andrewford.co.nz blog in 11ty",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "dev": "netlify functions:serve & netlify dev",
+    "dev": "netlify dev",
+    "api": "netlify functions:serve",
     "serve": "netlify serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",

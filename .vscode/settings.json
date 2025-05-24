@@ -1,10 +1,20 @@
 {
-  "cSpell.words": ["nextjs", "webp"],
+  "cSpell.words": [
+    "nextjs",
+    "webp"
+  ],
   "liquid.format.enable": false,
   "cSpell.enabled": true,
   "cSpell.language": "en,en-GB",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[nunjucks]": {
     "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
-  }
+  },
+  "deno.enable": true,
+  "deno.enablePaths": [
+    "edge-functions"
+  ],
+  "deno.unstable": true,
+  "deno.importMap": ".netlify/edge-functions-import-map.json",
+  "deno.path": "/Users/andrewford/Library/Preferences/netlify/deno-cli/deno"
 }
