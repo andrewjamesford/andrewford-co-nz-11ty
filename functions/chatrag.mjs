@@ -22,7 +22,7 @@ const ratelimit = new Ratelimit({
 // Input sanitization configuration
 const INPUT_LIMITS = {
   maxLength: 500,
-  minLength: 3,
+  minLength: 10,
 };
 
 function sanitizeInput(input) {

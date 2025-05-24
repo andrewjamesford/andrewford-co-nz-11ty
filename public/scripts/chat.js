@@ -10,7 +10,7 @@ function initializeChat() {
 
       try {
         checkClientRateLimit();
-        const response = await fetch("/.netlify/functions/chatrag", {
+        const response = await fetch(`${SITE_URL}/.netlify/functions/chatrag`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ question: userMessage }),
@@ -25,9 +25,17 @@ function initializeChat() {
   });
 
   function appendMessage(sender, text) {
-    const message = document.createElement("div");
-    message.textContent = `${sender}: ${text}`;
-    messages.appendChild(message);
+    const messageContainer = document.createElement("div");
+    messageContainer.className = `chat-message ${
+      sender.toLowerCase() === "you" ? "user" : "bot"
+    }`;
+
+    const bubble = document.createElement("div");
+    bubble.className = "chat-bubble";
+    bubble.textContent = text;
+
+    messageContainer.appendChild(bubble);
+    messages.appendChild(messageContainer);
     messages.scrollTop = messages.scrollHeight;
   }
 }
