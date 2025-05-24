@@ -29,11 +29,6 @@ const INPUT_LIMITS = {
   minLength: 10,
 };
 
-const INPUT_LIMITS = {
-  maxLength: 500,
-  minLength: 10,
-};
-
 function sanitizeInput(input) {
   const result = { success: false, sanitized: '', error: '' };
 
