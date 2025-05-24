@@ -273,8 +273,8 @@ picture {
 
 .chat-toggle {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
   z-index: 1001;
   width: 3.75rem;
   height: 3.75rem;
@@ -320,7 +320,7 @@ picture {
   position: fixed;
   bottom: 6rem;
   right: 1.25rem;
-  width: 18.75rem;
+  width: 16rem;
   height: 25rem;
   border: 1px solid var(--body-color-secondary);
   background: var(--bg-color);
@@ -472,8 +472,17 @@ picture {
   }
 }
 
+/* Desktop */
 @media screen and (min-width: 48rem) {
+  .chat-toggle {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+  .chat-container {
+    width: 18.75rem;
+  }
   .header {
+    padding-top: 0;
     position: sticky;
     display: grid;
     top: 0;
