@@ -30,3 +30,14 @@ function initializeChat() {
     messages.scrollTop = messages.scrollHeight;
   }
 }
+
+document.getElementById("chat-toggle").addEventListener("click", () => {
+  const chatContainer = document.getElementById("chat-container");
+  chatContainer.style.display =
+    chatContainer.style.display === "none" ? "block" : "none";
+
+  // Load chat script if not already loaded
+  if (!window.chatInitialized) {
+    initializeChat(); // Function defined in chat.js to set up event listeners
+  }
+});

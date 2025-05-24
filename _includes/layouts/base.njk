@@ -85,6 +85,7 @@
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
+		{%- js %}{% include "public/scripts/chat.js" %}{% endjs %}
 
 	</head>
 
@@ -207,6 +208,8 @@
 
 		{# visible page url in html #}
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+
+		{% include "chat.njk" %}
 
 		{# Render the JS bundle #}
 		<script>
