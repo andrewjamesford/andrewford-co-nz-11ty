@@ -356,6 +356,7 @@ picture {
   padding: 10px;
   border: none;
   background-color: transparent;
+  color: var(--body-color);
 }
 
 @media (prefers-color-scheme: dark) {
