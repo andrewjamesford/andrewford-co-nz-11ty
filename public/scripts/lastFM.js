@@ -29,9 +29,14 @@ const loadData = async () => {
     if (data) {
       lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
       lastFMLink.href = data.url;
-      if (!data.albumArt) {
-        lastFMImg.src = data.albumArt;
+
+      lastFMImg.src = `/images/vinyl.webp`;
+      lastFMImg.alt = `Vinyl for ${data.artist} - ${data.album}`;
+      console.log(data.albumArtLarge);
+      if (!data.albumArtLarge) {
+        lastFMImg.src = data.albumArtLarge;
         lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
+      } else {
       }
       lastFMAlbum.innerText = data.album;
       for (const source of lastFMSourceList) {

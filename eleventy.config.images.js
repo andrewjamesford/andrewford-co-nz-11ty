@@ -44,11 +44,12 @@ module.exports = (eleventyConfig) => {
       alt,
       widths = [320, 720, 1024, 1280],
       cssClass,
-      id = "externalImage"
+      id = "externalImage",
+      placeholderImage = "/images/placeholder.png"
     ) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
-      let srcUrl = src ? src : "";
+      let srcUrl = src ? src : placeholderImage;
       if (srcUrl === "") {
         return "";
       }
