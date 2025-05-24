@@ -8,6 +8,14 @@ import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 
 export async function generateVectorStore() {
+  // Check if running in development environment
+  if (process.env.NODE_ENV === "production") {
+    console.log(
+      "Vector store generation is disabled in production environment."
+    );
+    return;
+  }
+
   const loader = new DirectoryLoader(
     "./content",
     {
