@@ -56,7 +56,8 @@ function initializeChat() {
     // Create loading dots animation
     const dots = document.createElement("span");
     dots.className = "loading-dots";
-    dots.innerHTML = "<span>●</span><span>●</span><span>●</span>";
+    dots.innerHTML =
+      "<span>&bull;</span><span>&bull;</span><span>&bull;</span>";
 
     bubble.appendChild(dots);
     messageContainer.appendChild(bubble);
@@ -101,6 +102,22 @@ document.getElementById("chat-toggle").addEventListener("click", () => {
   // Load chat script if not already loaded
   if (!window.chatInitialized) {
     initializeChat();
+
+    // Add welcome message when chat is first opened
+    const messages = document.getElementById("chat-messages");
+    if (messages.children.length === 0) {
+      const messageContainer = document.createElement("div");
+      messageContainer.className = "chat-message bot";
+
+      const bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      bubble.textContent = `Hi, I'm Andrew 👋🏻 
+        How can I help YOU learn web development?`;
+
+      messageContainer.appendChild(bubble);
+      messages.appendChild(messageContainer);
+    }
+
     window.chatInitialized = true;
   }
 });

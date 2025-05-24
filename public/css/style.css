@@ -347,13 +347,13 @@ picture {
 
 .chat-messages {
   flex: 1;
-  min-height: 80%;
   overflow-y: auto;
   padding: 0.625rem;
   border-bottom: 1px solid var(--body-color-secondary);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-height: 0;
 }
 
 .chat-message {
@@ -361,6 +361,8 @@ picture {
   flex-direction: column;
   max-width: 80%;
   word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
 }
 
 .chat-message.user {
@@ -377,6 +379,10 @@ picture {
   font-size: 0.9rem;
   line-height: 1.3;
   position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .chat-message.user .chat-bubble {
