@@ -230,6 +230,7 @@ article ul {
   margin: 0.75rem auto;
   max-width: 70%;
 }
+.lastfm-placeholder,
 .lastfm-img {
   border-radius: 0.25rem;
   max-width: 64px;
