@@ -29,7 +29,55 @@ const INPUT_LIMITS = {
   minLength: 10,
 };
 
+const INPUT_LIMITS = {
+  maxLength: 500,
+  minLength: 10,
+};
+
 function sanitizeInput(input) {
+  const result = { success: false, sanitized: '', error: '' };
+
+  if (typeof input !== "string") {
+    result.error = "Input must be a string";
+    return result;
+  }
+
+  // Trim whitespace
+  const trimmed = input.trim();
+
+  // Check length limits
+  if (trimmed.length < INPUT_LIMITS.minLength) {
+    result.error = `Question must be at least ${INPUT_LIMITS.minLength} characters long`;
+    return result;
+  }
+
+  if (trimmed.length > INPUT_LIMITS.maxLength) {
+    result.error = `Question must be no more than ${INPUT_LIMITS.maxLength} characters long`;
+    return result;
+  }
+
+  // Remove potentially dangerous characters/patterns
+  const sanitized = trimmed
+    .replace(/[<>\"']/g, "") // Remove HTML/script injection chars
+    .replace(/javascript:/gi, "") // Remove javascript: protocols
+    .replace(/on\w+\s*=/gi, "") // Remove event handlers
+    .replace(/\s+/g, " "); // Normalize whitespace
+
+  // Basic content validation - ensure it's not just special characters
+  if (!/[a-zA-Z0-9]/.test(sanitized)) {
+    result.error = "Question must contain alphanumeric characters";
+    return result;
+  }
+
+  result.success = true;
+  result.sanitized = sanitized;
+  return result;
+}
+
+async function checkRateLimit(clientIP) {
+  try {
+    const { success, limit, remaining, reset, pending } = await ratelimit.limit(
+      clientIP
   if (typeof input !== "string") {
     throw new Error("Input must be a string");
   }
