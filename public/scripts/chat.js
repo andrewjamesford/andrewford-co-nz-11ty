@@ -26,7 +26,6 @@ function initializeChat() {
       const loadingMessageElement = appendLoadingMessage();
 
       try {
-        checkClientRateLimit();
         const response = await fetch(`${SITE_URL}/.netlify/functions/chatrag`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -174,20 +173,3 @@ document.getElementById("chat-toggle").addEventListener("click", () => {
     window.chatInitialized = true;
   }
 });
-
-function checkClientRateLimit() {
-  const now = Date.now();
-  const key = "chat_requests";
-  const windowMs = 15 * 60 * 1000; // 15 minutes
-  const maxRequests = 10;
-
-  let requests = JSON.parse(localStorage.getItem(key) || "[]");
-  requests = requests.filter((timestamp) => now - timestamp < windowMs);
-
-  if (requests.length >= maxRequests) {
-    return false; // Rate limit exceeded
-  }
-
-  requests.push(now);
-  localStorage.setItem(key, JSON.stringify(requests));
-}
