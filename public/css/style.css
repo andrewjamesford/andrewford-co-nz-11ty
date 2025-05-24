@@ -354,6 +354,7 @@ picture {
   flex-direction: column;
   gap: 0.5rem;
   min-height: 0;
+  height: calc(100% - 5rem);
 }
 
 .chat-message {
@@ -459,6 +460,8 @@ picture {
   color: var(--body-color);
   outline: none;
   flex-shrink: 0;
+  height: 3rem;
+  resize: none;
 }
 
 @media (prefers-color-scheme: dark) {
