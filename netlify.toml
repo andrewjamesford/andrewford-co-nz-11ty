@@ -8,8 +8,10 @@
   functions = "functions"
   publish = "_site"
 
+
 [functions]
-  node_bundler = "esbuild" 
+  node_bundler = "esbuild"
+
 
 [[redirects]]
   from = "/.well-known/webfinger"

@@ -149,7 +149,6 @@ h2 {
   width: 100%;
   margin-bottom: 0;
   text-wrap: balance;
-  font-size: 90%;
   line-height: 100%;
 }
 .article-description {
@@ -231,6 +230,7 @@ article ul {
   margin: 0.75rem auto;
   max-width: 70%;
 }
+.lastfm-placeholder,
 .lastfm-img {
   border-radius: 0.25rem;
   max-width: 64px;

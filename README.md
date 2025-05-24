@@ -22,6 +22,8 @@ LASTFM_API_KEY=
 SITE_URL=
 YOUTUBE_API_KEY=
 YOUTUBE_CHANNEL_ID=
+OPENAI_API_KEY=
+FUNCTION_URL=
 ```
 
 Ensure you have the following dependencies installed:
@@ -33,12 +35,6 @@ npm install netlify-cli -g
 ```
 
 Once you've installed the dependencies, you can run the development server:
-
-```sh
-npm run dev
-```
-
-or
 
 ```sh
 netlify dev
