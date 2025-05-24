@@ -46,7 +46,6 @@ function initializeChat() {
     messages.appendChild(messageContainer);
     messages.scrollTop = messages.scrollHeight;
   }
-
   function appendLoadingMessage() {
     const messageContainer = document.createElement("div");
     messageContainer.className = "chat-message bot loading-message";
@@ -55,14 +54,10 @@ function initializeChat() {
     bubble.className = "chat-bubble loading-bubble";
 
     // Create loading dots animation
-    const loadingText = document.createElement("span");
-    loadingText.textContent = "Thinking";
-
     const dots = document.createElement("span");
     dots.className = "loading-dots";
-    dots.innerHTML = "<span>.</span><span>.</span><span>.</span>";
+    dots.innerHTML = "<span>●</span><span>●</span><span>●</span>";
 
-    bubble.appendChild(loadingText);
     bubble.appendChild(dots);
     messageContainer.appendChild(bubble);
     messages.appendChild(messageContainer);

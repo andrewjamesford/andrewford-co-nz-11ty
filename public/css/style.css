@@ -407,17 +407,18 @@ picture {
 .chat-bubble.loading-bubble {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
 }
 
 .loading-dots {
   display: inline-flex;
-  gap: 0.1rem;
+  gap: 0.2rem;
 }
 
 .loading-dots span {
   opacity: 0.4;
   animation: loading-dot 1.4s infinite both;
+  font-size: 1rem;
 }
 
 .loading-dots span:nth-child(1) {
