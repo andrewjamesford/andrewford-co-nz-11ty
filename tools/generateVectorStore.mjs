@@ -36,7 +36,7 @@ export async function generateVectorStore() {
     apiKey: process.env.OPENAI_API_KEY,
   });
   const vectorStore = await FaissStore.fromDocuments(splitDocs, embeddings);
-  await vectorStore.save("./vector_store");
+  await vectorStore.save("./functions/vector_store");
   console.log("Vector store saved.");
 }
 
