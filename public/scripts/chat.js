@@ -88,19 +88,32 @@ function initializeChat() {
   }
 
   function sanitizeMessage(message) {
-    // Remove any HTML tags
-    const tempDiv = document.createElement("div");
-    tempDiv.textContent = message;
-    let sanitized = tempDiv.innerHTML;
+    // Use DOMPurify to sanitize the message if available
+    let sanitized;
 
-    // Remove script tags and other potentially dangerous content
-    sanitized = sanitized
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-      .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "")
-      .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, "")
-      .replace(/<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi, "")
-      .replace(/javascript:/gi, "")
-      .replace(/on\w+\s*=/gi, "");
+    if (typeof DOMPurify !== "undefined") {
+      // DOMPurify is available - use it for robust sanitization
+      sanitized = DOMPurify.sanitize(message, {
+        ALLOWED_TAGS: [], // Strip all HTML tags
+        ALLOWED_ATTR: [], // Strip all attributes
+        KEEP_CONTENT: true, // Keep text content
+      });
+    } else {
+      // Fallback to manual sanitization if DOMPurify is not available
+      console.warn("DOMPurify not available, using fallback sanitization");
+      const tempDiv = document.createElement("div");
+      tempDiv.textContent = message;
+      sanitized = tempDiv.innerHTML;
+
+      // Remove script tags and other potentially dangerous content
+      sanitized = sanitized
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "")
+        .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, "")
+        .replace(/<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi, "")
+        .replace(/javascript:/gi, "")
+        .replace(/on\w+\s*=/gi, "");
+    }
 
     // Limit length to prevent extremely long messages
     if (sanitized.length > 500) {

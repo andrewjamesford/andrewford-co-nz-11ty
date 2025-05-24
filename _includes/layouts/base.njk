@@ -209,6 +209,9 @@
 
 		{% include "chat.njk" %}
 
+		{# DOMPurify for HTML sanitization in chat #}
+		<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" integrity="sha512-M72KfQY0y+5Vwbnt3jHc3DZwdUowyXu1mFLb/rjY2cJLZd8f6WPoo+gCRod7b8+4XXPy4DjqaXrjGg0OgzV1jQ==" crossorigin="anonymous"></script>
+
 		{# Render the JS bundle #}
 		<script>
 			{% getBundle "js" %}
