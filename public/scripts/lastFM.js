@@ -30,9 +30,6 @@ const loadData = async () => {
       lastFMLink.innerText = `${data.trackName} - ${data.artist}`;
       lastFMLink.href = data.url;
 
-      lastFMImg.src = `/images/vinyl.webp`;
-      lastFMImg.alt = `Vinyl for ${data.artist} - ${data.album}`;
-      console.log(data.albumArtLarge);
       if (!data.albumArtLarge) {
         lastFMImg.src = data.albumArtLarge;
         lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;

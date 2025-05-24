@@ -391,6 +391,11 @@ picture {
   border-bottom-right-radius: 0.25rem;
 }
 
+/* Hide placeholder when actual image is present */
+.lastfm-widget:has(.lastfm-img[src]:not([src=""])) .lastfm-placeholder {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   .chat-message.user .chat-bubble {
     background-color: #3a3a3a;
@@ -518,10 +523,12 @@ picture {
   .lastfm-widget {
     max-width: 30rem;
   }
+  .lastfm-placeholder,
   .lastfm-img {
     max-width: 174px;
     max-height: 174px;
   }
+
   .lastfm-title {
     font-size: 1rem;
   }
