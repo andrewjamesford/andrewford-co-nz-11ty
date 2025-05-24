@@ -10,6 +10,7 @@
   "[nunjucks]": {
     "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
   },
+  "biome.enabled": false,
   "deno.enable": true,
   "deno.enablePaths": [
     "edge-functions"
