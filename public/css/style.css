@@ -279,7 +279,7 @@ picture {
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 50%;
-  border: none;
+  border: 1px solid var(--body-color-secondary);
   background-image: url("/images/af-chat-avatar.png");
   background-size: cover;
   background-position: center;
