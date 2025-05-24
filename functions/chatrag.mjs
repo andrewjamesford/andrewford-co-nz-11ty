@@ -22,10 +22,6 @@ try {
   });
 } catch (error) {
   console.error("Error initializing Redis or Ratelimit:", error);
-  return {
-    statusCode: 500,
-    body: JSON.stringify({ error: "Rate limiting service unavailable" }),
-  };
 }
 // Input sanitization configuration
 const INPUT_LIMITS = {
