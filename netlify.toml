@@ -7,7 +7,6 @@
   command = "npm run start"
   functions = "functions"
   publish = "_site"
-  targetPort = 9999
 
 
 [functions]
