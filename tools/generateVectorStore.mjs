@@ -9,7 +9,7 @@ import { TextLoader } from "langchain/document_loaders/fs/text";
 
 export async function generateVectorStore() {
   const loader = new DirectoryLoader(
-    "../content",
+    "./content",
     {
       ".md": (path) => new TextLoader(path),
     },
@@ -28,7 +28,7 @@ export async function generateVectorStore() {
     apiKey: process.env.OPENAI_API_KEY,
   });
   const vectorStore = await FaissStore.fromDocuments(splitDocs, embeddings);
-  await vectorStore.save("../vector_store");
+  await vectorStore.save("./vector_store");
   console.log("Vector store saved.");
 }
 
