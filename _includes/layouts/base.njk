@@ -85,6 +85,7 @@
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
+		{%- js %}{% include "public/scripts/chat.js" %}{% endjs %}
 
 	</head>
 
@@ -153,9 +154,6 @@
 					<a rel="me" href="{{ metadata.fullUrl }}/@andrew">Mastodon</a>
 				</li>
 				<li>
-					<a href="https://andrewford-co-nz-chatbot.onrender.com/">My Chatbot</a>
-				</li>
-				<li>
 					<a href="{{ metadata.fullUrl }}/privacy/">Privacy</a>
 				</li>
 				<li>
@@ -181,6 +179,7 @@
 			{%- if (latestMusic) and (latestMusic.music.artist !== "") -%}
 				<div id="lastFM" class="lastfm-widget">
 					{% externalImage latestMusic.music.albumArtLarge, "Cover art for " + latestMusic.music.trackName + " by " + latestMusic.music.artist, [64, 174], "lastfm-img", "lastFMImg" %}
+					<img src="{{ metadata.fullUrl }}/images/vinyl.png" alt="LastFM placeholder image" class="lastfm-placeholder" id="lastFMPlaceholder">
 					<div>
 						<div class="lastfm-title">
 							Last listening to:
@@ -207,6 +206,8 @@
 
 		{# visible page url in html #}
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+
+		{% include "chat.njk" %}
 
 		{# Render the JS bundle #}
 		<script>
