@@ -72,7 +72,6 @@ async function checkRateLimit(clientIP) {
     );
 
     if (!success) {
-      const resetTime = new Date(reset);
       const waitTime = Math.ceil((reset - Date.now()) / 1000 / 60); // minutes
 
       throw new Error(`Rate limit exceeded. Try again in ${waitTime} minutes.`);
