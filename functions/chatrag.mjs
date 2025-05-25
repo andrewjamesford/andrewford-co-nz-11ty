@@ -72,7 +72,6 @@ async function checkRateLimit(clientIP) {
     );
 
     if (!success) {
-      const resetTime = new Date(reset);
       const waitTime = Math.ceil((reset - Date.now()) / 1000 / 60); // minutes
 
       throw new Error(`Rate limit exceeded. Try again in ${waitTime} minutes.`);
@@ -130,10 +129,7 @@ export const handler = async (event, context) => {
       modelName: "gpt-4.1-nano",
     });
 
-    const vectorStore = await FaissStore.load(
-      "./functions/vector_store",
-      embeddings
-    );
+    const vectorStore = await FaissStore.load("./vector_store", embeddings);
     const retriever = vectorStore.asRetriever();
 
     const prompt = ChatPromptTemplate.fromTemplate(`
