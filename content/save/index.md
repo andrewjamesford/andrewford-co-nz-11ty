@@ -16,3 +16,4 @@ Everyone enjoys saving money, if you use one of these codes you will help suppor
 - [Hnry](https://app.hnry.io/r/ANDREW154724) is a platform that automatically calculates and pays taxes, files returns, and manages expenses for self-employed people.
 - [Wise](https://wise.com/invite/ihpc/andrejamesf1) is a service that lets you send, receive and manage money across 40+ currencies with low fees and fast transfers.
 - [Put.io](https://put.io/hi-friend/ibmq003w2zi0o2kg54aw) fetches files from many public places and puts them into your digital stash. You can access your content from various devices and apps, such as Apple TV, iOS, Android and more.
+- [Perplexity](https://perplexity.ai/pro?referral_code=FLD7056I) is a search engine that uses AI to provide direct answers to your questions, with sources and citations. Get $10 off.

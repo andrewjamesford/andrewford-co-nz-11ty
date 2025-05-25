@@ -564,7 +564,12 @@ picture {
     display: table-caption;
   }
   .article-list-item picture {
-    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
   }
   .article-list-item .article-title {
     margin-top: 0.25rem;
@@ -610,12 +615,6 @@ picture {
   .header-anchor {
     font-size: 1.2rem;
   }
-  /* .latest-videos picture {
-    max-width: 318px;
-    width: 318px;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-  } */
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
