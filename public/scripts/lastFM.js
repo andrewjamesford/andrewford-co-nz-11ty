@@ -31,12 +31,17 @@ const loadData = async () => {
       lastFMLink.href = data.url;
 
       if (data.albumArtLarge) {
-        lastFMImg.src = data.albumArtLarge;
-        lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
+        if (lastFMImg) {
+          lastFMImg.src = data.albumArtLarge;
+          lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
+        }
       }
       lastFMAlbum.innerText = data.album;
-      for (const source of lastFMSourceList) {
-        source.setAttribute("srcset", data.albumArtLarge);
+
+      if (lastFMSourceList.length !== 0) {
+        for (const source of lastFMSourceList) {
+          source.setAttribute("srcset", data.albumArtLarge);
+        }
       }
     }
   } catch (error) {

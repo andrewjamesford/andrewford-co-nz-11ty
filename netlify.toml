@@ -12,6 +12,9 @@
 [functions]
   node_bundler = "esbuild"
 
+[functions."chatrag"]
+  included_files = ["vector_store/docstore.json", "vector_store/faiss.index"]
+
 
 [[redirects]]
   from = "/.well-known/webfinger"
