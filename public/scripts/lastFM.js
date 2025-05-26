@@ -38,7 +38,7 @@ const loadData = async () => {
       }
       lastFMAlbum.innerText = data.album;
 
-      if (lastFMSourceList.length !== 0) {
+      if (data.albumArtLarge && lastFMSourceList.length !== 0) {
         for (const source of lastFMSourceList) {
           source.setAttribute("srcset", data.albumArtLarge);
         }
