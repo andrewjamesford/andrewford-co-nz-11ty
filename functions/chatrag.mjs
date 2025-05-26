@@ -51,11 +51,16 @@ function sanitizeInput(input) {
   }
 
   // Remove potentially dangerous characters/patterns
-  const sanitized = trimmed
-    .replace(/[<>\"']/g, "") // Remove HTML/script injection chars
-    .replace(/javascript:/gi, "") // Remove javascript: protocols
-    .replace(/on\w+\s*=/gi, "") // Remove event handlers
-    .replace(/\s+/g, " "); // Normalize whitespace
+  let sanitized = trimmed;
+  let previous;
+  do {
+    previous = sanitized;
+    sanitized = sanitized
+      .replace(/[<>\"']/g, "") // Remove HTML/script injection chars
+      .replace(/javascript:/gi, "") // Remove javascript: protocols
+      .replace(/on\w+\s*=/gi, "") // Remove event handlers
+      .replace(/\s+/g, " "); // Normalize whitespace
+  } while (sanitized !== previous);
 
   // Basic content validation - ensure it's not just special characters
   if (!/[a-zA-Z0-9]/.test(sanitized)) {
