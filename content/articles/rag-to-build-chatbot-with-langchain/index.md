@@ -29,7 +29,7 @@ Let’s face it attention spans are short. In the age of TikTok, ChatGPT, and �
 
 Whether reading a blog, seeking support, or navigating a product, attention is the new currency. But myself and most users are bankrupt. So I wanted to build something that respected people’s time: something that gets straight to the point and delivers value fast, with no fluff.
 
-youtube.com/embed/OAR0LXGSxhk
+{% youtube "OAR0LXGSxhk" %}
 
 ## What Is RAG?
 
