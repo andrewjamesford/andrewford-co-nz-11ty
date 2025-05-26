@@ -23,21 +23,19 @@ description: Learn how to build a fast, lightweight AI chatbot for your blog usi
 ogImage: "rag-chatbot-langchain.png"
 ---
 
-# What Is RAG and How I Used It to Build a Blog Chatbot with LangChain
-
-### The Problem I Wanted to Solve
+## The Problem I Wanted to Solve
 
 Let’s face it attention spans are short. In the age of TikTok, ChatGPT, and “TL;DR,” people want instant, relevant answers without wading through walls of text or scrubbing through 30-minute videos (which they’ll probably watch at 2x speed anyway).
 
 Whether reading a blog, seeking support, or navigating a product, attention is the new currency. But myself and most users are bankrupt. So I wanted to build something that respected people’s time: something that gets straight to the point and delivers value fast, with no fluff.
 
-### What Is RAG?
+## What Is RAG?
 
 **Retrieval-Augmented Generation (RAG)** is an AI pattern that combines two powerful components: a language model (like OpenAI's - gpt 4.1 nano) and a retrieval system. Instead of relying solely on the model’s training data, RAG actively fetches relevant documents from an external source like a blog, knowledge base, or docset and uses them to generate grounded responses.
 
 This makes answers more accurate, contextual, and up-to-date while reducing hallucinations (when the AI just makes stuff up). RAG is especially useful for support bots, internal tools, or anything that needs reliable, source-backed answers.
 
-### The Role of FAISS
+## The Role of FAISS
 
 **FAISS** (Facebook AI Similarity Search) is an open-source library from Meta designed for high-speed similarity search across vector data. In RAG systems, FAISS is the retrieval engine it searches through vectorised documents to find the ones most relevant to a user’s query.
 
@@ -50,7 +48,7 @@ Here’s how it works in my setup:
 
 When someone asks a question, the system turns that query into a vector and compares it against the stored vectors to find the top matches. These are passed into the language model via LangChain to generate a tailored response.
 
-### Building the Chatbot UI
+## Building the Chatbot UI
 
 To keep things lightweight, I built the chatbot in plain **vanilla JavaScript and CSS**—no frameworks, no heavy dependencies.
 
@@ -58,15 +56,18 @@ To keep things lightweight, I built the chatbot in plain **vanilla JavaScript a
 - It prevents multiple initialisations and uses minimal DOM manipulation for smooth async interactions.
 - Animations for showing and hiding the chat are done with CSS, and messages are handled with a single `fetch()`call.
 
+<video controls width="100%" preload="metadata">
+  <source src="./rag-chatbot.web.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 This lean approach makes the chatbot snappy, efficient, and perfect for a static Eleventy site.
 
-### How It Works (Under the Hood)
+## How It Works (Under the Hood)
 
 When a user submits a question through the UI, it sends a POST request to a Netlify Function:
 
-```http
-https://andrewford.co.nz/.netlify/functions/chatrag
-```
+`https://andrewford.co.nz/.netlify/functions/chatrag`
 
 The request payload looks like this:
 
@@ -85,7 +86,7 @@ On the backend, the `chatrag.mjs` Netlify Function handles everything:
 
 The frontend parses this response and appends the answer in the chat window.
 
-### Deployment Details
+## Deployment Details
 
 The site is deployed to **Netlify** with:
 
@@ -103,7 +104,7 @@ To make the vector store files available to the function I have to add the `inc
 
 Everything is file-based, serverless, and optimised for performance and is virtually free to host due to it being static files and serverless. There is no expensive database to host or node.js server waiting constantly to serve the backend.
 
-### What’s Next
+## What’s Next
 
 Now that the core system is up and running with a lightweight chatbot, FAISS-based vector search, and OpenAI powered answers here are a few upgrades I’m considering:
 
@@ -113,3 +114,5 @@ Now that the core system is up and running with a lightweight chatbot, FAISS-bas
 - **Go multilingual**, either through automatic translation or by supporting input in multiple languages.
 
 Each of these enhancements is modular, so I can add them incrementally at my own leisure while keeping the chatbot, lightweight, simple, and easy to maintain.
+
+Source code is available on [GitHub](https://github.com/andrewjamesford/andrewford-co-nz-11ty/blob/main/functions/chatrag.mjs)
