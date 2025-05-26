@@ -52,6 +52,7 @@ picture {
 .article-tags {
   font-size: 0.8rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1.5rem;
   list-style: none;
