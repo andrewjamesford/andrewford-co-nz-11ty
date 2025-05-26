@@ -23,13 +23,13 @@ description: Learn how to build a fast, lightweight AI chatbot for your blog usi
 ogImage: "rag-chatbot-langchain.png"
 ---
 
-youtube.com/embed/OAR0LXGSxhk
-
 ## The Problem I Wanted to Solve
 
 Let’s face it attention spans are short. In the age of TikTok, ChatGPT, and “TL;DR,” people want instant, relevant answers without wading through walls of text or scrubbing through 30-minute videos (which they’ll probably watch at 2x speed anyway).
 
 Whether reading a blog, seeking support, or navigating a product, attention is the new currency. But myself and most users are bankrupt. So I wanted to build something that respected people’s time: something that gets straight to the point and delivers value fast, with no fluff.
+
+youtube.com/embed/OAR0LXGSxhk
 
 ## What Is RAG?
 
