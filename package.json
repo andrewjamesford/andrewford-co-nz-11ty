@@ -63,6 +63,7 @@
     "@langchain/textsplitters": "^0.1.0",
     "@upstash/ratelimit": "^2.0.5",
     "@upstash/redis": "^1.34.9",
-    "faiss-node": "^0.5.1"
+    "faiss-node": "^0.5.1",
+    "dompurify": "^3.2.6"
   }
 }
