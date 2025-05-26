@@ -23,6 +23,8 @@ description: Learn how to build a fast, lightweight AI chatbot for your blog usi
 ogImage: "rag-chatbot-langchain.png"
 ---
 
+youtube.com/embed/OAR0LXGSxhk
+
 ## The Problem I Wanted to Solve
 
 Let’s face it attention spans are short. In the age of TikTok, ChatGPT, and “TL;DR,” people want instant, relevant answers without wading through walls of text or scrubbing through 30-minute videos (which they’ll probably watch at 2x speed anyway).
@@ -55,11 +57,6 @@ To keep things lightweight, I built the chatbot in plain **vanilla JavaScript a
 - The script loads only when the user clicks the anime version of me toggle button, keeping page performance fast.
 - It prevents multiple initialisations and uses minimal DOM manipulation for smooth async interactions.
 - Animations for showing and hiding the chat are done with CSS, and messages are handled with a single `fetch()`call.
-
-<video controls width="100%" preload="metadata">
-  <source src="./rag-chatbot.web.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 This lean approach makes the chatbot snappy, efficient, and perfect for a static Eleventy site.
 
@@ -115,4 +112,4 @@ Now that the core system is up and running with a lightweight chatbot, FAISS-bas
 
 Each of these enhancements is modular, so I can add them incrementally at my own leisure while keeping the chatbot, lightweight, simple, and easy to maintain.
 
-Source code is available on [GitHub](https://github.com/andrewjamesford/andrewford-co-nz-11ty/blob/main/functions/chatrag.mjs)
+Source code is available on [GitHub](https://github.com/andrewjamesford/andrewford-co-nz-11ty)
