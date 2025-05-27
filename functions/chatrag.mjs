@@ -29,6 +29,8 @@ const INPUT_LIMITS = {
   minLength: 10,
 };
 
+import sanitizeHtml from "sanitize-html";
+
 function sanitizeInput(input) {
   if (typeof input !== "string") {
     throw new Error("Input must be a string");
@@ -50,17 +52,11 @@ function sanitizeInput(input) {
     );
   }
 
-  // Remove potentially dangerous characters/patterns
-  let sanitized = trimmed;
-  let previous;
-  do {
-    previous = sanitized;
-    sanitized = sanitized
-      .replace(/[<>\"']/g, "") // Remove HTML/script injection chars
-      .replace(/javascript:/gi, "") // Remove javascript: protocols
-      .replace(/on\w+\s*=/gi, "") // Remove event handlers
-      .replace(/\s+/g, " "); // Normalize whitespace
-  } while (sanitized !== previous);
+  // Sanitize input using sanitize-html
+  const sanitized = sanitizeHtml(trimmed, {
+    allowedTags: [], // Disallow all HTML tags
+    allowedAttributes: {}, // Disallow all attributes
+  });
 
   // Basic content validation - ensure it's not just special characters
   if (!/[a-zA-Z0-9]/.test(sanitized)) {
