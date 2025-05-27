@@ -9,6 +9,7 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
+import sanitizeHtml from "sanitize-html";
 
 // Initialize Upstash Redis-based rate limiting
 let redis;
@@ -28,8 +29,6 @@ const INPUT_LIMITS = {
   maxLength: 500,
   minLength: 10,
 };
-
-import sanitizeHtml from "sanitize-html";
 
 function sanitizeInput(input) {
   if (typeof input !== "string") {
@@ -52,14 +51,22 @@ function sanitizeInput(input) {
     );
   }
 
-  // Sanitize input using sanitize-html
+  // Basic content validation - ensure it's not just special characters
+  // Sanitize input using sanitize-html with stricter text filtering
   const sanitized = sanitizeHtml(trimmed, {
     allowedTags: [], // Disallow all HTML tags
     allowedAttributes: {}, // Disallow all attributes
+    textFilter: function (text) {
+      // Only allow text that contains alphanumeric characters
+      if (!/[a-zA-Z0-9]/.test(text)) {
+        return ""; // Return empty string for invalid content
+      }
+      return text;
+    },
   });
 
-  // Basic content validation - ensure it's not just special characters
-  if (!/[a-zA-Z0-9]/.test(sanitized)) {
+  // Check if sanitization resulted in empty content
+  if (!sanitized || sanitized.trim().length === 0) {
     throw new Error("Question must contain alphanumeric characters");
   }
 
@@ -157,10 +164,9 @@ export const handler = async (event, context) => {
       input: sanitizedQuestion, // Use sanitized input
     });
 
-    const allowedOrigins = [
-      "http://localhost:8888",
-      "https://andrewford.co.nz",
-    ];
+    const allowedOrigins = process.env.ALLOWED_ORIGINS
+      ? process.env.ALLOWED_ORIGINS.split(",")
+      : ["https://andrewford.co.nz"];
     const origin = event.headers.origin;
     const allowOrigin = allowedOrigins.includes(origin)
       ? origin
