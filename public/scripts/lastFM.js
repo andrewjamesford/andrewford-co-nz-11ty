@@ -5,7 +5,7 @@ const LAST_FM_ALBUM_ID = "lastFMAlbum";
 const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
 const SITE_URL =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
-    ? "http://localhost:8888" // or your local dev port
+    ? `${API_URL}` // or your local dev port
     : location.origin;
 
 const loadData = async () => {

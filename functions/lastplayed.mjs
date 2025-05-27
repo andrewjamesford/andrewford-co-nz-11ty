@@ -23,10 +23,9 @@ export const handler = async (event, context) => {
       albumArtLarge: lastTrackData.image[2]["#text"],
     };
 
-    const allowedOrigins = [
-      "http://localhost:8888",
-      "https://andrewford.co.nz",
-    ];
+    const allowedOrigins = process.env.ALLOWED_ORIGINS
+      ? process.env.ALLOWED_ORIGINS.split(",")
+      : ["https://andrewford.co.nz"];
     const origin = event.headers.origin;
     const allowOrigin = allowedOrigins.includes(origin)
       ? origin
