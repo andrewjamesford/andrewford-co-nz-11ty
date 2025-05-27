@@ -1,8 +1,10 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 require("dotenv").config();
+
 module.exports = async () => {
   try {
-    const baseUrl = process.env.API_URL;
+    const baseUrl = process.env.API_URL || "http://localhost:8888";
+    console.log("Fetching latest music from:", baseUrl);
     const url = `${baseUrl}/.netlify/functions/lastplayed`;
 
     const json = await EleventyFetch(url, {
@@ -15,7 +17,7 @@ module.exports = async () => {
       music: json,
     };
   } catch (e) {
-    console.log(e);
+    console.error("Error in latestMusic.js: " + e);
     return {
       music: [],
     };

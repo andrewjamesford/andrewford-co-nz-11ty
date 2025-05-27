@@ -3,7 +3,7 @@ require("dotenv").config();
 
 module.exports = async () => {
   try {
-    const baseUrl = process.env.API_URL;
+    const baseUrl = process.env.API_URL || "http://localhost:8888";
     const url = `${baseUrl}/.netlify/functions/latestUploads`;
     const json = await EleventyFetch(url, {
       duration: "1h", // save for 1 hour
@@ -15,7 +15,7 @@ module.exports = async () => {
       videos: json,
     };
   } catch (e) {
-    console.log(e);
+    console.error("Error in latestVideos.js: " + e);
     return {
       videos: [],
     };
