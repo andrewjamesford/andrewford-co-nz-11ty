@@ -20,6 +20,11 @@
     "genvector": "node tools/generateVectorStore.mjs",
     "test": "jest"
   },
+  "jest": {
+    "testMatch": [
+      "**/*test.{js,mjs}"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrewjamesford/andrewford-co-nz-11ty.git"
