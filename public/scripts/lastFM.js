@@ -3,7 +3,7 @@ const loadData = async () => {
   const LAST_FM_LINK_ID = "lastFMLink";
   const LAST_FM_IMG_ID = "lastFMImg";
   const LAST_FM_ALBUM_ID = "lastFMAlbum";
-  const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
+  const NETLIFY_FUNCTIONS_URL = `${CONFIG.SITE_URL}/.netlify/functions/lastplayed`;
 
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);

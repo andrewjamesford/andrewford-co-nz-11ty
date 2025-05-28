@@ -5,7 +5,7 @@ config();
 
 export default async () => {
   try {
-    const baseUrl = "process.env.URL" || "http://localhost:9999"; // Fallback for local development
+    const baseUrl = process.env.URL || "http://localhost:9999"; // Fallback for local development
     const url = `${baseUrl}/.netlify/functions/latestUploads`;
     const json = await EleventyFetch(url, {
       duration: "1h", // save for 1 hour

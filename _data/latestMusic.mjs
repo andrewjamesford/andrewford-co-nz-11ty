@@ -5,8 +5,8 @@ config();
 
 export default async () => {
   try {
-    const baseUrl = "process.env.URL" || "http://localhost:9999"; // Fallback for local development
-    console.log("Fetching latest music from:", baseUrl);
+    const baseUrl = process.env.API_URL;
+    console.log("Fetching latest music from:", baseUrl, process.env.URL);
     const url = `${baseUrl}/.netlify/functions/lastplayed`;
 
     const json = await EleventyFetch(url, {

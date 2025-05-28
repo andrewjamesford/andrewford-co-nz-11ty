@@ -26,11 +26,14 @@ function initializeChat() {
       const loadingMessageElement = appendLoadingMessage();
 
       try {
-        const response = await fetch(`${SITE_URL}/.netlify/functions/chatrag`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: userMessage }),
-        });
+        const response = await fetch(
+          `${CONFIG.SITE_URL}/.netlify/functions/chatrag`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: userMessage }),
+          }
+        );
 
         const data = await response.json();
 
@@ -91,7 +94,9 @@ function initializeChat() {
     let sanitized;
 
     if (typeof DOMPurify === "undefined") {
-      throw new Error("DOMPurify is not available. Please include DOMPurify for sanitization.");
+      throw new Error(
+        "DOMPurify is not available. Please include DOMPurify for sanitization."
+      );
     }
 
     // Use DOMPurify for robust sanitization
