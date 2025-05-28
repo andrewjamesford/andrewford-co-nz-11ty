@@ -8,7 +8,6 @@
   functions = "functions"
   publish = "_site"
 
-
 [functions]
   node_bundler = "esbuild"
 

@@ -27,7 +27,7 @@ function initializeChat() {
 
       try {
         const response = await fetch(
-          `${CONFIG.SITE_URL}/.netlify/functions/chatrag`,
+          `${CONFIG.API_URL}/.netlify/functions/chatrag`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
