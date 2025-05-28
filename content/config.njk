@@ -1,9 +1,9 @@
 ---
-permalink: /scripts/config.js
+permalink: /scripts/config.mjs
 ---
 
-{% js %}
 console.log('Loading frontend configuration...');
+
 // Frontend Configuration
 // This file is generated at build time with environment-specific values
 
@@ -14,40 +14,8 @@ window.APP_CONFIG = {
   
   // URLs (adjust based on environment)
   urls: {
-    site: '{{ env.SITE_URL }}',
+    site: '{{ process.env.SITE_URL }}',
     api: '{{ metadata.API_URL }}',
-    serverless: '{{ env.SERVERLESS_URL }}'
-  },
-  
-  // API Endpoints
-  endpoints: {
-    chat: '{{ env.SERVERLESS_URL }}/.netlify/functions/chatrag',
-    lastPlayed: '{{ env.SERVERLESS_URL }}/.netlify/functions/lastplayed', 
-    latestUploads: '{{ env.SERVERLESS_URL }}/.netlify/functions/latestUploads'
-  },
-  
-  // Feature flags
-  features: {
-    analytics: {{ env.ENABLE_ANALYTICS | dump }},
-    debug: {{ env.ENABLE_DEBUG | dump }}
-  },
-  
-  // Public configuration
-  analytics: {
-    gtag: '{{ env.GTAG }}'
-  },
-  
-  // Helper methods
-  getEndpoint(name) {
-    return this.endpoints[name] || null;
-  },
-  
-  isProduction() {
-    return this.environment === 'production';
-  },
-  
-  isDevelopment() {
-    return this.environment === 'development';
   }
 };
 
@@ -57,4 +25,3 @@ Object.freeze(window.APP_CONFIG);
 if (window.APP_CONFIG.features.debug) {
   console.log('🔧 App configuration loaded:', window.APP_CONFIG);
 }
-{% endjs %}

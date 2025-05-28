@@ -1,9 +1,10 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-module.exports = {
+export default {
   title: "Andrew Ford",
-  fullUrl: "https://andrewford.co.nz",
-  apiUrl: process.env.API_URL || "https://api.andrewford.co.nz",
+  fullUrl: process.env.URL || "https://andrewford.co.nz",
+  apiUrl: process.env.URL || "https://api.andrewford.co.nz",
   language: "en",
   description:
     "Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code, a full-stack web developer, mentor and an educator.",

@@ -1,13 +1,14 @@
-const path = require("path");
-const eleventyImage = require("@11ty/eleventy-img");
+import path from "path";
+import eleventyImage from "@11ty/eleventy-img";
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   function relativeToInputPath(inputPath, relativeFilePath) {
     let split = inputPath.split("/");
     split.pop();
 
     return path.resolve(split.join(path.sep), relativeFilePath);
   }
+
   const formats = ["avif", "webp", "png", "auto"];
 
   // Eleventy Image shortcode
@@ -21,7 +22,7 @@ module.exports = (eleventyConfig) => {
       let metadata = await eleventyImage(file, {
         widths: widths || [320, 720, 1024, 1280],
         formats,
-        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
       // TODO loading=eager and fetchpriority=high
@@ -56,7 +57,7 @@ module.exports = (eleventyConfig) => {
       let metadata = await eleventyImage(srcUrl, {
         widths: widths || [320, 720, 1024, 1280],
         formats,
-        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
       // TODO loading=eager and fetchpriority=high
@@ -81,7 +82,7 @@ module.exports = (eleventyConfig) => {
       let metadata = await eleventyImage(file, {
         widths: widths || [320, 720, 1024, 1280],
         formats,
-        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
       // TODO loading=eager and fetchpriority=high
