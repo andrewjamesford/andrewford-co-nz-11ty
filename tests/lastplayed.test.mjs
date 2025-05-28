@@ -1,10 +1,10 @@
-import fetch from "node-fetch";
-
+const API_URL = process.env.API_URL || "http://localhost:8888";
 const FUNCTION_BASE_URL = `${API_URL}/.netlify/functions`; // Adjust port if your netlify dev runs on a different one
 
 describe("lastplayed Netlify Function", () => {
   const lastPlayedUrl = `${FUNCTION_BASE_URL}/lastplayed`;
 
+  console.log("Testing lastplayed function at URL:", lastPlayedUrl);
   // Test with an allowed origin (localhost)
   it("should return 200 and correct CORS header for localhost origin", async () => {
     const response = await fetch(lastPlayedUrl, {

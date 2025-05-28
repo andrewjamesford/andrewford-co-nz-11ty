@@ -1,0 +1,30 @@
+{% js %}
+
+const CONFIG = {
+  // Site URLs
+  SITE_URL: '{{ metadata.fullUrl }}',
+  API_URL: '{{ metadata.apiUrl }}',
+  SERVERLESS_URL: '{{ metadata.serverlessUrl }}',
+  
+  // Environment
+  ENVIRONMENT: '{{ metadata.environment }}',
+  
+  // Feature flags
+  {# FEATURES: {
+    analytics: {{ metadata.features.analytics | dump }},
+    debug: {{ metadata.features.debug | dump }}
+  }, #}
+  
+  // Functions/API endpoints
+  ENDPOINTS: {
+    chat: '{{ metadata.serverlessUrl }}/.netlify/functions/chatrag',
+    lastPlayed: '{{ metadata.serverlessUrl }}/.netlify/functions/lastplayed',
+    latestUploads: '{{ metadata.serverlessUrl }}/.netlify/functions/latestUploads'
+  }
+};
+
+// Make config globally available
+window.CONFIG = CONFIG;
+
+console.log('Client configuration:', CONFIG);
+{% endjs %}

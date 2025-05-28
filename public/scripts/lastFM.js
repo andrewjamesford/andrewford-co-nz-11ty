@@ -1,14 +1,11 @@
-const LAST_FM_WIDGET_ID = "lastFM";
-const LAST_FM_LINK_ID = "lastFMLink";
-const LAST_FM_IMG_ID = "lastFMImg";
-const LAST_FM_ALBUM_ID = "lastFMAlbum";
-const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
-const SITE_URL =
-  location.hostname === "localhost" || location.hostname === "127.0.0.1"
-    ? `${API_URL}` // or your local dev port
-    : location.origin;
-
 const loadData = async () => {
+  const LAST_FM_WIDGET_ID = "lastFM";
+  const LAST_FM_LINK_ID = "lastFMLink";
+  const LAST_FM_IMG_ID = "lastFMImg";
+  const LAST_FM_ALBUM_ID = "lastFMAlbum";
+  const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
+  const SITE_URL = CONFIG.API_URL;
+
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
     const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
