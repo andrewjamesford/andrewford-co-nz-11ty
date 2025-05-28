@@ -1,5 +1,6 @@
+const LAST_FM_WIDGET_ID = "lastFM";
+
 const loadData = async () => {
-  const LAST_FM_WIDGET_ID = "lastFM";
   const LAST_FM_LINK_ID = "lastFMLink";
   const LAST_FM_IMG_ID = "lastFMImg";
   const LAST_FM_ALBUM_ID = "lastFMAlbum";
@@ -45,4 +46,10 @@ const loadData = async () => {
   }
 };
 
-loadData();
+// Only run loadData when the DOM is loaded and the lastFM element exists
+document.addEventListener("DOMContentLoaded", () => {
+  const lastFMWidget = document.getElementById(LAST_FM_WIDGET_ID);
+  if (lastFMWidget) {
+    loadData();
+  }
+});
