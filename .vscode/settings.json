@@ -17,5 +17,8 @@
   ],
   "deno.unstable": true,
   "deno.importMap": ".netlify/edge-functions-import-map.json",
-  "deno.path": "/Users/andrewford/Library/Preferences/netlify/deno-cli/deno"
+  "deno.path": "/Users/andrewford/Library/Preferences/netlify/deno-cli/deno",
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }
