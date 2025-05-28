@@ -1,22 +1,23 @@
 [build]
-  command = "npm run build"
-  functions = "functions"
-  publish = "_site"
+command = "npm run build"
+functions = "functions"
+publish = "_site"
 
 [dev]
-  command = "npm run start"
-  functions = "functions"
-  publish = "_site"
+command = "npm run start"
+functions = "functions"
+publish = "_site"
 
 [functions]
-  node_bundler = "esbuild"
+node_bundler = "esbuild"
+
 
 [functions."chatrag"]
-  included_files = ["vector_store/docstore.json", "vector_store/faiss.index"]
+included_files = ["vector_store/docstore.json", "vector_store/faiss.index"]
+external_node_modules = ["faiss-node"]
 
 
 [[redirects]]
-  from = "/.well-known/webfinger"
-  to = "https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz"
-  status = 200
-
+from = "/.well-known/webfinger"
+to = "https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz"
+status = 200
