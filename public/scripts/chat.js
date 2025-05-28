@@ -155,8 +155,8 @@ document.getElementById("chat-toggle").addEventListener("click", () => {
 
       const bubble = document.createElement("div");
       bubble.className = "chat-bubble";
-      bubble.textContent = `Hi, I'm Andrew 👋🏻 
-        How can I help YOU learn web development?`;
+      bubble.textContent = `Hi, I'm Andrew's Chatbot 👋🏻
+        How can I help YOU learn about web and AI development?`;
 
       messageContainer.appendChild(bubble);
       messages.appendChild(messageContainer);

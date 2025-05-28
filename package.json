@@ -1,6 +1,6 @@
 {
   "name": "andrewford-co-nz-11ty",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "andrewford.co.nz blog in 11ty",
   "scripts": {
     "start": "NODE_ENV=development npx @11ty/eleventy --serve",

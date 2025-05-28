@@ -36,11 +36,9 @@ html {
 }
 .body {
   color: var(--body-color);
-  font-size: 1.13rem;
-  font: -apple-system-body;
   font-family: var(--font-sans);
-  line-height: 1.6rem;
   background-color: var(--bg-color);
+  line-height: 120%;
 }
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
@@ -102,6 +100,7 @@ h6 {
   margin-top: 0;
   letter-spacing: -1px;
   text-wrap: balance;
+  line-height: 130%;
 }
 .article :is(h2, h3, h4, h5, h6) {
   margin-top: 3rem;
@@ -111,14 +110,14 @@ h4:is(.footnotes-title) {
 }
 h1 {
   font-size: 1.9rem;
-  line-height: 2.3rem;
-  min-height: 2.3rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  line-height: 1.8rem;
-  min-height: 2.3rem;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 .article-datetime {
@@ -136,7 +135,6 @@ h2 {
 
 .article-list-item picture {
   text-align: center;
-  max-height: 180px;
 }
 .video-thumb {
   border-radius: 0.75rem;
@@ -147,8 +145,8 @@ h2 {
 }
 .article-title {
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   width: 100%;
-  margin-bottom: 0;
   text-wrap: balance;
   line-height: 100%;
 }
