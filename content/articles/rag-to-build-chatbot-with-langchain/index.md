@@ -28,8 +28,6 @@ Let’s face it attention spans are short. In the age of TikTok, ChatGPT, and �
 
 Whether reading a blog, seeking support, or navigating a product, attention is the new currency. But myself and most users are bankrupt. So I wanted to build something that respected people’s time: something that gets straight to the point and delivers value fast, with no fluff.
 
-youtube.com/embed/OAR0LXGSxhk
-
 ## What Is RAG?
 
 **Retrieval-Augmented Generation (RAG)** is an AI pattern that combines two powerful components: a language model (like OpenAI's - gpt 4.1 nano) and a retrieval system. Instead of relying solely on the model’s training data, RAG actively fetches relevant documents from an external source like a blog, knowledge base, or docset and uses them to generate grounded responses.
@@ -101,6 +99,8 @@ To make the vector store files available to the function I have to add the `inc
 ```
 
 Everything is file-based, serverless, and optimised for performance and is virtually free to host due to it being static files and serverless. There is no expensive database to host or node.js server waiting constantly to serve the backend.
+
+You can see the chatbot in action on my blog at [andrewford.co.nz](https://andrewford.co.nz) by clicking the anime version of me button in the bottom right corner on any page of the website.
 
 ## What’s Next
 

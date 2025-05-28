@@ -8,8 +8,9 @@ import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-import pluginDrafts from "./eleventy.config.drafts.js";
-import pluginImages from "./eleventy.config.images.js";
+import pluginImages from "./eleventy.config.images.mjs";
+import pluginDrafts from "./eleventy.config.drafts.mjs";
+
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
 import dotenv from "dotenv";

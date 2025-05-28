@@ -207,6 +207,7 @@
 		{# visible page url in html #}
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 
+		{% include "config.njk" %}
 		{% include "chat.njk" %}
 
 		{# DOMPurify for HTML sanitization in chat #}
@@ -219,14 +220,19 @@
 
 		{# Google tag (gtag.js) #}
 		<script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}"></script>
+		{# https: //developers.google.com/analytics/devguides/collection/gtagjs #}
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
+			if (
+				CONFIG
+				?.GTAG) {
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
 
-			gtag('config', '{{ metadata.gTag}}');
+				gtag('config', '{{ metadata.gTag}}');
+			}
 		</script>
 	</body>
 </html>

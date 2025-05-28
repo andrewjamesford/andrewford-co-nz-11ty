@@ -26,11 +26,14 @@ function initializeChat() {
       const loadingMessageElement = appendLoadingMessage();
 
       try {
-        const response = await fetch(`${SITE_URL}/.netlify/functions/chatrag`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: userMessage }),
-        });
+        const response = await fetch(
+          `${CONFIG.API_URL}/.netlify/functions/chatrag`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: userMessage }),
+          }
+        );
 
         const data = await response.json();
 
@@ -91,7 +94,9 @@ function initializeChat() {
     let sanitized;
 
     if (typeof DOMPurify === "undefined") {
-      throw new Error("DOMPurify is not available. Please include DOMPurify for sanitization.");
+      throw new Error(
+        "DOMPurify is not available. Please include DOMPurify for sanitization."
+      );
     }
 
     // Use DOMPurify for robust sanitization
@@ -150,8 +155,8 @@ document.getElementById("chat-toggle").addEventListener("click", () => {
 
       const bubble = document.createElement("div");
       bubble.className = "chat-bubble";
-      bubble.textContent = `Hi, I'm Andrew 👋🏻 
-        How can I help YOU learn web development?`;
+      bubble.textContent = `Hi, I'm Andrew's Chatbot 👋🏻
+        How can I help YOU learn about web and AI development?`;
 
       messageContainer.appendChild(bubble);
       messages.appendChild(messageContainer);

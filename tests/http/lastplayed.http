@@ -1,4 +1,4 @@
-GET {{ FUNCTION_URL }}/.netlify/functions/lastplayed HTTP/1.1
+GET {{ API_URL }}/.netlify/functions/lastplayed HTTP/1.1
 
 
 ?? status == 200

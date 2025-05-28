@@ -1,16 +1,17 @@
 {
   "name": "andrewford-co-nz-11ty",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "andrewford.co.nz blog in 11ty",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "dev": "netlify dev",
+    "start": "NODE_ENV=development npx @11ty/eleventy --serve",
+    "dev": "NODE_ENV=development netlify dev",
     "api": "netlify functions:serve",
     "serve": "netlify serve",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "build": "npx @11ty/eleventy",
+    "debug": "DEBUG=Eleventy* NODE_ENV=development npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* NODE_ENV=development npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* NODE_ENV=development npx @11ty/eleventy",
+    "build": "NODE_ENV=production npx @11ty/eleventy",
+    "build:dev": "NODE_ENV=development npx @11ty/eleventy",
     "article": "bash article.sh",
     "clear": "rm -rf _site && rm -rf .cache",
     "perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
@@ -19,6 +20,11 @@
     "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
     "genvector": "node tools/generateVectorStore.mjs",
     "test": "jest"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*test.{js,mjs}"
+    ]
   },
   "repository": {
     "type": "git",
@@ -64,6 +70,7 @@
     "@upstash/ratelimit": "^2.0.5",
     "@upstash/redis": "^1.34.9",
     "faiss-node": "^0.5.1",
-    "dompurify": "^3.2.6"
+    "dompurify": "^3.2.6",
+    "sanitize-html": "^2.17.0"
   }
 }

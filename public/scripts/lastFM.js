@@ -1,14 +1,11 @@
 const LAST_FM_WIDGET_ID = "lastFM";
-const LAST_FM_LINK_ID = "lastFMLink";
-const LAST_FM_IMG_ID = "lastFMImg";
-const LAST_FM_ALBUM_ID = "lastFMAlbum";
-const NETLIFY_FUNCTIONS_URL = "/.netlify/functions/lastplayed";
-const SITE_URL =
-  location.hostname === "localhost" || location.hostname === "127.0.0.1"
-    ? "http://localhost:8888" // or your local dev port
-    : location.origin;
 
 const loadData = async () => {
+  const LAST_FM_LINK_ID = "lastFMLink";
+  const LAST_FM_IMG_ID = "lastFMImg";
+  const LAST_FM_ALBUM_ID = "lastFMAlbum";
+  const NETLIFY_FUNCTIONS_URL = `${CONFIG.API_URL}/.netlify/functions/lastplayed`;
+
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
     const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
@@ -16,7 +13,7 @@ const loadData = async () => {
       ".lastfm-widget picture source"
     );
     const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
-    const response = await fetch(SITE_URL + NETLIFY_FUNCTIONS_URL, {
+    const response = await fetch(NETLIFY_FUNCTIONS_URL, {
       method: "GET",
     });
 
@@ -49,4 +46,10 @@ const loadData = async () => {
   }
 };
 
-loadData();
+// Only run loadData when the DOM is loaded and the lastFM element exists
+document.addEventListener("DOMContentLoaded", () => {
+  const lastFMWidget = document.getElementById(LAST_FM_WIDGET_ID);
+  if (lastFMWidget) {
+    loadData();
+  }
+});

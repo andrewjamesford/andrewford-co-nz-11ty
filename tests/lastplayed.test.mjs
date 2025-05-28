@@ -1,24 +1,22 @@
-import fetch from "node-fetch";
-
-const functionPort = 9999;
-
-const FUNCTION_BASE_URL = `http://localhost:${functionPort}/.netlify/functions`; // Adjust port if your netlify dev runs on a different one
+const API_URL = process.env.API_URL || "http://localhost:8888";
+const FUNCTION_BASE_URL = `${API_URL}/.netlify/functions`; // Adjust port if your netlify dev runs on a different one
 
 describe("lastplayed Netlify Function", () => {
   const lastPlayedUrl = `${FUNCTION_BASE_URL}/lastplayed`;
 
+  console.log("Testing lastplayed function at URL:", lastPlayedUrl);
   // Test with an allowed origin (localhost)
   it("should return 200 and correct CORS header for localhost origin", async () => {
     const response = await fetch(lastPlayedUrl, {
       headers: {
-        Origin: `http://localhost:${functionPort}`,
+        Origin: `${API_URL}`,
       },
     });
     const data = await response.json();
 
     expect(response.status).toBe(200);
     expect(response.headers.get("access-control-allow-origin")).toBe(
-      "http://localhost:8888"
+      `${API_URL}`
     );
     expect(data).toHaveProperty("artist");
     expect(data).toHaveProperty("trackName");
@@ -56,7 +54,7 @@ describe("lastplayed Netlify Function", () => {
     expect(response.status).toBe(200);
     // It should fall back to the first allowed origin as per your function logic
     expect(response.headers.get("access-control-allow-origin")).toBe(
-      "http://localhost:8888"
+      `${API_URL}`
     );
     expect(data).toHaveProperty("artist");
   });
@@ -69,7 +67,7 @@ describe("lastplayed Netlify Function", () => {
     expect(response.status).toBe(200);
     // It should fall back to the first allowed origin
     expect(response.headers.get("access-control-allow-origin")).toBe(
-      "http://localhost:8888"
+      `${API_URL}`
     );
     expect(data).toHaveProperty("artist");
   });
@@ -79,7 +77,7 @@ describe("lastplayed Netlify Function", () => {
     const response = await fetch(lastPlayedUrl, {
       method: "OPTIONS", // Preflight request
       headers: {
-        Origin: "http://localhost:8888",
+        Origin: `${API_URL}`,
         "Access-Control-Request-Method": "GET",
         "Access-Control-Request-Headers": "Content-Type",
       },
@@ -89,7 +87,7 @@ describe("lastplayed Netlify Function", () => {
     // If Netlify Dev handles it, the behavior might differ slightly from deployed.
     // For now, let's check the GET response headers which are explicitly set.
     const getResponse = await fetch(lastPlayedUrl, {
-      headers: { Origin: "http://localhost:8888" },
+      headers: { Origin: `${API_URL}` },
     });
     expect(getResponse.headers.get("access-control-allow-headers")).toBe(
       "Content-Type"
