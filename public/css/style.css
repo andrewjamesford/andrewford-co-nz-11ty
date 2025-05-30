@@ -456,7 +456,7 @@ picture {
   flex: 1;
   height: 3rem;
   box-sizing: border-box;
-  padding: 0 0.625rem;
+  padding: 0.25rem 0.625rem;
   border: none;
   background-color: transparent;
   color: var(--body-color);
