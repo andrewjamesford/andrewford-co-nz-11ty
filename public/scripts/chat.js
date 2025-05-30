@@ -2,50 +2,63 @@ function initializeChat() {
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
 
-  input.addEventListener("keypress", async (e) => {
-    if (e.key === "Enter" && input.value.trim()) {
-      const rawMessage = input.value.trim();
+  const sendButton = document.getElementById("chat-send");
 
-      // Sanitize and validate the message
-      const userMessage = sanitizeMessage(rawMessage);
+  const sendMessage = async () => {
+    if (!input.value.trim()) return;
 
-      // Check minimum length requirement
-      if (userMessage.length < 10) {
-        appendMessage(
-          "Bot",
-          "Please enter a message with at least 10 characters."
-        );
-        input.value = "";
-        return;
-      }
+    const rawMessage = input.value.trim();
 
-      appendMessage("You", userMessage);
+    // Sanitize and validate the message
+    const userMessage = sanitizeMessage(rawMessage);
+
+    // Check minimum length requirement
+    if (userMessage.length < 10) {
+      appendMessage(
+        "Bot",
+        "Please enter a message with at least 10 characters."
+      );
       input.value = "";
-
-      // Show loading indicator
-      const loadingMessageElement = appendLoadingMessage();
-
-      try {
-        const response = await fetch(
-          `${CONFIG.API_URL}/.netlify/functions/chatrag`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question: userMessage }),
-          }
-        );
-
-        const data = await response.json();
-
-        // Remove loading indicator and show actual response
-        removeLoadingMessage(loadingMessageElement);
-        appendMessage("Bot", data.answer || "No response.");
-      } catch (error) {
-        // Remove loading indicator and show error
-        removeLoadingMessage(loadingMessageElement);
-        appendMessage("Bot", "Error: Unable to fetch response.");
-      }
+      return;
     }
+
+    appendMessage("You", userMessage);
+    input.value = "";
+
+    // Show loading indicator
+    const loadingMessageElement = appendLoadingMessage();
+
+    try {
+      const response = await fetch(
+        `${CONFIG.API_URL}/.netlify/functions/chatrag`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: userMessage }),
+        }
+      );
+
+      const data = await response.json();
+
+      // Remove loading indicator and show actual response
+      removeLoadingMessage(loadingMessageElement);
+      appendMessage("Bot", data.answer || "No response.");
+    } catch (error) {
+      // Remove loading indicator and show error
+      removeLoadingMessage(loadingMessageElement);
+      appendMessage("Bot", "Error: Unable to fetch response.");
+    }
+  };
+
+  input.addEventListener("keydown", async (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      await sendMessage();
+    }
+  });
+
+  sendButton.addEventListener("click", async () => {
+    await sendMessage();
   });
 
   function appendMessage(sender, text) {
@@ -136,7 +149,7 @@ document.getElementById("chat-toggle").addEventListener("click", () => {
     }, 300); // Match the animation duration
   } else {
     // Show the chat with animation
-    chatContainer.style.display = "block";
+    chatContainer.style.display = "flex";
     // Small delay to ensure display change takes effect before animation
     setTimeout(() => {
       chatContainer.classList.add("show");
