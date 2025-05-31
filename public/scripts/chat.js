@@ -43,16 +43,14 @@ function initializeChat() {
       // Remove loading indicator and show actual response
       removeLoadingMessage(loadingMessageElement);
       appendMessage("Bot", data.answer || "No response.");
-} catch (error) {
+    } catch (error) {
       // Remove loading indicator and show error
       removeLoadingMessage(loadingMessageElement);
       console.error("Error fetching response:", error);
-      appendMessage("Bot", `Error: ${error.message || "Unable to fetch response."}`);
-    }
-  };
-      // Remove loading indicator and show error
-      removeLoadingMessage(loadingMessageElement);
-      appendMessage("Bot", "Error: Unable to fetch response.");
+      appendMessage(
+        "Bot",
+        `Error: ${error.message || "Unable to fetch response."}`
+      );
     }
   };
 
