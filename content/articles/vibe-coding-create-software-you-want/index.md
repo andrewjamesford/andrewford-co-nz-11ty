@@ -57,7 +57,7 @@ For low-stakes software like a script or extension, you don't need a full-blown 
 
 I began by outlining what I needed, gave the agent some docs, and linked to example plugins. Within minutes, I had a proof of concept doing eighty percent of what I wanted.
 
-One method I've found useful when working with agents is creating an [AGENTS.md](https://github.com/andrewjamesford/popclip-markdown-formatter/blob/2722d0518f322f0cf003e456fe5c5c343c8402e4/AGENTS.md#L1) file. It's tailored for ChatGPT and Codex CLI for now, but other tools are adopting similar formats. For GitHub Copilot, I use a workaround—creating an instructions.md file that points to AGENTS.md.
+[AGENTS.md](https://github.com/andrewjamesford/popclip-markdown-formatter/blob/main/AGENTS.md#L1)
 
 Once that's in place, I start outlining the task in detail. Examples help massively. Through iterative conversations with the agent, I get most of the way there without having to read the code line by line. It's the kind of work I can do while watching YouTube or multitasking. I just check in, review the results, and guide the next step.
 
