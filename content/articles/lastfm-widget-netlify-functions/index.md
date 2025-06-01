@@ -17,7 +17,7 @@ ogimage: "lastfm-widget-netlify-functions.png"
 
 Would it not be great to share what I'm listening to on my website? I've been using [LastFM](https://www.last.fm) for years to track my listening habits and I thought it would be great to use their API to do so. The hard part though was my site is "static" built with [eleventy (11ty)](https://www.11ty.dev), it's a static site generator which means a build process puts all the files together and turns it into HTML every time I push commits to GitHub. The files are static and can't dynamically change like a Node.js or Wordpress website. So I needed a way to get the data from LastFM and display it on my site. I could have used a JavaScript fetch request to get the data, but that would mean exposing my API key to the world. I needed a way to get the data securely and Netlify (serverless) functions was the answer.
 
-Here is the transcript from my [latest how-to guide](https://www.https://www.youtube.com/watch?v=okbDFf-eIqk) on how to make a [LastFM widget](https://www.last.fm) for your own website showing your last played song that uses [Netlify functions](https://www.netlify.com/products/functions/) (serverless functions).
+Here is the transcript from my [latest how-to guide](https://www.youtube.com/watch?v=okbDFf-eIqk) on how to make a [LastFM widget](https://www.last.fm) for your own website showing your last played song that uses [Netlify functions](https://www.netlify.com/products/functions/) (serverless functions).
 
 https://www.youtube.com/watch?v=okbDFf-eIqk
 
