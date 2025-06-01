@@ -28,6 +28,7 @@ pre[class*="language-"] {
   margin-left: 0;
   padding-left: 2rem;
   margin-right: 2rem;
+  font-style: italic;
 }
 .article li {
   margin-bottom: 0.5rem;
