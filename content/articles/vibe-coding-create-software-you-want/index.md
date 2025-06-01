@@ -14,6 +14,7 @@ tags:
   - workflow-automation
   - software-development
 description: "Discover how vibe coding with AI tools can help you build custom software that fits your workflow. Learn how to create a PopClip extension for instant Markdown formatting on macOS using AI agents, and build tools that adapt to your work instead of forcing you to adapt to them."
+ogimage: "vibe-coding-create-software-you-want.png"
 ---
 
 {% figure "./vibe-coding-software.png", "Vibe Coding to Create the Software You Want" %}
