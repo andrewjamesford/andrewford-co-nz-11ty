@@ -13,7 +13,7 @@ tags:
   - series
 description: Continuing with the Next.js & Stripe online shop we now will display the products from Stripe.
 socialBackground: bg5
-ogimage: "product-api.png"
+ogimage: "shop-nextjs-stripe-display-products.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}

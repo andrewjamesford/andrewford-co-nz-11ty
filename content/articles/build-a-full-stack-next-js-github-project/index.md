@@ -13,7 +13,7 @@ tags:
   - kanban
   - component
 description: "In this tutorial video we continue planning our full-stack web app with Next.js. We create a GitHub project and start adding tickets to the project. We also start building out the first components for the project."
-ogimage: "full-stack5.jpg"
+ogimage: "build-a-full-stack-next-js-github-project.jpg"
 ---
 
 {% figure "./full-stack-5.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}

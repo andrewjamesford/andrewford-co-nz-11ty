@@ -13,7 +13,7 @@ tags:
   - javascript
   - isolation
 description: "In this installment we create a Storybook for our project and start building out our Header component. I walk through some of the features of Storybook and how it can help you build your React components in isolation."
-ogimage: "full-stack-6.jpeg"
+ogimage: "build-a-full-stack-next-js-storybook.jpeg"
 ---
 
 {% figure "./full-stack-6.jpeg", "&quot;Building a storybook&quot; / Bing Image Creator" %}

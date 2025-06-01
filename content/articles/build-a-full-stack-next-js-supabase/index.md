@@ -14,7 +14,7 @@ tags:
   - youtube
   - lms
 description: This is the third video tutorial on building a full-stack Next.js with Supabase. Andrew discusses how to display a list of courses on a webpage using data from a Supabase database. He explains how to use SQL queries to retrieve data from the database and display it on the webpage and also mentions using Superbase's table editor to edit the database and provides a brief overview of plans for future development.
-ogimage: "full-stack3.jpg"
+ogimage: "build-a-full-stack-next-js-supabase.jpg"
 ---
 
 {% figure "./full-stack3.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}

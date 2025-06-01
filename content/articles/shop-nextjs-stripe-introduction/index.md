@@ -12,7 +12,7 @@ tags:
   - series
 description: Introducing a new series on how to build a shop using Next.js and Stripe
 socialBackground: bg5
-ogimage: "nextjs-start.png"
+ogimage: "shop-nextjs-stripe-introduction.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}

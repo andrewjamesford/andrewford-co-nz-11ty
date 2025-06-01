@@ -13,7 +13,7 @@ tags:
   - youtube
   - lms
 description: This is a transcript of my stream that went through the initial planning stages of a Next.js project, starting with brainstorming ideas on a virtual whiteboard. Wireframes were then created in Excalidraw to visualize pages like home, sign up, course listings, and course details. Key requirements around authentication, data storage, roles and permissions were mapped out. Superbase was selected to provide authentication via LinkedIn/Google login as well as for it being a Postgres database. Next.js was chosen for its React framework and Radix UI was selected for accessible, customizable UI components to speed up development.
-ogimage: "full-stack1.jpg"
+ogimage: "build-a-full-stack-next-js-planning.jpg"
 ---
 
 {% figure "./full-stack1.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}

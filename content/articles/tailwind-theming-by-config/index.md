@@ -10,7 +10,7 @@ tags:
   - environment variables
   - branding
 description: Using tailwind css and environment variables to reuse code for multiple brands on the same codebase.
-ogimage: "cards-alpha.png"
+ogimage: "tailwind-theming-by-config.png"
 ---
 
 A common approach to building web apps in large organisations are theming them for multiple brands. The app will function in the same way but look different for each corresponding theme with alternate fonts, colours and logo etc. This can be a big headache, and you can be left maintaining multiple copies of the same code base. In an ideal world we don't want to do that.

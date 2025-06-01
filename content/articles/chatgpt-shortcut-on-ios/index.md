@@ -10,6 +10,7 @@ tags:
   - ios
   - shortcut
 description: A better way to use ChatGPT on iOS and not lose your context using this shortcut.
+ogimage: "chatgpt-ios-shortcut.png"
 ---
 
 ## Use the ChatGPT app shortcut action on iOS

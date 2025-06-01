@@ -13,7 +13,7 @@ tags:
   - checkout
 description: Concluding with the Next.js & Stripe online shop we now will add the checkout functionality
 socialBackground: bg5
-ogimage: "stripe-checkout.png"
+ogimage: "shop-nextjs-stripe-checkout.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}
