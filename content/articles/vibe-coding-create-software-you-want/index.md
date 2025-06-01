@@ -71,3 +71,5 @@ This extension is now part of my daily flow. Doesn't matter if I'm replying in S
 "Vibe coding" is about building workflows and tools that _fit your rhythm_ with minimal effort. You don't need to launch a full app. Sometimes, it's a script, an extension, a shortcut. But it makes a real difference — and reminds you that you _can_ shape the way your tools behave.
 
 If something feels clunky or repetitive, don't just put up with it. You've got the skills — and the agents — to fix it.
+
+You can download the [Popclip Markdown Formatter extension project available here](https://github.com/andrewjamesford/popclip-markdown-formatter).
