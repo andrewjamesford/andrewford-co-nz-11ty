@@ -26,7 +26,7 @@ pre[class*="language-"] {
 .article blockquote {
   border-left: 0.5rem solid var(--link-color);
   margin-left: 0;
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin-right: 2rem;
   font-style: italic;
 }
@@ -612,7 +612,7 @@ picture {
   }
   .nav-links li {
     display: inline-block;
-padding: 1rem 0.9rem;
+    padding: 1rem 0.9rem;
     text-align: end;
   }
   .header-anchor {

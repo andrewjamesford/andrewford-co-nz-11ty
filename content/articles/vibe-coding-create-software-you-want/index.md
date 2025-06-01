@@ -55,13 +55,13 @@ For low-stakes software like a script or extension, you don't need a full-blown 
 
 ## How I Did It
 
-I began by outlining what I needed, gave the agent some docs, and linked to example plugins. Within minutes, I had a proof of concept doing eighty percent of what I wanted.
+I began by outlining what I needed, gave the agent some docs, and linked to example plugins. Within minutes, I had a proof of concept doing 80% of what I wanted.
 
-[AGENTS.md](https://github.com/andrewjamesford/popclip-markdown-formatter/blob/main/AGENTS.md#L1)
+One method I’ve found useful when working with agents is creating an [AGENTS.md](https://github.com/andrewjamesford/popclip-markdown-formatter/blob/main/AGENTS.md#L1) file. It’s tailored for ChatGPT and Codex CLI for now, but other tools are adopting similar formats. For GitHub Copilot, I use a workaround—creating an instructions.md file that points to AGENTS.md.
 
-Once that's in place, I start outlining the task in detail. Examples help massively. Through iterative conversations with the agent, I get most of the way there without having to read the code line by line. It's the kind of work I can do while watching YouTube or multitasking. I just check in, review the results, and guide the next step.
+Once that’s in place, I start expanding on the task in detail. Examples help massively. Through iterative conversations with the agent, I get most of the way there without having to read the code line by line. It’s the kind of work I can do while watching YouTube or multitasking. I just check in, review the results, and guide the next step.
 
-Is it perfect? Nope. Sometimes things break and I roll back. But that's what Git is for. As the plugin stabilises, I'm even getting the agent to write tests so I don't have to manually verify every tweak.
+Is it perfect? Nope. Sometimes things break and I roll back. But that’s what Git is for. As the plugin stabilises, I’m even getting the agent to write tests—so I don’t have to manually verify every tweak.
 
 ## The Final Product
 
@@ -73,4 +73,4 @@ This extension is now part of my daily flow. Doesn't matter if I'm replying in S
 
 If something feels clunky or repetitive, don't just put up with it. You've got the skills — and the agents — to fix it.
 
-You can download the [Popclip Markdown Formatter extension project available here](https://github.com/andrewjamesford/popclip-markdown-formatter).
+You can download the [Popclip Markdown Formatter extension project here](https://github.com/andrewjamesford/popclip-markdown-formatter).
