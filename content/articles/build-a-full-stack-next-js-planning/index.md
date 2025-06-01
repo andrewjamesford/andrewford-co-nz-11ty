@@ -13,7 +13,7 @@ tags:
   - youtube
   - lms
 description: This is a transcript of my stream that went through the initial planning stages of a Next.js project, starting with brainstorming ideas on a virtual whiteboard. Wireframes were then created in Excalidraw to visualize pages like home, sign up, course listings, and course details. Key requirements around authentication, data storage, roles and permissions were mapped out. Superbase was selected to provide authentication via LinkedIn/Google login as well as for it being a Postgres database. Next.js was chosen for its React framework and Radix UI was selected for accessible, customizable UI components to speed up development.
-ogimage: "full-stack1.jpg"
+ogimage: "build-a-full-stack-next-js-planning.jpg"
 ---
 
 {% figure "./full-stack1.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
@@ -23,7 +23,7 @@ The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev C
 To view the Wireframes I created in the stream, please see the following link:
 [Wireframes on Excalidraw](https://excalidraw.com/#json=almP8vw8UnTN7cR6Zk6Xf,aIx7EgfHxXwpKKnv6k3IbQ)
 
-youtube.com/embed/4xhebsXoSn4?si=YdTF06KTLVE8xH24
+https://www.youtube.com/watch?v=4xhebsXoSn4
 
 {% figure "./whiteboard.png", "The Whiteboard from the Stream" %}
 

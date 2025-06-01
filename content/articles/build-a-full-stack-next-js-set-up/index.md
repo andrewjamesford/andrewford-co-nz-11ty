@@ -14,7 +14,7 @@ tags:
   - youtube
   - lms
 description: This is the second video in the series on building a full-stack web app with Next.js. In this live stream, Andrew Ford set up Next.js, configured it for the project, installed Radix UI, created a Superbase database, and started adding routes. The project code is available on GitHub as LMS NextJS.
-ogimage: "full-stack2.jpg"
+ogimage: "build-a-full-stack-next-js-set-up.jpg"
 ---
 
 {% figure "./full-stack2.jpg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
@@ -23,7 +23,7 @@ The following is a transcript of my live stream on YouTube Sep 18, 2023 on Build
 
 The project is available on [GitHub as LMS NextJS](https://github.com/andrewjamesford/lms-nextjs).
 
-youtube.com/embed/2BQcCGCsql0?si=-ucJrgg1Wn3ZpHvc
+https://www.youtube.com/watch?v=2BQcCGCsql0
 
 ---
 

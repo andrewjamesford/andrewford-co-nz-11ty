@@ -13,12 +13,12 @@ tags:
   - checkout
 description: Concluding with the Next.js & Stripe online shop we now will add the checkout functionality
 socialBackground: bg5
-ogimage: "stripe-checkout.png"
+ogimage: "shop-nextjs-stripe-checkout.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-youtube.com/embed/-jCI2bKrud4
+https://www.youtube.com/watch?v=-jCI2bKrud4
 
 Concluding with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will configure our shop to be able to purchase via Stripes hosted checkout page.
 

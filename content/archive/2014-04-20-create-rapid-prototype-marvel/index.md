@@ -25,7 +25,7 @@ To scratch my own annoyance with the now long in the tooth iOS mobile app for <a
 
 <a title="Marvel App" href="https://marvelapp.com">Marvel</a> at this stage supports PNG, JPG’s, GIF’s and <a title="Adobe Photoshop" href="http://www.photoshop.com">Photoshop</a> PSD files. I fired up <a title="Apple Safari" href="http://www.apple.com/nz/safari/">safari</a> and created a new project on <a title="Marvel App" href="https://marvelapp.com">Marvelapp.com</a> and pointed the project to the images I created in <a href="https://itunes.apple.com/nz/app/sketch-3/id852320343?mt=12&amp;uo=4&amp;at=10lnRx" target="itunes_store">Sketch</a>. It was insanely simple to add each page, drag a few hotspots on to the image and configure which page they will navigate to and the transition I wanted.
 
-youtube.com/embed/LUrIyTqTRfg
+https://www.youtube.com/watch?v=LUrIyTqTRfg
 
 By using <a title="Dropbox" href="https://db.tt/K9T3k3Q">Dropbox</a> a change to the visuals can be easily made, saved and its just a matter of exporting the images. <a title="Dropbox" href="https://db.tt/K9T3k3Q">Dropbox</a> handles the synching. Next time you jump back in to <a title="Marvel App" href="https://marvelapp.com">Marvel</a> the images have updated, while your hotspots have remained the same.
 

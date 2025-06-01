@@ -11,10 +11,10 @@ tags:
   - typescript
 description: A guide to getting started creating your own UI Component library with ReactJS, TypeScript and Storybook
 socialBackground: bg7
-ogimage: "storybook-welcome.png"
+ogimage: "create-your-own-ui-component-library.png"
 ---
 
-youtube.com/embed/fpUPw9Yu5NA
+https://www.youtube.com/watch?v=fpUPw9Yu5NA
 
 In this guide, I will walk you through getting started creating your own UI Component library with [ReactJS](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org).
 

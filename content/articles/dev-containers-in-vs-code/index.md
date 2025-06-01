@@ -13,7 +13,7 @@ tags:
   - video
   - codespaces
 description: Dev Containers in VS Code allow packaging a project's dependencies and tools into reusable container images. This provides a consistent development environment between machines by launching the project within its dedicated container in VS Code. The live demo showcased common workflows like debugging, installing extensions, and using codespaces for cloud-based container development.
-ogimage: "dev-container.jpg"
+ogimage: "dev-containers-in-vs-code.jpg"
 ---
 
 {% figure "./dev-container.jpg", "&quot;A Dev Container&quot; / Bing Image Creator" %}
@@ -26,7 +26,7 @@ Dev Containers in VS Code allow packaging a project's dependencies and tools int
 
 The following is a transcript of my live stream on YouTube Sep 11, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
 
-youtube.com/embed/yiJ2lWrVCgk?si=gRRnvuHwD-8cHg8D
+https://www.youtube.com/watch?v=yiJ2lWrVCgk
 
 ---
 

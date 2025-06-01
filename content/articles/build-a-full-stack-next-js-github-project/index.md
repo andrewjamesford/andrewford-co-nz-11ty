@@ -13,7 +13,7 @@ tags:
   - kanban
   - component
 description: "In this tutorial video we continue planning our full-stack web app with Next.js. We create a GitHub project and start adding tickets to the project. We also start building out the first components for the project."
-ogimage: "full-stack5.jpg"
+ogimage: "build-a-full-stack-next-js-github-project.jpg"
 ---
 
 {% figure "./full-stack-5.jpeg", "&quot;A web full-stack app built with NextJS&quot; / Bing Image Creator" %}
@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjame
 
 The GitHub project board is available on [GitHub as @andrewjamesford's LMS Project](https://github.com/users/andrewjamesford/projects/4).
 
-youtube.com/embed/UUDUUrG-LDw?si=NC3-gYFDnArwXzC7
+https://www.youtube.com/watch?v=UUDUUrG-LDw
 
 ---
 

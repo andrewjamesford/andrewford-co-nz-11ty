@@ -10,6 +10,7 @@ tags:
   - career
 description: "After 20 years being in the software/web industry with roles like web developer, analyst developer, lead developer, software engineer, and full stack developer. I decided in August to take a side step in to teaching."
 socialBackground: bg3
+ogimage: "full-stack-developer-to-instructor.png"
 ---
 
 After 20 years being in the software/web industry with roles like web developer, analyst developer, lead developer, software engineer, and full stack developer. I decided in August to take a side step in to teaching.

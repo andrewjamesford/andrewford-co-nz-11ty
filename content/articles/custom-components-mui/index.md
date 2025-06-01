@@ -13,7 +13,7 @@ tags:
   - custom
   - storybook
 description: "In this article we will create custom components in MUI (Material UI) using ReactJS and Storybook."
-ogimage: "custom-components.png"
+ogimage: "custom-components-mui.png"
 ---
 
 {% figure "./custom-components.png", "&quot;Create Custom Components using
@@ -28,7 +28,7 @@ Storybook.
 
 The following is a transcript of the video tutorial below.
 
-youtube.com/embed/f6Bjdmlx35s
+https://www.youtube.com/watch?v=f6Bjdmlx35s
 
 ## Introduction & Getting Started
 

@@ -12,12 +12,12 @@ tags:
   - series
 description: Introducing a new series on how to build a shop using Next.js and Stripe
 socialBackground: bg5
-ogimage: "nextjs-start.png"
+ogimage: "shop-nextjs-stripe-introduction.png"
 ---
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-youtube.com/embed/-3rN4US4xzo
+https://www.youtube.com/watch?v=-3rN4US4xzo
 
 In this series I'm going to walk through the process of building an online shop using the [React](https://reactjs.org) Framework [Next.js](https://nextjs.org). You may have built a website before using the likes of [Create React App](https://create-react-app.dev) which will get you the bare bones together to start building. But it doesn't get you that far before you have a huge amount of decisions to make. What routing should I use for my pages? What CSS in JS library? Should I use Tailwind? Will my website have good [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)? Very quickly you can be overloaded with decisions. This stems mostly from the fact that React is not a framework. It's a _library_.
 

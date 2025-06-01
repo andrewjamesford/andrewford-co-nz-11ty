@@ -11,7 +11,7 @@ tags:
   - ios
   - shortcuts
 description: A tutorial on making it easy to use ChatGPT on macOS and iOS using shortcuts.
-ogimage: "popclip-in-action.png"
+ogimage: "chatgpt-macos-ios-using-shortcuts.png"
 ---
 
 ## What is ChatGPT?
@@ -56,7 +56,7 @@ For personal use they credited $18 until May for me when I created an account. I
 
 This shortcut is flexible in that it can be used in multiple ways. If no text is selected it will take the contents of the clipboard. Otherwise you can select text in iOS and then use the Share icon like in the video below.
 
-youtube.com/embed/LdzR17IGpQw
+https://www.youtube.com/watch?v=LdzR17IGpQw
 
 On macOS it's a little different. You first select the text and copy it to your clipboard. You can then invoke the shortcut by going up to the menu bar and running the shortcut from there.
 
@@ -68,6 +68,6 @@ On macOS it's a little different. You first select the text and copy it to your 
 
 I'm a big fan of the app [PopClip](https://pilotmoon.com/popclip/) on macOS that acts like the pop up selection menu for copy and paste on iOS (as seen in the image above). It can be used to invoke a Shortcut and I've created an [extension](https://andrewford.co.nz/assets/ChatGPTpopclipext.zip) that allows me to select some text with the mouse and then trigger the ChatGPT shortcut. See the video below to see how it works.
 
-youtube.com/embed/xqFsMzWzi5U
+https://www.youtube.com/watch?v=xqFsMzWzi5U
 
 The developer of PopClip has created an [extension snippet](https://forum.popclip.app/t/a-popclip-extension-for-chatgpt/1283) that will paste the response after your cursor in a text editor app.

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		{# CSP #}
-		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' www.googletagmanager.com www.youtube.com cdn.jsdelivr.net;">
+		<meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' www.googletagmanager.com youtube.com cdn.jsdelivr.net storage.ko-fi.com">
 		<meta name="view-transition" content="same-origin"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }} - Andrew Ford </title>
@@ -218,6 +218,8 @@
 			{% getBundle "js" %}
 		</script>
 
+		{# Google Analytics #}
+
 		{# Google tag (gtag.js) #}
 		<script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}"></script>
 		{# https: //developers.google.com/analytics/devguides/collection/gtagjs #}
@@ -233,6 +235,16 @@
 
 				gtag('config', '{{ metadata.gTag}}');
 			}
+		</script>
+
+		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+		<script>
+			kofiWidgetOverlay.draw('codewithandrewford', {
+				'type': 'floating-chat',
+				'floating-chat.donateButton.text': 'Support me',
+				'floating-chat.donateButton.background-color': '#323842',
+				'floating-chat.donateButton.text-color': '#fff'
+			});
 		</script>
 	</body>
 </html>

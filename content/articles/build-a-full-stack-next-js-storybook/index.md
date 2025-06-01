@@ -13,7 +13,7 @@ tags:
   - javascript
   - isolation
 description: "In this installment we create a Storybook for our project and start building out our Header component. I walk through some of the features of Storybook and how it can help you build your React components in isolation."
-ogimage: "full-stack-6.jpeg"
+ogimage: "build-a-full-stack-next-js-storybook.jpeg"
 ---
 
 {% figure "./full-stack-6.jpeg", "&quot;Building a storybook&quot; / Bing Image Creator" %}
@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjame
 
 Check out [Storybook](https://storybook.js.org/) for more information.
 
-youtube.com/embed/EGn-MsRIs4U?si=xT4O5dqmXvoaX0D0
+https://www.youtube.com/watch?v=EGn-MsRIs4U
 
 ---
 
