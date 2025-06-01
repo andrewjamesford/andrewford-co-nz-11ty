@@ -18,7 +18,7 @@ ogimage: "shop-nextjs-stripe-account-set-up.png"
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-youtube.com/embed/cEL2Jtp8RLs
+https://www.youtube.com/watch?v=cEL2Jtp8RLs
 
 [Continuing with the Next.js & Stripe](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) online shop series we will setup your Stripe account. Head to [Stripe's website](https://dashboard.stripe.com/register) and setup a new account (if you don't already have one).
 

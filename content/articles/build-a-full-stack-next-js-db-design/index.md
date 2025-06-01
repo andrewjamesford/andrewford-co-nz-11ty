@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjame
 
 DB diagram available [on dbdiagram.io](https://dbdiagram.io/d/LMS-Entity-Relationship-Diagram-636c1a0bc9abfc6111717fda).
 
-youtube.com/embed/4uPQxMDKSUU
+https://www.youtube.com/watch?v=4uPQxMDKSUU
 
 ---
 

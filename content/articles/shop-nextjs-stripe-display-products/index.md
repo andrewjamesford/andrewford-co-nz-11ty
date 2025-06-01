@@ -18,7 +18,7 @@ ogimage: "shop-nextjs-stripe-display-products.png"
 
 {% include "promos/seriesstripenextjs.njk" %}
 
-youtube.com/embed/OiHx3Zouj_w
+https://www.youtube.com/watch?v=OiHx3Zouj_w
 
 Continuing with the [Next.js & Stripe online shop series](https://andrewford.co.nz/articles/shop-nextjs-stripe-introduction/) we now will display the products.
 

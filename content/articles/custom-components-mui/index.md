@@ -28,7 +28,7 @@ Storybook.
 
 The following is a transcript of the video tutorial below.
 
-youtube.com/embed/f6Bjdmlx35s
+https://www.youtube.com/watch?v=f6Bjdmlx35s
 
 ## Introduction & Getting Started
 

@@ -26,7 +26,7 @@ Check out my review - [Create a rapid prototype with Marvel](//www.andrewford.co
 
 A great looking tool for rapid prototyping. It's works with Mac and Windows. Supports HTML and Liquid for the templating and LESS and SASS/Compass support looks very cool. Its like a whole development stack created for front end devs. Looking forward to trying this out.
 
-youtube.com/embed/42QM752E8tA
+https://www.youtube.com/watch?v=42QM752E8tA
 
 [mixture.io](http://mixture.io)
 
@@ -48,7 +48,7 @@ A tool for creating responsive designs in the browser. Not open to the public ye
 
 Adobe's tool for creating responsive designs.
 
-youtube.com/embed/o3fJoiC8OEQ
+https://www.youtube.com/watch?v=o3fJoiC8OEQ
 
 [Adobe Reflow](http://html.adobe.com/edge/reflow/)
 
@@ -56,7 +56,7 @@ youtube.com/embed/o3fJoiC8OEQ
 
 A drag and drop mockup tool that's also a code editor.
 
-youtube.com/embed/g9KhSUgf38A
+https://www.youtube.com/watch?v=g9KhSUgf38A
 
 [DivShot](http://www.divshot.com/)
 
@@ -94,7 +94,7 @@ A Mac and iPad apps for creating graphic documents at draft detail right up to h
 
 A great web based tool for making quick responsive prototypes with collaboration tools like real time chat.
 
-youtube.com/embed/vshdw8AZiqk
+https://www.youtube.com/watch?v=vshdw8AZiqk
 
 [UX Pin](http://uxpin.com/)
 
