@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjame
 
 The GitHub project board is available on [GitHub as @andrewjamesford's LMS Project](https://github.com/users/andrewjamesford/projects/4).
 
-https://www.youtube.com/watch?v=UUDUUrG-LDw?si=NC3-gYFDnArwXzC7
+https://www.youtube.com/watch?v=UUDUUrG-LDw
 
 ---
 

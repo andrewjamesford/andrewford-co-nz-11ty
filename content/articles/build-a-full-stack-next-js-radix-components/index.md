@@ -24,7 +24,7 @@ The project is available on [GitHub as LMS NextJS](https://github.com/andrewjam
 
 Check out the [documentation on Radix UI](https://www.Radix-ui.com) components for more information.
 
-https://www.youtube.com/watch?v=EXvU7F1D59o?si=8kM1Zl-k5_MIjtDG
+https://www.youtube.com/watch?v=EXvU7F1D59o
 
 ---
 
