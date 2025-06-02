@@ -79,7 +79,7 @@
 			{% getBundle "css" %}
 		</style>
 
-		{%- css "styles" %}{% include "public/css/style.css" %}{% endcss %}
+		{%- css "styles" async %}{% include "public/css/style.css" %}{% endcss %}
 		{# Non-critical styles #}
 		<link async rel="stylesheet" href="{% getBundleFileUrl 'css', 'styles' %}" fetchpriority="low">
 

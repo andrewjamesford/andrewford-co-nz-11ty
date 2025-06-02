@@ -28,7 +28,8 @@ export default (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes: widths,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
       };
@@ -63,7 +64,8 @@ export default (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes: widths,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
         class: cssClass,
@@ -88,13 +90,52 @@ export default (eleventyConfig) => {
       // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
-        sizes: widths,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
       };
       const img = eleventyImage.generateHTML(metadata, imageAttributes);
 
       return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
+    }
+  );
+
+  // Advanced responsive picture shortcode
+  eleventyConfig.addAsyncShortcode(
+    "responsivePicture",
+    async function responsivePictureShortcode(
+      src,
+      alt,
+      widths = [320, 720, 1024, 1280],
+      breakpoints = {
+        mobile: 320,
+        tablet: 720,
+        desktop: 1024,
+      }
+    ) {
+      let file = relativeToInputPath(this.page.inputPath, src);
+      let metadata = await eleventyImage(file, {
+        widths: widths,
+        formats,
+        outputDir: path.join(eleventyConfig.dir.output, "img"),
+      });
+
+      // Custom sizes attribute based on breakpoints
+      const sizesArray = [
+        `(min-width: ${breakpoints.desktop}px) ${breakpoints.desktop}px`,
+        `(min-width: ${breakpoints.tablet}px) ${breakpoints.tablet}px`,
+        `${breakpoints.mobile}px`,
+      ];
+
+      let imageAttributes = {
+        alt,
+        sizes: sizesArray.join(", "),
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      return eleventyImage.generateHTML(metadata, imageAttributes);
     }
   );
 };
