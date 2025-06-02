@@ -280,6 +280,19 @@ picture {
     background-image: url("/images/af-chat-avatar.webp");
   }
 }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .chat-toggle {
+    background-image: url("/images/af-chat-avatar@2x.png");
+  }
+}
+
+@supports (background-image: url("/images/af-chat-avatar@2x.webp")) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .chat-toggle {
+      background-image: url("/images/af-chat-avatar@2x.webp");
+    }
+  }
+}
 
 .chat-toggle:hover {
   transform: scale(1.1);
