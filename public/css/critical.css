@@ -135,11 +135,25 @@ h4 {
 
 .article-list-item picture {
   text-align: center;
+  width: 100%;
+  display: block;
 }
+
+.article-list-item picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .video-thumb {
   border-radius: 0.75rem;
   aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
 .article-heading {
   text-align: center;
 }
@@ -281,4 +295,53 @@ a.lastfm-icon:hover svg {
 .article-list-item .promotion {
   max-width: 320px;
   margin: 1rem auto 0 auto;
+}
+
+picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Art direction for hero images */
+@media (max-width: 767px) {
+  .hero-picture {
+    aspect-ratio: 4/3;
+  }
+
+  .hero-picture img {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-picture {
+    aspect-ratio: 16/9;
+  }
+
+  .hero-picture img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Container queries for responsive pictures (modern browsers) */
+@container (max-width: 500px) {
+  .article-list-item picture img {
+    border-radius: 0.5rem;
+  }
+}
+
+@container (min-width: 501px) {
+  .article-list-item picture img {
+    border-radius: 0.75rem;
+  }
 }
