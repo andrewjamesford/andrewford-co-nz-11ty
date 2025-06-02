@@ -75,13 +75,15 @@
 		{%- css %}{% include "public/css/critical.css" %}{% endcss %}
 
 		{# Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
-		<style async>
+		<style>
 			{% getBundle "css" %}
 		</style>
 
 		{%- css "styles" %}{% include "public/css/style.css" %}{% endcss %}
+
 		{# Non-critical styles #}
-		<link async rel="stylesheet" href="{% getBundleFileUrl 'css', 'styles' %}" fetchpriority="low">
+		<link rel="preload" href="{% getBundleFileUrl 'css', 'styles' %}" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'styles' %}"></noscript>
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}

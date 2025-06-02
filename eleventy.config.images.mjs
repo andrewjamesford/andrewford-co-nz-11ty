@@ -15,12 +15,12 @@ export default (eleventyConfig) => {
   // https://www.11ty.dev/docs/plugins/image/
   eleventyConfig.addAsyncShortcode(
     "image",
-    async function imageShortcode(src, alt, widths = [320, 720, 1024, 1280]) {
+    async function imageShortcode(src, alt, widths = [320, 720, 1024]) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
-        widths: widths || [320, 720, 1024, 1280],
+        widths: widths || [320, 720, 1024],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
@@ -44,7 +44,7 @@ export default (eleventyConfig) => {
     async function externalImageShortcode(
       src,
       alt,
-      widths = [320, 720, 1024, 1280],
+      widths = [320, 720, 1024],
       cssClass,
       id = "externalImage"
     ) {
@@ -56,7 +56,7 @@ export default (eleventyConfig) => {
       }
 
       let metadata = await eleventyImage(srcUrl, {
-        widths: widths || [320, 720, 1024, 1280],
+        widths: widths || [320, 720, 1024],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
@@ -77,12 +77,12 @@ export default (eleventyConfig) => {
 
   eleventyConfig.addAsyncShortcode(
     "figure",
-    async function imageShortcode(src, alt, widths = [320, 720, 1024, 1280]) {
+    async function imageShortcode(src, alt, widths = [320, 720, 1024]) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
-        widths: widths || [320, 720, 1024, 1280],
+        widths: widths || [320, 720, 1024],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
@@ -107,7 +107,7 @@ export default (eleventyConfig) => {
     async function responsivePictureShortcode(
       src,
       alt,
-      widths = [320, 720, 1024, 1280],
+      widths = [320, 720, 1024],
       breakpoints = {
         mobile: 320,
         tablet: 720,
