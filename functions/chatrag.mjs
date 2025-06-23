@@ -169,15 +169,8 @@ export const handler = async (event, context) => {
       process.env.SITE_URL || "https://andrewford.co.nz"
     ).replace(/\/$/, "");
     if (Array.isArray(response.context)) {
-      const sourceMap = new Map();
-
-      response.context.forEach((doc) => {
+      const links = response.context.map((doc) => {
         const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
-        // Improved title regex to handle quotes and multiline content better
-        const titleMatch = doc.pageContent.match(
-          /title:\s*["']?([^"'\n]+)["']?\s*$/m
-        );
-
         let slug;
         if (slugMatch) {
           slug = slugMatch[1];
@@ -205,26 +198,11 @@ export const handler = async (event, context) => {
           slug = "";
         }
 
-        const url = siteUrl + slug;
-        let title = "View Source";
-
-        if (titleMatch) {
-          title = titleMatch[1].trim();
-          // Remove any remaining quotes
-          title = title.replace(/^["']|["']$/g, "");
-        }
-
-        // Store unique sources with their titles
-        if (url && !sourceMap.has(url)) {
-          sourceMap.set(url, title);
-        }
+        return siteUrl + slug;
       });
-
-      // Convert map to array of objects with url and title
-      sources = Array.from(sourceMap.entries()).map(([url, title]) => ({
-        url,
-        title,
-      }));
+      const uniqueLinks = [...new Set(links)];
+      // Return only the top result
+      sources = uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
     }
 
     const allowedOrigins = process.env.ALLOWED_ORIGINS
