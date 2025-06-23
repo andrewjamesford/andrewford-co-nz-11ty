@@ -19,7 +19,7 @@ tags:
   - javascript
   - embeddings
 description: Learn how to build a fast, lightweight AI chatbot for your blog using LangChain, RAG (Retrieval-Augmented Generation), FAISS, and Netlify Functions. This guide walks through indexing markdown content, setting up a vector store, and deploying a serverless chatbot with OpenAI—all without heavy frameworks or databases.
-ogImage: "rag-chatbot-langchain.png"
+ogimage: "rag-chatbot-langchain.png"
 ---
 
 ## The Problem I Wanted to Solve
@@ -48,6 +48,8 @@ Here’s how it works in my setup:
 When someone asks a question, the system turns that query into a vector and compares it against the stored vectors to find the top matches. These are passed into the language model via LangChain to generate a tailored response.
 
 ## Building the Chatbot UI
+
+{% figure "./rag-chatbot-open.png", "The Chatbot UI" %}
 
 To keep things lightweight, I built the chatbot in plain **vanilla JavaScript and CSS**—no frameworks, no heavy dependencies.
 

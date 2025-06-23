@@ -30,8 +30,8 @@
 
 		<link rel="canonical" href="https://andrewford.co.nz/{{ page.url }}">
 
-		<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-		<link href="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}" rel="preload" as="script">
+		<link async rel="dns-prefetch" href="https://www.googletagmanager.com/">
+		<link async href="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}" rel="preload" as="script">
 
 		{# Atom and JSON feeds included by default #}
 		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -80,8 +80,10 @@
 		</style>
 
 		{%- css "styles" %}{% include "public/css/style.css" %}{% endcss %}
+
 		{# Non-critical styles #}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'styles' %}" fetchpriority="low">
+		<link rel="preload" href="{% getBundleFileUrl 'css', 'styles' %}" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'styles' %}"></noscript>
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
@@ -211,7 +213,7 @@
 		{% include "chat.njk" %}
 
 		{# DOMPurify for HTML sanitization in chat #}
-		<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
+		<script async src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
 
 		{# Render the JS bundle #}
 		<script>
@@ -222,28 +224,32 @@
 
 		{# Google tag (gtag.js) #}
 		<script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.gTag}}"></script>
-		{# https: //developers.google.com/analytics/devguides/collection/gtagjs #}
 		<script>
-			if (
-				CONFIG
-				?.GTAG) {
-				window.dataLayer = window.dataLayer || [];
-				function gtag() {
-					dataLayer.push(arguments);
-				}
-				gtag('js', new Date());
+			// Load Google Analytics only after page is fully loaded
+			window.addEventListener('load', function () {
+				if (
+					CONFIG
+					?.GTAG) {
+					window.dataLayer = window.dataLayer || [];
+					function gtag() {
+						dataLayer.push(arguments);
+					}
+					gtag('js', new Date());
 
-				gtag('config', '{{ metadata.gTag}}');
-			}
+					gtag('config', '{{ metadata.gTag}}');
+				}
+			});
 		</script>
 
-		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+		<script async src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 		<script>
-			kofiWidgetOverlay.draw('codewithandrewford', {
-				'type': 'floating-chat',
-				'floating-chat.donateButton.text': 'Support me',
-				'floating-chat.donateButton.background-color': '#323842',
-				'floating-chat.donateButton.text-color': '#fff'
+			window.addEventListener('load', function () {
+				kofiWidgetOverlay.draw('codewithandrewford', {
+					'type': 'floating-chat',
+					'floating-chat.donateButton.text': 'Support me',
+					'floating-chat.donateButton.background-color': '#323842',
+					'floating-chat.donateButton.text-color': '#fff'
+				});
 			});
 		</script>
 	</body>
