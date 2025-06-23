@@ -169,21 +169,62 @@ export const handler = async (event, context) => {
       process.env.SITE_URL || "https://andrewford.co.nz"
     ).replace(/\/$/, "");
     if (Array.isArray(response.context)) {
-      const links = response.context.map((doc) => {
+      const sourceMap = new Map();
+
+      response.context.forEach((doc) => {
         const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
+        // Improved title regex to handle quotes and multiline content better
+        const titleMatch = doc.pageContent.match(
+          /title:\s*["']?([^"'\n]+)["']?\s*$/m
+        );
+
         let slug;
         if (slugMatch) {
           slug = slugMatch[1];
+          // If slug from frontmatter doesn't include section path, try to infer it from metadata
+          if (doc.metadata?.source && !slug.includes("/")) {
+            const sourcePath = doc.metadata.source;
+            if (sourcePath.includes("/articles/")) {
+              slug = "articles/" + slug;
+            }
+          }
+          // Ensure slug has proper format
+          if (!slug.startsWith("/")) slug = "/" + slug;
+          if (!slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
         } else if (doc.metadata?.source) {
           const rel = doc.metadata.source.split("/content/")[1] || "";
           slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+          // Ensure trailing slash for directory-based articles
+          if (slug && !slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
+          if (!slug.startsWith("/")) slug = "/" + slug;
         } else {
           slug = "";
         }
-        if (!slug.startsWith("/")) slug = "/" + slug;
-        return siteUrl + slug;
+
+        const url = siteUrl + slug;
+        let title = "View Source";
+
+        if (titleMatch) {
+          title = titleMatch[1].trim();
+          // Remove any remaining quotes
+          title = title.replace(/^["']|["']$/g, "");
+        }
+
+        // Store unique sources with their titles
+        if (url && !sourceMap.has(url)) {
+          sourceMap.set(url, title);
+        }
       });
-      sources = [...new Set(links)];
+
+      // Convert map to array of objects with url and title
+      sources = Array.from(sourceMap.entries()).map(([url, title]) => ({
+        url,
+        title,
+      }));
     }
 
     const allowedOrigins = process.env.ALLOWED_ORIGINS
