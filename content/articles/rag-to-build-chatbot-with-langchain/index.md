@@ -49,6 +49,8 @@ When someone asks a question, the system turns that query into a vector and comp
 
 ## Building the Chatbot UI
 
+{% figure "./rag-chatbot-open.png", "The Chatbot UI" %}
+
 To keep things lightweight, I built the chatbot in plain **vanilla JavaScript and CSS**—no frameworks, no heavy dependencies.
 
 - The script loads only when the user clicks the anime version of me toggle button, keeping page performance fast.
