@@ -43,6 +43,7 @@ function initializeChat() {
       // Remove loading indicator and show actual response
       removeLoadingMessage(loadingMessageElement);
       appendMessage("Bot", data.answer || "No response.");
+      appendSourceLinks(data.sources);
     } catch (error) {
       // Remove loading indicator and show error
       removeLoadingMessage(loadingMessageElement);
@@ -78,6 +79,29 @@ function initializeChat() {
     messageContainer.appendChild(bubble);
     messages.appendChild(messageContainer);
     messages.scrollTop = messages.scrollHeight;
+  }
+
+  function appendSourceLinks(sources) {
+    if (!Array.isArray(sources)) return;
+    sources.forEach((url) => {
+      const messageContainer = document.createElement("div");
+      messageContainer.className = "chat-message bot";
+
+      const bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "chat-source-link";
+      link.textContent = "View Source";
+
+      bubble.appendChild(link);
+      messageContainer.appendChild(bubble);
+      messages.appendChild(messageContainer);
+      messages.scrollTop = messages.scrollHeight;
+    });
   }
   function appendLoadingMessage() {
     const messageContainer = document.createElement("div");

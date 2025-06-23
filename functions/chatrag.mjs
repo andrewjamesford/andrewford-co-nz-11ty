@@ -164,6 +164,47 @@ export const handler = async (event, context) => {
       input: sanitizedQuestion, // Use sanitized input
     });
 
+    let sources = [];
+    const siteUrl = (
+      process.env.SITE_URL || "https://andrewford.co.nz"
+    ).replace(/\/$/, "");
+    if (Array.isArray(response.context)) {
+      const links = response.context.map((doc) => {
+        const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
+        let slug;
+        if (slugMatch) {
+          slug = slugMatch[1];
+          // If slug from frontmatter doesn't include section path, try to infer it from metadata
+          if (doc.metadata?.source && !slug.includes("/")) {
+            const sourcePath = doc.metadata.source;
+            if (sourcePath.includes("/articles/")) {
+              slug = "articles/" + slug;
+            }
+          }
+          // Ensure slug has proper format
+          if (!slug.startsWith("/")) slug = "/" + slug;
+          if (!slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
+        } else if (doc.metadata?.source) {
+          const rel = doc.metadata.source.split("/content/")[1] || "";
+          slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+          // Ensure trailing slash for directory-based articles
+          if (slug && !slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
+          if (!slug.startsWith("/")) slug = "/" + slug;
+        } else {
+          slug = "";
+        }
+
+        return siteUrl + slug;
+      });
+      const uniqueLinks = [...new Set(links)];
+      // Return only the top result
+      sources = uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
+    }
+
     const allowedOrigins = process.env.ALLOWED_ORIGINS
       ? process.env.ALLOWED_ORIGINS.split(",")
       : ["https://andrewford.co.nz"];
@@ -181,7 +222,7 @@ export const handler = async (event, context) => {
       },
       body: JSON.stringify({
         answer: response.answer,
-        sourceDocuments: response.context,
+        sources,
       }),
     };
   } catch (error) {
