@@ -164,6 +164,28 @@ export const handler = async (event, context) => {
       input: sanitizedQuestion, // Use sanitized input
     });
 
+    let sources = [];
+    const siteUrl = (
+      process.env.SITE_URL || "https://andrewford.co.nz"
+    ).replace(/\/$/, "");
+    if (Array.isArray(response.context)) {
+      const links = response.context.map((doc) => {
+        const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
+        let slug;
+        if (slugMatch) {
+          slug = slugMatch[1];
+        } else if (doc.metadata?.source) {
+          const rel = doc.metadata.source.split("/content/")[1] || "";
+          slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+        } else {
+          slug = "";
+        }
+        if (!slug.startsWith("/")) slug = "/" + slug;
+        return siteUrl + slug;
+      });
+      sources = [...new Set(links)];
+    }
+
     const allowedOrigins = process.env.ALLOWED_ORIGINS
       ? process.env.ALLOWED_ORIGINS.split(",")
       : ["https://andrewford.co.nz"];
@@ -181,7 +203,7 @@ export const handler = async (event, context) => {
       },
       body: JSON.stringify({
         answer: response.answer,
-        sourceDocuments: response.context,
+        sources,
       }),
     };
   } catch (error) {
