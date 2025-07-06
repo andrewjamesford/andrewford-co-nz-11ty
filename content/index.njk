@@ -20,27 +20,27 @@ numberOfLatestVideosToShow: 3
 
 <section class="latest-articles-videos">
 	{%- if collections.articles.length > 0 -%}
-		<article class="latest-articles">
-			<h3>Latest Articles</h3>
-			<ul class="article-list">
-				{%- for article in collections.articles | reverse -%}
-					{% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
-					{%- if article.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
-						<li class="article-list-item">
-							<h4 class="article-title">
-								<a href="{{ absolutePostUrl }}">{{ article.data.title }}</a>
-							</h4>
-							<p class="article-description">{{ article.data.description }}</p>
-						</li>
-					{%- endif -%}
-				{%- endfor %}
-				<li class="article-list-item">
-					<h4 class="article-title">
-						<a href="{{ metadata.fullUrl }}/article/">More Articles&#8230;</a>
-					</h4>
-				</li>
-			</ul>
-		</article>
+    <article class="latest-articles">
+      <h3>Latest</h3>
+      <ul class="article-list">
+        {%- for post in collections.posts | reverse -%}
+          {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
+          {%- if post.data.draft == false and loop.index <= numberOfLatestPostsToShow -%}
+            <li class="article-list-item">
+              <h4 class="article-title">
+                <a href="{{ absolutePostUrl }}">{{ post.data.title }}</a>
+              </h4>
+              <p class="article-description">{{ post.data.description }}</p>
+            </li>
+          {%- endif -%}
+        {%- endfor %}
+        <li class="article-list-item">
+          <h4 class="article-title">
+            <a href="{{ metadata.fullUrl }}/article/">More Articles&#8230;</a>
+          </h4>
+        </li>
+      </ul>
+    </article>
 	{%- endif -%}
 
 	{%- if latestVideos.videos.length > 0 -%}
