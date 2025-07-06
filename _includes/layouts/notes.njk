@@ -7,7 +7,6 @@ layout: layouts/base.njk
 {{ content | safe }}
 
 <ul class="article-list">
-</ul>
 {%- for note in collections.notes | reverse %}
   {% set absoluteNoteUrl %}{{ note.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
   <li class="article-list-item">
@@ -17,5 +16,4 @@ layout: layouts/base.njk
     <p class="article-description">{{ note.data.description }}</p>
   </li>
 {%- endfor %}
-    </ul>
 </ul>
