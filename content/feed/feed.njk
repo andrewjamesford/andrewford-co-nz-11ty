@@ -7,22 +7,22 @@ permalink: /feed/feed.xml
 	<title>Andrew Ford's Atom Feed</title>
 	<subtitle>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code, a full-stack web developer, mentor and an educator.</subtitle>
 	<link href="{{ metadata.fullUrl }}/feed/feed.xml" rel="self"/>
-	<link href="{{ metadata.fullUrl }}"/>
-	<updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <link href="{{ metadata.fullUrl }}"/>
+    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>{{ metadata.fullUrl }}</id>
 	<author>
 		<name>{{ metadata.author.name }}</name>
 		<email>{{ metadata.author.email }}</email>
 		<link>{{ metadata.author.url }}</link>
 	</author>
-	{%- for article in collections.articles | reverse %}
-		{% set absoluteArticleUrl %}{{ article.url }}{% endset %}
-		<entry>
-			<title>{{ article.data.title }}</title>
-			<link href="{{ absoluteArticleUrl }}"/>
-			<updated>{{ article.date | dateToRfc3339 }}</updated>
-			<id>{{ absoluteArticleUrl }}</id>
-			<content type="html">{{ article.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) }}</content>
-		</entry>
-	{%- endfor %}
+{%- for post in collections.posts | reverse %}
+        {% set absolutePostUrl %}{{ post.url }}{% endset %}
+        <entry>
+            <title>{{ post.data.title }}</title>
+            <link href="{{ absolutePostUrl }}"/>
+            <updated>{{ post.date | dateToRfc3339 }}</updated>
+            <id>{{ absolutePostUrl }}</id>
+            <content type="html">{{ post.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) }}</content>
+        </entry>
+{%- endfor %}
 </feed>

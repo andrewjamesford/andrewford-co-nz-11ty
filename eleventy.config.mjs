@@ -166,6 +166,22 @@ export default async (eleventyConfig) => {
       .filter((item) => item.inputPath.startsWith("./content/archive/"))
   );
 
+  eleventyConfig.addCollection("notes", (collection) =>
+    collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.startsWith("./content/notes/"))
+  );
+
+  eleventyConfig.addCollection("posts", (collection) =>
+    collection
+      .getAllSorted()
+      .filter(
+        (item) =>
+          item.inputPath.startsWith("./content/articles/") ||
+          item.inputPath.startsWith("./content/notes/")
+      )
+  );
+
   eleventyConfig.addBundle("css", {
     // Folder (relative to output directory) files will write to
     toFileDirectory: "css",

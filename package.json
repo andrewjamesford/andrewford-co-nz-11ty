@@ -13,6 +13,7 @@
     "build": "NODE_ENV=production npx @11ty/eleventy",
     "build:dev": "NODE_ENV=development npx @11ty/eleventy",
     "article": "bash article.sh",
+    "note": "bash note.sh",
     "clear": "rm -rf _site && rm -rf .cache",
     "perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
     "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
