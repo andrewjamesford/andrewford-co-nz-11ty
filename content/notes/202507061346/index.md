@@ -15,11 +15,13 @@ tags:
 - creative-process
 - proof-of-concept
 - poc
-description: 
+description: Exploring how iPadOS 26 and AI tools like ChatGPT enable a focused, keyboard-free creative workflow.
 --- 
 
-I recently bought an iPad not because I wanted to just watch more content or play more games. I wanted to see how far I could push working with AI tools is more of a creative process away from a keyboard. I probably wouldn't have even considered this up till recently until the beta of iPadOS 26 now has proper windowing.
+I recently bought an iPad, not to just watch more content or play more games, but to explore how far I could push working with AI tools as part of a creative process away from a keyboard. I probably wouldn’t have even considered this until recently, when the beta of iPadOS 26 introduced proper windowing.
 
-I have been using the iPad for a few weeks now and I have to say that I am impressed with how well it works. The windowing feature is a game changer for me. I can now have multiple apps open at the same time and switch between them easily. This has made it much easier to work on my projects and stay organized.
+After using the iPad for a few weeks, I have to say I’m impressed with how well it works. The windowing feature is a game changer for me. I can now have multiple apps open at the same time and switch between them easily. This has made it much easier to work on the task at hand and stay focused.
 
- So there are a couple of ways I use it, a lot of the time just using Safari opening ChatGPT or Claude or Perplexity and scoping out some sort of proof of concept. It works really well for this, the art effects/canvas work really well and it's amazing how quickly a proof of concept comes together. I find a big benefit of having the iPad and the situation is it stops me from getting distracted from other things and stops my usual wish to start opening the code files and making changes. Instead, I can focus on the creative side of things, brainstorming ideas and exploring different concepts without getting bogged down in the technical details. Don't know that it also means that I can make three different concepts and minutes of each other to get exposed to lots of different ideas.
+As for forms of input, I primarily use the Apple Pencil and speech to text. The pencil is great for jotting down quick notes and sketching out ideas, it even makes my terrible handwriting legible. Speech to text is surprisingly effective for longer form writing, especially when I’m brainstorming or drafting ideas. It allows me to get my thoughts down quickly without having to type everything out, which can be a bit cumbersome on the iPad touch keyboard.
+
+There are a couple of ways I use it, most often by opening ChatGPT, Claude, or Perplexity in Safari and scoping out some sort of proof of concept. It works really well for this. The artifacts/canvas features are impressive, and it's amazing how quickly a proof of concept comes together. One big benefit of using the iPad is that it helps me avoid distractions and curbs my usual urge to start diving into code and making changes. Instead, I can focus on the creative side, brainstorming ideas and exploring different concepts without getting bogged down in technical details. It also means I can generate three different concepts within minutes (often with the same prompt), giving me exposure to a wide range of ideas.
