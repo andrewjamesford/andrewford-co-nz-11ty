@@ -1,0 +1,28 @@
+---
+# Metadata comes from _data/metadata.js
+permalink: /feed/notes.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.fullUrl }}" xml:lang="{{ metadata.language }}">
+    <title>Andrew Ford's Notes Atom Feed</title>
+    <subtitle>Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code, a full-stack web developer, mentor and an educator.</subtitle>
+    <link href="{{ metadata.fullUrl }}/feed/notes.xml" rel="self"/>
+    <link href="{{ metadata.fullUrl }}"/>
+    <updated>{{ collections.notes | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <id>{{ metadata.fullUrl }}</id>
+    <author>
+        <name>{{ metadata.author.name }}</name>
+        <email>{{ metadata.author.email }}</email>
+        <link>{{ metadata.author.url }}</link>
+    </author>
+{%- for note in collections.notes | reverse %}
+    {% set absoluteNoteUrl %}{{ note.url }}{% endset %}
+    <entry>
+        <title>{{ note.data.title }}</title>
+        <link href="{{ absoluteNoteUrl }}"/>
+        <updated>{{ note.date | dateToRfc3339 }}</updated>
+        <id>{{ absoluteNoteUrl }}</id>
+        <content type="html">{{ note.templateContent | transformWithHtmlBase(absoluteNoteUrl, note.url) }}</content>
+    </entry>
+{%- endfor %}
+</feed>
