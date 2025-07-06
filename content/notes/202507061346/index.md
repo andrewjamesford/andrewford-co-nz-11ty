@@ -2,7 +2,7 @@
 title: Creative process with AI on iPad
 date: '2025-07-06T13:46:33Z'
 template: post
-draft: true
+draft: false
 slug: '202507061346'
 category: note
 tags:
