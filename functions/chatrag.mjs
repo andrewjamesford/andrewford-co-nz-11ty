@@ -134,7 +134,7 @@ export const handler = async (event, context) => {
 
     const llm = new ChatOpenAI({
       apiKey: process.env.OPENAI_API_KEY,
-      modelName: "gpt-4.1-nano",
+      modelName: "gpt-4o-mini",
     });
 
     const vectorStore = await FaissStore.load("./vector_store", embeddings);

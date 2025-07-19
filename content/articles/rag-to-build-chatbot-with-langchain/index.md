@@ -30,7 +30,7 @@ Whether reading a blog, seeking support, or navigating a product, attention is t
 
 ## What Is RAG?
 
-**Retrieval-Augmented Generation (RAG)** is an AI pattern that combines two powerful components: a language model (like OpenAI's - gpt 4.1 nano) and a retrieval system. Instead of relying solely on the model’s training data, RAG actively fetches relevant documents from an external source like a blog, knowledge base, or docset and uses them to generate grounded responses.
+**Retrieval-Augmented Generation (RAG)** is an AI pattern that combines two powerful components: a language model (like OpenAI's GPT-4o-mini) and a retrieval system. Instead of relying solely on the model’s training data, RAG actively fetches relevant documents from an external source like a blog, knowledge base, or docset and uses them to generate grounded responses.
 
 This makes answers more accurate, contextual, and up-to-date while reducing hallucinations (when the AI just makes stuff up). RAG is especially useful for support bots, internal tools, or anything that needs reliable, source-backed answers.
 
