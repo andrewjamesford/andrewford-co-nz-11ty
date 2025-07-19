@@ -13,7 +13,7 @@ description: "What if you could check/preview your CSS changes before you push y
 
 What if you could check/preview your CSS changes before you push your changes to your site? You can with <a href="http://charlesproxy.com" title="Charles proxy" target="_blank">Charles</a> proxy. Check out the video below from <a href="http://learnable.com" title="Learnable" target="_blank">Learnable.com</a>.
 
-https://www.youtube.com/watch?v=y8Okx-RWK3M
+<https://www.youtube.com/watch?v=y8Okx-RWK3M>
 
 First enable local mapping. Under "Tools" > "Map Local".
 
