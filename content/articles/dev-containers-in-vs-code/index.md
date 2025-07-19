@@ -26,7 +26,7 @@ Dev Containers in VS Code allow packaging a project's dependencies and tools int
 
 The following is a transcript of my live stream on YouTube Sep 11, 2023 on Dev Containers in VS Code. This transcript has been lightly edited for length and clarity.
 
-https://www.youtube.com/watch?v=yiJ2lWrVCgk
+<https://www.youtube.com/watch?v=yiJ2lWrVCgk>
 
 ---
 

@@ -63,7 +63,7 @@ This lean approach makes the chatbot snappy, efficient, and perfect for a static
 
 When a user submits a question through the UI, it sends a POST request to a Netlify Function:
 
-```
+```text
 /.netlify/functions/chatrag
 ```
 
