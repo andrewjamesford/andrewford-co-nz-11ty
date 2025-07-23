@@ -2,7 +2,7 @@
 title: I Wasted 25 Years Writing Code — Here's What I Should Have Done Instead
 date: '2025-07-23T13:44:31Z'
 template: post
-draft: true
+draft: false
 slug: '202507231344'
 category: note
 tags:
