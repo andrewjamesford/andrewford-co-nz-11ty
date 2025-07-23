@@ -9,11 +9,14 @@ layout: layouts/base.njk
 <ul class="article-list">
 {%- for note in collections.notes | reverse %}
   {% set absoluteNoteUrl %}{{ note.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
+  {%- if note.data.draft == false -%}
   <li class="article-list-item">
     <h4 class="article-title">
       <a href={{ absoluteNoteUrl }}>{{ note.data.title }}</a>
     </h4>
     <p class="article-description">{{ note.data.description }}</p>
   </li>
+		{%- endif -%}
+
 {%- endfor %}
 </ul>
