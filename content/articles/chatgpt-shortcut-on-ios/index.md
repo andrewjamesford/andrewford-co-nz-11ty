@@ -20,7 +20,7 @@ Unfortunately the shortcut doesn't work anymore. I'd suggest you use the FREE [A
 
 Previously I wrote about [how to use ChatGPT on macOS and iOS using Shortcuts](/articles/chatgpt-macos-ios-using-shortcuts). I've now created a iOS Shortcut that uses the [ChatGPT app](https://chatgpt.com) and it's shortcut action to do your bidding. This means you don't need to create an OpenAI API key to use it, history is available in the app and less _copy & pasting_ on an iPhone (which is not always easy).
 
-https://www.youtube.com/watch?v=fD1nNVAyY7E
+<https://www.youtube.com/watch?v=fD1nNVAyY7E>
 
 ### How to use it
 

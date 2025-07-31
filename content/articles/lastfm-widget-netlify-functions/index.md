@@ -19,7 +19,7 @@ Would it not be great to share what I'm listening to on my website? I've been us
 
 Here is the transcript from my [latest how-to guide](https://www.youtube.com/watch?v=okbDFf-eIqk) on how to make a [LastFM widget](https://www.last.fm) for your own website showing your last played song that uses [Netlify functions](https://www.netlify.com/products/functions/) (serverless functions).
 
-https://www.youtube.com/watch?v=okbDFf-eIqk
+<https://www.youtube.com/watch?v=okbDFf-eIqk>
 
 ---
 

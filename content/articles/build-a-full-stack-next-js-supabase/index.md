@@ -23,7 +23,7 @@ The following is a transcript of my live stream on [YouTube](https://www.youtube
 
 The project is available on [GitHub as LMS NextJS](https://github.com/andrewjamesford/lms-nextjs).
 
-https://www.youtube.com/watch?v=LCnHOpg7U7s
+<https://www.youtube.com/watch?v=LCnHOpg7U7s>
 
 ---
 
