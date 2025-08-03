@@ -419,6 +419,7 @@ picture {
 .loading-dots {
   display: inline-flex;
   gap: 0.2rem;
+  color: var(--body-color);
 }
 
 .loading-dots span {
@@ -489,6 +490,15 @@ picture {
   border-radius: 0.25rem;
   text-decoration: none;
   font-size: 0.8rem;
+}
+
+.chat-source-link:visited {
+  color: #fff;
+  background-color: var(--link-color);
+}
+
+.chat-source-link:hover {
+  opacity: 0.9;
 }
 
 @media (prefers-color-scheme: dark) {
