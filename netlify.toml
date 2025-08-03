@@ -3,6 +3,10 @@ command = "npm run build"
 functions = "functions"
 publish = "_site"
 
+[build.environment]
+NODE_ENV = "production"
+NPM_FLAGS = "--production=false"
+
 [dev]
 command = "npm run start"
 functions = "functions"
@@ -15,6 +19,7 @@ node_bundler = "esbuild"
 [functions."chatrag"]
 included_files = ["vector_store/docstore.json", "vector_store/faiss.index"]
 external_node_modules = ["faiss-node"]
+node_bundler = "nft"
 
 
 [[redirects]]
