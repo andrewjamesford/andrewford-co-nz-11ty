@@ -76,6 +76,45 @@ function initializeChat() {
     messages.scrollTop = messages.scrollHeight;
   }
 
+  function formatUrlForDisplay(url) {
+    try {
+      const urlObj = new URL(url);
+      let path = urlObj.pathname;
+      
+      // Remove trailing slash and leading slash
+      path = path.replace(/^\/|\/$/g, '');
+      
+      // If path is empty, show domain
+      if (!path) {
+        return urlObj.hostname.replace(/^www\./, '');
+      }
+      
+      // For long paths, show domain + truncated path
+      const domain = urlObj.hostname.replace(/^www\./, '');
+      const maxLength = 25; // Adjust based on your chat width
+      
+      if ((domain + '/' + path).length > maxLength) {
+        const availableLength = maxLength - domain.length - 4; // 4 for "/.../
+        if (availableLength > 8) {
+          const pathParts = path.split('/');
+          const lastPart = pathParts[pathParts.length - 1];
+          if (lastPart.length <= availableLength) {
+            return `${domain}/.../${lastPart}`;
+          } else {
+            return `${domain}/.../${lastPart.substring(0, availableLength - 3)}...`;
+          }
+        } else {
+          return `${domain}/...`;
+        }
+      }
+      
+      return `${domain}/${path}`;
+    } catch (e) {
+      // Fallback for invalid URLs
+      return url.length > 40 ? url.substring(0, 37) + '...' : url;
+    }
+  }
+
   function appendSourceLinks(sources) {
     if (!Array.isArray(sources)) return;
     sources.forEach((url) => {
@@ -90,39 +129,13 @@ function initializeChat() {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.className = "chat-source-link";
-      link.textContent = "View Source";
+      link.textContent = formatUrlForDisplay(url);
 
       bubble.appendChild(link);
       messageContainer.appendChild(bubble);
       messages.appendChild(messageContainer);
       messages.scrollTop = messages.scrollHeight;
     });
-  }
-  function appendLoadingMessage() {
-    const messageContainer = document.createElement("div");
-    messageContainer.className = "chat-message bot loading-message";
-
-    const bubble = document.createElement("div");
-    bubble.className = "chat-bubble loading-bubble";
-
-    // Create loading dots animation
-    const dots = document.createElement("span");
-    dots.className = "loading-dots";
-    dots.innerHTML =
-      "<span>&bull;</span><span>&bull;</span><span>&bull;</span>";
-
-    bubble.appendChild(dots);
-    messageContainer.appendChild(bubble);
-    messages.appendChild(messageContainer);
-    messages.scrollTop = messages.scrollHeight;
-
-    return messageContainer;
-  }
-
-  function removeLoadingMessage(loadingElement) {
-    if (loadingElement && loadingElement.parentNode) {
-      loadingElement.parentNode.removeChild(loadingElement);
-    }
   }
 
   function sanitizeMessage(message) {

@@ -493,22 +493,25 @@ picture {
 
 .chat-source-link {
   display: inline-block;
-  margin-top: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--link-color);
+  margin-top: 0.5rem;
   color: #fff;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  font-size: 0.8rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  word-break: break-all;
+  line-height: 1.4;
 }
 
 .chat-source-link:visited {
   color: #fff;
-  background-color: var(--link-color);
+  text-decoration: underline;
 }
 
 .chat-source-link:hover {
-  opacity: 0.9;
+  opacity: 1;
+  text-decoration-thickness: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
