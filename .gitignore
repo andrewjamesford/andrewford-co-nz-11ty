@@ -122,3 +122,5 @@ package-lock.json
 .flaskenv*
 !.env.project
 !.env.vault
+test-results/
+playwright-report/

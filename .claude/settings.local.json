@@ -26,7 +26,8 @@
       "Bash(echo:*)",
       "Bash(grep:*)",
       "Bash(node:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(npx playwright test:*)"
     ],
     "deny": []
   }
