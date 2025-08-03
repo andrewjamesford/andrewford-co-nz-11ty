@@ -22,11 +22,14 @@
     "genvector": "node tools/generateVectorStore.mjs",
     "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest",
     "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
+    "test:integration": "node --test tests/lastplayed.test.mjs tests/chatrag.test.mjs",
+    "test:all": "npm run test && npm run test:integration",
     "postinstall": "npm rebuild faiss-node"
   },
   "jest": {
     "testMatch": [
-      "**/*test.{js,mjs}"
+      "**/tests/latestuploads.test.mjs",
+      "**/tests/*.supertest.mjs"
     ],
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"

@@ -42,7 +42,7 @@ jest.unstable_mockModule('langchain/chains/combine_documents', () => ({
 }));
 
 jest.unstable_mockModule('langchain/chains/retrieval', () => ({
-  createRetrievalChain: jest.fn().mockImplementation(({ combineDocsChain }) => ({
+  createRetrievalChain: jest.fn().mockImplementation(() => ({
     invoke: jest.fn().mockResolvedValue({
       answer: 'Test answer from the blog posts.',
       context: [
