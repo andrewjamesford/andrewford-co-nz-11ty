@@ -1,26 +1,25 @@
 ---
-title: 'Automate GitHub Security Updates: Comet Browser + Copilot Agent in Action!'
-date: '2025-07-28T20:55:17Z'
+title: "Automate GitHub Security Updates: Comet Browser + Copilot Agent in Action!"
+date: "2025-07-28T20:55:17Z"
 template: post
 draft: false
-slug: 'automate-github-security-updates-comet-browser-copilot-agent-in-action'
+slug: "automate-github-security-updates-comet-browser-copilot-agent-in-action"
 category: article
 tags:
-- AI
-- GitHub
-- Automation
-- Comet
-- Copilot
-- Security
-- Developer Tools
+  - AI
+  - GitHub
+  - Automation
+  - Comet
+  - Copilot
+  - Security
+  - Developer Tools
 
-description: 'Learn how to automate GitHub security notifications using Comet and GitHub Copilot. Transform hours of manual work into 15 minutes of automated maintenance.'
+description: "Learn how to automate GitHub security notifications using Comet and GitHub Copilot. Transform hours of manual work into 15 minutes of automated maintenance."
 ---
 
 https://www.youtube.com/watch?v=qGGd2_qayH4
 
 If you're like most developers, you've probably found yourself drowning in GitHub security notifications. Those endless email alerts about vulnerable dependencies, the mounting pile of Dependabot pull requests, and the tedious process of reviewing and updating packages across multiple repositories can quickly become overwhelming. But what if I told you there's a way to automate almost all of this using AI-powered tools?
-
 
 GitHub notifications interface showing filtered security and project-related notifications across multiple repositories.
 
@@ -31,7 +30,6 @@ Recently, I discovered a workflow that has transformed how I handle GitHub secur
 Let me paint a familiar picture. You open your GitHub notifications and see dozens of security advisories waiting for attention. Each one represents a repository that needs dependency updates, usually with a Dependabot pull request already generated but still requiring human review, testing, and merging.
 
 {% figure "./github-security-list.png", "Github Security Alerts" %}
-
 
 GitHub dependency graph showing alerts for known security vulnerabilities in project dependencies and suggested updates.
 
@@ -81,6 +79,7 @@ Go through these projects, create a new issue for each project with the followin
 Description:
 "The project currently has security issues related to its
 dependencies. Here's the task I want you to do:
+
 - Update all dependencies that have known security issues
 - Ensure that the project still builds and passes all tests after updates
 - Investigate and update the affected dependencies
@@ -89,7 +88,6 @@ dependencies. Here's the task I want you to do:
 Assign this to GitHub Copilot and make sure any repositories that have not
 had recent pull requests made today have issues created.
 ```
-
 
 ### Step 2: Let Comet Navigate and Execute
 
@@ -114,7 +112,6 @@ Once Comet creates the issues and assigns them to GitHub Copilot, the AI pair pr
 - **Runs automated tests** to ensure compatibility
 - **Provides detailed explanations** of what changes were made
 - **Generates ready-to-review pull requests** for final approval
-
 
 A DevOps workflow diagram showing GitHub Actions automation for active development, release, and deploying containers to development, staging, and production environments via CI/CD pipelines.
 
@@ -192,7 +189,6 @@ As AI tools continue to evolve, we can expect even more sophisticated automation
 - **Intelligent conflict resolution** for complex dependency updates
 - **Automated testing generation** tailored to dependency changes
 - **Smart rollback capabilities** when issues are detected
-
 
 ## Getting Started
 

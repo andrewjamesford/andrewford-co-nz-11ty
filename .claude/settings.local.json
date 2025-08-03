@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "WebFetch(domain:openrouter.ai)",
+      "Bash(npm test)",
+      "Bash(find:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "Bash(ls:*)",
+      "Bash(test:*)",
+      "Bash(rm:*)",
+      "Bash(netlify env:list:*)",
+      "Bash(netlify link:*)",
+      "Bash(netlify dev:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  }
+}

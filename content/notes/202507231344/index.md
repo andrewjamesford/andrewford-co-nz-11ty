@@ -1,20 +1,20 @@
 ---
 title: I Wasted 25 Years Writing Code — Here's What I Should Have Done Instead
-date: '2025-07-23T13:44:31Z'
+date: "2025-07-23T13:44:31Z"
 template: post
 draft: false
-slug: '202507231344'
+slug: "202507231344"
 category: note
 tags:
-- code
-- ai
-- communication
+  - code
+  - ai
+  - communication
 description: A reflection on how 25 years of coding experience has led to the realisation that structured communication, not code itself, is the true valuable artifact in the age of AI-generated programming.
 ---
 
 As I continue to use AI more in my side projects, my understanding of what code is and its value is drastically changing. I wholeheartedly believe that the code that I have written for the last 25 years is just a byproduct. For so long, developers and businesses have held it on a pedestal. It is the precious output, the gold to be mined and refined. We felt compelled to protect it at all costs, to back it up, version control it, and guard it jealously.
 
-> We were *wrong*. The valuable artefact is the **structured communication**.
+> We were _wrong_. The valuable artefact is the **structured communication**.
 
 {% figure "./the-new-code-sean-grove.jpg", "Structured Communication - Credit: Sean Grove" %}
 
