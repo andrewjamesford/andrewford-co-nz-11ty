@@ -22,7 +22,8 @@
       "Bash(netlify logs:function:*)",
       "Bash(npm test:*)",
       "Bash(NODE_OPTIONS=\"--experimental-vm-modules\" npm test:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(echo:*)"
     ],
     "deny": []
   }
