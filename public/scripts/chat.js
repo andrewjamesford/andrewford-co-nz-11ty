@@ -25,28 +25,23 @@ function initializeChat() {
     appendMessage("You", userMessage);
     input.value = "";
 
-    // Show loading indicator
-    const loadingMessageElement = appendLoadingMessage();
+    // Create bot message container for streaming
+    const botMessageElement = appendStreamingMessage();
 
     try {
-      const response = await fetch(
-        `${CONFIG.API_URL}/.netlify/functions/chatrag`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: userMessage }),
-        }
+      // Try streaming first
+      const streamSuccess = await handleStreamingRequest(
+        userMessage,
+        botMessageElement
       );
 
-      const data = await response.json();
-
-      // Remove loading indicator and show actual response
-      removeLoadingMessage(loadingMessageElement);
-      appendMessage("Bot", data.answer || "No response.");
-      appendSourceLinks(data.sources);
+      if (!streamSuccess) {
+        // Fallback to non-streaming request
+        await handleNonStreamingRequest(userMessage, botMessageElement);
+      }
     } catch (error) {
-      // Remove loading indicator and show error
-      removeLoadingMessage(loadingMessageElement);
+      // Remove streaming message and show error
+      removeStreamingMessage(botMessageElement);
       console.error("Error fetching response:", error);
       appendMessage(
         "Bot",
@@ -156,6 +151,149 @@ function initializeChat() {
     sanitized = sanitized.trim().replace(/\s+/g, " ");
 
     return sanitized;
+  }
+
+  function appendStreamingMessage() {
+    const messageContainer = document.createElement("div");
+    messageContainer.className = "chat-message bot";
+
+    const bubble = document.createElement("div");
+    bubble.className = "chat-bubble";
+    bubble.textContent = "";
+
+    messageContainer.appendChild(bubble);
+    messages.appendChild(messageContainer);
+    messages.scrollTop = messages.scrollHeight;
+
+    return messageContainer;
+  }
+
+  function removeStreamingMessage(messageElement) {
+    if (messageElement && messageElement.parentNode) {
+      messageElement.parentNode.removeChild(messageElement);
+    }
+  }
+
+  function updateStreamingMessage(messageElement, text) {
+    const bubble = messageElement.querySelector(".chat-bubble");
+    if (bubble) {
+      bubble.textContent = text;
+      messages.scrollTop = messages.scrollHeight;
+    }
+  }
+
+  async function handleStreamingRequest(userMessage, botMessageElement) {
+    return new Promise((resolve) => {
+      try {
+        // Create a POST request with streaming headers
+        fetch(`${CONFIG.API_URL}/.netlify/functions/chatrag`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "text/event-stream",
+          },
+          body: JSON.stringify({ question: userMessage }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = "";
+            let fullText = "";
+
+            function processStream() {
+              return reader.read().then(({ done, value }) => {
+                if (done) {
+                  resolve(true);
+                  return;
+                }
+
+                // Decode the chunk and add to buffer
+                buffer += decoder.decode(value, { stream: true });
+
+                // Process complete SSE messages
+                const lines = buffer.split("\n");
+                buffer = lines.pop() || ""; // Keep incomplete line in buffer
+
+                for (const line of lines) {
+                  if (line.startsWith("data: ")) {
+                    try {
+                      const data = JSON.parse(line.slice(6));
+
+                      if (data.error) {
+                        removeStreamingMessage(botMessageElement);
+                        const errorMsg = data.error.includes("Authentication")
+                          ? "API configuration error. Please check that API keys are set in the .env file."
+                          : `Error: ${data.error}`;
+                        appendMessage("Bot", errorMsg);
+                        resolve(false);
+                        return;
+                      }
+
+                      if (data.chunk) {
+                        fullText += data.chunk;
+                        updateStreamingMessage(botMessageElement, fullText);
+                      }
+
+                      if (data.done) {
+                        if (data.sources) {
+                          appendSourceLinks(data.sources);
+                        }
+                        resolve(true);
+                        return;
+                      }
+                    } catch (e) {
+                      console.warn("Failed to parse SSE data:", line);
+                    }
+                  }
+                }
+
+                return processStream();
+              });
+            }
+
+            return processStream();
+          })
+          .catch((error) => {
+            console.warn("Streaming failed, will try fallback:", error);
+            resolve(false);
+          });
+      } catch (error) {
+        console.warn("Streaming setup failed, will try fallback:", error);
+        resolve(false);
+      }
+    });
+  }
+
+  async function handleNonStreamingRequest(userMessage, botMessageElement) {
+    try {
+      const response = await fetch(
+        `${CONFIG.API_URL}/.netlify/functions/chatrag`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: userMessage }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.error) {
+        removeStreamingMessage(botMessageElement);
+        appendMessage("Bot", `Error: ${data.error}`);
+        return;
+      }
+
+      // Update the streaming message with the full response
+      updateStreamingMessage(botMessageElement, data.answer || "No response.");
+      appendSourceLinks(data.sources);
+    } catch (error) {
+      removeStreamingMessage(botMessageElement);
+      throw error;
+    }
   }
 }
 

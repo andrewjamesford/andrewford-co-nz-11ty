@@ -7,23 +7,8 @@ import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
 import sanitizeHtml from "sanitize-html";
 
-// Initialize Upstash Redis-based rate limiting
-let redis;
-let ratelimit;
-try {
-  redis = Redis.fromEnv(); // Uses UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
-  ratelimit = new Ratelimit({
-    redis: redis,
-    limiter: Ratelimit.slidingWindow(10, "15 m"), // 10 requests per 15 minutes
-    analytics: true, // Enable analytics
-  });
-} catch (error) {
-  console.error("Error initializing Redis or Ratelimit:", error);
-}
 // Input sanitization configuration
 const INPUT_LIMITS = {
   maxLength: 500,
@@ -73,39 +58,199 @@ function sanitizeInput(input) {
   return sanitized;
 }
 
-async function checkRateLimit(clientIP) {
+export const handler = async (event, context) => {
+  // Enable streaming for Netlify Functions
+  if (event.headers.accept?.includes("text/event-stream")) {
+    return streamHandler(event, context);
+  }
+
+  // Fallback to non-streaming response
+  return nonStreamHandler(event, context);
+};
+
+const streamHandler = async (event, context) => {
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+
   try {
-    const { success, limit, remaining, reset, pending } = await ratelimit.limit(
-      clientIP
-    );
+    const body =
+      typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+    const { question } = body;
 
-    if (!success) {
-      const waitTime = Math.ceil((reset - Date.now()) / 1000 / 60); // minutes
-
-      throw new Error(`Rate limit exceeded. Try again in ${waitTime} minutes.`);
+    if (!question) {
+      return {
+        statusCode: 400,
+        headers: {
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          Connection: "keep-alive",
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Methods": "POST",
+        },
+        body: `data: ${JSON.stringify({ error: "Question is required" })}\n\n`,
+      };
     }
 
-    return { remaining, reset };
+    // Sanitize the input
+    let sanitizedQuestion;
+    try {
+      sanitizedQuestion = sanitizeInput(question);
+    } catch (sanitizeError) {
+      return {
+        statusCode: 400,
+        headers: {
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          Connection: "keep-alive",
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Methods": "POST",
+        },
+        body: `data: ${JSON.stringify({ error: sanitizeError.message })}\n\n`,
+      };
+    }
+
+    const embeddings = new OpenAIEmbeddings({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
+    const llm = new ChatOpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      model:
+        process.env.OPENROUTER_MODEL || "meta-llama/llama-3.2-3b-instruct:free",
+      configuration: {
+        baseURL: "https://openrouter.ai/api/v1",
+        defaultHeaders: {
+          "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
+          "X-Title": "Andrew Ford Blog Chatbot",
+        },
+      },
+      streaming: true,
+    });
+
+    const vectorStore = await FaissStore.load("./vector_store", embeddings);
+    const retriever = vectorStore.asRetriever();
+
+    const prompt = ChatPromptTemplate.fromTemplate(`
+      You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
+      
+      If you cannot find the answer in the provided context, politely say that you don't have that information in the blog posts.
+      
+      Context from blog posts:
+      {context}
+      
+      Question: {input}
+      
+      Answer:
+    `);
+
+    const documentChain = await createStuffDocumentsChain({
+      llm,
+      prompt,
+    });
+
+    const retrievalChain = await createRetrievalChain({
+      combineDocsChain: documentChain,
+      retriever,
+    });
+
+    // Get the context first
+    const docs = await retriever.getRelevantDocuments(sanitizedQuestion);
+
+    // Process sources
+    let sources = [];
+    const siteUrl = (
+      process.env.SITE_URL || "https://andrewford.co.nz"
+    ).replace(/\/$/, "");
+    if (Array.isArray(docs)) {
+      const links = docs.map((doc) => {
+        const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
+        let slug;
+        if (slugMatch) {
+          slug = slugMatch[1];
+          if (doc.metadata?.source && !slug.includes("/")) {
+            const sourcePath = doc.metadata.source;
+            if (sourcePath.includes("/articles/")) {
+              slug = "articles/" + slug;
+            }
+          }
+          if (!slug.startsWith("/")) slug = "/" + slug;
+          if (!slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
+        } else if (doc.metadata?.source) {
+          const rel = doc.metadata.source.split("/content/")[1] || "";
+          slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+          if (slug && !slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
+          }
+          if (!slug.startsWith("/")) slug = "/" + slug;
+        } else {
+          slug = "";
+        }
+        return siteUrl + slug;
+      });
+      const uniqueLinks = [...new Set(links)];
+      sources = uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
+    }
+
+    // Stream the response
+    const stream = await retrievalChain.stream({
+      input: sanitizedQuestion,
+    });
+
+    let fullResponse = "";
+    const chunks = [];
+
+    for await (const chunk of stream) {
+      if (chunk.answer) {
+        fullResponse += chunk.answer;
+        chunks.push(`data: ${JSON.stringify({ chunk: chunk.answer })}\n\n`);
+      }
+    }
+
+    // Send the complete response with sources at the end
+    chunks.push(`data: ${JSON.stringify({ done: true, sources })}\n\n`);
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+        "Access-Control-Allow-Origin":
+          event.headers.origin || "https://andrewford.co.nz",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST",
+      },
+      body: chunks.join(""),
+    };
   } catch (error) {
-    // If rate limiting service is down, allow the request but log the error
-    console.error("Rate limiting service error:", error);
-    // If rate limiting service is down, implement a more restrictive fallback
-    return { remaining: 1, reset: Date.now() + 60000 }; // Allow only 1 request per minute as fallback
+    console.error("Error processing streaming request:", error);
+
+    return {
+      statusCode: 500,
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+        "Access-Control-Allow-Origin":
+          event.headers.origin || "https://andrewford.co.nz",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST",
+      },
+      body: `data: ${JSON.stringify({
+        error: "An unexpected error occurred. Please try again later.",
+      })}\n\n`,
+    };
   }
-}
+};
 
-export const handler = async (event, context) => {
+const nonStreamHandler = async (event, context) => {
   try {
-    // Extract client IP for rate limiting
-    const clientIP =
-      event.headers["x-forwarded-for"] ||
-      event.headers["x-real-ip"] ||
-      event.connection?.remoteAddress ||
-      "unknown";
-
-    // Check rate limit first
-    await checkRateLimit(clientIP);
-
     const body =
       typeof event.body === "string" ? JSON.parse(event.body) : event.body;
     const { question } = body;
@@ -133,21 +278,32 @@ export const handler = async (event, context) => {
     });
 
     const llm = new ChatOpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      modelName: "gpt-4.1-nano",
+      apiKey: process.env.OPENROUTER_API_KEY,
+      model:
+        process.env.OPENROUTER_MODEL || "meta-llama/llama-3.2-3b-instruct:free",
+      configuration: {
+        baseURL: "https://openrouter.ai/api/v1",
+        defaultHeaders: {
+          "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
+          "X-Title": "Andrew Ford Blog Chatbot",
+        },
+      },
     });
 
     const vectorStore = await FaissStore.load("./vector_store", embeddings);
     const retriever = vectorStore.asRetriever();
 
     const prompt = ChatPromptTemplate.fromTemplate(`
-      Answer the following question based only on the provided context:
+      You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
       
-      <context>
+      If you cannot find the answer in the provided context, politely say that you don't have that information in the blog posts.
+      
+      Context from blog posts:
       {context}
-      </context>
       
       Question: {input}
+      
+      Answer:
     `);
 
     const documentChain = await createStuffDocumentsChain({
@@ -226,9 +382,25 @@ export const handler = async (event, context) => {
       }),
     };
   } catch (error) {
-    // Handle rate limit errors specifically
-    if (error.message.includes("Rate limit exceeded")) {
-      console.error("Rate limit error:", error);
+    console.error("Error processing request:", error);
+
+    // Handle specific OpenRouter errors
+    if (error.response?.status === 401) {
+      return {
+        statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Methods": "POST",
+        },
+        body: JSON.stringify({
+          error: "Authentication error. Please check API configuration.",
+        }),
+      };
+    }
+
+    if (error.response?.status === 429) {
       return {
         statusCode: 429,
         headers: {
@@ -236,15 +408,13 @@ export const handler = async (event, context) => {
             event.headers.origin || "https://andrewford.co.nz",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "POST",
-          "Retry-After": "900", // 15 minutes in seconds
         },
         body: JSON.stringify({
-          error: "Too many requests. Please try again later.",
+          error: "Model rate limit reached. Please try again later.",
         }),
       };
     }
 
-    console.error("Error processing request:", error);
     return {
       statusCode: 500,
       headers: {
