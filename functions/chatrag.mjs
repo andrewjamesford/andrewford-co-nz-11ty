@@ -1,24 +1,13 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { ChatOpenAI } from "@langchain/openai";
+import { FaissStore } from "@langchain/community/vectorstores/faiss";
+import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
+import { createRetrievalChain } from "langchain/chains/retrieval";
+import { ChatPromptTemplate } from "@langchain/core/prompts";
 import sanitizeHtml from "sanitize-html";
-
-// Note: FaissStore operations moved to local-only generateVectorStore.mjs
-// This function now works with pre-computed embeddings or alternative approach
-// LangChain imports moved to dynamic imports to avoid ES module issues
-
-// Simple document collection for demo purposes
-// In production, you would load this from a pre-computed file or database
-const SAMPLE_DOCUMENTS = [
-  new Document({
-    pageContent: "Andrew Ford is a software developer and blogger. He writes about technology, programming, and software development on his blog.",
-    metadata: { source: "/about/", slug: "about" }
-  }),
-  new Document({
-    pageContent: "This blog contains articles about web development, JavaScript, TypeScript, React, and other programming topics.",
-    metadata: { source: "/articles/", slug: "articles" }
-  })
-];
 
 // Input sanitization configuration
 const INPUT_LIMITS = {
@@ -142,7 +131,7 @@ const streamHandler = async (event, context) => {
       streaming: true,
     });
 
-    const vectorStore = await MemoryVectorStore.fromDocuments(SAMPLE_DOCUMENTS, embeddings);
+    const vectorStore = await FaissStore.load("./vector_store", embeddings);
     const retriever = vectorStore.asRetriever();
 
     const prompt = ChatPromptTemplate.fromTemplate(`
@@ -302,7 +291,7 @@ const nonStreamHandler = async (event, context) => {
       },
     });
 
-    const vectorStore = await MemoryVectorStore.fromDocuments(SAMPLE_DOCUMENTS, embeddings);
+    const vectorStore = await FaissStore.load("./vector_store", embeddings);
     const retriever = vectorStore.asRetriever();
 
     const prompt = ChatPromptTemplate.fromTemplate(`

@@ -5,6 +5,7 @@
     "okitavera.vscode-nunjucks-formatter",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "orta.vscode-jest"
   ]
 }
