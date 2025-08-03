@@ -419,12 +419,21 @@ picture {
 .loading-dots {
   display: inline-flex;
   gap: 0.2rem;
+  color: inherit;
 }
 
 .loading-dots span {
   opacity: 0.4;
   animation: loading-dot 1.4s infinite both;
   font-size: 1rem;
+  color: inherit;
+  display: inline-block;
+}
+
+/* Ensure loading dots are visible in chat bubbles */
+.chat-bubble.loading-bubble .loading-dots,
+.chat-bubble.loading-bubble .loading-dots span {
+  color: #fff;
 }
 
 .loading-dots span:nth-child(1) {
@@ -441,12 +450,14 @@ picture {
 
 @keyframes loading-dot {
   0%,
-  80%,
+  60%,
   100% {
     opacity: 0.4;
+    transform: translateY(0);
   }
-  40% {
+  30% {
     opacity: 1;
+    transform: translateY(-8px);
   }
 }
 
@@ -482,13 +493,25 @@ picture {
 
 .chat-source-link {
   display: inline-block;
-  margin-top: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--link-color);
+  margin-top: 0.5rem;
   color: #fff;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  font-size: 0.8rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.chat-source-link:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.chat-source-link:hover {
+  opacity: 1;
+  text-decoration-thickness: 2px;
 }
 
 @media (prefers-color-scheme: dark) {

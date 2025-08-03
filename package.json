@@ -68,8 +68,6 @@
     "@langchain/core": "^0.3.57",
     "@langchain/openai": "^0.5.11",
     "@langchain/textsplitters": "^0.1.0",
-    "@upstash/ratelimit": "^2.0.5",
-    "@upstash/redis": "^1.34.9",
     "dompurify": "^3.2.6",
     "faiss-node": "^0.5.1",
     "sanitize-html": "^2.17.0"
