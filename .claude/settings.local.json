@@ -17,7 +17,9 @@
       "Bash(netlify link:*)",
       "Bash(netlify dev:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(netlify functions:list:*)",
+      "Bash(netlify logs:function:*)"
     ],
     "deny": []
   }

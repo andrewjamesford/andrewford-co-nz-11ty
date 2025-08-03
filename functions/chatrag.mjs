@@ -1,16 +1,11 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { OpenAIEmbeddings } from "@langchain/openai";
-import { ChatOpenAI } from "@langchain/openai";
+import sanitizeHtml from "sanitize-html";
+
 // Note: FaissStore operations moved to local-only generateVectorStore.mjs
 // This function now works with pre-computed embeddings or alternative approach
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
-import { createRetrievalChain } from "langchain/chains/retrieval";
-import { Document } from "@langchain/core/documents";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
-import sanitizeHtml from "sanitize-html";
+// LangChain imports moved to dynamic imports to avoid ES module issues
 
 // Simple document collection for demo purposes
 // In production, you would load this from a pre-computed file or database
