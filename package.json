@@ -21,6 +21,7 @@
     "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
     "genvector": "node tools/generateVectorStore.mjs",
     "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest",
+    "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
     "postinstall": "npm rebuild faiss-node"
   },
   "jest": {
@@ -61,6 +62,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "dotenv": "^16.4.5",
     "eleventy-plugin-youtube-embed": "^1.13.0",
+    "express": "^4.21.2",
     "jest": "^29.7.0",
     "lighthouse": "^12.2.1",
     "luxon": "^3.5",
@@ -68,7 +70,8 @@
     "markdown-it-footnote": "^4",
     "markdownlint-cli2": "^0.14.0",
     "node-fetch": "^3.3.2",
-    "prettier": "2.5.0"
+    "prettier": "2.5.0",
+    "supertest": "^7.1.4"
   },
   "dependencies": {
     "@langchain/community": "^0.3.44",

@@ -21,7 +21,8 @@
       "Bash(netlify functions:list:*)",
       "Bash(netlify logs:function:*)",
       "Bash(npm test:*)",
-      "Bash(NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/latestuploads.test.mjs)"
+      "Bash(NODE_OPTIONS=\"--experimental-vm-modules\" npm test:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }
