@@ -23,7 +23,10 @@
       "Bash(npm test:*)",
       "Bash(NODE_OPTIONS=\"--experimental-vm-modules\" npm test:*)",
       "Bash(npm install:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
