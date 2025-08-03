@@ -19,7 +19,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(netlify functions:list:*)",
-      "Bash(netlify logs:function:*)"
+      "Bash(netlify logs:function:*)",
+      "Bash(npm test:*)",
+      "Bash(NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/latestuploads.test.mjs)"
     ],
     "deny": []
   }
