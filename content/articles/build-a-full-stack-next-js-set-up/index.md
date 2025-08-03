@@ -23,7 +23,7 @@ The following is a transcript of my live stream on YouTube Sep 18, 2023 on Build
 
 The project is available on [GitHub as LMS NextJS](https://github.com/andrewjamesford/lms-nextjs).
 
-https://www.youtube.com/watch?v=2BQcCGCsql0
+<https://www.youtube.com/watch?v=2BQcCGCsql0>
 
 ---
 

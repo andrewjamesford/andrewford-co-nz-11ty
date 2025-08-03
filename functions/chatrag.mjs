@@ -278,6 +278,7 @@ const nonStreamHandler = async (event, context) => {
     });
 
     const llm = new ChatOpenAI({
+
       apiKey: process.env.OPENROUTER_API_KEY,
       model:
         process.env.OPENROUTER_MODEL || "meta-llama/llama-3.2-3b-instruct:free",

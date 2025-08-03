@@ -23,7 +23,7 @@ The following is a transcript of my live stream on YouTube Sep 14, 2023 on Dev C
 To view the Wireframes I created in the stream, please see the following link:
 [Wireframes on Excalidraw](https://excalidraw.com/#json=almP8vw8UnTN7cR6Zk6Xf,aIx7EgfHxXwpKKnv6k3IbQ)
 
-https://www.youtube.com/watch?v=4xhebsXoSn4
+<https://www.youtube.com/watch?v=4xhebsXoSn4>
 
 {% figure "./whiteboard.png", "The Whiteboard from the Stream" %}
 
