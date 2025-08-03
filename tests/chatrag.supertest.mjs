@@ -60,7 +60,7 @@ jest.unstable_mockModule('langchain/chains/retrieval', () => ({
   }))
 }));
 
-const { handler } = await import('../functions/chatrag.mjs');
+const { handler } = await import('../functions/chatrag.js');
 
 describe('Chat RAG Function - Supertest', () => {
   let app;

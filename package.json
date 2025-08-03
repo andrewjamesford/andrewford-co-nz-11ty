@@ -25,6 +25,11 @@
     "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
     "test:integration": "node --test tests/lastplayed.test.mjs tests/chatrag.test.mjs",
     "test:all": "npm run test && npm run test:integration",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:simple": "playwright test tests/e2e/chatbot-simple.spec.js",
+    "test:e2e:quick": "playwright test tests/e2e/chatbot-quick.spec.js --project=chromium",
     "postinstall": "npm rebuild faiss-node"
   },
   "jest": {
@@ -64,6 +69,7 @@
     "@11ty/eleventy-plugin-bundle": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@playwright/test": "^1.54.2",
     "dotenv": "^16.4.5",
     "eleventy-plugin-youtube-embed": "^1.13.0",
     "express": "^4.21.2",
