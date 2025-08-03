@@ -158,9 +158,15 @@ function initializeChat() {
     messageContainer.className = "chat-message bot";
 
     const bubble = document.createElement("div");
-    bubble.className = "chat-bubble";
-    bubble.textContent = "";
+    bubble.className = "chat-bubble loading-bubble";
 
+    // Create loading dots animation
+    const dots = document.createElement("span");
+    dots.className = "loading-dots";
+    dots.innerHTML =
+      "<span>&bull;</span><span>&bull;</span><span>&bull;</span>";
+
+    bubble.appendChild(dots);
     messageContainer.appendChild(bubble);
     messages.appendChild(messageContainer);
     messages.scrollTop = messages.scrollHeight;
@@ -177,6 +183,11 @@ function initializeChat() {
   function updateStreamingMessage(messageElement, text) {
     const bubble = messageElement.querySelector(".chat-bubble");
     if (bubble) {
+      // Remove loading class and dots when first text arrives
+      if (bubble.classList.contains("loading-bubble")) {
+        bubble.classList.remove("loading-bubble");
+        bubble.innerHTML = ""; // Clear loading dots
+      }
       bubble.textContent = text;
       messages.scrollTop = messages.scrollHeight;
     }
