@@ -1,4 +1,12 @@
+import { describe, it } from "node:test";
+import assert from "node:assert";
 import { handler } from "../functions/chatrag.mjs";
+
+// Simple expect wrapper for better readability
+const expect = (actual) => ({
+  toBe: (expected) => assert.strictEqual(actual, expected),
+  toHaveProperty: (prop) => assert.ok(actual.hasOwnProperty(prop), `Expected object to have property '${prop}'`)
+});
 
 // Mock environment variables for testing
 process.env.OPENAI_API_KEY = process.env.OPENAI_API_KEY || "mock-api-key";

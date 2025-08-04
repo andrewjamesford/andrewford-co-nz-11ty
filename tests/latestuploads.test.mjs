@@ -1,19 +1,24 @@
-import { handler } from "../functions/latestuploads.mjs";
-import dotenv from "dotenv";
+import { jest, describe, test, expect, beforeEach, afterEach } from '@jest/globals';
 
 // Create an explicit mock function for fetch
 const mockFetch = jest.fn();
 
-// Mock the node-fetch module to use our explicit mock
-jest.mock("node-fetch", () => ({
-  __esModule: true,
+// Mock dotenv with a proper mock implementation
+const mockDotenvConfig = jest.fn();
+
+// Use unstable_mockModule for ES modules
+jest.unstable_mockModule("node-fetch", () => ({
   default: mockFetch,
 }));
 
-// Mock dotenv with a proper mock implementation
-jest.mock("dotenv", () => ({
-  config: jest.fn(),
+jest.unstable_mockModule("dotenv", () => ({
+  default: {
+    config: mockDotenvConfig,
+  },
+  config: mockDotenvConfig,
 }));
+
+const { handler } = await import("../functions/latestuploads.mjs");
 
 describe("latestUploads Netlify Function", () => {
   let consoleErrorSpy;
@@ -28,7 +33,7 @@ describe("latestUploads Netlify Function", () => {
     process.env.YOUTUBE_CHANNEL_ID = mockChannelId;
 
     // Clear mock calls - don't reassign the mock function
-    dotenv.config.mockClear();
+    mockDotenvConfig.mockClear();
     mockFetch.mockClear();
 
     // Spy on console.error and mock its implementation to prevent logging during tests
@@ -59,7 +64,7 @@ describe("latestUploads Netlify Function", () => {
 
     const response = await handler(mockEvent, mockContext);
 
-    expect(dotenv.config).toHaveBeenCalledTimes(1);
+    expect(mockDotenvConfig).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledWith(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${mockChannelId}&maxResults=10&order=date&type=video&key=${mockApiKey}`,

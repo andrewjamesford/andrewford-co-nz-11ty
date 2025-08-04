@@ -1,24 +1,31 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git checkout:*)",
-      "WebFetch(domain:openrouter.ai)",
-      "Bash(npm test)",
-      "Bash(find:*)",
-      "Bash(npm run lint)",
+      "mcp__playwright__browser_get",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_navigate",
       "Bash(npm run:*)",
+      "Bash(netlify:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)",
-      "Bash(true)",
-      "Bash(ls:*)",
-      "Bash(test:*)",
-      "Bash(rm:*)",
-      "Bash(netlify env:list:*)",
-      "Bash(netlify link:*)",
-      "Bash(netlify dev:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(lsof:*)",
+      "Bash(pkill:*)"
     ],
-    "deny": []
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run prettier && npm run test"
+          }
+        ]
+      }
+    ]
   }
 }
