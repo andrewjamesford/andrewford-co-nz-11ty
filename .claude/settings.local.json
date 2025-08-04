@@ -10,10 +10,7 @@
       "Bash(lsof:*)",
       "Bash(pkill:*)"
     ],
-    "deny": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)"
-    ]
+    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },
   "hooks": {
     "PostToolUse": [

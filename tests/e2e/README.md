@@ -5,11 +5,13 @@ This directory contains Playwright end-to-end tests to verify the chatbot functi
 ## Test Files
 
 ### `basic.spec.js`
+
 - Basic site functionality tests
 - Homepage loading and navigation
 - Chat toggle button presence
 
 ### `chatbot.spec.js`
+
 - Comprehensive chatbot UI interaction tests
 - Chat opening/closing animations
 - Message sending and receiving
@@ -20,6 +22,7 @@ This directory contains Playwright end-to-end tests to verify the chatbot functi
 - Scroll behavior
 
 ### `chatbot-api.spec.js`
+
 - API endpoint testing
 - Request validation (missing, empty, too short, too long questions)
 - Response format validation
@@ -33,6 +36,7 @@ This directory contains Playwright end-to-end tests to verify the chatbot functi
 ## Running Tests
 
 ### Prerequisites
+
 1. Make sure the development server is running: `npm run dev`
 2. Ensure the vector store is generated: `npm run genvector:simple`
 3. Install Playwright browsers: `npx playwright install`
@@ -68,11 +72,13 @@ npx playwright test --project=chromium
 ### Recommended Test Flow
 
 1. **Start with quick tests**: `npm run test:e2e:quick` (6 tests, ~10 seconds)
+
    - UI functionality tests
    - Basic API validation tests
    - No AI API calls (fast and reliable)
 
 2. **Run simple tests for full validation**: `npm run test:e2e:simple` (15 tests, ~60 seconds)
+
    - Includes one AI API test
    - More comprehensive but still reasonable runtime
 
@@ -85,6 +91,7 @@ npx playwright test --project=chromium
 The tests verify:
 
 #### UI Functionality ✅
+
 - Chat toggle button visibility and functionality
 - Chat container opening/closing animations
 - Welcome message display
@@ -95,6 +102,7 @@ The tests verify:
 - Scroll behavior for long conversations
 
 #### API Functionality ✅
+
 - Successful chatbot responses
 - Input validation (length, content)
 - Error handling for invalid requests
@@ -105,6 +113,7 @@ The tests verify:
 - Input sanitization for security
 
 #### Chatbot Intelligence ✅
+
 - Relevant responses to questions about Andrew Ford
 - Professional background information retrieval
 - Technology stack questions
@@ -114,6 +123,7 @@ The tests verify:
 ## Configuration
 
 The tests are configured in `playwright.config.js` with:
+
 - Base URL: `http://localhost:8888`
 - Test timeout: Default Playwright settings
 - Browsers: Chromium, Firefox, WebKit
@@ -124,15 +134,18 @@ The tests are configured in `playwright.config.js` with:
 ## Troubleshooting
 
 1. **Tests fail with "Server not found"**
+
    - Ensure `npm run dev` is running
    - Check that the server is accessible at `http://localhost:8888`
 
 2. **Chatbot API tests fail**
+
    - Verify the vector store exists: `ls vector_store/simple_vector_store.json`
    - Check environment variables in `.env` file
    - Ensure OpenAI API key is configured
 
 3. **Long response times**
+
    - This is normal for AI responses (up to 30 seconds)
    - Cold starts may take longer
 
@@ -143,6 +156,7 @@ The tests are configured in `playwright.config.js` with:
 ## Reports
 
 After running tests, view the HTML report:
+
 ```bash
 npx playwright show-report
 ```
