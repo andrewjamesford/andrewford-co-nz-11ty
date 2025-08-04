@@ -80,38 +80,41 @@ function initializeChat() {
     try {
       const urlObj = new URL(url);
       let path = urlObj.pathname;
-      
+
       // Remove trailing slash and leading slash
-      path = path.replace(/^\/|\/$/g, '');
-      
+      path = path.replace(/^\/|\/$/g, "");
+
       // If path is empty, show domain
       if (!path) {
-        return urlObj.hostname.replace(/^www\./, '');
+        return urlObj.hostname.replace(/^www\./, "");
       }
-      
+
       // For long paths, show domain + truncated path
-      const domain = urlObj.hostname.replace(/^www\./, '');
+      const domain = urlObj.hostname.replace(/^www\./, "");
       const maxLength = 25; // Adjust based on your chat width
-      
-      if ((domain + '/' + path).length > maxLength) {
+
+      if ((domain + "/" + path).length > maxLength) {
         const availableLength = maxLength - domain.length - 4; // 4 for "/.../
         if (availableLength > 8) {
-          const pathParts = path.split('/');
+          const pathParts = path.split("/");
           const lastPart = pathParts[pathParts.length - 1];
           if (lastPart.length <= availableLength) {
             return `${domain}/.../${lastPart}`;
           } else {
-            return `${domain}/.../${lastPart.substring(0, availableLength - 3)}...`;
+            return `${domain}/.../${lastPart.substring(
+              0,
+              availableLength - 3
+            )}...`;
           }
         } else {
           return `${domain}/...`;
         }
       }
-      
+
       return `${domain}/${path}`;
     } catch (e) {
       // Fallback for invalid URLs
-      return url.length > 40 ? url.substring(0, 37) + '...' : url;
+      return url.length > 40 ? url.substring(0, 37) + "..." : url;
     }
   }
 

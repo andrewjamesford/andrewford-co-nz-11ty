@@ -9,9 +9,6 @@ const loadData = async () => {
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
     const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
-    const lastFMSourceList = document.querySelectorAll(
-      ".lastfm-widget picture source"
-    );
     const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
     const response = await fetch(NETLIFY_FUNCTIONS_URL, {
       method: "GET",
@@ -31,15 +28,16 @@ const loadData = async () => {
         if (lastFMImg) {
           lastFMImg.src = data.albumArtLarge;
           lastFMImg.alt = `Album art for ${data.artist} - ${data.album}`;
+          lastFMImg.style.display = "block";
+
+          const lastFMPlaceholder =
+            document.getElementById("lastFMPlaceholder");
+          if (lastFMPlaceholder) {
+            lastFMPlaceholder.style.display = "none";
+          }
         }
       }
       lastFMAlbum.innerText = data.album;
-
-      if (data.albumArtLarge && lastFMSourceList.length !== 0) {
-        for (const source of lastFMSourceList) {
-          source.setAttribute("srcset", data.albumArtLarge);
-        }
-      }
     }
   } catch (error) {
     console.error(error);

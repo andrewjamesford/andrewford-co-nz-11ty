@@ -1,4 +1,11 @@
-import { jest, describe, test, expect, beforeEach, afterEach } from '@jest/globals';
+import {
+  jest,
+  describe,
+  test,
+  expect,
+  beforeEach,
+  afterEach,
+} from "@jest/globals";
 
 // Create an explicit mock function for fetch
 const mockFetch = jest.fn();

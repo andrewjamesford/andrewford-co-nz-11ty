@@ -14,12 +14,17 @@ let VECTOR_STORE = null;
 
 function loadVectorStore() {
   if (VECTOR_STORE) return VECTOR_STORE;
-  
+
   try {
-    const vectorStorePath = path.join(__dirname, "../vector_store/simple_vector_store.json");
+    const vectorStorePath = path.join(
+      __dirname,
+      "../vector_store/simple_vector_store.json"
+    );
     const vectorStoreContent = fs.readFileSync(vectorStorePath, "utf-8");
     VECTOR_STORE = JSON.parse(vectorStoreContent);
-    console.log(`Loaded ${VECTOR_STORE.documents.length} documents from vector store`);
+    console.log(
+      `Loaded ${VECTOR_STORE.documents.length} documents from vector store`
+    );
     return VECTOR_STORE;
   } catch (error) {
     console.error("Error loading vector store:", error);
@@ -130,7 +135,7 @@ const streamHandler = async (event, context) => {
 
     // Load vector store
     const vectorStore = loadVectorStore();
-    
+
     if (!vectorStore.documents || vectorStore.documents.length === 0) {
       return {
         statusCode: 200,
@@ -143,10 +148,11 @@ const streamHandler = async (event, context) => {
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "POST",
         },
-        body: `data: ${JSON.stringify({ 
-          chunk: "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
+        body: `data: ${JSON.stringify({
+          chunk:
+            "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
           done: true,
-          sources: []
+          sources: [],
         })}\n\n`,
       };
     }
@@ -158,7 +164,11 @@ const streamHandler = async (event, context) => {
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
 
     // Find similar documents using pre-computed embeddings
-    const similarDocs = findSimilarDocuments(queryEmbedding, vectorStore.documents, 4);
+    const similarDocs = findSimilarDocuments(
+      queryEmbedding,
+      vectorStore.documents,
+      4
+    );
 
     // Initialize LLM
     const llm = new ChatOpenAI({
@@ -177,7 +187,7 @@ const streamHandler = async (event, context) => {
 
     // Create context from similar documents
     const context = similarDocs
-      .map(doc => doc.pageContent)
+      .map((doc) => doc.pageContent)
       .join("\n\n---\n\n");
 
     const prompt = ChatPromptTemplate.fromTemplate(`
@@ -195,7 +205,7 @@ const streamHandler = async (event, context) => {
 
     const formattedPrompt = await prompt.format({
       context: context,
-      input: sanitizedQuestion
+      input: sanitizedQuestion,
     });
 
     // Stream the response
@@ -206,7 +216,7 @@ const streamHandler = async (event, context) => {
     const siteUrl = (
       process.env.SITE_URL || "https://andrewford.co.nz"
     ).replace(/\/$/, "");
-    
+
     const links = similarDocs.map((doc) => {
       if (doc.metadata?.source) {
         const rel = doc.metadata.source.split("/content/")[1] || "";
@@ -277,7 +287,8 @@ const nonStreamHandler = async (event, context) => {
       return {
         statusCode: 400,
         headers: {
-          "Access-Control-Allow-Origin": event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "POST",
         },
@@ -293,7 +304,8 @@ const nonStreamHandler = async (event, context) => {
       return {
         statusCode: 400,
         headers: {
-          "Access-Control-Allow-Origin": event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "POST",
         },
@@ -303,18 +315,20 @@ const nonStreamHandler = async (event, context) => {
 
     // Load vector store
     const vectorStore = loadVectorStore();
-    
+
     if (!vectorStore.documents || vectorStore.documents.length === 0) {
       return {
         statusCode: 200,
         headers: {
-          "Access-Control-Allow-Origin": event.headers.origin || "https://andrewford.co.nz",
+          "Access-Control-Allow-Origin":
+            event.headers.origin || "https://andrewford.co.nz",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "POST",
         },
         body: JSON.stringify({
-          answer: "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
-          sources: []
+          answer:
+            "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
+          sources: [],
         }),
       };
     }
@@ -326,7 +340,11 @@ const nonStreamHandler = async (event, context) => {
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
 
     // Find similar documents using pre-computed embeddings
-    const similarDocs = findSimilarDocuments(queryEmbedding, vectorStore.documents, 4);
+    const similarDocs = findSimilarDocuments(
+      queryEmbedding,
+      vectorStore.documents,
+      4
+    );
 
     // Initialize LLM
     const llm = new ChatOpenAI({
@@ -344,7 +362,7 @@ const nonStreamHandler = async (event, context) => {
 
     // Create context from similar documents
     const context = similarDocs
-      .map(doc => doc.pageContent)
+      .map((doc) => doc.pageContent)
       .join("\n\n---\n\n");
 
     const prompt = ChatPromptTemplate.fromTemplate(`
@@ -362,7 +380,7 @@ const nonStreamHandler = async (event, context) => {
 
     const formattedPrompt = await prompt.format({
       context: context,
-      input: sanitizedQuestion
+      input: sanitizedQuestion,
     });
 
     const response = await llm.invoke(formattedPrompt);
@@ -372,7 +390,7 @@ const nonStreamHandler = async (event, context) => {
     const siteUrl = (
       process.env.SITE_URL || "https://andrewford.co.nz"
     ).replace(/\/$/, "");
-    
+
     const links = similarDocs.map((doc) => {
       if (doc.metadata?.source) {
         const rel = doc.metadata.source.split("/content/")[1] || "";

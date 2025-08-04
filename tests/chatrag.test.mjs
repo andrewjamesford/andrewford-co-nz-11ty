@@ -5,7 +5,11 @@ import { handler } from "../functions/chatrag.mjs";
 // Simple expect wrapper for better readability
 const expect = (actual) => ({
   toBe: (expected) => assert.strictEqual(actual, expected),
-  toHaveProperty: (prop) => assert.ok(actual.hasOwnProperty(prop), `Expected object to have property '${prop}'`)
+  toHaveProperty: (prop) =>
+    assert.ok(
+      actual.hasOwnProperty(prop),
+      `Expected object to have property '${prop}'`
+    ),
 });
 
 // Mock environment variables for testing
