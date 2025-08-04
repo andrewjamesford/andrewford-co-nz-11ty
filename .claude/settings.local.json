@@ -5,7 +5,10 @@
       "mcp__playwright__browser_click",
       "mcp__playwright__browser_navigate",
       "Bash(npm run:*)",
-      "Bash(netlify:*)"
+      "Bash(netlify:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(pkill:*)"
     ],
     "deny": [
       "Bash(rm:*)",

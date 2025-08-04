@@ -30,7 +30,7 @@
     "test:e2e": "playwright test",
     "test:integration": "node --test tests/lastplayed.test.mjs tests/chatrag.test.mjs",
     "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
-    "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "jest": {
     "testMatch": [
