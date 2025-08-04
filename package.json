@@ -35,7 +35,8 @@
   "jest": {
     "testMatch": [
       "**/tests/latestuploads.test.mjs",
-      "**/tests/*.supertest.mjs"
+      "**/tests/*.supertest.mjs",
+      "**/tests/*.contract.test.mjs"
     ],
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"
