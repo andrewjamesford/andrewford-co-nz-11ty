@@ -110,9 +110,11 @@
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav-links nav-links-header">
 					{%- for entry in collections.all | eleventyNavigation %}
-						<li>
-							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-						</li>
+						{%- if entry.key != "Archive" %}
+							<li>
+								<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+							</li>
+						{%- endif %}
 					{%- endfor %}
 					<li>
 						<a href="https://andrewford.gumroad.com/">Shop</a>
