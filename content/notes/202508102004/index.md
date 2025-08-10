@@ -114,43 +114,7 @@ Start Claude Code and give it a task that requires permission:
 claude "Create a new file called test.py with a hello world function"
 ```
 
-When Claude needs your permission to create the file, you'll receive a push notification on your phone!
-
-## Advanced Configurations
-
-### Task Completion Notifications
-
-Get notified when Claude finishes a task using the Stop hook:
-
-```json
-{
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "curl -d \"Claude has completed your task\" -H \"Tags: white_check_mark\" -H \"Priority: low\" ntfy.sh/$NTFY_TOPIC"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-### Priority and Tags
-
-You can set tags with the X-Tags header and specify multiple tags by separating them with a comma. Make your notifications more informative:
-
-```bash
-curl -H "Priority: urgent" \
-     -H "Tags: warning,claude" \
-     -H "Title: Claude Code Alert" \
-     -d "Permission needed to modify core files" \
-     ntfy.sh/$NTFY_TOPIC
-```
+When Claude needs your permission to create the file, you'll receive a push notification on your phone/desktop!
 
 ### Not Receiving Notifications?
 
