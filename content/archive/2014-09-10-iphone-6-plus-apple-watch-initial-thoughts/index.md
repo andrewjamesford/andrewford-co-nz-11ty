@@ -13,7 +13,7 @@ description: "Initial thoughts on the iPhone 6, iPhone 6 Plus and Apple Watch."
 
 ## iPhone 6 and iPhone 6 Plus
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/FglqN1jd1tM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/FglqN1jd1tM" frameborder="0" allowfullscreen title="iPhone 6 and iPhone 6 Plus announcement video"></iframe>
 
 The move to flat design with iOS 7 has finally paid off today with the announcement of the iPhone 6 and iPhone 6 Plus both sporting higher resolutions. Just like web design trending in a more flat aesthetic to make responsive web design easier on multiple resolutions so to will having flat, texture less apps. It's even reflected in Apples new website, now that it's finally responsive. ((<a href="https://www.apple.com">Apples new responsive website</a>))
 
@@ -31,7 +31,7 @@ The question I ask with the release of the 6 Plus is there need for an iPad Mini
 
 ## Apple Watch
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/ktujsc4ZUTo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/ktujsc4ZUTo" frameborder="0" allowfullscreen title="Apple Watch announcement video"></iframe>
 
 The Apple Watch looks great! With its dial I believe it solves a lot of the “fiddlyness” of a gesture driven/touch smart watch. The bonus of using Apple Pay with it would be a great convenience too.
 

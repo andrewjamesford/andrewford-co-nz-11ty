@@ -15,7 +15,7 @@ description: "Wouldn't it be great if you could create prototypes for an iOS app
 
 Wouldn't it be great if you could create prototypes for an iOS app or a website using the design tool(s) your already familiar with (like <a title="Adobe Photoshop" href="http://www.photoshop.com">Photoshop</a> or <a href="https://itunes.apple.com/nz/app/sketch-3/id852320343?mt=12&amp;uo=4&amp;at=10lnRx" target="itunes_store">Sketch</a>)? Well you can with <a title="Marvel App" href="https://marvelapp.com">Marvel</a>.
 
-<iframe src="//player.vimeo.com/video/78741166" width="500" height="324" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="//player.vimeo.com/video/78741166" width="500" height="324" frameborder="0" allowfullscreen="allowfullscreen" title="Marvel prototyping tool demonstration video"></iframe>
 
 <a title="Marvel App" href="https://marvelapp.com">Marvel</a> makes it so simple to turn your pixel perfect mockups into elegant prototypes with nice frame sets representing your targeted device with great transitions between each screen.
 
@@ -37,7 +37,7 @@ To top off a great experience with the creation of your prototype. <a title="Mar
 
 <a title="Marvel App" href="https://marvelapp.com">Marvel</a> recently added the ability to embed your prototype in a blog article. Here is the example prototype I created for <a title="2 Degrees Mobile prototype" href="http://marvl.in/19c24e">2 Degrees Mobile</a>.
 
-<div style="text-align: center;"><iframe style="margin: 0 auto; text-align: center;" src="https://marvl.in/19c24e?emb=1" width="384" height="834" frameborder="0"></iframe></div>
+<div style="text-align: center;"><iframe style="margin: 0 auto; text-align: center;" src="https://marvl.in/19c24e?emb=1" width="384" height="834" frameborder="0" title="2 Degrees Mobile app prototype - interactive demo"></iframe></div>
 
 {% figure "./marvel-2-degrees-mobile-page-02.png", "2 Degrees Mobile prototype" %}
 

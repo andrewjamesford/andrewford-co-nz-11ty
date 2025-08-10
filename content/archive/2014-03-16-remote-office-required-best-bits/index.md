@@ -12,7 +12,7 @@ tags:
 description: "37 Signals new book Remote: Office Not Required is well worth the read if your interested in changing your company to work remote or you work remotely yourself."
 ---
 
-<iframe src="https://demos.andrewford.co.nz/remote/" width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<iframe src="https://demos.andrewford.co.nz/remote/" width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Remote: Office Not Required book cover animation"></iframe>
 
 <a href="https://demos.andrewford.co.nz/remote/" title="See the Remote Office Not Required cover animation full screen" target="_blank">See the Remote Office Not Required cover animation full screen</a>
 
