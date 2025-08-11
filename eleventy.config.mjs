@@ -10,6 +10,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 import pluginImages from "./eleventy.config.images.mjs";
 import pluginDrafts from "./eleventy.config.drafts.mjs";
+import pluginSEO from "./eleventy.config.seo.mjs";
 
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
@@ -65,6 +66,7 @@ export default async (eleventyConfig) => {
   // App plugins
   eleventyConfig.addPlugin(pluginDrafts);
   eleventyConfig.addPlugin(pluginImages);
+  eleventyConfig.addPlugin(pluginSEO);
   eleventyConfig.addPlugin(embedYouTube, {
     embedClass: "video",
     lazy: true,
@@ -139,6 +141,50 @@ export default async (eleventyConfig) => {
         ) === -1
     );
   });
+
+  // SEO Meta Description Filter
+  eleventyConfig.addFilter(
+    "metaDescription",
+    function (description, content, fallback) {
+      // Priority 1: Use provided description
+      if (description && description.length > 0) {
+        return description.substring(0, 160);
+      }
+
+      // Priority 2: Auto-generate from content
+      if (content && content.length > 0) {
+        // Remove HTML tags
+        let cleaned = content.replace(/<[^>]*>/g, "");
+
+        // Remove Nunjucks/Liquid tags
+        cleaned = cleaned.replace(/{%[^%]*%}/g, "");
+        cleaned = cleaned.replace(/{{[^}]*}}/g, "");
+
+        // Remove markdown formatting
+        cleaned = cleaned
+          .replace(/^#+\s+/gm, "") // Headers
+          .replace(/\*\*([^*]+)\*\*/g, "$1") // Bold
+          .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // Links
+          .replace(/!\[([^\]]*)\]\([^)]+\)/g, "") // Images
+          .replace(/\n+/g, " ") // Newlines
+          .replace(/\s+/g, " ") // Multiple spaces
+          .trim();
+
+        // Truncate to 160 chars
+        if (cleaned.length > 157) {
+          cleaned = cleaned.substring(0, 157) + "...";
+        }
+
+        return cleaned;
+      }
+
+      // Priority 3: Use fallback
+      return (
+        fallback ||
+        "Andrew Ford is a full-stack web developer, mentor and educator teaching people how to code."
+      );
+    }
+  );
 
   // Customize Markdown library settings:
   eleventyConfig.amendLibrary("md", (mdLib) => {

@@ -6,8 +6,8 @@
 		<meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' www.googletagmanager.com youtube.com cdn.jsdelivr.net storage.ko-fi.com">
 		<meta name="view-transition" content="same-origin"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title or metadata.title }} - Andrew Ford </title>
-		<meta name="description" content="{{ description or metadata.description }}">
+		<title>{{ title | seoTitle(page.url) }}</title>
+		<meta name="description" content="{{ description | metaDescription(content, metadata.description) }}">
 		<meta name="fediverse:creator" content="@andrewford@mastodon.nz"/>
 		<base href="{{ metadata.fullUrl }}"/>
 
@@ -60,8 +60,17 @@
 			<meta property="twitter:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
 
-		{# Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
+		{# Uncomment this if you'd like folks to know that you used Eleventy to build your site! #}
 		<meta name="generator" content="{{ eleventy.generator }}">
+
+		{# Structured Data Schemas #}
+		{% include "schemas/person.njk" %}
+		{% include "schemas/organization.njk" %}
+		{% include "schemas/website.njk" %}
+		{% include "schemas/article.njk" %}
+		{% include "schemas/breadcrumb.njk" %}
+		{% include "schemas/video.njk" %}
+		{% include "schemas/faq.njk" %}
 
 		{# Webmention.io #}
 		<link rel="webmention" href="https://webmention.io/andrewford.co.nz/webmention"/>

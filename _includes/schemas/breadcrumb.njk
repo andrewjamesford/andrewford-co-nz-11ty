@@ -1,0 +1,60 @@
+{%- set breadcrumbItems = [] -%}
+{%- set breadcrumbItems = (breadcrumbItems.push({
+  "position": 1,
+  "name": "Home",
+  "item": metadata.fullUrl + "/"
+}), breadcrumbItems) -%}
+
+{%- if page.url.includes('/articles/') -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 2,
+    "name": "Articles",
+    "item": metadata.fullUrl + "/article/"
+  }), breadcrumbItems) -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 3,
+    "name": title,
+    "item": metadata.fullUrl + page.url
+  }), breadcrumbItems) -%}
+{%- elif page.url.includes('/archive/') -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 2,
+    "name": "Archive",
+    "item": metadata.fullUrl + "/archive/"
+  }), breadcrumbItems) -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 3,
+    "name": title,
+    "item": metadata.fullUrl + page.url
+  }), breadcrumbItems) -%}
+{%- elif page.url.includes('/notes/') -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 2,
+    "name": "Notes",
+    "item": metadata.fullUrl + "/note/"
+  }), breadcrumbItems) -%}
+  {%- set breadcrumbItems = (breadcrumbItems.push({
+    "position": 3,
+    "name": title,
+    "item": metadata.fullUrl + page.url
+  }), breadcrumbItems) -%}
+{%- endif -%}
+
+{%- if breadcrumbItems.length > 1 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {%- for item in breadcrumbItems -%}
+    {
+      "@type": "ListItem",
+      "position": {{ item.position }},
+      "name": "{{ item.name | safe }}",
+      "item": "{{ item.item }}"
+    }{%- if not loop.last -%},{%- endif -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
