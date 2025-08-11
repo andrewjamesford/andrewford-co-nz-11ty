@@ -13,15 +13,14 @@
       "Bash(npm audit:*)",
       "Bash(mkdir:*)",
       "Bash(node:*)",
+      "Bash(git add:*)",
+      "Bash(git rebase:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(git commit:*)",
       "Bash(git rm:*)"
     ],
-    "deny": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)"
-    ]
+    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },
   "hooks": {
     "PostToolUse": [
