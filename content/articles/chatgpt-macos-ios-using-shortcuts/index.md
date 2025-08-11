@@ -1,5 +1,5 @@
 ---
-title: Make ChatGPT easy to use on macOS and iOS using Shortcuts
+title: "ChatGPT Shortcuts for macOS and iOS"
 date: "2023-02-04T14:23:11Z"
 template: post
 draft: false

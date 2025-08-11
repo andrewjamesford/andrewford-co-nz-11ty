@@ -1,5 +1,5 @@
 ---
-title: Facebook data breach hits 63,714 New Zealanders after 10 people download quiz
+title: Facebook Data Breach Hits 63K New Zealanders
 date: "2018-04-10T07:57:00+00:00"
 template: post
 draft: false

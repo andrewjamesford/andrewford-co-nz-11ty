@@ -1,5 +1,5 @@
 ---
-title: Google &#038; Facebook, the real spy networks
+title: "Google & Facebook, The Real Spy Networks"
 date: "2017-06-19T21:37:14+00:00"
 template: post
 draft: false

@@ -27,13 +27,13 @@ Hi everyone, it's Andrew here and I'm here to show you a new tutorial on how to 
 
 Currently, it's showing a track by [Foals](https://www.last.fm/music/Foals) and if I play another song from another album like this one from [The Beths](https://www.last.fm/music/The+Beths), next time I refresh the page on my website it will show the latest one, played or playing.
 
-### Create a LastFM API key
+## Create a LastFM API key
 
 We're now gonna generate the last FM API key. So here to the [last FM API website](https://www.last.fm/api/account/create). I'm gonna add that to the comments.
 
 To generate a new API key, once that's done, give your application a name, maybe like a website widget demo. Fill in all the details. We won't be needing the call-back URL. And after hitting submit, it will create your account and display an API key.
 
-### Create an ENV file
+## Create an ENV file
 
 We're going to start by creating an ENV file. I see why I've already created one already, `.env`. You can see that. And I have added the Last FM API key. And I'm going to copy that key into that position there.
 
@@ -41,7 +41,7 @@ We're going to start by creating an ENV file. I see why I've already created one
 LASTFM_API_KEY=ReplaceWithYourAPIKey
 ```
 
-### Create a Serverless function
+## Create a Serverless function
 
 With Netlify, it's very easy to add serverless functions to your project. Serverless functions, also known as Functions As A Service, are a way of building and running computer programs without needing to worry about the underlying servers or infrastructure. Instead, a cloud provider takes care of managing the servers and resources, and developers can just write and deploy their code. Serverless functions are triggered by specific events or requests and can quickly execute and shut down when they're finished. This makes them efficient, cost-effective and flexible, and they're often used for tasks that don't require continuous running or need to handle a lot of traffic.
 
@@ -91,7 +91,7 @@ exports.handler = async function (event, context) {
 };
 ```
 
-### Fetch Data
+## Fetch Data
 
 We now have a way to retrieve our data from Last FM in a secure way, protecting our API key. I've created a JavaScript file to run after the page has loaded. This is going to grab the data from our serverless function and append it to the page.
 
@@ -162,7 +162,7 @@ The CSS for the widget is loaded here in the CSS file for the website.
 }
 ```
 
-### Install Netlify CLI
+## Install Netlify CLI
 
 To make it easier to debug any issues before you release your function, I recommend you set up the [Netify CLI](https://docs.netlify.com/cli/get-started/). Check the instructions from the [Netlify documentation](https://docs.netlify.com/cli/get-started/#installation). Let's see the notes.
 
@@ -179,7 +179,7 @@ Install the CLI tool globally by copying this command into your terminal from th
 }
 ```
 
-### Run Local
+## Run Local
 
 Run Netlify Dev from the command line and this will start a local server where you can run your serverless function locally. It starts up the local serverless function dev server and then it calls the NPM `start` command to start the 11ty Dev server. Check out the link in the notes below and you can see how to deploy your function.
 

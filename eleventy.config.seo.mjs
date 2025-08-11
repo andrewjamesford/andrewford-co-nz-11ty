@@ -86,4 +86,55 @@ export default (eleventyConfig) => {
 
     return fullTitle;
   });
+
+  // Track meta descriptions for uniqueness validation
+  const metaDescriptions = new Map();
+
+  // Add transform to validate meta description uniqueness
+  eleventyConfig.addTransform(
+    "validateMetaDescriptions",
+    function (content, outputPath) {
+      // Only check HTML files
+      if (!outputPath || !outputPath.endsWith(".html")) {
+        return content;
+      }
+
+      try {
+        // Extract meta description
+        const metaMatch = content.match(
+          /<meta\s+name="description"\s+content="([^"]*)"[^>]*>/i
+        );
+
+        if (metaMatch) {
+          const description = metaMatch[1];
+          const normalizedDesc = description.toLowerCase().trim();
+
+          // Skip very generic or fallback descriptions
+          if (
+            normalizedDesc.includes("andrew ford is a full-stack") ||
+            normalizedDesc.length < 10
+          ) {
+            return content;
+          }
+
+          // Check for duplicates
+          if (metaDescriptions.has(normalizedDesc)) {
+            const existingPath = metaDescriptions.get(normalizedDesc);
+            console.warn(`⚠️  Duplicate meta description found:`);
+            console.warn(`   First: ${existingPath}`);
+            console.warn(`   Duplicate: ${outputPath}`);
+            console.warn(
+              `   Description: "${description.substring(0, 80)}..."`
+            );
+          } else {
+            metaDescriptions.set(normalizedDesc, outputPath);
+          }
+        }
+      } catch (error) {
+        // Silently skip if validation fails
+      }
+
+      return content;
+    }
+  );
 };

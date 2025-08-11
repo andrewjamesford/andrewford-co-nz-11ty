@@ -1,5 +1,5 @@
 ---
-title: Fireworks plugin to make favicons (with quick guide)
+title: "Fireworks Plugin for Favicons Guide"
 date: "2011-07-04T22:25:58+00:00"
 template: post
 draft: false

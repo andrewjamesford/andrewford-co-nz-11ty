@@ -1,5 +1,5 @@
 ---
-title: "Automate GitHub Security Updates: Comet Browser + Copilot Agent in Action!"
+title: "Automate GitHub Security Updates with AI Agents"
 date: "2025-07-28T20:55:17Z"
 template: post
 draft: false

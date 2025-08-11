@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 6 - Storybook
+title: "Next.js Full-Stack App Part 6 - Storybook"
 date: "2023-10-30T14:01:33Z"
 template: post
 draft: false

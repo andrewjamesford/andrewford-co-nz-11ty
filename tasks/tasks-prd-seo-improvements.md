@@ -54,7 +54,7 @@
   - [x] 2.5 Add title format for archive pages ("Andrew Ford - Archive - [Year/Category]")
   - [x] 2.6 Add title format for notes ("Andrew Ford - Note - [Note Title]")
   - [x] 2.7 Implement title length validation (50-60 characters warning)
-  - [ ] 2.8 Update all page frontmatter to ensure proper titles
+  - [x] 2.8 Update all page frontmatter to ensure proper titles
 
 - [x] 3.0 Create Meta Description Auto-Generation System
 
@@ -66,7 +66,7 @@
   - [x] 3.6 Create fallback hierarchy (frontmatter → auto-generate → site default)
   - [x] 3.7 Update `base.njk` to use new meta description system
   - [x] 3.8 Add character count validation (150-160 characters)
-  - [ ] 3.9 Ensure uniqueness checking across all pages
+  - [x] 3.9 Ensure uniqueness checking across all pages
 
 - [x] 4.0 Fix Heading Hierarchy and Add Validation
 
@@ -76,9 +76,9 @@
   - [x] 4.4 Review `post.njk` template heading structure
   - [x] 4.5 Create heading hierarchy validator in build process
   - [x] 4.6 Add validation for H-level skipping detection
-  - [ ] 4.7 Update existing article content to fix heading issues
+  - [x] 4.7 Update existing article content to fix heading issues
   - [x] 4.8 Add build-time warnings for heading hierarchy violations
-  - [ ] 4.9 Document heading best practices in CLAUDE.md
+  - [x] 4.9 Document heading best practices in CLAUDE.md
 
 - [x] 5.0 Implement Breadcrumb Navigation with Schema
 
@@ -91,15 +91,15 @@
   - [x] 5.7 Insert breadcrumb component in archive templates
   - [x] 5.8 Insert breadcrumb component in notes templates
   - [x] 5.9 Add ARIA labels for accessibility
-  - [ ] 5.10 Test responsive design on mobile devices
+  - [x] 5.10 Test responsive design on mobile devices
 
 - [x] 6.0 Enhance Internal Linking and Related Posts
   - [x] 6.1 Create `_includes/components/related-posts.njk` component
   - [x] 6.2 Implement tag-based related posts algorithm
-  - [ ] 6.3 Add related posts data generation in `_data/` directory
+  - [x] 6.3 Add related posts data generation in `_data/` directory
   - [x] 6.4 Display 3-5 related posts at article end
   - [x] 6.5 Style related posts to match existing article list design
-  - [ ] 6.6 Add related posts to Article schema as relatedLink
+  - [x] 6.6 Add related posts to Article schema as relatedLink
   - [ ] 6.7 Create internal linking suggestions system
   - [ ] 6.8 Audit existing content for internal linking opportunities
   - [ ] 6.9 Update high-traffic articles with contextual internal links

@@ -37,6 +37,17 @@
   {%- if tags and tags.length > 0 -%},
   "keywords": "{{ tags | filterTagList | join(', ') }}"
   {%- endif -%}
+  {%- if relatedPosts and relatedPosts.calculateRelated -%}
+    {%- set relatedPostsList = relatedPosts.calculateRelated(collections.posts, { url: page.url, data: { tags: tags, draft: draft } }) -%}
+    {%- if relatedPostsList.length > 0 -%},
+  "relatedLink": [
+      {%- for post in relatedPostsList | head(5) -%}
+        "{{ metadata.fullUrl }}{{ post.url }}"
+        {%- if not loop.last -%},{%- endif -%}
+      {%- endfor -%}
+  ]
+    {%- endif -%}
+  {%- endif -%}
 }
 </script>
 {%- endif -%}
