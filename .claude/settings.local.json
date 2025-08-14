@@ -8,7 +8,11 @@
       "Bash(netlify:*)",
       "Bash(curl:*)",
       "Bash(lsof:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(mkdir:*)",
+      "Bash(node:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)"
     ],
     "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },

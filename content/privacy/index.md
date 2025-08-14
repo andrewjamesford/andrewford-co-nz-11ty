@@ -1,11 +1,13 @@
 ---
 layout: layouts/base.njk
-title: "Privacy"
+title: "Privacy Policy"
 template: "page"
 slug: "privacy/"
 socialImage: ""
 description: "Privacy Policy for Andrew Ford"
 ---
+
+# Privacy Policy
 
 ## TLDR
 
@@ -17,7 +19,7 @@ Use of this website, and information gained is at your own risk. Anything that i
 
 I try my best to only link to websites that are decent, and any content from external sites is subject to the linked sites privacy policy, terms & conditions.
 
-### Tracking
+## Tracking
 
 This website has 3rd party tracking analytics software implemented. This is due to me using the [Gumroad](https://gumroad.com/) embed to sell/give away my products, Google Adsense and YouTube video embed.
 

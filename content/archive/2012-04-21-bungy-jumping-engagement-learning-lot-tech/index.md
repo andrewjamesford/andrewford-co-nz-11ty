@@ -1,5 +1,5 @@
 ---
-title: Bungy jumping, engagement and learning a whole lot of tech
+title: "Bungy Jumping, Engagement and Learning Tech"
 date: "2012-04-21T20:35:26+00:00"
 template: post
 draft: false

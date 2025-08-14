@@ -1,5 +1,5 @@
 ---
-title: Google Hires Veteran Chip Designer Away From Apple to Build Custom Chips for Pixel Smartphones
+title: Google Hires Apple Chip Designer for Pixel Smartphones
 date: "2017-06-14T08:51:26+00:00"
 template: post
 draft: false

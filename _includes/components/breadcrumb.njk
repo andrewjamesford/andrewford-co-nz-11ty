@@ -1,0 +1,48 @@
+{%- if page.url != '/' and page.url != '/404.html' -%}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ metadata.fullUrl }}/">Home</a>
+    </li>
+    
+    {%- if page.url.includes('/articles/') -%}
+      <li class="breadcrumb-item">
+        <a href="{{ metadata.fullUrl }}/article/">Articles</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ title }}
+      </li>
+    {%- elif page.url.includes('/archive/') -%}
+      <li class="breadcrumb-item">
+        <a href="{{ metadata.fullUrl }}/archive/">Archive</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ title }}
+      </li>
+    {%- elif page.url.includes('/notes/') -%}
+      <li class="breadcrumb-item">
+        <a href="{{ metadata.fullUrl }}/note/">Notes</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ title }}
+      </li>
+    {%- elif page.url == '/article/' -%}
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        Articles
+      </li>
+    {%- elif page.url == '/archive/' -%}
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        Archive
+      </li>
+    {%- elif page.url == '/note/' -%}
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        Notes
+      </li>
+    {%- else -%}
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ title }}
+      </li>
+    {%- endif -%}
+  </ol>
+</nav>
+{%- endif -%}

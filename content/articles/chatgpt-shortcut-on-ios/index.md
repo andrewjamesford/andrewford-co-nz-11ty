@@ -1,5 +1,5 @@
 ---
-title: Make ChatGPT even easier shortcut on iOS
+title: "Create an Even Easier ChatGPT Shortcut on iOS"
 date: "2023-06-24T16:23:02Z"
 template: post
 draft: false

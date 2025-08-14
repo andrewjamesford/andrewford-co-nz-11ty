@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 4 - DB Design
+title: "Next.js Full-Stack App Part 4 - DB Design"
 date: "2023-10-13T15:45:33Z"
 template: post
 draft: false

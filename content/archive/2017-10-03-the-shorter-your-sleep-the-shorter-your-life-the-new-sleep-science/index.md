@@ -1,5 +1,5 @@
 ---
-title: "The Shorter Your Sleep, the Shorter Your Life: The New Sleep Science"
+title: "Sleep Science: Short Sleep, Short Life"
 date: "2017-10-03T07:27:04+00:00"
 template: post
 draft: false

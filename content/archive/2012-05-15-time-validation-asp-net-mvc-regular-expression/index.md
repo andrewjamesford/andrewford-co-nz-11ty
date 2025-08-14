@@ -1,5 +1,5 @@
 ---
-title: "Time validation in ASP.Net MVC using a regular expression."
+title: "Time Validation in ASP.NET MVC"
 date: "2012-05-15T12:52:32+00:00"
 template: post
 draft: false

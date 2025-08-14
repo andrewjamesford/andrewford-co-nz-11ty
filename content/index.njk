@@ -16,12 +16,12 @@ numberOfLatestVideosToShow: 3
 	</h1>
 	<h2 class="center secondary">He is a <a class="u-url" href="https://www.linkedin.com/in/andrewjamesford/">full-stack web developer, mentor</a> and an <a class="u-url" href="https://www.missionreadyhq.com/accelerator/advanced-full-stack-developer">educator</a> living in <a class="p-locality" href="https://en.wikipedia.org/wiki/Tauranga">Tauranga, New Zealand</a>.</h2>
 </div>
-<h3 class="center">"I want to help you get on the job ladder as a Full Stack Developer"</h3>
+<h2 class="center">"I want to help you get on the job ladder as a Full Stack Developer"</h2>
 
 <section class="latest-articles-videos">
 	{%- if collections.articles.length > 0 -%}
     <article class="latest-articles">
-      <h3>Latest</h3>
+      <h2>Latest</h2>
       <ul class="article-list">
         {%- for post in collections.posts | reverse -%}
           {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
@@ -45,7 +45,7 @@ numberOfLatestVideosToShow: 3
 
 	{%- if latestVideos.videos.length > 0 -%}
 		<aside class="latest-videos">
-			<h3>Latest Videos</h3>
+			<h2>Latest Videos</h2>
 			<ul class="article-list">
 				{%- for video in latestVideos.videos -%}
 					{% if loop.index <= numberOfLatestVideosToShow -%}

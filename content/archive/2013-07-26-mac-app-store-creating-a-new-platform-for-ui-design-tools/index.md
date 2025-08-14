@@ -1,5 +1,5 @@
 ---
-title: Mac App store creating a new platform for UI design tools
+title: "Mac App Store: New Platform for UI Design Tools"
 date: "2013-07-26T07:37:27+00:00"
 template: post
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: What Is RAG and How I Used It to Build a Blog Chatbot with LangChain
+title: "Build a Blog Chatbot with RAG and LangChain"
 date: "2025-05-26T22:14:58Z"
 template: post
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 5 - GitHub Project
+title: "Next.js Full-Stack App Part 5 - GitHub Project"
 date: "2023-10-14T16:56:10Z"
 template: post
 draft: false

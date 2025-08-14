@@ -1,5 +1,5 @@
 ---
-title: How to Set Up Two-Factor Authentication on All Your Online Accounts
+title: "Set Up Two-Factor Authentication Guide"
 date: "2017-06-19T21:21:04+00:00"
 template: post
 draft: false

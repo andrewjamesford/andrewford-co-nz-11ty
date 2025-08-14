@@ -1,5 +1,5 @@
 ---
-title: With New Browser Tech, Apple Preserves Privacy and Google Preserves Trackers
+title: Apple Browser Privacy vs Google Trackers
 date: "2017-06-12T12:59:42+00:00"
 template: post
 draft: false

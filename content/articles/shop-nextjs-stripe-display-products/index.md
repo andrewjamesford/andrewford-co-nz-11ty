@@ -1,5 +1,5 @@
 ---
-title: Build a shop with Next.js and Stripe - Display the products from Stripe
+title: "Build a Shop with Next.js and Stripe - Display Products"
 date: "2022-10-16T07:29:45Z"
 template: post
 draft: false

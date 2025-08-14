@@ -1,5 +1,5 @@
 ---
-title: Custom share and tweet buttons for Facebook and Twitter
+title: "Custom Social Share Buttons Guide"
 date: "2011-10-05T21:23:47+00:00"
 template: post
 draft: false

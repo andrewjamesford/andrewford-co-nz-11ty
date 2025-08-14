@@ -1,5 +1,5 @@
 ---
-title: Build a Full-Stack web app with Next.js - Part 7 - Radix Components
+title: "Next.js Full-Stack App Part 7 - Radix Components"
 date: "2023-12-24T01:25:43Z"
 template: post
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "The Year Without Pants: WordPress.com and the Future of Work by Scott Berkun review"
+title: "The Year Without Pants by Scott Berkun Review"
 date: "2015-01-14T11:41:32+00:00"
 template: post
 draft: false

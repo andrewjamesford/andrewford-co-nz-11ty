@@ -1,0 +1,17 @@
+{%- if content and (content.includes('youtube.com/embed/') or content.includes('youtu.be/') or content.includes('youtube-embed')) -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{ title | safe }}",
+  "description": "{{ description or content | striptags | truncate(160) | safe }}",
+  "thumbnailUrl": "{{ metadata.fullUrl }}/ogimage/{{ ogimage or 'social-card.png' }}",
+  "uploadDate": "{{ page.date | htmlDateString }}",
+  "author": {
+    "@type": "Person",
+    "name": "Andrew Ford",
+    "url": "{{ metadata.fullUrl }}"
+  }
+}
+</script>
+{%- endif -%}

@@ -10,9 +10,9 @@ eleventyNavigation:
   order: 4
 ---
 
-## About Andrew Ford
+# About Andrew Ford
 
-### Then
+## Then
 
 I'm an <a href="https://www.linkedin.com/in/andrewjamesford/">experienced full
 stack developer</a> working professionally in the web industry since the
@@ -38,7 +38,7 @@ role involved mentoring the teaching team and enhancing the learning experience
 for students. I was responsible for implementing assessments that met NZQA
 standards and ensuring the curriculum is delivered at a high level.
 
-### Now
+## Now
 
 I'm a senior developer at Southern Cross Health Society, where my
 responsibilities is that of a Senior Technical Analyst. I'm responsible for the

@@ -1,5 +1,5 @@
 ---
-title: AI-Assisted Coding Tools Comparing CodeLlama and GitHub Copilot Chat
+title: "CodeLlama vs GitHub Copilot Chat Comparison"
 date: "2023-08-27T13:21:52Z"
 template: post
 draft: false

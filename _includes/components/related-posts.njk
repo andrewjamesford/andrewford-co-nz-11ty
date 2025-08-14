@@ -1,0 +1,56 @@
+{%- if tags and collections.posts -%}
+
+{# Use data file helper if available, otherwise fall back to inline calculation #}
+{%- if relatedPosts.calculateRelated -%}
+  {%- set relatedPostsList = relatedPosts.calculateRelated(collections.posts, { url: page.url, data: { tags: tags, draft: draft } }) -%}
+{%- else -%}
+  {# Fallback to inline calculation #}
+  {%- set relatedPostsList = [] -%}
+  {%- set currentTags = tags | filterTagList -%}
+
+  {# Find posts with matching tags #}
+  {%- for post in collections.posts | reverse -%}
+    {%- if post.url != page.url and post.data.draft != true -%}
+      {%- set postTags = post.data.tags | filterTagList -%}
+      {%- set matchingTags = 0 -%}
+      
+      {# Count matching tags #}
+      {%- for tag in currentTags -%}
+        {%- if postTags.includes(tag) -%}
+          {%- set matchingTags = matchingTags + 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {# Add posts with at least one matching tag #}
+      {%- if matchingTags > 0 -%}
+        {%- set relatedPost = {
+          "url": post.url,
+          "title": post.data.title,
+          "description": post.data.description,
+          "matches": matchingTags
+        } -%}
+        {%- set relatedPostsList = (relatedPostsList.push(relatedPost), relatedPostsList) -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if relatedPostsList.length > 0 -%}
+<section class="related-posts">
+  <h2>Related Articles</h2>
+  <ul class="related-posts-list">
+    {%- for post in relatedPostsList | head(5) -%}
+    <li class="related-post-item">
+      <h3 class="related-post-title">
+        <a href="{{ post.url | url }}">{{ post.title }}</a>
+      </h3>
+      {%- if post.description -%}
+        <p class="related-post-description">{{ post.description }}</p>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+{%- endif -%}
