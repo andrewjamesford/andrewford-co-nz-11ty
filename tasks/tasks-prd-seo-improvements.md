@@ -100,7 +100,4 @@
   - [x] 6.4 Display 3-5 related posts at article end
   - [x] 6.5 Style related posts to match existing article list design
   - [x] 6.6 Add related posts to Article schema as relatedLink
-  - [ ] 6.7 Create internal linking suggestions system
-  - [ ] 6.8 Audit existing content for internal linking opportunities
-  - [ ] 6.9 Update high-traffic articles with contextual internal links
-  - [ ] 6.10 Create topic clusters documentation for content strategy
+
