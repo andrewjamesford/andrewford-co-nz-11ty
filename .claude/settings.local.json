@@ -8,9 +8,13 @@
       "Bash(netlify:*)",
       "Bash(curl:*)",
       "Bash(lsof:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(git worktree:*)"
     ],
-    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
   },
   "hooks": {
     "PostToolUse": [
