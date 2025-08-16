@@ -10,16 +10,14 @@
       "Bash(lsof:*)",
       "Bash(pkill:*)",
       "Bash(git worktree:*)",
+      "Bash(npm audit:*)",
       "Bash(mkdir:*)",
       "Bash(node:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(git commit:*)"
     ],
-    "deny": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)"
-    ]
+    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },
   "hooks": {
     "PostToolUse": [
