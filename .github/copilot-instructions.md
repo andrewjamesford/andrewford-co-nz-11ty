@@ -146,12 +146,13 @@ OPENROUTER_MODEL=
 ### Global Dependencies
 
 ```bash
-# Install Netlify CLI for local development
-npm install -g netlify-cli
-
 # Verify Node.js version (required: 20+)
 node --version
 # Expected: v20.x.x or higher (see .nvmrc)
+
+# Docker for local containerized testing (optional)
+docker --version
+# Expected: Docker version 20.x.x or higher
 ```
 
 ## Architecture Understanding
@@ -160,7 +161,7 @@ node --version
 
 - **\_data/**: Data files for build-time API fetching (latestMusic.mjs, latestVideos.mjs)
 - **api/**: Express API server with routes for Last.fm, YouTube, and chatbot
-- **functions/**: Netlify serverless functions (latestUploads.mjs, lastplayed.mjs, chatrag.js)
+- **functions/**: Legacy serverless functions (maintained for compatibility)
 - **content/**: All markdown content and articles
 - **tests/**: Multi-layered testing (Jest, Supertest, Integration, E2E)
 - **vector_store/**: Vector database for RAG chatbot functionality
@@ -206,22 +207,32 @@ node --version
 
 ## Production Deployment
 
-### Docker Build (when supported)
+### Docker Build
 
 ```bash
 # Build container image
 npm run docker:build
-# NEVER CANCEL: Set timeout to 15+ minutes. May fail in some environments.
+# NEVER CANCEL: Set timeout to 15+ minutes. Builds production Docker image.
 
-# Run containerized application
+# Run containerized application locally
 npm run docker:run
+# Starts container on port 3000, requires .env file
+
+# Development with Docker Compose
+npm run docker:dev
+# Starts full development environment in containers
 ```
 
-### Netlify Deployment
+### Coolify Deployment
 
-- **Build Command**: `npm run build`
-- **Functions**: Located in `functions/` directory
-- **Environment**: Production variables required for API functionality
+The site is hosted on a personal VPS using Coolify with Docker containers:
+
+- **Deployment**: Automatic deployment via Docker containers managed by Coolify
+- **Configuration**: `coolify.yaml` defines container setup and resource limits
+- **Build Process**: Docker build followed by container deployment
+- **Environment**: Production variables configured in Coolify dashboard
+- **Health Checks**: Built-in health monitoring at `/health` endpoint
+- **SSL/TLS**: Automatic certificate management via Traefik and Let's Encrypt
 
 ## Performance Expectations
 
