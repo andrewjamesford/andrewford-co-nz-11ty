@@ -1,0 +1,65 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - SITE_URL=http://localhost:3000
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000
+    env_file:
+      - .env
+    volumes:
+      # Mount logs for easier debugging
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "const http = require('http'); const options = { host: 'localhost', port: 3000, path: '/health', timeout: 2000 }; const req = http.request(options, (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); }); req.on('error', () => process.exit(1)); req.end();",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development service with hot reloading
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    ports:
+      - "3000:3000"
+      - "8080:8080" # For 11ty dev server if needed
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - SITE_URL=http://localhost:3000
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000,http://localhost:8080
+    env_file:
+      - .env
+    volumes:
+      # Mount source for development
+      - .:/app
+      - /app/node_modules
+      - ./logs:/app/logs
+    command: ["node", "api/server.mjs"]
+    restart: unless-stopped
+    profiles:
+      - dev
+
+networks:
+  default:
+    name: andrewford-blog-network
+
+volumes:
+  logs:
+    driver: local

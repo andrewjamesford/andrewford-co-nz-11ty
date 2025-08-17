@@ -4,13 +4,13 @@ const loadData = async () => {
   const LAST_FM_LINK_ID = "lastFMLink";
   const LAST_FM_IMG_ID = "lastFMImg";
   const LAST_FM_ALBUM_ID = "lastFMAlbum";
-  const NETLIFY_FUNCTIONS_URL = `${CONFIG.API_URL}/.netlify/functions/lastplayed`;
+  const API_URL = `${CONFIG.API_URL}/api/lastplayed`;
 
   try {
     const lastFMLink = document.getElementById(LAST_FM_LINK_ID);
     const lastFMImg = document.getElementById(LAST_FM_IMG_ID);
     const lastFMAlbum = document.getElementById(LAST_FM_ALBUM_ID);
-    const response = await fetch(NETLIFY_FUNCTIONS_URL, {
+    const response = await fetch(API_URL, {
       method: "GET",
     });
 

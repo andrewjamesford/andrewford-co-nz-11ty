@@ -1,0 +1,12 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+//
+// Example:
+[
+  {
+    "label": "claude",
+    "command": "cc",
+    "reveal": "always",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  }
+]

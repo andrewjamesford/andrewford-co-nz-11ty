@@ -57,7 +57,7 @@ export const handler = async (event, context) => {
 
     const allowedOrigins = process.env.ALLOWED_ORIGINS
       ? process.env.ALLOWED_ORIGINS.split(",")
-      : ["http://localhost:8888", "https://andrewford.co.nz"];
+      : ["http://localhost:3000", "https://andrewford.co.nz"];
     const origin = event.headers.origin;
     const allowOrigin = allowedOrigins.includes(origin)
       ? origin
@@ -75,7 +75,7 @@ export const handler = async (event, context) => {
   } catch (error) {
     const allowedOrigins = process.env.ALLOWED_ORIGINS
       ? process.env.ALLOWED_ORIGINS.split(",")
-      : ["http://localhost:8888", "https://andrewford.co.nz"];
+      : ["http://localhost:3000", "https://andrewford.co.nz"];
     const origin = event.headers?.origin;
     const allowOrigin = allowedOrigins.includes(origin)
       ? origin

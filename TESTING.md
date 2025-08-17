@@ -62,7 +62,7 @@ npm run test:integration
 
 **Note**: These tests require:
 
-- Running Netlify dev server on `http://localhost:8888`
+- Running Netlify dev server on `http://localhost:3000`
 - Valid API keys in environment variables
 - Live external API availability
 
