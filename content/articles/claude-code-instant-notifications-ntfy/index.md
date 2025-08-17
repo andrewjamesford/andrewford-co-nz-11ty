@@ -3,8 +3,8 @@ title: Get Instant Notifications When Claude Code Needs You
 date: "2025-08-10T20:04:35Z"
 template: post
 draft: false
-slug: "202508102004"
-category: note
+slug: "claude-code-instant-notifications-ntfy"
+category: article
 tags:
   - claude code
   - hooks

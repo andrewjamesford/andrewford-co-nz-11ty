@@ -3,8 +3,8 @@ title: Creative process with AI on iPad
 date: "2025-07-06T13:46:33Z"
 template: post
 draft: false
-slug: "202507061346"
-category: note
+slug: "creative-process-with-ai-on-ipad"
+category: article
 tags:
   - claude
   - perplexity
