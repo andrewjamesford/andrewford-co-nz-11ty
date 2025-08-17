@@ -1,5 +1,5 @@
 :root {
-  --link-color: #366a92;
+  --link-color: #7e7333;
   --body-color: #333;
   --body-color-secondary: #646464;
   --bg-color: #fff;
@@ -23,7 +23,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --link-color: #79a9cd;
+    --link-color: #c4b466;
     --body-color: #eee;
     --body-color-secondary: #e6e6e6;
     --bg-color: #121212;

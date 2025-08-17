@@ -9,12 +9,16 @@
       "Bash(curl:*)",
       "Bash(lsof:*)",
       "Bash(pkill:*)",
+      "Bash(git worktree:*)",
       "Bash(mkdir:*)",
       "Bash(node:*)",
       "Bash(find:*)",
       "Bash(grep:*)"
     ],
-    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
   },
   "hooks": {
     "PostToolUse": [
