@@ -74,11 +74,11 @@
   - [x] 4.6 Test staging deployment on Coolify server
 
 - [ ] 5.0 Migrate and test complete system with DNS cutover
-  - [ ] 5.1 Export and document all current Netlify environment variables
-  - [ ] 5.2 Perform comprehensive testing of all functionality in staging
-  - [ ] 5.3 Validate chatbot RAG functionality with vector store
-  - [ ] 5.4 Test Last.fm and YouTube API integrations
-  - [ ] 5.5 Verify 11ty build process works with containerized APIs
-  - [ ] 5.6 Create rollback plan and backup of current Netlify setup
+  - [x] 5.1 Export and document all current Netlify environment variables
+  - [x] 5.2 Perform comprehensive testing of all functionality in staging
+  - [x] 5.3 Validate chatbot RAG functionality with vector store
+  - [x] 5.4 Test Last.fm and YouTube API integrations
+  - [x] 5.5 Verify 11ty build process works with containerized APIs
+  - [x] 5.6 Create rollback plan and backup of current Netlify setup
   - [ ] 5.7 Execute DNS cutover to Coolify server
   - [ ] 5.8 Monitor system performance and validate all endpoints post-migration

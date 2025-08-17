@@ -41,7 +41,7 @@ Once you've installed the dependencies, you can run the development server:
 netlify dev
 ```
 
-This will start a local development server at [http://localhost:8888/](http://localhost:8888/) where you can preview your blog.
+This will start a local development server at [http://localhost:3000/](http://localhost:3000/) where you can preview your blog.
 
 ## Deployment
 
