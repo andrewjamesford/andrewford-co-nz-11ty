@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		{# CSP #}
-		<meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' www.googletagmanager.com youtube.com cdn.jsdelivr.net storage.ko-fi.com">
+		<meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' www.googletagmanager.com youtube.com cdn.jsdelivr.net">
 		<meta name="view-transition" content="same-origin"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title | seoTitle(page.url) }}</title>
@@ -253,17 +253,6 @@
 			});
 		</script>
 
-		<script async src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-		<script>
-			window.addEventListener('load', function () {
-				kofiWidgetOverlay.draw('codewithandrewford', {
-					'type': 'floating-chat',
-					'floating-chat.donateButton.text': 'Support me',
-					'floating-chat.donateButton.background-color': '#323842',
-					'floating-chat.donateButton.text-color': '#fff'
-				});
-			});
-		</script>
 		<script type="speculationrules">
 			{
 				"prerender": [
