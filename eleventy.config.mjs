@@ -220,8 +220,8 @@ export default async (eleventyConfig) => {
         symbol: "#",
         ariaHidden: false,
         renderHref: (slug, state) => {
-          // Get the base URL from config
-          const baseUrl = "https://andrewford.co.nz";
+          // Get the base URL from environment variable with fallback
+          const baseUrl = process.env.SITE_URL || "https://andrewford.co.nz";
           // Get current page URL from the markdown-it state env
           const pageUrl = state.env?.page?.url || "";
           // Combine to create full URL
