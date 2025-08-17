@@ -8,14 +8,14 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
-    
+
     # Container settings
     restart: unless-stopped
-    
+
     # Port mapping
     ports:
       - "3000:3000"
-    
+
     # Environment variables (will be set in Coolify dashboard)
     environment:
       - NODE_ENV=production
@@ -23,15 +23,21 @@ services:
       - SITE_URL=${SITE_URL:-https://andrewford.co.nz}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-https://andrewford.co.nz}
       - LOG_LEVEL=${LOG_LEVEL:-info}
-    
+
     # Health check configuration
     healthcheck:
-      test: ["CMD", "node", "-e", "const http = require('http'); const options = { host: 'localhost', port: 3000, path: '/health', timeout: 2000 }; const req = http.request(options, (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); }); req.on('error', () => process.exit(1)); req.end();"]
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "const http = require('http'); const options = { host: 'localhost', port: 3000, path: '/health', timeout: 2000 }; const req = http.request(options, (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); }); req.on('error', () => process.exit(1)); req.end();",
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    
+
     # Resource limits (adjust based on your Coolify server specs)
     deploy:
       resources:
@@ -41,37 +47,43 @@ services:
         reservations:
           memory: 512M
           cpus: "0.25"
-    
+
     # Labels for Coolify configuration
     labels:
       # Enable Coolify management
       - "coolify.managed=true"
-      
+
       # Domain configuration
       - "traefik.enable=true"
       - "traefik.http.routers.andrewford-blog.rule=Host(`andrewford.co.nz`)"
       - "traefik.http.routers.andrewford-blog.tls=true"
       - "traefik.http.routers.andrewford-blog.tls.certresolver=letsencrypt"
       - "traefik.http.services.andrewford-blog.loadbalancer.server.port=3000"
-      
+
+      # Compression middleware
+      - "traefik.http.middlewares.compress.compress=true"
+
       # Health check endpoint
       - "traefik.http.routers.andrewford-blog.middlewares=health-check"
       - "traefik.http.middlewares.health-check.retry.attempts=3"
-      
+
       # Security headers
       - "traefik.http.middlewares.security-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-Content-Type-Options=nosniff"
       - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-Frame-Options=DENY"
       - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-XSS-Protection=1; mode=block"
-      
+
+      # Apply both middlewares
+      - "traefik.http.routers.andrewford-blog.middlewares=compress,security-headers"
+
       # Enable automatic deployment on git push
       - "coolify.deployment.strategy=docker-compose"
       - "coolify.deployment.auto_deploy=true"
       - "coolify.deployment.branch=main"
-      
+
       # Backup configuration
-      - "coolify.backup.enabled=false"
-      
+      - "coolify.backup.enabled=true"
+
     # Volume mounts for persistent data (logs)
     volumes:
       - app-logs:/app/logs

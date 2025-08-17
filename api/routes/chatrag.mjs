@@ -1,10 +1,9 @@
-import express from "express";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { OpenAIEmbeddings } from "@langchain/openai";
-import { ChatOpenAI } from "@langchain/openai";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
+import express from "express";
 import sanitizeHtml from "sanitize-html";
 import { findSimilarDocuments } from "../utils/vectorSearch.mjs";
 
@@ -62,7 +61,7 @@ function sanitizeInput(input) {
   const sanitized = sanitizeHtml(trimmed, {
     allowedTags: [],
     allowedAttributes: {},
-    textFilter: function (text) {
+    textFilter: (text) => {
       if (!/[a-zA-Z0-9]/.test(text)) {
         return "";
       }
@@ -147,14 +146,14 @@ router.post("/", async (req, res) => {
 
       const prompt = ChatPromptTemplate.fromTemplate(`
         You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
-        
+
         If you cannot find the answer in the provided context, politely say that you don't have that information in the blog posts.
-        
+
         Context from blog posts:
         {context}
-        
+
         Question: {input}
-        
+
         Answer:
       `);
 
@@ -210,14 +209,14 @@ router.post("/", async (req, res) => {
 
       const prompt = ChatPromptTemplate.fromTemplate(`
         You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
-        
+
         If you cannot find the answer in the provided context, politely say that you don't have that information in the blog posts.
-        
+
         Context from blog posts:
         {context}
-        
+
         Question: {input}
-        
+
         Answer:
       `);
 
