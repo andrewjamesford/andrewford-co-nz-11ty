@@ -3,10 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-import logger from "./utils/logger.js";
-import chatragRouter from "./routes/chatrag.js";
-import lastplayedRouter from "./routes/lastplayed.js";
-import latestUploadsRouter from "./routes/latestUploads.js";
+import logger from "./utils/logger.mjs";
+import chatragRouter from "./routes/chatrag.mjs";
+import lastplayedRouter from "./routes/lastplayed.mjs";
+import latestUploadsRouter from "./routes/latestUploads.mjs";
 
 dotenv.config();
 

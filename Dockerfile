@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for 11ty site with API server
 
 # Stage 1: Build stage
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ COPY vector_store/ ./vector_store/
 RUN npm run build
 
 # Stage 2: Production stage
-FROM node:20-alpine AS production
+FROM node:24-alpine AS production
 
 WORKDIR /app
 
@@ -71,4 +71,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 ENTRYPOINT ["dumb-init", "--"]
 
 # Start the API server
-CMD ["node", "api/server.js"]
+CMD ["node", "api/server.mjs"]

@@ -6,7 +6,7 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { ChatOpenAI } from "@langchain/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import sanitizeHtml from "sanitize-html";
-import { findSimilarDocuments } from "../utils/vectorSearch.js";
+import { findSimilarDocuments } from "../utils/vectorSearch.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
