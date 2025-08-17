@@ -12,10 +12,7 @@
       "Bash(git worktree:*)",
       "Bash(npm audit:*)"
     ],
-    "deny": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)"
-    ]
+    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },
   "hooks": {
     "PostToolUse": [
