@@ -23,6 +23,7 @@
       "Bash(git commit:*)",
       "Bash(git rm:*)",
       "Bash(git push:*)"
+      "Bash(npm audit:*)"
     ],
     "deny": [
       "Bash(rm:*)",
