@@ -194,6 +194,14 @@ export default async (eleventyConfig) => {
         class: "header-anchor",
         symbol: "#",
         ariaHidden: false,
+        renderHref: (slug, state) => {
+          // Get the base URL from environment variable with fallback
+          const baseUrl = process.env.SITE_URL || "https://andrewford.co.nz";
+          // Get current page URL from the markdown-it state env
+          const pageUrl = state.env?.page?.url || "";
+          // Combine to create full URL
+          return `${baseUrl}${pageUrl}#${slug}`;
+        },
       }),
       level: [1, 2, 3, 4],
       slugify: eleventyConfig.getFilter("slugify"),

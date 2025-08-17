@@ -3,7 +3,7 @@ dotenv.config();
 
 export default {
   title: "Andrew Ford",
-  fullUrl: process.env.SITE_URL,
+  fullUrl: process.env.SITE_URL || "https://andrewford.co.nz",
   apiUrl: process.env.API_URL,
   url: process.env.URL,
   language: "en",
@@ -12,7 +12,7 @@ export default {
   author: {
     name: "Andrew Ford",
     email: "me@andrewford.co.nz",
-    url: `${process.env.SITE_URL}/about/`,
+    url: `${process.env.SITE_URL || "https://andrewford.co.nz"}/about/`,
   },
   gTag: process.env.GTAG,
 };
