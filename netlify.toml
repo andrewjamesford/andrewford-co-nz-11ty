@@ -23,6 +23,21 @@ node_bundler = "nft"
 
 
 [[redirects]]
+from = "/notes/202507061346/*"
+to = "/articles/creative-process-with-ai-on-ipad/:splat"
+status = 301
+
+[[redirects]]
+from = "/notes/202507231344/*"
+to = "/articles/wasted-25-years-writing-code-structured-communication/:splat"
+status = 301
+
+[[redirects]]
+from = "/notes/202508102004/*"
+to = "/articles/claude-code-instant-notifications-ntfy/:splat"
+status = 301
+
+[[redirects]]
 from = "/.well-known/webfinger"
 to = "https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz"
 status = 200
