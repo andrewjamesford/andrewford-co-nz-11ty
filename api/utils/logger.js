@@ -1,4 +1,4 @@
-const winston = require("winston");
+import winston from "winston";
 
 const logLevel = process.env.LOG_LEVEL || "info";
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -37,4 +37,4 @@ if (!isDevelopment) {
   );
 }
 
-module.exports = logger;
+export default logger;

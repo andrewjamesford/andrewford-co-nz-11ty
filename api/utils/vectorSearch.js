@@ -27,7 +27,4 @@ function findSimilarDocuments(queryEmbedding, documents, topK = 4) {
   }));
 }
 
-module.exports = {
-  cosineSimilarity,
-  findSimilarDocuments,
-};
+export { cosineSimilarity, findSimilarDocuments };

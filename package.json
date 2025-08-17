@@ -2,6 +2,7 @@
   "name": "andrewford-co-nz-11ty",
   "version": "3.1.0",
   "description": "andrewford.co.nz blog in 11ty",
+  "type": "module",
   "scripts": {
     "api": "node api/server.js",
     "api:dev": "NODE_ENV=development node api/server.js",
@@ -22,7 +23,7 @@
     "genvector": "node tools/generateVectorStore.mjs",
     "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
     "note": "bash note.sh",
-    "perfbudget": "lighthouse http://localhost:8888 --budget-path=./budget.json --view",
+    "perfbudget": "lighthouse http://localhost:3000 --budget-path=./budget.json --view",
     "postinstall": "npm rebuild faiss-node",
     "prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
@@ -82,14 +83,12 @@
     "concurrently": "^9.1.0",
     "dotenv": "^16.4.5",
     "eleventy-plugin-youtube-embed": "^1.13.0",
-    "express": "^4.21.2",
     "jest": "^29.7.0",
     "lighthouse": "^12.2.1",
     "luxon": "^3.5",
     "markdown-it-anchor": "^9.2",
     "markdown-it-footnote": "^4",
     "markdownlint-cli2": "^0.14.0",
-    "node-fetch": "^3.3.2",
     "prettier": "2.5.0",
     "supertest": "^7.1.4"
   },
@@ -100,7 +99,9 @@
     "@langchain/textsplitters": "^0.1.0",
     "cors": "^2.8.5",
     "dompurify": "^3.2.6",
+    "express": "^4.21.2",
     "faiss-node": "^0.5.1",
+    "node-fetch": "^3.3.2",
     "sanitize-html": "^2.17.0",
     "winston": "^3.17.0"
   }

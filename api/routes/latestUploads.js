@@ -1,6 +1,5 @@
-const express = require("express");
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+import express from "express";
+import fetch from "node-fetch";
 
 const router = express.Router();
 
@@ -45,4 +44,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

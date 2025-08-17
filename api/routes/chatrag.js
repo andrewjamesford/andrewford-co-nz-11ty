@@ -1,11 +1,15 @@
-const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const { OpenAIEmbeddings } = require("@langchain/openai");
-const { ChatOpenAI } = require("@langchain/openai");
-const { ChatPromptTemplate } = require("@langchain/core/prompts");
-const sanitizeHtml = require("sanitize-html");
-const { findSimilarDocuments } = require("../utils/vectorSearch");
+import express from "express";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { ChatOpenAI } from "@langchain/openai";
+import { ChatPromptTemplate } from "@langchain/core/prompts";
+import sanitizeHtml from "sanitize-html";
+import { findSimilarDocuments } from "../utils/vectorSearch.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
@@ -268,4 +272,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
