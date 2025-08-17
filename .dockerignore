@@ -1,0 +1,71 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build outputs (will be generated in container)
+_site
+.cache
+.netlify
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+TESTING.md
+*.md
+!package.json
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Test coverage
+coverage
+
+# Temporary files
+tmp
+temp
+
+# Playwright
+test-results
+playwright-report
+
+# Development tools
+.markdownlint.json
+playwright.config.js
+budget.json
+
+# CI/CD
+.github
+
+# Local development
+docker-compose.override.yml
+.env.example
+
+# Tasks and documentation
+tasks/
+documents/
+
+# Scripts
+article.sh
+note.sh
+
+# Build artifacts from previous builds
+public/_redirects
