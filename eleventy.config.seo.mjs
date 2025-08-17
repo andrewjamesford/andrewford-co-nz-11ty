@@ -21,7 +21,7 @@ export default (eleventyConfig) => {
       // Check if no H1 exists (except for special pages)
       const isSpecialPage =
         outputPath.includes("404") ||
-        outputPath.includes("sitemap") || 
+        outputPath.includes("sitemap") ||
         outputPath.includes("feed");
 
       if (h1Matches.length === 0 && !isSpecialPage) {

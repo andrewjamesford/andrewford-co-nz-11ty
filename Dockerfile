@@ -17,8 +17,11 @@ COPY . .
 # Copy vector store files
 COPY vector_store/ ./vector_store/
 
-# Build the static site
-RUN npm run build
+# Start API server in background and build the static site
+RUN nohup node api/server.mjs & \
+    sleep 5 && \
+    npm run build && \
+    pkill -f "node api/server.mjs"
 
 # Stage 2: Production stage
 FROM node:24-alpine AS production
