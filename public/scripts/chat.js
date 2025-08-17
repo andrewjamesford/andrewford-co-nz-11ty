@@ -213,7 +213,7 @@ function initializeChat() {
     return new Promise((resolve) => {
       try {
         // Create a POST request with streaming headers
-        fetch(`${CONFIG.API_URL}/.netlify/functions/chatrag`, {
+        fetch(`${CONFIG.API_URL}/api/chatrag`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -297,14 +297,11 @@ function initializeChat() {
 
   async function handleNonStreamingRequest(userMessage, botMessageElement) {
     try {
-      const response = await fetch(
-        `${CONFIG.API_URL}/.netlify/functions/chatrag`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: userMessage }),
-        }
-      );
+      const response = await fetch(`${CONFIG.API_URL}/api/chatrag`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: userMessage }),
+      });
 
       const data = await response.json();
 

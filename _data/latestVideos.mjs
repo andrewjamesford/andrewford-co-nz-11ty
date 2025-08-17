@@ -5,12 +5,14 @@ config();
 
 export default async () => {
   try {
-    const baseUrl = process.env.URL || "http://localhost:9999"; // Fallback for local development
-    const url = `${baseUrl}/.netlify/functions/latestUploads`;
+    const baseUrl =
+      process.env.API_URL || process.env.URL || "http://localhost:3000";
+    console.log("Fetching latest videos from:", baseUrl);
+    const url = `${baseUrl}/api/latestUploads`;
     const json = await EleventyFetch(url, {
       duration: "1h", // save for 1 hour
       type: "json", // we'll parse JSON for you
-      directory: "/tmp/.cache/", // Netlify Functions
+      directory: "/tmp/.cache/", // API cache
     });
 
     return {
