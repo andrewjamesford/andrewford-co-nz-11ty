@@ -1,5 +1,5 @@
 ---
-title: Supercharge Responsive Web Design with BrowserSync
+title: "Supercharge Responsive Design with BrowserSync"
 date: "2014-02-13T00:17:00+00:00"
 template: post
 draft: false

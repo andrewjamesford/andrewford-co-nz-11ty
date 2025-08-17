@@ -10,9 +10,25 @@
       "Bash(lsof:*)",
       "Bash(pkill:*)",
       "Bash(git worktree:*)",
+      "Bash(npm audit:*)",
+      "Bash(mkdir:*)",
+      "Bash(node:*)",
+      "Bash(git add:*)",
+      "Bash(git rebase:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(git push:*)"
       "Bash(npm audit:*)"
     ],
-    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
   },
   "hooks": {
     "PostToolUse": [

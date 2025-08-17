@@ -1,0 +1,53 @@
+{%- if page.inputPath.includes('/articles/') or page.inputPath.includes('/archive/') -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title | safe }}",
+  "description": "{{ description or content | striptags | truncate(160) | safe }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}"
+  },
+  "datePublished": "{{ page.date | htmlDateString }}",
+  "dateModified": "{{ page.date | htmlDateString }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ metadata.author.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ metadata.fullUrl }}/ogimage/AF-Logo.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ metadata.fullUrl }}{{ page.url }}"
+  }
+  {%- if ogimage -%},
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ metadata.fullUrl }}/ogimage/{{ ogimage }}",
+    "width": 1200,
+    "height": 630
+  }
+  {%- endif -%}
+  {%- if tags and tags.length > 0 -%},
+  "keywords": "{{ tags | filterTagList | join(', ') }}"
+  {%- endif -%}
+  {%- if relatedPosts and relatedPosts.calculateRelated -%}
+    {%- set relatedPostsList = relatedPosts.calculateRelated(collections.posts, { url: page.url, data: { tags: tags, draft: draft } }) -%}
+    {%- if relatedPostsList.length > 0 -%},
+  "relatedLink": [
+      {%- for post in relatedPostsList | head(5) -%}
+        "{{ metadata.fullUrl }}{{ post.url }}"
+        {%- if not loop.last -%},{%- endif -%}
+      {%- endfor -%}
+  ]
+    {%- endif -%}
+  {%- endif -%}
+}
+</script>
+{%- endif -%}

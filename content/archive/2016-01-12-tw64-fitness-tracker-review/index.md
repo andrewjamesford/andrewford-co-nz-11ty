@@ -26,12 +26,12 @@ To get the most out of the TW64 you will need to use the [Movnow Plus](https://i
 
 So to sum up the TW64 isn't a great device. It ticks of the basics, but it is mostly let down by the software (health kit support would help). I still use the TW64 everyday for the sleep tracking and the wakeup alarm. I will until I find something that's again cheap but has better software.
 
-##### Minor notes
+## Minor notes
 
 - This device loses time like crazy, after not syncing for 2 days it lost 4 minutes. It continually does until you sync.
 - Strap comes off in bed quite easily
 
-##### Wish list
+## Wish list
 
 - Notifications simply buzz on wrist showing icon for call or app notifications
 - Health kit support

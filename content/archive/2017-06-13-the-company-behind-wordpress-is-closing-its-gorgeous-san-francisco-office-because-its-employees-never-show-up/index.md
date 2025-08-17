@@ -1,5 +1,5 @@
 ---
-title: The Company Behind WordPress Is Closing Its Gorgeous San Francisco Office Because Its Employees Never Show Up
+title: "WordPress Company Closes SF Office Due to Low Attendance"
 date: "2017-06-13T11:02:18+00:00"
 template: post
 draft: false
