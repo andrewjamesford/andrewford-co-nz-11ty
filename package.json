@@ -30,13 +30,15 @@
     "test:e2e": "playwright test",
     "test:integration": "node --test tests/lastplayed.test.mjs tests/chatrag.test.mjs",
     "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
+    "test:api": "NODE_OPTIONS='--experimental-vm-modules' jest tests/api/",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "jest": {
     "testMatch": [
       "**/tests/latestuploads.test.mjs",
       "**/tests/*.supertest.mjs",
-      "**/tests/*.contract.test.mjs"
+      "**/tests/*.contract.test.mjs",
+      "**/tests/api/*.test.js"
     ],
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"
@@ -89,8 +91,10 @@
     "@langchain/core": "^0.3.57",
     "@langchain/openai": "^0.5.11",
     "@langchain/textsplitters": "^0.1.0",
+    "cors": "^2.8.5",
     "dompurify": "^3.2.6",
     "faiss-node": "^0.5.1",
-    "sanitize-html": "^2.17.0"
+    "sanitize-html": "^2.17.0",
+    "winston": "^3.17.0"
   }
 }
