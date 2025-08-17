@@ -17,9 +17,9 @@ tags:
 description: "Learn how to automate GitHub security notifications using Comet and GitHub Copilot. Transform hours of manual work into 15 minutes of automated maintenance."
 ---
 
-https://www.youtube.com/watch?v=qGGd2_qayH4
-
 If you're like most developers, you've probably found yourself drowning in GitHub security notifications. Those endless email alerts about vulnerable dependencies, the mounting pile of Dependabot pull requests, and the tedious process of reviewing and updating packages across multiple repositories can quickly become overwhelming. But what if I told you there's a way to automate almost all of this using AI-powered tools?
+
+https://www.youtube.com/watch?v=qGGd2_qayH4
 
 GitHub notifications interface showing filtered security and project-related notifications across multiple repositories.
 

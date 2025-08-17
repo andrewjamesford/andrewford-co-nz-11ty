@@ -100,4 +100,3 @@
   - [x] 6.4 Display 3-5 related posts at article end
   - [x] 6.5 Style related posts to match existing article list design
   - [x] 6.6 Add related posts to Article schema as relatedLink
-
