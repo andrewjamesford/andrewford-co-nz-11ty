@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 test.describe("Chatbot API Functionality", () => {
-  const API_BASE = "http://localhost:8888/.netlify/functions";
+  const API_BASE = "http://localhost:3000/.netlify/functions";
 
   test("should respond to basic chatrag API request", async ({ request }) => {
     const response = await request.post(`${API_BASE}/chatrag`, {
@@ -214,7 +214,7 @@ test.describe("Chatbot API Functionality", () => {
     const response = await request.post(`${API_BASE}/chatrag`, {
       headers: {
         "Content-Type": "application/json",
-        Origin: "http://localhost:8888",
+        Origin: "http://localhost:3000",
       },
       data: {
         question: "What does Andrew Ford do professionally?",

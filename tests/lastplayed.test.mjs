@@ -11,7 +11,7 @@ const expect = (actual) => ({
     ),
 });
 
-const API_URL = process.env.API_URL || "http://localhost:8888";
+const API_URL = process.env.API_URL || "http://localhost:3000";
 const FUNCTION_BASE_URL = `${API_URL}/.netlify/functions`; // Adjust port if your netlify dev runs on a different one
 
 describe("lastplayed Netlify Function", () => {
@@ -61,7 +61,7 @@ describe("lastplayed Netlify Function", () => {
     // Function currently has a bug - it always returns localhost
     // This test validates current behavior until function is fixed
     const isValidCors =
-      corsHeader?.includes("http://localhost:8888") ||
+      corsHeader?.includes("http://localhost:3000") ||
       corsHeader?.includes("https://andrewford.co.nz");
     expect(isValidCors).toBe(true);
   });

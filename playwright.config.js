@@ -9,7 +9,7 @@ module.exports = defineConfig({
   reporter: "html",
   timeout: 60000, // Increase test timeout to 60 seconds for AI responses
   use: {
-    baseURL: "http://localhost:8888",
+    baseURL: "http://localhost:3000",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
     actionTimeout: 10000, // 10 seconds for actions
@@ -32,7 +32,7 @@ module.exports = defineConfig({
 
   webServer: {
     command: "npm run dev",
-    url: "http://localhost:8888",
+    url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
   },

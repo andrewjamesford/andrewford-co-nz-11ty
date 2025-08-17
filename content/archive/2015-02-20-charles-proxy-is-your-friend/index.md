@@ -23,7 +23,7 @@ So this morning I remembered my handy dev tool Charles Proxy would be able to he
     <li>Open up terminal or your command prompt and type "ipconfig" for Windows or "ifconfig" for Mac. </li>
     <li>In Charles under Proxy > Proxy Settings enable Http Proxy by checking the box on the Proxies tab.</li>
     <li>Now open up your iPhone Settings > Wi-Fi > Wifi Network Name tap the "i" icon and scroll down to HTTP PROXY. </li>
-    <li>Select "Manual" and enter the IP address from the terminal/command prompt and the port 8888</li>
+    <li>Select "Manual" and enter the IP address from the terminal/command prompt and the port 3000</li>
 </ol>
 
 Now you should be able to see all the traffic from your phone in Charles Proxy and inspect the data. It will show data requested and responded from each URL. So in my case I was able to look at the JSON response and find the exact parameters I needed.
