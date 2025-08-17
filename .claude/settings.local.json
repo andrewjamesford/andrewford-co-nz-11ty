@@ -15,9 +15,13 @@
       "Bash(node:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git rm:*)"
     ],
-    "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
   },
   "hooks": {
     "PostToolUse": [
