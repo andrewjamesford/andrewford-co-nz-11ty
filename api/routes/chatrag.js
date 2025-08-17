@@ -1,11 +1,11 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const { OpenAIEmbeddings } = require('@langchain/openai');
-const { ChatOpenAI } = require('@langchain/openai');
-const { ChatPromptTemplate } = require('@langchain/core/prompts');
-const sanitizeHtml = require('sanitize-html');
-const { findSimilarDocuments } = require('../utils/vectorSearch');
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const { OpenAIEmbeddings } = require("@langchain/openai");
+const { ChatOpenAI } = require("@langchain/openai");
+const { ChatPromptTemplate } = require("@langchain/core/prompts");
+const sanitizeHtml = require("sanitize-html");
+const { findSimilarDocuments } = require("../utils/vectorSearch");
 
 const router = express.Router();
 
@@ -17,16 +17,16 @@ function loadVectorStore() {
   try {
     const vectorStorePath = path.join(
       __dirname,
-      '../../vector_store/simple_vector_store.json'
+      "../../vector_store/simple_vector_store.json"
     );
-    const vectorStoreContent = fs.readFileSync(vectorStorePath, 'utf-8');
+    const vectorStoreContent = fs.readFileSync(vectorStorePath, "utf-8");
     VECTOR_STORE = JSON.parse(vectorStoreContent);
     console.log(
       `Loaded ${VECTOR_STORE.documents.length} documents from vector store`
     );
     return VECTOR_STORE;
   } catch (error) {
-    console.error('Error loading vector store:', error);
+    console.error("Error loading vector store:", error);
     return { documents: [] };
   }
 }
@@ -37,8 +37,8 @@ const INPUT_LIMITS = {
 };
 
 function sanitizeInput(input) {
-  if (typeof input !== 'string') {
-    throw new Error('Input must be a string');
+  if (typeof input !== "string") {
+    throw new Error("Input must be a string");
   }
 
   const trimmed = input.trim();
@@ -60,25 +60,25 @@ function sanitizeInput(input) {
     allowedAttributes: {},
     textFilter: function (text) {
       if (!/[a-zA-Z0-9]/.test(text)) {
-        return '';
+        return "";
       }
       return text;
     },
   });
 
   if (!sanitized || sanitized.trim().length === 0) {
-    throw new Error('Question must contain alphanumeric characters');
+    throw new Error("Question must contain alphanumeric characters");
   }
 
   return sanitized;
 }
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { question } = req.body;
 
     if (!question) {
-      return res.status(400).json({ error: 'Question is required' });
+      return res.status(400).json({ error: "Question is required" });
     }
 
     let sanitizedQuestion;
@@ -92,7 +92,8 @@ router.post('/', async (req, res) => {
 
     if (!vectorStore.documents || vectorStore.documents.length === 0) {
       return res.json({
-        answer: "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
+        answer:
+          "I'm sorry, but the knowledge base is not available at the moment. Please try again later.",
         sources: [],
       });
     }
@@ -108,26 +109,29 @@ router.post('/', async (req, res) => {
       4
     );
 
-    const isStreaming = req.headers.accept?.includes('text/event-stream');
+    const isStreaming = req.headers.accept?.includes("text/event-stream");
 
     if (isStreaming) {
       res.writeHead(200, {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Access-Control-Allow-Origin': req.headers.origin || 'https://andrewford.co.nz',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST',
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+        "Access-Control-Allow-Origin":
+          req.headers.origin || "https://andrewford.co.nz",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST",
       });
 
       const llm = new ChatOpenAI({
         apiKey: process.env.OPENROUTER_API_KEY,
-        model: process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free',
+        model:
+          process.env.OPENROUTER_MODEL ||
+          "meta-llama/llama-3.2-3b-instruct:free",
         configuration: {
-          baseURL: 'https://openrouter.ai/api/v1',
+          baseURL: "https://openrouter.ai/api/v1",
           defaultHeaders: {
-            'HTTP-Referer': process.env.SITE_URL || 'https://andrewford.co.nz',
-            'X-Title': 'Andrew Ford Blog Chatbot',
+            "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
+            "X-Title": "Andrew Ford Blog Chatbot",
           },
         },
         streaming: true,
@@ -135,7 +139,7 @@ router.post('/', async (req, res) => {
 
       const context = similarDocs
         .map((doc) => doc.pageContent)
-        .join('\n\n---\n\n');
+        .join("\n\n---\n\n");
 
       const prompt = ChatPromptTemplate.fromTemplate(`
         You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
@@ -161,15 +165,17 @@ router.post('/', async (req, res) => {
         res.write(`data: ${JSON.stringify({ chunk: chunk.content })}\n\n`);
       }
 
-      const siteUrl = (process.env.SITE_URL || 'https://andrewford.co.nz').replace(/\/$/, '');
+      const siteUrl = (
+        process.env.SITE_URL || "https://andrewford.co.nz"
+      ).replace(/\/$/, "");
       const links = similarDocs.map((doc) => {
         if (doc.metadata?.source) {
-          const rel = doc.metadata.source.split('/content/')[1] || '';
-          let slug = rel.replace(/index\.md$/, '').replace(/\.md$/, '');
-          if (slug && !slug.endsWith('/') && slug.includes('/')) {
-            slug = slug + '/';
+          const rel = doc.metadata.source.split("/content/")[1] || "";
+          let slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+          if (slug && !slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
           }
-          if (!slug.startsWith('/')) slug = '/' + slug;
+          if (!slug.startsWith("/")) slug = "/" + slug;
           return siteUrl + slug;
         }
         return siteUrl;
@@ -182,19 +188,21 @@ router.post('/', async (req, res) => {
     } else {
       const llm = new ChatOpenAI({
         apiKey: process.env.OPENROUTER_API_KEY,
-        model: process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free',
+        model:
+          process.env.OPENROUTER_MODEL ||
+          "meta-llama/llama-3.2-3b-instruct:free",
         configuration: {
-          baseURL: 'https://openrouter.ai/api/v1',
+          baseURL: "https://openrouter.ai/api/v1",
           defaultHeaders: {
-            'HTTP-Referer': process.env.SITE_URL || 'https://andrewford.co.nz',
-            'X-Title': 'Andrew Ford Blog Chatbot',
+            "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
+            "X-Title": "Andrew Ford Blog Chatbot",
           },
         },
       });
 
       const context = similarDocs
         .map((doc) => doc.pageContent)
-        .join('\n\n---\n\n');
+        .join("\n\n---\n\n");
 
       const prompt = ChatPromptTemplate.fromTemplate(`
         You are a helpful assistant for Andrew Ford's blog. Answer the following question based on the provided context from the blog posts.
@@ -216,15 +224,17 @@ router.post('/', async (req, res) => {
 
       const response = await llm.invoke(formattedPrompt);
 
-      const siteUrl = (process.env.SITE_URL || 'https://andrewford.co.nz').replace(/\/$/, '');
+      const siteUrl = (
+        process.env.SITE_URL || "https://andrewford.co.nz"
+      ).replace(/\/$/, "");
       const links = similarDocs.map((doc) => {
         if (doc.metadata?.source) {
-          const rel = doc.metadata.source.split('/content/')[1] || '';
-          let slug = rel.replace(/index\.md$/, '').replace(/\.md$/, '');
-          if (slug && !slug.endsWith('/') && slug.includes('/')) {
-            slug = slug + '/';
+          const rel = doc.metadata.source.split("/content/")[1] || "";
+          let slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
+          if (slug && !slug.endsWith("/") && slug.includes("/")) {
+            slug = slug + "/";
           }
-          if (!slug.startsWith('/')) slug = '/' + slug;
+          if (!slug.startsWith("/")) slug = "/" + slug;
           return siteUrl + slug;
         }
         return siteUrl;
@@ -238,22 +248,22 @@ router.post('/', async (req, res) => {
       });
     }
   } catch (error) {
-    console.error('Error processing chatrag request:', error);
+    console.error("Error processing chatrag request:", error);
 
     if (error.response?.status === 401) {
       return res.status(500).json({
-        error: 'Authentication error. Please check API configuration.',
+        error: "Authentication error. Please check API configuration.",
       });
     }
 
     if (error.response?.status === 429) {
       return res.status(429).json({
-        error: 'Model rate limit reached. Please try again later.',
+        error: "Model rate limit reached. Please try again later.",
       });
     }
 
     res.status(500).json({
-      error: 'An unexpected error occurred. Please try again later.',
+      error: "An unexpected error occurred. Please try again later.",
     });
   }
 });

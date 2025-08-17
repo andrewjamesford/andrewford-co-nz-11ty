@@ -1,26 +1,26 @@
-const request = require('supertest');
-const app = require('../../api/server');
+const request = require("supertest");
+const app = require("../../api/server");
 
-describe('GET /api/lastplayed', () => {
+describe("GET /api/lastplayed", () => {
   beforeEach(() => {
-    process.env.LASTFM_API_KEY = 'test-api-key';
+    process.env.LASTFM_API_KEY = "test-api-key";
   });
 
-  it('should return last played track data', async () => {
+  it("should return last played track data", async () => {
     const mockLastFmResponse = {
       recenttracks: {
         track: {
-          artist: { '#text': 'Test Artist' },
-          name: 'Test Track',
-          album: { '#text': 'Test Album' },
-          url: 'http://test.url',
+          artist: { "#text": "Test Artist" },
+          name: "Test Track",
+          album: { "#text": "Test Album" },
+          url: "http://test.url",
           image: [
-            { '#text': 'small.jpg' },
-            { '#text': 'medium.jpg' },
-            { '#text': 'large.jpg' }
-          ]
-        }
-      }
+            { "#text": "small.jpg" },
+            { "#text": "medium.jpg" },
+            { "#text": "large.jpg" },
+          ],
+        },
+      },
     };
 
     global.fetch = jest.fn(() =>
@@ -30,50 +30,44 @@ describe('GET /api/lastplayed', () => {
       })
     );
 
-    const response = await request(app)
-      .get('/api/lastplayed')
-      .expect(200);
+    const response = await request(app).get("/api/lastplayed").expect(200);
 
     expect(response.body).toEqual({
-      artist: 'Test Artist',
-      trackName: 'Test Track',
-      album: 'Test Album',
-      url: 'http://test.url',
-      albumArt: 'medium.jpg',
-      albumArtLarge: 'large.jpg'
+      artist: "Test Artist",
+      trackName: "Test Track",
+      album: "Test Album",
+      url: "http://test.url",
+      albumArt: "medium.jpg",
+      albumArtLarge: "large.jpg",
     });
 
     expect(fetch).toHaveBeenCalledWith(
-      expect.stringContaining('ws.audioscrobbler.com'),
+      expect.stringContaining("ws.audioscrobbler.com"),
       expect.any(Object)
     );
   });
 
-  it('should handle missing API key', async () => {
+  it("should handle missing API key", async () => {
     delete process.env.LASTFM_API_KEY;
 
-    const response = await request(app)
-      .get('/api/lastplayed')
-      .expect(500);
+    const response = await request(app).get("/api/lastplayed").expect(500);
 
-    expect(response.body).toHaveProperty('error_description');
-    expect(response.body.error_description).toContain('LASTFM_API_KEY');
+    expect(response.body).toHaveProperty("error_description");
+    expect(response.body.error_description).toContain("LASTFM_API_KEY");
   });
 
-  it('should handle API errors', async () => {
+  it("should handle API errors", async () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
         ok: false,
         status: 500,
-        statusText: 'Internal Server Error',
+        statusText: "Internal Server Error",
       })
     );
 
-    const response = await request(app)
-      .get('/api/lastplayed')
-      .expect(500);
+    const response = await request(app).get("/api/lastplayed").expect(500);
 
-    expect(response.body).toHaveProperty('error_description');
+    expect(response.body).toHaveProperty("error_description");
   });
 
   afterEach(() => {

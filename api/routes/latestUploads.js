@@ -1,25 +1,26 @@
-const express = require('express');
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const express = require("express");
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;
 
     if (!apiKey) {
-      throw new Error('YOUTUBE_API_KEY environment variable is not set');
+      throw new Error("YOUTUBE_API_KEY environment variable is not set");
     }
 
     if (!channelId) {
-      throw new Error('YOUTUBE_CHANNEL_ID environment variable is not set');
+      throw new Error("YOUTUBE_CHANNEL_ID environment variable is not set");
     }
 
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`,
       {
-        method: 'GET',
+        method: "GET",
       }
     );
 
@@ -32,14 +33,14 @@ router.get('/', async (req, res) => {
     const data = await response.json();
 
     if (!data || !data.items) {
-      throw new Error('Invalid response structure from YouTube API');
+      throw new Error("Invalid response structure from YouTube API");
     }
 
     const lastUploadData = data.items;
 
     res.json(lastUploadData);
   } catch (error) {
-    console.error('YouTube API error:', error);
+    console.error("YouTube API error:", error);
     res.status(500).json({ error_description: error.message });
   }
 });

@@ -1,7 +1,7 @@
-const winston = require('winston');
+const winston = require("winston");
 
-const logLevel = process.env.LOG_LEVEL || 'info';
-const isDevelopment = process.env.NODE_ENV === 'development';
+const logLevel = process.env.LOG_LEVEL || "info";
+const isDevelopment = process.env.NODE_ENV === "development";
 
 const logger = winston.createLogger({
   level: logLevel,
@@ -10,7 +10,7 @@ const logger = winston.createLogger({
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: 'api-server' },
+  defaultMeta: { service: "api-server" },
   transports: [
     new winston.transports.Console({
       format: isDevelopment
@@ -26,13 +26,13 @@ const logger = winston.createLogger({
 if (!isDevelopment) {
   logger.add(
     new winston.transports.File({
-      filename: 'logs/error.log',
-      level: 'error',
+      filename: "logs/error.log",
+      level: "error",
     })
   );
   logger.add(
     new winston.transports.File({
-      filename: 'logs/combined.log',
+      filename: "logs/combined.log",
     })
   );
 }
