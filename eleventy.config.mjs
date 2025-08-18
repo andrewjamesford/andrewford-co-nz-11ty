@@ -133,6 +133,31 @@ export default async (eleventyConfig) => {
     return Array.from(tagSet);
   });
 
+  // Decode HTML entities
+  eleventyConfig.addFilter("decodeHtmlEntities", (str) => {
+    if (!str) return str;
+
+    const htmlEntities = {
+      "&quot;": '"',
+      "&#34;": '"',
+      "&apos;": "'",
+      "&#39;": "'",
+      "&lt;": "<",
+      "&#60;": "<",
+      "&gt;": ">",
+      "&#62;": ">",
+      "&amp;": "&",
+      "&#38;": "&",
+      "&nbsp;": " ",
+      "&#160;": " ",
+    };
+
+    return str.replace(
+      /&quot;|&#34;|&apos;|&#39;|&lt;|&#60;|&gt;|&#62;|&amp;|&#38;|&nbsp;|&#160;/g,
+      (match) => htmlEntities[match] || match
+    );
+  });
+
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     return (tags || []).filter(
       (tag) =>

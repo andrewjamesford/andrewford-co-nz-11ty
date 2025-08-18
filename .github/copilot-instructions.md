@@ -195,6 +195,7 @@ docker --version
 - **Integration Test Prerequisites**: Requires both dev servers running
 
 ### Content Validation Issues
+
 - **H1 Heading Violations**: `content/about/index.md` and `content/privacy/index.md` have multiple H1 tags
 - **SEO Title Warnings**: Many articles have titles longer than 60 characters (expected warnings)
 - **API Connection Errors**: Build-time API fetching fails without API server (expected behavior)
