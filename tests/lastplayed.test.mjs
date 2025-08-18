@@ -112,9 +112,9 @@ describe("lastplayed API Endpoint", () => {
         "Access-Control-Request-Headers": "Content-Type",
       },
     });
-    // For OPTIONS requests, Netlify Dev might handle them or your function might.
+    // For OPTIONS requests, the API server might handle them or your function might.
     // If your function handles OPTIONS, it should return the headers.
-    // If Netlify Dev handles it, the behavior might differ slightly from deployed.
+    // If the API server handles it, the behavior might differ slightly from deployed.
     // For now, let's check the GET response headers which are explicitly set.
     const getResponse = await fetch(lastPlayedUrl, {
       headers: { Origin: `${API_URL}` },

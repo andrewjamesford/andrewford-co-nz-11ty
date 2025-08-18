@@ -5,7 +5,6 @@ npm-debug.log*
 # Build outputs (will be generated in container)
 _site
 .cache
-.netlify
 
 # Development files
 .env.local

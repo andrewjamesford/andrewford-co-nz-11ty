@@ -82,7 +82,7 @@ function sanitizeInput(input) {
 }
 
 exports.handler = async (event, context) => {
-  // Enable streaming for Netlify Functions
+  // Enable streaming for API
   if (event.headers.accept?.includes("text/event-stream")) {
     return streamHandler(event, context);
   }

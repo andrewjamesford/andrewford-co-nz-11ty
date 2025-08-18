@@ -27,6 +27,25 @@
       "env": {
         "NODE_ENV": "development"
       }
-    }
+    },
+    {
+			"type": "chrome",
+			"request": "launch",
+			"port": 9222,
+			"name": "Launch Chrome localhost",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}",
+			"userDataDir": "${workspaceFolder}/temp/chrome",
+			"disableNetworkCache": true,
+			"runtimeArgs": [
+				"--auto-open-devtools-for-tabs",
+				"--disk-cache-size=1",
+				"--media-cache-size=1",
+				"--remote-debugging-port=9222",
+				"--no-first-run",
+				"--no-default-browser-check"
+			]
+		}
+    
   ]
 }

@@ -1,6 +1,6 @@
 import { jest, describe, test, expect } from "@jest/globals";
 import request from "supertest";
-import { createTestApp, mockEnv } from "./helpers/netlify-function-helper.mjs";
+import { createTestApp, mockEnv } from "./helpers/function-test-helper.mjs";
 
 const { handler } = await import("../functions/chatrag.js");
 

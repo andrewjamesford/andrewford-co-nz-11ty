@@ -110,8 +110,9 @@ _site/
 # Resoc image data mapping file
 resoc-image-data.json
 
-# Local Netlify folder
-.netlify
+# Temporary files
+tmp
+temp/
 
 # Generated lighthouse reports
 chromewebdata_*

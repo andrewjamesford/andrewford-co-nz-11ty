@@ -1,7 +1,6 @@
 # Ignore artifacts:
 build
 coverage
-.netlify/
 .vector_store/
 node_modules/
 _site/
