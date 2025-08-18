@@ -18,9 +18,20 @@ const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = process.env.ALLOWED_ORIGINS
-      ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
-      : ["http://localhost:3000", "https://andrewford.co.nz"];
+    let allowedOrigins = ["http://localhost:3000", "https://andrewford.co.nz"];
+
+    if (process.env.ALLOWED_ORIGINS) {
+      try {
+        // Try parsing as JSON first (in case it's JSON-encoded)
+        const parsed = JSON.parse(process.env.ALLOWED_ORIGINS);
+        allowedOrigins = Array.isArray(parsed) ? parsed : [parsed];
+      } catch {
+        // If JSON parsing fails, treat as comma-separated string
+        allowedOrigins = process.env.ALLOWED_ORIGINS.split(",").map((o) =>
+          o.trim()
+        );
+      }
+    }
 
     // Allow requests with no origin (e.g., mobile apps, Postman)
     // or from allowed origins
