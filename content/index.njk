@@ -65,7 +65,7 @@ numberOfLatestVideosToShow: 3
 							{% if video.snippet.liveBroadcastContent === "upcoming" %}
 								<h5 class="article-title indicator-upcoming">Upcoming</h5>
 							{% endif %}
-							<p class="article-description">{{ video.snippet.description }}</p>
+							<p class="article-description">{{ video.snippet.description | decodeHtmlEntities | safe }}</p>
 						</li>
 					{%- endif -%}
 				{%- endfor -%}
