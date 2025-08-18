@@ -28,10 +28,10 @@ OPENROUTER_MODEL=
 Ensure you have the following dependencies installed:
 
 ```sh
-npm run start
+npm run dev
 ```
 
-This will start a local development server at [http://localhost:3000/](http://localhost:3000/) where you can preview your blog.
+This will start a local development server at [http://localhost:3000/](http://localhost:3000/) where you can preview your blog with it's API.
 
 ## Deployment
 
