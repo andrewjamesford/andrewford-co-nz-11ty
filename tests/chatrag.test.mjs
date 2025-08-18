@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
-import { handler } from "../functions/chatrag.mjs";
+import { handler } from "../api/chatrag.js";
 
 // Simple expect wrapper for better readability
 const expect = (actual) => ({
@@ -23,7 +23,7 @@ process.env.ALLOWED_ORIGINS =
   process.env.ALLOWED_ORIGINS ||
   "https://andrewford.co.nz,http://localhost:3000";
 
-describe("chatrag Netlify Function", () => {
+describe("chatrag API Endpoint", () => {
   it("should return 400 for missing question", async () => {
     const event = {
       body: JSON.stringify({}),

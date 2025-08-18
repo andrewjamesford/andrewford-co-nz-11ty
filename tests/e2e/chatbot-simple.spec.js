@@ -69,7 +69,7 @@ test.describe("Chatbot Simple Tests", () => {
 });
 
 test.describe("Chatbot API Simple Tests", () => {
-  const API_BASE = "http://localhost:3000/.netlify/functions";
+  const API_BASE = "http://localhost:3000/api";
 
   test("should handle basic API validation", async ({ request }) => {
     // Test missing question

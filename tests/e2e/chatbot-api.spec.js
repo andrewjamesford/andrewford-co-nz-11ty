@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 test.describe("Chatbot API Functionality", () => {
-  const API_BASE = "http://localhost:3000/.netlify/functions";
+  const API_BASE = "http://localhost:3000/api";
 
   test("should respond to basic chatrag API request", async ({ request }) => {
     const response = await request.post(`${API_BASE}/chatrag`, {

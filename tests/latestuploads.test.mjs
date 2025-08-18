@@ -25,9 +25,9 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { handler } = await import("../functions/latestuploads.mjs");
+const { handler } = await import("../api/latestUploads.js");
 
-describe("latestUploads Netlify Function", () => {
+describe("latestUploads API Endpoint", () => {
   let consoleErrorSpy;
   const mockApiKey = "test-api-key";
   const mockChannelId = "test-channel-id";

@@ -5,32 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "netlify dev",
+      "name": "API Server",
       "type": "node",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
-      "outFiles": ["${workspaceFolder}/.netlify/functions-serve/**/*.js"],
-      "program": "${workspaceFolder}/node_modules/.bin/netlify",
-      "args": ["dev"],
+      "program": "${workspaceFolder}/api/server.mjs",
+      "args": [],
       "console": "integratedTerminal",
       "env": {
-        "BROWSER": "none"
-      },
-      "serverReadyAction": {
-        "pattern": "Server now ready on (https?://[\\w:.-]+)",
-        "uriFormat": "%s",
-        "action": "debugWithChrome"
+        "NODE_ENV": "development"
       }
     },
     {
-      "name": "netlify functions:serve",
+      "name": "11ty Dev Server",
       "type": "node",
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
-      "outFiles": ["${workspaceFolder}/.netlify/functions-serve/**/*.js"],
-      "program": "${workspaceFolder}/node_modules/.bin/netlify",
-      "args": ["functions:serve"],
-      "console": "integratedTerminal"
+      "program": "${workspaceFolder}/node_modules/.bin/eleventy",
+      "args": ["--serve"],
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
     }
   ]
 }

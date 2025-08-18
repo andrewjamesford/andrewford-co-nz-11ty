@@ -12,10 +12,10 @@ const expect = (actual) => ({
 });
 
 const API_URL = process.env.API_URL || "http://localhost:3000";
-const FUNCTION_BASE_URL = `${API_URL}/.netlify/functions`; // Adjust port if your netlify dev runs on a different one
+const API_BASE_URL = `${API_URL}/api`; // Express API endpoints
 
-describe("lastplayed Netlify Function", () => {
-  const lastPlayedUrl = `${FUNCTION_BASE_URL}/lastplayed`;
+describe("lastplayed API Endpoint", () => {
+  const lastPlayedUrl = `${API_BASE_URL}/lastplayed`;
 
   console.log("Testing lastplayed function at URL:", lastPlayedUrl);
   // Test with an allowed origin (localhost)
