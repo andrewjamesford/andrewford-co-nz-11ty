@@ -56,7 +56,7 @@ numberOfLatestVideosToShow: 3
 
 							<h4 class="article-title">
 								<a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
-									{{ video.snippet.title }}
+									{{ video.snippet.title | decodeHtmlEntities | safe }}
 								</a>
 							</h4>
 							{% if video.snippet.liveBroadcastContent === "live" %}
