@@ -33,7 +33,7 @@
 			"request": "launch",
 			"port": 9222,
 			"name": "Launch Chrome localhost",
-			"url": "http://localhost:3000",
+			"url": "http://localhost:8080",
 			"webRoot": "${workspaceFolder}",
 			"userDataDir": "${workspaceFolder}/temp/chrome",
 			"disableNetworkCache": true,
