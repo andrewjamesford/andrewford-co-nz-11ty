@@ -91,5 +91,4 @@ When writing content, follow these heading hierarchy rules to ensure proper SEO 
 - [markdownlint](https://github.com/DavidAnson/markdownlint) is available for reference.
 - [Prettier Documentation](https://prettier.io/docs/en/index.html) is available for reference.
 - [GitHub Markdown Cheatsheet](https://github.github.com/gfm/) is available for reference.
-- [Netlify Documentation](https://docs.netlify.com) is available for reference.
 - [OpenAI Documentation](https://platform.openai.com/docs/overview) is available for reference.

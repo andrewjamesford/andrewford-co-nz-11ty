@@ -7,7 +7,7 @@ import {
   afterEach,
 } from "@jest/globals";
 import request from "supertest";
-import { createTestApp, mockEnv } from "./helpers/netlify-function-helper.mjs";
+import { createTestApp, mockEnv } from "./helpers/function-test-helper.mjs";
 
 // Mock fetch
 const mockFetch = jest.fn();

@@ -1,7 +1,5 @@
 # Andrew Ford 11ty blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f4b1e9ee-d1f7-4070-9fe6-f865eb782feb/deploy-status)](https://app.netlify.com/sites/andrewford-co-nz/deploys)
-
 This is my personal blog built with [11ty](https://www.11ty.dev/). It features articles on various topics related to web development, programming, and technology.
 
 ## Getting Started
@@ -14,7 +12,7 @@ cd andrewford-co-nz-11ty
 npm install
 ```
 
-This project uses the ENV capabilities from the Netlify CLI. If you wish to create manually please add the following to an `.env` file.
+## Env variables
 
 ```env
 API_URL=
@@ -29,23 +27,25 @@ OPENROUTER_MODEL=
 
 Ensure you have the following dependencies installed:
 
-- Netlify CLI
-
 ```sh
-npm install netlify-cli -g
+npm run dev
 ```
 
-Once you've installed the dependencies, you can run the development server:
-
-```sh
-netlify dev
-```
-
-This will start a local development server at [http://localhost:3000/](http://localhost:3000/) where you can preview your blog.
+This will start a local development server at [http://localhost:3000/](http://localhost:3000/) where you can preview your blog with it's API.
 
 ## Deployment
 
-This blog is deployed to Netlify using their continuous deployment feature. When changes are pushed to the main branch, Netlify will automatically build and deploy the site.
+This blog is deployed using Docker containers on a self-hosted VPS through [Coolify](https://coolify.io/). The deployment includes:
+
+- **11ty static site generation** with build-time API calls for content
+- **Express.js API server** providing REST endpoints for dynamic data
+- **Docker containerization** for consistent deployments
+- **Self-hosted infrastructure** on VPS for full control and flexibility
+
+The application runs in two containers:
+
+1. **Web container**: Serves the static 11ty-generated site
+2. **API container**: Provides dynamic endpoints for Last.fm, YouTube, and ChatRAG functionality
 
 ## License
 

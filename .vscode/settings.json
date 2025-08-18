@@ -8,11 +8,7 @@
     "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
   },
   "biome.enabled": false,
-  "deno.enable": true,
-  "deno.enablePaths": ["edge-functions"],
-  "deno.unstable": true,
-  "deno.importMap": ".netlify/edge-functions-import-map.json",
-  "deno.path": "/Users/andrewford/Library/Preferences/netlify/deno-cli/deno",
+  "deno.enable": false,
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   }

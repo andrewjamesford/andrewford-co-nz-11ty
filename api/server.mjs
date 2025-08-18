@@ -1,12 +1,12 @@
-import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import logger from "./utils/logger.mjs";
 import chatragRouter from "./routes/chatrag.mjs";
 import lastplayedRouter from "./routes/lastplayed.mjs";
 import latestUploadsRouter from "./routes/latestUploads.mjs";
+import logger from "./utils/logger.mjs";
 
 dotenv.config();
 
@@ -19,12 +19,19 @@ const PORT = process.env.PORT || 3000;
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = process.env.ALLOWED_ORIGINS
-      ? process.env.ALLOWED_ORIGINS.split(",")
+      ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
       : ["http://localhost:3000", "https://andrewford.co.nz"];
 
+    // Allow requests with no origin (e.g., mobile apps, Postman)
+    // or from allowed origins
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      // Log the rejected origin for debugging
+      logger.warn(`CORS rejected origin: ${origin}`, {
+        origin,
+        allowedOrigins,
+      });
       callback(new Error("Not allowed by CORS"));
     }
   },

@@ -1,6 +1,6 @@
 # Testing Strategy
 
-This project uses a multi-layered testing approach to ensure comprehensive coverage of the Netlify serverless functions.
+This project uses a multi-layered testing approach to ensure comprehensive coverage of the API endpoints and functions.
 
 ## Test Types
 
@@ -28,7 +28,7 @@ This project uses a multi-layered testing approach to ensure comprehensive cover
 
 **Location**: `tests/*.supertest.mjs`
 
-**Purpose**: HTTP-level testing of functions using Express wrapper
+**Purpose**: HTTP-level testing of API endpoints using Express wrapper
 
 - ✅ `tests/lastplayed.supertest.mjs` - Last.fm API testing
 - ✅ `tests/latestuploads.supertest.mjs` - YouTube API testing
@@ -42,19 +42,19 @@ This project uses a multi-layered testing approach to ensure comprehensive cover
 - Input validation
 - Streaming responses (for chat function)
 
-### 3. Integration Tests (Node.js Test Runner)
+### 3. API Integration Tests (Node.js Test Runner)
 
 **Command**: `npm run test:integration`
 
 **Location**: `tests/lastplayed.test.mjs`, `tests/chatrag.test.mjs`
 
-**Purpose**: End-to-end testing against live Netlify functions
+**Purpose**: End-to-end testing against live API server
 
 **Requirements**:
 
 ```bash
-# Start Netlify dev server first
-netlify dev
+# Start API server first
+npm run api:dev
 
 # Then run integration tests in another terminal
 npm run test:integration
@@ -62,9 +62,23 @@ npm run test:integration
 
 **Note**: These tests require:
 
-- Running Netlify dev server on `http://localhost:3000`
+- Running API server on `http://localhost:3000`
 - Valid API keys in environment variables
 - Live external API availability
+
+### 4. End-to-End Tests (Playwright)
+
+**Command**: `npm run test:e2e`
+
+**Location**: `tests/e2e/*.spec.js`
+
+**Purpose**: Browser-based testing of the complete application
+
+**Features**:
+
+- Tests chatbot functionality in real browser environment
+- Validates UI interactions with API endpoints
+- Ensures proper CORS handling in browser context
 
 ## Running All Tests
 
@@ -75,11 +89,45 @@ npm test
 # Supertest tests only
 npm run test:supertest
 
-# Integration tests only (requires netlify dev)
+# Integration tests only (requires API server)
 npm run test:integration
 
-# All tests (Jest + integration, requires netlify dev)
+# End-to-end tests (requires full application running)
+npm run test:e2e
+
+# All tests (Jest + integration, requires API server)
 npm run test:all
+```
+
+## Development Workflow
+
+### Local Development
+
+1. Start the API server:
+
+   ```bash
+   npm run api:dev
+   ```
+
+2. Start the 11ty dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Run tests:
+   ```bash
+   npm run test:all
+   ```
+
+### Docker Development
+
+```bash
+# Start full stack with Docker
+npm run docker:dev
+
+# Run tests against containerized environment
+npm run test:integration
 ```
 
 ## Test Results Summary
@@ -127,6 +175,22 @@ npm test  # Run only Jest tests
 For local development validation:
 
 ```bash
-netlify dev &  # Start dev server
-npm run test:all  # Run all tests
+npm run api:dev &  # Start API server
+npm run test:all   # Run all tests
+```
+
+## Deployment Testing
+
+Before deploying to production:
+
+```bash
+# Build and test in Docker environment
+npm run docker:build
+npm run docker:run &
+
+# Run integration tests against containerized app
+npm run test:integration
+
+# Run end-to-end tests
+npm run test:e2e
 ```

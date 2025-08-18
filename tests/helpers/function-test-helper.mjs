@@ -1,10 +1,10 @@
 import express from "express";
 
 /**
- * Creates an Express app wrapper for a Netlify serverless function
- * This allows us to test Netlify functions with Supertest
+ * Creates an Express app wrapper for a serverless function
+ * This allows us to test functions with Supertest
  *
- * @param {Function} handler - The Netlify function handler
+ * @param {Function} handler - The function handler
  * @returns {express.Application} Express app configured to call the handler
  */
 export function createTestApp(handler) {
@@ -17,7 +17,7 @@ export function createTestApp(handler) {
 
   // Handle all HTTP methods
   app.all("*", async (req, res) => {
-    // Convert Express request to Netlify event format
+    // Convert Express request to serverless event format
     const event = {
       httpMethod: req.method,
       headers: req.headers,
@@ -27,7 +27,7 @@ export function createTestApp(handler) {
       isBase64Encoded: false,
     };
 
-    // Mock Netlify context
+    // Mock serverless context
     const context = {
       functionName: "test-function",
       functionVersion: "1",
