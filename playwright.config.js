@@ -19,7 +19,7 @@ module.exports = defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
-    }
+    },
   ],
 
   webServer: {
