@@ -6,6 +6,11 @@ import {
   beforeEach,
   afterEach,
 } from "@jest/globals";
+import request from "supertest";
+import {
+  createTestAppFromRouter,
+  mockEnv,
+} from "./helpers/function-test-helper.mjs";
 
 // Create an explicit mock function for fetch
 const mockFetch = jest.fn();
@@ -25,36 +30,35 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { handler } = await import("../api/latestUploads.js");
+const { default: latestUploadsRouter } = await import(
+  "../api/routes/latestUploads.mjs"
+);
 
 describe("latestUploads API Endpoint", () => {
-  let consoleErrorSpy;
+  let app;
+  let restoreEnv;
   const mockApiKey = "test-api-key";
   const mockChannelId = "test-channel-id";
-  const originalEnv = process.env;
 
   beforeEach(() => {
-    // Reset process.env to a clean state for each test
-    process.env = { ...originalEnv };
-    process.env.YOUTUBE_API_KEY = mockApiKey;
-    process.env.YOUTUBE_CHANNEL_ID = mockChannelId;
+    // Create test app
+    app = createTestAppFromRouter(latestUploadsRouter);
 
-    // Clear mock calls - don't reassign the mock function
+    // Mock environment variables
+    restoreEnv = mockEnv({
+      YOUTUBE_API_KEY: mockApiKey,
+      YOUTUBE_CHANNEL_ID: mockChannelId,
+    });
+
+    // Clear mock calls
     mockDotenvConfig.mockClear();
     mockFetch.mockClear();
-
-    // Spy on console.error and mock its implementation to prevent logging during tests
-    consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {});
   });
 
   afterEach(() => {
-    // Restore original console.error and process.env
-    consoleErrorSpy.mockRestore();
-    process.env = originalEnv;
+    // Restore environment
+    restoreEnv();
   });
-
-  const mockEvent = {};
-  const mockContext = {};
 
   test("should return 200 and video data on successful API call", async () => {
     const mockYouTubeApiResponse = {
@@ -69,17 +73,14 @@ describe("latestUploads API Endpoint", () => {
       status: 200,
     });
 
-    const response = await handler(mockEvent, mockContext);
+    const response = await request(app).get("/").expect(200);
 
-    expect(mockDotenvConfig).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledWith(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${mockChannelId}&maxResults=10&order=date&type=video&key=${mockApiKey}`,
       { method: "GET" }
     );
-    expect(response.statusCode).toBe(200);
-    expect(JSON.parse(response.body)).toEqual(mockYouTubeApiResponse.items);
-    expect(consoleErrorSpy).not.toHaveBeenCalled();
+    expect(response.body).toEqual(mockYouTubeApiResponse.items);
   });
 
   test("should return 500 if YouTube API returns an error", async () => {

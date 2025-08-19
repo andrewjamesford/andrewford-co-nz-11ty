@@ -83,6 +83,27 @@ export function createTestApp(handler) {
 }
 
 /**
+ * Creates an Express app wrapper for an Express router
+ * This allows us to test routers with Supertest
+ *
+ * @param {express.Router} router - The Express router
+ * @returns {express.Application} Express app configured with the router
+ */
+export function createTestAppFromRouter(router) {
+  const app = express();
+
+  // Parse JSON bodies
+  app.use(express.json());
+  app.use(express.text());
+  app.use(express.urlencoded({ extended: true }));
+
+  // Mount the router
+  app.use("/", router);
+
+  return app;
+}
+
+/**
  * Mock environment variables for testing
  * @param {Object} env - Environment variables to mock
  * @returns {Function} Cleanup function to restore original env

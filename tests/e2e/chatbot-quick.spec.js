@@ -75,7 +75,7 @@ test.describe("Chatbot Quick Tests", () => {
 });
 
 test.describe("Chatbot API Quick Tests", () => {
-  const API_BASE = "http://localhost:3000/api";
+  const API_BASE = "http://localhost:3010/api";
 
   test("should validate API input", async ({ request }) => {
     // Test missing question

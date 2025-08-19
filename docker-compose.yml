@@ -5,12 +5,12 @@ services:
       dockerfile: Dockerfile
       target: production
     ports:
-      - "3000:3000"
+      - "3010:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - SITE_URL=http://localhost:3000
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000
+      - SITE_URL=http://localhost:3010
+      - ALLOWED_ORIGINS=http://localhost:3010,http://localhost:3010
     env_file:
       - .env
     volumes:
@@ -37,13 +37,13 @@ services:
       dockerfile: Dockerfile
       target: builder
     ports:
-      - "3000:3000"
+      - "3010:3000"
       - "8080:8080" # For 11ty dev server if needed
     environment:
       - NODE_ENV=development
       - PORT=3000
-      - SITE_URL=http://localhost:3000
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000,http://localhost:8080
+      - SITE_URL=http://localhost:3010
+      - ALLOWED_ORIGINS=http://localhost:3010,http://localhost:3010,http://localhost:8080
     env_file:
       - .env
     volumes:

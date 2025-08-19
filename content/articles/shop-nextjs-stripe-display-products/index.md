@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 
 By default the products can only be retrieved on the [same origin](https://nextjs.org/docs/api-routes/introduction#caveats) ensuring that only our own shop can retrieve the products.
 
-Let's [test our API](http://localhost:3000/api/products) retrieves our products when running locally. You should be able to see the JSON returned.
+Let's [test our API](http://localhost:3010/api/products) retrieves our products when running locally. You should be able to see the JSON returned.
 
 {% image "./product-api.png", "Response from the product API" %}
 
@@ -59,7 +59,7 @@ Before we do anything else we need to create a _HOST_ environment variable. Open
 
 ```shell
 # add HOST
-HOST=http://localhost:3000
+HOST=http://localhost:3010
 ```
 
 We will use the _HOST_ environment variable now, to prepend to our request to the API. Let's update the `index.js` file in the `pages` directory and add the following (outlined in the orange comments):

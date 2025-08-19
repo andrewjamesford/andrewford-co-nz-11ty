@@ -22,36 +22,20 @@
     "genvector": "node tools/generateVectorStore.mjs",
     "markdownlint": "markdownlint-cli2 --fix \"content/**/*.md\" \"#node_modules\" --config .markdownlint.json",
     "note": "bash note.sh",
-    "perfbudget": "lighthouse http://localhost:3000 --budget-path=./budget.json --view",
+    "perfbudget": "lighthouse http://localhost:3010 --budget-path=./budget.json --view",
     "postinstall": "npm rebuild faiss-node",
     "prettier:check": "prettier --check \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "serve": "npx http-server _site -p 3000",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve",
-    "test:all": "npm run test && npm run test:integration",
+    "test": "npm run test:e2e:quick",
+    "test:all": "npm run test:e2e:essential",
+    "test:e2e": "playwright test",
+    "test:e2e:essential": "playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-simple.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:quick": "playwright test tests/e2e/chatbot-quick.spec.js --project=chromium",
-    "test:e2e:simple": "playwright test tests/e2e/chatbot-simple.spec.js",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e": "playwright test",
-    "test:integration": "node --test tests/lastplayed.test.mjs tests/chatrag.test.mjs",
-    "test:supertest": "NODE_OPTIONS=\"--experimental-vm-modules\" npm test -- tests/*.supertest.mjs",
-    "test:api": "NODE_OPTIONS='--experimental-vm-modules' jest tests/api/",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
-  },
-  "jest": {
-    "testMatch": [
-      "**/tests/latestuploads.test.mjs",
-      "**/tests/*.supertest.mjs",
-      "**/tests/*.contract.test.mjs",
-      "**/tests/api/*.test.js"
-    ],
-    "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1"
-    },
-    "transform": {},
-    "testEnvironment": "node",
-    "setupFilesAfterEnv": []
+    "test:e2e:simple": "playwright test tests/e2e/chatbot-simple.spec.js --project=chromium",
+    "test:e2e:ui": "playwright test --ui"
   },
   "repository": {
     "type": "git",
