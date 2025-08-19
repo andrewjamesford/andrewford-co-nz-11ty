@@ -585,8 +585,8 @@ DEV_PID=$!
 sleep 10
 
 # Test function endpoints
-curl -s http://localhost:3000/.netlify/functions/lastplayed | jq '.artist' && echo "✅ lastplayed function working"
-curl -s http://localhost:3000/.netlify/functions/latestUploads | jq 'length' && echo "✅ latestUploads function working"
+curl -s http://localhost:3010/.netlify/functions/lastplayed | jq '.artist' && echo "✅ lastplayed function working"
+curl -s http://localhost:3010/.netlify/functions/latestUploads | jq 'length' && echo "✅ latestUploads function working"
 
 # Cleanup
 kill $DEV_PID

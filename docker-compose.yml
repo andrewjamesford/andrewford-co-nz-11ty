@@ -9,8 +9,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - SITE_URL=http://localhost:3000
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000
+      - SITE_URL=http://localhost:3010
+      - ALLOWED_ORIGINS=http://localhost:3010,http://localhost:3010
     env_file:
       - .env
     volumes:
@@ -42,8 +42,8 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3000
-      - SITE_URL=http://localhost:3000
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3000,http://localhost:8080
+      - SITE_URL=http://localhost:3010
+      - ALLOWED_ORIGINS=http://localhost:3010,http://localhost:3010,http://localhost:8080
     env_file:
       - .env
     volumes:

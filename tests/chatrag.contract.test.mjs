@@ -17,7 +17,7 @@ describe("Chat RAG Function - Contract Tests", () => {
       OPENAI_API_KEY: "test-key",
       OPENROUTER_API_KEY: "test-key",
       SITE_URL: "https://andrewford.co.nz",
-      ALLOWED_ORIGINS: "http://localhost:3000,https://andrewford.co.nz",
+      ALLOWED_ORIGINS: "http://localhost:3010,https://andrewford.co.nz",
     });
   });
 
@@ -30,7 +30,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should return proper error structure for missing question", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({});
 
       expect(response.status).toBe(400);
@@ -42,7 +42,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should return proper error structure for invalid question length", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({ question: "Hi" });
 
       expect(response.status).toBe(400);
@@ -54,7 +54,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should return proper error structure for oversized question", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({ question: "a".repeat(501) });
 
       expect(response.status).toBe(400);
@@ -66,7 +66,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should return proper error structure for non-string question", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({ question: 123 });
 
       expect(response.status).toBe(400);
@@ -78,7 +78,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should return proper error for special characters only", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({ question: "!!!@@@###$$$%%%" });
 
       expect(response.status).toBe(400);
@@ -90,7 +90,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should handle CORS headers correctly", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .send({ question: "What is a valid test question here?" });
 
       // Should have CORS headers regardless of success/failure
@@ -102,7 +102,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     test("should handle streaming request headers", async () => {
       const response = await request(app)
         .post("/")
-        .set("Origin", "http://localhost:3000")
+        .set("Origin", "http://localhost:3010")
         .set("Accept", "text/event-stream")
         .send({ question: "Hi" }); // Invalid to test error case
 
@@ -126,7 +126,7 @@ describe("Chat RAG Function - Contract Tests", () => {
 
         const response = await request(realApp)
           .post("/")
-          .set("Origin", "http://localhost:3000")
+          .set("Origin", "http://localhost:3010")
           .send({ question: "What does Andrew Ford do professionally?" });
 
         if (response.status === 200) {

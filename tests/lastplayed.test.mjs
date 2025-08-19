@@ -11,7 +11,7 @@ const expect = (actual) => ({
     ),
 });
 
-const API_URL = process.env.API_URL || "http://localhost:3000";
+const API_URL = process.env.API_URL || "http://localhost:3010";
 const API_BASE_URL = `${API_URL}/api`; // Express API endpoints
 
 describe("lastplayed API Endpoint", () => {
@@ -61,7 +61,7 @@ describe("lastplayed API Endpoint", () => {
     // Function currently has a bug - it always returns localhost
     // This test validates current behavior until function is fixed
     const isValidCors =
-      corsHeader?.includes("http://localhost:3000") ||
+      corsHeader?.includes("http://localhost:3010") ||
       corsHeader?.includes("https://andrewford.co.nz");
     expect(isValidCors).toBe(true);
   });

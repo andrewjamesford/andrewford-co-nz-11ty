@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: (origin, callback) => {
-    let allowedOrigins = ["http://localhost:3000", "https://andrewford.co.nz"];
+    let allowedOrigins = ["http://localhost:3010", "https://andrewford.co.nz"];
 
     if (process.env.ALLOWED_ORIGINS) {
       try {

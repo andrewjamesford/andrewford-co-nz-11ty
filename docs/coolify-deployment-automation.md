@@ -196,7 +196,7 @@ stages:
   - name: "Health Check"
     commands:
       - sleep 30
-      - curl -f http://localhost:3000/health || exit 1
+      - curl -f http://localhost:3010/health || exit 1
 
   - name: "Post-deploy"
     commands:
@@ -252,7 +252,7 @@ LOG_LEVEL=info
 NODE_ENV=staging
 SITE_URL=https://staging.andrewford.co.nz
 API_URL=https://staging.andrewford.co.nz
-ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3000
+ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3010
 LOG_LEVEL=debug
 ```
 

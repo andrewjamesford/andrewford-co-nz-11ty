@@ -66,7 +66,7 @@ SITE_URL=https://deploy-preview-XX--andrewford.netlify.app
 API_URL=https://deploy-preview-XX--andrewford.netlify.app
 
 # CORS Configuration
-ALLOWED_ORIGINS=https://deploy-preview-XX--andrewford.netlify.app,http://localhost:3000
+ALLOWED_ORIGINS=https://deploy-preview-XX--andrewford.netlify.app,http://localhost:3010
 
 # Logging
 LOG_LEVEL=debug
@@ -184,7 +184,7 @@ Configure these variables in Coolify for the staging deployment:
 NODE_ENV=staging
 SITE_URL=https://staging.andrewford.co.nz
 API_URL=https://staging.andrewford.co.nz
-ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3000
+ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3010
 LOG_LEVEL=debug
 PORT=3000
 
@@ -353,7 +353,7 @@ SITE_URL=https://andrewford.co.nz
 SITE_URL=https://staging.andrewford.co.nz
 
 # Development allows localhost access
-ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3000
+ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3010
 ```
 
 ## Troubleshooting

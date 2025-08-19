@@ -6,7 +6,7 @@ config();
 export default async () => {
   try {
     const baseUrl =
-      process.env.API_URL || process.env.URL || "http://localhost:3000";
+      process.env.API_URL || process.env.URL || "http://localhost:3010";
     console.log("Fetching latest videos from:", baseUrl);
     const url = `${baseUrl}/api/latestUploads`;
     const json = await EleventyFetch(url, {

@@ -51,7 +51,7 @@ Test all required environment variables are configured:
 NODE_ENV=staging
 SITE_URL=https://staging.andrewford.co.nz
 API_URL=https://staging.andrewford.co.nz
-ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3000
+ALLOWED_ORIGINS=https://staging.andrewford.co.nz,http://localhost:3010
 LOG_LEVEL=debug
 
 # API Keys (same as production)

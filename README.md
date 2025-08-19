@@ -76,7 +76,7 @@ A modern, fast personal blog built with [11ty](https://www.11ty.dev/) featuring 
    This starts both the 11ty site and API server:
 
    - **Website**: http://localhost:8080
-   - **API**: http://localhost:3000
+   - **API**: http://localhost:3010
 
 ### Development Commands
 
@@ -111,7 +111,7 @@ Create a `.env` file in the root directory:
 ```env
 # Site Configuration
 SITE_URL=http://localhost:8080
-API_URL=http://localhost:3000
+API_URL=http://localhost:3010
 
 # AI Chatbot (Required for chat functionality)
 OPENAI_API_KEY=your_openai_api_key_here
