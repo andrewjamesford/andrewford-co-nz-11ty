@@ -7,7 +7,10 @@ import {
   afterEach,
 } from "@jest/globals";
 import request from "supertest";
-import { createTestApp, mockEnv } from "./helpers/function-test-helper.mjs";
+import {
+  createTestAppFromRouter,
+  mockEnv,
+} from "./helpers/function-test-helper.mjs";
 
 // Mock fetch
 const mockFetch = jest.fn();
@@ -24,7 +27,9 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { handler } = await import("../functions/latestUploads.mjs");
+const { default: latestUploadsRouter } = await import(
+  "../api/routes/latestUploads.mjs"
+);
 
 describe("YouTube Latest Uploads Function - Supertest", () => {
   let app;
@@ -32,7 +37,7 @@ describe("YouTube Latest Uploads Function - Supertest", () => {
 
   beforeEach(() => {
     // Create test app
-    app = createTestApp(handler);
+    app = createTestAppFromRouter(latestUploadsRouter);
 
     // Mock environment variables
     restoreEnv = mockEnv({

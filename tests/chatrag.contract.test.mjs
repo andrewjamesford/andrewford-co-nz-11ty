@@ -1,15 +1,18 @@
 import { jest, describe, test, expect } from "@jest/globals";
 import request from "supertest";
-import { createTestApp, mockEnv } from "./helpers/function-test-helper.mjs";
+import {
+  createTestAppFromRouter,
+  mockEnv,
+} from "./helpers/function-test-helper.mjs";
 
-const { handler } = await import("../functions/chatrag.js");
+const { default: chatragRouter } = await import("../api/routes/chatrag.mjs");
 
 describe("Chat RAG Function - Contract Tests", () => {
   let app;
   let restoreEnv;
 
   beforeEach(() => {
-    app = createTestApp(handler);
+    app = createTestAppFromRouter(chatragRouter);
     restoreEnv = mockEnv({
       OPENAI_API_KEY: "test-key",
       OPENROUTER_API_KEY: "test-key",
@@ -118,7 +121,7 @@ describe("Chat RAG Function - Contract Tests", () => {
     (hasRealKeys ? test : test.skip)(
       "should handle real API call with valid keys",
       async () => {
-        const realApp = createTestApp(handler);
+        const realApp = createTestAppFromRouter(chatragRouter);
         // Use real environment variables
 
         const response = await request(realApp)

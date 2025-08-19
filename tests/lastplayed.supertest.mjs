@@ -7,7 +7,10 @@ import {
   afterEach,
 } from "@jest/globals";
 import request from "supertest";
-import { createTestApp, mockEnv } from "./helpers/function-test-helper.mjs";
+import {
+  createTestAppFromRouter,
+  mockEnv,
+} from "./helpers/function-test-helper.mjs";
 
 // Mock fetch
 const mockFetch = jest.fn();
@@ -24,7 +27,9 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { handler } = await import("../functions/lastplayed.mjs");
+const { default: lastplayedRouter } = await import(
+  "../api/routes/lastplayed.mjs"
+);
 
 describe("Last.fm API Function - Supertest", () => {
   let app;
@@ -32,7 +37,7 @@ describe("Last.fm API Function - Supertest", () => {
 
   beforeEach(() => {
     // Create test app
-    app = createTestApp(handler);
+    app = createTestAppFromRouter(lastplayedRouter);
 
     // Mock environment variables
     restoreEnv = mockEnv({

@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../api/server");
+const app = require("../../api/server.mjs").default;
 const fs = require("fs");
 
 jest.mock("fs");
