@@ -24,12 +24,67 @@ const corsOptions = {
       try {
         // Try parsing as JSON first (in case it's JSON-encoded)
         const parsed = JSON.parse(process.env.ALLOWED_ORIGINS);
-        allowedOrigins = Array.isArray(parsed) ? parsed : [parsed];
+        if (Array.isArray(parsed)) {
+          // Handle nested array structures and clean up malformed entries
+          allowedOrigins = parsed
+            .flatMap((item) => {
+              if (typeof item === "string") {
+                // Check if this is a malformed nested JSON string
+                if (item.startsWith("[") && item.endsWith("]")) {
+                  try {
+                    const nestedParsed = JSON.parse(item);
+                    return Array.isArray(nestedParsed)
+                      ? nestedParsed
+                      : [nestedParsed];
+                  } catch {
+                    // If nested parsing fails, treat as regular string
+                    return [item];
+                  }
+                }
+                return [item];
+              } else if (Array.isArray(item)) {
+                // Handle nested arrays by flattening them
+                return item.flat();
+              }
+              return [item];
+            })
+            .filter(
+              (origin) => origin && typeof origin === "string" && origin.trim()
+            );
+        } else {
+          allowedOrigins = [parsed];
+        }
+
+        // Ensure we have valid origins after parsing
+        if (allowedOrigins.length === 0) {
+          logger.warn("ALLOWED_ORIGINS parsed to empty array, using defaults", {
+            original: process.env.ALLOWED_ORIGINS,
+            parsed: allowedOrigins,
+          });
+          allowedOrigins = [
+            "http://localhost:3010",
+            "https://andrewford.co.nz",
+          ];
+        }
       } catch {
         // If JSON parsing fails, treat as comma-separated string
-        allowedOrigins = process.env.ALLOWED_ORIGINS.split(",").map((o) =>
-          o.trim()
-        );
+        allowedOrigins = process.env.ALLOWED_ORIGINS.split(",")
+          .map((o) => o.trim())
+          .filter((origin) => origin);
+
+        // Ensure we have valid origins after string parsing
+        if (allowedOrigins.length === 0) {
+          logger.warn(
+            "ALLOWED_ORIGINS string parsing resulted in empty array, using defaults",
+            {
+              original: process.env.ALLOWED_ORIGINS,
+            }
+          );
+          allowedOrigins = [
+            "http://localhost:3010",
+            "https://andrewford.co.nz",
+          ];
+        }
       }
     }
 
