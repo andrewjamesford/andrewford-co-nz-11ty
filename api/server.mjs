@@ -21,63 +21,64 @@ const corsOptions = {
     let allowedOrigins = ["http://localhost:3010", "https://andrewford.co.nz"];
 
     if (process.env.ALLOWED_ORIGINS) {
-      try {
-        // Try parsing as JSON first (in case it's JSON-encoded)
-        const parsed = JSON.parse(process.env.ALLOWED_ORIGINS);
-        if (Array.isArray(parsed)) {
-          // Handle nested array structures and clean up malformed entries
-          allowedOrigins = parsed
-            .flatMap((item) => {
-              if (typeof item === "string") {
-                // Check if this is a malformed nested JSON string
-                if (item.startsWith("[") && item.endsWith("]")) {
-                  try {
-                    const nestedParsed = JSON.parse(item);
-                    return Array.isArray(nestedParsed)
-                      ? nestedParsed
-                      : [nestedParsed];
-                  } catch {
-                    // If nested parsing fails, treat as regular string
-                    return [item];
-                  }
-                }
-                return [item];
-              } else if (Array.isArray(item)) {
-                // Handle nested arrays by flattening them
-                return item.flat();
-              }
-              return [item];
-            })
-            .filter(
-              (origin) => origin && typeof origin === "string" && origin.trim()
-            );
-        } else {
-          allowedOrigins = [parsed];
+      const parseOriginsRecursively = (value, depth = 0) => {
+        // Prevent infinite recursion
+        if (depth > 5) return [];
+
+        if (typeof value !== "string") return [];
+
+        // Clean up the string - remove extra escaping and whitespace
+        let cleaned = value.trim();
+
+        // Handle cases where the string is wrapped in extra quotes or brackets
+        if (cleaned.startsWith('"') && cleaned.endsWith('"')) {
+          cleaned = cleaned.slice(1, -1);
         }
+
+        // Try to parse as JSON
+        try {
+          const parsed = JSON.parse(cleaned);
+          if (Array.isArray(parsed)) {
+            return parsed.flatMap((item) =>
+              parseOriginsRecursively(String(item), depth + 1)
+            );
+          } else if (typeof parsed === "string") {
+            return parseOriginsRecursively(parsed, depth + 1);
+          } else {
+            return [String(parsed)];
+          }
+        } catch {
+          // If not JSON, treat as comma-separated values
+          if (cleaned.includes(",")) {
+            return cleaned
+              .split(",")
+              .map((o) => o.trim())
+              .filter(Boolean);
+          }
+          // Single value
+          return [cleaned].filter(Boolean);
+        }
+      };
+
+      try {
+        allowedOrigins = parseOriginsRecursively(process.env.ALLOWED_ORIGINS);
+
+        // Filter to only valid URLs
+        allowedOrigins = allowedOrigins.filter((origin) => {
+          if (!origin || typeof origin !== "string") return false;
+          const trimmed = origin.trim();
+          return (
+            trimmed.startsWith("http://") || trimmed.startsWith("https://")
+          );
+        });
 
         // Ensure we have valid origins after parsing
         if (allowedOrigins.length === 0) {
-          logger.warn("ALLOWED_ORIGINS parsed to empty array, using defaults", {
-            original: process.env.ALLOWED_ORIGINS,
-            parsed: allowedOrigins,
-          });
-          allowedOrigins = [
-            "http://localhost:3010",
-            "https://andrewford.co.nz",
-          ];
-        }
-      } catch {
-        // If JSON parsing fails, treat as comma-separated string
-        allowedOrigins = process.env.ALLOWED_ORIGINS.split(",")
-          .map((o) => o.trim())
-          .filter((origin) => origin);
-
-        // Ensure we have valid origins after string parsing
-        if (allowedOrigins.length === 0) {
           logger.warn(
-            "ALLOWED_ORIGINS string parsing resulted in empty array, using defaults",
+            "ALLOWED_ORIGINS parsing resulted in no valid URLs, using defaults",
             {
               original: process.env.ALLOWED_ORIGINS,
+              parsed: allowedOrigins,
             }
           );
           allowedOrigins = [
@@ -85,6 +86,12 @@ const corsOptions = {
             "https://andrewford.co.nz",
           ];
         }
+      } catch (error) {
+        logger.error("Error parsing ALLOWED_ORIGINS, using defaults", {
+          original: process.env.ALLOWED_ORIGINS,
+          error: error.message,
+        });
+        allowedOrigins = ["http://localhost:3010", "https://andrewford.co.nz"];
       }
     }
 
