@@ -117,7 +117,6 @@ temp/
 # Generated lighthouse reports
 chromewebdata_*
 localhost_*
-package-lock.json
 
 .env*
 .flaskenv*
@@ -125,3 +124,4 @@ package-lock.json
 !.env.vault
 test-results/
 playwright-report/
+!package-lock.json
