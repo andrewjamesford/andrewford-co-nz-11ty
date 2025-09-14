@@ -785,13 +785,9 @@ picture {
   line-height: 1.3;
 }
 
-.related-post-title a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
+.related-post-title a,
 .related-post-title a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .related-post-description {
