@@ -198,7 +198,7 @@
 				<div>
 					<div class="lastfm-title">
 						Last listening to:
-						<a href="{{ metadata.fullUrl }}/articles/lastfm-widget-api-endpoints/" title="How this widget was made" class="lastfm-icon">
+						<a href="{{ metadata.fullUrl }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
 							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
 								<title>Icon of a Question Mark ?</title>
 								<path fill="none" d="M0 0h24v24H0V0z"></path>
@@ -224,7 +224,7 @@
 		{% include "config.njk" %}
 		{% include "chat.njk" %}
 
-		{# DOMPurify for HTML sanitization in chat #}
+		{# DOMPurify for HTML sanitisation in chat #}
 		<script async src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
 
 		{# Render the JS bundle #}
