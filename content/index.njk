@@ -10,7 +10,7 @@ numberOfLatestVideosToShow: 3
 
 <div class="h-card">
 	<h1 class="center">
-		<a class="p-name u-email" href="mailto:hireme@andrewford.co.nz" rel="me">Andrew Ford</a> wants to teach 
+		<a class="p-name u-email" href="mailto:hireme@andrewford.co.nz" rel="me">Andrew Ford</a> wants to teach
 			<strong>YOU</strong>
 		<a class="u-url" href="https://www.youtube.com/@CodewithAndrewFord">how to code!</a>
 	</h1>
@@ -21,7 +21,7 @@ numberOfLatestVideosToShow: 3
 <section class="latest-articles-videos">
 	{%- if collections.articles.length > 0 -%}
     <article class="latest-articles">
-      <h2>Latest</h2>
+      <h2>Latest Articles</h2>
       <ul class="article-list">
         {%- for post in collections.posts | reverse -%}
           {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
