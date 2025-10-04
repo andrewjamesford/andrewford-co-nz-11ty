@@ -186,7 +186,7 @@ app.get("/health", async (_req, res) => {
   res.status(statusCode).json(healthCheck);
 });
 
-app.get("*", (_req, res) => {
+app.get("/*path", (_req, res) => {
   res.sendFile(path.join(__dirname, "../_site/index.html"));
 });
 

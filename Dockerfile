@@ -17,11 +17,12 @@ COPY . .
 # Copy vector store files
 COPY vector_store/ ./vector_store/
 
-# Start API server in background and build the static site
-RUN nohup node api/server.mjs & \
+# Start API server in background, build the static site, then stop the server
+RUN node api/server.mjs & \
+    SERVER_PID=$! && \
     sleep 5 && \
     npm run build && \
-    pkill -f "node api/server.mjs"
+    kill $SERVER_PID || true
 
 # Stage 2: Production stage
 FROM node:24-alpine AS production
@@ -61,11 +62,11 @@ EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "const http = require('http'); \
+    CMD node -e "const http = require('http'); \
     const options = { host: 'localhost', port: 3000, path: '/health', timeout: 2000 }; \
     const req = http.request(options, (res) => { \
-      if (res.statusCode === 200) process.exit(0); \
-      else process.exit(1); \
+    if (res.statusCode === 200) process.exit(0); \
+    else process.exit(1); \
     }); \
     req.on('error', () => process.exit(1)); \
     req.end();"
