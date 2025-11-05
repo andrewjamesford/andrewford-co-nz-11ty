@@ -29,6 +29,8 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          YOUTUBE_API_KEY: mock-key-for-ci
+          YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
@@ -39,6 +41,8 @@ jobs:
         run: npx playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium
         env:
           CI: true
+          YOUTUBE_API_KEY: mock-key-for-ci
+          YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
       - name: Upload test results
         if: failure()
