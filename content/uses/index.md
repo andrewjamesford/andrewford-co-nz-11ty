@@ -21,5 +21,6 @@ description: "What I use"
 
 ### Mobile Device 📱 🎧
 
-- [iPhone 15](https://www.apple.com/shop/buy-iphone/iphone-15)
+- [iPhone 17](https://www.apple.com/nz/iphone-17/)
 - [CMF by Nothing Buds](https://cmf.tech/pages/buds)
+- [Apple Watch SE 3](https://www.apple.com/nz/apple-watch-se-3/)

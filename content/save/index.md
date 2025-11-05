@@ -24,3 +24,5 @@ Everyone enjoys saving money, if you use one of these codes you will help suppor
 - AI Search engine / Browser - [Perplexity](https://perplexity.ai/pro?referral_code=FLD7056I) is a search engine that uses AI to provide direct answers to your questions, with sources and citations. Access to ChatGPT 5, Grok 4, Claude etc. Comet browser lets you automate the web too. Get $10 off.
 
 - Hosting - [Hostinger](https://hostinger.com?REFERRALCODE=445ANDREWXNA) set up my own VPS with Coolify. So far I have n8n and Code-Server. Great bang for buck and fixed costs are great.
+
+- VPN - [Surfshark](https://surfshark.club/friend/qs6MWGaw) secure your internet connection and protect your privacy online.
