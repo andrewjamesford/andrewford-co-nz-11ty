@@ -27,5 +27,13 @@ module.exports = defineConfig({
     url: "http://localhost:3010",
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
+    env: {
+      // In CI, provide mock credentials to prevent YouTube API timeouts
+      ...(process.env.CI && {
+        YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY || "mock-key-for-ci",
+        YOUTUBE_CHANNEL_ID:
+          process.env.YOUTUBE_CHANNEL_ID || "mock-channel-id-for-ci",
+      }),
+    },
   },
 });
