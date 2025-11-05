@@ -28,11 +28,14 @@ module.exports = defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: {
-      // In CI, provide mock credentials to prevent YouTube API timeouts
+      // Pass through CI flag
+      CI: process.env.CI || "",
+      // In CI, provide mock credentials to prevent API timeouts
       ...(process.env.CI && {
         YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY || "mock-key-for-ci",
         YOUTUBE_CHANNEL_ID:
           process.env.YOUTUBE_CHANNEL_ID || "mock-channel-id-for-ci",
+        LASTFM_API_KEY: process.env.LASTFM_API_KEY || "mock-key-for-ci",
       }),
     },
   },
