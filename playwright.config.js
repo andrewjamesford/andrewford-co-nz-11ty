@@ -23,19 +23,16 @@ module.exports = defineConfig({
   ],
 
   webServer: {
-    command: "npm run dev",
+    // In CI: serve pre-built static files (faster, no rebuild needed)
+    // In local: use dev server with hot reload
+    command: process.env.CI ? "npx http-server _site -p 3010" : "npm run dev",
     url: "http://localhost:3010",
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: {
-      // Pass through CI flag
-      CI: process.env.CI || "",
-      // In CI, provide mock credentials to prevent API timeouts
-      ...(process.env.CI && {
-        YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY || "mock-key-for-ci",
-        YOUTUBE_CHANNEL_ID:
-          process.env.YOUTUBE_CHANNEL_ID || "mock-channel-id-for-ci",
-        LASTFM_API_KEY: process.env.LASTFM_API_KEY || "mock-key-for-ci",
+      // Only needed for local dev server (not for static file serving)
+      ...(!process.env.CI && {
+        CI: process.env.CI || "",
       }),
     },
   },
