@@ -25,11 +25,15 @@ module.exports = defineConfig({
   webServer: {
     // In CI: serve pre-built static files (faster, no rebuild needed)
     // In local: use dev server with hot reload
-    command: process.env.CI ? "npx http-server _site -p 3010" : "npm run dev",
+    command: process.env.CI
+      ? "npx http-server _site -p 3010"
+      : "npm run api:dev",
     url: "http://localhost:3010",
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: {
+      // Set PORT for API server in local dev mode
+      PORT: "3010",
       // Only needed for local dev server (not for static file serving)
       ...(!process.env.CI && {
         CI: process.env.CI || "",

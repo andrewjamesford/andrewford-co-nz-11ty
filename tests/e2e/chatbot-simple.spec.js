@@ -72,6 +72,9 @@ test.describe("Chatbot API Simple Tests", () => {
   const API_BASE = "http://localhost:3010/api";
 
   test("should handle basic API validation", async ({ request }) => {
+    // Skip in CI since static server doesn't handle API routes
+    test.skip(!!process.env.CI, "Skipping API test in CI");
+
     // Test missing question
     const response1 = await request.post(`${API_BASE}/chatrag`, {
       headers: { "Content-Type": "application/json" },
@@ -95,6 +98,12 @@ test.describe("Chatbot API Simple Tests", () => {
   });
 
   test("should respond to valid API request", async ({ request }) => {
+    // Skip in CI or when API credentials are not available
+    test.skip(
+      !!process.env.CI || !process.env.OPENROUTER_API_KEY,
+      "Skipping API integration test (requires OPENROUTER_API_KEY)"
+    );
+
     test.setTimeout(90000); // Extend timeout for this test
 
     // Add delay to reduce concurrent load
