@@ -78,6 +78,9 @@ test.describe("Chatbot API Quick Tests", () => {
   const API_BASE = "http://localhost:3010/api";
 
   test("should validate API input", async ({ request }) => {
+    // Skip in CI since static server doesn't handle API routes
+    test.skip(!!process.env.CI, "Skipping API test in CI");
+
     // Test missing question
     const response = await request.post(`${API_BASE}/chatrag`, {
       headers: { "Content-Type": "application/json" },
@@ -91,6 +94,9 @@ test.describe("Chatbot API Quick Tests", () => {
   });
 
   test("should validate short questions", async ({ request }) => {
+    // Skip in CI since static server doesn't handle API routes
+    test.skip(!!process.env.CI, "Skipping API test in CI");
+
     const response = await request.post(`${API_BASE}/chatrag`, {
       headers: { "Content-Type": "application/json" },
       data: { question: "Hi" },

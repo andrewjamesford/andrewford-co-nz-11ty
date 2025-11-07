@@ -25,13 +25,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(npm list @playwright/test --depth=0 --json | jq -r '.dependencies["@playwright/test"].version')" >> $GITHUB_OUTPUT
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium --with-deps
+
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
       - name: Build site
         run: npm run build
         env:
           NODE_ENV: production
-
-      - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
+          YOUTUBE_API_KEY: mock-key-for-ci
+          YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
       # Run basic site functionality and UI tests only
       # Note: API tests require OpenAI API key and are excluded from CI
@@ -39,6 +57,8 @@ jobs:
         run: npx playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium
         env:
           CI: true
+          YOUTUBE_API_KEY: mock-key-for-ci
+          YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
       - name: Upload test results
         if: failure()
