@@ -40,11 +40,11 @@ cd shop-nextjs-stripe
 npm run dev
 ```
 
-Open your code editor and take a look at the folder structure. You will see 3 folders. The "pages" folder is where the routing happens. That will direct the url page in your app. For example if you had a file called `contact-us.js` to be routed to it you would have the following url your browser `http://localhost:3010/contact-us`. This will show the content from that component.
+Open your code editor and take a look at the folder structure. You will see 3 folders. The "pages" folder is where the routing happens. That will direct the url page in your app. For example if you had a file called `contact-us.js` to be routed to it you would have the following url your browser `http://localhost:3080/contact-us`. This will show the content from that component.
 
 Your **pages** folder will have a **api** folder and two files `_app.js` and `index.js`.
 
-Open the project in a [browser](http://localhost:3010) and you should see something like this
+Open the project in a [browser](http://localhost:3080) and you should see something like this
 
 {% image "./nextjs-start.png", "Next.JS Starter" %}
 

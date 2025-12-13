@@ -102,7 +102,13 @@ router.post("/", async (req, res) => {
     }
 
     const embeddings = new OpenAIEmbeddings({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: process.env.OPENROUTER_API_KEY,
+      model:
+        process.env.OPENROUTER_EMBEDDING_MODEL ||
+        "openai/text-embedding-3-small",
+      configuration: {
+        baseURL: "https://openrouter.ai/api/v1",
+      },
     });
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
 

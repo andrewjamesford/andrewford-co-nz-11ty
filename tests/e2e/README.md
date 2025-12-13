@@ -124,7 +124,7 @@ The tests verify:
 
 The tests are configured in `playwright.config.js` with:
 
-- Base URL: `http://localhost:3010`
+- Base URL: `http://localhost:3080`
 - Test timeout: Default Playwright settings
 - Browsers: Chromium, Firefox, WebKit
 - Automatic server startup via `npm run dev`
@@ -136,7 +136,7 @@ The tests are configured in `playwright.config.js` with:
 1. **Tests fail with "Server not found"**
 
    - Ensure `npm run dev` is running
-   - Check that the server is accessible at `http://localhost:3010`
+   - Check that the server is accessible at `http://localhost:3080`
 
 2. **Chatbot API tests fail**
 

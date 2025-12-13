@@ -62,7 +62,7 @@ npm run test:integration
 
 **Note**: These tests require:
 
-- Running API server on `http://localhost:3010`
+- Running API server on `http://localhost:3080`
 - Valid API keys in environment variables
 - Live external API availability
 

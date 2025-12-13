@@ -58,11 +58,11 @@ API_PID=$!
 sleep 5
 
 # Test API availability
-curl -s http://localhost:3010/health | jq '.status'
+curl -s http://localhost:3080/health | jq '.status'
 # Expected: "healthy"
 
 # Run 11ty build with local API
-API_URL=http://localhost:3010 npm run build
+API_URL=http://localhost:3080 npm run build
 
 # Check build output
 ls -la _site/
@@ -83,7 +83,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Set environment for testing
-process.env.API_URL = 'http://localhost:3010';
+process.env.API_URL = 'http://localhost:3080';
 
 // Import data files
 const latestMusic = (await import('./_data/latestMusic.mjs')).default;
@@ -146,7 +146,7 @@ import EleventyFetch from "@11ty/eleventy-fetch";
 async function testCaching() {
   console.log('Testing EleventyFetch caching behavior...');
 
-  const baseUrl = 'http://localhost:3010';
+  const baseUrl = 'http://localhost:3080';
 
   // First request - should be cached
   console.log('\n1. First request (should cache):');
@@ -420,7 +420,7 @@ docker rm andrewford-blog-test 2>/dev/null || true
 docker run -d --name andrewford-blog-test \
   -p 3001:3000 \
   -e NODE_ENV=production \
-  -e API_URL=http://localhost:3010 \
+  -e API_URL=http://localhost:3080 \
   -e SITE_URL=http://localhost:3001 \
   -e ALLOWED_ORIGINS=http://localhost:3001 \
   andrewford-blog-test
@@ -977,7 +977,7 @@ npm run api:dev &
 API_PID=$!
 sleep 5
 
-curl -s http://localhost:3010/health > /dev/null
+curl -s http://localhost:3080/health > /dev/null
 check_success "API server started"
 
 # 2. Data file testing
@@ -986,7 +986,7 @@ echo "2. Data Files Testing"
 echo "--------------------"
 
 # Test music data fetch
-music_test=$(API_URL=http://localhost:3010 node -e "
+music_test=$(API_URL=http://localhost:3080 node -e "
 const latestMusic = require('./_data/latestMusic.mjs').default;
 latestMusic().then(data => {
   console.log(data.music.artist ? 'SUCCESS' : 'FAIL');
@@ -1000,7 +1000,7 @@ else
 fi
 
 # Test video data fetch
-video_test=$(API_URL=http://localhost:3010 node -e "
+video_test=$(API_URL=http://localhost:3080 node -e "
 const latestVideos = require('./_data/latestVideos.mjs').default;
 latestVideos().then(data => {
   console.log(data.videos.length > 0 ? 'SUCCESS' : 'FAIL');
@@ -1023,7 +1023,7 @@ rm -rf _site
 rm -rf /tmp/.cache
 
 # Run build with API integration
-API_URL=http://localhost:3010 npm run build > build.log 2>&1
+API_URL=http://localhost:3080 npm run build > build.log 2>&1
 check_success "11ty build completed"
 
 # Check build output

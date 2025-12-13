@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 test.describe("Chatbot API Functionality", () => {
-  const API_BASE = "http://localhost:3010/api";
+  const API_BASE = "http://localhost:3080/api";
 
   test("should respond to basic chatrag API request", async ({ request }) => {
     const response = await request.post(`${API_BASE}/chatrag`, {
@@ -214,7 +214,7 @@ test.describe("Chatbot API Functionality", () => {
     const response = await request.post(`${API_BASE}/chatrag`, {
       headers: {
         "Content-Type": "application/json",
-        Origin: "http://localhost:3010",
+        Origin: "http://localhost:3080",
       },
       data: {
         question: "What does Andrew Ford do professionally?",

@@ -75,7 +75,7 @@ test.describe("Chatbot Quick Tests", () => {
 });
 
 test.describe("Chatbot API Quick Tests", () => {
-  const API_BASE = "http://localhost:3010/api";
+  const API_BASE = "http://localhost:3080/api";
 
   test("should validate API input", async ({ request }) => {
     // Skip in CI since static server doesn't handle API routes

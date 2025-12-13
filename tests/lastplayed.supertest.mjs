@@ -42,7 +42,7 @@ describe("Last.fm API Function - Supertest", () => {
     // Mock environment variables
     restoreEnv = mockEnv({
       LASTFM_API_KEY: "test-api-key",
-      ALLOWED_ORIGINS: "http://localhost:3010,https://andrewford.co.nz",
+      ALLOWED_ORIGINS: "http://localhost:3080,https://andrewford.co.nz",
     });
 
     // Clear mocks
@@ -83,7 +83,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(200)
         .expect("Content-Type", /json/);
 
@@ -102,7 +102,7 @@ describe("Last.fm API Function - Supertest", () => {
       );
 
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "http://localhost:3010"
+        "http://localhost:3080"
       );
     });
 
@@ -112,7 +112,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(500)
         .expect("Content-Type", /json/);
 
@@ -132,7 +132,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(500)
         .expect("Content-Type", /json/);
 
@@ -146,7 +146,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(500)
         .expect("Content-Type", /json/);
 
@@ -164,7 +164,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(500)
         .expect("Content-Type", /json/);
 
@@ -186,7 +186,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(500)
         .expect("Content-Type", /json/);
 
@@ -214,7 +214,7 @@ describe("Last.fm API Function - Supertest", () => {
 
       const response = await request(app)
         .get("/")
-        .set("Origin", "http://localhost:3010")
+        .set("Origin", "http://localhost:3080")
         .expect(200)
         .expect("Content-Type", /json/);
 
@@ -277,7 +277,7 @@ describe("Last.fm API Function - Supertest", () => {
         .expect(200);
 
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "http://localhost:3010"
+        "http://localhost:3080"
       );
     });
   });

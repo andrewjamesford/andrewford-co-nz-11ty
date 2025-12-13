@@ -141,7 +141,30 @@
 
 		<footer class="wrapper">
 
-			<ul class="nav-links nav-links-footer">
+			
+
+			<div id="lastFM" class="lastfm-widget">
+				<img id="lastFMImg" src="" alt="Album art" class="lastfm-img" style="display: none;" loading="lazy">
+				<img src="{{ metadata.fullUrl }}/images/vinyl.webp" alt="LastFM placeholder image" class="lastfm-placeholder" id="lastFMPlaceholder" loading="lazy">
+				<div>
+					<div class="lastfm-title">
+						Last listening to:
+						<a href="{{ metadata.fullUrl }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
+								<title>Icon of a Question Mark ?</title>
+								<path fill="none" d="M0 0h24v24H0V0z"></path>
+								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.5.51-.86.97-1.04 1.69-.08.32-.13.68-.13 1.14h-2v-.5c0-.46.08-.9.22-1.31.2-.58.53-1.1.95-1.52l1.24-1.26c.46-.44.68-1.1.55-1.8-.13-.72-.69-1.33-1.39-1.53-1.11-.31-2.14.32-2.47 1.27-.12.37-.43.65-.82.65h-.3C8.4 9 8 8.44 8.16 7.88c.43-1.47 1.68-2.59 3.23-2.83 1.52-.24 2.97.55 3.87 1.8 1.18 1.63.83 3.38-.19 4.4z"></path>
+							</svg>
+						</a>
+					</div>
+					<div class="lastfm-link">
+						<a id="lastFMLink" href="https://www.last.fm">Loading...</a>
+					</div>
+					<div id="lastFMAlbum" class="lastfm-album">Loading...</div>
+				</div>
+			</div>
+
+<ul class="nav-links nav-links-footer">
 				<li>
 					<a href="{{ metadata.fullUrl }}/about/">About</a>
 				</li>
@@ -189,26 +212,6 @@
 				</li>
 			</ul>
 
-			<div id="lastFM" class="lastfm-widget">
-				<img id="lastFMImg" src="" alt="Album art" class="lastfm-img" style="display: none;" loading="lazy">
-				<img src="{{ metadata.fullUrl }}/images/vinyl.webp" alt="LastFM placeholder image" class="lastfm-placeholder" id="lastFMPlaceholder" loading="lazy">
-				<div>
-					<div class="lastfm-title">
-						Last listening to:
-						<a href="{{ metadata.fullUrl }}/articles/lastfm-widget-netlify-functions/" title="How this widget was made" class="lastfm-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" id="help">
-								<title>Icon of a Question Mark ?</title>
-								<path fill="none" d="M0 0h24v24H0V0z"></path>
-								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.5.51-.86.97-1.04 1.69-.08.32-.13.68-.13 1.14h-2v-.5c0-.46.08-.9.22-1.31.2-.58.53-1.1.95-1.52l1.24-1.26c.46-.44.68-1.1.55-1.8-.13-.72-.69-1.33-1.39-1.53-1.11-.31-2.14.32-2.47 1.27-.12.37-.43.65-.82.65h-.3C8.4 9 8 8.44 8.16 7.88c.43-1.47 1.68-2.59 3.23-2.83 1.52-.24 2.97.55 3.87 1.8 1.18 1.63.83 3.38-.19 4.4z"></path>
-							</svg>
-						</a>
-					</div>
-					<div class="lastfm-link">
-						<a id="lastFMLink" href="https://www.last.fm">Loading...</a>
-					</div>
-					<div id="lastFMAlbum" class="lastfm-album">Loading...</div>
-				</div>
-			</div>
 			<div class="website-built">
 				Website made with <a href="https://www.11ty.dev/">11ty v3</a> and deployed with <a href="https://coolify.io/">Coolify</a> on self-hosted VPS on <a href="https://hostinger.com?REFERRALCODE=445ANDREWXNA">Hostinger</a>.
 				Source available on <a href="https://github.com/andrewjamesford/andrewford-co-nz-11ty">GitHub</a>.
