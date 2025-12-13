@@ -21,7 +21,7 @@ process.env.UPSTASH_REDIS_REST_TOKEN =
 process.env.SITE_URL = process.env.SITE_URL || "https://andrewford.co.nz";
 process.env.ALLOWED_ORIGINS =
   process.env.ALLOWED_ORIGINS ||
-  "https://andrewford.co.nz,http://localhost:3010";
+  "https://andrewford.co.nz,http://localhost:3080";
 
 describe("chatrag API Endpoint", () => {
   it("should return 400 for missing question", async () => {

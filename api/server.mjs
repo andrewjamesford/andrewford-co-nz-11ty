@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: (origin, callback) => {
-    let allowedOrigins = ["http://localhost:3010", "https://andrewford.co.nz"];
+    let allowedOrigins = ["http://localhost:3080", "https://andrewford.co.nz"];
 
     if (process.env.ALLOWED_ORIGINS) {
       const parseOriginsRecursively = (value, depth = 0) => {
@@ -82,7 +82,7 @@ const corsOptions = {
             }
           );
           allowedOrigins = [
-            "http://localhost:3010",
+            "http://localhost:3080",
             "https://andrewford.co.nz",
           ];
         }
@@ -91,7 +91,7 @@ const corsOptions = {
           original: process.env.ALLOWED_ORIGINS,
           error: error.message,
         });
-        allowedOrigins = ["http://localhost:3010", "https://andrewford.co.nz"];
+        allowedOrigins = ["http://localhost:3080", "https://andrewford.co.nz"];
       }
     }
 

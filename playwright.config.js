@@ -9,7 +9,7 @@ module.exports = defineConfig({
   reporter: "html",
   timeout: 60000, // Increase test timeout to 60 seconds for AI responses
   use: {
-    baseURL: "http://localhost:3010",
+    baseURL: "http://localhost:3080",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
     actionTimeout: 10000, // 10 seconds for actions
@@ -26,14 +26,14 @@ module.exports = defineConfig({
     // In CI: serve pre-built static files (faster, no rebuild needed)
     // In local: use dev server with hot reload
     command: process.env.CI
-      ? "npx http-server _site -p 3010"
+      ? "npx http-server _site -p 3080"
       : "npm run api:dev",
-    url: "http://localhost:3010",
+    url: "http://localhost:3080",
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: {
       // Set PORT for API server in local dev mode
-      PORT: "3010",
+      PORT: "3080",
       // Only needed for local dev server (not for static file serving)
       ...(!process.env.CI && {
         CI: process.env.CI || "",

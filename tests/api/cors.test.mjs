@@ -52,7 +52,7 @@ describe("CORS Configuration Tests", () => {
 
   it("should handle JSON array format in ALLOWED_ORIGINS", async () => {
     process.env.ALLOWED_ORIGINS =
-      '["https://andrewford.co.nz", "http://localhost:3010"]';
+      '["https://andrewford.co.nz", "http://localhost:3080"]';
 
     const response = await request(app)
       .options("/api/chatrag")
@@ -69,7 +69,7 @@ describe("CORS Configuration Tests", () => {
 
   it("should handle comma-separated string format in ALLOWED_ORIGINS", async () => {
     process.env.ALLOWED_ORIGINS =
-      "https://andrewford.co.nz,http://localhost:3010";
+      "https://andrewford.co.nz,http://localhost:3080";
 
     const response = await request(app)
       .options("/api/chatrag")

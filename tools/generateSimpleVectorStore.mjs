@@ -36,9 +36,17 @@ async function generateSimpleVectorStore() {
 
   console.log(`Split into ${splitDocs.length} chunks.`);
 
-  // Initialize embeddings
+  // Initialize embeddings using OpenRouter
+  const embeddingModel =
+    process.env.OPENROUTER_EMBEDDING_MODEL || "openai/text-embedding-3-small";
+  console.log(`Using embedding model: ${embeddingModel}`);
+
   const embeddings = new OpenAIEmbeddings({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENROUTER_API_KEY,
+    model: embeddingModel,
+    configuration: {
+      baseURL: "https://openrouter.ai/api/v1",
+    },
   });
 
   // Generate embeddings for all documents
@@ -87,7 +95,7 @@ async function generateSimpleVectorStore() {
     JSON.stringify(
       {
         documents: processedDocs,
-        embeddings_model: "text-embedding-ada-002",
+        embeddings_model: embeddingModel,
         created_at: new Date().toISOString(),
         total_documents: processedDocs.length,
       },

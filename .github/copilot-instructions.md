@@ -32,7 +32,7 @@ npm run start
 
 # Start API server (port 3000) - run in separate terminal
 npm run api:dev
-# API endpoints available at http://localhost:3010/api/*
+# API endpoints available at http://localhost:3080/api/*
 
 # Combined development (both servers)
 npm run dev:api
@@ -113,8 +113,8 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/articles/automate-g
 # Start API server
 npm run api:dev
 # Test API endpoints (expect 500 without API keys)
-curl -s -o /dev/null -w "%{http_code}" http://localhost:3010/api/lastplayed
-curl -s -o /dev/null -w "%{http_code}" http://localhost:3010/api/latestUploads
+curl -s -o /dev/null -w "%{http_code}" http://localhost:3080/api/lastplayed
+curl -s -o /dev/null -w "%{http_code}" http://localhost:3080/api/latestUploads
 # Expected: 500 (no API keys) or 200 (with valid API keys)
 ```
 
