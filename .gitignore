@@ -125,3 +125,6 @@ localhost_*
 test-results/
 playwright-report/
 !package-lock.json
+
+# YouTube thumbnail cache (downloaded during build)
+public/images/youtube-cache/

@@ -67,7 +67,7 @@ numberOfLatestVideosToShow: 3
 						<li class="article-list-item">
 
 							{# https://developers.google.com/youtube/v3/docs/search #}
-							{% externalImage video.snippet.thumbnails.medium.url, "Thumb for " + video.snippet.title, [320, 640], "video-thumb" %}
+							{% youtubeThumb video.localThumbnailPath, "Thumb for " + video.snippet.title, video.id.videoId, "video-thumb" %}
 
 							<h4 class="article-title">
 								<a href={{ "https://www.youtube.com/watch?v=" + video.id.videoId }}>
