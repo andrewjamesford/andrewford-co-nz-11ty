@@ -27,7 +27,7 @@ Hours to build an app from scratch barely knowing any Swift that can upload an i
 
 > In this article I use **Agent** which could be Claude Code, Codex, OpenCode, or GitHub Copilot. Pick your poison.
 
-### The How
+## The How
 
 What I find that works for me is to create a PRD that's a Product Requirements Document. This need not be made entirely by me. Instead, I work with the Agent iterating on a clear and concise document that covers the MVP (Minimal Viable Product) that will meet what I want to achieve. I write this up in markdown and get it to a point where I'm ready to give it to the Agent. This can take hours to write up but I find it's worth it to get it clear what I want and how I want it built.
 
@@ -43,7 +43,7 @@ In the case of my app Health Scan Express I split the project across 3 git repos
 
 This will get you to a reasonably good working prototype of the app you outlined in your PRD. Next, you'll want to build out the application. To do this and keep a good level of quality within your codebase it's time to start adding some guard rails to ensure the codebase doesn't become a mess of spaghetti and flaky.
 
-### Guard Rails
+## Guard Rails
 
 Like all good coding practices they map very well to **AI Engineering**, putting in place tests and code quality tools all help to keep everything in check including the AI itself.
 
@@ -55,21 +55,21 @@ For end to end testing (e2e) you can add [Playwright](https://playwright.dev/) f
 
 Having all these tests in place is no good if you don't make them validate before releasing to production. Agents are very good at boilerplate for project setup and that includes putting in place [GitHub Actions](https://github.com/features/actions). That way each pull request I create gets thoroughly tested before merging. This is everything from running unit tests, ensuring the container builds are successful and running subsets of e2e tests.
 
-### Debugging and QA
+## Debugging and QA
 
 Using Agents to develop flips the development practice. Rather than writing code, most of my time is now spent on validating that the code made by the Agent is correct and works as intended. While testing, when I find issues I either take a screenshot of the issue, usually with the browser console open and paste that into the Agents input. Or describe the issue in text (sometimes using dictation) of what is wrong, maybe pasting in an error from the browser console. If it's a UI issue I annotate the screenshot with red arrows and comments, which works remarkably well.
 
 Another option is to enable a browser MCP server (like Claude Chrome MCP server), that can navigate your website in a browser. I create a `.env.test` file with user accounts for local testing of the development environment for web projects and tell the Agent that these are available. This is great for getting the Agent to investigate issues when debugging a complicated flow letting it sign in to the project and navigate around the app taking screenshots and filling forms.
 
-### Code Review
+## Code Review
 
 I still prefer to work adding new features using Pull Requests to perform code review, old habits die hard. But again just like I don't write all the code I get Agents to review code too. GitHub Copilot can be configured on GitHub to perform code review on PR creation/update and there are many other tools like (Greptile and Code Rabbit) that do the same. Again adding another level of code validation. Claude Code also offers this as a GitHub action and by leaving a comment for `@claude` to review as well. The review doesn't have to happen so late in the process. You can always get Agents to review code beforehand. There can be value getting other Agents or fresh Agent sessions to have a second set of eyes too. Surprisingly repeatedly asking the Agent to check their work multiple times works amazingly well.
 
-### Documentation
+## Documentation
 
 While I didn't write the code you will still need to be able to understand at least what's happening to ensure the code is working as advertised. A good way to get a good understanding without having to read each line is to get the Agent to write documentation of how the project is architected. It's helpful to open a new session or even use another AI tool Agent to have a fresh set of eyes. I usually create a `/docs` folder of markdown files and ask the agent to write documentation of how the code is working. To get an easy overview I also get the Agent to create [mermaid diagrams](https://mermaid.js.org/) (markdown inspired text diagram definitions) of the logic flow where needed.
 
-### What did I build
+## What did I build
 
 With the process to building the app out of the way you're probably asking what did I build? I built an iOS app called [Health Scan Express](https://apps.apple.com/us/app/health-scan-express/id6755371692) that turns your digital scales or blood pressure monitor into smart versions that can save the reading to Apple Health. The interface is familiar it's similar to a camera or scanner. You hit the capture button the app captures an image and the AI model returns a result ready to save into Apple Health. While I spent little time getting it built. More time was spent fine tuning the process and making it fast. Adding the payment process, writing testing scripts to compare models and manipulate the images (this made a huge impact on speed). Most of my time building the project was spent in the finishing phases testing and preparing the app for submission for Apple.
 
