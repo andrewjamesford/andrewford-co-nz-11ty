@@ -101,6 +101,74 @@ export default (eleventyConfig) => {
     }
   );
 
+  // YouTube thumbnail shortcode with stable filenames
+  eleventyConfig.addAsyncShortcode(
+    "youtubeThumb",
+    async function youtubeThumbShortcode(localPath, alt, videoId, cssClass) {
+      const placeholderPath = "./public/images/video-placeholder.svg";
+
+      // Handle missing or placeholder paths
+      if (!localPath || localPath.includes("video-placeholder")) {
+        let metadata = await eleventyImage(placeholderPath, {
+          widths: [320, 640],
+          formats: ["svg"],
+          outputDir: path.join(eleventyConfig.dir.output, "img"),
+        });
+
+        let imageAttributes = {
+          alt: alt || "Video thumbnail",
+          sizes: "(min-width: 640px) 640px, 320px",
+          loading: "lazy",
+          decoding: "async",
+          class: cssClass,
+        };
+        return eleventyImage.generateHTML(metadata, imageAttributes);
+      }
+
+      try {
+        // Convert URL path to file path
+        const filePath = `./public${localPath}`;
+
+        let metadata = await eleventyImage(filePath, {
+          widths: [320, 640],
+          formats: ["avif", "webp", "jpeg"],
+          outputDir: path.join(eleventyConfig.dir.output, "img"),
+          filenameFormat: function (id, src, width, format) {
+            return `yt-${videoId}-${width}.${format}`;
+          },
+        });
+
+        let imageAttributes = {
+          alt,
+          sizes: "(min-width: 640px) 640px, 320px",
+          loading: "lazy",
+          decoding: "async",
+          class: cssClass,
+        };
+        return eleventyImage.generateHTML(metadata, imageAttributes);
+      } catch (error) {
+        console.error(
+          `Error processing YouTube thumbnail for ${videoId}: ${error.message}`
+        );
+        // Fallback to placeholder
+        let metadata = await eleventyImage(placeholderPath, {
+          widths: [320, 640],
+          formats: ["svg"],
+          outputDir: path.join(eleventyConfig.dir.output, "img"),
+        });
+
+        let imageAttributes = {
+          alt: alt || "Video thumbnail",
+          sizes: "(min-width: 640px) 640px, 320px",
+          loading: "lazy",
+          decoding: "async",
+          class: cssClass,
+        };
+        return eleventyImage.generateHTML(metadata, imageAttributes);
+      }
+    }
+  );
+
   // Advanced responsive picture shortcode
   eleventyConfig.addAsyncShortcode(
     "responsivePicture",

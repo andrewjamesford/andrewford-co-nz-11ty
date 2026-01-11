@@ -1,7 +1,45 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { config } from "dotenv";
+import fs from "fs/promises";
+import path from "path";
 
 config();
+
+const CACHE_DIR = "./public/images/youtube-cache";
+const PLACEHOLDER_PATH = "/images/video-placeholder.svg";
+
+async function ensureCacheDir() {
+  try {
+    await fs.mkdir(CACHE_DIR, { recursive: true });
+  } catch (error) {
+    // Directory may already exist
+  }
+}
+
+async function cacheThumbnail(videoId, thumbnailUrl) {
+  if (!thumbnailUrl) {
+    return PLACEHOLDER_PATH;
+  }
+
+  const outputPath = path.join(CACHE_DIR, `${videoId}.jpg`);
+
+  try {
+    const buffer = await EleventyFetch(thumbnailUrl, {
+      duration: "1d",
+      type: "buffer",
+      directory: "/tmp/.cache/yt-thumbs/",
+      fetchOptions: {
+        timeout: 10000,
+      },
+    });
+
+    await fs.writeFile(outputPath, buffer);
+    return `/images/youtube-cache/${videoId}.jpg`;
+  } catch (error) {
+    console.error(`Failed to cache thumbnail for ${videoId}: ${error.message}`);
+    return PLACEHOLDER_PATH;
+  }
+}
 
 export default async () => {
   try {
@@ -38,8 +76,25 @@ export default async () => {
       return { videos: [] };
     }
 
+    // Ensure cache directory exists
+    await ensureCacheDir();
+
+    // Download and cache thumbnails, adding local paths to video objects
+    const videosWithCachedThumbs = await Promise.all(
+      data.items.map(async (video) => {
+        const videoId = video.id.videoId;
+        const thumbnailUrl = video.snippet?.thumbnails?.medium?.url;
+        const localThumbnailPath = await cacheThumbnail(videoId, thumbnailUrl);
+
+        return {
+          ...video,
+          localThumbnailPath,
+        };
+      })
+    );
+
     return {
-      videos: data.items,
+      videos: videosWithCachedThumbs,
     };
   } catch (e) {
     console.error("Error in latestVideos.mjs: " + e);
