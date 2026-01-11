@@ -2,7 +2,7 @@
 title: From zero Swift to the App Store
 date: "2026-01-11T13:48:32Z"
 template: post
-draft: true
+draft: false
 slug: "zero-swift-to-app-store"
 category: article
 tags:
