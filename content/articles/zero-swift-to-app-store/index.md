@@ -76,3 +76,12 @@ With the process to building the app out of the way you're probably asking what 
 {% figure "./appstore-page.png", "The app marketing images" %}
 
 Like I said in the beginning if you have agency and are prepared to learn I believe any developer, designer and product manager can build their own app and get it on the App Store.
+
+<div class="promotion" style="background: transparent; border: none;">
+  <img src="/images/health-scan-express-logo.svg" alt="Health Scan Express logo" width="80" height="80" style="margin-top: 1rem;">
+  <div class="promotion-title">Health Scan Express</div>
+  <p class="promotion-body">Turn your scales and blood pressure monitor into smart devices that sync with Apple Health.</p>
+  <a href="https://apps.apple.com/us/app/health-scan-express/id6755371692" class="no-hover" style="display: inline-block; margin: 1rem;">
+    <img src="/images/Download_on_the_App_Store_Badge_US-UK.svg" alt="Download on the App Store" width="120" height="40">
+  </a>
+</div>
