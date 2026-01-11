@@ -281,8 +281,7 @@ picture {
   text-decoration: none;
   color: inherit;
   background-color: var(--box-bg-color);
-    border-radius: 0.5rem;
-
+  border-radius: 0.5rem;
 }
 
 .app-card:hover .app-name {
