@@ -259,6 +259,12 @@ router.post("/", async (req, res) => {
   } catch (error) {
     console.error("Error processing chatrag request:", error);
 
+    // If headers already sent (streaming started), end the response
+    if (res.headersSent) {
+      res.end();
+      return;
+    }
+
     if (error.response?.status === 401) {
       return res.status(500).json({
         error: "Authentication error. Please check API configuration.",
