@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createRedirectMiddleware } from "./middleware/redirects.mjs";
 import chatragRouter from "./routes/chatrag.mjs";
 import lastplayedRouter from "./routes/lastplayed.mjs";
 import latestUploadsRouter from "./routes/latestUploads.mjs";
@@ -126,6 +127,9 @@ app.use((req, _res, next) => {
   });
   next();
 });
+
+// Handle redirects from _redirects file before static files
+app.use(createRedirectMiddleware());
 
 app.use(express.static(path.join(__dirname, "../_site")));
 
