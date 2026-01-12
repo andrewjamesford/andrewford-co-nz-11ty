@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import logger from "../utils/logger.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,6 +11,11 @@ const __dirname = path.dirname(__filename);
  */
 function parseRedirectsFile(filePath) {
   const rules = [];
+
+  if (!fs.existsSync(filePath)) {
+    logger.warn("Redirects file not found", { path: filePath });
+    return rules;
+  }
 
   try {
     const content = fs.readFileSync(filePath, "utf-8");
@@ -44,7 +50,10 @@ function parseRedirectsFile(filePath) {
       }
     }
   } catch (error) {
-    console.error("Error parsing _redirects file:", error.message);
+    logger.error("Error parsing _redirects file", {
+      path: filePath,
+      error: error.message,
+    });
   }
 
   return rules;
@@ -57,7 +66,7 @@ export function createRedirectMiddleware() {
   const redirectsPath = path.join(__dirname, "../../_site/_redirects");
   const rules = parseRedirectsFile(redirectsPath);
 
-  console.log(`Loaded ${rules.length} redirect rules`);
+  logger.info("Redirect middleware initialized", { rulesCount: rules.length });
 
   return (req, res, next) => {
     const requestPath = req.path;
@@ -81,13 +90,20 @@ export function createRedirectMiddleware() {
       }
 
       if (matches) {
-        // Handle external redirects
-        if (rule.to.startsWith("http://") || rule.to.startsWith("https://")) {
-          return res.redirect(rule.status, rule.to);
+        // Build redirect URL, preserving query parameters
+        let redirectUrl = rule.to;
+        const queryString = req.originalUrl.split("?")[1];
+        if (queryString) {
+          redirectUrl += `?${queryString}`;
         }
 
-        // Internal redirect
-        return res.redirect(rule.status, rule.to);
+        logger.info("Redirect matched", {
+          from: requestPath,
+          to: redirectUrl,
+          status: rule.status,
+        });
+
+        return res.redirect(rule.status, redirectUrl);
       }
     }
 
