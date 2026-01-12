@@ -11,3 +11,19 @@
 /2021/02/07/new-year-new-blog-generator /2021/02/07/new-year-new-blog-11ty
 /.well-known/webfinger https://mastodon.nz/.well-known/webfinger?resource=acct:andrewford@mastodon.nz
 /@andrew https://mastodon.nz/@andrewford
+
+# Old URL structure redirects (no date prefix -> date prefix)
+/the-year-without-pants-wordpress-com-and-the-future-of-work-by-scott-berkun-review/* /2015/01/14/the-year-without-pants-wordpress-com-and-the-future-of-work-by-scott-berkun-review/ 301
+/create-rapid-prototype-marvel/* /2014/04/20/create-rapid-prototype-marvel/ 301
+/easy-iphone-screenshot-with-os-x-yosemite/* /2014/10/22/easy-iphone-screenshot-with-os-x-yosemite/ 301
+/manage-your-server-from-your-iphone/* /2014/10/24/manage-your-server-from-your-iphone/ 301
+/react-js-conf-2016-highlights-day-2/* /2016/02/24/react-js-conf-2016-highlights-day-2/ 301
+/self-quantifying/* /2014/08/17/self-quantifying/ 301
+/rapid-prototyping-tools-fr/* /2013/03/21/rapid-prototyping-tools-fr/ 301
+/remote-office-required-best-bits/* /2014/03/16/remote-office-required-best-bits/ 301
+/responsive-theme/* /2013/02/10/responsive-theme/ 301
+
+# Broken/truncated URLs
+/react-js- / 301
+/error / 301
+/cdn-cgi/* / 301
