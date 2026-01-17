@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+import { test, expect } from "@playwright/test";
 
 test.describe("Chatbot API Functionality", () => {
   const API_BASE = "http://localhost:3080/api";
