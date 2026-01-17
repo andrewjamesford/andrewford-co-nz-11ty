@@ -8,7 +8,7 @@ export default {
   url: process.env.URL,
   language: "en",
   description:
-    "Andrew Ford is the host of Code with Andrew Ford, a YouTube channel dedicated to teaching you how to code, a full-stack web developer, mentor and an educator.",
+    "Andrew Ford is a software engineer, mentor and educator from Tauranga, New Zealand.",
   author: {
     name: "Andrew Ford",
     email: "me@andrewford.co.nz",

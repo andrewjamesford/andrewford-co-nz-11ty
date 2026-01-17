@@ -25,13 +25,35 @@ export default (eleventyConfig) => {
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
-      // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
         sizes:
           "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
+      };
+      return eleventyImage.generateHTML(metadata, imageAttributes);
+    }
+  );
+
+  // Eager image shortcode for above-the-fold/hero images (LCP optimization)
+  eleventyConfig.addAsyncShortcode(
+    "heroImage",
+    async function heroImageShortcode(src, alt, widths = [320, 720, 1024]) {
+      let file = relativeToInputPath(this.page.inputPath, src);
+      let metadata = await eleventyImage(file, {
+        widths: widths || [320, 720, 1024],
+        formats,
+        outputDir: path.join(eleventyConfig.dir.output, "img"),
+      });
+
+      let imageAttributes = {
+        alt,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
+        loading: "eager",
+        decoding: "async",
+        fetchpriority: "high",
       };
       return eleventyImage.generateHTML(metadata, imageAttributes);
     }
@@ -61,13 +83,47 @@ export default (eleventyConfig) => {
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
-      // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
         sizes:
           "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
+        class: cssClass,
+        id: id,
+      };
+      return eleventyImage.generateHTML(metadata, imageAttributes);
+    }
+  );
+
+  // External hero image shortcode for above-the-fold external images
+  eleventyConfig.addAsyncShortcode(
+    "externalHeroImage",
+    async function externalHeroImageShortcode(
+      src,
+      alt,
+      widths = [320, 720, 1024],
+      cssClass,
+      id = "externalHeroImage"
+    ) {
+      let srcUrl = src ? src : "";
+      if (srcUrl === "") {
+        return "";
+      }
+
+      let metadata = await eleventyImage(srcUrl, {
+        widths: widths || [320, 720, 1024],
+        formats,
+        outputDir: path.join(eleventyConfig.dir.output, "img"),
+      });
+
+      let imageAttributes = {
+        alt,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
+        loading: "eager",
+        decoding: "async",
+        fetchpriority: "high",
         class: cssClass,
         id: id,
       };
@@ -87,13 +143,37 @@ export default (eleventyConfig) => {
         outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we're using addPlugin.
       });
 
-      // TODO loading=eager and fetchpriority=high
       let imageAttributes = {
         alt,
         sizes:
           "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
         loading: "lazy",
         decoding: "async",
+      };
+      const img = eleventyImage.generateHTML(metadata, imageAttributes);
+
+      return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
+    }
+  );
+
+  // Hero figure shortcode for above-the-fold figures (LCP optimization)
+  eleventyConfig.addAsyncShortcode(
+    "heroFigure",
+    async function heroFigureShortcode(src, alt, widths = [320, 720, 1024]) {
+      let file = relativeToInputPath(this.page.inputPath, src);
+      let metadata = await eleventyImage(file, {
+        widths: widths || [320, 720, 1024],
+        formats,
+        outputDir: path.join(eleventyConfig.dir.output, "img"),
+      });
+
+      let imageAttributes = {
+        alt,
+        sizes:
+          "(min-width: 1024px) 1024px, (min-width: 720px) 720px, (min-width: 320px) 320px, 100vw",
+        loading: "eager",
+        decoding: "async",
+        fetchpriority: "high",
       };
       const img = eleventyImage.generateHTML(metadata, imageAttributes);
 
