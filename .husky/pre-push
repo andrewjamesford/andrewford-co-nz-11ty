@@ -1,0 +1,2 @@
+echo "Running Docker build check before push..."
+npm run docker:build
