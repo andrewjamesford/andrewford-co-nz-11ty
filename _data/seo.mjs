@@ -68,7 +68,7 @@ export default {
     // Priority 3: Use fallback
     return (
       fallback ||
-      "Andrew Ford is a full-stack web developer, mentor and educator teaching people how to code."
+      "Andrew Ford is a software engineer, mentor and educator from Tauranga, New Zealand."
     );
   },
 

@@ -2,6 +2,7 @@
   "name": "andrewford-co-nz-11ty",
   "version": "3.2.1",
   "description": "andrewford.co.nz blog in 11ty",
+  "type": "module",
   "scripts": {
     "api": "node api/server.mjs",
     "api:dev": "NODE_ENV=development node api/server.mjs",
@@ -76,14 +77,16 @@
     "supertest": "7.1.4"
   },
   "dependencies": {
-    "@langchain/community": "0.3.57",
+    "@langchain/community": "0.3.59",
     "@langchain/core": "0.3.80",
     "@langchain/openai": "0.6.14",
     "@langchain/textsplitters": "0.1.0",
+    "compression": "1.8.1",
     "cors": "2.8.5",
     "dompurify": "3.2.7",
     "express": "5.1.0",
     "faiss-node": "0.5.1",
+    "html-minifier-terser": "7.2.0",
     "node-fetch": "3.3.2",
     "sanitize-html": "2.17.0",
     "winston": "3.18.3"

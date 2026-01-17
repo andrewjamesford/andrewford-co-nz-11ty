@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownIt from "markdown-it";
+import { minify } from "html-minifier-terser";
 
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
@@ -51,7 +52,7 @@ export default async (eleventyConfig) => {
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/css/` ends up in `_site/css/`
   // https://www.11ty.dev/docs/assets/
-  https: eleventyConfig.addPassthroughCopy({
+  eleventyConfig.addPassthroughCopy({
     "./public/": "/",
   });
 
@@ -206,7 +207,7 @@ export default async (eleventyConfig) => {
       // Priority 3: Use fallback
       return (
         fallback ||
-        "Andrew Ford is a full-stack web developer, mentor and educator teaching people how to code."
+        "Andrew Ford is a software engineer, mentor and educator from Tauranga, New Zealand."
       );
     }
   );
@@ -275,13 +276,34 @@ export default async (eleventyConfig) => {
     // Modify bundle content
     transforms: [],
 
-    // If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
+    // If two identical code blocks exist in non-default buckets, they'll be hoisted to the first bucket in common.
     hoist: true,
 
     // In 11ty.js templates, having a named export of `bundle` will populate your bundles.
     bundleExportKey: "bundle",
     // bundleExportKey: false, // disable this feature.
   });
+
+  // HTML Minification in production
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addTransform("htmlmin", async function (content) {
+      if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+        try {
+          return await minify(content, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+          });
+        } catch (error) {
+          console.error("HTML minification failed for:", this.page.outputPath);
+          console.error(error);
+          return content;
+        }
+      }
+      return content;
+    });
+  }
 
   // Features to make your build faster (when you need them)
 
