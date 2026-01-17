@@ -116,7 +116,17 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(compression());
+app.use(
+  compression({
+    threshold: 1024,
+    filter: (req, res) => {
+      if (req.path && req.path.startsWith("/api/")) {
+        return false;
+      }
+      return compression.filter(req, res);
+    },
+  })
+);
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -137,20 +147,16 @@ app.use(createRedirectMiddleware());
 app.use((req, res, next) => {
   const url = req.url;
 
-  // Immutable assets (hashed filenames) - cache for 1 year
-  if (
-    url.match(/\.(js|css|woff2?|ttf|eot)$/) &&
-    url.includes(".") &&
-    url.match(/[a-f0-9]{8,}/)
-  ) {
-    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
-  }
-  // Images - cache for 1 year (AVIF, WebP, PNG, JPG, etc.)
-  else if (url.match(/\.(avif|webp|png|jpe?g|gif|svg|ico)$/i)) {
+  // Images - cache for 1 year
+  if (url.match(/\.(avif|webp|png|jpe?g|gif|svg|ico)$/i)) {
     res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
   }
   // Fonts - cache for 1 year
   else if (url.match(/\.(woff2?|ttf|eot|otf)$/i)) {
+    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+  }
+  // JS/CSS - cache for 1 year (11ty uses hashed filenames)
+  else if (url.match(/\.(js|css)$/i)) {
     res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
   }
   // HTML - short cache with revalidation

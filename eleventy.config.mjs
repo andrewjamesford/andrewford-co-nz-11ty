@@ -288,12 +288,18 @@ export default async (eleventyConfig) => {
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", async function (content) {
       if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
-        return await minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          conservativeCollapse: true,
-        });
+        try {
+          return await minify(content, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+          });
+        } catch (error) {
+          console.error("HTML minification failed for:", this.page.outputPath);
+          console.error(error);
+          return content;
+        }
       }
       return content;
     });
