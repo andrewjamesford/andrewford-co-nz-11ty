@@ -36,11 +36,12 @@ RUN apk add --no-cache dumb-init
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nextjs -u 1001
 
-# Copy package files
+# Copy package files and node_modules from builder, then prune to production only
 COPY package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
 
-# Install only production dependencies
-RUN npm install --only=production && npm cache clean --force
+# Prune to production dependencies only (native modules already built in builder)
+RUN npm prune --omit=dev && npm cache clean --force
 
 # Copy built site from builder stage
 COPY --from=builder --chown=nextjs:nodejs /app/_site ./_site
