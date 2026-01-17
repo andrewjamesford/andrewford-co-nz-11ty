@@ -76,7 +76,7 @@
     "supertest": "7.1.4"
   },
   "dependencies": {
-    "@langchain/community": "0.3.57",
+    "@langchain/community": "0.3.59",
     "@langchain/core": "0.3.80",
     "@langchain/openai": "0.6.14",
     "@langchain/textsplitters": "0.1.0",
