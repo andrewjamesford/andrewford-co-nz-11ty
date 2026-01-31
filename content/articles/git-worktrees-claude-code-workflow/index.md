@@ -36,7 +36,7 @@ With traditional Git, this would mean stashing my changes, creating a new branch
 
 ## My Claude Code Solution
 
-I've automated this entire process with a custom Claude Code command. In my [Claude Code repository](<[YOUR_GITHUB_REPO_LINK](https://github.com/andrewjamesford/claude-code/blob/main/commands/chores/worktree.md)>), I've created a `/worktree` slash command that handles all the complexity for you.
+I've automated this entire process with a custom Claude Code command. In my [Claude Code repository](https://github.com/andrewjamesford/claude-code/blob/main/commands/chores/worktree.md), I've created a `/worktree` slash command that handles all the complexity for you.
 
 Here's how it works:
 
@@ -74,8 +74,8 @@ Git worktrees solve fundamental workflow problems:
 If you want to try this workflow:
 
 1. **Learn about git worktrees**: Check out the [official documentation](https://git-scm.com/docs/git-worktree)
-2. **Get my custom command**: Visit my [GitHub repository](<[YOUR_GITHUB_REPO_LINK](https://github.com/andrewjamesford/claude-code/blob/main/commands/chores/worktree.md)>) to grab the Claude Code slash command
-3. **Watch the demo**: See it in action in [my video walkthrough](<[YOUR_VIDEO_LINK](https://www.youtube.com/watch?v=tuRRuVcZTew)>)
+2. **Get my custom command**: Visit my [GitHub repository](https://github.com/andrewjamesford/claude-code/blob/main/commands/chores/worktree.md) to grab the Claude Code slash command
+3. **Watch the demo**: See it in action in [my video walkthrough](https://www.youtube.com/watch?v=tuRRuVcZTew)
 
 The combination of git worktrees and Claude Code's natural language interface has completely transformed how I handle parallel development tasks. No more workflow interruptions, no more lost context - just smooth, efficient development.
 
