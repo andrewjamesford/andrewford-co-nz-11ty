@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Parse Netlify-style _redirects file and return redirect rules
+ * Parse _redirects file and return redirect rules
  */
 function parseRedirectsFile(filePath) {
   const rules = [];

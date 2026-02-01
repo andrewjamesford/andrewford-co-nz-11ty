@@ -40,3 +40,7 @@
 # Non-existent notes pages
 /note/ / 301
 /notes/* / 301
+
+# Legacy Netlify functions - redirect to new API endpoints
+/.netlify/functions/lastplayed /api/lastplayed 301
+/.netlify/functions/* / 301
