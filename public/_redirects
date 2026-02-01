@@ -27,3 +27,20 @@
 /react-js- / 301
 /error / 301
 /cdn-cgi/* / 301
+
+# Deleted posts - redirect to homepage
+/2018/07/01/bitbucket-pipeline/* / 301
+/2019/04/09/test-automation-workshop/* / 301
+/2018/10/13/fixing-an-iphone-6/* / 301
+/2019/03/27/nz-cheapest-mobile-plans/* / 301
+/2020/04/23/roll-your-own-wireguard-vpn-with-pivpn/* / 301
+/2020/04/08/gluten-free-pancakes/* / 301
+/2020/04/30/dual-screen-with-duet/* / 301
+
+# Non-existent notes pages
+/note/ / 301
+/notes/* / 301
+
+# Legacy Netlify functions - redirect to new API endpoints
+/.netlify/functions/lastplayed /api/lastplayed 301
+/.netlify/functions/* / 301
