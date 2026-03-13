@@ -1,16 +1,17 @@
-{%- if content and (content.includes('youtube.com/embed/') or content.includes('youtu.be/') or content.includes('youtube-embed')) -%}
+{%- if primaryVideo and primaryVideo.title and primaryVideo.description and primaryVideo.thumbnailUrl and primaryVideo.uploadDate and primaryVideo.embedUrl and primaryVideo.contentUrl and primaryVideo.duration -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "{{ title | safe }}",
-  "description": "{{ description or content | striptags | truncate(160) | safe }}",
-  "thumbnailUrl": "{{ metadata.fullUrl }}/ogimage/{{ ogimage or 'social-card.png' }}",
-  "uploadDate": "{{ page.date | htmlDateString }}",
+  "name": "{{ primaryVideo.title | safe }}",
+  "description": "{{ primaryVideo.description | safe }}",
+  "thumbnailUrl": "{{ primaryVideo.thumbnailUrl }}",
+  "uploadDate": "{{ primaryVideo.uploadDate }}",
+  "duration": "{{ primaryVideo.duration }}",
+  "embedUrl": "{{ primaryVideo.embedUrl }}",
+  "contentUrl": "{{ primaryVideo.contentUrl }}",
   "author": {
-    "@type": "Person",
-    "name": "Andrew Ford",
-    "url": "{{ metadata.fullUrl }}"
+    "@id": "{{ metadata.fullUrl }}/#person"
   }
 }
 </script>

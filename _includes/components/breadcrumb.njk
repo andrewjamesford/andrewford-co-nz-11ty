@@ -7,7 +7,7 @@
     
     {%- if page.url.includes('/articles/') -%}
       <li class="breadcrumb-item">
-        <a href="{{ metadata.fullUrl }}/article/">Articles</a>
+        <a href="{{ metadata.fullUrl }}/articles/">Articles</a>
       </li>
       <li class="breadcrumb-item breadcrumb-current" aria-current="page">
         {{ title }}
@@ -26,7 +26,7 @@
       <li class="breadcrumb-item breadcrumb-current" aria-current="page">
         {{ title }}
       </li>
-    {%- elif page.url == '/article/' -%}
+    {%- elif page.url == '/articles/' -%}
       <li class="breadcrumb-item breadcrumb-current" aria-current="page">
         Articles
       </li>

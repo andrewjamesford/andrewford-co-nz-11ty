@@ -17,6 +17,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const siteDirectory = path.join(__dirname, "../_site");
+const notFoundPage = path.join(siteDirectory, "404.html");
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -171,7 +173,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "../_site")));
+app.use(express.static(siteDirectory));
 
 app.use("/api/chatrag", chatragRouter);
 app.use("/api/lastplayed", lastplayedRouter);
@@ -230,8 +232,13 @@ app.get("/health", async (_req, res) => {
   res.status(statusCode).json(healthCheck);
 });
 
-app.get("/*path", (_req, res) => {
-  res.sendFile(path.join(__dirname, "../_site/index.html"));
+app.use((req, res) => {
+  if (path.extname(req.path)) {
+    res.status(404).end();
+    return;
+  }
+
+  res.status(404).sendFile(notFoundPage);
 });
 
 app.use((err, req, res, _next) => {

@@ -4,12 +4,12 @@ title: "Uses"
 template: "page"
 slug: "uses/"
 socialImage: ""
-description: "What I use"
+description: "Andrew Ford's developer setup, hardware, and software for daily development, teaching, and video production."
 ---
 
-## Things I use in my day to day, development and video production 💻 ⌨️ 🖱️ 📱
+# Things I use in my day to day development and video production
 
-### Computing Device 💻 ⌨️ 🖱️
+## Computing device
 
 - [MacBook Pro 16" 2021 M1 Max / 32GB Ram / 1TB SSD](https://support.apple.com/en-us/111901)
 - [Logitech MX Keys Mini](https://www.logitech.com/en-us/products/keyboards/mx-keys-mini.920-010473.html)
@@ -19,7 +19,7 @@ description: "What I use"
 - [Rain design mStand 360](https://www.raindesigninc.com/mstand360.html)
 - [Jabra Evolve2 65 Headset](https://www.jabra.com/en-nz/business/office-headsets/jabra-evolve/jabra-evolve2-65)
 
-### Mobile Device 📱 🎧
+## Mobile device
 
 - [iPhone 17](https://www.apple.com/nz/iphone-17/)
 - [AirPods Pro 3](https://www.apple.com/nz/airpods-pro/)

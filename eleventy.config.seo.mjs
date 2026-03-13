@@ -57,19 +57,24 @@ export default (eleventyConfig) => {
 
     // Homepage
     if (pageUrl === "/") {
-      return `${brand} - Full Stack Developer, Mentor & Educator`;
+      return `${brand} | Software Engineer in Tauranga, NZ`;
     }
 
-    // Determine page type from URL
-    let prefix = brand;
-    if (pageUrl && pageUrl.includes("/archive/")) {
-      prefix = `${brand} - Archive`;
+    let fullTitle = brand;
+
+    if (pageUrl === "/articles/") {
+      fullTitle = `Articles | ${brand}`;
+    } else if (pageUrl && pageUrl.includes("/articles/")) {
+      fullTitle = title ? `${title} | ${brand}` : `Articles | ${brand}`;
+    } else if (pageUrl === "/archive/") {
+      fullTitle = `Archive | ${brand}`;
+    } else if (pageUrl && pageUrl.includes("/archive/")) {
+      fullTitle = title ? `${title} | ${brand}` : `Archive | ${brand}`;
     } else if (pageUrl && pageUrl.includes("/notes/")) {
-      prefix = `${brand} - Note`;
+      fullTitle = title ? `${title} | ${brand}` : `Notes | ${brand}`;
+    } else if (title) {
+      fullTitle = `${title} | ${brand}`;
     }
-
-    // Build title
-    const fullTitle = title ? `${prefix} - ${title}` : prefix;
 
     // Warn if too long
     if (fullTitle.length > 60) {

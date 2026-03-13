@@ -3,8 +3,7 @@ title: "Custom Social Share Buttons Guide"
 date: "2011-10-05T21:23:47+00:00"
 template: post
 draft: false
-slug: "/2011/10/05/custom-share-tweet-buttons-for-facebook-and-twitter/
-wordpress_connect_custom_fields_like_button_enable"
+slug: "/2011/10/05/custom-share-tweet-buttons-for-facebook-and-twitter/"
 category: "article"
 tags:
   - custom

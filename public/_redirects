@@ -4,6 +4,9 @@
 /feed.xml /feed/feed.xml
 /comments/feed /feed/feed.xml
 /author/andrewf /about/
+/article/ /articles/ 301
+/articles/claude-code-workflow/ /articles/git-worktrees-claude-code-workflow/ 301
+/2011/10/05/custom-share-tweet-buttons-for-facebook-and-twitter/%20wordpress_connect_custom_fields_like_button_enable/ /2011/10/05/custom-share-tweet-buttons-for-facebook-and-twitter/ 301
 /react-js-conf-2016-highlights-day-1/ /2016/02/23/react-js-conf-2016-highlights-day-1/
 /newsletter/ /
 /2018/05/11/Brotherhood-of-ad-blockers /2018/05/11/brotherhood-of-ad-blockers/
