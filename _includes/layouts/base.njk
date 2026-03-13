@@ -38,8 +38,9 @@
 		<link rel="alternate" href="{{ metadata.fullUrl }}/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
 		{# open graph #}
+		{% set isArticleDetailPage = page | isArticleDetailPage %}
 		<meta property="og:title" content="{{ heading or title or metadata.title or "Andrew Ford" }}"/>
-		<meta property="og:type" content="{% if page.inputPath and (page.inputPath.includes('/articles/') or page.inputPath.includes('/archive/')) %}article{% else %}website{% endif %}"/>
+		<meta property="og:type" content="{% if isArticleDetailPage %}article{% else %}website{% endif %}"/>
 		<meta property="og:description" content="{{ description or metadata.description }}"/>
 		{% if ogimage %}
 			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ ogimage }}"/>
@@ -47,7 +48,7 @@
 			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
 		<meta property="og:url" content="{{ metadata.fullUrl }}{{ page.url }}">
-		{% if page.inputPath and (page.inputPath.includes('/articles/') or page.inputPath.includes('/archive/')) %}
+		{% if isArticleDetailPage %}
 			<meta property="article:published_time" content="{{ page.date | htmlDateString }}"/>
 			<meta property="article:author" content="{{ metadata.author.name }}"/>
 		{% endif %}

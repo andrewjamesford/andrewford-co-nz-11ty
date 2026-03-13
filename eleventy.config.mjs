@@ -17,6 +17,19 @@ import embedYouTube from "eleventy-plugin-youtube-embed";
 
 import dotenv from "dotenv";
 
+function isArticleDetailPage(page) {
+  if (!page || !page.url) {
+    return false;
+  }
+
+  const isArticlesPage =
+    page.url.startsWith("/articles/") && page.url !== "/articles/";
+  const isArchivePost =
+    page.url.startsWith("/archive/") && page.url !== "/archive/";
+
+  return isArticlesPage || isArchivePost;
+}
+
 export default async (eleventyConfig) => {
   dotenv.config();
   // Create our custom markdown-it instance.
@@ -166,6 +179,32 @@ export default async (eleventyConfig) => {
           tag
         ) === -1
     );
+  });
+
+  eleventyConfig.addFilter("isArticleDetailPage", (page) =>
+    isArticleDetailPage(page)
+  );
+
+  eleventyConfig.addFilter("extractYouTubeVideoId", (content) => {
+    if (!content || typeof content !== "string") {
+      return "";
+    }
+
+    const patterns = [
+      /videoid="([A-Za-z0-9_-]{11})"/,
+      /youtube\.com\/embed\/([A-Za-z0-9_-]{11})/,
+      /youtu\.be\/([A-Za-z0-9_-]{11})/,
+      /youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/,
+    ];
+
+    for (const pattern of patterns) {
+      const match = content.match(pattern);
+      if (match) {
+        return match[1];
+      }
+    }
+
+    return "";
   });
 
   // SEO Meta Description Filter

@@ -1,4 +1,4 @@
-{%- if page.inputPath.includes('/articles/') or page.inputPath.includes('/archive/') -%}
+{%- if page | isArticleDetailPage -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

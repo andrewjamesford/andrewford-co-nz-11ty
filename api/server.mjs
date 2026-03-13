@@ -2,6 +2,7 @@ import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import fs from "node:fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { createRedirectMiddleware } from "./middleware/redirects.mjs";
@@ -19,6 +20,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const siteDirectory = path.join(__dirname, "../_site");
 const notFoundPage = path.join(siteDirectory, "404.html");
+const defaultNotFoundPageContent =
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Page Not Found</title></head><body><h1>Page Not Found</h1></body></html>';
+const notFoundPageContent = fs.existsSync(notFoundPage)
+  ? fs.readFileSync(notFoundPage, "utf8")
+  : defaultNotFoundPageContent;
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -238,7 +244,7 @@ app.use((req, res) => {
     return;
   }
 
-  res.status(404).sendFile(notFoundPage);
+  res.status(404).type("html").send(notFoundPageContent);
 });
 
 app.use((err, req, res, _next) => {
