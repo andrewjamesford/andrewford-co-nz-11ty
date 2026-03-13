@@ -10,21 +10,6 @@ const SKIPPED_PROTOCOLS = new Set([
   "webcal:",
 ]);
 
-function decodeXmlEntities(value) {
-  return value
-    .replaceAll("&amp;", "&")
-    .replaceAll("&lt;", "<")
-    .replaceAll("&gt;", ">")
-    .replaceAll("&quot;", '"')
-    .replaceAll("&#39;", "'");
-}
-
-function extractSitemapLocations(xml) {
-  return [...xml.matchAll(/<loc>(.*?)<\/loc>/gis)].map((match) =>
-    decodeXmlEntities(match[1].trim())
-  );
-}
-
 function createNormalizedUrl(value, currentUrl, internalHostnames, baseUrl) {
   if (!value) {
     return null;
@@ -82,7 +67,13 @@ test.describe("Site-wide internal links", () => {
     expect(sitemapResponse.ok()).toBeTruthy();
 
     const sitemapXml = await sitemapResponse.text();
-    const sitemapLocations = extractSitemapLocations(sitemapXml);
+    const sitemapLocations = await page.evaluate((xml) => {
+      const parsedXml = new DOMParser().parseFromString(xml, "application/xml");
+      return Array.from(
+        parsedXml.querySelectorAll("loc"),
+        (node) => node.textContent?.trim() || ""
+      ).filter(Boolean);
+    }, sitemapXml);
     const internalHostnames = new Set([localBaseUrl.hostname]);
 
     for (const sitemapLocation of sitemapLocations) {
