@@ -1,6 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Chatbot Functionality", () => {
+  const getBotAnswerBubbles = (page) =>
+    page.locator(".chat-message.bot .chat-bubble").filter({
+      hasNot: page.locator(".chat-source-link"),
+    });
+
   test.beforeEach(async ({ page }) => {
     // Navigate to the homepage where the chatbot is available
     await page.goto("/");
@@ -104,7 +109,7 @@ test.describe("Chatbot Functionality", () => {
     });
 
     // Bot response should appear
-    const botResponse = page.locator(".chat-message.bot").last();
+    const botResponse = getBotAnswerBubbles(page).last();
     await expect(botResponse).toBeVisible();
 
     // Wait a bit more to ensure response is fully loaded
@@ -137,7 +142,7 @@ test.describe("Chatbot Functionality", () => {
     });
 
     // Bot response should appear
-    const botResponse = page.locator(".chat-message.bot").last();
+    const botResponse = getBotAnswerBubbles(page).last();
     await expect(botResponse).toBeVisible();
   });
 
@@ -221,10 +226,12 @@ test.describe("Chatbot Functionality", () => {
 
     // Should have multiple messages
     const userMessages = page.locator(".chat-message.user");
-    const botMessages = page.locator(".chat-message.bot");
+    const botAnswerBubbles = getBotAnswerBubbles(page);
+    const sourceLinks = page.locator(".chat-source-link");
 
     await expect(userMessages).toHaveCount(2);
-    await expect(botMessages).toHaveCount(3); // Welcome + 2 responses
+    await expect(botAnswerBubbles).toHaveCount(3); // Welcome + 2 responses
+    expect(await sourceLinks.count()).toBeGreaterThan(0);
   });
 
   test("should sanitize user input", async ({ page }) => {

@@ -1,11 +1,12 @@
-- [x] Review the existing Playwright and CI setup for a site-wide internal link test.
-- [x] Add an end-to-end link crawler test that walks internal URLs across the built site.
-- [x] Wire the new test into package scripts and CI without slowing the quick local loop too much.
-- [x] Run formatting and verification, then document the outcome here.
+- [x] Inspect the failing Playwright report and identify the exact test/runtime failure.
+- [x] Reproduce the failure locally or isolate the root cause from the generated artifacts.
+- [x] Implement the smallest reliable fix and verify the affected e2e coverage.
+- [x] Update the review notes with what failed and how it was resolved.
 
 ## Review
 
-- Added a sitemap-seeded Playwright crawl that follows same-site links and fails on broken internal pages or linked assets.
-- Kept the quick local loop intact by adding a dedicated `test:e2e:links` command and folding it into `test:all` rather than `npm test`.
-- Fixed two broken links surfaced by the new crawl: the local-only `/api/products` article link and a video asset path mismatch in an archive post.
-- Verified with `npm run build` and `npm run test:all`.
+- Reproduced the three failing tests from the Playwright report locally.
+- Fixed `tests/e2e/chatbot-api.spec.js` to verify preflight-specific CORS headers on an `OPTIONS` request instead of assuming they appear on the normal `POST` response.
+- Fixed `tests/e2e/chatbot.spec.js` to assert against answer bubbles rather than the last `.chat-message.bot`, because source links are rendered as separate bot messages.
+- Relaxed the multi-message assertion to count actual answer bubbles while still confirming source links were added.
+- Verified with targeted reruns of the three failing tests and a full run of `tests/e2e/chatbot.spec.js` plus `tests/e2e/chatbot-api.spec.js` (23 tests passed).
