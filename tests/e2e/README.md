@@ -81,18 +81,15 @@ npx playwright test --project=chromium
 ### Recommended Test Flow
 
 1. **Start with quick tests**: `npm run test:e2e:quick` (6 tests, ~10 seconds)
-
    - UI functionality tests
    - Basic API validation tests
    - No AI API calls (fast and reliable)
 
 2. **Run simple tests for full validation**: `npm run test:e2e:simple` (15 tests, ~60 seconds)
-
    - Includes one AI API test
    - More comprehensive but still reasonable runtime
 
 3. **Run the link crawl before shipping site changes**: `npm run test:e2e:links`
-
    - Checks same-site links across the built site
    - Uses `sitemap.xml` for broad coverage
    - Ignores external destinations to keep the test deterministic
@@ -155,18 +152,15 @@ The tests are configured in `playwright.config.js` with:
 ## Troubleshooting
 
 1. **Tests fail with "Server not found"**
-
    - Ensure `npm run dev` is running
    - Check that the server is accessible at `http://localhost:3080`
 
 2. **Chatbot API tests fail**
-
    - Verify the vector store exists: `ls vector_store/simple_vector_store.json`
    - Check environment variables in `.env` file
    - Ensure OpenAI API key is configured
 
 3. **Long response times**
-
    - This is normal for AI responses (up to 30 seconds)
    - Cold starts may take longer
 

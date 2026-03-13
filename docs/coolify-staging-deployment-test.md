@@ -71,7 +71,6 @@ PORT=3000
 Deploy the application to staging environment:
 
 1. **Trigger Deployment**:
-
    - Push commit to `migrate-from-netlify` branch
    - Or manually trigger deployment in Coolify dashboard
    - Or use webhook trigger

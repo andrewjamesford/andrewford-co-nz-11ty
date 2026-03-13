@@ -11,7 +11,7 @@ export async function generateVectorStore() {
   // Check if running in development environment
   if (process.env.NODE_ENV === "production") {
     console.log(
-      "Vector store generation is disabled in production environment."
+      "Vector store generation is disabled in production environment.",
     );
     return;
   }
@@ -21,7 +21,7 @@ export async function generateVectorStore() {
     {
       ".md": (path) => new TextLoader(path),
     },
-    true
+    true,
   );
   const docs = await loader.load();
 

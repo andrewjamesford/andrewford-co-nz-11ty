@@ -111,7 +111,7 @@ export default async (eleventyConfig) => {
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-      format || "DDDD"
+      format || "DDDD",
     );
   });
 
@@ -169,7 +169,7 @@ export default async (eleventyConfig) => {
 
     return str.replace(
       /&quot;|&#34;|&apos;|&#39;|&lt;|&#60;|&gt;|&#62;|&amp;|&#38;|&nbsp;|&#160;/g,
-      (match) => htmlEntities[match] || match
+      (match) => htmlEntities[match] || match,
     );
   });
 
@@ -177,13 +177,13 @@ export default async (eleventyConfig) => {
     return (tags || []).filter(
       (tag) =>
         ["all", "nav", "post", "posts", "[articles]", "[archive]"].indexOf(
-          tag
-        ) === -1
+          tag,
+        ) === -1,
     );
   });
 
   eleventyConfig.addFilter("isArticleDetailPage", (page) =>
-    isArticleDetailPage(page)
+    isArticleDetailPage(page),
   );
 
   eleventyConfig.addFilter("extractYouTubeVideoId", (content) => {
@@ -249,7 +249,7 @@ export default async (eleventyConfig) => {
         fallback ||
         "Andrew Ford is a software engineer, mentor and educator from Tauranga, New Zealand."
       );
-    }
+    },
   );
 
   // Customize Markdown library settings:
@@ -277,19 +277,19 @@ export default async (eleventyConfig) => {
   eleventyConfig.addCollection("articles", (collection) =>
     collection
       .getAllSorted()
-      .filter((item) => item.inputPath.startsWith("./content/articles/"))
+      .filter((item) => item.inputPath.startsWith("./content/articles/")),
   );
 
   eleventyConfig.addCollection("archive", (collection) =>
     collection
       .getAllSorted()
-      .filter((item) => item.inputPath.startsWith("./content/archive/"))
+      .filter((item) => item.inputPath.startsWith("./content/archive/")),
   );
 
   eleventyConfig.addCollection("notes", (collection) =>
     collection
       .getAllSorted()
-      .filter((item) => item.inputPath.startsWith("./content/notes/"))
+      .filter((item) => item.inputPath.startsWith("./content/notes/")),
   );
 
   eleventyConfig.addCollection("posts", (collection) =>
@@ -298,8 +298,8 @@ export default async (eleventyConfig) => {
       .filter(
         (item) =>
           item.inputPath.startsWith("./content/articles/") ||
-          item.inputPath.startsWith("./content/notes/")
-      )
+          item.inputPath.startsWith("./content/notes/"),
+      ),
   );
 
   eleventyConfig.addBundle("css", {

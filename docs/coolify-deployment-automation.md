@@ -20,7 +20,6 @@ The deployment automation includes:
 Configure the repository for Coolify integration:
 
 1. **Repository Settings**:
-
    - Repository: `andrewjamesford/andrewford-co-nz-11ty`
    - Primary Branch: `main` (production)
    - Development Branch: `migrate-from-netlify` (staging)
@@ -37,7 +36,6 @@ Configure in Coolify dashboard:
 
 1. **Go to Application → Source**
 2. **Git Repository Settings**:
-
    - **Repository URL**: `https://github.com/andrewjamesford/andrewford-co-nz-11ty.git`
    - **Branch**: `main`
    - **Auto Deploy**: ✅ Enabled
@@ -406,7 +404,6 @@ notifications:
 Configure Slack webhook for deployment notifications:
 
 1. **Create Slack Webhook**:
-
    - Go to Slack API: https://api.slack.com/incoming-webhooks
    - Create new webhook for your channel
    - Copy webhook URL

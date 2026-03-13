@@ -9,12 +9,12 @@ const expect = (actual) => ({
   toContain: (expected) =>
     assert.ok(
       actual.includes(expected),
-      `Expected '${actual}' to contain '${expected}'`
+      `Expected '${actual}' to contain '${expected}'`,
     ),
   toHaveProperty: (prop) =>
     assert.ok(
       actual.hasOwnProperty(prop),
-      `Expected object to have property '${prop}'`
+      `Expected object to have property '${prop}'`,
     ),
 });
 
@@ -46,7 +46,7 @@ describe("CORS Configuration Tests", () => {
 
     expect(response.status).toBe(204);
     expect(response.headers["access-control-allow-origin"]).toBe(
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     );
   });
 
@@ -61,7 +61,7 @@ describe("CORS Configuration Tests", () => {
 
     expect(response.status).toBe(204);
     expect(response.headers["access-control-allow-origin"]).toBe(
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     );
 
     restoreEnv();
@@ -78,7 +78,7 @@ describe("CORS Configuration Tests", () => {
 
     expect(response.status).toBe(204);
     expect(response.headers["access-control-allow-origin"]).toBe(
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     );
 
     restoreEnv();
@@ -96,7 +96,7 @@ describe("CORS Configuration Tests", () => {
     // This should pass after we fix the parsing logic
     expect(response.status).toBe(204);
     expect(response.headers["access-control-allow-origin"]).toBe(
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     );
 
     restoreEnv();
@@ -126,7 +126,7 @@ describe("CORS Configuration Tests", () => {
 
     // Should not fail with CORS error (might fail with 500 due to missing API keys, but not CORS)
     expect(response.headers["access-control-allow-origin"]).toBe(
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     );
 
     restoreEnv();
@@ -155,7 +155,7 @@ describe("CORS Configuration Tests", () => {
 
       expect(response.status).toBe(204);
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "https://andrewford.co.nz"
+        "https://andrewford.co.nz",
       );
     }
 

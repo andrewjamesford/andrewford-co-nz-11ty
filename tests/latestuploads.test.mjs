@@ -30,9 +30,8 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { default: latestUploadsRouter } = await import(
-  "../api/routes/latestUploads.mjs"
-);
+const { default: latestUploadsRouter } =
+  await import("../api/routes/latestUploads.mjs");
 
 describe("latestUploads API Endpoint", () => {
   let app;
@@ -78,7 +77,7 @@ describe("latestUploads API Endpoint", () => {
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledWith(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${mockChannelId}&maxResults=10&order=date&type=video&key=${mockApiKey}`,
-      { method: "GET" }
+      { method: "GET" },
     );
     expect(response.body).toEqual(mockYouTubeApiResponse.items);
   });
@@ -98,7 +97,7 @@ describe("latestUploads API Endpoint", () => {
     });
     expect(consoleErrorSpy).toHaveBeenCalledTimes(1);
     expect(consoleErrorSpy).toHaveBeenCalledWith(
-      new Error("HTTP error! status: 403 Forbidden")
+      new Error("HTTP error! status: 403 Forbidden"),
     );
   });
 
@@ -130,7 +129,7 @@ describe("latestUploads API Endpoint", () => {
 
     expect(mockFetch).toHaveBeenCalledWith(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${mockChannelId}&maxResults=10&order=date&type=video&key=undefined`,
-      { method: "GET" }
+      { method: "GET" },
     );
     expect(response.statusCode).toBe(500);
     expect(JSON.parse(response.body)).toEqual({
@@ -153,7 +152,7 @@ describe("latestUploads API Endpoint", () => {
 
     expect(mockFetch).toHaveBeenCalledWith(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=undefined&maxResults=10&order=date&type=video&key=${mockApiKey}`,
-      { method: "GET" }
+      { method: "GET" },
     );
     expect(response.statusCode).toBe(500);
     expect(JSON.parse(response.body)).toEqual({

@@ -22,7 +22,7 @@ function createNormalizedUrl(value, currentUrl, internalHostnames, baseUrl) {
   }
 
   const matchingProtocol = [...SKIPPED_PROTOCOLS].find((protocol) =>
-    trimmedValue.toLowerCase().startsWith(protocol)
+    trimmedValue.toLowerCase().startsWith(protocol),
   );
 
   if (matchingProtocol) {
@@ -71,7 +71,7 @@ test.describe("Site-wide internal links", () => {
       const parsedXml = new DOMParser().parseFromString(xml, "application/xml");
       return Array.from(
         parsedXml.querySelectorAll("loc"),
-        (node) => node.textContent?.trim() || ""
+        (node) => node.textContent?.trim() || "",
       ).filter(Boolean);
     }, sitemapXml);
     const internalHostnames = new Set([localBaseUrl.hostname]);
@@ -90,12 +90,12 @@ test.describe("Site-wide internal links", () => {
           const parsedUrl = new URL(location);
           return new URL(
             parsedUrl.pathname + parsedUrl.search,
-            localBaseUrl
+            localBaseUrl,
           ).toString();
         } catch {
           return new URL(location, localBaseUrl).toString();
         }
-      })
+      }),
     );
     pendingUrls.add(new URL("/", localBaseUrl).toString());
 
@@ -130,7 +130,7 @@ test.describe("Site-wide internal links", () => {
       const hrefValues = await page
         .locator("a[href]")
         .evaluateAll((anchors) =>
-          anchors.map((anchor) => anchor.getAttribute("href"))
+          anchors.map((anchor) => anchor.getAttribute("href")),
         );
 
       for (const hrefValue of hrefValues) {
@@ -138,7 +138,7 @@ test.describe("Site-wide internal links", () => {
           hrefValue,
           currentUrl,
           internalHostnames,
-          localBaseUrl
+          localBaseUrl,
         );
 
         if (!normalizedUrl || visitedUrls.has(normalizedUrl)) {
@@ -154,7 +154,7 @@ test.describe("Site-wide internal links", () => {
 
         if (!linkResponse.ok()) {
           failures.push(
-            `${currentUrl} links to ${normalizedUrl}, which returned ${linkResponse.status()}`
+            `${currentUrl} links to ${normalizedUrl}, which returned ${linkResponse.status()}`,
           );
         }
       }
@@ -162,7 +162,7 @@ test.describe("Site-wide internal links", () => {
 
     expect(
       failures,
-      `Broken internal links found:\n${failures.join("\n")}`
+      `Broken internal links found:\n${failures.join("\n")}`,
     ).toEqual([]);
   });
 });

@@ -50,7 +50,7 @@ const loadData = async () => {
 
     if (isLocalDevelopment && isNetworkFailure) {
       console.error(
-        `Unable to reach the local API server at ${CONFIG.API_URL}. Start both servers with "npm run dev", or run "npm run api:dev" alongside the 11ty UI server.`
+        `Unable to reach the local API server at ${CONFIG.API_URL}. Start both servers with "npm run dev", or run "npm run api:dev" alongside the 11ty UI server.`,
       );
       return;
     }
