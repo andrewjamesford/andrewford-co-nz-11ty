@@ -225,8 +225,22 @@ test.describe("Chatbot API Functionality", () => {
 
     const headers = response.headers();
     expect(headers["access-control-allow-origin"]).toBeDefined();
-    expect(headers["access-control-allow-headers"]).toBeDefined();
-    expect(headers["access-control-allow-methods"]).toBeDefined();
+
+    const preflightResponse = await request.fetch(`${API_BASE}/chatrag`, {
+      method: "OPTIONS",
+      headers: {
+        Origin: "http://localhost:3080",
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "Content-Type, Authorization",
+      },
+    });
+
+    expect(preflightResponse.status()).toBe(204);
+
+    const preflightHeaders = preflightResponse.headers();
+    expect(preflightHeaders["access-control-allow-origin"]).toBeDefined();
+    expect(preflightHeaders["access-control-allow-headers"]).toBeDefined();
+    expect(preflightHeaders["access-control-allow-methods"]).toBeDefined();
   });
 
   test("should handle rate limiting gracefully", async ({ request }) => {

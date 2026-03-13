@@ -31,7 +31,7 @@ On some apps I believe this is fine. Say like [Twitterrific](http://twitterrific
 
 Purely by coincidence Letterboxd was released the same week Google updated the "Material Design" guidelines adding a [bottom navigation bar](https://www.google.com/design/spec/components/bottom-navigation.html#bottom-navigation-style) similar to the iOS tab bar in Safari on iOS. On Letterboxd as the content is scrolled the tab bar (and navigation bar) is hidden therefore removing a distraction to reading/viewing.
 
-[Letterboxd hide toolbar video](./letterboxd-hide-toolbar.mov)
+[Letterboxd hide toolbar video](/archive/2016-03-20-letterboxd-app-for-ios/letterboxd-hide-toolbar.mov)
 
 The wait has been long but has been worthwhile for Letterboxd to provide a great [version 1.0 iOS app](https://letterboxd.com/app/). I look forward to what they add next to the service.
 

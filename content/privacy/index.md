@@ -4,7 +4,7 @@ title: "Privacy Policy"
 template: "page"
 slug: "privacy/"
 socialImage: ""
-description: "Privacy Policy for Andrew Ford"
+description: "Privacy policy for andrewford.co.nz, including analytics, third-party embeds, and how site visitors should interpret external links and downloads."
 ---
 
 # Privacy Policy

@@ -1,21 +1,14 @@
-{%- if page.url == '/' -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "{{ metadata.fullUrl }}/#website",
   "name": "Andrew Ford",
   "alternateName": "Code with Andrew Ford",
   "url": "{{ metadata.fullUrl }}",
   "description": "{{ metadata.description }}",
   "publisher": {
-    "@type": "Organization",
-    "name": "Andrew Ford",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ metadata.fullUrl }}/ogimage/AF-Logo.png",
-      "width": 512,
-      "height": 512
-    }
+    "@id": "{{ metadata.fullUrl }}/#organization"
   },
   "potentialAction": {
     "@type": "SearchAction",
@@ -27,4 +20,3 @@
   }
 }
 </script>
-{%- endif -%}

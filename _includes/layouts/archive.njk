@@ -13,9 +13,9 @@ layout: layouts/base.njk
 		{% set absolutePostUrl %}{{ archiveItem.url | url | absoluteUrl(metadata.fullUrl) }}{% endset %}
 		{%- if archiveItem.data.draft == false -%}
 			<li class="article-list-item">
-				<h4 class="article-title">
+				<h2 class="article-title">
 					<a href={{ absolutePostUrl }}>{{ archiveItem.data.title }}</a>
-				</h4>
+				</h2>
 				<p class="article-description">{{ archiveItem.data.description }}</p>
 			</li>
 		{%- endif -%}

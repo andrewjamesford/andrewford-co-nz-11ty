@@ -2,6 +2,7 @@ import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import fs from "node:fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { createRedirectMiddleware } from "./middleware/redirects.mjs";
@@ -17,10 +18,21 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const siteDirectory = path.join(__dirname, "../_site");
+const notFoundPage = path.join(siteDirectory, "404.html");
+const defaultNotFoundPageContent =
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Page Not Found</title></head><body><h1>Page Not Found</h1></body></html>';
+const notFoundPageContent = fs.existsSync(notFoundPage)
+  ? fs.readFileSync(notFoundPage, "utf8")
+  : defaultNotFoundPageContent;
 
 const corsOptions = {
   origin: (origin, callback) => {
-    let allowedOrigins = ["http://localhost:3080", "https://andrewford.co.nz"];
+    let allowedOrigins = [
+      "http://localhost:8080",
+      "http://localhost:3080",
+      "https://andrewford.co.nz",
+    ];
 
     if (process.env.ALLOWED_ORIGINS) {
       const parseOriginsRecursively = (value, depth = 0) => {
@@ -84,6 +96,7 @@ const corsOptions = {
             }
           );
           allowedOrigins = [
+            "http://localhost:8080",
             "http://localhost:3080",
             "https://andrewford.co.nz",
           ];
@@ -93,7 +106,11 @@ const corsOptions = {
           original: process.env.ALLOWED_ORIGINS,
           error: error.message,
         });
-        allowedOrigins = ["http://localhost:3080", "https://andrewford.co.nz"];
+        allowedOrigins = [
+          "http://localhost:8080",
+          "http://localhost:3080",
+          "https://andrewford.co.nz",
+        ];
       }
     }
 
@@ -171,7 +188,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "../_site")));
+app.use(express.static(siteDirectory));
 
 app.use("/api/chatrag", chatragRouter);
 app.use("/api/lastplayed", lastplayedRouter);
@@ -230,8 +247,13 @@ app.get("/health", async (_req, res) => {
   res.status(statusCode).json(healthCheck);
 });
 
-app.get("/*path", (_req, res) => {
-  res.sendFile(path.join(__dirname, "../_site/index.html"));
+app.use((req, res) => {
+  if (path.extname(req.path)) {
+    res.status(404).end();
+    return;
+  }
+
+  res.status(404).type("html").send(notFoundPageContent);
 });
 
 app.use((err, req, res, _next) => {

@@ -1,16 +1,22 @@
-{%- if content and (content.includes('youtube.com/embed/') or content.includes('youtu.be/') or content.includes('youtube-embed')) -%}
+{%- set isArticleDetailPage = page | isArticleDetailPage -%}
+{%- set youtubeVideoId = primaryVideo.videoId or (content | extractYouTubeVideoId) -%}
+{%- set shouldRenderVideoSchema = (primaryVideo and primaryVideo.title and primaryVideo.description and primaryVideo.thumbnailUrl and primaryVideo.embedUrl and primaryVideo.contentUrl) or (isArticleDetailPage and youtubeVideoId) -%}
+{%- if shouldRenderVideoSchema -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "{{ title | safe }}",
-  "description": "{{ description or content | striptags | truncate(160) | safe }}",
-  "thumbnailUrl": "{{ metadata.fullUrl }}/ogimage/{{ ogimage or 'social-card.png' }}",
-  "uploadDate": "{{ page.date | htmlDateString }}",
+  "name": "{{ (primaryVideo.title or title) | safe }}",
+  "description": "{{ (primaryVideo.description or description or content | striptags | truncate(160)) | safe }}",
+  "thumbnailUrl": "{{ primaryVideo.thumbnailUrl or ('https://i.ytimg.com/vi/' + youtubeVideoId + '/hqdefault.jpg') }}",
+  "uploadDate": "{{ primaryVideo.uploadDate or (page.date | htmlDateString) }}",
+  {%- if primaryVideo and primaryVideo.duration %}
+  "duration": "{{ primaryVideo.duration }}",
+  {%- endif %}
+  "embedUrl": "{{ primaryVideo.embedUrl or ('https://www.youtube.com/embed/' + youtubeVideoId) }}",
+  "contentUrl": "{{ primaryVideo.contentUrl or ('https://www.youtube.com/watch?v=' + youtubeVideoId) }}",
   "author": {
-    "@type": "Person",
-    "name": "Andrew Ford",
-    "url": "{{ metadata.fullUrl }}"
+    "@id": "{{ metadata.fullUrl }}/#person"
   }
 }
 </script>

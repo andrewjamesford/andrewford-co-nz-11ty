@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 
 By default the products can only be retrieved on the [same origin](https://nextjs.org/docs/api-routes/introduction#caveats) ensuring that only our own shop can retrieve the products.
 
-Let's [test our API](http://localhost:3080/api/products) retrieves our products when running locally. You should be able to see the JSON returned.
+Let's test the API locally at `http://localhost:3080/api/products`. You should be able to see the JSON returned.
 
 {% image "./product-api.png", "Response from the product API" %}
 

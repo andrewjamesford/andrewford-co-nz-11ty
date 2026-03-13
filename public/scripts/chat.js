@@ -4,6 +4,22 @@ function initializeChat() {
 
   const sendButton = document.getElementById("chat-send");
 
+  function getFriendlyApiErrorMessage(error) {
+    const isLocalDevelopment =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    const isNetworkFailure =
+      error instanceof TypeError &&
+      error.message &&
+      error.message.includes("Failed to fetch");
+
+    if (isLocalDevelopment && isNetworkFailure) {
+      return `Unable to reach the local API server at ${CONFIG.API_URL}. Start both servers with "npm run dev", or run "npm run api:dev" alongside the 11ty UI server.`;
+    }
+
+    return error.message || "Unable to fetch response.";
+  }
+
   const sendMessage = async () => {
     if (!input.value.trim()) return;
 
@@ -43,10 +59,7 @@ function initializeChat() {
       // Remove streaming message and show error
       removeStreamingMessage(botMessageElement);
       console.error("Error fetching response:", error);
-      appendMessage(
-        "Bot",
-        `Error: ${error.message || "Unable to fetch response."}`
-      );
+      appendMessage("Bot", `Error: ${getFriendlyApiErrorMessage(error)}`);
     }
   };
 
@@ -316,7 +329,7 @@ function initializeChat() {
       appendSourceLinks(data.sources);
     } catch (error) {
       removeStreamingMessage(botMessageElement);
-      throw error;
+      throw new Error(getFriendlyApiErrorMessage(error));
     }
   }
 }
