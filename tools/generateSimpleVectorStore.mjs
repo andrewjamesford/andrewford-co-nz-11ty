@@ -8,6 +8,7 @@ import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { CharacterTextSplitter } from "@langchain/textsplitters";
 import { OpenAIEmbeddings } from "@langchain/openai";
+import { getOpenRouterConfiguration } from "../api/utils/openrouter.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,9 +45,7 @@ async function generateSimpleVectorStore() {
   const embeddings = new OpenAIEmbeddings({
     apiKey: process.env.OPENROUTER_API_KEY,
     model: embeddingModel,
-    configuration: {
-      baseURL: "https://openrouter.ai/api/v1",
-    },
+    configuration: getOpenRouterConfiguration("Andrew Ford Blog Vector Store"),
   });
 
   // Generate embeddings for all documents

@@ -6,6 +6,7 @@ import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import express from "express";
 import sanitizeHtml from "sanitize-html";
 import { findSimilarDocuments } from "../utils/vectorSearch.mjs";
+import { getOpenRouterConfiguration } from "../utils/openrouter.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -106,9 +107,9 @@ router.post("/", async (req, res) => {
       model:
         process.env.OPENROUTER_EMBEDDING_MODEL ||
         "openai/text-embedding-3-small",
-      configuration: {
-        baseURL: "https://openrouter.ai/api/v1",
-      },
+      configuration: getOpenRouterConfiguration(
+        "Andrew Ford Blog Chatbot Embeddings"
+      ),
     });
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
 
@@ -136,13 +137,7 @@ router.post("/", async (req, res) => {
         model:
           process.env.OPENROUTER_MODEL ||
           "meta-llama/llama-3.2-3b-instruct:free",
-        configuration: {
-          baseURL: "https://openrouter.ai/api/v1",
-          defaultHeaders: {
-            "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
-            "X-Title": "Andrew Ford Blog Chatbot",
-          },
-        },
+        configuration: getOpenRouterConfiguration("Andrew Ford Blog Chatbot"),
         streaming: true,
       });
 
@@ -200,13 +195,7 @@ router.post("/", async (req, res) => {
         model:
           process.env.OPENROUTER_MODEL ||
           "meta-llama/llama-3.2-3b-instruct:free",
-        configuration: {
-          baseURL: "https://openrouter.ai/api/v1",
-          defaultHeaders: {
-            "HTTP-Referer": process.env.SITE_URL || "https://andrewford.co.nz",
-            "X-Title": "Andrew Ford Blog Chatbot",
-          },
-        },
+        configuration: getOpenRouterConfiguration("Andrew Ford Blog Chatbot"),
       });
 
       const context = similarDocs

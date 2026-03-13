@@ -40,6 +40,21 @@ const loadData = async () => {
       lastFMAlbum.innerText = data.album;
     }
   } catch (error) {
+    const isLocalDevelopment =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    const isNetworkFailure =
+      error instanceof TypeError &&
+      error.message &&
+      error.message.includes("Failed to fetch");
+
+    if (isLocalDevelopment && isNetworkFailure) {
+      console.error(
+        `Unable to reach the local API server at ${CONFIG.API_URL}. Start both servers with "npm run dev", or run "npm run api:dev" alongside the 11ty UI server.`
+      );
+      return;
+    }
+
     console.error(error);
   }
 };

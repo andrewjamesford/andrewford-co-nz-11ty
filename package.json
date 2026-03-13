@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "api": "node api/server.mjs",
-    "api:dev": "NODE_ENV=development node api/server.mjs",
+    "api:dev": "PORT=3080 NODE_ENV=development node api/server.mjs",
     "article": "bash article.sh",
     "benchmark": "DEBUG=Eleventy:Benchmark* NODE_ENV=development npx @11ty/eleventy",
     "build:dev": "NODE_ENV=development npx @11ty/eleventy",
