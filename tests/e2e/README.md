@@ -10,6 +10,12 @@ This directory contains Playwright end-to-end tests to verify the chatbot functi
 - Homepage loading and navigation
 - Chat toggle button presence
 
+### `site-links.spec.js`
+
+- Site-wide internal link integrity crawl
+- Seeds from `sitemap.xml` and follows discovered same-site links
+- Fails on broken HTML pages and linked same-origin assets
+
 ### `chatbot.spec.js`
 
 - Comprehensive chatbot UI interaction tests
@@ -50,6 +56,9 @@ npm run test:e2e:quick
 # Run simple tests (includes basic API test)
 npm run test:e2e:simple
 
+# Run the full internal link crawl
+npm run test:e2e:links
+
 # Run all e2e tests (may be slow due to AI responses)
 npm run test:e2e
 
@@ -82,7 +91,13 @@ npx playwright test --project=chromium
    - Includes one AI API test
    - More comprehensive but still reasonable runtime
 
-3. **Full test suite**: `npm run test:e2e` (75 tests, may timeout)
+3. **Run the link crawl before shipping site changes**: `npm run test:e2e:links`
+
+   - Checks same-site links across the built site
+   - Uses `sitemap.xml` for broad coverage
+   - Ignores external destinations to keep the test deterministic
+
+4. **Full test suite**: `npm run test:e2e` (75 tests, may timeout)
    - Comprehensive testing including AI responses
    - May have timeout issues due to AI API response times
 
@@ -111,6 +126,12 @@ The tests verify:
 - Response time performance
 - Concurrent request handling
 - Input sanitization for security
+
+#### Site Integrity ✅
+
+- Every URL emitted in `sitemap.xml` returns successfully
+- Same-site links discovered on those pages resolve without 4xx/5xx errors
+- Internal asset downloads linked from pages remain valid
 
 #### Chatbot Intelligence ✅
 
