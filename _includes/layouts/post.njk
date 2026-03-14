@@ -13,6 +13,7 @@ layout: layouts/base.njk
 <h1>{{ title }}</h1>
 
 <time datetime="{{ page.date | htmlDateString }}" class="article-datetime">{{ page.date | readableDate }}</time>
+<span class="reading-time">{{ content | readingTime }}</span>
 
 <article class="article">
 	{{ content | safe }}
