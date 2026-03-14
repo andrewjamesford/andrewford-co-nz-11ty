@@ -15,7 +15,7 @@ export default async () => {
       process.env.CI
     ) {
       console.log(
-        "Skipping Last.fm API fetch (credentials missing or CI environment)",
+        "Skipping Last.fm API fetch (credentials missing or CI environment)"
       );
       return {
         music: {

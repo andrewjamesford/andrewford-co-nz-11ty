@@ -403,7 +403,7 @@ export function createData(
   movieName: string,
   director: string,
   year: number,
-  rating: number,
+  rating: number
 ): Data {
   return { id, movieName, director, year, rating };
 }

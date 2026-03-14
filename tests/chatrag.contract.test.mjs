@@ -140,7 +140,7 @@ describe("Chat RAG Function - Contract Tests", () => {
           expect(typeof response.body.error).toBe("string");
         }
       },
-      30000,
+      30000
     );
   });
 });

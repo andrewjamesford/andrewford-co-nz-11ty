@@ -45,7 +45,7 @@ export default {
     // Validate length and warn if too long
     if (formattedTitle.length > 60) {
       console.warn(
-        `Title too long (${formattedTitle.length} chars): ${formattedTitle}`,
+        `Title too long (${formattedTitle.length} chars): ${formattedTitle}`
       );
     }
 

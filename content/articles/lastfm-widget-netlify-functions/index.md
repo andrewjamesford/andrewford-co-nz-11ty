@@ -64,7 +64,7 @@ exports.handler = async function (event, context) {
       `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`,
       {
         method: "GET",
-      },
+      }
     );
 
     const data = await response.json();

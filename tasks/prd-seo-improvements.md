@@ -173,12 +173,14 @@ This PRD outlines comprehensive SEO improvements for the andrewford.co.nz websit
 ## Design Considerations
 
 1. **Breadcrumb styling**:
+
    - Use existing site typography and color scheme
    - Implement with existing CSS variables
    - Mobile-responsive with proper touch targets
    - Separator using CSS pseudo-elements (›)
 
 2. **Schema implementation**:
+
    - Hidden from visual display (in script tags)
    - No impact on page layout or design
    - Generated server-side during build
@@ -201,21 +203,25 @@ This PRD outlines comprehensive SEO improvements for the andrewford.co.nz websit
 ## Success Metrics
 
 1. **Technical validation**:
+
    - 100% pass rate in Google Search Console structured data report
    - All pages pass Google Rich Results Test
    - Zero errors in Schema.org validator
 
 2. **Search visibility**:
+
    - Rich snippets appearing for 80%+ of eligible content within 30 days
    - Improved average position in Search Console by 10% within 60 days
    - Increased organic click-through rate by 15% within 60 days
 
 3. **Performance metrics**:
+
    - Maintain or improve Core Web Vitals scores
    - Build time increase less than 10%
    - No increase in page load time
 
 4. **Content metrics**:
+
    - All pages have unique meta descriptions
    - 100% of articles have proper heading hierarchy
    - All content pages have breadcrumb navigation
@@ -272,12 +278,14 @@ This PRD outlines comprehensive SEO improvements for the andrewford.co.nz websit
 ## Testing Requirements
 
 1. **Pre-deployment testing**:
+
    - Validate all schema with Google's Rich Results Test
    - Check meta descriptions are unique and properly formatted
    - Verify heading hierarchy on sample pages
    - Test breadcrumb navigation on all page types
 
 2. **Post-deployment monitoring**:
+
    - Daily Google Search Console checks for first week
    - Monitor Core Web Vitals for any degradation
    - Track rich snippet appearance in SERPs

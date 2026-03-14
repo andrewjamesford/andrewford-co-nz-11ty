@@ -33,7 +33,7 @@ describe("GET /api/latestUploads", () => {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockYouTubeResponse),
-      }),
+      })
     );
 
     const response = await request(app).get("/api/latestUploads").expect(200);
@@ -41,7 +41,7 @@ describe("GET /api/latestUploads", () => {
     expect(response.body).toEqual(mockYouTubeResponse.items);
     expect(fetch).toHaveBeenCalledWith(
       expect.stringContaining("googleapis.com/youtube/v3/search"),
-      expect.any(Object),
+      expect.any(Object)
     );
   });
 
@@ -69,7 +69,7 @@ describe("GET /api/latestUploads", () => {
         ok: false,
         status: 403,
         statusText: "Forbidden",
-      }),
+      })
     );
 
     const response = await request(app).get("/api/latestUploads").expect(500);

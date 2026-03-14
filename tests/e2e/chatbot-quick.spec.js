@@ -47,7 +47,7 @@ test.describe("Chatbot Quick Tests", () => {
     // Should display validation error
     const errorMessage = page.locator(".chat-message.bot").last();
     await expect(errorMessage).toContainText(
-      "Please enter a message with at least 10 characters",
+      "Please enter a message with at least 10 characters"
     );
   });
 

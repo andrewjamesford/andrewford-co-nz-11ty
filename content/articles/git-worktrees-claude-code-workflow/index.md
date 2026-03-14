@@ -43,6 +43,7 @@ Here's how it works:
 1. **Natural Language Interface**: Instead of remembering git syntax, I just tell Claude what I want: "create a new branch for signup fix"
 
 2. **Automatic Setup**: The command:
+
    - Checks for existing worktrees
    - Creates the new branch and separate directory
    - Sets up the development environment (runs `npm install`, etc.)

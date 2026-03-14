@@ -7,7 +7,7 @@ const expect = (actual) => ({
   toHaveProperty: (prop) =>
     assert.ok(
       actual.hasOwnProperty(prop),
-      `Expected object to have property '${prop}'`,
+      `Expected object to have property '${prop}'`
     ),
 });
 
@@ -120,7 +120,7 @@ describe("lastplayed API Endpoint", () => {
       headers: { Origin: `${API_URL}` },
     });
     expect(getResponse.headers.get("access-control-allow-headers")).toBe(
-      "Content-Type",
+      "Content-Type"
     );
     expect(getResponse.headers.get("access-control-allow-methods")).toBe("GET");
   });

@@ -14,7 +14,7 @@ export default (eleventyConfig) => {
       // Check for multiple H1s
       if (h1Matches.length > 1) {
         console.warn(
-          `⚠️  Multiple H1 tags found in ${outputPath} (found ${h1Matches.length})`,
+          `⚠️  Multiple H1 tags found in ${outputPath} (found ${h1Matches.length})`
         );
       }
 
@@ -31,14 +31,14 @@ export default (eleventyConfig) => {
       // Basic heading level validation
       if (headingMatches.length > 0) {
         const levels = headingMatches.map((h) =>
-          parseInt(h.match(/<h([1-6])/)[1]),
+          parseInt(h.match(/<h([1-6])/)[1])
         );
         for (let i = 1; i < levels.length; i++) {
           if (levels[i] > levels[i - 1] + 1) {
             console.warn(
               `⚠️  Potential heading level skip in ${outputPath}: H${
                 levels[i - 1]
-              } → H${levels[i]}`,
+              } → H${levels[i]}`
             );
             break; // Only warn once per page
           }
@@ -81,8 +81,8 @@ export default (eleventyConfig) => {
       console.warn(
         `⚠️  Title too long (${fullTitle.length} chars): ${fullTitle.substring(
           0,
-          50,
-        )}...`,
+          50
+        )}...`
       );
     }
 
@@ -104,7 +104,7 @@ export default (eleventyConfig) => {
       try {
         // Extract meta description
         const metaMatch = content.match(
-          /<meta\s+name="description"\s+content="([^"]*)"[^>]*>/i,
+          /<meta\s+name="description"\s+content="([^"]*)"[^>]*>/i
         );
 
         if (metaMatch) {
@@ -126,7 +126,7 @@ export default (eleventyConfig) => {
             console.warn(`   First: ${existingPath}`);
             console.warn(`   Duplicate: ${outputPath}`);
             console.warn(
-              `   Description: "${description.substring(0, 80)}..."`,
+              `   Description: "${description.substring(0, 80)}..."`
             );
           } else {
             metaDescriptions.set(normalizedDesc, outputPath);
@@ -137,6 +137,6 @@ export default (eleventyConfig) => {
       }
 
       return content;
-    },
+    }
   );
 };

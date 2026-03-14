@@ -21,12 +21,12 @@ function loadVectorStore() {
   try {
     const vectorStorePath = path.join(
       __dirname,
-      "../../vector_store/simple_vector_store.json",
+      "../../vector_store/simple_vector_store.json"
     );
     const vectorStoreContent = fs.readFileSync(vectorStorePath, "utf-8");
     VECTOR_STORE = JSON.parse(vectorStoreContent);
     console.log(
-      `Loaded ${VECTOR_STORE.documents.length} documents from vector store`,
+      `Loaded ${VECTOR_STORE.documents.length} documents from vector store`
     );
     return VECTOR_STORE;
   } catch (error) {
@@ -49,13 +49,13 @@ function sanitizeInput(input) {
 
   if (trimmed.length < INPUT_LIMITS.minLength) {
     throw new Error(
-      `Question must be at least ${INPUT_LIMITS.minLength} characters long`,
+      `Question must be at least ${INPUT_LIMITS.minLength} characters long`
     );
   }
 
   if (trimmed.length > INPUT_LIMITS.maxLength) {
     throw new Error(
-      `Question must be no more than ${INPUT_LIMITS.maxLength} characters long`,
+      `Question must be no more than ${INPUT_LIMITS.maxLength} characters long`
     );
   }
 
@@ -108,7 +108,7 @@ router.post("/", async (req, res) => {
         process.env.OPENROUTER_EMBEDDING_MODEL ||
         "openai/text-embedding-3-small",
       configuration: getOpenRouterConfiguration(
-        "Andrew Ford Blog Chatbot Embeddings",
+        "Andrew Ford Blog Chatbot Embeddings"
       ),
     });
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
@@ -116,7 +116,7 @@ router.post("/", async (req, res) => {
     const similarDocs = findSimilarDocuments(
       queryEmbedding,
       vectorStore.documents,
-      4,
+      4
     );
 
     const isStreaming = req.headers.accept?.includes("text/event-stream");

@@ -26,32 +26,38 @@ This PRD outlines the requirements for migrating the existing AI chatbot on the 
 ## Functional Requirements
 
 1. **OpenRouter Integration**
+
    - The system must integrate with OpenRouter API using appropriate authentication
    - The system must support configuration of API keys through environment variables
    - The system must handle API errors gracefully with user-friendly error messages
 
 2. **Free Model Selection**
+
    - The system must use only free-tier models available on OpenRouter
    - The system must implement model fallback logic if primary model is unavailable
    - The system must log which models are being used for monitoring purposes
 
 3. **LangChain Implementation**
+
    - The system must use LangChain.js for managing conversations and prompts
    - The system must implement proper prompt templates for consistent responses
    - The system must handle conversation context appropriately
 
 4. **Streaming Responses**
+
    - The system must stream AI responses character-by-character or chunk-by-chunk
    - The system must show visual indicators during response generation
    - The system must handle stream interruptions gracefully
 
 5. **Chat Widget**
+
    - The system must display a chat widget on all blog pages
    - The widget must be collapsible/expandable
    - The widget must maintain conversation state during page navigation
    - The widget must be responsive and work on mobile devices
 
 6. **Static Site Compatibility**
+
    - The system must work with static site architecture (11ty)
    - The system must use client-side JavaScript for API calls
    - The system must not require server-side infrastructure beyond API endpoints
@@ -75,6 +81,7 @@ This PRD outlines the requirements for migrating the existing AI chatbot on the 
 ## Design Considerations
 
 1. **UI/UX Requirements**
+
    - Chat widget should match existing blog design theme
    - Widget should be unobtrusive but easily discoverable
    - Loading states must be clear during streaming
@@ -88,16 +95,19 @@ This PRD outlines the requirements for migrating the existing AI chatbot on the 
 ## Technical Considerations
 
 1. **API Key Management**
+
    - OpenRouter API keys must be stored securely
    - Consider using edge functions or serverless endpoints to protect keys
    - Never expose API keys in client-side code
 
 2. **Performance**
+
    - Lazy load chat widget to avoid impacting initial page load
    - Implement request debouncing to prevent spam
    - Cache static assets appropriately
 
 3. **Browser Compatibility**
+
    - Must support modern browsers (Chrome, Firefox, Safari, Edge)
    - Must gracefully degrade for older browsers
 
@@ -109,16 +119,19 @@ This PRD outlines the requirements for migrating the existing AI chatbot on the 
 ## Success Metrics
 
 1. **User Engagement**
+
    - 100% elimination of rate limit error messages
    - Increase in average chat sessions per visitor
    - Reduction in chat abandonment rate
 
 2. **Performance**
+
    - Time to first token < 2 seconds
    - Complete response streaming without interruptions
    - Widget load time < 500ms
 
 3. **Cost Optimization**
+
    - $0 monthly cost for AI model usage (using only free tiers)
    - Reduced infrastructure costs from removing Upstash
 

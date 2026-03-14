@@ -33,7 +33,7 @@ export default (eleventyConfig) => {
         decoding: "async",
       };
       return eleventyImage.generateHTML(metadata, imageAttributes);
-    },
+    }
   );
 
   // Eager image shortcode for above-the-fold/hero images (LCP optimization)
@@ -56,7 +56,7 @@ export default (eleventyConfig) => {
         fetchpriority: "high",
       };
       return eleventyImage.generateHTML(metadata, imageAttributes);
-    },
+    }
   );
 
   // Eleventy Image shortcode
@@ -68,7 +68,7 @@ export default (eleventyConfig) => {
       alt,
       widths = [320, 720, 1024],
       cssClass,
-      id = "externalImage",
+      id = "externalImage"
     ) {
       // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
       // Warning: Avif can be resource-intensive so take care!
@@ -93,7 +93,7 @@ export default (eleventyConfig) => {
         id: id,
       };
       return eleventyImage.generateHTML(metadata, imageAttributes);
-    },
+    }
   );
 
   // External hero image shortcode for above-the-fold external images
@@ -104,7 +104,7 @@ export default (eleventyConfig) => {
       alt,
       widths = [320, 720, 1024],
       cssClass,
-      id = "externalHeroImage",
+      id = "externalHeroImage"
     ) {
       let srcUrl = src ? src : "";
       if (srcUrl === "") {
@@ -128,7 +128,7 @@ export default (eleventyConfig) => {
         id: id,
       };
       return eleventyImage.generateHTML(metadata, imageAttributes);
-    },
+    }
   );
 
   eleventyConfig.addAsyncShortcode(
@@ -153,7 +153,7 @@ export default (eleventyConfig) => {
       const img = eleventyImage.generateHTML(metadata, imageAttributes);
 
       return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
-    },
+    }
   );
 
   // Hero figure shortcode for above-the-fold figures (LCP optimization)
@@ -178,7 +178,7 @@ export default (eleventyConfig) => {
       const img = eleventyImage.generateHTML(metadata, imageAttributes);
 
       return `<figure class="figure">${img}<figcaption class="figure-caption">${alt}</figcaption></figure>`;
-    },
+    }
   );
 
   // YouTube thumbnail shortcode with stable filenames
@@ -228,7 +228,7 @@ export default (eleventyConfig) => {
         return eleventyImage.generateHTML(metadata, imageAttributes);
       } catch (error) {
         console.error(
-          `Error processing YouTube thumbnail for ${videoId}: ${error.message}`,
+          `Error processing YouTube thumbnail for ${videoId}: ${error.message}`
         );
         // Fallback to placeholder
         let metadata = await eleventyImage(placeholderPath, {
@@ -246,7 +246,7 @@ export default (eleventyConfig) => {
         };
         return eleventyImage.generateHTML(metadata, imageAttributes);
       }
-    },
+    }
   );
 
   // Advanced responsive picture shortcode
@@ -260,7 +260,7 @@ export default (eleventyConfig) => {
         mobile: 320,
         tablet: 720,
         desktop: 1024,
-      },
+      }
     ) {
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
@@ -284,6 +284,6 @@ export default (eleventyConfig) => {
       };
 
       return eleventyImage.generateHTML(metadata, imageAttributes);
-    },
+    }
   );
 };

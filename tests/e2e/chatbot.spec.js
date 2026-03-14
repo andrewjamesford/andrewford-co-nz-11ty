@@ -65,7 +65,7 @@ test.describe("Chatbot Functionality", () => {
     // Check placeholder text
     await expect(page.locator("#chat-input")).toHaveAttribute(
       "placeholder",
-      "Enter your question here",
+      "Enter your question here"
     );
   });
 
@@ -81,7 +81,7 @@ test.describe("Chatbot Functionality", () => {
     // Should display validation error
     const errorMessage = page.locator(".chat-message.bot").last();
     await expect(errorMessage).toContainText(
-      "Please enter a message with at least 10 characters",
+      "Please enter a message with at least 10 characters"
     );
   });
 
@@ -117,7 +117,7 @@ test.describe("Chatbot Functionality", () => {
 
     // Response should contain relevant information about Andrew
     await expect(botResponse).toContainText(
-      /developer|Andrew|professional|software|web/i,
+      /developer|Andrew|professional|software|web/i
     );
   });
 
@@ -260,7 +260,7 @@ test.describe("Chatbot Functionality", () => {
     for (let i = 1; i <= 3; i++) {
       await page.fill(
         "#chat-input",
-        `Test message number ${i} - What does Andrew Ford do professionally?`,
+        `Test message number ${i} - What does Andrew Ford do professionally?`
       );
       await page.click("#chat-send");
 
@@ -275,10 +275,10 @@ test.describe("Chatbot Functionality", () => {
     const messagesContainer = page.locator("#chat-messages");
     const scrollTop = await messagesContainer.evaluate((el) => el.scrollTop);
     const scrollHeight = await messagesContainer.evaluate(
-      (el) => el.scrollHeight,
+      (el) => el.scrollHeight
     );
     const clientHeight = await messagesContainer.evaluate(
-      (el) => el.clientHeight,
+      (el) => el.clientHeight
     );
 
     // Should be scrolled close to the bottom (within a reasonable threshold)

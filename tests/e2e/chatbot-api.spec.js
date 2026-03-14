@@ -169,7 +169,7 @@ test.describe("Chatbot API Functionality", () => {
           "Content-Type": "application/json",
         },
         data: { question },
-      }),
+      })
     );
 
     const responses = await Promise.all(promises);
@@ -257,7 +257,7 @@ test.describe("Chatbot API Functionality", () => {
               i + 1
             } - What does Andrew Ford do?`,
           },
-        }),
+        })
       );
 
     const responses = await Promise.all(rapidRequests);

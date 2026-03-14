@@ -55,12 +55,12 @@ async function preprocessDocuments() {
   // Save processed documents
   const outputPath = path.join(
     __dirname,
-    "../vector_store/processed_documents.json",
+    "../vector_store/processed_documents.json"
   );
   fs.writeFileSync(outputPath, JSON.stringify(processedDocs, null, 2));
 
   console.log(
-    `Saved ${processedDocs.length} processed documents to ${outputPath}`,
+    `Saved ${processedDocs.length} processed documents to ${outputPath}`
   );
 }
 

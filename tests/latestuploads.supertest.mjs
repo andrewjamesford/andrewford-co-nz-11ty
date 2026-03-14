@@ -27,8 +27,9 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { default: latestUploadsRouter } =
-  await import("../api/routes/latestUploads.mjs");
+const { default: latestUploadsRouter } = await import(
+  "../api/routes/latestUploads.mjs"
+);
 
 describe("YouTube Latest Uploads Function - Supertest", () => {
   let app;
@@ -96,7 +97,7 @@ describe("YouTube Latest Uploads Function - Supertest", () => {
 
       expect(mockFetch).toHaveBeenCalledWith(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=test-channel-id&maxResults=10&order=date&type=video&key=test-youtube-api-key",
-        { method: "GET" },
+        { method: "GET" }
       );
     });
 
@@ -120,7 +121,7 @@ describe("YouTube Latest Uploads Function - Supertest", () => {
 
       expect(mockFetch).toHaveBeenCalledWith(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=test-channel-id&maxResults=10&order=date&type=video&key=undefined",
-        { method: "GET" },
+        { method: "GET" }
       );
     });
 
@@ -144,7 +145,7 @@ describe("YouTube Latest Uploads Function - Supertest", () => {
 
       expect(mockFetch).toHaveBeenCalledWith(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=undefined&maxResults=10&order=date&type=video&key=test-youtube-api-key",
-        { method: "GET" },
+        { method: "GET" }
       );
     });
 

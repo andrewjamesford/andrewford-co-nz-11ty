@@ -90,7 +90,7 @@ export default async () => {
           ...video,
           localThumbnailPath,
         };
-      }),
+      })
     );
 
     return {
