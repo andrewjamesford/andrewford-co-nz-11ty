@@ -33,7 +33,7 @@
     "test:all": "npm run test:e2e:essential && npm run test:e2e:links",
     "test:e2e": "playwright test",
     "test:e2e:essential": "playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-simple.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium",
-    "test:e2e:links": "playwright test tests/e2e/site-links.spec.js --project=chromium",
+    "test:e2e:links": "node --test tests/e2e/site-links.spec.js",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:quick": "playwright test tests/e2e/chatbot-quick.spec.js --project=chromium",
     "test:e2e:simple": "playwright test tests/e2e/chatbot-simple.spec.js --project=chromium",

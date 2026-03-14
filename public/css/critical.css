@@ -25,8 +25,12 @@
   :root {
     --link-color: #c4b466;
     --body-color: #eee;
-    --body-color-secondary: #e6e6e6;
+    --body-color-secondary: #aaa;
     --bg-color: #121212;
+    --box-bg-color: #2a2a2a;
+    --box-bg-color2: #2a2a2a;
+    --box-border-color: #ffffff14;
+    --promo-color: #eee;
     --header-bg-color: rgba(18, 18, 18, 0);
     --header-shadow: #242424;
   }
