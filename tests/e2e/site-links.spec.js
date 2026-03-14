@@ -30,7 +30,7 @@ function createNormalizedUrl(value, currentUrl, internalHostnames, baseUrl) {
   }
 
   const matchingProtocol = [...SKIPPED_PROTOCOLS].find((protocol) =>
-    trimmedValue.toLowerCase().startsWith(protocol)
+    trimmedValue.toLowerCase().startsWith(protocol),
   );
 
   if (matchingProtocol) {
@@ -95,7 +95,7 @@ describe("Site-wide internal links", () => {
     serverProcess = spawn(
       "npx",
       ["http-server", SITE_DIR, "-p", "3081", "--silent"],
-      { stdio: "ignore" }
+      { stdio: "ignore" },
     );
     // Give the server time to start
     await sleep(2000);
@@ -116,7 +116,7 @@ describe("Site-wide internal links", () => {
       const sitemapResponse = await fetch(`${BASE_URL}/sitemap.xml`);
       assert.ok(
         sitemapResponse.ok,
-        `Sitemap request failed: ${sitemapResponse.status}`
+        `Sitemap request failed: ${sitemapResponse.status}`,
       );
 
       const sitemapXml = await sitemapResponse.text();
@@ -140,17 +140,17 @@ describe("Site-wide internal links", () => {
             const parsedUrl = new URL(location);
             return new URL(
               parsedUrl.pathname + parsedUrl.search,
-              localBaseUrl
+              localBaseUrl,
             ).toString();
           } catch {
             return new URL(location, localBaseUrl).toString();
           }
-        })
+        }),
       );
       pendingUrls.add(new URL("/", localBaseUrl).toString());
 
       const redirectSources = loadRedirectSources(
-        join(process.cwd(), SITE_DIR, "_redirects")
+        join(process.cwd(), SITE_DIR, "_redirects"),
       );
 
       const visitedUrls = new Set();
@@ -197,7 +197,7 @@ describe("Site-wide internal links", () => {
             hrefValue,
             currentUrl,
             internalHostnames,
-            localBaseUrl
+            localBaseUrl,
           );
 
           if (!normalizedUrl || visitedUrls.has(normalizedUrl)) {
@@ -214,14 +214,14 @@ describe("Site-wide internal links", () => {
             linkResponse = await fetch(normalizedUrl);
           } catch (error) {
             failures.push(
-              `${currentUrl} links to ${normalizedUrl}, fetch failed: ${error.message}`
+              `${currentUrl} links to ${normalizedUrl}, fetch failed: ${error.message}`,
             );
             continue;
           }
 
           if (!linkResponse.ok) {
             failures.push(
-              `${currentUrl} links to ${normalizedUrl}, which returned ${linkResponse.status}`
+              `${currentUrl} links to ${normalizedUrl}, which returned ${linkResponse.status}`,
             );
           }
         }
@@ -230,8 +230,8 @@ describe("Site-wide internal links", () => {
       assert.deepStrictEqual(
         failures,
         [],
-        `Broken internal links found:\n${failures.join("\n")}`
+        `Broken internal links found:\n${failures.join("\n")}`,
       );
-    }
+    },
   );
 });

@@ -22,7 +22,7 @@ async function generateSimpleVectorStore() {
     {
       ".md": (path) => new TextLoader(path),
     },
-    true
+    true,
   );
   const docs = await loader.load();
 
@@ -58,8 +58,8 @@ async function generateSimpleVectorStore() {
     const batch = splitDocs.slice(i, i + batchSize);
     console.log(
       `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(
-        splitDocs.length / batchSize
-      )}...`
+        splitDocs.length / batchSize,
+      )}...`,
     );
 
     try {
@@ -87,7 +87,7 @@ async function generateSimpleVectorStore() {
   // Save the vector store
   const outputPath = path.join(
     __dirname,
-    "../vector_store/simple_vector_store.json"
+    "../vector_store/simple_vector_store.json",
   );
   fs.writeFileSync(
     outputPath,
@@ -99,12 +99,12 @@ async function generateSimpleVectorStore() {
         total_documents: processedDocs.length,
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 
   console.log(
-    `Saved ${processedDocs.length} documents with embeddings to ${outputPath}`
+    `Saved ${processedDocs.length} documents with embeddings to ${outputPath}`,
   );
 }
 

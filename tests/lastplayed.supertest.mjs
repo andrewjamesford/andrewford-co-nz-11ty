@@ -27,9 +27,8 @@ jest.unstable_mockModule("dotenv", () => ({
   config: mockDotenvConfig,
 }));
 
-const { default: lastplayedRouter } = await import(
-  "../api/routes/lastplayed.mjs"
-);
+const { default: lastplayedRouter } =
+  await import("../api/routes/lastplayed.mjs");
 
 describe("Last.fm API Function - Supertest", () => {
   let app;
@@ -98,11 +97,11 @@ describe("Last.fm API Function - Supertest", () => {
 
       expect(mockFetch).toHaveBeenCalledWith(
         "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=indysonic&api_key=test-api-key&format=json",
-        { method: "GET" }
+        { method: "GET" },
       );
 
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "http://localhost:3080"
+        "http://localhost:3080",
       );
     });
 
@@ -250,7 +249,7 @@ describe("Last.fm API Function - Supertest", () => {
         .expect(200);
 
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "https://andrewford.co.nz"
+        "https://andrewford.co.nz",
       );
       expect(response.headers["access-control-allow-methods"]).toBe("GET");
     });
@@ -277,7 +276,7 @@ describe("Last.fm API Function - Supertest", () => {
         .expect(200);
 
       expect(response.headers["access-control-allow-origin"]).toBe(
-        "http://localhost:3080"
+        "http://localhost:3080",
       );
     });
   });

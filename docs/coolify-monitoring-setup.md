@@ -82,7 +82,7 @@ app.get("/health", async (req, res) => {
 
     // Check for any critical issues
     const criticalIssues = Object.values(apiStatus).filter(
-      (status) => status === "missing"
+      (status) => status === "missing",
     ).length;
     if (criticalIssues > 0) {
       healthCheck.status = "degraded";
@@ -97,8 +97,8 @@ app.get("/health", async (req, res) => {
     healthCheck.status === "healthy"
       ? 200
       : healthCheck.status === "degraded"
-      ? 200
-      : 503;
+        ? 200
+        : 503;
 
   res.status(statusCode).json(healthCheck);
 });
@@ -166,7 +166,7 @@ const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json(),
-    winston.format.metadata()
+    winston.format.metadata(),
   ),
   defaultMeta: {
     service: "andrewford-blog",
@@ -180,7 +180,7 @@ const logger = winston.createLogger({
         process.env.NODE_ENV === "development"
           ? winston.format.combine(
               winston.format.colorize(),
-              winston.format.simple()
+              winston.format.simple(),
             )
           : winston.format.json(),
     }),

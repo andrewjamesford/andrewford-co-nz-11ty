@@ -15,12 +15,12 @@ router.get("/", async (_req, res) => {
       `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=indysonic&api_key=${apiKey}&format=json`,
       {
         method: "GET",
-      }
+      },
     );
 
     if (!response.ok) {
       throw new Error(
-        `Last.fm API request failed: ${response.status} ${response.statusText}`
+        `Last.fm API request failed: ${response.status} ${response.statusText}`,
       );
     }
 
