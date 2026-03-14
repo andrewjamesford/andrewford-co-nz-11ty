@@ -74,7 +74,7 @@
     "eleventy-plugin-youtube-embed": "1.13.0",
     "husky": "9.1.7",
     "jest": "30.2.0",
-    "lighthouse": "13.0.3",
+    "lighthouse": "12.8.2",
     "luxon": "3.7.2",
     "markdown-it-anchor": "9.2.0",
     "markdown-it-footnote": "4.0.0",
