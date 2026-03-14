@@ -110,9 +110,12 @@ export default async (eleventyConfig) => {
   // Filters
   eleventyConfig.addFilter("readingTime", (content) => {
     if (!content) return "1 min read";
-    const text = content.replace(/<[^>]*>/g, "");
-    const wordCount = text.trim().split(/\s+/).length;
-    const minutes = Math.max(1, Math.round(wordCount / 200));
+    const text = content
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const wordCount = text.split(" ").filter(Boolean).length;
+    const minutes = Math.max(1, Math.ceil(wordCount / 200));
     return `${minutes} min read`;
   });
 
