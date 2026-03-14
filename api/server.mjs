@@ -54,7 +54,7 @@ const corsOptions = {
           const parsed = JSON.parse(cleaned);
           if (Array.isArray(parsed)) {
             return parsed.flatMap((item) =>
-              parseOriginsRecursively(String(item), depth + 1)
+              parseOriginsRecursively(String(item), depth + 1),
             );
           } else if (typeof parsed === "string") {
             return parseOriginsRecursively(parsed, depth + 1);
@@ -93,7 +93,7 @@ const corsOptions = {
             {
               original: process.env.ALLOWED_ORIGINS,
               parsed: allowedOrigins,
-            }
+            },
           );
           allowedOrigins = [
             "http://localhost:8080",
@@ -142,7 +142,7 @@ app.use(
       }
       return compression.filter(req, res);
     },
-  })
+  }),
 );
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
@@ -226,7 +226,7 @@ app.get("/health", async (_req, res) => {
 
     // Check for any critical issues
     const criticalIssues = Object.values(apiStatus).filter(
-      (status) => status === "missing"
+      (status) => status === "missing",
     ).length;
     if (criticalIssues > 0) {
       healthCheck.status = "degraded";
@@ -241,8 +241,8 @@ app.get("/health", async (_req, res) => {
     healthCheck.status === "healthy"
       ? 200
       : healthCheck.status === "degraded"
-      ? 200
-      : 503;
+        ? 200
+        : 503;
 
   res.status(statusCode).json(healthCheck);
 });

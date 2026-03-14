@@ -8,7 +8,7 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: "api-server" },
   transports: [
@@ -16,7 +16,7 @@ const logger = winston.createLogger({
       format: isDevelopment
         ? winston.format.combine(
             winston.format.colorize(),
-            winston.format.simple()
+            winston.format.simple(),
           )
         : winston.format.json(),
     }),
@@ -28,12 +28,12 @@ if (!isDevelopment) {
     new winston.transports.File({
       filename: "logs/error.log",
       level: "error",
-    })
+    }),
   );
   logger.add(
     new winston.transports.File({
       filename: "logs/combined.log",
-    })
+    }),
   );
 }
 

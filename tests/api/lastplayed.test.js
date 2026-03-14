@@ -27,7 +27,7 @@ describe("GET /api/lastplayed", () => {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockLastFmResponse),
-      })
+      }),
     );
 
     const response = await request(app).get("/api/lastplayed").expect(200);
@@ -43,7 +43,7 @@ describe("GET /api/lastplayed", () => {
 
     expect(fetch).toHaveBeenCalledWith(
       expect.stringContaining("ws.audioscrobbler.com"),
-      expect.any(Object)
+      expect.any(Object),
     );
   });
 
@@ -62,7 +62,7 @@ describe("GET /api/lastplayed", () => {
         ok: false,
         status: 500,
         statusText: "Internal Server Error",
-      })
+      }),
     );
 
     const response = await request(app).get("/api/lastplayed").expect(500);

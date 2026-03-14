@@ -24,13 +24,11 @@ When writing content, follow these heading hierarchy rules to ensure proper SEO 
 #### Structure Rules
 
 1. **Single H1 per page**: Each page should have exactly one H1 heading
-
    - The H1 should be the main topic of the page
    - For articles, this is typically the title
    - For pages, this should be the page's main heading
 
 2. **Sequential heading levels**: Don't skip heading levels
-
    - ✅ Good: H1 → H2 → H3
    - ❌ Bad: H1 → H3 (skips H2)
    - ❌ Bad: H1 → H5 (skips H2, H3, H4)

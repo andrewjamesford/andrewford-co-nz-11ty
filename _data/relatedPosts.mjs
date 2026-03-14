@@ -52,8 +52,8 @@ export default {
     return tags.filter(
       (tag) =>
         !["all", "nav", "post", "posts", "[articles]", "[archive]"].includes(
-          tag
-        )
+          tag,
+        ),
     );
   },
 
@@ -87,10 +87,10 @@ export default {
   calculateContentSimilarity(post1, post2) {
     // Simple implementation - can be enhanced with more sophisticated algorithms
     const words1 = this.extractWords(
-      post1.data.description || post1.data.title || ""
+      post1.data.description || post1.data.title || "",
     );
     const words2 = this.extractWords(
-      post2.data.description || post2.data.title || ""
+      post2.data.description || post2.data.title || "",
     );
 
     const commonWords = words1.filter((word) => words2.includes(word));
@@ -133,7 +133,7 @@ export default {
             "into",
             "over",
             "think",
-          ].includes(word)
+          ].includes(word),
       ); // Filter common words
   },
 };

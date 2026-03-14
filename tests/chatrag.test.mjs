@@ -8,7 +8,7 @@ const expect = (actual) => ({
   toHaveProperty: (prop) =>
     assert.ok(
       actual.hasOwnProperty(prop),
-      `Expected object to have property '${prop}'`
+      `Expected object to have property '${prop}'`,
     ),
 });
 

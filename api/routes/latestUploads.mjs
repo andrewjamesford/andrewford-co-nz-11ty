@@ -20,12 +20,12 @@ router.get("/", async (_req, res) => {
       `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`,
       {
         method: "GET",
-      }
+      },
     );
 
     if (!response.ok) {
       throw new Error(
-        `YouTube API request failed: ${response.status} ${response.statusText}`
+        `YouTube API request failed: ${response.status} ${response.statusText}`,
       );
     }
 

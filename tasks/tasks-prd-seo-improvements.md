@@ -31,7 +31,6 @@
 ## Tasks
 
 - [x] 1.0 Implement Structured Data (JSON-LD) System ✅
-
   - [x] 1.1 Create `_includes/schemas/` directory structure
   - [x] 1.2 Create Article schema template with all required properties (headline, author, publisher, dates, image)
   - [x] 1.3 Create Person schema template for author information
@@ -46,7 +45,6 @@
   - [x] 1.12 Test all schemas with Google Rich Results Test
 
 - [x] 2.0 Fix Title Tag Format and Optimization
-
   - [x] 2.1 Update title tag in `base.njk` to use "Andrew Ford - {{ title }}" format
   - [x] 2.2 Create title generation filter in `_data/seo.mjs`
   - [x] 2.3 Implement conditional logic for homepage title ("Andrew Ford - Full Stack Developer, Mentor & Educator")
@@ -57,7 +55,6 @@
   - [x] 2.8 Update all page frontmatter to ensure proper titles
 
 - [x] 3.0 Create Meta Description Auto-Generation System
-
   - [x] 3.1 Create `metaDescription` filter in `eleventy.config.mjs`
   - [x] 3.2 Implement content extraction logic (first 160 chars)
   - [x] 3.3 Add markdown stripping functionality
@@ -69,7 +66,6 @@
   - [x] 3.9 Ensure uniqueness checking across all pages
 
 - [x] 4.0 Fix Heading Hierarchy and Add Validation
-
   - [x] 4.1 Audit and fix `home.njk` to have single H1
   - [x] 4.2 Convert homepage secondary headings to H2
   - [x] 4.3 Update "Latest" and "Latest Videos" sections to use H2
@@ -81,7 +77,6 @@
   - [x] 4.9 Document heading best practices in CLAUDE.md
 
 - [x] 5.0 Implement Breadcrumb Navigation with Schema
-
   - [x] 5.1 Create `_includes/components/breadcrumb.njk` component
   - [x] 5.2 Configure 11ty navigation plugin for breadcrumb generation
   - [x] 5.3 Add breadcrumb CSS styling matching site design

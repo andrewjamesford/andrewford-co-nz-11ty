@@ -37,7 +37,7 @@ test.describe("Chatbot Simple Tests", () => {
     // Should display validation error
     const errorMessage = page.locator(".chat-message.bot").last();
     await expect(errorMessage).toContainText(
-      "Please enter a message with at least 10 characters"
+      "Please enter a message with at least 10 characters",
     );
   });
 
@@ -101,14 +101,14 @@ test.describe("Chatbot API Simple Tests", () => {
     // Skip in CI or when API credentials are not available
     test.skip(
       !!process.env.CI || !process.env.OPENROUTER_API_KEY,
-      "Skipping API integration test (requires OPENROUTER_API_KEY)"
+      "Skipping API integration test (requires OPENROUTER_API_KEY)",
     );
 
     test.setTimeout(90000); // Extend timeout for this test
 
     // Add delay to reduce concurrent load
     await new Promise((resolve) =>
-      setTimeout(resolve, Math.random() * 2000 + 1000)
+      setTimeout(resolve, Math.random() * 2000 + 1000),
     );
 
     const response = await request.post(`${API_BASE}/chatrag`, {

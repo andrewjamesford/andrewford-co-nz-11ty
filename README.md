@@ -74,7 +74,6 @@ A modern, fast personal blog built with [11ty](https://www.11ty.dev/) featuring 
    ```
 
    This starts both the 11ty site and API server:
-
    - **Website**: http://localhost:8080
    - **API**: http://localhost:3080
    - Local dev CORS allows the website on `http://localhost:8080` to call the API on `http://localhost:3080`
