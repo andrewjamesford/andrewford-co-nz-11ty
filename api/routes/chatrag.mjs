@@ -21,12 +21,12 @@ function loadVectorStore() {
   try {
     const vectorStorePath = path.join(
       __dirname,
-      "../../vector_store/simple_vector_store.json",
+      "../../vector_store/simple_vector_store.json"
     );
     const vectorStoreContent = fs.readFileSync(vectorStorePath, "utf-8");
     VECTOR_STORE = JSON.parse(vectorStoreContent);
     console.log(
-      `Loaded ${VECTOR_STORE.documents.length} documents from vector store`,
+      `Loaded ${VECTOR_STORE.documents.length} documents from vector store`
     );
     return VECTOR_STORE;
   } catch (error) {
@@ -49,13 +49,13 @@ function sanitizeInput(input) {
 
   if (trimmed.length < INPUT_LIMITS.minLength) {
     throw new Error(
-      `Question must be at least ${INPUT_LIMITS.minLength} characters long`,
+      `Question must be at least ${INPUT_LIMITS.minLength} characters long`
     );
   }
 
   if (trimmed.length > INPUT_LIMITS.maxLength) {
     throw new Error(
-      `Question must be no more than ${INPUT_LIMITS.maxLength} characters long`,
+      `Question must be no more than ${INPUT_LIMITS.maxLength} characters long`
     );
   }
 
@@ -75,6 +75,58 @@ function sanitizeInput(input) {
   }
 
   return sanitized;
+}
+
+function getRawDocumentSlug(doc) {
+  const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
+
+  if (slugMatch) {
+    const rawSlug = slugMatch[1];
+
+    if (doc.metadata?.source && !rawSlug.includes("/")) {
+      const sourcePath = doc.metadata.source;
+
+      if (sourcePath.includes("/articles/")) {
+        return `articles/${rawSlug}`;
+      }
+    }
+
+    return rawSlug;
+  }
+
+  if (doc.metadata?.source) {
+    return doc.metadata.source.split("/content/")[1] || "";
+  }
+
+  return "";
+}
+
+function formatDocumentSlug(rawSlug) {
+  let slug = rawSlug.replace(/index\.md$/, "").replace(/\.md$/, "");
+
+  if (!slug) {
+    return "";
+  }
+
+  if (!slug.startsWith("/")) {
+    slug = `/${slug}`;
+  }
+
+  if (slug.includes("/") && !slug.endsWith("/")) {
+    slug = `${slug}/`;
+  }
+
+  return slug;
+}
+
+function getSourceLinks(similarDocs, siteUrl) {
+  const links = similarDocs.map((doc) => {
+    const slug = formatDocumentSlug(getRawDocumentSlug(doc));
+    return slug ? `${siteUrl}${slug}` : siteUrl;
+  });
+  const uniqueLinks = [...new Set(links)];
+
+  return uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
 }
 
 router.post("/", async (req, res) => {
@@ -108,7 +160,7 @@ router.post("/", async (req, res) => {
         process.env.OPENROUTER_EMBEDDING_MODEL ||
         "openai/text-embedding-3-small",
       configuration: getOpenRouterConfiguration(
-        "Andrew Ford Blog Chatbot Embeddings",
+        "Andrew Ford Blog Chatbot Embeddings"
       ),
     });
     const queryEmbedding = await embeddings.embedQuery(sanitizedQuestion);
@@ -116,7 +168,7 @@ router.post("/", async (req, res) => {
     const similarDocs = findSimilarDocuments(
       queryEmbedding,
       vectorStore.documents,
-      4,
+      4
     );
 
     const isStreaming = req.headers.accept?.includes("text/event-stream");
@@ -172,20 +224,7 @@ router.post("/", async (req, res) => {
       const siteUrl = (
         process.env.SITE_URL || "https://andrewford.co.nz"
       ).replace(/\/$/, "");
-      const links = similarDocs.map((doc) => {
-        if (doc.metadata?.source) {
-          const rel = doc.metadata.source.split("/content/")[1] || "";
-          let slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
-          if (slug && !slug.endsWith("/") && slug.includes("/")) {
-            slug = slug + "/";
-          }
-          if (!slug.startsWith("/")) slug = "/" + slug;
-          return siteUrl + slug;
-        }
-        return siteUrl;
-      });
-      const uniqueLinks = [...new Set(links)];
-      const sources = uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
+      const sources = getSourceLinks(similarDocs, siteUrl);
 
       res.write(`data: ${JSON.stringify({ done: true, sources })}\n\n`);
       res.end();
@@ -225,20 +264,7 @@ router.post("/", async (req, res) => {
       const siteUrl = (
         process.env.SITE_URL || "https://andrewford.co.nz"
       ).replace(/\/$/, "");
-      const links = similarDocs.map((doc) => {
-        if (doc.metadata?.source) {
-          const rel = doc.metadata.source.split("/content/")[1] || "";
-          let slug = rel.replace(/index\.md$/, "").replace(/\.md$/, "");
-          if (slug && !slug.endsWith("/") && slug.includes("/")) {
-            slug = slug + "/";
-          }
-          if (!slug.startsWith("/")) slug = "/" + slug;
-          return siteUrl + slug;
-        }
-        return siteUrl;
-      });
-      const uniqueLinks = [...new Set(links)];
-      const sources = uniqueLinks.length > 0 ? [uniqueLinks[0]] : [];
+      const sources = getSourceLinks(similarDocs, siteUrl);
 
       res.json({
         answer: response.content,
@@ -272,4 +298,5 @@ router.post("/", async (req, res) => {
   }
 });
 
+export { formatDocumentSlug, getRawDocumentSlug, getSourceLinks };
 export default router;

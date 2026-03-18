@@ -1,8 +1,8 @@
 function initializeChat() {
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
-
   const sendButton = document.getElementById("chat-send");
+  let isSendingMessage = false;
 
   function getFriendlyApiErrorMessage(error) {
     const isLocalDevelopment =
@@ -20,35 +20,73 @@ function initializeChat() {
     return error.message || "Unable to fetch response.";
   }
 
-  const sendMessage = async () => {
-    if (!input.value.trim()) return;
+  function scrollMessagesToBottom() {
+    messages.scrollTop = messages.scrollHeight;
+  }
 
-    const rawMessage = input.value.trim();
+  function createMessageElements(sender, bubbleClassName = "") {
+    const messageContainer = document.createElement("div");
+    messageContainer.className = `chat-message ${
+      sender.toLowerCase() === "you" ? "user" : "bot"
+    }`;
 
-    // Sanitize and validate the message
-    const userMessage = sanitizeMessage(rawMessage);
+    const bubble = document.createElement("div");
+    bubble.className = `chat-bubble ${bubbleClassName}`.trim();
 
-    // Check minimum length requirement
-    if (userMessage.length < 10) {
-      appendMessage(
-        "Bot",
-        "Please enter a message with at least 10 characters.",
-      );
-      input.value = "";
-      return;
+    messageContainer.appendChild(bubble);
+
+    return { messageContainer, bubble };
+  }
+
+  function appendMessageContainer(messageContainer) {
+    messages.appendChild(messageContainer);
+    scrollMessagesToBottom();
+    return messageContainer;
+  }
+
+  function setMessageSubmissionState(isPending) {
+    isSendingMessage = isPending;
+    input.disabled = isPending;
+    sendButton.disabled = isPending;
+
+    if (!isPending) {
+      input.focus();
     }
+  }
 
-    appendMessage("You", userMessage);
-    input.value = "";
+  const sendMessage = async () => {
+    if (isSendingMessage || !input.value.trim()) return;
 
-    // Create bot message container for streaming
-    const botMessageElement = appendStreamingMessage();
+    let botMessageElement;
 
     try {
+      setMessageSubmissionState(true);
+
+      const rawMessage = input.value.trim();
+
+      // Sanitize and validate the message
+      const userMessage = sanitizeMessage(rawMessage);
+
+      // Check minimum length requirement
+      if (userMessage.length < 10) {
+        appendMessage(
+          "Bot",
+          "Please enter a message with at least 10 characters."
+        );
+        input.value = "";
+        return;
+      }
+
+      appendMessage("You", userMessage);
+      input.value = "";
+
+      // Create bot message container for streaming
+      botMessageElement = appendStreamingMessage();
+
       // Try streaming first
       const streamSuccess = await handleStreamingRequest(
         userMessage,
-        botMessageElement,
+        botMessageElement
       );
 
       if (!streamSuccess) {
@@ -60,6 +98,8 @@ function initializeChat() {
       removeStreamingMessage(botMessageElement);
       console.error("Error fetching response:", error);
       appendMessage("Bot", `Error: ${getFriendlyApiErrorMessage(error)}`);
+    } finally {
+      setMessageSubmissionState(false);
     }
   };
 
@@ -75,18 +115,9 @@ function initializeChat() {
   });
 
   function appendMessage(sender, text) {
-    const messageContainer = document.createElement("div");
-    messageContainer.className = `chat-message ${
-      sender.toLowerCase() === "you" ? "user" : "bot"
-    }`;
-
-    const bubble = document.createElement("div");
-    bubble.className = "chat-bubble";
+    const { messageContainer, bubble } = createMessageElements(sender);
     bubble.textContent = text;
-
-    messageContainer.appendChild(bubble);
-    messages.appendChild(messageContainer);
-    messages.scrollTop = messages.scrollHeight;
+    appendMessageContainer(messageContainer);
   }
 
   function formatUrlForDisplay(url) {
@@ -116,7 +147,7 @@ function initializeChat() {
           } else {
             return `${domain}/.../${lastPart.substring(
               0,
-              availableLength - 3,
+              availableLength - 3
             )}...`;
           }
         } else {
@@ -134,12 +165,7 @@ function initializeChat() {
   function appendSourceLinks(sources) {
     if (!Array.isArray(sources)) return;
     sources.forEach((url) => {
-      const messageContainer = document.createElement("div");
-      messageContainer.className = "chat-message bot";
-
-      const bubble = document.createElement("div");
-      bubble.className = "chat-bubble";
-
+      const { messageContainer, bubble } = createMessageElements("Bot");
       const link = document.createElement("a");
       link.href = url;
       link.target = "_blank";
@@ -148,9 +174,7 @@ function initializeChat() {
       link.textContent = formatUrlForDisplay(url);
 
       bubble.appendChild(link);
-      messageContainer.appendChild(bubble);
-      messages.appendChild(messageContainer);
-      messages.scrollTop = messages.scrollHeight;
+      appendMessageContainer(messageContainer);
     });
   }
 
@@ -160,7 +184,7 @@ function initializeChat() {
 
     if (typeof DOMPurify === "undefined") {
       throw new Error(
-        "DOMPurify is not available. Please include DOMPurify for sanitization.",
+        "DOMPurify is not available. Please include DOMPurify for sanitization."
       );
     }
 
@@ -183,11 +207,10 @@ function initializeChat() {
   }
 
   function appendStreamingMessage() {
-    const messageContainer = document.createElement("div");
-    messageContainer.className = "chat-message bot";
-
-    const bubble = document.createElement("div");
-    bubble.className = "chat-bubble loading-bubble";
+    const { messageContainer, bubble } = createMessageElements(
+      "Bot",
+      "loading-bubble"
+    );
 
     // Create loading dots animation
     const dots = document.createElement("span");
@@ -196,11 +219,7 @@ function initializeChat() {
       "<span>&bull;</span><span>&bull;</span><span>&bull;</span>";
 
     bubble.appendChild(dots);
-    messageContainer.appendChild(bubble);
-    messages.appendChild(messageContainer);
-    messages.scrollTop = messages.scrollHeight;
-
-    return messageContainer;
+    return appendMessageContainer(messageContainer);
   }
 
   function removeStreamingMessage(messageElement) {
@@ -218,7 +237,7 @@ function initializeChat() {
         bubble.innerHTML = ""; // Clear loading dots
       }
       bubble.textContent = text;
-      messages.scrollTop = messages.scrollHeight;
+      scrollMessagesToBottom();
     }
   }
 

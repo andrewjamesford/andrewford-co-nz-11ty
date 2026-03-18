@@ -47,7 +47,7 @@ test.describe("Chatbot Quick Tests", () => {
     // Should display validation error
     const errorMessage = page.locator(".chat-message.bot").last();
     await expect(errorMessage).toContainText(
-      "Please enter a message with at least 10 characters",
+      "Please enter a message with at least 10 characters"
     );
   });
 
@@ -71,6 +71,48 @@ test.describe("Chatbot Quick Tests", () => {
     // Loading animation should appear briefly
     const loadingBubble = page.locator(".loading-bubble");
     await expect(loadingBubble).toBeVisible({ timeout: 5000 });
+  });
+
+  test("should disable chat controls while a request is in flight", async ({
+    page,
+  }) => {
+    let requestCount = 0;
+
+    await page.route("**/api/chatrag", async (route) => {
+      requestCount += 1;
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await route.fulfill({
+        status: 200,
+        contentType: "text/event-stream",
+        body: [
+          'data: {"chunk":"Mock response from chatbot."}',
+          'data: {"done":true,"sources":["https://andrewford.co.nz/articles/mock-response/"]}',
+          "",
+        ].join("\n\n"),
+      });
+    });
+
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
+
+    await page.click("#chat-toggle");
+    await page.waitForTimeout(500);
+
+    await page.fill("#chat-input", "Tell me about Andrew Ford's background.");
+    await page.click("#chat-send");
+
+    await expect(page.locator("#chat-input")).toBeDisabled();
+    await expect(page.locator("#chat-send")).toBeDisabled();
+
+    await page.waitForSelector(".loading-bubble", {
+      state: "detached",
+      timeout: 5000,
+    });
+
+    await expect(page.locator(".chat-message.user")).toHaveCount(1);
+    await expect(page.locator("#chat-input")).toBeEnabled();
+    await expect(page.locator("#chat-send")).toBeEnabled();
+    expect(requestCount).toBe(1);
   });
 });
 
