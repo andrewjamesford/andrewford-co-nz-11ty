@@ -78,6 +78,11 @@ function sanitizeInput(input) {
 }
 
 function getRawDocumentSlug(doc) {
+  const permalinkMatch = doc.pageContent.match(/permalink:\s*"?([^"\n]+)"?/);
+  if (permalinkMatch) {
+    return permalinkMatch[1];
+  }
+
   const slugMatch = doc.pageContent.match(/slug:\s*"?([^"\n]+)"?/);
 
   if (slugMatch) {
@@ -112,7 +117,15 @@ function formatDocumentSlug(rawSlug) {
     slug = `/${slug}`;
   }
 
-  if (slug.includes("/") && !slug.endsWith("/")) {
+  const slugWithoutLeadingSlash = slug.slice(1);
+  const lastSegment = slugWithoutLeadingSlash.split("/").pop() || "";
+  const looksLikeFilePath = /\.[a-z0-9]+$/i.test(lastSegment);
+
+  if (
+    slugWithoutLeadingSlash.includes("/") &&
+    !looksLikeFilePath &&
+    !slug.endsWith("/")
+  ) {
     slug = `${slug}/`;
   }
 
