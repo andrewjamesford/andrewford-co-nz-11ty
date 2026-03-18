@@ -1,5 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
 import dotenv from "dotenv";
 dotenv.config();
+
+const stylesheetVersion = fs.statSync(
+  path.join(process.cwd(), "public/css/style.css")
+).mtimeMs;
 
 export default {
   title: "Andrew Ford",
@@ -14,5 +20,6 @@ export default {
     email: "me@andrewford.co.nz",
     url: `${process.env.SITE_URL || "https://andrewford.co.nz"}/about/`,
   },
+  stylesheetVersion,
   gTag: process.env.GTAG,
 };
