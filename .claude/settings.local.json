@@ -14,7 +14,9 @@
       "MultiEdit",
       "Write",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "Skill(commit-commands:commit-push-pr)",
+      "Skill(commit-commands:commit-push-pr:*)"
     ],
     "deny": ["Bash(rm:*)", "Bash(rmdir:*)"]
   },
