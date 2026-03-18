@@ -93,12 +93,9 @@
 			{% getBundle "css" %}
 		</style>
 
-		{%- css "styles" %}{% include "public/css/style.css" %}{% endcss %}
-
 		{# Non-critical styles #}
-		{% set stylesBundleUrl %}{% getBundleFileUrl 'css', 'styles' %}{% endset %}
-		<link rel="preload" href="{{ stylesBundleUrl }}" as="style">
-		<link rel="stylesheet" href="{{ stylesBundleUrl }}">
+		<link rel="preload" href="/css/style.css" as="style">
+		<link rel="stylesheet" href="/css/style.css">
 
 		{# Add the contents of a file to the JS bundle #}
 		{%- js %}{% include "public/scripts/lastFM.js" %}{% endjs %}
