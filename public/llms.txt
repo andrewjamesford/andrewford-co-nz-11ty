@@ -1,0 +1,35 @@
+# Andrew Ford
+
+> Andrew Ford is a software engineer, mentor, and educator from Tauranga, New Zealand. This site contains Andrew's writing about software development, AI-assisted coding, developer education, web development, Swift, and the tools he uses to build apps.
+
+Use this file as a curated guide to the highest-signal pages on andrewford.co.nz. For a full crawlable page list, use the sitemap.
+
+## Site
+
+- [Home](https://andrewford.co.nz/): Overview of Andrew Ford, his apps, latest articles, and recent videos
+- [About Andrew Ford](https://andrewford.co.nz/about/): Professional background, teaching experience, current work, and CV link
+- [Articles](https://andrewford.co.nz/articles/): Blog index covering AI-assisted development, Swift, full stack web development, and software engineering
+- [Uses](https://andrewford.co.nz/uses/): Andrew's developer setup, hardware, software, and video production tools
+- [Privacy Policy](https://andrewford.co.nz/privacy/): Analytics, embeds, external links, and downloads policy
+- [Sitemap](https://andrewford.co.nz/sitemap.xml): Full XML sitemap for discoverable site URLs
+
+## Featured Articles
+
+- [From zero Swift to the App Store](https://andrewford.co.nz/articles/zero-swift-to-app-store/): Building and publishing an iOS app with AI assistance
+- [The Git Feature I Wish I'd Known About Years Ago](https://andrewford.co.nz/articles/git-worktrees-claude-code-workflow/): Using Git worktrees with Claude Code for parallel development workflows
+- [Vibe Coding to Create the Software You Want](https://andrewford.co.nz/articles/vibe-coding-create-software-you-want/): Building personal workflow tools with AI agents
+- [Build a Blog Chatbot with RAG and LangChain](https://andrewford.co.nz/articles/rag-to-build-chatbot-with-langchain/): Creating a lightweight RAG chatbot for an Eleventy blog
+- [Teaching Software Development with AI](https://andrewford.co.nz/articles/teaching-software-development-with-ai/): Using AI tools in remote software development education
+- [Dev Containers In VS Code](https://andrewford.co.nz/articles/dev-containers-in-vs-code/): Creating reusable developer environments with VS Code dev containers
+- [Tailwind Grid Cheatsheet](https://andrewford.co.nz/articles/tailwind-grid-cheatsheet/): Visual reference for Tailwind CSS grid classes
+
+## Apps And Projects
+
+- [Health Scan Express](https://apps.apple.com/us/app/health-scan-express/id6755371692): iOS app for recording weight and blood pressure readings into Apple Health
+- [SlideVids](https://slidevids.com): AI-assisted slide deck video generation with narration
+- [Code with Andrew Ford](https://www.youtube.com/@CodewithAndrewFord): Andrew's YouTube channel for coding videos and livestreams
+
+## Optional
+
+- [Robots.txt](https://andrewford.co.nz/robots.txt): Crawl policy and sitemap location
+- [CV](https://andrewford.co.nz/assets/CV-AndrewFord-May-2024-tech-analyst.pdf): Andrew Ford's latest linked CV
