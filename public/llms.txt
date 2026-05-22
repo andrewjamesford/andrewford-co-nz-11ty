@@ -2,7 +2,7 @@
 
 > Andrew Ford is a software engineer, mentor, and educator from Tauranga, New Zealand. This site contains Andrew's writing about software development, AI-assisted coding, developer education, web development, Swift, and the tools he uses to build apps.
 
-Use this file as a curated guide to the highest-signal pages on andrewford.co.nz. For a full crawlable page list, use the sitemap.
+Use this file as a curated guide to the highest-signal pages on andrewford.co.nz. For a full list of crawlable pages, use the sitemap.
 
 ## Site
 
