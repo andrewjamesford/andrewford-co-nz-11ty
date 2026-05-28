@@ -71,7 +71,7 @@ function initializeChat() {
       if (userMessage.length < 10) {
         appendMessage(
           "Bot",
-          "Please enter a message with at least 10 characters."
+          "Please enter a message with at least 10 characters.",
         );
         input.value = "";
         return;
@@ -86,7 +86,7 @@ function initializeChat() {
       // Try streaming first
       const streamSuccess = await handleStreamingRequest(
         userMessage,
-        botMessageElement
+        botMessageElement,
       );
 
       if (!streamSuccess) {
@@ -147,7 +147,7 @@ function initializeChat() {
           } else {
             return `${domain}/.../${lastPart.substring(
               0,
-              availableLength - 3
+              availableLength - 3,
             )}...`;
           }
         } else {
@@ -184,7 +184,7 @@ function initializeChat() {
 
     if (typeof DOMPurify === "undefined") {
       throw new Error(
-        "DOMPurify is not available. Please include DOMPurify for sanitization."
+        "DOMPurify is not available. Please include DOMPurify for sanitization.",
       );
     }
 
@@ -209,7 +209,7 @@ function initializeChat() {
   function appendStreamingMessage() {
     const { messageContainer, bubble } = createMessageElements(
       "Bot",
-      "loading-bubble"
+      "loading-bubble",
     );
 
     // Create loading dots animation

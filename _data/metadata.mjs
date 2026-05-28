@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const stylesheetVersion = fs.statSync(
-  path.join(process.cwd(), "public/css/style.css")
+  path.join(process.cwd(), "public/css/style.css"),
 ).mtimeMs;
 
 export default {
