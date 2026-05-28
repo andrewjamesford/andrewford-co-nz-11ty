@@ -8,8 +8,8 @@ WORKDIR /app
 # Copy package files first for better caching
 COPY package*.json ./
 
-# Install all dependencies (including devDependencies for build)
-RUN npm install
+# Install all dependencies from the lockfile (including devDependencies for build)
+RUN npm ci
 
 # Copy source code
 COPY . .
