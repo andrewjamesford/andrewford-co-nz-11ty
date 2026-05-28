@@ -18,7 +18,7 @@ test("getRawDocumentSlug infers article paths from frontmatter slugs", () => {
   assert.equal(slug, "articles/rag-to-build-chatbot-with-langchain");
   assert.equal(
     formatDocumentSlug(slug),
-    "/articles/rag-to-build-chatbot-with-langchain/"
+    "/articles/rag-to-build-chatbot-with-langchain/",
   );
 });
 
@@ -33,7 +33,7 @@ test("getSourceLinks normalizes metadata-derived slugs into site urls", () => {
         },
       },
     ],
-    "https://andrewford.co.nz"
+    "https://andrewford.co.nz",
   );
 
   assert.deepEqual(sources, ["https://andrewford.co.nz/pages/about/"]);
@@ -42,7 +42,7 @@ test("getSourceLinks normalizes metadata-derived slugs into site urls", () => {
 test("formatDocumentSlug does not append a trailing slash to file urls", () => {
   assert.equal(
     formatDocumentSlug("fasttempo-privacy-policy.html"),
-    "/fasttempo-privacy-policy.html"
+    "/fasttempo-privacy-policy.html",
   );
 });
 
@@ -69,8 +69,8 @@ test("getRawDocumentSlug prefers permalink frontmatter over file path inference"
           },
         },
       ],
-      "https://andrewford.co.nz"
+      "https://andrewford.co.nz",
     ),
-    ["https://andrewford.co.nz/2017/05/27/probably-already-work-facebook/"]
+    ["https://andrewford.co.nz/2017/05/27/probably-already-work-facebook/"],
   );
 });

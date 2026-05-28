@@ -1,12 +1,13 @@
-- [x] Review the currently open GitHub issues and identify the affected files and behaviors.
-- [x] Refactor chatbot message rendering to share DOM creation logic and prevent duplicate submissions while a request is in flight.
-- [x] Deduplicate chatbot source slug generation in the API route.
-- [x] Run targeted formatting and tests for the affected chatbot paths.
-- [x] Record the implementation and verification results.
+- [x] Inspect current npm scripts, outdated packages, audit output, and open Dependabot alerts.
+- [x] Update direct npm dependencies and refresh the lockfile.
+- [x] Re-run audit/outdated checks to confirm the security posture.
+- [x] Run the project verification suite.
+- [x] Commit, push, and open a PR to `main`.
 
 ## Review
 
-- Added shared chat message DOM helpers in `public/scripts/chat.js`, reused them for normal messages, streaming placeholders, and source links, and disabled the textarea/send button while a request is active to block duplicate submissions.
-- Extracted raw-slug inference and slug formatting into reusable helpers in `api/routes/chatrag.mjs`, then reused the resulting source-link builder in both streaming and non-streaming response paths.
-- Added a pure helper test in `tests/chatrag-helpers.test.mjs` for article and metadata-derived source urls, plus a focused Playwright assertion in `tests/e2e/chatbot-quick.spec.js` that verifies chat controls disable during an in-flight request and re-enable after completion.
-- Verified with `node --test tests/chatrag-helpers.test.mjs`, `npm run build`, and `npx playwright test tests/e2e/chatbot-quick.spec.js --project=chromium`.
+- Updated direct npm dependencies and refreshed the lockfile, including Eleventy, Playwright, LangChain, Express, DOMPurify, Prettier, Jest, Lighthouse, markdownlint, sanitize-html, supertest, and related packages.
+- Added targeted npm overrides for patched transitive security dependencies, bringing `npm audit` to zero vulnerabilities.
+- Kept `dotenv` on `16.6.1` because `17.x` conflicts with the transitive `@browserbasehq/stagehand` peer dependency pulled in by LangChain.
+- Added `http-server` as an explicit dev dependency so the site-wide link test can start its local static server reliably.
+- Verified with `npm audit`, `npm run build`, `npm run prettier:check`, and `npm run test:all`.
