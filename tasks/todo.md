@@ -11,6 +11,12 @@
 - [x] Fix the root cause with the smallest safe change.
 - [x] Verify the fix locally and against representative pages.
 
+## Fix Local YouTube Dev Warning
+
+- [x] Reproduce the local YouTube data fetch issue from placeholder env values.
+- [x] Treat placeholder YouTube credentials as unconfigured.
+- [x] Verify `npm run dev` no longer logs the YouTube API 400 error.
+
 ## Review
 
 - Updated direct npm dependencies and refreshed the lockfile, including Eleventy, Playwright, LangChain, Express, DOMPurify, Prettier, Jest, Lighthouse, markdownlint, sanitize-html, supertest, and related packages.
@@ -22,3 +28,5 @@
 - Found that live YouTube embeds rendered `<div class="lty-playbtn">` while `lite-youtube-embed@0.3.4` only styles `.lyt-playbtn`, making the play button invisible and unclickable.
 - Added a local CSS compatibility rule for the legacy `lty-playbtn` class so the lazy YouTube embeds have a visible, clickable play target again.
 - Verified the fix with a local browser click test, `npm audit`, `npm run build`, `npm run prettier:check`, and `npm run test:all`.
+- Found that README placeholder YouTube values were treated as real credentials during local dev, causing a YouTube API 400 response.
+- Changed optional YouTube fetch failures to a concise skip message so local dev can continue without logging a stack-like API error.

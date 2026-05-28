@@ -7,6 +7,28 @@ config();
 
 const CACHE_DIR = "./public/images/youtube-cache";
 const PLACEHOLDER_PATH = "/images/video-placeholder.svg";
+const PLACEHOLDER_VALUES = [
+  "your_youtube_api_key_here",
+  "your_youtube_channel_id_here",
+  "your-youtube-key",
+  "your-channel-id",
+];
+
+function isMissingOrPlaceholder(value) {
+  if (!value) {
+    return true;
+  }
+
+  const normalizedValue = value.trim().toLowerCase();
+
+  return (
+    !normalizedValue ||
+    PLACEHOLDER_VALUES.includes(normalizedValue) ||
+    normalizedValue.includes("mock") ||
+    normalizedValue.includes("test") ||
+    normalizedValue.includes("placeholder")
+  );
+}
 
 async function ensureCacheDir() {
   try {
@@ -46,16 +68,11 @@ export default async () => {
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;
 
-    // Skip fetching if credentials are missing or are mock/test values
-    if (
-      !apiKey ||
-      !channelId ||
-      apiKey.includes("mock") ||
-      channelId.includes("mock") ||
-      apiKey.includes("test") ||
-      channelId.includes("test")
-    ) {
-      console.log("Skipping YouTube API fetch (credentials missing or mock)");
+    // Skip fetching if credentials are missing or placeholder values.
+    if (isMissingOrPlaceholder(apiKey) || isMissingOrPlaceholder(channelId)) {
+      console.log(
+        "Skipping YouTube API fetch (credentials missing or placeholder)",
+      );
       return { videos: [] };
     }
 
@@ -96,8 +113,10 @@ export default async () => {
     return {
       videos: videosWithCachedThumbs,
     };
-  } catch (e) {
-    console.error("Error in latestVideos.mjs: " + e);
+  } catch (error) {
+    console.warn(
+      "Skipping YouTube API fetch (configured credentials were rejected or the API is unavailable)",
+    );
     return {
       videos: [],
     };
