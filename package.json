@@ -52,7 +52,7 @@
   },
   "license": "GPL-3.0-only",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "bugs": {
     "url": "https://github.com/andrewjamesford/andrewford-co-nz-11ty/issues"

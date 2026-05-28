@@ -4,6 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
+      args:
+        NODE_VERSION: "24.12"
+        NPM_VERSION: "11.16.0"
+        YOUTUBE_CHANNEL_ID: ${YOUTUBE_CHANNEL_ID:-mock-channel-id-for-docker-build}
+      secrets:
+        - youtube_api_key
     ports:
       - "3080:3000"
     environment:
@@ -36,6 +42,12 @@ services:
       context: .
       dockerfile: Dockerfile
       target: builder
+      args:
+        NODE_VERSION: "24.12"
+        NPM_VERSION: "11.16.0"
+        YOUTUBE_CHANNEL_ID: ${YOUTUBE_CHANNEL_ID:-mock-channel-id-for-docker-build}
+      secrets:
+        - youtube_api_key
     ports:
       - "3080:3000"
       - "8080:8080" # For 11ty dev server if needed
@@ -63,3 +75,7 @@ networks:
 volumes:
   logs:
     driver: local
+
+secrets:
+  youtube_api_key:
+    environment: YOUTUBE_API_KEY

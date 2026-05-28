@@ -1,9 +1,20 @@
+# syntax=docker/dockerfile:1.10
 # Multi-stage Dockerfile for 11ty site with API server
 
+ARG NODE_VERSION=24.12
+ARG NPM_VERSION=11.16.0
+ARG YOUTUBE_CHANNEL_ID=mock-channel-id-for-docker-build
+
 # Stage 1: Build stage
-FROM node:24-alpine AS builder
+FROM node:${NODE_VERSION}-alpine AS builder
+
+ARG NPM_VERSION
+ARG YOUTUBE_CHANNEL_ID
 
 WORKDIR /app
+
+# Align Docker installs with packageManager so peer resolution matches local/CI.
+RUN npm install -g npm@${NPM_VERSION}
 
 # Copy package files first for better caching
 COPY package*.json ./
@@ -18,16 +29,25 @@ COPY . .
 COPY vector_store/ ./vector_store/
 
 # Start API server in background, build the static site, then stop the server
-RUN node api/server.mjs & \
-    SERVER_PID=$! && \
-    sleep 5 && \
-    npm run build && \
-    kill $SERVER_PID || true
+RUN --mount=type=secret,id=youtube_api_key,env=YOUTUBE_API_KEY,required=false \
+    export YOUTUBE_CHANNEL_ID="${YOUTUBE_CHANNEL_ID}"; \
+    node api/server.mjs & \
+    SERVER_PID=$!; \
+    sleep 5; \
+    npm run build; \
+    BUILD_STATUS=$?; \
+    kill $SERVER_PID || true; \
+    exit $BUILD_STATUS
 
 # Stage 2: Production stage
-FROM node:24-alpine AS production
+FROM node:${NODE_VERSION}-alpine AS production
+
+ARG NPM_VERSION
 
 WORKDIR /app
+
+# Align production npm commands with packageManager as well.
+RUN npm install -g npm@${NPM_VERSION}
 
 # Install dumb-init for proper signal handling
 RUN apk add --no-cache dumb-init
