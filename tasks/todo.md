@@ -10,4 +10,5 @@
 - Added targeted npm overrides for patched transitive security dependencies, bringing `npm audit` to zero vulnerabilities.
 - Kept `dotenv` on `16.6.1` because `17.x` conflicts with the transitive `@browserbasehq/stagehand` peer dependency pulled in by LangChain.
 - Added `http-server` as an explicit dev dependency so the site-wide link test can start its local static server reliably.
+- Regenerated the lockfile with npm 10 so CI `npm ci` includes optional `@emnapi` package entries, and kept Lighthouse on `12.8.2` for Node 20 CI compatibility.
 - Verified with `npm audit`, `npm run build`, `npm run prettier:check`, and `npm run test:all`.
