@@ -26,6 +26,30 @@ const notFoundPageContent = fs.existsSync(notFoundPage)
   ? fs.readFileSync(notFoundPage, "utf8")
   : defaultNotFoundPageContent;
 
+function setStaticCacheHeaders(res, filePath) {
+  const extension = path.extname(filePath).toLowerCase();
+  const normalizedFilePath = filePath.split(path.sep).join("/");
+
+  if (/\.(avif|webp|png|jpe?g|gif|svg|ico)$/i.test(extension)) {
+    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    return;
+  }
+
+  if (/\.(woff2?|ttf|eot|otf)$/i.test(extension)) {
+    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    return;
+  }
+
+  if (normalizedFilePath.endsWith("/css/style.css")) {
+    res.setHeader("Cache-Control", "public, max-age=3600, must-revalidate");
+    return;
+  }
+
+  if (/\.(js|css)$/i.test(extension)) {
+    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+  }
+}
+
 const corsOptions = {
   origin: (origin, callback) => {
     let allowedOrigins = [
@@ -160,39 +184,24 @@ app.use((req, _res, next) => {
 // Handle redirects from _redirects file before static files
 app.use(createRedirectMiddleware());
 
-// Cache static assets with appropriate headers
+// Cache dynamic routes and let express.static cache only files that exist.
 app.use((req, res, next) => {
   const url = req.url;
 
-  // Images - cache for 1 year
-  if (url.match(/\.(avif|webp|png|jpe?g|gif|svg|ico)$/i)) {
-    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
-  }
-  // Fonts - cache for 1 year
-  else if (url.match(/\.(woff2?|ttf|eot|otf)$/i)) {
-    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
-  }
-  // Stable stylesheet path needs revalidation because cache-busting is query-based
-  else if (url.startsWith("/css/style.css")) {
+  if (url.match(/\.(html?)$/i) || url === "/" || !url.includes(".")) {
     res.setHeader("Cache-Control", "public, max-age=3600, must-revalidate");
-  }
-  // JS/CSS - cache for 1 year (11ty uses hashed filenames)
-  else if (url.match(/\.(js|css)$/i)) {
-    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
-  }
-  // HTML - short cache with revalidation
-  else if (url.match(/\.(html?)$/i) || url === "/" || !url.includes(".")) {
-    res.setHeader("Cache-Control", "public, max-age=3600, must-revalidate");
-  }
-  // Default - moderate cache
-  else {
+  } else if (!path.extname(url)) {
     res.setHeader("Cache-Control", "public, max-age=86400");
   }
 
   next();
 });
 
-app.use(express.static(siteDirectory));
+app.use(
+  express.static(siteDirectory, {
+    setHeaders: setStaticCacheHeaders,
+  }),
+);
 
 app.use("/api/chatrag", chatragRouter);
 app.use("/api/lastplayed", lastplayedRouter);
@@ -253,6 +262,7 @@ app.get("/health", async (_req, res) => {
 
 app.use((req, res) => {
   if (path.extname(req.path)) {
+    res.setHeader("Cache-Control", "no-store");
     res.status(404).end();
     return;
   }

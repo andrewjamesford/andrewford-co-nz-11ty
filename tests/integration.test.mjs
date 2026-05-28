@@ -149,5 +149,13 @@ describe("API Integration Tests", () => {
     test("should return 404 for non-existent API endpoints - Negative Path", async () => {
       const response = await request(app).get("/api/nonexistent").expect(404);
     });
+
+    test("should not long-cache missing static image assets", async () => {
+      const response = await request(app)
+        .get("/img/missing-youtube-thumbnail.avif")
+        .expect(404);
+
+      expect(response.headers["cache-control"]).toBe("no-store");
+    });
   });
 });

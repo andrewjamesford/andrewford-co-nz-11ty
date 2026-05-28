@@ -214,7 +214,7 @@ export default (eleventyConfig) => {
           formats: ["avif", "webp", "jpeg"],
           outputDir: path.join(eleventyConfig.dir.output, "img"),
           filenameFormat: function (id, src, width, format) {
-            return `yt-${videoId}-${width}.${format}`;
+            return `yt-${videoId}-${id}-${width}.${format}`;
           },
         });
 
