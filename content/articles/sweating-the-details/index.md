@@ -27,5 +27,13 @@ At some point you do have to hit the release button. I'm sure there are many thi
 
 I hope it helps you, it's available now on the [App Store](https://apps.apple.com/us/app/fasttempo-fasting-timer/id6757407552)
 
-
 {% figure "./fasttempo-app-store.png", "FastTempo Website" %}
+
+<div class="promotion" style="background: transparent; border: none;">
+  <img src="/images/fasttempo-logo.svg" alt="FastTempo logo" width="80" height="80" style="margin-top: 1rem;">
+  <div class="promotion-title">FastTempo</div>
+  <p class="promotion-body">A fasting timer for iPhone and Apple Watch. Track your fasting window, see when you started, and know exactly when your eating window closes.</p>
+  <a href="https://apps.apple.com/us/app/fasttempo-fasting-timer/id6757407552" class="no-hover" style="display: inline-block; margin: 1rem;">
+    <img src="/images/Download_on_the_App_Store_Badge_US-UK.svg" alt="Download on the App Store" width="120" height="40">
+  </a>
+</div>
