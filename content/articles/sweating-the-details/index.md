@@ -25,7 +25,7 @@ As I was living with the app I found its issues, its rough edges. But as it was 
 
 At some point you do have to hit the release button. I'm sure there are many things left to fix or smooth off, but that will require more eyes than just my own.
 
-I hope it helps you, it's available now on the [App Store](https://apps.apple.com/us/app/fasttempo-fasting-timer/id6757407552)
+I hope it helps you in your fasting journey, it's available now on the [App Store](https://apps.apple.com/us/app/fasttempo-fasting-timer/id6757407552)
 
 {% figure "./fasttempo-app-store.png", "FastTempo Website" %}
 
