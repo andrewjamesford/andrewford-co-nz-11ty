@@ -101,7 +101,7 @@
     "@11ty/eleventy-plugin-rss": "3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2",
     "@playwright/test": "1.60.0",
-    "concurrently": "9.2.1",
+    "concurrently": "10.0.3",
     "dotenv": "16.6.1",
     "eleventy-plugin-youtube-embed": "1.13.2",
     "http-server": "14.1.1",
