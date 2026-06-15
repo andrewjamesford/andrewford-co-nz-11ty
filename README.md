@@ -251,6 +251,72 @@ The project includes `coolify.yaml` for automated deployment on Coolify:
 
 - `GET /api/health` - API server status
 
+## ✍️ Content Authoring
+
+### Creating a New Article
+
+Use the `article.sh` script to scaffold a new article:
+
+```bash
+bash article.sh
+```
+
+You will be prompted for:
+
+- **Title** — the human-readable title (e.g. `Sweating the details`)
+- **File title** — used as the folder name and slug (e.g. `sweating-the-details`)
+
+The script creates `content/articles/<file-title>/index.md` with the frontmatter pre-filled and `draft: true`. Set `draft: false` when ready to publish.
+
+Place any images for the article in the same folder as `index.md` before referencing them in shortcodes.
+
+---
+
+### Image Shortcodes
+
+All image shortcodes are relative to the current article's folder and output optimised AVIF/WebP/PNG at 320px, 720px, and 1024px widths.
+
+#### `{% image %}` — inline responsive image
+
+Renders a `<picture>` element with lazy loading. Use for images embedded within the flow of text.
+
+```nunjucks
+{% image "./my-photo.png", "Alt text describing the image" %}
+```
+
+Optional third argument overrides the default widths array:
+
+```nunjucks
+{% image "./my-photo.png", "Alt text", [320, 640] %}
+```
+
+#### `{% figure %}` — image with caption
+
+Wraps the image in a `<figure>` element. The alt text is also used as the visible `<figcaption>`.
+
+```nunjucks
+{% figure "./my-photo.png", "Caption shown below the image" %}
+```
+
+Output structure:
+
+```html
+<figure class="figure">
+  <picture>...</picture>
+  <figcaption class="figure-caption">Caption shown below the image</figcaption>
+</figure>
+```
+
+#### `{% heroImage %}` / `{% heroFigure %}` — above-the-fold images
+
+Same as `image` and `figure` but uses `loading="eager"` and `fetchpriority="high"` for LCP optimisation. Use these for the first visible image on a page.
+
+```nunjucks
+{% heroFigure "./hero.png", "Hero image caption" %}
+```
+
+---
+
 ## 🤝 Contributing
 
 1. Fork the repository
