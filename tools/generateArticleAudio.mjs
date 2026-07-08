@@ -117,17 +117,18 @@ function hashContent(text) {
 }
 
 function runCommand(command, commandArgs, options = {}) {
+  const { displayCommand, ...spawnOptions } = options;
   const result = spawnSync(command, commandArgs, {
     cwd: rootDirectory,
     encoding: "utf8",
     stdio: "pipe",
-    ...options,
+    ...spawnOptions,
   });
 
   if (result.status !== 0) {
     throw new Error(
       [
-        `${command} ${commandArgs.join(" ")} failed`,
+        `${displayCommand || `${command} ${commandArgs.join(" ")}`} failed`,
         result.stdout,
         result.stderr,
       ]
@@ -315,7 +316,7 @@ function generateChunksWithF5Tts({
   const f5TtsDirectory = resolveF5TtsDirectory();
   const cloneVoiceScriptPath = path.join(f5TtsDirectory, "clone_voice.sh");
   const f5OutputDirectory = path.join(f5TtsDirectory, "output");
-  const maximumCharacters = Number(process.env.F5_TTS_MAX_CHARS || "420");
+  const maximumCharacters = Number(process.env.F5_TTS_MAX_CHARS || "160");
 
   if (!fs.existsSync(f5TtsDirectory)) {
     throw new Error(
@@ -338,7 +339,7 @@ function generateChunksWithF5Tts({
     throw new Error(`No F5-TTS chunks were produced for ${slug}`);
   }
 
-  chunks.forEach((chunk, index) => {
+  for (const [index, chunk] of chunks.entries()) {
     const paddedIndex = String(index + 1).padStart(3, "0");
     const outputFileName = `${slug}-${paddedIndex}.wav`;
     const f5OutputPath = path.join(f5OutputDirectory, outputFileName);
@@ -346,16 +347,27 @@ function generateChunksWithF5Tts({
 
     fs.rmSync(f5OutputPath, { force: true });
     console.log(`Generating F5-TTS chunk ${paddedIndex}/${chunks.length}`);
-    runCommand("bash", [cloneVoiceScriptPath, chunk, outputFileName], {
-      cwd: f5TtsDirectory,
-    });
+    try {
+      runCommand("bash", [cloneVoiceScriptPath, chunk, outputFileName], {
+        cwd: f5TtsDirectory,
+        displayCommand: `bash ${cloneVoiceScriptPath} "[chunk ${paddedIndex}]" ${outputFileName}`,
+      });
+    } catch (error) {
+      throw new Error(
+        [
+          `F5-TTS failed while generating chunk ${paddedIndex}/${chunks.length}.`,
+          `Try lowering F5_TTS_MAX_CHARS below ${maximumCharacters} if this is a segmentation fault.`,
+          error.message,
+        ].join("\n"),
+      );
+    }
 
     if (!fs.existsSync(f5OutputPath)) {
       throw new Error(`F5-TTS did not create expected file: ${f5OutputPath}`);
     }
 
     fs.copyFileSync(f5OutputPath, chunkOutputPath);
-  });
+  }
 }
 
 function generateChunks({ slug, cleanText, textPath, chunksDirectory }) {

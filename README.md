@@ -339,7 +339,7 @@ Optional F5-TTS environment variables:
 
 ```bash
 F5_TTS_DIR=/Users/andrewford/Developer/Projects/F5-TTS
-F5_TTS_MAX_CHARS=420
+F5_TTS_MAX_CHARS=160
 TTS_PROVIDER=f5
 ```
 
