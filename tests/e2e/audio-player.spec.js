@@ -23,8 +23,9 @@ test.describe("Article audio player", () => {
       player.getByRole("combobox", { name: "Playback speed" }),
     ).toBeVisible();
     await expect(
-      player.getByRole("link", { name: "Download" }),
+      player.getByRole("link", { name: "Download article audio" }),
     ).toHaveAttribute("href", "/audio/posts/audio-player-fixture.mp3");
+    await expect(player.getByText("Generated")).toHaveCount(0);
     await expect(player.locator("audio")).toHaveCount(1);
   });
 

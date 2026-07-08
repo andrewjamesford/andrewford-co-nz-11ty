@@ -1,6 +1,5 @@
 {% if audio and audioSrc %}
 	{% set articleAudioDisclosure = audioDisclosure or "AI narrated using Andrew's voice" %}
-	{% set articleAudioVoice = audioVoice or "Andrew" %}
 	{% set articleAudioDuration = audioDuration or "0:00" %}
 	<section class="article-audio" data-audio-player data-audio-duration="{{ articleAudioDuration }}" aria-labelledby="article-audio-title">
 		<div class="article-audio-controls">
@@ -27,7 +26,11 @@
 				</select>
 			</label>
 			{% if audioDownload != false %}
-				<a class="article-audio-download" href="{{ audioSrc }}" download>Download</a>
+				<a class="article-audio-download" href="{{ audioSrc }}" download aria-label="Download article audio" title="Download article audio">
+					<svg class="article-audio-download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</a>
 			{% endif %}
 		</div>
 		<audio class="article-audio-native" src="{{ audioSrc }}" preload="metadata" controls>
@@ -35,15 +38,5 @@
 			<a href="{{ audioSrc }}">download the AI narration</a>
 			instead.
 		</audio>
-		<div class="article-audio-meta">
-			{% if audioGeneratedAt %}
-				Generated {{ audioGeneratedAt | audioDate }}
-				{% if articleAudioVoice %}
-					with {{ articleAudioVoice }}
-				{% endif %}
-			{% else %}
-				Narrated with {{ articleAudioVoice }}
-			{% endif %}
-		</div>
 	</section>
 {% endif %}
