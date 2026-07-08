@@ -11,6 +11,10 @@ tags:
   - app
   - swift
 description: "How I built an app with zero understanding of Swift to a published app in the iOS App Store"
+audio: true
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
+audioDownload: true
 ---
 
 It's such a cliché in the age of AI to build an app with zero knowledge to publishing your own app in the App Store. But I made it happen too. This is now the new reality, those with agency can and will easily build what they desire.
