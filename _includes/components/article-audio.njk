@@ -1,0 +1,42 @@
+{% if audio and audioSrc %}
+	{% set articleAudioDisclosure = audioDisclosure or "AI narrated using Andrew's voice" %}
+	{% set articleAudioDuration = audioDuration or "0:00" %}
+	<section class="article-audio" data-audio-player data-audio-duration="{{ articleAudioDuration }}" aria-labelledby="article-audio-title">
+		<div class="article-audio-controls">
+			<button class="article-audio-play" type="button" data-audio-play aria-label="Play Listen to this article">
+				<span class="article-audio-play-icon" data-audio-play-icon aria-hidden="true">▶</span>
+			</button>
+			<div class="article-audio-copy">
+				<div class="article-audio-title" id="article-audio-title">Listen to this article</div>
+				<div class="article-audio-disclosure">{{ articleAudioDisclosure }}</div>
+			</div>
+			<div class="article-audio-timeline">
+				<span class="article-audio-time" data-audio-current>0:00</span>
+				<input class="article-audio-progress" type="range" min="0" max="100" value="0" step="0.1" data-audio-progress aria-label="Audio progress">
+				<span class="article-audio-time" data-audio-total>{{ articleAudioDuration }}</span>
+			</div>
+			<label class="article-audio-speed">
+				<span class="visually-hidden">Playback speed</span>
+				<select data-audio-speed aria-label="Playback speed">
+					<option value="0.75">0.75x</option>
+					<option value="1" selected>1x</option>
+					<option value="1.25">1.25x</option>
+					<option value="1.5">1.5x</option>
+					<option value="2">2x</option>
+				</select>
+			</label>
+			{% if audioDownload != false %}
+				<a class="article-audio-download" href="{{ audioSrc }}" download aria-label="Download article audio" title="Download article audio">
+					<svg class="article-audio-download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</a>
+			{% endif %}
+		</div>
+		<audio class="article-audio-native" src="{{ audioSrc }}" preload="metadata" controls>
+			Your browser does not support the audio element. You can
+			<a href="{{ audioSrc }}">download the AI narration</a>
+			instead.
+		</audio>
+	</section>
+{% endif %}

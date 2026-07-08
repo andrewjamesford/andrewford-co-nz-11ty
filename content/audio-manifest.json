@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "audio-player-fixture",
+    "contentHash": "1278e09c978412cc264c0b0c1c78f68ee26b5e7fe4c1a2beb94a4d0113975ce0",
+    "audioSrc": "/audio/posts/audio-player-fixture.mp3",
+    "duration": "0:09",
+    "generatedAt": "2026-07-08"
+  },
+  {
+    "slug": "zero-swift-to-app-store",
+    "provider": "f5",
+    "contentHash": "aa6b4b23f8a4ea6083d5b908f1b0682bee73e4d439d23e3fb02ee9a7fb4b8517",
+    "audioSrc": "/audio/posts/zero-swift-to-app-store.mp3",
+    "duration": "11:23",
+    "generatedAt": "2026-07-08"
+  }
+]

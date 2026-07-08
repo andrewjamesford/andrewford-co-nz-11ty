@@ -3,14 +3,23 @@ title: From zero Swift to the App Store
 date: "2026-01-11T13:48:32Z"
 template: post
 draft: false
-slug: "zero-swift-to-app-store"
+slug: zero-swift-to-app-store
 category: article
 tags:
   - ai
   - claudecode
   - app
   - swift
-description: "How I built an app with zero understanding of Swift to a published app in the iOS App Store"
+description: >-
+  How I built an app with zero understanding of Swift to a published app in the
+  iOS App Store
+audio: true
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
+audioDownload: true
+audioSrc: /audio/posts/zero-swift-to-app-store.mp3
+audioDuration: "11:23"
+audioGeneratedAt: "2026-07-08"
 ---
 
 It's such a cliché in the age of AI to build an app with zero knowledge to publishing your own app in the App Store. But I made it happen too. This is now the new reality, those with agency can and will easily build what they desire.
