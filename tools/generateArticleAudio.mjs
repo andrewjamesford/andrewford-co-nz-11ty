@@ -111,26 +111,68 @@ function hashContent(text) {
   return crypto.createHash("sha256").update(text).digest("hex");
 }
 
-function runCommand(command, commandArgs, options = {}) {
-  const { cwd = rootDirectory } = options;
+function commandError(command, commandArgs, error) {
+  return new Error(
+    [
+      `${command} failed with ${commandArgs.length} argument${commandArgs.length === 1 ? "" : "s"}`,
+      error.message,
+      error.stdout,
+      error.stderr,
+    ]
+      .filter(Boolean)
+      .join("\n"),
+  );
+}
+
+function runFfprobe(commandArgs) {
   try {
-    return execFileSync(command, commandArgs, {
+    return execFileSync("ffprobe", commandArgs, {
+      cwd: rootDirectory,
+      encoding: "utf8",
+      shell: false,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
+    throw commandError("ffprobe", commandArgs, error);
+  }
+}
+
+function runTtsToolsBatch(commandArgs, cwd) {
+  try {
+    return execFileSync("uv", commandArgs, {
       cwd,
       encoding: "utf8",
       shell: false,
       stdio: ["ignore", "pipe", "pipe"],
     });
   } catch (error) {
-    throw new Error(
-      [
-        `${command} failed with ${commandArgs.length} argument${commandArgs.length === 1 ? "" : "s"}`,
-        error.message,
-        error.stdout,
-        error.stderr,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    );
+    throw commandError("uv", commandArgs, error);
+  }
+}
+
+function runF5CloneVoice(commandArgs, cwd) {
+  try {
+    return execFileSync("bash", commandArgs, {
+      cwd,
+      encoding: "utf8",
+      shell: false,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
+    throw commandError("bash", commandArgs, error);
+  }
+}
+
+function runFfmpeg(commandArgs) {
+  try {
+    return execFileSync("ffmpeg", commandArgs, {
+      cwd: rootDirectory,
+      encoding: "utf8",
+      shell: false,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
+    throw commandError("ffmpeg", commandArgs, error);
   }
 }
 
@@ -143,7 +185,7 @@ function formatDuration(seconds) {
 }
 
 function getAudioDuration(filePath) {
-  const output = runCommand("ffprobe", [
+  const output = runFfprobe([
     "-v",
     "error",
     "-show_entries",
@@ -284,8 +326,7 @@ if any(file is None for file in files):
     raise SystemExit("One or more TTS chunks failed")
 `;
 
-  runCommand(
-    "uv",
+  runTtsToolsBatch(
     [
       "run",
       "python",
@@ -297,7 +338,7 @@ if any(file is None for file in files):
       audioPromptPath,
       process.env.TTS_MAX_PARALLEL_CHUNKS || "2",
     ],
-    { cwd: ttsToolsDirectory },
+    ttsToolsDirectory,
   );
 }
 
@@ -342,9 +383,10 @@ function generateChunksWithF5Tts({
     fs.rmSync(f5OutputPath, { force: true });
     console.log(`Generating F5-TTS chunk ${paddedIndex}/${chunks.length}`);
     try {
-      runCommand("bash", [cloneVoiceScriptPath, chunk, outputFileName], {
-        cwd: f5TtsDirectory,
-      });
+      runF5CloneVoice(
+        [cloneVoiceScriptPath, chunk, outputFileName],
+        f5TtsDirectory,
+      );
     } catch (error) {
       throw new Error(
         [
@@ -399,7 +441,7 @@ function combineChunks({ slug, chunksDirectory, outputPath }) {
   );
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  runCommand("ffmpeg", [
+  runFfmpeg([
     "-y",
     "-f",
     "concat",
