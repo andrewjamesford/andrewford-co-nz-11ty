@@ -112,11 +112,12 @@ function hashContent(text) {
 }
 
 function runCommand(command, commandArgs, options = {}) {
+  const { cwd = rootDirectory } = options;
   const result = spawnSync(command, commandArgs, {
-    cwd: rootDirectory,
+    cwd,
     encoding: "utf8",
+    shell: false,
     stdio: "pipe",
-    ...options,
   });
 
   if (result.status !== 0 || result.error) {
