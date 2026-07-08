@@ -180,11 +180,13 @@ picture {
 .article-audio-download {
   width: 2.25rem;
   height: 2.25rem;
+  box-sizing: border-box;
   border: 1px solid var(--box-border-color);
   border-radius: 50%;
   background-color: var(--bg-color);
   display: inline-grid;
   place-items: center;
+  padding: 0;
   text-decoration: none;
 }
 .article-audio .article-audio-download:hover,
@@ -192,9 +194,11 @@ picture {
   background-color: var(--bg-color) !important;
   color: var(--link-color);
   border-color: var(--link-color);
-  border-radius: 50%;
-  padding: 0;
-  text-decoration: none;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 .article-audio-download-icon {
   width: 1.1rem;

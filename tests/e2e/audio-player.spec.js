@@ -25,13 +25,15 @@ test.describe("Article audio player", () => {
     await expect(
       player.getByRole("link", { name: "Download article audio" }),
     ).toHaveAttribute("href", "/audio/posts/audio-player-fixture.mp3");
-    await player.getByRole("link", { name: "Download article audio" }).hover();
-    await expect(
-      player.getByRole("link", { name: "Download article audio" }),
-    ).toHaveCSS("border-radius", "50%");
-    await expect(
-      player.getByRole("link", { name: "Download article audio" }),
-    ).toHaveCSS("padding", "0px");
+    const downloadLink = player.getByRole("link", {
+      name: "Download article audio",
+    });
+    const downloadBoxBeforeHover = await downloadLink.boundingBox();
+    await downloadLink.hover();
+    const downloadBoxAfterHover = await downloadLink.boundingBox();
+    expect(downloadBoxAfterHover).toEqual(downloadBoxBeforeHover);
+    await expect(downloadLink).toHaveCSS("border-radius", "50%");
+    await expect(downloadLink).toHaveCSS("padding", "0px");
     await expect(player.getByText("Generated")).toHaveCount(0);
     await expect(player.locator("audio")).toHaveCount(1);
   });
