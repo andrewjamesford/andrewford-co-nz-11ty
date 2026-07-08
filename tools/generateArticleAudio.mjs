@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { spawnSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -113,27 +113,25 @@ function hashContent(text) {
 
 function runCommand(command, commandArgs, options = {}) {
   const { cwd = rootDirectory } = options;
-  const result = spawnSync(command, commandArgs, {
-    cwd,
-    encoding: "utf8",
-    shell: false,
-    stdio: "pipe",
-  });
-
-  if (result.status !== 0 || result.error) {
+  try {
+    return execFileSync(command, commandArgs, {
+      cwd,
+      encoding: "utf8",
+      shell: false,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
     throw new Error(
       [
         `${command} failed with ${commandArgs.length} argument${commandArgs.length === 1 ? "" : "s"}`,
-        result.error?.message,
-        result.stdout,
-        result.stderr,
+        error.message,
+        error.stdout,
+        error.stderr,
       ]
         .filter(Boolean)
         .join("\n"),
     );
   }
-
-  return result.stdout;
 }
 
 function formatDuration(seconds) {
