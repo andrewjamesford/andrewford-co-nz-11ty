@@ -131,6 +131,24 @@ export default async (eleventyConfig) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
+  eleventyConfig.addFilter("audioDate", (dateValue) => {
+    if (!dateValue) {
+      return "";
+    }
+
+    if (dateValue instanceof Date) {
+      return DateTime.fromJSDate(dateValue, { zone: "utc" }).toFormat(
+        "yyyy-LL-dd",
+      );
+    }
+
+    const parsedDate = DateTime.fromISO(String(dateValue), { zone: "utc" });
+
+    return parsedDate.isValid
+      ? parsedDate.toFormat("yyyy-LL-dd")
+      : String(dateValue);
+  });
+
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {

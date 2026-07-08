@@ -272,6 +272,58 @@ Place any images for the article in the same folder as `index.md` before referen
 
 ---
 
+### Article Audio
+
+Posts can opt in to an AI narrated audio version with frontmatter. The player renders near the top of the article only when `audio: true` and `audioSrc` are present.
+
+```yaml
+audio: true
+audioSrc: /audio/posts/my-post-slug.mp3
+audioDuration: 08:42
+audioGeneratedAt: 2026-07-08
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
+audioDownload: true
+```
+
+Generated audio files are saved to `public/audio/posts/{slug}.mp3`, which publishes them at `/audio/posts/{slug}.mp3`.
+
+Run the generator manually:
+
+```bash
+npm run audio:generate
+```
+
+Useful options:
+
+```bash
+npm run audio:generate -- --slug=my-post-slug
+npm run audio:generate -- --force
+npm run audio:generate -- --dry-run
+```
+
+The generator scans `content/articles/**/index.md` and processes only posts with `audio: true`. It extracts clean article text, removes code blocks, image shortcodes, promo includes, YouTube-only links, raw media markup, and footnote definitions, then hashes that clean text. The hash is stored in `content/audio-manifest.json`; matching hashes with an existing MP3 are skipped on later runs.
+
+The local TTS integration expects:
+
+- `uv`
+- `ffmpeg`
+- `ffprobe`
+- the TTS repo at `../../tts-tools` from this project root, or `TTS_TOOLS_DIR=/path/to/tts-tools`
+
+Optional environment variables:
+
+```bash
+TTS_TOOLS_DIR=/Users/andrewford/Developer/Projects/tts-tools
+TTS_AUDIO_PROMPT_PATH=sample03.mp3
+TTS_MAX_PARALLEL_CHUNKS=2
+TTS_VOICE=Andrew
+```
+
+The workflow is intentionally manual. It can be added later as a GitHub Actions `workflow_dispatch` job for controlled publishing, but it should not run automatically on every push because voice generation is slow and depends on local model assets.
+
+---
+
 ### Image Shortcodes
 
 All image shortcodes are relative to the current article's folder and output optimised AVIF/WebP/PNG at 320px, 720px, and 1024px widths.

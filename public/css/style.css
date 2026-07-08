@@ -101,6 +101,95 @@ picture {
 .article pre {
   font-size: 0.9rem;
 }
+.article-audio {
+  border: 1px solid var(--box-border-color);
+  border-radius: 0.4rem;
+  background-color: var(--box-bg-color);
+  color: var(--body-color);
+  margin: 1.25rem 0 2rem;
+  padding: 0.85rem;
+}
+.article-audio-controls {
+  display: none;
+}
+.article-audio-enhanced .article-audio-controls {
+  display: grid;
+  grid-template-columns: auto minmax(9rem, 1fr) minmax(14rem, 1.6fr) auto auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+.article-audio-enhanced .article-audio-native {
+  display: none;
+}
+.article-audio-native {
+  display: block;
+  width: 100%;
+}
+.article-audio-play {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--link-color);
+  border-radius: 50%;
+  background-color: var(--link-color);
+  color: #fff;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  font: inherit;
+  line-height: 1;
+}
+.article-audio-play-icon {
+  transform: translateX(0.05rem);
+}
+.article-audio-title {
+  font-weight: 700;
+  line-height: 1.2;
+}
+.article-audio-disclosure,
+.article-audio-meta {
+  color: var(--body-color-secondary);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+.article-audio-meta {
+  margin-top: 0.55rem;
+}
+.article-audio-timeline {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(6rem, 1fr) 2.75rem;
+  gap: 0.45rem;
+  align-items: center;
+}
+.article-audio-time {
+  color: var(--body-color-secondary);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+.article-audio-time:last-child {
+  text-align: right;
+}
+.article-audio-progress {
+  accent-color: var(--link-color);
+  cursor: pointer;
+  width: 100%;
+}
+.article-audio-speed select {
+  color: var(--body-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--body-color-secondary);
+  border-radius: 0.25rem;
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.35rem;
+}
+.article-audio-download {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.article-audio :is(button, input, select, a):focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+}
 .form {
   display: grid;
   grid-template-columns: 1fr;
@@ -860,6 +949,39 @@ picture {
 
   .breadcrumb-item::after {
     margin: 0 0.25rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .article-audio-enhanced .article-audio-controls {
+    grid-template-columns: auto 1fr auto;
+  }
+  .article-audio-timeline {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .article-audio-download {
+    grid-column: 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .article-audio-enhanced .article-audio-controls {
+    grid-template-columns: auto 1fr;
+  }
+  .article-audio-speed,
+  .article-audio-download {
+    grid-row: 3;
+  }
+  .article-audio-speed {
+    grid-column: 1;
+  }
+  .article-audio-download {
+    grid-column: 2;
+    justify-self: end;
+  }
+  .article-audio-timeline {
+    grid-template-columns: 2.6rem minmax(0, 1fr) 2.6rem;
   }
 }
 
