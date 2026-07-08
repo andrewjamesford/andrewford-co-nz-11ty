@@ -187,9 +187,14 @@ picture {
   place-items: center;
   text-decoration: none;
 }
-.article-audio-download:hover {
+.article-audio .article-audio-download:hover,
+.article-audio .article-audio-download:active {
+  background-color: var(--bg-color) !important;
   color: var(--link-color);
   border-color: var(--link-color);
+  border-radius: 50%;
+  padding: 0;
+  text-decoration: none;
 }
 .article-audio-download-icon {
   width: 1.1rem;
