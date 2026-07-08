@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { decodeHTML } from "entities";
 import matter from "gray-matter";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -72,13 +73,7 @@ function findArticleFiles(directory) {
 }
 
 function decodeHtmlEntities(text) {
-  return text
-    .replace(/&quot;/g, '"')
-    .replace(/&#34;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, "&")
-    .replace(/&nbsp;/g, " ");
+  return decodeHTML(text).replace(/\u00a0/g, " ");
 }
 
 function cleanArticleText(markdown) {
@@ -117,18 +112,18 @@ function hashContent(text) {
 }
 
 function runCommand(command, commandArgs, options = {}) {
-  const { displayCommand, ...spawnOptions } = options;
   const result = spawnSync(command, commandArgs, {
     cwd: rootDirectory,
     encoding: "utf8",
     stdio: "pipe",
-    ...spawnOptions,
+    ...options,
   });
 
-  if (result.status !== 0) {
+  if (result.status !== 0 || result.error) {
     throw new Error(
       [
-        `${displayCommand || `${command} ${commandArgs.join(" ")}`} failed`,
+        `${command} failed with ${commandArgs.length} argument${commandArgs.length === 1 ? "" : "s"}`,
+        result.error?.message,
         result.stdout,
         result.stderr,
       ]
@@ -350,7 +345,6 @@ function generateChunksWithF5Tts({
     try {
       runCommand("bash", [cloneVoiceScriptPath, chunk, outputFileName], {
         cwd: f5TtsDirectory,
-        displayCommand: `bash ${cloneVoiceScriptPath} "[chunk ${paddedIndex}]" ${outputFileName}`,
       });
     } catch (error) {
       throw new Error(

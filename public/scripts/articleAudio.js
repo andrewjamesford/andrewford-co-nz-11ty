@@ -62,7 +62,12 @@
 
     playButton.addEventListener("click", async () => {
       if (audio.paused) {
-        await audio.play();
+        try {
+          await audio.play();
+        } catch {
+          setPlayingState(false);
+          updateProgress();
+        }
       } else {
         audio.pause();
       }
@@ -89,7 +94,9 @@
     audio.addEventListener("pause", () => setPlayingState(false));
     audio.addEventListener("ended", () => {
       setPlayingState(false);
+      audio.currentTime = 0;
       progress.value = 0;
+      updateProgress();
     });
 
     updateDuration();
