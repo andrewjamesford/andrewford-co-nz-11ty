@@ -23,6 +23,7 @@ const defaultTtsToolsDirectory = path.resolve(
   "..",
   "tts-tools",
 );
+const defaultF5TtsDirectory = path.resolve(rootDirectory, "..", "..", "F5-TTS");
 
 const args = new Set(process.argv.slice(2));
 const force = args.has("--force");
@@ -31,6 +32,11 @@ const slugArg = process.argv
   .slice(2)
   .find((arg) => arg.startsWith("--slug="))
   ?.replace("--slug=", "");
+const providerArg = process.argv
+  .slice(2)
+  .find((arg) => arg.startsWith("--provider="))
+  ?.replace("--provider=", "");
+const audioProvider = providerArg || process.env.TTS_PROVIDER || "tts-tools";
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -163,7 +169,79 @@ function resolveTtsToolsDirectory() {
   return path.resolve(process.env.TTS_TOOLS_DIR || defaultTtsToolsDirectory);
 }
 
-function generateChunks({ slug, cleanText, textPath, chunksDirectory }) {
+function resolveF5TtsDirectory() {
+  return path.resolve(process.env.F5_TTS_DIR || defaultF5TtsDirectory);
+}
+
+function splitTextIntoChunks(text, maximumCharacters) {
+  const sentences = text
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+  const chunks = [];
+  let currentChunk = "";
+
+  for (const sentence of sentences) {
+    if (!currentChunk) {
+      currentChunk = sentence;
+      continue;
+    }
+
+    const candidateChunk = `${currentChunk} ${sentence}`;
+
+    if (candidateChunk.length <= maximumCharacters) {
+      currentChunk = candidateChunk;
+      continue;
+    }
+
+    chunks.push(currentChunk);
+    currentChunk = sentence;
+  }
+
+  if (currentChunk) {
+    chunks.push(currentChunk);
+  }
+
+  return chunks.flatMap((chunk) => {
+    if (chunk.length <= maximumCharacters) {
+      return [chunk];
+    }
+
+    const words = chunk.split(/\s+/);
+    const wordChunks = [];
+    let currentWordChunk = "";
+
+    for (const word of words) {
+      const candidateWordChunk = currentWordChunk
+        ? `${currentWordChunk} ${word}`
+        : word;
+
+      if (candidateWordChunk.length <= maximumCharacters) {
+        currentWordChunk = candidateWordChunk;
+        continue;
+      }
+
+      if (currentWordChunk) {
+        wordChunks.push(currentWordChunk);
+      }
+
+      currentWordChunk = word;
+    }
+
+    if (currentWordChunk) {
+      wordChunks.push(currentWordChunk);
+    }
+
+    return wordChunks;
+  });
+}
+
+function generateChunksWithTtsTools({
+  slug,
+  cleanText,
+  textPath,
+  chunksDirectory,
+}) {
   const ttsToolsDirectory = resolveTtsToolsDirectory();
   const audioPromptPath = path.resolve(
     ttsToolsDirectory,
@@ -225,6 +303,74 @@ if any(file is None for file in files):
       process.env.TTS_MAX_PARALLEL_CHUNKS || "2",
     ],
     { cwd: ttsToolsDirectory },
+  );
+}
+
+function generateChunksWithF5Tts({
+  slug,
+  cleanText,
+  textPath,
+  chunksDirectory,
+}) {
+  const f5TtsDirectory = resolveF5TtsDirectory();
+  const cloneVoiceScriptPath = path.join(f5TtsDirectory, "clone_voice.sh");
+  const f5OutputDirectory = path.join(f5TtsDirectory, "output");
+  const maximumCharacters = Number(process.env.F5_TTS_MAX_CHARS || "420");
+
+  if (!fs.existsSync(f5TtsDirectory)) {
+    throw new Error(
+      `F5-TTS directory not found: ${f5TtsDirectory}. Set F5_TTS_DIR to override.`,
+    );
+  }
+
+  if (!fs.existsSync(cloneVoiceScriptPath)) {
+    throw new Error(
+      `F5-TTS clone voice script not found: ${cloneVoiceScriptPath}.`,
+    );
+  }
+
+  fs.mkdirSync(chunksDirectory, { recursive: true });
+  fs.writeFileSync(textPath, cleanText);
+
+  const chunks = splitTextIntoChunks(cleanText, maximumCharacters);
+
+  if (chunks.length === 0) {
+    throw new Error(`No F5-TTS chunks were produced for ${slug}`);
+  }
+
+  chunks.forEach((chunk, index) => {
+    const paddedIndex = String(index + 1).padStart(3, "0");
+    const outputFileName = `${slug}-${paddedIndex}.wav`;
+    const f5OutputPath = path.join(f5OutputDirectory, outputFileName);
+    const chunkOutputPath = path.join(chunksDirectory, outputFileName);
+
+    fs.rmSync(f5OutputPath, { force: true });
+    console.log(`Generating F5-TTS chunk ${paddedIndex}/${chunks.length}`);
+    runCommand("bash", [cloneVoiceScriptPath, chunk, outputFileName], {
+      cwd: f5TtsDirectory,
+    });
+
+    if (!fs.existsSync(f5OutputPath)) {
+      throw new Error(`F5-TTS did not create expected file: ${f5OutputPath}`);
+    }
+
+    fs.copyFileSync(f5OutputPath, chunkOutputPath);
+  });
+}
+
+function generateChunks({ slug, cleanText, textPath, chunksDirectory }) {
+  if (audioProvider === "tts-tools") {
+    generateChunksWithTtsTools({ slug, cleanText, textPath, chunksDirectory });
+    return;
+  }
+
+  if (audioProvider === "f5") {
+    generateChunksWithF5Tts({ slug, cleanText, textPath, chunksDirectory });
+    return;
+  }
+
+  throw new Error(
+    `Unsupported audio provider: ${audioProvider}. Use "tts-tools" or "f5".`,
   );
 }
 
@@ -316,6 +462,7 @@ function main() {
     const unchanged =
       !force &&
       existingManifestEntry?.contentHash === contentHash &&
+      (existingManifestEntry?.provider || "tts-tools") === audioProvider &&
       fs.existsSync(outputPath);
 
     if (unchanged) {
@@ -330,6 +477,7 @@ function main() {
       updatedManifest.push(
         existingManifestEntry || {
           slug,
+          provider: audioProvider,
           contentHash,
           audioSrc,
           duration: parsed.data.audioDuration || "",
@@ -363,6 +511,7 @@ function main() {
 
     updatedManifest.push({
       slug,
+      provider: audioProvider,
       contentHash,
       audioSrc,
       duration,

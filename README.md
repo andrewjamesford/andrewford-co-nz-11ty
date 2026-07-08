@@ -298,13 +298,14 @@ Useful options:
 
 ```bash
 npm run audio:generate -- --slug=my-post-slug
+npm run audio:generate -- --provider=f5 --slug=my-post-slug --force
 npm run audio:generate -- --force
 npm run audio:generate -- --dry-run
 ```
 
-The generator scans `content/articles/**/index.md` and processes only posts with `audio: true`. It extracts clean article text, removes code blocks, image shortcodes, promo includes, YouTube-only links, raw media markup, and footnote definitions, then hashes that clean text. The hash is stored in `content/audio-manifest.json`; matching hashes with an existing MP3 are skipped on later runs.
+The generator scans `content/articles/**/index.md` and processes only posts with `audio: true`. It extracts clean article text, removes code blocks, image shortcodes, promo includes, YouTube-only links, raw media markup, and footnote definitions, then hashes that clean text. The hash and selected provider are stored in `content/audio-manifest.json`; matching hashes with the same provider and an existing MP3 are skipped on later runs.
 
-The local TTS integration expects:
+The default local TTS integration expects:
 
 - `uv`
 - `ffmpeg`
@@ -318,6 +319,28 @@ TTS_TOOLS_DIR=/Users/andrewford/Developer/Projects/tts-tools
 TTS_AUDIO_PROMPT_PATH=sample03.mp3
 TTS_MAX_PARALLEL_CHUNKS=2
 TTS_VOICE=Andrew
+```
+
+An F5-TTS provider is also available for regenerating audio from the local F5-TTS checkout:
+
+```bash
+npm run audio:generate -- --provider=f5 --slug=zero-swift-to-app-store --force
+```
+
+The F5-TTS integration expects:
+
+- `ffmpeg`
+- `ffprobe`
+- the F5-TTS repo at `../../F5-TTS` from this project root, or `F5_TTS_DIR=/path/to/F5-TTS`
+- `clone_voice.sh` configured with the desired `ref_clip.wav` and matching `REF_TEXT`
+- the F5-TTS virtual environment installed as described by that repo
+
+Optional F5-TTS environment variables:
+
+```bash
+F5_TTS_DIR=/Users/andrewford/Developer/Projects/F5-TTS
+F5_TTS_MAX_CHARS=420
+TTS_PROVIDER=f5
 ```
 
 The workflow is intentionally manual. It can be added later as a GitHub Actions `workflow_dispatch` job for controlled publishing, but it should not run automatically on every push because voice generation is slow and depends on local model assets.
