@@ -427,7 +427,10 @@ function generateChunksWithF5Tts({
     const f5OutputPath = path.join(f5OutputDirectory, outputFileName);
     const chunkOutputPath = path.join(chunksDirectory, outputFileName);
 
-    if (fs.existsSync(chunkOutputPath)) {
+    const cachedChunkIsReusable =
+      fs.existsSync(chunkOutputPath) && fs.statSync(chunkOutputPath).size > 0;
+
+    if (cachedChunkIsReusable) {
       console.log(`Reusing F5-TTS chunk ${paddedIndex}/${chunks.length}`);
       continue;
     }
@@ -575,6 +578,7 @@ function main() {
       hashContent(fs.readFileSync(textPath, "utf8")) === contentHash;
     const recoveredManifestEntry =
       !existingManifestEntry &&
+      providerArg === undefined &&
       cachedContentMatches &&
       fs.existsSync(outputPath) &&
       parsed.data.audioDuration &&
