@@ -1,9 +1,11 @@
 ---
-title: The Git Feature I Wish I'd Known About Years Ago (And How Claude Code Makes It Easy)
+title: >-
+  The Git Feature I Wish I'd Known About Years Ago (And How Claude Code Makes It
+  Easy)
 date: "2025-08-17T13:06:33Z"
 template: post
 draft: false
-slug: "git-worktrees-claude-code-workflow"
+slug: git-worktrees-claude-code-workflow
 category: article
 tags:
   - git
@@ -13,7 +15,17 @@ tags:
   - automation
   - version-control
   - developer-tools
-description: "Git worktrees let you work on different branches at the same time without the stash-switch-repeat cycle that kills productivity. Learn how I created a custom Claude Code command that sets up parallel development environments with just a simple natural language request."
+description: >-
+  Git worktrees let you work on different branches at the same time without the
+  stash-switch-repeat cycle that kills productivity. Learn how I created a
+  custom Claude Code command that sets up parallel development environments with
+  just a simple natural language request.
+audio: true
+audioSrc: /audio/posts/git-worktrees-claude-code-workflow.mp3
+audioDuration: "4:43"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 We've all been there. You're deep in the middle of implementing a feature when suddenly you need to fix a critical bug. Your code isn't ready to commit, you're right in the middle of something important, and the traditional git workflow feels clunky. Stash your changes, switch branches, lose your mental context, then reverse the process when you're done.

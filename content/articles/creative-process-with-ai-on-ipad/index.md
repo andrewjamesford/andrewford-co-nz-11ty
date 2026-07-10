@@ -3,7 +3,7 @@ title: Creative process with AI on iPad
 date: "2025-07-06T13:46:33Z"
 template: post
 draft: false
-slug: "creative-process-with-ai-on-ipad"
+slug: creative-process-with-ai-on-ipad
 category: article
 tags:
   - claude
@@ -15,7 +15,15 @@ tags:
   - creative-process
   - proof-of-concept
   - poc
-description: Exploring how iPadOS 26 and AI tools like ChatGPT enable a focused, keyboard-free creative workflow.
+description: >-
+  Exploring how iPadOS 26 and AI tools like ChatGPT enable a focused,
+  keyboard-free creative workflow.
+audio: true
+audioSrc: /audio/posts/creative-process-with-ai-on-ipad.mp3
+audioDuration: "2:17"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 I recently bought an iPad, not to just watch more content or play more games, but to explore how far I could push working with AI tools as part of a creative process away from a keyboard. I probably wouldn’t have even considered this until recently, when the beta of iPadOS 26 introduced proper windowing.

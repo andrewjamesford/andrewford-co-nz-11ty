@@ -30,3 +30,25 @@
 - Verified the fix with a local browser click test, `npm audit`, `npm run build`, `npm run prettier:check`, and `npm run test:all`.
 - Found that README placeholder YouTube values were treated as real credentials during local dev, causing a YouTube API 400 response.
 - Changed optional YouTube fetch failures to a concise skip message so local dev can continue without logging a stack-like API error.
+
+## Generate F5 audio for top articles
+
+- [x] Map the analytics top 10 to production article files and exclude the homepage and audio fixture.
+- [x] Make F5-TTS the default provider and include archived articles in discovery.
+- [x] Enable audio for the eight production articles in the analytics list.
+- [x] Keep the automated audio fixture pinned to its original provider.
+- [x] Reduce F5 chunk size and preserve completed chunks after native model failures.
+- [x] Persist each completed manifest entry and recover completed work after interruption.
+- [x] Record generation timestamps using the local calendar date.
+- [x] Update audio browser tests for the newly enabled articles and stable hover measurement.
+- [x] Generate or refresh F5-TTS audio and article metadata.
+- [x] Run formatting, build, and audio verification checks.
+- [x] Commit, push, and open a PR to `main`.
+
+### Review
+
+- Enabled F5-TTS audio for the eight real article pages in the analytics top 10; excluded the homepage and kept the test fixture on its original provider.
+- Generated seven new MP3 files and retained the current F5 recording for `zero-swift-to-app-store`.
+- Added archived-article discovery, stable archive slug handling, 120-character F5 chunks, resumable chunk caching, incremental manifest writes, interrupted-run recovery, and local generation dates.
+- Verified every manifest entry has a valid MP3 with `ffprobe`; the final dry run skipped all nine enabled entries as current.
+- Passed `npm run prettier:check`, `npm run build`, `npm run test:all`, and the five dedicated audio-player Playwright tests on desktop and mobile.

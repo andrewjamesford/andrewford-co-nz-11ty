@@ -9,7 +9,10 @@ import matter from "gray-matter";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDirectory = path.resolve(__dirname, "..");
-const articlesDirectory = path.join(rootDirectory, "content", "articles");
+const articleDirectories = [
+  path.join(rootDirectory, "content", "articles"),
+  path.join(rootDirectory, "content", "archive"),
+];
 const publicAudioDirectory = path.join(
   rootDirectory,
   "public",
@@ -37,7 +40,7 @@ const providerArg = process.argv
   .slice(2)
   .find((arg) => arg.startsWith("--provider="))
   ?.replace("--provider=", "");
-const audioProvider = providerArg || process.env.TTS_PROVIDER || "tts-tools";
+const defaultAudioProvider = process.env.TTS_PROVIDER || "f5";
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -50,6 +53,23 @@ function readJson(filePath, fallback) {
 function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+function writeManifest(entries, originalEntries) {
+  const entriesBySlug = new Map(
+    originalEntries.map((entry) => [entry.slug, entry]),
+  );
+
+  for (const entry of entries) {
+    entriesBySlug.set(entry.slug, entry);
+  }
+
+  writeJson(
+    manifestPath,
+    Array.from(entriesBySlug.values()).sort((first, second) =>
+      first.slug.localeCompare(second.slug),
+    ),
+  );
 }
 
 function findArticleFiles(directory) {
@@ -109,6 +129,15 @@ function cleanArticleText(markdown) {
 
 function hashContent(text) {
   return crypto.createHash("sha256").update(text).digest("hex");
+}
+
+function getArticleSlug(filePath, frontmatterSlug) {
+  if (!frontmatterSlug) {
+    return path.basename(path.dirname(filePath));
+  }
+
+  const slugSegments = frontmatterSlug.split("/").filter(Boolean);
+  return slugSegments.at(-1) || path.basename(path.dirname(filePath));
 }
 
 function commandError(command, commandArgs, error) {
@@ -199,7 +228,12 @@ function getAudioDuration(filePath) {
 }
 
 function getGeneratedDate() {
-  return new Date().toISOString().slice(0, 10);
+  const generatedAt = new Date();
+  const year = generatedAt.getFullYear();
+  const month = String(generatedAt.getMonth() + 1).padStart(2, "0");
+  const day = String(generatedAt.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 }
 
 function resolveTtsToolsDirectory() {
@@ -297,6 +331,7 @@ function generateChunksWithTtsTools({
     );
   }
 
+  fs.rmSync(chunksDirectory, { recursive: true, force: true });
   fs.mkdirSync(chunksDirectory, { recursive: true });
   fs.writeFileSync(textPath, cleanText);
 
@@ -351,7 +386,7 @@ function generateChunksWithF5Tts({
   const f5TtsDirectory = resolveF5TtsDirectory();
   const cloneVoiceScriptPath = path.join(f5TtsDirectory, "clone_voice.sh");
   const f5OutputDirectory = path.join(f5TtsDirectory, "output");
-  const maximumCharacters = Number(process.env.F5_TTS_MAX_CHARS || "160");
+  const maximumCharacters = Number(process.env.F5_TTS_MAX_CHARS || "120");
 
   if (!fs.existsSync(f5TtsDirectory)) {
     throw new Error(
@@ -365,10 +400,22 @@ function generateChunksWithF5Tts({
     );
   }
 
+  const chunks = splitTextIntoChunks(cleanText, maximumCharacters);
+  const chunkPlanPath = path.join(chunksDirectory, "plan.json");
+  const chunkPlan = {
+    contentHash: hashContent(cleanText),
+    maximumCharacters,
+    chunks,
+  };
+  const existingChunkPlan = readJson(chunkPlanPath, null);
+
+  if (JSON.stringify(existingChunkPlan) !== JSON.stringify(chunkPlan)) {
+    fs.rmSync(chunksDirectory, { recursive: true, force: true });
+  }
+
   fs.mkdirSync(chunksDirectory, { recursive: true });
   fs.writeFileSync(textPath, cleanText);
-
-  const chunks = splitTextIntoChunks(cleanText, maximumCharacters);
+  writeJson(chunkPlanPath, chunkPlan);
 
   if (chunks.length === 0) {
     throw new Error(`No F5-TTS chunks were produced for ${slug}`);
@@ -379,6 +426,11 @@ function generateChunksWithF5Tts({
     const outputFileName = `${slug}-${paddedIndex}.wav`;
     const f5OutputPath = path.join(f5OutputDirectory, outputFileName);
     const chunkOutputPath = path.join(chunksDirectory, outputFileName);
+
+    if (fs.existsSync(chunkOutputPath)) {
+      console.log(`Reusing F5-TTS chunk ${paddedIndex}/${chunks.length}`);
+      continue;
+    }
 
     fs.rmSync(f5OutputPath, { force: true });
     console.log(`Generating F5-TTS chunk ${paddedIndex}/${chunks.length}`);
@@ -405,7 +457,13 @@ function generateChunksWithF5Tts({
   }
 }
 
-function generateChunks({ slug, cleanText, textPath, chunksDirectory }) {
+function generateChunks({
+  slug,
+  cleanText,
+  textPath,
+  chunksDirectory,
+  audioProvider,
+}) {
   if (audioProvider === "tts-tools") {
     generateChunksWithTtsTools({ slug, cleanText, textPath, chunksDirectory });
     return;
@@ -479,7 +537,9 @@ function updateFrontmatter({
 function main() {
   const manifest = readJson(manifestPath, []);
   const manifestBySlug = new Map(manifest.map((entry) => [entry.slug, entry]));
-  const articleFiles = findArticleFiles(articlesDirectory);
+  const articleFiles = articleDirectories.flatMap((directory) =>
+    findArticleFiles(directory),
+  );
   const updatedManifest = [];
   let generatedCount = 0;
   let skippedCount = 0;
@@ -487,7 +547,9 @@ function main() {
   for (const filePath of articleFiles) {
     const raw = fs.readFileSync(filePath, "utf8");
     const parsed = matter(raw);
-    const slug = parsed.data.slug || path.basename(path.dirname(filePath));
+    const slug = getArticleSlug(filePath, parsed.data.slug);
+    const audioProvider =
+      providerArg || parsed.data.audioProvider || defaultAudioProvider;
 
     if (slugArg && slug !== slugArg) {
       continue;
@@ -506,6 +568,37 @@ function main() {
     const contentHash = hashContent(cleanText);
     const audioSrc = `/audio/posts/${slug}.mp3`;
     const outputPath = path.join(publicAudioDirectory, `${slug}.mp3`);
+    const articleCacheDirectory = path.join(cacheDirectory, slug);
+    const textPath = path.join(articleCacheDirectory, `${slug}.txt`);
+    const cachedContentMatches =
+      fs.existsSync(textPath) &&
+      hashContent(fs.readFileSync(textPath, "utf8")) === contentHash;
+    const recoveredManifestEntry =
+      !existingManifestEntry &&
+      cachedContentMatches &&
+      fs.existsSync(outputPath) &&
+      parsed.data.audioDuration &&
+      parsed.data.audioGeneratedAt
+        ? {
+            slug,
+            provider: audioProvider,
+            contentHash,
+            audioSrc,
+            duration: parsed.data.audioDuration,
+            generatedAt: parsed.data.audioGeneratedAt,
+          }
+        : null;
+
+    if (!force && recoveredManifestEntry) {
+      skippedCount += 1;
+      updatedManifest.push(recoveredManifestEntry);
+      if (!dryRun) {
+        writeManifest(updatedManifest, manifest);
+      }
+      console.log(`Recovered ${slug}: audio is current`);
+      continue;
+    }
+
     const unchanged =
       !force &&
       existingManifestEntry?.contentHash === contentHash &&
@@ -534,15 +627,18 @@ function main() {
       continue;
     }
 
-    const articleCacheDirectory = path.join(cacheDirectory, slug);
-    const textPath = path.join(articleCacheDirectory, `${slug}.txt`);
     const chunksDirectory = path.join(articleCacheDirectory, "chunks");
 
-    fs.rmSync(articleCacheDirectory, { recursive: true, force: true });
     fs.mkdirSync(articleCacheDirectory, { recursive: true });
 
     console.log(`Generating audio for ${slug}`);
-    generateChunks({ slug, cleanText, textPath, chunksDirectory });
+    generateChunks({
+      slug,
+      cleanText,
+      textPath,
+      chunksDirectory,
+      audioProvider,
+    });
     combineChunks({ slug, chunksDirectory, outputPath });
 
     const duration = getAudioDuration(outputPath);
@@ -564,6 +660,7 @@ function main() {
       duration,
       generatedAt,
     });
+    writeManifest(updatedManifest, manifest);
     generatedCount += 1;
     console.log(`Generated ${audioSrc} (${duration})`);
   }
@@ -577,12 +674,7 @@ function main() {
   }
 
   if (!dryRun) {
-    writeJson(
-      manifestPath,
-      updatedManifest.sort((first, second) =>
-        first.slug.localeCompare(second.slug),
-      ),
-    );
+    writeManifest(updatedManifest, manifest);
   }
 
   console.log(`Done. Generated ${generatedCount}, skipped ${skippedCount}.`);

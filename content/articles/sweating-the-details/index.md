@@ -3,14 +3,21 @@ title: Sweating the details
 date: "2026-06-15T15:10:01Z"
 template: post
 draft: false
-slug: "sweating-the-details"
+slug: sweating-the-details
 category: article
 tags:
   - ios
   - fasting
   - details
-
-description: "After 200 commits and 3 months of daily use, I finally released FastTempo — my fasting timer app for iPhone and Apple Watch. Here is why I waited."
+description: >-
+  After 200 commits and 3 months of daily use, I finally released FastTempo — my
+  fasting timer app for iPhone and Apple Watch. Here is why I waited.
+audio: true
+audioSrc: /audio/posts/sweating-the-details.mp3
+audioDuration: "1:53"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 For my second iOS app I've sat on releasing it for 3 months. Yes that's right I've had it in a good working state for that long. I use FastTempo every day on my iPhone and Apple Watch. Every time I came to wanting to release it I found I wasn't happy. In fact it was around 200 commits from when I had the MVP ready. That's 200 nitpicks and changes.

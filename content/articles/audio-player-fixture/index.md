@@ -10,6 +10,7 @@ tags:
   - test
 description: Fixture page used to verify the AI article audio player.
 audio: true
+audioProvider: tts-tools
 audioSrc: /audio/posts/audio-player-fixture.mp3
 audioDuration: "0:09"
 audioGeneratedAt: "2026-07-08"
