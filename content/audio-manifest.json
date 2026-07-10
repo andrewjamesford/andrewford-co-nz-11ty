@@ -9,6 +9,7 @@
   },
   {
     "slug": "audio-player-fixture",
+    "provider": "tts-tools",
     "contentHash": "1278e09c978412cc264c0b0c1c78f68ee26b5e7fe4c1a2beb94a4d0113975ce0",
     "audioSrc": "/audio/posts/audio-player-fixture.mp3",
     "duration": "0:09",
