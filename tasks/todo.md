@@ -52,3 +52,22 @@
 - Added archived-article discovery, stable archive slug handling, 120-character F5 chunks, resumable chunk caching, incremental manifest writes, interrupted-run recovery, and local generation dates.
 - Verified every manifest entry has a valid MP3 with `ffprobe`; the final dry run skipped all nine enabled entries as current.
 - Passed `npm run prettier:check`, `npm run build`, `npm run test:all`, and the five dedicated audio-player Playwright tests on desktop and mobile.
+
+## Add audio through Create Custom Components in MUI
+
+- [x] Define the cutoff as 1 May 2024 and identify the six missing production articles.
+- [x] Enable audio for the six missing articles without changing current recordings.
+- [x] Exclude custom highlight shortcode blocks from narrated text.
+- [x] Move the no-audio browser fixture outside the newly covered date range.
+- [x] Generate F5-TTS audio and update frontmatter and the manifest.
+- [x] Verify every production article from the cutoff onward has a valid MP3.
+- [x] Run formatting, build, and browser tests.
+- [x] Commit, push, and open a PR to `main`.
+
+### Review
+
+- Generated six F5-TTS recordings for the missing production articles from 1 May 2024 onward, including `custom-components-mui`.
+- Added support for excluding `{% highlight %}` shortcode blocks after finding a JavaScript diff in the cleaned narration text.
+- Verified all 11 real production articles in the cutoff range have F5 manifest entries, durations, and existing MP3 files.
+- Confirmed all six new MP3s with `ffprobe`; the final dry run skipped all 15 enabled entries as current.
+- Passed `npm run prettier:check`, `npm run build`, `npm run test:all`, and the five dedicated audio-player Playwright tests.

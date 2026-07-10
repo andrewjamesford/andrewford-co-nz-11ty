@@ -3,7 +3,7 @@ title: Vibe Coding to Create the Software You Want
 date: "2025-06-01T17:26:10Z"
 template: post
 draft: false
-slug: "vibe-coding-create-software-you-want"
+slug: vibe-coding-create-software-you-want
 category: article
 tags:
   - ai-tools
@@ -13,8 +13,18 @@ tags:
   - macos
   - workflow-automation
   - software-development
-description: "Discover how vibe coding with AI tools can help you build custom software that fits your workflow. Learn how to create a PopClip extension for instant Markdown formatting on macOS using AI agents, and build tools that adapt to your work instead of forcing you to adapt to them."
-ogimage: "vibe-coding-create-software-you-want.png"
+description: >-
+  Discover how vibe coding with AI tools can help you build custom software that
+  fits your workflow. Learn how to create a PopClip extension for instant
+  Markdown formatting on macOS using AI agents, and build tools that adapt to
+  your work instead of forcing you to adapt to them.
+ogimage: vibe-coding-create-software-you-want.png
+audio: true
+audioSrc: /audio/posts/vibe-coding-create-software-you-want.mp3
+audioDuration: "5:13"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 {% figure "./vibe-coding-software.png", "Vibe Coding to Create the Software You Want" %}

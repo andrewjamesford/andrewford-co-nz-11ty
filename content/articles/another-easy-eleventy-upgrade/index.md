@@ -3,14 +3,22 @@ title: Another easy Eleventy upgrade
 date: "2024-10-06T10:10:02Z"
 template: post
 draft: false
-slug: "another-easy-eleventy-upgrade"
+slug: another-easy-eleventy-upgrade
 category: article
 tags:
   - eleventy
   - blog
   - static site generator
   - ssg
-description: Another easy upgrade with the NodeJS simple static site generator Eleventy (11ty) from v2 to v3.
+description: >-
+  Another easy upgrade with the NodeJS simple static site generator Eleventy
+  (11ty) from v2 to v3.
+audio: true
+audioSrc: /audio/posts/another-easy-eleventy-upgrade.mp3
+audioDuration: "1:42"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 The latest version of [Eleventy v3](https://www.11ty.dev/blog/eleventy-v3/) is out. If you haven't heard of Eleventy also known as 11ty it's a fast [Static Site Generator (SSG)](https://jamstack.org/generators/) that uses NodeS. It converts in my case Markdown files into a fast, easy to maintain blog that I've used since Jan 2021. As per usual upgrading to it was easy. So what's new?

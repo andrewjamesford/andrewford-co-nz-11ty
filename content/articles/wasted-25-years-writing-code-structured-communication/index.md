@@ -3,13 +3,22 @@ title: "25 Years Coding: What I Should Have Done Instead"
 date: "2025-07-23T13:44:31Z"
 template: post
 draft: false
-slug: "wasted-25-years-writing-code-structured-communication"
+slug: wasted-25-years-writing-code-structured-communication
 category: article
 tags:
   - code
   - ai
   - communication
-description: A reflection on how 25 years of coding experience has led to the realisation that structured communication, not code itself, is the true valuable artifact in the age of AI-generated programming.
+description: >-
+  A reflection on how 25 years of coding experience has led to the realisation
+  that structured communication, not code itself, is the true valuable artifact
+  in the age of AI-generated programming.
+audio: true
+audioSrc: /audio/posts/wasted-25-years-writing-code-structured-communication.mp3
+audioDuration: "0:57"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 As I continue to use AI more in my side projects, my understanding of what code is and its value is drastically changing. I wholeheartedly believe that the code that I have written for the last 25 years is just a byproduct. For so long, developers and businesses have held it on a pedestal. It is the precious output, the gold to be mined and refined. We felt compelled to protect it at all costs, to back it up, version control it, and guard it jealously.
