@@ -3,7 +3,7 @@ title: Create Custom Components in MUI
 date: "2024-05-01T23:58:44Z"
 template: post
 draft: false
-slug: "custom-components-mui"
+slug: custom-components-mui
 category: article
 tags:
   - mui
@@ -12,8 +12,16 @@ tags:
   - reactjs
   - custom
   - storybook
-description: "In this article we will create custom components in MUI (Material UI) using ReactJS and Storybook."
-ogimage: "custom-components-mui.png"
+description: >-
+  In this article we will create custom components in MUI (Material UI) using
+  ReactJS and Storybook.
+ogimage: custom-components-mui.png
+audio: true
+audioSrc: /audio/posts/custom-components-mui.mp3
+audioDuration: "12:40"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 {% figure "./custom-components.png", "&quot;Create Custom Components using

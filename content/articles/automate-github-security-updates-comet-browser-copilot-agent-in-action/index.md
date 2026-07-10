@@ -1,9 +1,9 @@
 ---
-title: "Automate GitHub Security Updates with AI Agents"
+title: Automate GitHub Security Updates with AI Agents
 date: "2025-07-28T20:55:17Z"
 template: post
 draft: false
-slug: "automate-github-security-updates-comet-browser-copilot-agent-in-action"
+slug: automate-github-security-updates-comet-browser-copilot-agent-in-action
 category: article
 tags:
   - AI
@@ -13,8 +13,17 @@ tags:
   - Copilot
   - Security
   - Developer Tools
-
-description: "Learn how to automate GitHub security notifications using Comet and GitHub Copilot. Transform hours of manual work into 15 minutes of automated maintenance."
+description: >-
+  Learn how to automate GitHub security notifications using Comet and GitHub
+  Copilot. Transform hours of manual work into 15 minutes of automated
+  maintenance.
+audio: true
+audioSrc: >-
+  /audio/posts/automate-github-security-updates-comet-browser-copilot-agent-in-action.mp3
+audioDuration: "11:53"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 If you're like most developers, you've probably found yourself drowning in GitHub security notifications. Those endless email alerts about vulnerable dependencies, the mounting pile of Dependabot pull requests, and the tedious process of reviewing and updating packages across multiple repositories can quickly become overwhelming. But what if I told you there's a way to automate almost all of this using AI-powered tools?

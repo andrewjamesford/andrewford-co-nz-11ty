@@ -101,6 +101,7 @@ function cleanArticleText(markdown) {
     markdown
       .replace(/```[\s\S]*?```/g, " ")
       .replace(/~~~[\s\S]*?~~~/g, " ")
+      .replace(/{%\s*highlight\b[^%]*%}[\s\S]*?{%\s*endhighlight\s*%}/g, " ")
       .replace(/<!--[\s\S]*?-->/g, " ")
       .replace(/^\[\^[^\]]+\]:.*(?:\n[ \t]+.*)*/gm, " ")
       .replace(

@@ -1,9 +1,9 @@
 ---
-title: "Build a Blog Chatbot with RAG and LangChain"
+title: Build a Blog Chatbot with RAG and LangChain
 date: "2025-05-26T22:14:58Z"
 template: post
 draft: false
-slug: "rag-to-build-chatbot-with-langchain"
+slug: rag-to-build-chatbot-with-langchain
 category: article
 tags:
   - RAG
@@ -18,8 +18,19 @@ tags:
   - netlify-functions
   - javascript
   - embeddings
-description: Learn how to build a fast, lightweight AI chatbot for your blog using LangChain, RAG (Retrieval-Augmented Generation), FAISS, and Netlify Functions. This guide walks through indexing markdown content, setting up a vector store, and deploying a serverless chatbot with OpenAI—all without heavy frameworks or databases.
-ogimage: "rag-chatbot-langchain.png"
+description: >-
+  Learn how to build a fast, lightweight AI chatbot for your blog using
+  LangChain, RAG (Retrieval-Augmented Generation), FAISS, and Netlify Functions.
+  This guide walks through indexing markdown content, setting up a vector store,
+  and deploying a serverless chatbot with OpenAI—all without heavy frameworks or
+  databases.
+ogimage: rag-chatbot-langchain.png
+audio: true
+audioSrc: /audio/posts/rag-to-build-chatbot-with-langchain.mp3
+audioDuration: "6:22"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 ## The Problem I Wanted to Solve

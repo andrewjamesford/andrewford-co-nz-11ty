@@ -42,7 +42,7 @@ test.describe("Article audio player", () => {
   test("does not render for articles without audio metadata", async ({
     page,
   }) => {
-    await page.goto("/articles/another-easy-eleventy-upgrade/");
+    await page.goto("/articles/build-a-full-stack-next-js-db-design/");
     await page.waitForLoadState("networkidle");
 
     await expect(page.locator("[data-audio-player]")).toHaveCount(0);

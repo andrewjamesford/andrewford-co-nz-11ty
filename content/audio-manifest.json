@@ -1,10 +1,26 @@
 [
   {
+    "slug": "another-easy-eleventy-upgrade",
+    "provider": "f5",
+    "contentHash": "efcd53e48d5ede25587675d13726de5248d74633545530d138c3a55533b4a8d0",
+    "audioSrc": "/audio/posts/another-easy-eleventy-upgrade.mp3",
+    "duration": "1:42",
+    "generatedAt": "2026-07-10"
+  },
+  {
     "slug": "audio-player-fixture",
     "contentHash": "1278e09c978412cc264c0b0c1c78f68ee26b5e7fe4c1a2beb94a4d0113975ce0",
     "audioSrc": "/audio/posts/audio-player-fixture.mp3",
     "duration": "0:09",
     "generatedAt": "2026-07-08"
+  },
+  {
+    "slug": "automate-github-security-updates-comet-browser-copilot-agent-in-action",
+    "provider": "f5",
+    "contentHash": "32eb44b6782ab077b759f1d65eb091b8cc10321b74060d0976517b8c4ec53e33",
+    "audioSrc": "/audio/posts/automate-github-security-updates-comet-browser-copilot-agent-in-action.mp3",
+    "duration": "11:53",
+    "generatedAt": "2026-07-10"
   },
   {
     "slug": "chatgpt-shortcut-on-ios",
@@ -39,11 +55,27 @@
     "generatedAt": "2026-07-10"
   },
   {
+    "slug": "custom-components-mui",
+    "provider": "f5",
+    "contentHash": "c3eca388b99a581a7ba95346cf9f300aebaf1ee9b5068565204ef9c4eba37444",
+    "audioSrc": "/audio/posts/custom-components-mui.mp3",
+    "duration": "12:40",
+    "generatedAt": "2026-07-10"
+  },
+  {
     "slug": "git-worktrees-claude-code-workflow",
     "provider": "f5",
     "contentHash": "cfd8e0e9d272f6efa3681c1a3f9e32cbfb64a5d091ff4ce5267bb9eb90e913df",
     "audioSrc": "/audio/posts/git-worktrees-claude-code-workflow.mp3",
     "duration": "4:43",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "rag-to-build-chatbot-with-langchain",
+    "provider": "f5",
+    "contentHash": "1f3b9ec73919ed52c923a7b9790fa928a7da3db4fb2cfb00d31e86038acb1597",
+    "audioSrc": "/audio/posts/rag-to-build-chatbot-with-langchain.mp3",
+    "duration": "6:22",
     "generatedAt": "2026-07-10"
   },
   {
@@ -60,6 +92,22 @@
     "contentHash": "dc882858d501dbe947ce12a7fae3d1ebdb2795b2469270e06b7753dfc7bfda6d",
     "audioSrc": "/audio/posts/tailwind-grid-cheatsheet.mp3",
     "duration": "0:31",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "vibe-coding-create-software-you-want",
+    "provider": "f5",
+    "contentHash": "cd296ee78c4b9ad03c13c593a91d171be6b34665ba1917414b12b128fed52928",
+    "audioSrc": "/audio/posts/vibe-coding-create-software-you-want.mp3",
+    "duration": "5:13",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "wasted-25-years-writing-code-structured-communication",
+    "provider": "f5",
+    "contentHash": "b60e26cf95282a28c6e41a81a29278387117281109da00881661bdbe9c73e99b",
+    "audioSrc": "/audio/posts/wasted-25-years-writing-code-structured-communication.mp3",
+    "duration": "0:57",
     "generatedAt": "2026-07-10"
   },
   {
