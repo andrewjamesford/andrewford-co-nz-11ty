@@ -303,9 +303,30 @@ npm run audio:generate -- --force
 npm run audio:generate -- --dry-run
 ```
 
-The generator scans `content/articles/**/index.md` and processes only posts with `audio: true`. It extracts clean article text, removes code blocks, image shortcodes, promo includes, YouTube-only links, raw media markup, and footnote definitions, then hashes that clean text. The hash and selected provider are stored in `content/audio-manifest.json`; matching hashes with the same provider and an existing MP3 are skipped on later runs.
+The generator scans `content/articles/**/index.md` and `content/archive/**/index.md`, and processes only posts with `audio: true`. It extracts clean article text, removes code blocks, image shortcodes, promo includes, YouTube-only links, raw media markup, and footnote definitions, then hashes that clean text. The hash and selected provider are stored in `content/audio-manifest.json`; matching hashes with the same provider and an existing MP3 are skipped on later runs.
 
-The default local TTS integration expects:
+F5-TTS is the default provider. The integration expects:
+
+- `ffmpeg`
+- `ffprobe`
+- the F5-TTS repo at `../../F5-TTS` from this project root, or `F5_TTS_DIR=/path/to/F5-TTS`
+- `clone_voice.sh` configured with the desired `ref_clip.wav` and matching `REF_TEXT`
+- the F5-TTS virtual environment installed as described by that repo
+
+Optional F5-TTS environment variables:
+
+```bash
+F5_TTS_DIR=/Users/andrewford/Developer/Projects/F5-TTS
+F5_TTS_MAX_CHARS=120
+```
+
+Set `audioProvider: tts-tools` in a post's frontmatter when that post should keep using the original provider. An explicit `--provider` command option overrides the post setting.
+
+F5-TTS chunk WAVs are cached under `.cache/article-audio/{slug}/chunks`. If a native model failure interrupts an article, rerunning the command reuses completed chunks when the article text and chunk size are unchanged.
+
+Each completed article is written to the manifest immediately. If a batch stops after an MP3 and frontmatter were published but before the manifest write, the next run recovers that entry when its cached clean text still matches the article.
+
+The original TTS tools provider remains available with `--provider=tts-tools`. It expects:
 
 - `uv`
 - `ffmpeg`
@@ -321,26 +342,10 @@ TTS_MAX_PARALLEL_CHUNKS=2
 TTS_VOICE=Andrew
 ```
 
-An F5-TTS provider is also available for regenerating audio from the local F5-TTS checkout:
+To explicitly regenerate audio with F5-TTS:
 
 ```bash
 npm run audio:generate -- --provider=f5 --slug=zero-swift-to-app-store --force
-```
-
-The F5-TTS integration expects:
-
-- `ffmpeg`
-- `ffprobe`
-- the F5-TTS repo at `../../F5-TTS` from this project root, or `F5_TTS_DIR=/path/to/F5-TTS`
-- `clone_voice.sh` configured with the desired `ref_clip.wav` and matching `REF_TEXT`
-- the F5-TTS virtual environment installed as described by that repo
-
-Optional F5-TTS environment variables:
-
-```bash
-F5_TTS_DIR=/Users/andrewford/Developer/Projects/F5-TTS
-F5_TTS_MAX_CHARS=160
-TTS_PROVIDER=f5
 ```
 
 The workflow is intentionally manual. It can be added later as a GitHub Actions `workflow_dispatch` job for controlled publishing, but it should not run automatically on every push because voice generation is slow and depends on local model assets.

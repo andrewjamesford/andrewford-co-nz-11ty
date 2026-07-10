@@ -28,6 +28,7 @@ test.describe("Article audio player", () => {
     const downloadLink = player.getByRole("link", {
       name: "Download article audio",
     });
+    await downloadLink.scrollIntoViewIfNeeded();
     const downloadBoxBeforeHover = await downloadLink.boundingBox();
     await downloadLink.hover();
     const downloadBoxAfterHover = await downloadLink.boundingBox();
@@ -41,7 +42,7 @@ test.describe("Article audio player", () => {
   test("does not render for articles without audio metadata", async ({
     page,
   }) => {
-    await page.goto("/articles/creative-process-with-ai-on-ipad/");
+    await page.goto("/articles/another-easy-eleventy-upgrade/");
     await page.waitForLoadState("networkidle");
 
     await expect(page.locator("[data-audio-player]")).toHaveCount(0);

@@ -1,16 +1,24 @@
 ---
-title: "Create an Even Easier ChatGPT Shortcut on iOS"
+title: Create an Even Easier ChatGPT Shortcut on iOS
 date: "2023-06-24T16:23:02Z"
 template: post
 draft: false
-slug: "chatgpt-shortcut-on-ios"
+slug: chatgpt-shortcut-on-ios
 category: article
 tags:
   - chatgpt
   - ios
   - shortcut
-description: A better way to use ChatGPT on iOS and not lose your context using this shortcut.
-ogimage: "chatgpt-ios-shortcut.png"
+description: >-
+  A better way to use ChatGPT on iOS and not lose your context using this
+  shortcut.
+ogimage: chatgpt-ios-shortcut.png
+audio: true
+audioSrc: /audio/posts/chatgpt-shortcut-on-ios.mp3
+audioDuration: "3:38"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 ## Use the ChatGPT app shortcut action on iOS

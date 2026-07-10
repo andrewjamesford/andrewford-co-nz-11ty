@@ -3,7 +3,7 @@ title: Get Instant Notifications When Claude Code Needs You
 date: "2025-08-10T20:04:35Z"
 template: post
 draft: false
-slug: "claude-code-instant-notifications-ntfy"
+slug: claude-code-instant-notifications-ntfy
 category: article
 tags:
   - claude code
@@ -12,7 +12,16 @@ tags:
   - ntfy
   - automation
   - developer tools
-description: "Learn how to get instant push notifications when Claude Code needs your attention using hooks and ntfy.sh - never miss when your AI assistant needs input again"
+description: >-
+  Learn how to get instant push notifications when Claude Code needs your
+  attention using hooks and ntfy.sh - never miss when your AI assistant needs
+  input again
+audio: true
+audioSrc: /audio/posts/claude-code-instant-notifications-ntfy.mp3
+audioDuration: "5:53"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 _Never miss when your AI coding assistant needs your attention - get push notifications to your phone or desktop using ntfy.sh with Claude Code Hooks_

@@ -3,14 +3,23 @@ title: Clipy a replacement for Clipmenu
 date: "2017-09-06T20:18:21+00:00"
 template: post
 draft: false
-slug: "/2017/09/06/clipy-a-replacement-for-clipmenu/"
-category: "article"
+slug: /2017/09/06/clipy-a-replacement-for-clipmenu/
+category: article
 tags:
   - App
   - clipboard
   - mac
   - app
-description: "Was really happy to find a replacement for the now unsupported clipboard manager Clipmenu today. It's called Clipy and acts just the same as Clipmenu but has a new snippet manager."
+description: >-
+  Was really happy to find a replacement for the now unsupported clipboard
+  manager Clipmenu today. It's called Clipy and acts just the same as Clipmenu
+  but has a new snippet manager.
+audio: true
+audioSrc: /audio/posts/clipy-a-replacement-for-clipmenu.mp3
+audioDuration: "0:37"
+audioGeneratedAt: "2026-07-10"
+audioVoice: Andrew
+audioDisclosure: AI narrated using Andrew's voice
 ---
 
 Was really happy to find a replacement for the now unsupported clipboard manager [Clipmenu](http://www.clipmenu.com/) today.

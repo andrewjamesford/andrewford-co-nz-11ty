@@ -7,6 +7,62 @@
     "generatedAt": "2026-07-08"
   },
   {
+    "slug": "chatgpt-shortcut-on-ios",
+    "provider": "f5",
+    "contentHash": "54d9480ff7cdbb8447ad3cd5f93661d9cbe196e45a69bb53fb015d03e8992dcd",
+    "audioSrc": "/audio/posts/chatgpt-shortcut-on-ios.mp3",
+    "duration": "3:38",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "claude-code-instant-notifications-ntfy",
+    "provider": "f5",
+    "contentHash": "44173752a6d20fa07516176885622cd55949a5816b1d655b373fa67434347b9b",
+    "audioSrc": "/audio/posts/claude-code-instant-notifications-ntfy.mp3",
+    "duration": "5:53",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "clipy-a-replacement-for-clipmenu",
+    "provider": "f5",
+    "contentHash": "40ec0db55fc7122f25e679966dbc4b2b16eee61f3996c8dd571e904b6e9dfefa",
+    "audioSrc": "/audio/posts/clipy-a-replacement-for-clipmenu.mp3",
+    "duration": "0:37",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "creative-process-with-ai-on-ipad",
+    "provider": "f5",
+    "contentHash": "a78dbb8777ecbdbeb4c1ae2c15d37243872189b504d0e9406b0c4d0d88be1160",
+    "audioSrc": "/audio/posts/creative-process-with-ai-on-ipad.mp3",
+    "duration": "2:17",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "git-worktrees-claude-code-workflow",
+    "provider": "f5",
+    "contentHash": "cfd8e0e9d272f6efa3681c1a3f9e32cbfb64a5d091ff4ce5267bb9eb90e913df",
+    "audioSrc": "/audio/posts/git-worktrees-claude-code-workflow.mp3",
+    "duration": "4:43",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "sweating-the-details",
+    "provider": "f5",
+    "contentHash": "88aef022aefe4c7597c3f7801ae757e0d4e81a3519917716bc71172f30864234",
+    "audioSrc": "/audio/posts/sweating-the-details.mp3",
+    "duration": "1:53",
+    "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "tailwind-grid-cheatsheet",
+    "provider": "f5",
+    "contentHash": "dc882858d501dbe947ce12a7fae3d1ebdb2795b2469270e06b7753dfc7bfda6d",
+    "audioSrc": "/audio/posts/tailwind-grid-cheatsheet.mp3",
+    "duration": "0:31",
+    "generatedAt": "2026-07-10"
+  },
+  {
     "slug": "zero-swift-to-app-store",
     "provider": "f5",
     "contentHash": "aa6b4b23f8a4ea6083d5b908f1b0682bee73e4d439d23e3fb02ee9a7fb4b8517",
