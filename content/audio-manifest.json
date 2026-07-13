@@ -96,6 +96,14 @@
     "generatedAt": "2026-07-10"
   },
   {
+    "slug": "teaching-software-development-with-ai",
+    "provider": "f5",
+    "contentHash": "c7aa550223b8373cc5f3142aa52a41e8964e47a38f46e40b657e65474be1ce63",
+    "audioSrc": "/audio/posts/teaching-software-development-with-ai.mp3",
+    "duration": "13:18",
+    "generatedAt": "2026-07-13"
+  },
+  {
     "slug": "vibe-coding-create-software-you-want",
     "provider": "f5",
     "contentHash": "cd296ee78c4b9ad03c13c593a91d171be6b34665ba1917414b12b128fed52928",

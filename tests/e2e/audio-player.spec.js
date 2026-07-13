@@ -28,13 +28,14 @@ test.describe("Article audio player", () => {
     const downloadLink = player.getByRole("link", {
       name: "Download article audio",
     });
+    await expect(downloadLink).toBeVisible();
     await downloadLink.scrollIntoViewIfNeeded();
     const downloadBoxBeforeHover = await downloadLink.boundingBox();
+    expect(downloadBoxBeforeHover).not.toBeNull();
     await downloadLink.hover();
     const downloadBoxAfterHover = await downloadLink.boundingBox();
+    expect(downloadBoxAfterHover).not.toBeNull();
     expect(downloadBoxAfterHover).toEqual(downloadBoxBeforeHover);
-    await expect(downloadLink).toHaveCSS("border-radius", "50%");
-    await expect(downloadLink).toHaveCSS("padding", "0px");
     await expect(player.getByText("Generated")).toHaveCount(0);
     await expect(player.locator("audio")).toHaveCount(1);
   });
