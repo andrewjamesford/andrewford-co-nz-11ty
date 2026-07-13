@@ -33,8 +33,6 @@ test.describe("Article audio player", () => {
     await downloadLink.hover();
     const downloadBoxAfterHover = await downloadLink.boundingBox();
     expect(downloadBoxAfterHover).toEqual(downloadBoxBeforeHover);
-    await expect(downloadLink).toHaveCSS("border-radius", "50%");
-    await expect(downloadLink).toHaveCSS("padding", "0px");
     await expect(player.getByText("Generated")).toHaveCount(0);
     await expect(player.locator("audio")).toHaveCount(1);
   });

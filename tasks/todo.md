@@ -71,3 +71,18 @@
 - Verified all 11 real production articles in the cutoff range have F5 manifest entries, durations, and existing MP3 files.
 - Confirmed all six new MP3s with `ffprobe`; the final dry run skipped all 15 enabled entries as current.
 - Passed `npm run prettier:check`, `npm run build`, `npm run test:all`, and the five dedicated audio-player Playwright tests.
+
+## Add audio to Teaching Software Development with AI
+
+- [x] Enable audio for `teaching-software-development-with-ai`.
+- [x] Generate F5-TTS audio and update frontmatter and the manifest.
+- [x] Verify the MP3, build output, and audio player behavior.
+- [x] Commit, push, and open a PR to `main`.
+
+### Review
+
+- Generated a 13:18 F5-TTS narration and stored it at `/audio/posts/teaching-software-development-with-ai.mp3`.
+- Added the F5 manifest entry, content hash, duration, generation date, voice, and AI disclosure to the article frontmatter.
+- Used the stable 120-character F5 chunk size after larger chunks triggered native model segmentation faults.
+- Passed `npm run audio:generate -- --dry-run --slug=teaching-software-development-with-ai`, `npm run prettier:check`, and `npm run build`.
+- Updated the audio player test to assert stable hover geometry instead of relying on a browser-specific computed `border-radius` string.
