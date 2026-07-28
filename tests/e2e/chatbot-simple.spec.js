@@ -42,6 +42,22 @@ test.describe("Chatbot Simple Tests", () => {
   });
 
   test("should send message and get loading state", async ({ page }) => {
+    // Delay the mock response so the loading state is reliably observable,
+    // regardless of whether a live /api/chatrag endpoint exists (e.g. in CI's
+    // static-file-server mode a real request would 404 almost instantly).
+    await page.route("**/api/chatrag", async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await route.fulfill({
+        status: 200,
+        contentType: "text/event-stream",
+        body: [
+          'data: {"chunk":"Mock response from chatbot."}',
+          'data: {"done":true,"sources":["https://andrewford.co.nz/articles/mock-response/"]}',
+          "",
+        ].join("\n\n"),
+      });
+    });
+
     // Open chat
     await page.click("#chat-toggle");
     await page.waitForTimeout(500);

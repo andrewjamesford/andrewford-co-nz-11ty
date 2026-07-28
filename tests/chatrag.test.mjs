@@ -1,85 +1,53 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
-import { handler } from "../api/chatrag.js";
+import request from "supertest";
+import app from "../api/server.mjs";
 
-// Simple expect wrapper for better readability
-const expect = (actual) => ({
-  toBe: (expected) => assert.strictEqual(actual, expected),
-  toHaveProperty: (prop) =>
-    assert.ok(
-      actual.hasOwnProperty(prop),
-      `Expected object to have property '${prop}'`,
-    ),
-});
+const ORIGIN = "https://andrewford.co.nz";
 
-// Mock environment variables for testing
-process.env.OPENAI_API_KEY = process.env.OPENAI_API_KEY || "mock-api-key";
-process.env.UPSTASH_REDIS_REST_URL =
-  process.env.UPSTASH_REDIS_REST_URL || "mock-redis-url";
-process.env.UPSTASH_REDIS_REST_TOKEN =
-  process.env.UPSTASH_REDIS_REST_TOKEN || "mock-redis-token";
-process.env.SITE_URL = process.env.SITE_URL || "https://andrewford.co.nz";
-process.env.ALLOWED_ORIGINS =
-  process.env.ALLOWED_ORIGINS ||
-  "https://andrewford.co.nz,http://localhost:3080";
-
-describe("chatrag API Endpoint", () => {
+describe("POST /api/chatrag", () => {
   it("should return 400 for missing question", async () => {
-    const event = {
-      body: JSON.stringify({}),
-      headers: {
-        "content-type": "application/json",
-        origin: "https://andrewford.co.nz",
-      },
-      connection: {
-        remoteAddress: "127.0.0.1",
-      },
-    };
+    const response = await request(app)
+      .post("/api/chatrag")
+      .set("Origin", ORIGIN)
+      .send({});
 
-    const result = await handler(event, {});
-
-    expect(result.statusCode).toBe(400);
-    const body = JSON.parse(result.body);
-    expect(body.error).toBe("Question is required");
+    assert.strictEqual(response.status, 400);
+    assert.strictEqual(response.body.error, "Question is required");
   });
 
-  it("should return 400 for question that is too short", async () => {
-    const event = {
-      body: JSON.stringify({ question: "Hi" }),
-      headers: {
-        "content-type": "application/json",
-        origin: "https://andrewford.co.nz",
-      },
-      connection: {
-        remoteAddress: "127.0.0.1",
-      },
-    };
+  it("should return 400 for a question that is too short", async () => {
+    const response = await request(app)
+      .post("/api/chatrag")
+      .set("Origin", ORIGIN)
+      .send({ question: "Hi" });
 
-    const result = await handler(event, {});
-
-    expect(result.statusCode).toBe(400);
-    const body = JSON.parse(result.body);
-    expect(body.error).toBe("Question must be at least 10 characters long");
+    assert.strictEqual(response.status, 400);
+    assert.strictEqual(
+      response.body.error,
+      "Question must be at least 10 characters long",
+    );
   });
 
-  it("should include proper CORS headers", async () => {
-    const event = {
-      body: JSON.stringify({
-        question: "What is your favorite programming language?",
-      }),
-      headers: {
-        "content-type": "application/json",
-        origin: "https://andrewford.co.nz",
-      },
-      connection: {
-        remoteAddress: "127.0.0.1",
-      },
-    };
+  it("should return 400 for a question that is too long", async () => {
+    const response = await request(app)
+      .post("/api/chatrag")
+      .set("Origin", ORIGIN)
+      .send({ question: "a".repeat(501) });
 
-    const result = await handler(event, {});
+    assert.strictEqual(response.status, 400);
+    assert.strictEqual(
+      response.body.error,
+      "Question must be no more than 500 characters long",
+    );
+  });
 
-    expect(result.headers).toHaveProperty("Access-Control-Allow-Origin");
-    expect(result.headers).toHaveProperty("Access-Control-Allow-Headers");
-    expect(result.headers).toHaveProperty("Access-Control-Allow-Methods");
+  it("should include CORS headers on the response", async () => {
+    const response = await request(app)
+      .post("/api/chatrag")
+      .set("Origin", ORIGIN)
+      .send({ question: "Hi" });
+
+    assert.strictEqual(response.headers["access-control-allow-origin"], ORIGIN);
   });
 });

@@ -30,10 +30,12 @@
     "prettier": "prettier --write \"**/*.{md,*js,json,yml,css}\" --ignore-path .gitignore",
     "serve": "npx http-server _site -p 3000",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve",
-    "test": "npm run test:e2e:quick",
-    "test:all": "npm run test:e2e:essential && npm run test:e2e:links",
+    "test": "npm run test:unit && npm run test:e2e:quick",
+    "test:all": "npm run test:unit && npm run test:e2e:essential && npm run test:e2e:links",
+    "test:unit": "node --test tests/api/cors.test.mjs tests/chatrag-helpers.test.mjs tests/chatrag.test.mjs tests/lastplayed.test.mjs tests/latestuploads.test.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:essential": "playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-simple.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium",
+    "test:e2e:essential": "playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-simple.spec.js tests/e2e/chatbot-quick.spec.js tests/e2e/audio-player.spec.js --project=chromium",
+    "test:e2e:full": "playwright test tests/e2e/chatbot.spec.js tests/e2e/chatbot-api.spec.js --project=chromium",
     "test:e2e:links": "node --test tests/e2e/site-links.spec.js",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:quick": "playwright test tests/e2e/chatbot-quick.spec.js --project=chromium",
@@ -60,8 +62,11 @@
   "homepage": "https://github.com/andrewjamesford/andrewford-co-nz-11ty#readme",
   "overrides": {
     "@11ty/eleventy": {
-      "liquidjs": "10.27.0",
+      "liquidjs": "10.27.2",
       "picomatch": "4.0.4"
+    },
+    "@11ty/eleventy-img": {
+      "sharp": "0.35.3"
     },
     "@langchain/langgraph": {
       "uuid": "11.1.1"
@@ -69,13 +74,11 @@
     "@langchain/langgraph-checkpoint": {
       "uuid": "11.1.1"
     },
-    "@sentry/node": {
-      "brace-expansion": "2.0.3"
-    },
+    "brace-expansion": "5.0.8",
     "anymatch": {
       "picomatch": "2.3.2"
     },
-    "axios": "1.16.1",
+    "axios": "1.18.1",
     "fdir": {
       "picomatch": "4.0.4"
     },
@@ -86,7 +89,7 @@
     "langsmith": "0.7.3",
     "lodash-es": "4.18.1",
     "path-to-regexp": "8.4.2",
-    "postcss": "8.5.15",
+    "postcss": "8.5.23",
     "qs": "6.15.2",
     "readdirp": {
       "picomatch": "2.3.2"
@@ -105,17 +108,16 @@
     "@11ty/eleventy-plugin-rss": "3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2",
     "@playwright/test": "1.60.0",
-    "concurrently": "10.0.3",
+    "concurrently": "10.0.4",
     "dotenv": "16.6.1",
     "eleventy-plugin-youtube-embed": "1.13.2",
     "http-server": "14.1.1",
     "husky": "9.1.7",
-    "jest": "30.4.2",
-    "lighthouse": "12.8.2",
+    "lighthouse": "13.4.1",
     "luxon": "3.7.2",
     "markdown-it-anchor": "9.2.0",
     "markdown-it-footnote": "4.0.0",
-    "markdownlint-cli2": "0.23.0",
+    "markdownlint-cli2": "0.23.2",
     "prettier": "3.8.3",
     "supertest": "7.2.2"
   },

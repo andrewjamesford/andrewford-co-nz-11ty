@@ -25,6 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check formatting
+        run: npm run prettier:check
+
+      - name: Run unit/API tests
+        run: npm run test:unit
+
       - name: Get Playwright version
         id: playwright-version
         run: echo "version=$(npm list @playwright/test --depth=0 --json | jq -r '.dependencies["@playwright/test"].version')" >> $GITHUB_OUTPUT
@@ -51,17 +57,22 @@ jobs:
           YOUTUBE_API_KEY: mock-key-for-ci
           YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
-      # Run basic site functionality and UI tests only
-      # Note: API tests require OpenAI API key and are excluded from CI
+      # Runs basic.spec.js, chatbot-simple.spec.js, chatbot-quick.spec.js, audio-player.spec.js.
+      # These are safe for CI: real /api/chatrag calls are either mocked via
+      # page.route() or skipped with test.skip(!!process.env.CI, ...).
+      # chatbot.spec.js and chatbot-api.spec.js are NOT run here because they
+      # make live, unmocked calls to /api/chatrag which require a real
+      # OPENROUTER_API_KEY (cost + non-determinism) - run them locally via
+      # `npm run test:e2e:full` with credentials configured in .env.
       - name: Run essential tests
-        run: npx playwright test tests/e2e/basic.spec.js tests/e2e/chatbot-quick.spec.js --project=chromium
+        run: npm run test:e2e:essential
         env:
           CI: true
           YOUTUBE_API_KEY: mock-key-for-ci
           YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 
       - name: Run internal link crawl
-        run: node --test tests/e2e/site-links.spec.js
+        run: npm run test:e2e:links
         env:
           CI: true
           YOUTUBE_API_KEY: mock-key-for-ci

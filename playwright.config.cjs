@@ -2,6 +2,13 @@ const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
   testDir: "./tests/e2e",
+  // site-links.spec.js uses node:test, not Playwright, but its filename
+  // matches Playwright's default *.spec.js glob. Left unignored, a bare
+  // `npx playwright test` imports it, which executes its node:test suite
+  // as an import side effect outside Playwright's runner (spawning its own
+  // server) alongside the real Playwright tests. Run it via `node --test`
+  // (see `npm run test:e2e:links`) instead.
+  testIgnore: ["**/site-links.spec.js"],
   fullyParallel: false, // Disable parallel execution to avoid overwhelming the API
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
