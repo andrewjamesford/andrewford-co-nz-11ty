@@ -2,7 +2,7 @@
 - [x] Update direct npm dependencies and refresh the lockfile.
 - [x] Re-run audit/outdated checks to confirm the security posture.
 - [x] Run the project verification suite.
-- [ ] Commit, push, and open a PR to `main`.
+- [x] Commit, push, and open a PR to `main`.
 
 ## Investigate YouTube embeds
 
