@@ -2,7 +2,7 @@
 - [x] Update direct npm dependencies and refresh the lockfile.
 - [x] Re-run audit/outdated checks to confirm the security posture.
 - [x] Run the project verification suite.
-- [x] Commit, push, and open a PR to `main`.
+- [ ] Commit, push, and open a PR to `main`.
 
 ## Investigate YouTube embeds
 
@@ -86,3 +86,14 @@
 - Used the stable 120-character F5 chunk size after larger chunks triggered native model segmentation faults.
 - Passed `npm run audio:generate -- --dry-run --slug=teaching-software-development-with-ai`, `npm run prettier:check`, and `npm run build`.
 - Updated the audio player test to assert stable hover geometry instead of relying on a browser-specific computed `border-radius` string.
+- [x] Review all live Dependabot alerts and identify direct and transitive remediation paths.
+- [x] Upgrade vulnerable dependencies and refresh the npm lockfile.
+- [x] Run formatting, build, tests, npm audit, and a post-change Dependabot check.
+- [x] Commit, push, and open a PR to `main`.
+
+## Review Dependabot Alerts
+
+- Six open alerts were reduced to four remediation paths: `@11ty/eleventy-img` 7.0.0 removes `image-size`, while DOMPurify, sanitize-html, and brace-expansion use patched versions.
+- Added targeted `js-yaml` and `nanoid` overrides for additional vulnerabilities reported by local npm audit.
+- Passed `npm audit`, Prettier, unit/API tests, production build, 19 essential Playwright tests, and the site-wide internal-link crawl.
+- Markdownlint still reports 11 pre-existing issues in nine content files; no content files were changed for this dependency task.
