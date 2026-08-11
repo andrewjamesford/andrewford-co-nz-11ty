@@ -63,7 +63,8 @@
   "overrides": {
     "@11ty/eleventy": {
       "liquidjs": "10.27.2",
-      "picomatch": "4.0.4"
+      "picomatch": "4.0.4",
+      "js-yaml": "4.3.1"
     },
     "@11ty/eleventy-img": {
       "sharp": "0.35.3"
@@ -74,8 +75,13 @@
     "@langchain/langgraph-checkpoint": {
       "uuid": "11.1.1"
     },
+    "@langchain/classic": {
+      "js-yaml": "4.3.1"
+    },
+    "@langchain/community": {
+      "js-yaml": "4.3.1"
+    },
     "brace-expansion": "5.0.9",
-    "js-yaml": "4.3.1",
     "nanoid": "3.3.18",
     "anymatch": {
       "picomatch": "2.3.2"
