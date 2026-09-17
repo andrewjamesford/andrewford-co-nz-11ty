@@ -97,3 +97,18 @@
 - Added targeted `js-yaml` and `nanoid` overrides for additional vulnerabilities reported by local npm audit.
 - Passed `npm audit`, Prettier, unit/API tests, production build, 19 essential Playwright tests, and the site-wide internal-link crawl.
 - Markdownlint still reports 11 pre-existing issues in nine content files; no content files were changed for this dependency task.
+
+## Remediate September 2026 Dependabot Alerts
+
+- [x] Inventory the current GitHub alerts and dependency paths.
+- [x] Apply the smallest compatible dependency and override updates.
+- [x] Regenerate the lockfile and confirm each patched version is resolved.
+- [x] Run audit, formatting, unit, browser, build, link, and Docker checks.
+- [ ] Commit, push, and open a pull request to `main`.
+
+### Review
+
+- Fixed seven open GitHub alerts: `smol-toml` 1.7.0 to 1.7.1, `sharp` 0.35.3 to 0.35.4, `js-yaml` 3.15.1 to 3.15.2 and 4.3.1 to 4.3.2, `qs` 6.15.2 to 6.16.0, and `sanitize-html` 2.17.6 to 2.17.7.
+- Kept the `markdownlint-cli2` `js-yaml@5.2.2` dependency isolated while scoping the patched `smol-toml` override to that package.
+- Passed `npm audit`, dependency-tree verification, Prettier, site build, 18 unit tests, 19 essential browser tests, internal-link crawl, and Docker build.
+- Markdownlint still reports 11 pre-existing content issues in nine files; no content files were changed.
