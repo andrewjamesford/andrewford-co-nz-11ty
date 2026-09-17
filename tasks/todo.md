@@ -104,7 +104,7 @@
 - [x] Apply the smallest compatible dependency and override updates.
 - [x] Regenerate the lockfile and confirm each patched version is resolved.
 - [x] Run audit, formatting, unit, browser, build, link, and Docker checks.
-- [ ] Commit, push, and open a pull request to `main`.
+- [x] Commit, push, and open a pull request to `main`.
 
 ### Review
 
