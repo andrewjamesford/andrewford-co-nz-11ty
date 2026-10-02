@@ -128,7 +128,7 @@
     "luxon": "3.7.2",
     "markdown-it-anchor": "9.2.0",
     "markdown-it-footnote": "4.0.0",
-    "markdownlint-cli2": "0.23.2",
+    "markdownlint-cli2": "0.23.3",
     "prettier": "3.8.3",
     "supertest": "7.2.2"
   },
@@ -140,7 +140,7 @@
     "@langchain/textsplitters": "1.0.1",
     "compression": "1.8.1",
     "cors": "2.8.6",
-    "dompurify": "3.4.13",
+    "dompurify": "3.4.16",
     "entities": "6.0.1",
     "express": "5.2.1",
     "faiss-node": "0.5.1",
