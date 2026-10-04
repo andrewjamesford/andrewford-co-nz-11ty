@@ -16,6 +16,13 @@ import pluginSEO from "./eleventy.config.seo.mjs";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 
 import dotenv from "dotenv";
+import { readFileSync } from "node:fs";
+
+const dompurifyVersion = JSON.parse(
+  readFileSync(
+    new URL("./node_modules/dompurify/package.json", import.meta.url),
+  ),
+).version;
 
 function isArticleDetailPage(page) {
   if (!page || !page.url) {
@@ -67,7 +74,9 @@ export default async (eleventyConfig) => {
   // https://www.11ty.dev/docs/assets/
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
+    "./node_modules/dompurify/dist/purify.min.js": `scripts/vendor/dompurify-${dompurifyVersion}.min.js`,
   });
+  eleventyConfig.addGlobalData("dompurifyVersion", dompurifyVersion);
   eleventyConfig.addPassthroughCopy("content/**/*.{mov,mp4,webm}");
 
   // Run Eleventy when these files change:
