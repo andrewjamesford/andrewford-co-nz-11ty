@@ -112,3 +112,19 @@
 - Kept the `markdownlint-cli2` `js-yaml@5.2.2` dependency isolated while scoping the patched `smol-toml` override to that package.
 - Passed `npm audit`, dependency-tree verification, Prettier, site build, 18 unit tests, 19 essential browser tests, internal-link crawl, and Docker build.
 - Markdownlint still reports 11 pre-existing content issues in nine files; no content files were changed.
+
+## Serve the pinned DOMPurify browser asset
+
+- [x] Copy the installed npm browser asset through Eleventy and load it before the chatbot.
+- [x] Verify chatbot submissions and malicious markup with mocked responses.
+- [x] Verify asset bytes, production build, formatting, unit tests and browser regressions.
+- [x] Commit locally for review without pushing or deploying.
+
+### Review
+
+- Copy `dompurify/dist/purify.min.js` from the installed npm package to a versioned URL, avoiding stale responses under the existing immutable JavaScript cache policy.
+- Load it before the chatbot bundle. Keep the existing text-only sanitization and rendering unchanged.
+- Set the CI build's `SITE_URL` to its local static server so the page's base URL resolves the sanitizer locally.
+- Passed production build, byte comparison against DOMPurify 3.4.16, formatting, 18 unit/API tests, 18 essential browser tests and the internal link crawl. Four browser tests intentionally skip live API checks in CI.
+- Three new browser regressions block external traffic and mock chatbot replies. They verify the loaded version, submitted question and inert malicious user/model markup.
+- Markdownlint reports the same 11 existing content issues in nine files.

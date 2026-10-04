@@ -54,6 +54,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          SITE_URL: http://localhost:3080
           YOUTUBE_API_KEY: mock-key-for-ci
           YOUTUBE_CHANNEL_ID: mock-channel-id-for-ci
 

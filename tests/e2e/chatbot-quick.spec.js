@@ -1,4 +1,92 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+const pinnedDOMPurifyVersion = JSON.parse(
+  readFileSync(new URL("../../package.json", import.meta.url), "utf8"),
+).dependencies.dompurify;
+
+test.describe("Chatbot sanitizer regressions", () => {
+  let submittedQuestions;
+  const responseText =
+    '<img src=x onerror="window.__xssExecuted=true"><script>window.__xssExecuted=true</script>';
+
+  test.beforeEach(async ({ page }) => {
+    submittedQuestions = [];
+    // Keep these tests independent of CDNs, analytics and paid chatbot APIs.
+    await page.route("**/*", async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname === "/api/chatrag") {
+        submittedQuestions.push(route.request().postDataJSON().question);
+        await route.fulfill({
+          status: 200,
+          contentType: "text/event-stream",
+          body: [
+            `data: ${JSON.stringify({ chunk: responseText })}`,
+            'data: {"done":true}',
+            "",
+          ].join("\n\n"),
+        });
+      } else if (url.origin === "http://localhost:3080") {
+        await route.continue();
+      } else {
+        await route.abort();
+      }
+    });
+    await page.goto("/");
+    await page.click("#chat-toggle");
+  });
+
+  test("submits with the same-origin pinned npm sanitizer", async ({
+    page,
+  }) => {
+    const script = page.locator('script[src*="dompurify"]');
+    await expect(script).toHaveAttribute(
+      "src",
+      `/scripts/vendor/dompurify-${pinnedDOMPurifyVersion}.min.js`,
+    );
+    expect(await script.getAttribute("async")).toBeNull();
+    expect(await page.evaluate(() => window.DOMPurify.version)).toBe(
+      pinnedDOMPurifyVersion,
+    );
+
+    const question = "Tell me about Andrew Ford's background.";
+    await page.fill("#chat-input", question);
+    await page.click("#chat-send");
+    await expect(page.locator(".chat-message.bot").last()).toHaveText(
+      responseText,
+    );
+    expect(submittedQuestions).toEqual([question]);
+    await expect(page.locator("#chat-send")).toBeEnabled();
+  });
+
+  for (const markup of [
+    '<img src=x onerror="window.__xssExecuted=true"><script>window.__xssExecuted=true</script>',
+    '<svg onload="window.__xssExecuted=true"><a href="javascript:window.__xssExecuted=true"></a></svg>',
+  ]) {
+    test(`keeps malicious markup inert: ${markup.slice(0, 4)}`, async ({
+      page,
+    }) => {
+      await page.fill(
+        "#chat-input",
+        `<b>Tell me about Andrew Ford.</b>${markup}`,
+      );
+      await page.click("#chat-send");
+      await expect(page.locator(".chat-message.bot").last()).toHaveText(
+        responseText,
+      );
+      expect(submittedQuestions).toEqual(["Tell me about Andrew Ford."]);
+      await expect(page.locator(".chat-message.user").last()).toHaveText(
+        "Tell me about Andrew Ford.",
+      );
+      await expect(
+        page.locator(
+          "#chat-messages img, #chat-messages script, #chat-messages svg",
+        ),
+      ).toHaveCount(0);
+      expect(await page.evaluate(() => window.__xssExecuted)).toBeUndefined();
+    });
+  }
+});
 
 test.describe("Chatbot Quick Tests", () => {
   test("should display chat toggle button", async ({ page }) => {
