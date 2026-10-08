@@ -432,6 +432,12 @@ picture {
   height: 80px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .app-logo {
+    filter: invert(1);
+  }
+}
+
 .app-info {
   flex: 1;
 }
