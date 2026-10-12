@@ -64,10 +64,11 @@
     "@11ty/eleventy": {
       "liquidjs": "10.27.2",
       "picomatch": "4.0.4",
-      "js-yaml": "4.3.2"
+      "js-yaml": "4.3.2",
+      "markdown-it": "14.3.1"
     },
     "@11ty/eleventy-img": {
-      "sharp": "0.35.4"
+      "sharp": "0.35.5"
     },
     "@langchain/langgraph": {
       "uuid": "11.1.1"
@@ -81,12 +82,12 @@
     "@langchain/community": {
       "js-yaml": "4.3.2"
     },
-    "brace-expansion": "5.0.9",
+    "brace-expansion": "5.0.12",
     "nanoid": "3.3.18",
     "anymatch": {
       "picomatch": "2.3.2"
     },
-    "axios": "1.18.1",
+    "axios": "1.20.0",
     "fdir": {
       "picomatch": "4.0.4"
     },
@@ -97,7 +98,7 @@
     "langsmith": "0.7.3",
     "lodash-es": "4.18.1",
     "markdownlint-cli2": {
-      "smol-toml": "1.7.1"
+      "smol-toml": "1.9.0"
     },
     "path-to-regexp": "8.4.2",
     "postcss": "8.5.23",
@@ -108,7 +109,10 @@
     "tinyglobby": {
       "picomatch": "4.0.4"
     },
-    "yauzl": "3.2.1"
+    "yauzl": "3.2.1",
+    "micromark-extension-math": {
+      "katex": "0.18.2"
+    }
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.5",
