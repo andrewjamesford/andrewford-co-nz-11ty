@@ -1,4 +1,4 @@
-{%- if page.url != '/' and page.url != '/404.html' -%}
+{%- if page.url and page.url != '/' and page.url != '/404.html' -%}
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol class="breadcrumb-list">
     <li class="breadcrumb-item">
@@ -12,14 +12,14 @@
       <li class="breadcrumb-item breadcrumb-current" aria-current="page">
         {{ title }}
       </li>
-    {%- elif page.url.includes('/archive/') -%}
+    {%- elif page.url and page.url.includes('/archive/') -%}
       <li class="breadcrumb-item">
         <a href="{{ metadata.fullUrl }}/archive/">Archive</a>
       </li>
       <li class="breadcrumb-item breadcrumb-current" aria-current="page">
         {{ title }}
       </li>
-    {%- elif page.url.includes('/notes/') -%}
+    {%- elif page.url and page.url.includes('/notes/') -%}
       <li class="breadcrumb-item">
         <a href="{{ metadata.fullUrl }}/note/">Notes</a>
       </li>

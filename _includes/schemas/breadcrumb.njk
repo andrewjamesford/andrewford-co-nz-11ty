@@ -5,7 +5,7 @@
   "item": metadata.fullUrl + "/"
 }), breadcrumbItems) -%}
 
-{%- if page.url.includes('/articles/') -%}
+{%- if page.url and page.url.includes('/articles/') -%}
   {%- set breadcrumbItems = (breadcrumbItems.push({
     "position": 2,
     "name": "Articles",
@@ -16,7 +16,7 @@
     "name": title,
     "item": metadata.fullUrl + page.url
   }), breadcrumbItems) -%}
-{%- elif page.url.includes('/archive/') -%}
+{%- elif page.url and page.url.includes('/archive/') -%}
   {%- set breadcrumbItems = (breadcrumbItems.push({
     "position": 2,
     "name": "Archive",
@@ -27,7 +27,7 @@
     "name": title,
     "item": metadata.fullUrl + page.url
   }), breadcrumbItems) -%}
-{%- elif page.url.includes('/notes/') -%}
+{%- elif page.url and page.url.includes('/notes/') -%}
   {%- set breadcrumbItems = (breadcrumbItems.push({
     "position": 2,
     "name": "Notes",
