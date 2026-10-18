@@ -2,7 +2,7 @@
 title: How Coding Agents Actually Work
 date: "2026-10-18T18:00:00Z"
 template: post
-draft: true
+draft: false
 slug: how-coding-agents-work
 category: article
 tags:
@@ -18,9 +18,7 @@ description: >-
   window that limits everything an LLM can see.
 ---
 
-<!-- TODO: swap in the real YouTube URL once the video is published -->
-
-<https://www.youtube.com/watch?v=REPLACE_ME>
+<https://youtu.be/EqItwfp3qE8>
 
 In this video I show you how coding agents work. We take a very simple failing test, get Claude to fix it, and then I explain what's actually happening behind the scenes.
 
