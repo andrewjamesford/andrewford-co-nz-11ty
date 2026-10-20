@@ -6,6 +6,10 @@ draft: false
 slug: build-ios-app-with-ai
 category: article
 tags: []
+ogimage: pageflick-building-with-ai.png
+ogimageAlt: "Building PageFlick with AI. From prototype to App Store. PageFlick app icon and andrewford.co.nz."
+ogimageWidth: 1200
+ogimageHeight: 628
 description: "I built PageFlick with Claude and ChatGPT in three weeks. What took 30 minutes, what testing changed, and the App Store review mistakes I should have caught."
 ---
 

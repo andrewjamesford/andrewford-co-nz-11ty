@@ -44,6 +44,9 @@
 		<meta property="og:description" content="{{ description or metadata.description }}"/>
 		{% if ogimage %}
 			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ ogimage }}"/>
+			{% if ogimageAlt %}<meta property="og:image:alt" content="{{ ogimageAlt | escape }}"/>{% endif %}
+			{% if ogimageWidth %}<meta property="og:image:width" content="{{ ogimageWidth }}"/>{% endif %}
+			{% if ogimageHeight %}<meta property="og:image:height" content="{{ ogimageHeight }}"/>{% endif %}
 		{% else %}
 			<meta property="og:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}
@@ -61,6 +64,7 @@
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
 		{% if ogimage %}
 			<meta name="twitter:image" content="{{ metadata.fullUrl }}/ogimage/{{ ogimage }}">
+			{% if ogimageAlt %}<meta name="twitter:image:alt" content="{{ ogimageAlt | escape }}">{% endif %}
 		{% else %}
 			<meta property="twitter:image" content="{{ metadata.fullUrl }}/ogimage/{{ "social-card.png" }}"/>
 		{% endif %}

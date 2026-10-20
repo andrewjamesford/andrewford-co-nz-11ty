@@ -20,8 +20,8 @@
   "image": {
     "@type": "ImageObject",
     "url": "{{ metadata.fullUrl }}/ogimage/{{ ogimage or 'social-card.png' }}",
-    "width": 1200,
-    "height": 630
+    "width": {{ ogimageWidth or 1200 }},
+    "height": {{ ogimageHeight or 630 }}
   }
   {%- if tags and tags.length > 0 -%},
   "keywords": "{{ tags | filterTagList | join(', ') }}"
