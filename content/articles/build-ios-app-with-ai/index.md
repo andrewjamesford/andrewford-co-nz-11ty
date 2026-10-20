@@ -5,7 +5,10 @@ template: post
 draft: false
 slug: build-ios-app-with-ai
 category: article
-tags: []
+tags:
+  - ai
+  - ios
+  - swift
 ogimage: pageflick-building-with-ai.png
 ogimageAlt: "Building PageFlick with AI. From prototype to App Store. PageFlick app icon and andrewford.co.nz."
 ogimageWidth: 1200
