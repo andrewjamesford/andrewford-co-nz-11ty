@@ -14,6 +14,12 @@ ogimageAlt: "Building PageFlick with AI. From prototype to App Store. PageFlick 
 ogimageWidth: 1200
 ogimageHeight: 628
 description: "I built PageFlick with Claude and ChatGPT in three weeks. What took 30 minutes, what testing changed, and the App Store review mistakes I should have caught."
+audio: true
+audioSrc: "/audio/posts/build-ios-app-with-ai.mp3"
+audioDuration: "4:18"
+audioGeneratedAt: "2026-10-22"
+audioVoice: "Andrew"
+audioDisclosure: "AI narrated using Andrew's voice"
 ---
 
 ## The Idea: Turning Pages Without Touching the Screen
