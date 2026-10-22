@@ -1,5 +1,7 @@
 const { defineConfig, devices } = require("@playwright/test");
 
+const baseURL = "http://localhost:3080";
+
 module.exports = defineConfig({
   testDir: "./tests/e2e",
   // site-links.spec.js uses node:test, not Playwright, but its filename
@@ -16,7 +18,7 @@ module.exports = defineConfig({
   reporter: "html",
   timeout: 60000, // Increase test timeout to 60 seconds for AI responses
   use: {
-    baseURL: "http://localhost:3080",
+    baseURL,
     trace: "on-first-retry",
     screenshot: "only-on-failure",
     actionTimeout: 10000, // 10 seconds for actions
@@ -30,17 +32,19 @@ module.exports = defineConfig({
   ],
 
   webServer: {
-    // In CI: serve pre-built static files (faster, no rebuild needed)
-    // In local: use dev server with hot reload
+    // CI already builds for this origin. Local runs rebuild first so a prior
+    // production <base> cannot send same-origin scripts to the production site.
     command: process.env.CI
-      ? "npx http-server _site -p 3080"
-      : "npm run api:dev",
-    url: "http://localhost:3080",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
+      ? "npx --no-install http-server _site -p 3080"
+      : "npm run build && npm run api:dev",
+    url: baseURL,
+    // Reusing an unrelated server could silently test stale production output.
+    reuseExistingServer: false,
+    timeout: 180 * 1000,
     env: {
       // Set PORT for API server in local dev mode
       PORT: "3080",
+      SITE_URL: baseURL,
       // Only needed for local dev server (not for static file serving)
       ...(!process.env.CI && {
         CI: process.env.CI || "",

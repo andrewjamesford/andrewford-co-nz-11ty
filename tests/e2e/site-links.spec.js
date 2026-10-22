@@ -5,7 +5,9 @@ import { setTimeout as sleep } from "node:timers/promises";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const BASE_URL = process.env.SITE_URL || "http://localhost:3081";
+// Crawl the server started by this suite, regardless of the site build origin.
+const PORT = 3081;
+const BASE_URL = `http://localhost:${PORT}`;
 const SITE_DIR = process.env.SITE_DIR || "_site";
 
 const SKIPPED_PROTOCOLS = new Set([
@@ -94,7 +96,7 @@ describe("Site-wide internal links", () => {
   before(async () => {
     serverProcess = spawn(
       "npx",
-      ["http-server", SITE_DIR, "-p", "3081", "--silent"],
+      ["http-server", SITE_DIR, "-p", String(PORT), "--silent"],
       { stdio: "ignore" },
     );
     // Give the server time to start
