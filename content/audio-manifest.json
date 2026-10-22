@@ -24,6 +24,14 @@
     "generatedAt": "2026-07-10"
   },
   {
+    "slug": "build-ios-app-with-ai",
+    "provider": "f5",
+    "contentHash": "a5817c32ecaae3d9deb47f4f9b37ef074f632895364b7bb8145659136879cc3d",
+    "audioSrc": "/audio/posts/build-ios-app-with-ai.mp3",
+    "duration": "4:18",
+    "generatedAt": "2026-10-22"
+  },
+  {
     "slug": "chatgpt-shortcut-on-ios",
     "provider": "f5",
     "contentHash": "54d9480ff7cdbb8447ad3cd5f93661d9cbe196e45a69bb53fb015d03e8992dcd",
@@ -70,6 +78,14 @@
     "audioSrc": "/audio/posts/git-worktrees-claude-code-workflow.mp3",
     "duration": "4:43",
     "generatedAt": "2026-07-10"
+  },
+  {
+    "slug": "how-coding-agents-work",
+    "provider": "f5",
+    "contentHash": "671f428745c2d693f54f42d2c38cc9eb41cbc09adfd6d2430ee1f73b46573d9e",
+    "audioSrc": "/audio/posts/how-coding-agents-work.mp3",
+    "duration": "9:05",
+    "generatedAt": "2026-10-22"
   },
   {
     "slug": "rag-to-build-chatbot-with-langchain",

@@ -16,6 +16,12 @@ description: >-
   A walkthrough of what happens inside a coding agent when it fixes a failing
   test: the permission gate, the agent loop, tokenization, and the context
   window that limits everything an LLM can see.
+audio: true
+audioSrc: "/audio/posts/how-coding-agents-work.mp3"
+audioDuration: "9:05"
+audioGeneratedAt: "2026-10-22"
+audioVoice: "Andrew"
+audioDisclosure: "AI narrated using Andrew's voice"
 ---
 
 <https://youtu.be/EqItwfp3qE8>
