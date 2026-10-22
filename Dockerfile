@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for 11ty site with API server
 
 # Stage 1: Build stage
-FROM node:24-alpine AS builder
+FROM node:24.22.1-alpine AS builder
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ RUN node api/server.mjs & \
     kill $SERVER_PID || true
 
 # Stage 2: Production stage
-FROM node:24-alpine AS production
+FROM node:24.22.1-alpine AS production
 
 WORKDIR /app
 
