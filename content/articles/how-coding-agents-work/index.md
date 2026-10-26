@@ -133,4 +133,4 @@ A coding agent is software running on your machine. It builds a request from you
 
 That's the loop: request permission, execute on approval, feed the result back into the next request. It might run through several tool calls before replying, because the model has no memory of its own between requests. Close to the context window limit, the agent summarizes the conversation so far to stay under it.
 
-Next up, I'm building an agent from scratch in TypeScript, so you can see this loop with no framework hiding it. Subscribe if you want to catch it when it drops.
+Next up, I build an agent from scratch in TypeScript, so you can see this loop with no framework hiding it: [Building a Coding Agent in TypeScript](/articles/building-a-coding-agent/).
