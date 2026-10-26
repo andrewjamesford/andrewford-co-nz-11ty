@@ -78,6 +78,8 @@ That's the whole shape of it. The model has no memory of its own, so `conversati
 
 A tool is four things: a name, a description Claude uses to decide when to reach for it, a JSON schema for its input, and the code that actually runs. That shape becomes an interface in `tools.ts`:
 
+{% figure "./anatomy-of-a-tool.png", "Diagram of a ToolDefinition: name, description, inputSchema and run(input), with the four tools this agent ends up with — read_file, list_files, edit_file and bash" %}
+
 ```ts
 export interface ToolDefinition {
   name: string;
@@ -206,6 +208,8 @@ No change to the loop this time. Adding a tool is just adding a function and lis
 ## Step 5: edit_file
 
 This one does two jobs: replace text in a file that exists, or create one that doesn't, by passing an empty `old_str`.
+
+{% figure "./edit-file-flow.png", "Flowchart of edit_file: checks for invalid input, whether the file exists, creates it if old_str is empty, otherwise replaces every match of old_str with new_str and errors if nothing changed" %}
 
 ```ts
 run: async (input) => {
